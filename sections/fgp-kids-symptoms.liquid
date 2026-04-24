@@ -1,0 +1,247 @@
+{% comment %}
+  Feel Good Pharma — Kids Probiotics "Never Have to Suffer From" Section
+  Desktop: heading centered + up to 5 icons in a horizontal row
+  Mobile:  heading + icons stacked vertically
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-ksym" aria-label="Kids Probiotics symptoms">
+
+  <h2 class="fgp-ksym__heading">{{ section.settings.heading | default: 'With <strong>KIDS PROBIOTICS</strong>, your child will never have to suffer from:' }}</h2>
+
+  <div class="fgp-ksym__grid">
+    {% for i in (1..5) %}
+      {% assign icon_key  = 'icon_' | append: i %}
+      {% assign label_key = 'label_' | append: i %}
+      {% assign icon  = section.settings[icon_key] %}
+      {% assign label = section.settings[label_key] %}
+      {% if icon != blank or label != blank %}
+        <div class="fgp-ksym__item">
+          {% if icon != blank %}
+            <img
+              class="fgp-ksym__icon"
+              src="{{ icon | img_url: '100x' }}"
+              alt="{{ label }}"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="fgp-ksym__icon fgp-ksym__icon--placeholder"></div>
+          {% endif %}
+          {% if label != blank %}
+            <span class="fgp-ksym__label">{{ label }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-ksym {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 56px 24px 64px;
+  text-align: center;
+}
+
+.fgp-ksym__heading {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  margin: 0 auto 48px;
+  line-height: 1.3;
+  max-width: 700px;
+}
+
+.fgp-ksym__heading strong {
+  font-weight: 800;
+}
+
+.fgp-ksym__grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fgp-ksym__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex: 0 1 160px;
+}
+
+.fgp-ksym__icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.fgp-ksym__icon--placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--fgp-blue);
+  background: transparent;
+}
+
+.fgp-ksym__label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fgp-navy);
+  line-height: 1.3;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .fgp-ksym {
+    padding: 40px 24px 48px;
+  }
+
+  .fgp-ksym__heading {
+    font-size: 22px;
+    margin-bottom: 36px;
+  }
+
+  .fgp-ksym__grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .fgp-ksym__item {
+    flex: none;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .fgp-ksym__icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .fgp-ksym__label { font-size: 14px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-ksym__heading { font-size: 24px; }
+  .fgp-ksym__grid { gap: 28px; }
+  .fgp-ksym__item { flex: 0 1 130px; }
+  .fgp-ksym__icon { width: 76px; height: 76px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Kids Symptoms",
+  "tag": "section",
+  "class": "fgp-kids-symptoms",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (use <strong> for bold)",
+      "default": "With <strong>KIDS PROBIOTICS<\/strong>, your child will never have to suffer from:"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Icon 1"
+    },
+    {
+      "type": "text",
+      "id": "label_1",
+      "label": "Label 1",
+      "default": "Tummy aches"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Icon 2"
+    },
+    {
+      "type": "text",
+      "id": "label_2",
+      "label": "Label 2",
+      "default": "Constipation or diarrhea"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Icon 3"
+    },
+    {
+      "type": "text",
+      "id": "label_3",
+      "label": "Label 3",
+      "default": "Frequent colds"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_4",
+      "label": "Icon 4"
+    },
+    {
+      "type": "text",
+      "id": "label_4",
+      "label": "Label 4",
+      "default": "Intestinal imbalance"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_5",
+      "label": "Icon 5"
+    },
+    {
+      "type": "text",
+      "id": "label_5",
+      "label": "Label 5",
+      "default": "Allergies"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Kids Symptoms"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,252 @@
+{% comment %}
+  Feel Good Pharma — Contact Info Cards Section
+  Desktop: row of up to 4 contact info cards (email, phone, location, hours)
+  Mobile:  2-col grid
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-cinfo" aria-label="Contact information">
+  <div class="fgp-cinfo__grid">
+    {% for block in section.blocks %}
+      <div class="fgp-cinfo__card" {{ block.shopify_attributes }}>
+        {% if block.settings.icon != blank %}
+          <img
+            class="fgp-cinfo__icon"
+            src="{{ block.settings.icon | img_url: '80x' }}"
+            alt="{{ block.settings.label }}"
+            loading="lazy"
+          >
+        {% elsif block.settings.icon_svg != blank %}
+          <div class="fgp-cinfo__icon-svg">{{ block.settings.icon_svg }}</div>
+        {% else %}
+          <div class="fgp-cinfo__icon-fallback">
+            {% case block.settings.type %}
+              {% when 'email' %}✉
+              {% when 'phone' %}📞
+              {% when 'location' %}📍
+              {% when 'hours' %}🕐
+              {% else %}•
+            {% endcase %}
+          </div>
+        {% endif %}
+
+        <p class="fgp-cinfo__label">{{ block.settings.label }}</p>
+
+        {% if block.settings.value != blank %}
+          {% if block.settings.type == 'email' %}
+            <a href="mailto:{{ block.settings.value }}" class="fgp-cinfo__value">{{ block.settings.value }}</a>
+          {% elsif block.settings.type == 'phone' %}
+            <a href="tel:{{ block.settings.value | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}" class="fgp-cinfo__value">{{ block.settings.value }}</a>
+          {% elsif block.settings.type == 'url' %}
+            <a href="{{ block.settings.value }}" class="fgp-cinfo__value" target="_blank" rel="noopener">{{ block.settings.display_value | default: block.settings.value }}</a>
+          {% else %}
+            <p class="fgp-cinfo__value">{{ block.settings.value }}</p>
+          {% endif %}
+        {% endif %}
+
+        {% if block.settings.subvalue != blank %}
+          <p class="fgp-cinfo__subvalue">{{ block.settings.subvalue }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.fgp-cinfo {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 48px 24px 56px;
+}
+
+.fgp-cinfo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fgp-cinfo__card {
+  background: var(--fgp-white);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.fgp-cinfo__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.fgp-cinfo__icon-svg {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.fgp-cinfo__icon-fallback {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.fgp-cinfo__label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-cinfo__value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  margin: 0;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+a.fgp-cinfo__value:hover {
+  color: var(--fgp-blue);
+  text-decoration: underline;
+}
+
+.fgp-cinfo__subvalue {
+  font-size: 13px;
+  color: var(--fgp-navy);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .fgp-cinfo { padding: 32px 20px 40px; }
+  .fgp-cinfo__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .fgp-cinfo__card { padding: 20px 14px; }
+  .fgp-cinfo__value { font-size: 13px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Contact Info",
+  "tag": "section",
+  "class": "fgp-contact-info",
+  "max_blocks": 4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "info_card",
+      "name": "Info Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Type",
+          "options": [
+            { "value": "email", "label": "Email (mailto link)" },
+            { "value": "phone", "label": "Phone (tel link)" },
+            { "value": "location", "label": "Location (plain text)" },
+            { "value": "hours", "label": "Hours (plain text)" },
+            { "value": "url", "label": "URL (external link)" },
+            { "value": "text", "label": "Text (plain)" }
+          ],
+          "default": "email"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Email"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value (email address, phone number, text, or URL)",
+          "default": "hola@feelgoodpharma.com"
+        },
+        {
+          "type": "text",
+          "id": "display_value",
+          "label": "Display text (for URL type only)",
+          "info": "What to show as the link text when type is URL"
+        },
+        {
+          "type": "text",
+          "id": "subvalue",
+          "label": "Sub-value (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Contact Info",
+      "blocks": [
+        {
+          "type": "info_card",
+          "settings": {
+            "type": "email",
+            "label": "Email",
+            "value": "hola@feelgoodpharma.com"
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "type": "phone",
+            "label": "Phone",
+            "value": "+506 XXXX XXXX"
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "type": "location",
+            "label": "Location",
+            "value": "San José, Costa Rica"
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "type": "hours",
+            "label": "Hours",
+            "value": "Mon–Fri: 8am – 5pm"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

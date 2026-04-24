@@ -1,0 +1,298 @@
+{% comment %}
+  Feel Good Pharma — Founder Quote Section
+  Desktop: rounded card, image left (bleeds to edge) + quote/name/CTA right
+  Mobile:  image top (bleeds) + white panel below with name, quote, CTA
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-founder" aria-label="Founder quote">
+
+  <!-- ---- DESKTOP ---- -->
+  <div class="fgp-founder__desktop">
+    <div class="fgp-founder__card">
+
+      <!-- LEFT: Photo -->
+      <div class="fgp-founder__image-col">
+        {% if section.settings.founder_image != blank %}
+          <img
+            class="fgp-founder__image"
+            src="{{ section.settings.founder_image | img_url: 'master' }}"
+            alt="{{ section.settings.founder_name | default: 'Founder' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-founder__image fgp-founder__image--placeholder"></div>
+        {% endif %}
+      </div>
+
+      <!-- RIGHT: Quote + name + CTA -->
+      <div class="fgp-founder__content">
+        <blockquote class="fgp-founder__quote">{{ section.settings.quote | default: 'I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body natural balance, so you can feel your best every day.' }}</blockquote>
+        <p class="fgp-founder__name">{{ section.settings.founder_name | default: 'Dr. Katherine Jiménez, Founder' }}</p>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-founder__cta">
+          {{ section.settings.cta_label | default: 'View more' }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ---- MOBILE ---- -->
+  <div class="fgp-founder__mobile">
+    <div class="fgp-founder__mobile-card">
+
+      <!-- TOP: Photo -->
+      <div class="fgp-founder__mobile-image-wrap">
+        {% if section.settings.founder_image != blank %}
+          <img
+            class="fgp-founder__mobile-image"
+            src="{{ section.settings.founder_image | img_url: 'master' }}"
+            alt="{{ section.settings.founder_name | default: 'Founder' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-founder__mobile-image fgp-founder__image--placeholder"></div>
+        {% endif %}
+      </div>
+
+      <!-- BOTTOM: Name + quote + CTA -->
+      <div class="fgp-founder__mobile-content">
+        <h2 class="fgp-founder__mobile-name">{{ section.settings.founder_name | default: 'Dr. Katherine Jiménez, Founder' }}</h2>
+        <blockquote class="fgp-founder__quote">{{ section.settings.quote | default: 'I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body natural balance, so you can feel your best every day.' }}</blockquote>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-founder__cta">
+          {{ section.settings.cta_label | default: 'View more' }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+.fgp-founder {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 40px 24px 56px;
+}
+
+/* ===============================================================
+   DESKTOP
+=============================================================== */
+.fgp-founder__mobile { display: none; }
+
+.fgp-founder__desktop {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fgp-founder__card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--fgp-white);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  min-height: 420px;
+}
+
+/* Image column */
+.fgp-founder__image-col {
+  flex: 0 0 40%;
+  overflow: hidden;
+}
+
+.fgp-founder__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.fgp-founder__image--placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: #dce8f5;
+}
+
+/* Content column */
+.fgp-founder__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 48px 52px;
+}
+
+.fgp-founder__quote {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  line-height: 1.6;
+  margin: 0;
+  font-style: normal;
+}
+
+.fgp-founder__name {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  margin: 0;
+  opacity: 0.75;
+}
+
+.fgp-founder__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+.fgp-founder__cta:hover { opacity: 0.85; }
+
+/* ===============================================================
+   MOBILE
+=============================================================== */
+@media (max-width: 767px) {
+  .fgp-founder__desktop { display: none; }
+  .fgp-founder__mobile  { display: block; }
+
+  .fgp-founder {
+    padding: 20px 20px 40px;
+  }
+
+  .fgp-founder__mobile-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--fgp-white);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .fgp-founder__mobile-image-wrap {
+    overflow: hidden;
+    line-height: 0;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .fgp-founder__mobile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .fgp-founder__mobile-content {
+    padding: 24px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fgp-founder__mobile-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--fgp-navy);
+    margin: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    line-height: 1.3;
+  }
+
+  .fgp-founder__quote {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--fgp-navy);
+    margin: 0;
+    font-style: normal;
+  }
+
+  .fgp-founder__cta {
+    align-self: flex-start;
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}
+
+/* ===============================================================
+   TABLET
+=============================================================== */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-founder__content { padding: 36px 36px; }
+  .fgp-founder__quote { font-size: 17px; }
+  .fgp-founder__image-col { flex: 0 0 38%; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Founder Quote",
+  "tag": "section",
+  "class": "fgp-founder-quote",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Founder Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder Photo"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Founder Name & Title",
+      "default": "Dr. Katherine Jiménez, Founder"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body natural balance, so you can feel your best every day."
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Label",
+      "default": "View more"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Founder Quote"
+    }
+  ]
+}
+{% endschema %}

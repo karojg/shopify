@@ -1,0 +1,628 @@
+{% comment %}
+  Feel Good Pharma — Custom Footer
+  Layout (desktop, left → right):
+    Col 1: Logo + address + hours
+    Col 2: Company nav links
+    Col 3: Resources nav links
+    Col 4: "Subscribe & Save" newsletter + checkbox consent
+  Bottom bar: language/country selector | copyright | payment icons
+  Mobile: stacked vertically in same order
+{% endcomment %}
+
+<footer class="fgp-ft" aria-label="Site footer">
+
+  <!-- ===================== TOP ROW ===================== -->
+  <div class="fgp-ft__top">
+
+    <!-- Decorative gut illustration (right edge) -->
+    {% if section.settings.deco_image != blank %}
+      <img
+        class="fgp-ft__deco"
+        src="{{ section.settings.deco_image | img_url: '300x' }}"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      >
+    {% else %}
+      <!-- Inline SVG fallback gut outline -->
+      <svg class="fgp-ft__deco fgp-ft__deco--svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 340" fill="none">
+        <path d="M90 10 C110 10, 115 30, 115 50 C115 70, 95 75, 80 90 C65 105, 60 120, 70 140
+                 C80 160, 105 165, 108 185 C111 205, 90 220, 75 235
+                 C60 250, 55 268, 65 285 C75 302, 100 308, 100 325 C100 340, 80 345, 65 338"
+              stroke="rgba(255,255,255,0.18)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="65" cy="338" r="14" stroke="rgba(255,255,255,0.18)" stroke-width="10" fill="none"/>
+      </svg>
+    {% endif %}
+
+    <div class="fgp-ft__inner">
+
+      <!-- COL 1: Logo + address -->
+      <div class="fgp-ft__col fgp-ft__col--brand">
+        <a href="{{ routes.root_url }}" class="fgp-ft__logo-link" aria-label="{{ shop.name }}">
+          {% if section.settings.logo != blank %}
+            <img
+              class="fgp-ft__logo"
+              src="{{ section.settings.logo | img_url: '240x' }}"
+              alt="{{ shop.name }}"
+              loading="lazy"
+            >
+          {% else %}
+            <span class="fgp-ft__logo-text">{{ shop.name }}</span>
+          {% endif %}
+        </a>
+
+        {% if section.settings.address != blank %}
+          <p class="fgp-ft__address">{{ section.settings.address }}</p>
+        {% endif %}
+
+        {% if section.settings.hours != blank %}
+          <p class="fgp-ft__hours">{{ section.settings.hours }}</p>
+        {% endif %}
+      </div>
+
+      <!-- COL 2: Company links -->
+      {% if section.settings.menu_1 != blank %}
+        {% assign menu1 = linklists[section.settings.menu_1] %}
+        <div class="fgp-ft__col fgp-ft__col--nav">
+          {% if section.settings.menu_1_heading != blank %}
+            <p class="fgp-ft__nav-heading">{{ section.settings.menu_1_heading }}</p>
+          {% endif %}
+          <ul class="fgp-ft__nav-list">
+            {% for link in menu1.links %}
+              <li><a href="{{ link.url }}" class="fgp-ft__nav-link">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <!-- COL 3: Resources links -->
+      {% if section.settings.menu_2 != blank %}
+        {% assign menu2 = linklists[section.settings.menu_2] %}
+        <div class="fgp-ft__col fgp-ft__col--nav">
+          {% if section.settings.menu_2_heading != blank %}
+            <p class="fgp-ft__nav-heading">{{ section.settings.menu_2_heading }}</p>
+          {% endif %}
+          <ul class="fgp-ft__nav-list">
+            {% for link in menu2.links %}
+              <li><a href="{{ link.url }}" class="fgp-ft__nav-link">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <!-- COL 4: Subscribe & Save -->
+      <div class="fgp-ft__col fgp-ft__col--newsletter">
+        <p class="fgp-ft__nl-heading">{{ section.settings.nl_heading | default: 'Subscribe & Save' }}</p>
+        {% if section.settings.nl_subtext != blank %}
+          <p class="fgp-ft__nl-subtext">{{ section.settings.nl_subtext }}</p>
+        {% endif %}
+
+        {% form 'customer', id: 'fgp-footer-nl-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="fgp-ft__nl-form">
+            <label for="fgp-ft-email" class="visually-hidden">Email</label>
+            <input
+              id="fgp-ft-email"
+              type="email"
+              name="contact[email]"
+              class="fgp-ft__nl-input"
+              placeholder="{{ section.settings.nl_placeholder | default: 'Email' }}"
+              required
+              autocomplete="email"
+            >
+            <button type="submit" class="fgp-ft__nl-btn" aria-label="Subscribe">→</button>
+          </div>
+
+          <label class="fgp-ft__consent">
+            <input type="checkbox" class="fgp-ft__consent-check" required>
+            <span class="fgp-ft__consent-text">{{ section.settings.nl_consent | default: 'I agree to receiving marketing emails and special deals' }}</span>
+          </label>
+
+          {%- if form.posted_successfully? -%}
+            <p class="fgp-ft__nl-success">{{ section.settings.nl_success | default: 'Thanks for subscribing!' }}</p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== BOTTOM BAR ===================== -->
+  <div class="fgp-ft__bottom">
+    <div class="fgp-ft__bottom-inner">
+
+      <div class="fgp-ft__bottom-left">
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <form action="{{ localization.language.iso_code | prepend: '//' | prepend: request.host }}" method="post" class="fgp-ft__locale-form">
+            <input type="hidden" name="_method" value="put">
+            <select name="locale_code" class="fgp-ft__select" onchange="this.form.submit()">
+              {%- for language in localization.available_languages -%}
+                <option value="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                  {{ language.endonym_name | capitalize }}
+                </option>
+              {%- endfor -%}
+            </select>
+          </form>
+        {%- endif -%}
+
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <form action="{{ localization.country.iso_code | prepend: '//' | prepend: request.host }}" method="post" class="fgp-ft__locale-form">
+            <input type="hidden" name="_method" value="put">
+            <select name="country_code" class="fgp-ft__select" onchange="this.form.submit()">
+              {%- for country in localization.available_countries -%}
+                <option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                  {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                </option>
+              {%- endfor -%}
+            </select>
+          </form>
+        {%- endif -%}
+      </div>
+
+      <div class="fgp-ft__copyright">
+        <p>{{ section.settings.copyright | default: '© 2025 Feel Good Pharma – All rights reserved.' }}
+          <a href="https://www.shopify.com" class="fgp-ft__powered" target="_blank" rel="noopener">Powered by Shopify</a>
+        </p>
+      </div>
+
+      {%- if section.settings.payment_enable -%}
+        <div class="fgp-ft__payment">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'fgp-ft__payment-icon' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+
+</footer>
+
+<style>
+/* =====================================================================
+   FOOTER BASE
+===================================================================== */
+.fgp-ft {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-gold:  #f5a623;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+}
+
+/* =====================================================================
+   TOP ROW
+===================================================================== */
+.fgp-ft__top {
+  padding: 56px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gut illustration — right edge */
+.fgp-ft__deco {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  object-position: right center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.fgp-ft__deco--svg {
+  width: 120px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fgp-ft__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* --- Brand col --- */
+.fgp-ft__col--brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fgp-ft__logo-link { display: inline-block; }
+
+.fgp-ft__logo {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+.fgp-ft__logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--fgp-white);
+}
+
+.fgp-ft__address,
+.fgp-ft__hours {
+  font-size: 14px;
+  color: var(--fgp-white);
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.fgp-ft__hours { font-size: 13px; }
+
+/* --- Nav cols --- */
+.fgp-ft__col--nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fgp-ft__nav-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fgp-white);
+  margin: 0;
+}
+
+.fgp-ft__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fgp-ft__nav-link {
+  font-size: 14px;
+  color: var(--fgp-white);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.fgp-ft__nav-link:hover { opacity: 1; }
+
+/* --- Newsletter col --- */
+.fgp-ft__col--newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fgp-ft__nl-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fgp-white);
+  margin: 0;
+}
+
+.fgp-ft__nl-subtext {
+  font-size: 13px;
+  color: var(--fgp-white);
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fgp-ft__nl-form {
+  display: flex;
+  flex-direction: row;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fgp-ft__nl-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  color: var(--fgp-white);
+  min-width: 0;
+}
+
+.fgp-ft__nl-input::placeholder { color: rgba(255,255,255,0.5); }
+
+.fgp-ft__nl-btn {
+  background: transparent;
+  border: none;
+  border-left: 1.5px solid rgba(255,255,255,0.4);
+  color: var(--fgp-white);
+  font-size: 18px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.fgp-ft__nl-btn:hover { background: rgba(255,255,255,0.1); }
+
+/* Consent checkbox */
+.fgp-ft__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.fgp-ft__consent-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--fgp-blue);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.fgp-ft__consent-text {
+  font-size: 12px;
+  color: var(--fgp-white);
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.fgp-ft__nl-success {
+  font-size: 13px;
+  color: var(--fgp-blue);
+  margin: 0;
+}
+
+/* =====================================================================
+   BOTTOM BAR
+===================================================================== */
+.fgp-ft__bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 20px 24px;
+}
+
+.fgp-ft__bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Language/country selectors */
+.fgp-ft__bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fgp-ft__select {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 13px;
+  padding: 6px 10px;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.fgp-ft__select option { color: var(--fgp-navy); background: var(--fgp-white); }
+
+/* Copyright */
+.fgp-ft__copyright {
+  font-size: 12px;
+  color: var(--fgp-white);
+  opacity: 0.6;
+  text-align: center;
+  flex: 1;
+}
+
+.fgp-ft__copyright p { margin: 0; }
+
+.fgp-ft__powered {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Payment icons */
+.fgp-ft__payment {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.fgp-ft__payment-icon {
+  height: 24px;
+  width: auto;
+  border-radius: 3px;
+}
+
+/* =====================================================================
+   MOBILE
+===================================================================== */
+@media (max-width: 767px) {
+  .fgp-ft__top { padding: 40px 24px 36px; }
+
+  .fgp-ft__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .fgp-ft__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .fgp-ft__copyright { text-align: left; flex: none; }
+
+  .fgp-ft__payment { justify-content: flex-start; }
+}
+
+/* =====================================================================
+   TABLET
+===================================================================== */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-ft__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Footer",
+  "tag": "section",
+  "class": "fgp-footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (white version)"
+    },
+    {
+      "type": "image_picker",
+      "id": "deco_image",
+      "label": "Decorative image (right side)",
+      "info": "Upload the gut illustration (white/outline version). Falls back to an SVG outline if empty."
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address",
+      "default": "Plaza Florencia\nEscazú, Costa Rica"
+    },
+    {
+      "type": "textarea",
+      "id": "hours",
+      "label": "Hours",
+      "default": "Mon - Fri 8 a.m. - 8 p.m.\nSat - Sun 9 a.m. - 4 p.m."
+    },
+    {
+      "type": "header",
+      "content": "Company Menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_heading",
+      "label": "Column 1 heading",
+      "default": "Company"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Column 1 menu",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Resources Menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_heading",
+      "label": "Column 2 heading",
+      "default": "Resources"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Column 2 menu"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "nl_heading",
+      "label": "Heading",
+      "default": "Subscribe & Save"
+    },
+    {
+      "type": "text",
+      "id": "nl_subtext",
+      "label": "Subtext",
+      "default": "Sign up for our newsletter and receive 5% off your first order!"
+    },
+    {
+      "type": "text",
+      "id": "nl_placeholder",
+      "label": "Input placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "nl_consent",
+      "label": "Consent checkbox label",
+      "default": "I agree to receiving marketing emails and special deals"
+    },
+    {
+      "type": "text",
+      "id": "nl_success",
+      "label": "Success message",
+      "default": "Thanks for subscribing!"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright text",
+      "default": "© 2025 Feel Good Pharma – All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "label": "Show country/currency selector",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Footer"
+    }
+  ]
+}
+{% endschema %}

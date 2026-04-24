@@ -1,0 +1,322 @@
+{% comment %}
+  Feel Good Pharma — Synbiotic+ Product Feature Section
+  Desktop: 2-column card (left: text/CTA, right: full product image)
+  Mobile:  Stacked card (top: full product image, bottom: blue panel with text/CTA)
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<!-- ===================== SYNBIOTIC FEATURE SECTION ===================== -->
+<section class="fgp-syn" aria-label="Synbiotic+ Feature">
+
+  <!-- ---- DESKTOP ---- -->
+  <div class="fgp-syn__desktop">
+    <div class="fgp-syn__card">
+
+      <!-- LEFT: Text + CTA -->
+      <div class="fgp-syn__col-left">
+        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: 'DIGESTIVE ENZYMES' }}</p>
+        <h2 class="fgp-syn__title">{{ section.settings.title | default: 'SYNBIOTIC+' }}</h2>
+        <div class="fgp-syn__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-syn__cta">
+          {{ section.settings.cta_label | default: 'Shop Synbiotic+' }}
+        </a>
+      </div>
+
+      <!-- RIGHT: Full product image -->
+      <div class="fgp-syn__col-right">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-syn__product-img"
+            src="{{ section.settings.product_image | img_url: 'master' }}"
+            alt="{{ section.settings.product_image_alt | default: 'Synbiotic+ product' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-syn__product-img-placeholder"></div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ---- MOBILE ---- -->
+  <div class="fgp-syn__mobile">
+    <div class="fgp-syn__mobile-card">
+
+      <!-- TOP: Full product image -->
+      <div class="fgp-syn__mobile-image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-syn__mobile-product-img"
+            src="{{ section.settings.product_image | img_url: 'master' }}"
+            alt="{{ section.settings.product_image_alt | default: 'Synbiotic+ product' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-syn__product-img-placeholder"></div>
+        {% endif %}
+      </div>
+
+      <!-- BOTTOM: Blue panel with text + CTA -->
+      <div class="fgp-syn__mobile-panel">
+        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: 'DIGESTIVE ENZYMES' }}</p>
+        <h2 class="fgp-syn__title">{{ section.settings.title | default: 'SYNBIOTIC+' }}</h2>
+        <div class="fgp-syn__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-syn__cta">
+          {{ section.settings.cta_label | default: 'Shop Synbiotic+' }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+/* ===============================================================
+   DESIGN TOKENS
+=============================================================== */
+.fgp-syn {
+  --fgp-blue:     #45bfef;
+  --fgp-navy:     #234092;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-gold:     #f5a623;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 0 24px 40px;
+}
+
+/* ===============================================================
+   DESKTOP LAYOUT
+=============================================================== */
+.fgp-syn__mobile { display: none; }
+
+.fgp-syn__desktop {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fgp-syn__card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  min-height: 480px;
+}
+
+/* --- Left column: blue text panel --- */
+.fgp-syn__col-left {
+  flex: 0 0 300px;
+  background: var(--fgp-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 36px;
+  gap: 16px;
+}
+
+.fgp-syn__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fgp-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-syn__title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.fgp-syn__description {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fgp-white);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fgp-syn__description p { margin: 0; }
+
+.fgp-syn__description strong {
+  font-weight: 700;
+}
+
+.fgp-syn__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 14px 28px;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+.fgp-syn__cta:hover { opacity: 0.85; }
+
+/* --- Right column: full image --- */
+.fgp-syn__col-right {
+  flex: 1;
+  overflow: hidden;
+}
+
+.fgp-syn__product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fgp-syn__product-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: #dce8f5;
+}
+
+/* ===============================================================
+   MOBILE LAYOUT
+=============================================================== */
+@media (max-width: 767px) {
+  .fgp-syn__desktop { display: none; }
+  .fgp-syn__mobile  { display: block; }
+
+  .fgp-syn {
+    padding: 20px 20px 32px;
+  }
+
+  .fgp-syn__mobile-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .fgp-syn__mobile-image-wrap {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .fgp-syn__mobile-product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .fgp-syn__mobile-panel {
+    background: var(--fgp-blue);
+    padding: 24px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .fgp-syn__mobile-panel .fgp-syn__eyebrow { font-size: 11px; }
+  .fgp-syn__mobile-panel .fgp-syn__title   { font-size: 28px; }
+  .fgp-syn__mobile-panel .fgp-syn__description { font-size: 13px; }
+  .fgp-syn__mobile-panel .fgp-syn__cta {
+    align-self: center;
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}
+
+/* ===============================================================
+   TABLET (768px - 1100px)
+=============================================================== */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-syn__col-left {
+    flex: 0 0 260px;
+    padding: 36px 28px;
+  }
+  .fgp-syn__title { font-size: 30px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Synbiotic Feature",
+  "tag": "section",
+  "class": "fgp-synbiotic-feature",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "DIGESTIVE ENZYMES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Product Title",
+      "default": "SYNBIOTIC+"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>"
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Label",
+      "default": "Shop Synbiotic+"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Image Alt Text",
+      "default": "Synbiotic+ product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Synbiotic Feature"
+    }
+  ]
+}
+{% endschema %}

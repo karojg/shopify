@@ -1,0 +1,124 @@
+{% comment %}
+  Feel Good Pharma — Article Page Header
+  Blue banner showing article title, date, and category tag
+  Shopify OS 2.0 Section — uses article object from context
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-arth" aria-label="Article header">
+  <div class="fgp-arth__inner">
+    {% if article.tags.size > 0 %}
+      <div class="fgp-arth__tags">
+        {% for tag in article.tags %}
+          <span class="fgp-arth__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <h1 class="fgp-arth__title">{{ article.title }}</h1>
+
+    <div class="fgp-arth__meta">
+      {% if section.settings.show_date %}
+        <span class="fgp-arth__date">{{ article.published_at | date: '%B %d, %Y' }}</span>
+      {% endif %}
+      {% if section.settings.show_author and article.author != blank %}
+        <span class="fgp-arth__sep">·</span>
+        <span class="fgp-arth__author">{{ article.author }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.fgp-arth {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-gold:  #f5a623;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-blue);
+  padding: 56px 24px 64px;
+  text-align: center;
+}
+
+.fgp-arth__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fgp-arth__tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fgp-arth__tag {
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 4px 14px;
+}
+
+.fgp-arth__title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fgp-arth__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--fgp-white);
+  opacity: 0.8;
+}
+
+.fgp-arth__sep { opacity: 0.5; }
+
+@media (max-width: 767px) {
+  .fgp-arth { padding: 40px 24px 48px; }
+  .fgp-arth__title { font-size: 24px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Article Header",
+  "tag": "section",
+  "class": "fgp-article-header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Article Header"
+    }
+  ]
+}
+{% endschema %}

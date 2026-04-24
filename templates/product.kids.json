@@ -1,0 +1,423 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_logo_carousel_tUznXW": {
+      "type": "fgp-logo-carousel",
+      "blocks": {
+        "logo_7yaPdX": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Harina.png",
+            "logo_alt": "Partner"
+          }
+        },
+        "logo_DTdViB": {
+          "type": "logo",
+          "settings": {
+            "logo_alt": "Partner"
+          }
+        },
+        "logo_XyBDyA": {
+          "type": "logo",
+          "settings": {
+            "logo_alt": "Partner"
+          }
+        },
+        "logo_RACmNf": {
+          "type": "logo",
+          "settings": {
+            "logo_alt": "Partner"
+          }
+        },
+        "logo_9873JB": {
+          "type": "logo",
+          "settings": {
+            "logo_alt": "Partner"
+          }
+        }
+      },
+      "block_order": [
+        "logo_7yaPdX",
+        "logo_DTdViB",
+        "logo_XyBDyA",
+        "logo_RACmNf",
+        "logo_9873JB"
+      ],
+      "name": "FGP Logo Carousel",
+      "settings": {
+        "heading": "Hola",
+        "section_label": "As seen in",
+        "speed": 30,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "fgp_product_benefits_kids": {
+      "type": "fgp-product-benefits",
+      "blocks": {
+        "ben_1": {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "",
+            "label": "Probiotics",
+            "sublabel": "Replenish good bacteria"
+          }
+        },
+        "ben_2": {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "",
+            "label": "Prebiotics",
+            "sublabel": "Feed the microbiome"
+          }
+        },
+        "ben_3": {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "",
+            "label": "Immunity",
+            "sublabel": "Strengthen defenses"
+          }
+        },
+        "ben_4": {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "",
+            "label": "Digestion",
+            "sublabel": "Reduce tummy aches"
+          }
+        }
+      },
+      "block_order": [
+        "ben_1",
+        "ben_2",
+        "ben_3",
+        "ben_4"
+      ],
+      "name": "Kids Probiotics Benefits",
+      "settings": {
+        "eyebrow": "KIDS PROBIOTICS",
+        "heading": "4 IN 1 Formula for Kids",
+        "subtext": "1 capsule · 1 time a day · Can be opened and mixed with food"
+      }
+    },
+    "fgp_how_it_works_kids": {
+      "type": "fgp-how-it-works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Supports a healthy gut microbiome",
+            "description": "Probiotic strains specifically selected for children help establish and maintain a healthy gut from an early age."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Strengthens the immune system",
+            "description": "Over 70% of the immune system lives in the gut. A balanced microbiome helps kids fight off infections more effectively."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Reduces tummy aches and discomfort",
+            "description": "The prebiotic and probiotic combination reduces bloating, constipation, diarrhea, and general digestive discomfort."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Safe and easy to give",
+            "description": "Capsules can be opened and mixed into food or drinks — no unpleasant taste, no fuss."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "name": "How It Works — Kids",
+      "settings": {
+        "eyebrow": "THE SCIENCE",
+        "heading": "How do our Kids formulations work?",
+        "subtext": "",
+        "cta_label": "",
+        "cta_url": ""
+      }
+    },
+    "fgp_lifestyle_kids": {
+      "type": "fgp-lifestyle-grid",
+      "name": "Kids Lifestyle Photos",
+      "settings": {
+        "image_1_alt": "Child with Feel Good Pharma Kids Probiotics",
+        "image_2_alt": "Happy healthy child",
+        "image_3_alt": "Kids Probiotics product",
+        "image_4_alt": "Family with Feel Good Pharma"
+      }
+    },
+    "fgp_doctor_testimonials_kids": {
+      "type": "fgp-doctor-testimonials",
+      "blocks": {
+        "doc_1": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Pediatrician",
+            "ig_handle": "",
+            "quote": "The Kids Probiotics formula is one of the safest and most effective I've seen for children's gut health.",
+            "quote_url": ""
+          }
+        },
+        "doc_2": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Pediatric Gastroenterologist",
+            "ig_handle": "",
+            "quote": "I recommend this to parents of children with frequent tummy aches or recurring infections.",
+            "quote_url": ""
+          }
+        },
+        "doc_3": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Nutritionist",
+            "ig_handle": "",
+            "quote": "A well-formulated product that supports children's immunity and digestive development.",
+            "quote_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "doc_1",
+        "doc_2",
+        "doc_3"
+      ],
+      "name": "Doctor Testimonials — Kids",
+      "settings": {
+        "eyebrow": "TRUSTED BY PROFESSIONALS",
+        "heading": "Recommended by Doctors"
+      }
+    },
+    "fgp_product_faq_kids": {
+      "type": "fgp-product-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I give Kids Probiotics to my child?",
+            "answer": "<p>Give 1 capsule per day with a meal. You can open the capsule and mix the contents into food or a cold drink — it has no unpleasant taste.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What age is it suitable for?",
+            "answer": "<p>Kids Probiotics is formulated for children aged 3 and older. For younger children, please consult your pediatrician.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to give every day?",
+            "answer": "<p>Yes. The formula uses well-studied probiotic strains that are safe and beneficial for daily use in children.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will my child start feeling results?",
+            "answer": "<p>Most parents notice improvements in digestion and fewer colds within 3–6 weeks of consistent daily use.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it contain allergens?",
+            "answer": "<p>Kids Probiotics is free from gluten, dairy, and artificial colors. Please read the full ingredient list on the label if your child has known allergies.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "name": "Kids FAQ",
+      "settings": {
+        "layout": "split",
+        "eyebrow": "GOT QUESTIONS?",
+        "heading": "Parents Ask, We Answer",
+        "subtext": ""
+      }
+    },
+    "fgp_customer_reviews_kids": {
+      "type": "fgp-customer-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "My daughter's tummy aches disappeared within the first month. She even reminds me to give it to her every day!",
+            "name": "Sofía L.",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "My son used to get sick every other week. Since starting Kids Probiotics he's barely been sick. Game changer!",
+            "name": "Ricardo M.",
+            "location": "Alajuela, Costa Rica"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "So easy to use — I just mix it in his smoothie. He doesn't even notice it. And the results speak for themselves.",
+            "name": "Carla V.",
+            "location": "Heredia, Costa Rica"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "name": "Customer Reviews — Kids",
+      "settings": {
+        "eyebrow": "WHAT PARENTS SAY",
+        "heading": "Loved by Families"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_logo_carousel_tUznXW",
+    "fgp_product_benefits_kids",
+    "fgp_how_it_works_kids",
+    "fgp_lifestyle_kids",
+    "fgp_doctor_testimonials_kids",
+    "fgp_product_faq_kids",
+    "fgp_customer_reviews_kids",
+    "related-products"
+  ]
+}

@@ -1,0 +1,307 @@
+{% comment %}
+  Feel Good Pharma — Featured Products Grid Section
+  Desktop: 3 product cards side by side
+  Mobile:  vertical stack (or 2-col scroll)
+  Uses Shopify product blocks — each block picks one product.
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-pgrid" aria-label="Featured products">
+
+  {% if section.settings.heading != blank %}
+    <h2 class="fgp-pgrid__heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="fgp-pgrid__grid">
+    {% for block in section.blocks %}
+      {% assign prod = all_products[block.settings.product] %}
+      {% if prod != blank %}
+        <div class="fgp-pgrid__card" {{ block.shopify_attributes }}>
+          <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
+            {% if prod.featured_image %}
+              <img
+                class="fgp-pgrid__img"
+                src="{{ prod.featured_image | img_url: '600x' }}"
+                alt="{{ prod.featured_image.alt | default: prod.title }}"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="fgp-pgrid__img-placeholder"></div>
+            {% endif %}
+          </a>
+          <div class="fgp-pgrid__info">
+            {% if block.settings.eyebrow != blank %}
+              <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
+            {% endif %}
+            <h3 class="fgp-pgrid__title">
+              <a href="{{ prod.url }}">{{ prod.title }}</a>
+            </h3>
+            <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
+            <a href="{{ prod.url }}" class="fgp-pgrid__cta">
+              {{ block.settings.cta_label | default: 'Shop Now' }}
+            </a>
+          </div>
+        </div>
+      {% else %}
+        {% comment %} Placeholder card when no product is selected {% endcomment %}
+        <div class="fgp-pgrid__card fgp-pgrid__card--empty" {{ block.shopify_attributes }}>
+          <div class="fgp-pgrid__img-placeholder"></div>
+          <div class="fgp-pgrid__info">
+            <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
+            <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
+            <p class="fgp-pgrid__price">—</p>
+            <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-pgrid {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-gold:     #f5a623;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 56px 24px 64px;
+}
+
+.fgp-pgrid__heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+.fgp-pgrid__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.fgp-pgrid__card {
+  background: var(--fgp-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fgp-pgrid__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.fgp-pgrid__img-link {
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.fgp-pgrid__img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.fgp-pgrid__card:hover .fgp-pgrid__img {
+  transform: scale(1.03);
+}
+
+.fgp-pgrid__img-placeholder {
+  width: 100%;
+  height: 260px;
+  background: #dce8f5;
+}
+
+/* Info */
+.fgp-pgrid__info {
+  padding: 20px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.fgp-pgrid__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fgp-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-pgrid__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.fgp-pgrid__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fgp-pgrid__title a:hover {
+  text-decoration: underline;
+}
+
+.fgp-pgrid__price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  margin: 0;
+}
+
+.fgp-pgrid__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.fgp-pgrid__cta:hover { opacity: 0.85; }
+
+.fgp-pgrid__cta--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-pgrid__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .fgp-pgrid__img { height: 200px; }
+  .fgp-pgrid__img-placeholder { height: 200px; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-pgrid {
+    padding: 40px 20px 48px;
+  }
+
+  .fgp-pgrid__heading { font-size: 22px; margin-bottom: 28px; }
+
+  .fgp-pgrid__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fgp-pgrid__img { height: 240px; }
+  .fgp-pgrid__img-placeholder { height: 240px; }
+  .fgp-pgrid__title { font-size: 17px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Products Grid",
+  "tag": "section",
+  "class": "fgp-products-grid",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Products"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow Label",
+          "default": "DIGESTIVE ENZYMES"
+        },
+        {
+          "type": "text",
+          "id": "placeholder_title",
+          "label": "Placeholder title (if no product selected)",
+          "default": "Product name"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Products Grid",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "eyebrow": "DIGESTIVE ENZYMES",
+            "cta_label": "Shop Synbiotic+"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "eyebrow": "KIDS",
+            "cta_label": "Shop Kids Probiotics"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "eyebrow": "DIGESTIVE ENZYMES",
+            "cta_label": "Shop Enzymes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,317 @@
+{% comment %}
+  Feel Good Pharma — Video Cards Grid Section
+  Each card: looping autoplay video (or fallback image) as background
+  + overlay text (title, subtitle) + CTA button bottom-left
+  Desktop: up to 3 cards side by side
+  Mobile:  vertical stack
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-vcards" aria-label="{{ section.settings.section_label | default: 'Products' }}">
+
+  {% if section.settings.heading != blank %}
+    <h2 class="fgp-vcards__heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="fgp-vcards__grid">
+    {% for block in section.blocks %}
+      <div class="fgp-vcards__card" {{ block.shopify_attributes }}>
+
+        <!-- MEDIA BACKGROUND -->
+        <div class="fgp-vcards__media">
+          {% if block.settings.video_url != blank %}
+            <video
+              class="fgp-vcards__video"
+              src="{{ block.settings.video_url }}"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          {% elsif block.settings.video != blank %}
+            {{
+              block.settings.video
+              | video_tag:
+                class: 'fgp-vcards__video',
+                autoplay: true,
+                muted: true,
+                loop: true,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% elsif block.settings.image != blank %}
+            <img
+              class="fgp-vcards__img"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.title | default: 'Product' }}"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="fgp-vcards__placeholder"></div>
+          {% endif %}
+
+          <!-- dark gradient overlay -->
+          <div class="fgp-vcards__overlay"></div>
+        </div>
+
+        <!-- TEXT OVERLAY -->
+        <div class="fgp-vcards__content">
+          {% if block.settings.title != blank %}
+            <p class="fgp-vcards__title">{{ block.settings.title }}</p>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <p class="fgp-vcards__subtitle">{{ block.settings.subtitle }}</p>
+          {% endif %}
+          {% if block.settings.cta_label != blank %}
+            <a
+              href="{{ block.settings.cta_url | default: '#' }}"
+              class="fgp-vcards__cta"
+            >{{ block.settings.cta_label }}</a>
+          {% endif %}
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-vcards {
+  --fgp-navy:     #234092;
+  --fgp-white:    #ffffff;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 48px 24px 64px;
+}
+
+.fgp-vcards__heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 700px;
+}
+
+/* Grid */
+.fgp-vcards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.fgp-vcards__card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Media layer */
+.fgp-vcards__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fgp-vcards__video,
+.fgp-vcards__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fgp-vcards__placeholder {
+  width: 100%;
+  height: 100%;
+  background: #c8dce8;
+}
+
+/* Gradient overlay — bottom-heavy so text is always readable */
+.fgp-vcards__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+/* Text content — sits above overlay */
+.fgp-vcards__content {
+  position: relative;
+  z-index: 1;
+  padding: 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fgp-vcards__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+}
+
+.fgp-vcards__subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--fgp-white);
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* CTA pill button */
+.fgp-vcards__cta {
+  display: inline-block;
+  background: var(--fgp-white);
+  color: var(--fgp-navy);
+  font-family: var(--fgp-font);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 10px 26px;
+  text-decoration: none;
+  margin-top: 12px;
+  align-self: flex-start;
+  transition: opacity 0.2s;
+}
+.fgp-vcards__cta:hover { opacity: 0.85; }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-vcards { padding: 32px 16px 48px; }
+  .fgp-vcards__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .fgp-vcards__card { min-height: 380px; }
+  .fgp-vcards__title { font-size: 22px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Video Cards",
+  "tag": "section",
+  "class": "fgp-video-cards",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading (optional)"
+    },
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section aria-label",
+      "default": "Products"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Video Card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media — video takes priority over image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video (Shopify-hosted)"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "External video URL (.mp4)",
+          "info": "Use if video is hosted externally (e.g. CDN). Shopify-hosted video above takes priority."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Fallback image (shown if no video)"
+        },
+        {
+          "type": "header",
+          "content": "Overlay text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "SYNBIOTIC +"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Prebiotic, probiotic, postbiotic and enzymes"
+        },
+        {
+          "type": "header",
+          "content": "CTA Button"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button label",
+          "default": "Shop"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Video Cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "SYNBIOTIC +",
+            "subtitle": "Prebiotic, probiotic, postbiotic and enzymes",
+            "cta_label": "Shop"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "KIDS PROBIOTICS",
+            "subtitle": "4 in 1 formula for your little ones",
+            "cta_label": "Shop"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,314 @@
+{% comment %}
+  Feel Good Pharma — Store Locator / Puntos de Venta Section
+  Desktop: heading + grid of location cards
+  Mobile:  vertical stack
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-stores" aria-label="Store locations">
+
+  <div class="fgp-stores__header">
+    {% if section.settings.eyebrow != blank %}
+      <p class="fgp-stores__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    <h1 class="fgp-stores__heading">{{ section.settings.heading | default: 'Find a store near you' }}</h1>
+    {% if section.settings.subtext != blank %}
+      <p class="fgp-stores__subtext">{{ section.settings.subtext }}</p>
+    {% endif %}
+  </div>
+
+  <div class="fgp-stores__grid">
+    {% for block in section.blocks %}
+      <div class="fgp-stores__card" {{ block.shopify_attributes }}>
+
+        {% if block.settings.image != blank %}
+          <div class="fgp-stores__img-wrap">
+            <img
+              class="fgp-stores__img"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.name }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+        <div class="fgp-stores__info">
+          <h2 class="fgp-stores__name">{{ block.settings.name | default: 'Store Name' }}</h2>
+
+          {% if block.settings.address != blank %}
+            <p class="fgp-stores__address">{{ block.settings.address }}</p>
+          {% endif %}
+
+          {% if block.settings.hours != blank %}
+            <div class="fgp-stores__hours">
+              <span class="fgp-stores__hours-label">Hours</span>
+              <p class="fgp-stores__hours-text">{{ block.settings.hours }}</p>
+            </div>
+          {% endif %}
+
+          {% if block.settings.phone != blank %}
+            <a href="tel:{{ block.settings.phone | remove: ' ' | remove: '-' }}" class="fgp-stores__phone">
+              {{ block.settings.phone }}
+            </a>
+          {% endif %}
+
+          {% if block.settings.map_url != blank %}
+            <a href="{{ block.settings.map_url }}" class="fgp-stores__map-link" target="_blank" rel="noopener">
+              {{ section.settings.map_label | default: 'Get directions' }} →
+            </a>
+          {% endif %}
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-stores {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-gold:     #f5a623;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 56px 24px 72px;
+}
+
+/* Header */
+.fgp-stores__header {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fgp-stores__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-stores__heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fgp-stores__subtext {
+  font-size: 15px;
+  color: var(--fgp-navy);
+  opacity: 0.7;
+  margin: 0 auto;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* Grid */
+.fgp-stores__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.fgp-stores__card {
+  background: var(--fgp-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-stores__img-wrap {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.fgp-stores__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fgp-stores__info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.fgp-stores__name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.fgp-stores__address {
+  font-size: 14px;
+  color: var(--fgp-navy);
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.fgp-stores__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fgp-stores__hours-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.fgp-stores__hours-text {
+  font-size: 13px;
+  color: var(--fgp-navy);
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.fgp-stores__phone {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  text-decoration: none;
+}
+.fgp-stores__phone:hover { text-decoration: underline; }
+
+.fgp-stores__map-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.fgp-stores__map-link:hover { text-decoration: underline; }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-stores { padding: 40px 20px 56px; }
+  .fgp-stores__heading { font-size: 26px; }
+  .fgp-stores__grid { grid-template-columns: 1fr; gap: 16px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Store Locator",
+  "tag": "section",
+  "class": "fgp-store-locator",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FIND US"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find a store near you"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "map_label",
+      "label": "Map link label",
+      "default": "Get directions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Store photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Store name",
+          "default": "Feel Good Pharma — Plaza Florencia"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "default": "Plaza Florencia\nEscazú, Costa Rica"
+        },
+        {
+          "type": "textarea",
+          "id": "hours",
+          "label": "Hours",
+          "default": "Mon – Fri: 8 a.m. – 8 p.m.\nSat – Sun: 9 a.m. – 4 p.m."
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone number"
+        },
+        {
+          "type": "url",
+          "id": "map_url",
+          "label": "Google Maps URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Store Locator",
+      "blocks": [
+        {
+          "type": "location",
+          "settings": {
+            "name": "Feel Good Pharma — Plaza Florencia",
+            "address": "Plaza Florencia\nEscazú, Costa Rica",
+            "hours": "Mon – Fri: 8 a.m. – 8 p.m.\nSat – Sun: 9 a.m. – 4 p.m."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

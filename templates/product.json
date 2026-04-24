@@ -1,0 +1,324 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_product_benefits_syn": {
+      "type": "fgp-product-benefits",
+      "name": "Synbiotic+ Benefits",
+      "blocks": {
+        "ben_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Prebiotics",
+            "sublabel": "Feed good bacteria"
+          }
+        },
+        "ben_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Probiotics",
+            "sublabel": "Replenish the microbiome"
+          }
+        },
+        "ben_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Postbiotics",
+            "sublabel": "Strengthen gut barrier"
+          }
+        },
+        "ben_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Enzymes",
+            "sublabel": "Improve digestion"
+          }
+        }
+      },
+      "block_order": ["ben_1", "ben_2", "ben_3", "ben_4"],
+      "settings": {
+        "eyebrow": "SYNBIOTIC+",
+        "heading": "4 IN 1 Formula",
+        "subtext": "2 capsules · 3 times a day · No refrigeration needed"
+      }
+    },
+    "fgp_how_it_works_syn": {
+      "type": "fgp-how-it-works",
+      "name": "How It Works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Prebiotics feed good bacteria",
+            "description": "Prebiotic fibers serve as food for beneficial bacteria, helping them thrive and multiply in your gut."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Probiotics replenish the microbiome",
+            "description": "Live probiotic strains colonize the gut and restore microbial balance, supporting digestion and immunity."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Postbiotics strengthen the gut barrier",
+            "description": "Postbiotic compounds reinforce the intestinal lining, reducing inflammation and improving nutrient absorption."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Enzymes improve digestion",
+            "description": "18 broad-spectrum digestive enzymes break down proteins, fats, and carbohydrates efficiently, reducing bloating."
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "settings": {
+        "eyebrow": "THE SCIENCE",
+        "heading": "How do our formulations work?",
+        "cta_label": "View all ingredients",
+        "cta_url": "shopify://pages/product-information"
+      }
+    },
+    "fgp_doctor_testimonials_syn": {
+      "type": "fgp-doctor-testimonials",
+      "name": "Doctor Testimonials",
+      "blocks": {
+        "doc_1": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Gastroenterologist",
+            "stars": 5,
+            "quote": "I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation."
+          }
+        },
+        "doc_2": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Internal Medicine",
+            "stars": 5,
+            "quote": "A trusted product with transparent ingredient labeling and proven clinical results."
+          }
+        },
+        "doc_3": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Nutritionist",
+            "stars": 5,
+            "quote": "The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need."
+          }
+        }
+      },
+      "block_order": ["doc_1", "doc_2", "doc_3"],
+      "settings": {
+        "eyebrow": "TRUSTED BY PROFESSIONALS",
+        "heading": "Recommended by Doctors"
+      }
+    },
+    "fgp_product_faq_syn": {
+      "type": "fgp-product-faq",
+      "name": "Product FAQ",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I take SYNBIOTIC+?",
+            "answer": "<p>Take 2 capsules 3 times a day with meals. For best results, take consistently every day.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it need refrigeration?",
+            "answer": "<p>No refrigeration needed. Store in a cool, dry place away from direct sunlight.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will I start feeling results?",
+            "answer": "<p>Most customers notice improvements within 2–4 weeks of consistent use, though results may vary.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe for long-term use?",
+            "answer": "<p>Yes. SYNBIOTIC+ is formulated with safe, natural ingredients designed for daily, long-term use.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who should take SYNBIOTIC+?",
+            "answer": "<p>SYNBIOTIC+ is ideal for adults looking to improve digestive health, strengthen immunity, and restore gut balance. Consult your doctor if you are pregnant, nursing, or have a medical condition.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "settings": {
+        "layout": "split",
+        "eyebrow": "GOT QUESTIONS?",
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "fgp_customer_reviews_syn": {
+      "type": "fgp-customer-reviews",
+      "name": "Customer Reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!",
+            "name": "Maria G.",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "No more bloating after meals. I was skeptical at first but this product truly works. Highly recommend!",
+            "name": "Carlos M.",
+            "location": "Cartago, Costa Rica"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Finally a probiotic that actually delivers results. My gut health has never been better.",
+            "name": "Ana R.",
+            "location": "Heredia, Costa Rica"
+          }
+        }
+      },
+      "block_order": ["rev_1", "rev_2", "rev_3"],
+      "settings": {
+        "eyebrow": "WHAT OUR CUSTOMERS SAY",
+        "heading": "Loved by Customers"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_product_benefits_syn",
+    "fgp_how_it_works_syn",
+    "fgp_doctor_testimonials_syn",
+    "fgp_product_faq_syn",
+    "fgp_customer_reviews_syn",
+    "related-products"
+  ]
+}

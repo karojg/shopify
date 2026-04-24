@@ -1,0 +1,230 @@
+{% comment %}
+  Feel Good Pharma — Related Articles Section
+  Shows other articles from the same blog
+  Desktop: 3-col card grid | Mobile: vertical stack
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+{% assign other_articles = blog.articles | where_exp: 'a', 'a.id != article.id' %}
+{% assign articles_to_show = section.settings.articles_to_show | default: 3 %}
+
+{% if other_articles.size > 0 %}
+<section class="fgp-rart" aria-label="Related articles">
+
+  <div class="fgp-rart__header">
+    <h2 class="fgp-rart__heading">{{ section.settings.heading | default: 'More from our Blog' }}</h2>
+  </div>
+
+  <div class="fgp-rart__grid">
+    {% for art in other_articles limit: articles_to_show %}
+      <article class="fgp-rart__card">
+        <a href="{{ art.url }}" class="fgp-rart__img-link">
+          {% if art.image %}
+            <img
+              class="fgp-rart__img"
+              src="{{ art.image | img_url: '600x400', crop: 'center' }}"
+              alt="{{ art.image.alt | default: art.title }}"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="fgp-rart__img fgp-rart__img--placeholder"></div>
+          {% endif %}
+        </a>
+        <div class="fgp-rart__info">
+          {% if art.tags.size > 0 %}
+            <span class="fgp-rart__tag">{{ art.tags.first }}</span>
+          {% endif %}
+          <h3 class="fgp-rart__title">
+            <a href="{{ art.url }}">{{ art.title }}</a>
+          </h3>
+          {% if section.settings.show_date %}
+            <p class="fgp-rart__date">{{ art.published_at | date: '%B %d, %Y' }}</p>
+          {% endif %}
+          {% if section.settings.show_excerpt and art.excerpt_or_content != blank %}
+            <p class="fgp-rart__excerpt">{{ art.excerpt_or_content | strip_html | truncate: 100 }}</p>
+          {% endif %}
+          <a href="{{ art.url }}" class="fgp-rart__read-more">Read more</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+</section>
+{% endif %}
+
+<style>
+.fgp-rart {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-gold:     #f5a623;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 56px 24px 64px;
+}
+
+.fgp-rart__header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.fgp-rart__heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+}
+
+.fgp-rart__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fgp-rart__card {
+  background: var(--fgp-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fgp-rart__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+}
+
+.fgp-rart__img-link { line-height: 0; display: block; overflow: hidden; }
+
+.fgp-rart__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.fgp-rart__card:hover .fgp-rart__img { transform: scale(1.04); }
+
+.fgp-rart__img--placeholder {
+  width: 100%;
+  height: 200px;
+  background: #dce8f5;
+}
+
+.fgp-rart__info {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.fgp-rart__tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.fgp-rart__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.fgp-rart__title a {
+  color: inherit;
+  text-decoration: none;
+}
+.fgp-rart__title a:hover { text-decoration: underline; }
+
+.fgp-rart__date {
+  font-size: 12px;
+  color: var(--fgp-navy);
+  opacity: 0.5;
+  margin: 0;
+}
+
+.fgp-rart__excerpt {
+  font-size: 13px;
+  color: var(--fgp-navy);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.fgp-rart__read-more {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fgp-blue);
+  text-decoration: none;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.fgp-rart__read-more:hover { text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .fgp-rart { padding: 40px 20px 48px; }
+  .fgp-rart__grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-rart__grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Related Articles",
+  "tag": "section",
+  "class": "fgp-related-articles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "More from our Blog"
+    },
+    {
+      "type": "range",
+      "id": "articles_to_show",
+      "label": "Number of articles",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Related Articles"
+    }
+  ]
+}
+{% endschema %}

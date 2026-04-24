@@ -1,0 +1,248 @@
+{% comment %}
+  Feel Good Pharma — Lifestyle Image Grid Section
+  Desktop: 2-column asymmetric photo collage (up to 4 images)
+  Mobile:  2-column equal grid
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-lifestyle" aria-label="Lifestyle photos">
+  <div class="fgp-lifestyle__grid">
+
+    {% comment %} Left column: one tall image {% endcomment %}
+    <div class="fgp-lifestyle__col fgp-lifestyle__col--tall">
+      {% if section.settings.image_1 != blank %}
+        <div class="fgp-lifestyle__img-wrap fgp-lifestyle__img-wrap--tall">
+          <img
+            src="{{ section.settings.image_1 | img_url: 'master' }}"
+            alt="{{ section.settings.image_1_alt | default: 'Lifestyle photo 1' }}"
+            class="fgp-lifestyle__img"
+            loading="lazy"
+          >
+        </div>
+      {% else %}
+        <div class="fgp-lifestyle__img-wrap fgp-lifestyle__img-wrap--tall fgp-lifestyle__placeholder"></div>
+      {% endif %}
+    </div>
+
+    {% comment %} Right column: two stacked images {% endcomment %}
+    <div class="fgp-lifestyle__col fgp-lifestyle__col--stack">
+      {% if section.settings.image_2 != blank %}
+        <div class="fgp-lifestyle__img-wrap">
+          <img
+            src="{{ section.settings.image_2 | img_url: 'master' }}"
+            alt="{{ section.settings.image_2_alt | default: 'Lifestyle photo 2' }}"
+            class="fgp-lifestyle__img"
+            loading="lazy"
+          >
+        </div>
+      {% else %}
+        <div class="fgp-lifestyle__img-wrap fgp-lifestyle__placeholder"></div>
+      {% endif %}
+
+      {% if section.settings.image_3 != blank %}
+        <div class="fgp-lifestyle__img-wrap">
+          <img
+            src="{{ section.settings.image_3 | img_url: 'master' }}"
+            alt="{{ section.settings.image_3_alt | default: 'Lifestyle photo 3' }}"
+            class="fgp-lifestyle__img"
+            loading="lazy"
+          >
+        </div>
+      {% else %}
+        <div class="fgp-lifestyle__img-wrap fgp-lifestyle__placeholder"></div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  {% comment %} Optional full-width 4th image below {% endcomment %}
+  {% if section.settings.image_4 != blank %}
+    <div class="fgp-lifestyle__img-wrap fgp-lifestyle__img-wrap--wide">
+      <img
+        src="{{ section.settings.image_4 | img_url: 'master' }}"
+        alt="{{ section.settings.image_4_alt | default: 'Lifestyle photo 4' }}"
+        class="fgp-lifestyle__img"
+        loading="lazy"
+      >
+    </div>
+  {% endif %}
+</section>
+
+<style>
+.fgp-lifestyle {
+  --fgp-offwhite: #f8f8f8;
+  --fgp-radius:   16px;
+  --fgp-gap:      16px;
+
+  background: var(--fgp-offwhite);
+  padding: 0 24px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.fgp-lifestyle__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--fgp-gap);
+  margin-bottom: var(--fgp-gap);
+}
+
+/* Left col: single tall image */
+.fgp-lifestyle__col--tall {
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-lifestyle__img-wrap--tall {
+  flex: 1;
+  min-height: 480px;
+}
+
+/* Right col: two stacked */
+.fgp-lifestyle__col--stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fgp-gap);
+}
+
+.fgp-lifestyle__col--stack .fgp-lifestyle__img-wrap {
+  flex: 1;
+  min-height: 220px;
+}
+
+/* All image wrappers */
+.fgp-lifestyle__img-wrap {
+  border-radius: var(--fgp-radius);
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+
+.fgp-lifestyle__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Optional 4th wide image */
+.fgp-lifestyle__img-wrap--wide {
+  border-radius: var(--fgp-radius);
+  overflow: hidden;
+  max-height: 400px;
+  line-height: 0;
+}
+
+.fgp-lifestyle__img-wrap--wide .fgp-lifestyle__img {
+  height: 400px;
+}
+
+/* Placeholders */
+.fgp-lifestyle__placeholder {
+  background: #dce8f5;
+  min-height: 220px;
+}
+
+/* Mobile: equal 2-col grid */
+@media (max-width: 767px) {
+  .fgp-lifestyle {
+    padding: 0 16px 32px;
+  }
+
+  .fgp-lifestyle__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .fgp-lifestyle__img-wrap--tall { min-height: 280px; }
+  .fgp-lifestyle__col--stack .fgp-lifestyle__img-wrap { min-height: 130px; }
+
+  .fgp-lifestyle__img-wrap--wide {
+    max-height: 220px;
+    margin-top: 10px;
+  }
+
+  .fgp-lifestyle__img-wrap--wide .fgp-lifestyle__img {
+    height: 220px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Lifestyle Grid",
+  "tag": "section",
+  "class": "fgp-lifestyle-grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image 1 (Left — tall)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Alt Text 1",
+      "default": "Lifestyle photo"
+    },
+    {
+      "type": "header",
+      "content": "Image 2 (Right — top)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "image_2_alt",
+      "label": "Alt Text 2",
+      "default": "Lifestyle photo"
+    },
+    {
+      "type": "header",
+      "content": "Image 3 (Right — bottom)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "image_3_alt",
+      "label": "Alt Text 3",
+      "default": "Lifestyle photo"
+    },
+    {
+      "type": "header",
+      "content": "Image 4 (Optional — full width)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image 4 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "image_4_alt",
+      "label": "Alt Text 4",
+      "default": "Lifestyle photo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Lifestyle Grid"
+    }
+  ]
+}
+{% endschema %}

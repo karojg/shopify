@@ -1,0 +1,293 @@
+{% comment %}
+  Feel Good Pharma — Newsletter / Email Signup Banner
+  Desktop: gold/yellow banner, heading left + form right
+  Mobile:  stacked, heading top + form below
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-nl" aria-label="Newsletter signup">
+  <div class="fgp-nl__inner">
+
+    <div class="fgp-nl__text">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fgp-nl__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h2 class="fgp-nl__heading">{{ section.settings.heading | default: 'Get 15% off your first order' }}</h2>
+      {% if section.settings.subtext != blank %}
+        <p class="fgp-nl__subtext">{{ section.settings.subtext }}</p>
+      {% endif %}
+    </div>
+
+    <div class="fgp-nl__form-wrap">
+      {% form 'customer', id: 'fgp-newsletter-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="fgp-nl__form">
+          <label for="fgp-nl-email" class="visually-hidden">Email address</label>
+          <input
+            id="fgp-nl-email"
+            type="email"
+            name="contact[email]"
+            class="fgp-nl__input"
+            placeholder="{{ section.settings.placeholder | default: 'Enter your email' }}"
+            required
+            autocomplete="email"
+          >
+          <button type="submit" class="fgp-nl__btn">
+            {{ section.settings.button_label | default: 'Subscribe' }}
+          </button>
+        </div>
+        {%- if form.posted_successfully? -%}
+          <p class="fgp-nl__success">{{ section.settings.success_message | default: 'Thanks for subscribing!' }}</p>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <p class="fgp-nl__error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+        {%- endif -%}
+      {% endform %}
+
+      {% if section.settings.disclaimer != blank %}
+        <p class="fgp-nl__disclaimer">{{ section.settings.disclaimer }}</p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-nl {
+  --fgp-navy:  #234092;
+  --fgp-gold:  #f5a623;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-gold);
+  padding: 56px 24px;
+}
+
+.fgp-nl__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Text block */
+.fgp-nl__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fgp-nl__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.fgp-nl__heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fgp-nl__subtext {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Form block */
+.fgp-nl__form-wrap {
+  flex: 0 0 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fgp-nl__form {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  border-radius: 100px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.fgp-nl__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 24px;
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  color: var(--fgp-navy);
+  background: var(--fgp-white);
+  min-width: 0;
+}
+
+.fgp-nl__input::placeholder {
+  color: #aaa;
+}
+
+.fgp-nl__btn {
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  padding: 16px 28px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.fgp-nl__btn:hover { opacity: 0.85; }
+
+.fgp-nl__disclaimer {
+  font-size: 11px;
+  color: var(--fgp-navy);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1.5;
+  padding-left: 8px;
+}
+
+.fgp-nl__success {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  margin: 0;
+  padding-left: 8px;
+}
+
+.fgp-nl__error {
+  font-size: 13px;
+  color: #c0392b;
+  margin: 0;
+  padding-left: 8px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-nl {
+    padding: 40px 20px 48px;
+  }
+
+  .fgp-nl__inner {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .fgp-nl__text { align-items: center; }
+
+  .fgp-nl__heading { font-size: 24px; }
+
+  .fgp-nl__form-wrap { flex: none; width: 100%; }
+
+  .fgp-nl__form {
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .fgp-nl__input {
+    padding: 14px 20px;
+    border-radius: 0;
+  }
+
+  .fgp-nl__btn {
+    padding: 14px 20px;
+    border-radius: 0;
+    text-align: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-nl__inner { gap: 32px; }
+  .fgp-nl__form-wrap { flex: 0 0 360px; }
+  .fgp-nl__heading { font-size: 26px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Newsletter",
+  "tag": "section",
+  "class": "fgp-newsletter",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "EXCLUSIVE OFFER"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get 15% off your first order"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Subscribe and be the first to know about new products and promotions."
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer text (optional)",
+      "default": "By subscribing you agree to our privacy policy. Unsubscribe at any time."
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks for subscribing! Check your inbox for your discount code."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Newsletter"
+    }
+  ]
+}
+{% endschema %}

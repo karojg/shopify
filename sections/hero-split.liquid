@@ -1,0 +1,657 @@
+{% comment %}
+  Feel Good Pharma — Responsive Hero Section
+  Desktop: Full-width blue header with nav + hero content area
+  Mobile:  Rounded blue card + announcement bar + logo row
+  Shopify OS 2.0 Section
+
+  CHANGES vs previous version:
+  - Mobile headline font-weight: 600 → 700 (bold, matches Figma)
+  - Desktop badge repositioned: now floats to the RIGHT of product images (matches Figma)
+  - CTA default label updated to "Take the Test!" (matches mobile Figma)
+  - Desktop CTA schema default updated to match
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="fgp-hero" aria-label="Hero">
+
+  <!-- ---- DESKTOP HERO ---- -->
+  <div class="fgp-hero__desktop">
+    <div class="fgp-hero__desktop-inner">
+
+      <!-- COLUMN 1: Headline + Product Image -->
+      <div class="fgp-hero__desktop-col-left">
+        <h1 class="fgp-hero__desktop-headline">
+          {{ section.settings.headline_text | default: 'Is it a gut feeling or' }}
+        </h1>
+
+        <div class="fgp-hero__desktop-products">
+          {% if section.settings.product_combined_image != blank %}
+            <img class="fgp-hero__product-combined-desktop" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
+          {% endif %}
+
+          {% if section.settings.badge_image != blank %}
+            <img class="fgp-hero__badge fgp-hero__badge--desktop" src="{{ section.settings.badge_image | img_url: '160x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Underline/Question + Symptoms + CTA -->
+      <div class="fgp-hero__desktop-col-right">
+        <div class="fgp-hero__desktop-title-line">
+          <span class="fgp-hero__desktop-underline"></span>
+          <span class="fgp-hero__question-mark">?</span>
+        </div>
+
+        <ul class="fgp-hero__symptoms fgp-hero__symptoms--desktop">
+          {% for i in (1..5) %}
+            {% assign key = 'symptom_' | append: i %}
+            {% assign val = section.settings[key] %}
+            {% if val != blank %}
+              <li>{{ val }}</li>
+            {% elsif section.settings.symptom_1 == blank %}
+              {% case i %}
+                {% when 1 %}<li>Gluten intolerance</li>
+                {% when 2 %}<li>Lactose intolerance</li>
+                {% when 3 %}<li>Constipation or Diarrhea</li>
+                {% when 4 %}<li>Irritable Bowel Syndrome</li>
+                {% when 5 %}<li>Low defenses</li>
+              {% endcase %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta fgp-hero__cta--desktop">
+          {{ section.settings.cta_label | default: 'Take the Test!' }}
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Announcement Bar (desktop) -->
+    <div class="fgp-hero__announcement fgp-hero__announcement--desktop">
+      <span class="fgp-hero__stars" aria-label="5 stars">★★★★★</span>
+      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: '+275,000 Happy Customers' }}</span>
+    </div>
+  </div>
+
+  <!-- ---- MOBILE HERO ---- -->
+  <div class="fgp-hero__mobile">
+
+    <div class="fgp-hero__card">
+      <!-- FIX: font-weight 700 on mobile headline to match Figma bold style -->
+      <div class="fgp-hero__content-wrapper">
+        <h1 class="fgp-hero__headline">
+          {{ section.settings.headline_text | default: 'Is it a gut feeling or' }}
+        </h1>
+
+        <div class="fgp-hero__blank-answers">
+          <div class="fgp-hero__blank-line-wrap">
+            <span class="fgp-hero__underline-line"></span>
+            <span class="fgp-hero__question-mark">?</span>
+          </div>
+
+          <div class="fgp-hero__symptoms--wrapper">
+          <ul class="fgp-hero__symptoms">
+        {% for i in (1..5) %}
+          {% assign key = 'symptom_' | append: i %}
+          {% assign val = section.settings[key] %}
+          {% if val != blank %}
+            <li>{{ val }}</li>
+          {% else %}
+            {% case i %}
+              {% when 1 %}<li>Gluten intolerance</li>
+              {% when 2 %}<li>Lactose intolerance</li>
+              {% when 3 %}<li>Constipation or Diarrhea</li>
+              {% when 4 %}<li>Irritable Bowel Syndrome</li>
+              {% when 5 %}<li>Low defenses</li>
+            {% endcase %}
+          {% endif %}
+        {% endfor %}
+          </ul>
+                <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta">
+        {{ section.settings.cta_label | default: 'Take the Test!' }}
+      </a>
+        </div>
+  
+      </div>
+      </div>
+
+      <div class="fgp-hero__products">
+            <div class="fgp-hero__products-wrapper">
+        {% if section.settings.product_combined_image != blank %}
+          <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
+        {% endif %}
+
+        {% if section.settings.badge_image != blank %}
+          <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
+        {% endif %}      </div>
+      </div>
+    </div>
+
+    <!-- Announcement Bar (mobile) -->
+    <div class="fgp-hero__announcement fgp-hero__announcement--mobile">
+      <span class="fgp-hero__stars" aria-label="5 stars">★★★★★</span>
+      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: '+275,000 Happy Customers' }}</span>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* ===============================================================
+   DESIGN TOKENS
+=============================================================== */
+:root {
+  --fgp-blue:     #45bfef;
+  --fgp-purple:   #65438a;
+  --fgp-navy:     #234092;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+}
+
+/* ===============================================================
+   DESKTOP HERO - BASE STYLES (1101px - 1440px)
+=============================================================== */
+.fgp-hero {
+  font-family: var(--fgp-font);
+  background-color: var(--fgp-offwhite);
+}
+
+.fgp-hero__desktop {
+  background: var(--fgp-blue);
+}
+
+.fgp-hero__desktop-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 80px 0 80px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2px;
+  min-height: 75vh;
+  height: 100%
+}
+
+/* Left Column: Headline + Products */
+.fgp-hero__desktop-col-left {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.fgp-hero__desktop-headline {
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--fgp-offwhite);
+  line-height: 1.15;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.fgp-hero__desktop-products {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.fgp-hero__product-combined-desktop {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.fgp-hero__badge--desktop {
+  position: absolute;
+  right: 20%;
+  top: 0%;
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right Column: Underline + Symptoms + CTA */
+.fgp-hero__desktop-col-right {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  {% comment %} padding-bottom: 56px; {% endcomment %}
+}
+
+.fgp-hero__desktop-title-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.fgp-hero__desktop-underline {
+  display: block;
+  flex: 1;
+  height: 3px;
+  background: rgba(248,248,248,0.75);
+  border-radius: 2px;
+  margin-bottom: 10px;
+  min-width: 300px;
+}
+
+.fgp-hero__desktop-title-line .fgp-hero__question-mark {
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--fgp-offwhite);
+  line-height: 1;
+}
+
+.fgp-hero__symptoms--desktop {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fgp-hero__symptoms.fgp-hero__symptoms--desktop li {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--fgp-offwhite);
+  text-align: left;
+}
+
+.fgp-hero__cta--desktop {
+  font-size: 35px;
+  font-weight: 400;
+  padding: 24px 30px;
+  border-radius: 100px;
+  background: var(--fgp-white);
+  color: var(--fgp-navy);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+  border: 1px solid red;
+}
+.fgp-hero__cta--desktop:hover { opacity: 0.85; }
+
+.fgp-hero__announcement {
+  background: var(--fgp-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.fgp-hero__announcement--desktop {
+  width: 100%;
+  padding: 22px 40px;
+}
+
+.fgp-hero__announcement--mobile {
+  margin: 0 24px;
+  border-radius: 0 0 12px 12px;
+  padding: 14px 20px;
+}
+
+.fgp-hero__stars {
+  color: #f5a623;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.fgp-hero__announcement-text {
+  font-family: var(--fgp-font);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--fgp-white);
+  letter-spacing: 0.5px;
+}
+
+.fgp-hero__announcement--mobile .fgp-hero__stars {
+  font-size: 16px;
+}
+
+.fgp-hero__announcement--mobile .fgp-hero__announcement-text {
+  font-size: 15px;
+}
+
+/* ===============================================================
+   MOBILE HERO - BASE STYLES (hidden by default)
+=============================================================== */
+.fgp-hero__mobile {
+  display: none;
+  background: var(--fgp-blue);
+  padding-bottom: 16px;
+}
+
+.fgp-hero__card {
+  background: var(--fgp-blue);
+  border-radius: 12px 12px 0 0;
+  margin: 24px 24px 0;
+  overflow: hidden;
+  position: relative;
+  height: 70vh;
+  padding: 45px 15px 280px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fgp-hero__content-wrapper {
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.fgp-hero__headline {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--fgp-offwhite);
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  text-align: end;
+}
+
+.fgp-hero__blank-line-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.fgp-hero__underline-line {
+  display: inline-block;
+  flex: 1 1 auto;
+  max-width: 180px;
+  height: 2px;
+  background: rgba(248,248,248,0.7);
+  border-radius: 2px;
+  align-self: flex-end;
+}
+
+.fgp-hero__question-mark {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fgp-offwhite);
+  line-height: 1;
+}
+
+.fgp-hero__symptoms--wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-hero__symptoms {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-hero__symptoms li {
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--fgp-offwhite);
+  line-height: 28px;
+}
+
+.fgp-hero__cta {
+  background: var(--fgp-white);
+  color: var(--fgp-navy);
+  font-family: var(--fgp-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 100px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  position: relative;
+}
+.fgp-hero__cta:hover { opacity: 0.85; }
+
+.fgp-hero__products {
+  position: absolute;
+  left: -50px;
+  bottom: 0;
+  width: 100%;
+  height: 315px;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fgp-hero__products-wrapper {
+  position: relative;
+}
+
+.fgp-hero__product-combined {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.fgp-hero__badge--mobile {
+  position: absolute;
+  bottom: 35px;
+  right: -15%;
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===============================================================
+   RESPONSIVE BREAKPOINTS
+=============================================================== */
+
+/* --- LARGE MONITORS (1441px+) --- */
+@media (min-width: 1441px) {
+  .fgp-hero__desktop-headline { font-size: 72px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 72px; }
+  .fgp-hero__desktop-underline { min-width: 400px; }
+  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li {
+    font-size: 48px;
+    line-height: 1.3;
+  }
+  .fgp-hero__cta--desktop { font-size: 28px; padding: 28px 40px; }
+  .fgp-hero__badge--desktop { width: 120px; }
+}
+
+/* --- TABLET (768px - 1100px) --- */
+@media (max-width: 1100px) {
+  .fgp-hero__desktop-inner { padding: 40px 40px 0; min-height: 420px; gap: 60px; }
+  .fgp-hero__desktop-headline { font-size: 48px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 48px; }
+  .fgp-hero__desktop-underline { min-width: 250px; }
+  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 28px; }
+  .fgp-hero__desktop-products { max-width: 400px; }
+  .fgp-hero__product-combined-desktop { max-width: 350px; }
+  .fgp-hero__badge--desktop { width: 85px; }
+  .fgp-hero__announcement--desktop { padding: 18px 40px; }
+}
+
+/* --- SMALL TABLET (768px - 900px) --- */
+@media (max-width: 900px) and (min-width: 768px) {
+  .fgp-hero__desktop-inner { padding: 40px 40px 0; min-height: 380px; gap: 40px; }
+  .fgp-hero__desktop-headline { font-size: 38px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 38px; }
+  .fgp-hero__desktop-underline { min-width: 180px; }
+  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 24px; }
+  .fgp-hero__desktop-products { max-width: 350px; }
+  .fgp-hero__product-combined-desktop { max-width: 300px; }
+  .fgp-hero__badge--desktop { width: 75px; }
+  .fgp-hero__announcement--desktop { padding: 16px 40px; }
+}
+
+/* --- MOBILE SWITCH (767px and below) --- */
+@media (max-width: 767px) {
+  .fgp-hero__desktop { display: none; }
+  .fgp-hero__mobile { display: block; }
+}
+
+/* --- LARGER MOBILE (600px - 767px) --- */
+@media (min-width: 600px) and (max-width: 767px) {
+  .fgp-hero__content-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+  }
+  .fgp-hero__products { height: 400px; }
+  .fgp-hero__product-combined { max-width: 420px; }
+  .fgp-hero__badge--mobile { width: 90px; right: 12%; }
+}
+
+/* --- MEDIUM MOBILE (480px - 599px) --- */
+@media (min-width: 480px) and (max-width: 599px) {
+  .fgp-hero__content-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .fgp-hero__products { height: 360px; }
+  .fgp-hero__product-combined { max-width: 380px; }
+  {% comment %} .fgp-hero__badge--mobile { width: 80px;  } {% endcomment %}
+}
+
+/* --- SMALL MOBILE (375px - 479px) --- */
+@media (min-width: 375px) and (max-width: 479px) {
+  .fgp-hero__products { 
+    height: 340px;
+    left: -15%
+   }
+  .fgp-hero__product-combined { max-width: 300px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Hero",
+  "tag": "section",
+  "class": "fgp-hero-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "headline_text",
+      "label": "Headline",
+      "default": "Is it a gut feeling or"
+    },
+    {
+      "type": "header",
+      "content": "Symptoms"
+    },
+    { "type": "text", "id": "symptom_1", "label": "Symptom 1", "default": "Gluten intolerance" },
+    { "type": "text", "id": "symptom_2", "label": "Symptom 2", "default": "Lactose intolerance" },
+    { "type": "text", "id": "symptom_3", "label": "Symptom 3", "default": "Constipation or Diarrhea" },
+    { "type": "text", "id": "symptom_4", "label": "Symptom 4", "default": "Irritable Bowel Syndrome" },
+    { "type": "text", "id": "symptom_5", "label": "Symptom 5", "default": "Low defenses" },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Label",
+      "default": "Take the Test!"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_combined_image",
+      "label": "Product Image (bottles + badge)"
+    },
+    {
+      "type": "text",
+      "id": "product_combined_alt",
+      "label": "Product Image Alt Text",
+      "default": "Feel Good Pharma Products"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Trust Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_alt",
+      "label": "Badge Alt Text",
+      "default": "Recommended by health specialists"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Bar"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "+275,000 Happy Customers"
+    },
+  ],
+  "presets": [
+    {
+      "name": "FGP Hero"
+    }
+  ]
+}
+{% endschema %}
+

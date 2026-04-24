@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fgp_store_locator": {
+      "type": "fgp-store-locator",
+      "name": "Store Locator",
+      "blocks": {
+        "loc_1": {
+          "type": "location",
+          "settings": {
+            "name": "Feel Good Pharma — Plaza Florencia",
+            "address": "Plaza Florencia\nEscazú, Costa Rica",
+            "hours": "Mon – Fri: 8 a.m. – 8 p.m.\nSat – Sun: 9 a.m. – 4 p.m."
+          }
+        }
+      },
+      "block_order": ["loc_1"],
+      "settings": {
+        "eyebrow": "FIND US",
+        "heading": "Puntos de Venta",
+        "subtext": "Encuentra nuestros productos en estos puntos de venta.",
+        "map_label": "Cómo llegar"
+      }
+    },
+    "fgp_subfooter_pdv": {
+      "type": "fgp-subfooter",
+      "name": "FGP Sub-footer",
+      "settings": {
+        "tagline": "Feel Good Pharma takes care of your microbiota and that of your family.",
+        "hashtag": "#FeelGoodWithin",
+        "ig_handle": "feel.goodpharma"
+      }
+    }
+  },
+  "order": [
+    "fgp_store_locator",
+    "fgp_subfooter_pdv"
+  ]
+}

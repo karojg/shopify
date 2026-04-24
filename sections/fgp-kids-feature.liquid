@@ -1,0 +1,383 @@
+{% comment %}
+  Feel Good Pharma — Kids Probiotics Feature Section
+  Desktop: 2-column card (left: text/CTA + badge, right: full product image)
+  Mobile:  Stacked card (top: product image, bottom: blue panel with text/CTA)
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-kids" aria-label="Kids Probiotics Feature">
+
+  <!-- ---- DESKTOP ---- -->
+  <div class="fgp-kids__desktop">
+    <div class="fgp-kids__card">
+
+      <!-- LEFT: Product image -->
+      <div class="fgp-kids__col-left">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-kids__product-img"
+            src="{{ section.settings.product_image | img_url: 'master' }}"
+            alt="{{ section.settings.product_image_alt | default: 'Kids Probiotics product' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-kids__product-img-placeholder"></div>
+        {% endif %}
+      </div>
+
+      <!-- RIGHT: Text + badge + CTA -->
+      <div class="fgp-kids__col-right">
+        {% if section.settings.badge_text != blank %}
+          <div class="fgp-kids__badge-wrap">
+            <span class="fgp-kids__badge">{{ section.settings.badge_text }}</span>
+            {% if section.settings.badge_subtext != blank %}
+              <span class="fgp-kids__badge-sub">{{ section.settings.badge_subtext }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+        <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
+        <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
+          {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ---- MOBILE ---- -->
+  <div class="fgp-kids__mobile">
+    <div class="fgp-kids__mobile-card">
+
+      <!-- TOP: Product image -->
+      <div class="fgp-kids__mobile-image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-kids__mobile-product-img"
+            src="{{ section.settings.product_image | img_url: 'master' }}"
+            alt="{{ section.settings.product_image_alt | default: 'Kids Probiotics product' }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="fgp-kids__product-img-placeholder"></div>
+        {% endif %}
+      </div>
+
+      <!-- BOTTOM: Blue panel with badge, text + CTA -->
+      <div class="fgp-kids__mobile-panel">
+        {% if section.settings.badge_text != blank %}
+          <div class="fgp-kids__badge-wrap">
+            <span class="fgp-kids__badge">{{ section.settings.badge_text }}</span>
+            {% if section.settings.badge_subtext != blank %}
+              <span class="fgp-kids__badge-sub">{{ section.settings.badge_subtext }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+        <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
+        <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
+          {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+/* ===============================================================
+   DESIGN TOKENS
+=============================================================== */
+.fgp-kids {
+  --fgp-blue:     #45bfef;
+  --fgp-navy:     #234092;
+  --fgp-gold:     #f5a623;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 40px 24px;
+}
+
+/* ===============================================================
+   DESKTOP LAYOUT
+=============================================================== */
+.fgp-kids__mobile { display: none; }
+
+.fgp-kids__desktop {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fgp-kids__card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  min-height: 480px;
+}
+
+/* LEFT: Product image */
+.fgp-kids__col-left {
+  flex: 1;
+  overflow: hidden;
+}
+
+.fgp-kids__product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fgp-kids__product-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: #dce8f5;
+}
+
+/* RIGHT: Blue text panel */
+.fgp-kids__col-right {
+  flex: 0 0 320px;
+  background: var(--fgp-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 36px;
+  gap: 14px;
+  position: relative;
+}
+
+/* Badge */
+.fgp-kids__badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.fgp-kids__badge {
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 12px;
+  padding: 6px 18px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.fgp-kids__badge-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fgp-white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 4px;
+  opacity: 0.85;
+}
+
+.fgp-kids__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fgp-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-kids__title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.fgp-kids__description {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fgp-white);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fgp-kids__description p { margin: 0; }
+.fgp-kids__description strong { font-weight: 700; }
+
+.fgp-kids__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 14px 28px;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+.fgp-kids__cta:hover { opacity: 0.85; }
+
+/* ===============================================================
+   MOBILE LAYOUT
+=============================================================== */
+@media (max-width: 767px) {
+  .fgp-kids__desktop { display: none; }
+  .fgp-kids__mobile  { display: block; }
+
+  .fgp-kids {
+    padding: 20px 20px 32px;
+  }
+
+  .fgp-kids__mobile-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .fgp-kids__mobile-image-wrap {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .fgp-kids__mobile-product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .fgp-kids__mobile-panel {
+    background: var(--fgp-blue);
+    padding: 24px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .fgp-kids__mobile-panel .fgp-kids__badge-wrap { align-items: center; }
+  .fgp-kids__mobile-panel .fgp-kids__badge { font-size: 18px; }
+  .fgp-kids__mobile-panel .fgp-kids__eyebrow { font-size: 11px; }
+  .fgp-kids__mobile-panel .fgp-kids__title { font-size: 26px; }
+  .fgp-kids__mobile-panel .fgp-kids__description { font-size: 13px; }
+  .fgp-kids__mobile-panel .fgp-kids__cta {
+    align-self: center;
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}
+
+/* ===============================================================
+   TABLET
+=============================================================== */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-kids__col-right {
+    flex: 0 0 280px;
+    padding: 36px 28px;
+  }
+  .fgp-kids__title { font-size: 26px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Kids Feature",
+  "tag": "section",
+  "class": "fgp-kids-feature",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text (e.g. 4 IN 1)",
+      "default": "4 IN 1"
+    },
+    {
+      "type": "text",
+      "id": "badge_subtext",
+      "label": "Badge Subtext",
+      "default": "2 capsules · 3 times a day"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "KIDS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Product Title",
+      "default": "KIDS PROBIOTICS"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>"
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Label",
+      "default": "Shop Kids Probiotics"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Image Alt Text",
+      "default": "Kids Probiotics product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Kids Probiotics Feature"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,280 @@
+{% comment %}
+  Feel Good Pharma — About Page Hero Section
+  Desktop: blue background, large heading left + founder image right
+  Mobile:  image top, text below on navy/blue background
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-ahero" aria-label="About Feel Good Pharma">
+
+  <!-- DESKTOP -->
+  <div class="fgp-ahero__desktop">
+    <div class="fgp-ahero__inner">
+      <div class="fgp-ahero__text">
+        {% if section.settings.eyebrow != blank %}
+          <p class="fgp-ahero__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h1 class="fgp-ahero__heading">{{ section.settings.heading | default: 'We were founded to help you truly feel good.' }}</h1>
+        {% if section.settings.subtext != blank %}
+          <div class="fgp-ahero__subtext">{{ section.settings.subtext }}</div>
+        {% endif %}
+        {% if section.settings.cta_label != blank %}
+          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-ahero__cta">
+            {{ section.settings.cta_label }}
+          </a>
+        {% endif %}
+      </div>
+      <div class="fgp-ahero__image-col">
+        {% if section.settings.image != blank %}
+          <img
+            class="fgp-ahero__image"
+            src="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image_alt | default: 'About Feel Good Pharma' }}"
+            loading="eager"
+          >
+        {% else %}
+          <div class="fgp-ahero__image fgp-ahero__image--placeholder"></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="fgp-ahero__mobile">
+    <div class="fgp-ahero__mobile-image-wrap">
+      {% if section.settings.image != blank %}
+        <img
+          class="fgp-ahero__mobile-image"
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image_alt | default: 'About Feel Good Pharma' }}"
+          loading="eager"
+        >
+      {% else %}
+        <div class="fgp-ahero__mobile-image fgp-ahero__image--placeholder"></div>
+      {% endif %}
+    </div>
+    <div class="fgp-ahero__mobile-panel">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fgp-ahero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h1 class="fgp-ahero__heading">{{ section.settings.heading | default: 'We were founded to help you truly feel good.' }}</h1>
+      {% if section.settings.subtext != blank %}
+        <div class="fgp-ahero__subtext">{{ section.settings.subtext }}</div>
+      {% endif %}
+      {% if section.settings.cta_label != blank %}
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-ahero__cta">
+          {{ section.settings.cta_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+<style>
+.fgp-ahero {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-gold:  #f5a623;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+}
+
+/* DESKTOP */
+.fgp-ahero__mobile { display: none; }
+
+.fgp-ahero__desktop {
+  background: var(--fgp-blue);
+  min-height: 520px;
+}
+
+.fgp-ahero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 520px;
+  padding: 0 24px;
+}
+
+.fgp-ahero__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 60px 48px 60px 0;
+}
+
+.fgp-ahero__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.fgp-ahero__heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.fgp-ahero__subtext {
+  font-size: 16px;
+  color: var(--fgp-white);
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.fgp-ahero__subtext p { margin: 0 0 8px; }
+.fgp-ahero__subtext p:last-child { margin-bottom: 0; }
+
+.fgp-ahero__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+.fgp-ahero__cta:hover { opacity: 0.85; }
+
+.fgp-ahero__image-col {
+  flex: 0 0 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fgp-ahero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.fgp-ahero__image--placeholder {
+  width: 100%;
+  min-height: 520px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .fgp-ahero__desktop { display: none; }
+  .fgp-ahero__mobile  { display: block; }
+
+  .fgp-ahero__mobile-image-wrap {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .fgp-ahero__mobile-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .fgp-ahero__mobile-panel {
+    background: var(--fgp-blue);
+    padding: 32px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .fgp-ahero__mobile-panel .fgp-ahero__heading {
+    font-size: 26px;
+  }
+
+  .fgp-ahero__mobile-panel .fgp-ahero__subtext {
+    font-size: 14px;
+  }
+
+  .fgp-ahero__mobile-panel .fgp-ahero__cta {
+    align-self: flex-start;
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-ahero__heading { font-size: 30px; }
+  .fgp-ahero__image-col { flex: 0 0 320px; }
+  .fgp-ahero__text { padding-right: 32px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP About Hero",
+  "tag": "section",
+  "class": "fgp-about-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "OUR STORY"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We were founded to help you truly feel good."
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Label",
+      "default": "Meet Dr. Katherine"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image (founder / team photo)"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "About Feel Good Pharma"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP About Hero"
+    }
+  ]
+}
+{% endschema %}

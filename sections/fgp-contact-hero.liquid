@@ -1,0 +1,106 @@
+{% comment %}
+  Feel Good Pharma — Contact Page Hero / Header
+  Blue background with heading and subtext
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-chero" aria-label="Contact us">
+  <div class="fgp-chero__inner">
+    {% if section.settings.eyebrow != blank %}
+      <p class="fgp-chero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    <h1 class="fgp-chero__heading">{{ section.settings.heading | default: 'Contact us' }}</h1>
+    {% if section.settings.subtext != blank %}
+      <p class="fgp-chero__subtext">{{ section.settings.subtext }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.fgp-chero {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-blue);
+  padding: 72px 24px 80px;
+  text-align: center;
+}
+
+.fgp-chero__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fgp-chero__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.fgp-chero__heading {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.fgp-chero__subtext {
+  font-size: 16px;
+  color: var(--fgp-white);
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .fgp-chero { padding: 48px 24px 56px; }
+  .fgp-chero__heading { font-size: 28px; }
+  .fgp-chero__subtext { font-size: 14px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Contact Hero",
+  "tag": "section",
+  "class": "fgp-contact-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "GET IN TOUCH"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Contact us"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Contact Hero"
+    }
+  ]
+}
+{% endschema %}

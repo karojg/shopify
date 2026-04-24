@@ -1,0 +1,46 @@
+<div>
+  <div class="hero__products">
+    {% for block in section.blocks %}
+      {% if block.type == 'product_image' and block.settings.image != blank %}
+        <div class="hero__product hero__product--{{ forloop.index }}">
+          <img 
+            src="{{ block.settings.image | img_url: '800x' }}" 
+            srcset="{{ block.settings.image | img_url: '400x' }} 400w, {{ block.settings.image | img_url: '800x' }} 800w, {{ block.settings.image | img_url: '1200x' }} 1200w"
+            sizes="(max-width: 749px) 50vw, 320px"
+            alt="{{ block.settings.alt_text | escape }}"
+            loading="lazy"
+            decoding="async"
+            />
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if section.settings.recommend_badge != blank %}
+    <div class="hero__badge">
+      <img src="{{ section.settings.recommend_badge | img_url: '200x' }}" alt="{{ section.settings.recommend_badge_alt | escape }}" loading="lazy" decoding="async" />
+    </div>
+  {% endif %}
+</div>
+
+<div class="hero__right">
+  <h1 class="hero__heading">
+    <span class="hero__heading--part1">{{ section.settings.heading_part1 }}</span>
+    <span class="hero__heading--gap" aria-hidden="true">{{ section.settings.heading_gap | default: '__________' }}</span>
+    <span class="hero__heading--question">{{ section.settings.heading_question }}</span>
+  </h1>
+
+  <ul class="hero__list" role="list">
+    {% for block in section.blocks %}
+      {% if block.type == 'symptom' %}
+        <li class="hero__list-item">{{ block.settings.text }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div class="hero__cta-wrap">
+    <a href="{{ section.settings.cta_url }}" class="btn hero__cta" style="background:{{ section.settings.cta_bg_color }}; color:{{ section.settings.cta_text_color }};" {% if section.settings.cta_new_window %}target="_blank" rel="noopener"{% endif %}>
+      {{ section.settings.cta_text }}
+    </a>
+  </div>
+</div>

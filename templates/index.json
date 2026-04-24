@@ -1,0 +1,386 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fgp_logo_carousel_main": {
+      "type": "fgp-logo-carousel",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/amazon.png",
+            "logo_alt": "Amazon"
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/amazon.png",
+            "logo_alt": "Amazon"
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/amazon.png",
+            "logo_alt": "Amazon"
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/amazon.png",
+            "logo_alt": "Amazon"
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/amazon.png",
+            "logo_alt": "Amazon"
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5"
+      ],
+      "name": "FGP Logo Carousel",
+      "settings": {
+        "heading": "",
+        "section_label": "As seen in",
+        "speed": 30,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "b8b0c886-8d85-4099-b9f2-61e11d876167": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Is it a gut feeling or</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>prebiótico<br/>probiótico<br/>postbiótico</h2>",
+            "text_style": "body"
+          }
+        },
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Comprar",
+            "button_link": "shopify://products/enzimas-digestivas-con-sinbiotico",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-0",
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-1",
+        "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-2"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".image-with-text__heading {word-break: initial;}",
+        ".image-with-text__text {margin-left: 30%; margin-top: 0;}",
+        ".image-with-text__text h2 {color: #42c0ef; text-align: left; margin-top: 0;}",
+        ".button {margin: auto; margin-top: 10%;}",
+        "@media screen and (max-width: 768px) {.image-with-text__text {margin-left: 0; margin-top: 0; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Synbiotic.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "fgp_synbiotic_feature_jkwUPt": {
+      "type": "fgp-synbiotic-feature",
+      "name": "FGP Synbiotic Feature",
+      "settings": {
+        "eyebrow": "DIGESTIVE ENZYMES",
+        "title": "SYNBIOTIC+",
+        "description": "<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>",
+        "cta_label": "Shop Synbiotic+",
+        "cta_url": "",
+        "product_image": "shopify://shop_images/fgp-syn-duo.png",
+        "product_image_alt": "Synbiotic+ product"
+      }
+    },
+    "fgp_goodbye_symptoms_ULcw7q": {
+      "type": "fgp-goodbye-symptoms",
+      "name": "FGP Say Goodbye",
+      "settings": {
+        "heading": "With SYNBIOTIC+, say goodbye to:",
+        "icon_1": "shopify://shop_images/Harina.png",
+        "label_1": "Gluten intolerance",
+        "icon_2": "shopify://shop_images/Milk.png",
+        "label_2": "Lactose intolerance",
+        "icon_3": "shopify://shop_images/Gut.png",
+        "label_3": "Constipation or diarrhea",
+        "icon_4": "shopify://shop_images/Balance.png",
+        "label_4": "Intestinal imbalance due to antibiotics",
+        "icon_5": "shopify://shop_images/Alergologo.png",
+        "label_5": "Low defenses"
+      }
+    },
+    "fgp_founder_quote_q3JAYQ": {
+      "type": "fgp-founder-quote",
+      "name": "FGP Founder Quote",
+      "settings": {
+        "founder_image": "shopify://shop_images/IMG_0462.jpg",
+        "founder_name": "Dr. Katherine Jiménez, Founder",
+        "quote": "I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body's natural balance, so you can feel your best every day.",
+        "cta_label": "View more",
+        "cta_url": ""
+      }
+    },
+    "fgp_kids_feature_main": {
+      "type": "fgp-kids-feature",
+      "name": "FGP Kids Probiotics Feature",
+      "settings": {
+        "badge_text": "4 IN 1",
+        "badge_subtext": "2 capsules · 3 times a day",
+        "eyebrow": "KIDS",
+        "title": "KIDS PROBIOTICS",
+        "description": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",
+        "cta_label": "Shop Kids Probiotics",
+        "cta_url": "",
+        "product_image": "shopify://shop_images/Image.png",
+        "product_image_alt": "Kids Probiotics product"
+      }
+    },
+    "fgp_kids_symptoms_main": {
+      "type": "fgp-kids-symptoms",
+      "name": "FGP Kids Symptoms",
+      "settings": {
+        "heading": "With KIDS PROBIOTICS, your child will never have to suffer from:",
+        "icon_1": "shopify://shop_images/Gut.png",
+        "label_1": "Constipation or diarrhea",
+        "icon_2": "shopify://shop_images/Balance.png",
+        "label_2": "Intestinal imbalance due to antibiotics",
+        "icon_3": "shopify://shop_images/Alergologo.png",
+        "label_3": "Low defenses",
+        "label_4": "",
+        "label_5": ""
+      }
+    },
+    "fgp_video_cards_main": {
+      "type": "fgp-video-cards",
+      "blocks": {
+        "vcard_1": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/FLGD_SINBIOTIC_DDM_CLEAN_1.mp4",
+            "video_url": "",
+            "title": "SYNBIOTIC +",
+            "subtitle": "Prebiotic, probiotic, postbiotic and enzymes",
+            "cta_label": "Shop",
+            "cta_url": ""
+          }
+        },
+        "vcard_2": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/FLGD_KIDS_PRO_DDM_CLEAN_5.mp4",
+            "video_url": "",
+            "title": "KIDS PROBIOTICS",
+            "subtitle": "4 in 1 formula for your little ones",
+            "cta_label": "Shop",
+            "cta_url": "shopify://products/kids-organic-probiotic-gummies"
+          }
+        }
+      },
+      "block_order": [
+        "vcard_1",
+        "vcard_2"
+      ],
+      "name": "FGP Video Cards",
+      "settings": {
+        "heading": "",
+        "section_label": "Products"
+      }
+    },
+    "fgp_products_grid_main": {
+      "type": "fgp-products-grid",
+      "blocks": {
+        "product_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "DIGESTIVE ENZYMES",
+            "placeholder_title": "Synbiotic+",
+            "cta_label": "Shop Synbiotic+"
+          }
+        },
+        "product_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "KIDS",
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Shop Kids Probiotics"
+          }
+        },
+        "product_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "DIGESTIVE ENZYMES",
+            "placeholder_title": "Digestive Enzymes",
+            "cta_label": "Shop Enzymes"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
+      "name": "FGP Products Grid",
+      "settings": {
+        "heading": "Formulated to Costa Rica"
+      }
+    },
+    "fgp_doctor_testimonials_main": {
+      "type": "fgp-doctor-testimonials",
+      "blocks": {
+        "doctor_1": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Gastroenterologist",
+            "ig_handle": "",
+            "quote": "I recommend Feel Good Pharma products to my patients because of their proven formulation and high-quality ingredients.",
+            "quote_url": ""
+          }
+        },
+        "doctor_2": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Pediatrician",
+            "ig_handle": "",
+            "quote": "The Kids Probiotics formula is one of the best I've seen. Safe, effective, and kids love the taste.",
+            "quote_url": ""
+          }
+        },
+        "doctor_3": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Name Lastname",
+            "specialty": "Internal Medicine",
+            "ig_handle": "",
+            "quote": "A scientifically sound product that truly delivers results. I trust Feel Good Pharma for its quality and transparency.",
+            "quote_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "doctor_1",
+        "doctor_2",
+        "doctor_3"
+      ],
+      "name": "FGP Doctor Testimonials",
+      "settings": {
+        "eyebrow": "TRUSTED BY PROFESSIONALS",
+        "heading": "Recommended by Doctors"
+      }
+    },
+    "fgp_customer_reviews_main": {
+      "type": "fgp-customer-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!",
+            "name": "Maria G.",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "My daughter started Kids Probiotics and within weeks her tummy aches were gone. I'm so grateful for this product!",
+            "name": "Ana R.",
+            "location": "Heredia, Costa Rica"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Finally a probiotic that actually works! No more bloating, no more discomfort. Feel Good Pharma changed my life.",
+            "name": "Carlos M.",
+            "location": "Cartago, Costa Rica"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "name": "FGP Customer Reviews",
+      "settings": {
+        "eyebrow": "WHAT OUR CUSTOMERS SAY",
+        "heading": "Loved by Customers"
+      }
+    },
+    "fgp_subfooter_main": {
+      "type": "fgp-subfooter",
+      "name": "FGP Sub-footer",
+      "settings": {
+        "tagline": "Feel Good Pharma takes care of your microbiota and that of your family.",
+        "hashtag": "#FeelGoodWithin",
+        "lifestyle_image": "shopify://shop_images/b045018f841846fc1a4ff6b51fb2b12540b1660c.png",
+        "lifestyle_image_alt": "Feel Good Pharma family lifestyle",
+        "ig_handle": "feel.goodpharma"
+      }
+    }
+  },
+  "order": [
+    "fgp_logo_carousel_main",
+    "b8b0c886-8d85-4099-b9f2-61e11d876167",
+    "fgp_synbiotic_feature_jkwUPt",
+    "fgp_goodbye_symptoms_ULcw7q",
+    "fgp_founder_quote_q3JAYQ",
+    "fgp_kids_feature_main",
+    "fgp_kids_symptoms_main",
+    "fgp_video_cards_main",
+    "fgp_products_grid_main",
+    "fgp_doctor_testimonials_main",
+    "fgp_customer_reviews_main",
+    "fgp_subfooter_main"
+  ]
+}

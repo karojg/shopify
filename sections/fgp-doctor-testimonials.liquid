@@ -1,0 +1,308 @@
+{% comment %}
+  Feel Good Pharma — Recommended by Doctors Section
+  Card: purple photo border, name, specialty, IG handle, curly-quote text, optional arrow link
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-docs" aria-label="Recommended by Doctors">
+
+  <div class="fgp-docs__header">
+    {% if section.settings.eyebrow != blank %}
+      <p class="fgp-docs__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="fgp-docs__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+  </div>
+
+  <div class="fgp-docs__grid">
+    {% for block in section.blocks %}
+      <div class="fgp-docs__card" {{ block.shopify_attributes }}>
+
+        <div class="fgp-docs__card-top">
+          {% if block.settings.photo != blank %}
+            <img
+              class="fgp-docs__photo"
+              src="{{ block.settings.photo | img_url: '200x200', crop: 'center' }}"
+              alt="{{ block.settings.name | default: 'Doctor' }}"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="fgp-docs__photo fgp-docs__photo--placeholder"></div>
+          {% endif %}
+
+          <div class="fgp-docs__card-meta">
+            <p class="fgp-docs__name">{{ block.settings.name | default: 'Dr. Name' }}</p>
+            {% if block.settings.specialty != blank %}
+              <p class="fgp-docs__specialty">{{ block.settings.specialty }}</p>
+            {% endif %}
+            {% if block.settings.ig_handle != blank %}
+              <a
+                href="https://instagram.com/{{ block.settings.ig_handle | remove: '@' }}"
+                class="fgp-docs__ig"
+                target="_blank"
+                rel="noopener"
+              >@{{ block.settings.ig_handle | remove: '@' }}</a>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if block.settings.quote != blank %}
+          <div class="fgp-docs__quote-wrap">
+            <p class="fgp-docs__quote">
+              <span class="fgp-docs__open-quote">&ldquo;</span>{{ block.settings.quote }}
+            </p>
+            {% if block.settings.quote_url != blank %}
+              <a href="{{ block.settings.quote_url }}" class="fgp-docs__quote-arrow" target="_blank" rel="noopener" aria-label="Read more">→</a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-docs {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-purple:   #6b3fa0;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 56px 24px 64px;
+}
+
+/* Header */
+.fgp-docs__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.fgp-docs__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.fgp-docs__heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Grid */
+.fgp-docs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.fgp-docs__card {
+  background: var(--fgp-white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fgp-docs__card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Photo — purple border */
+.fgp-docs__photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 3px solid var(--fgp-purple);
+}
+
+.fgp-docs__photo--placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #ede8f5;
+  border: 3px solid var(--fgp-purple);
+}
+
+/* Meta */
+.fgp-docs__card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fgp-docs__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.fgp-docs__specialty {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  opacity: 0.65;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.fgp-docs__ig {
+  font-size: 13px;
+  color: var(--fgp-navy);
+  opacity: 0.45;
+  text-decoration: none;
+  margin: 0;
+  transition: opacity 0.2s;
+}
+.fgp-docs__ig:hover { opacity: 0.8; text-decoration: underline; }
+
+/* Quote block — no left border, curly quote only */
+.fgp-docs__quote-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fgp-docs__quote {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--fgp-navy);
+  line-height: 1.7;
+  margin: 0;
+  font-style: normal;
+  opacity: 0.85;
+}
+
+.fgp-docs__open-quote {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--fgp-purple);
+  line-height: 0;
+  vertical-align: -0.35em;
+  margin-right: 2px;
+  font-style: normal;
+}
+
+/* Arrow link */
+.fgp-docs__quote-arrow {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fgp-purple);
+  text-decoration: none;
+  align-self: flex-end;
+  transition: transform 0.2s;
+}
+.fgp-docs__quote-arrow:hover { transform: translateX(4px); }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-docs { padding: 40px 20px 48px; }
+  .fgp-docs__heading { font-size: 22px; }
+  .fgp-docs__grid { grid-template-columns: 1fr; gap: 16px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Doctor Testimonials",
+  "tag": "section",
+  "class": "fgp-doctor-testimonials",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "TRUSTED BY PROFESSIONALS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Recommended by Doctors"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "doctor",
+      "name": "Doctor",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Doctor Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Dr. Name Lastname"
+        },
+        {
+          "type": "text",
+          "id": "specialty",
+          "label": "Specialty",
+          "default": "Gastroenterologist"
+        },
+        {
+          "type": "text",
+          "id": "ig_handle",
+          "label": "Instagram handle",
+          "info": "Enter with or without @, e.g. pediatranancyconejo"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "I recommend Feel Good Pharma products to my patients because of their proven formulation and high-quality ingredients."
+        },
+        {
+          "type": "url",
+          "id": "quote_url",
+          "label": "Quote link (optional \u2192)",
+          "info": "Shows a purple arrow link at the bottom of the quote. Use for an IG post or full article."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Doctor Testimonials",
+      "blocks": [
+        { "type": "doctor" },
+        { "type": "doctor" },
+        { "type": "doctor" }
+      ]
+    }
+  ]
+}
+{% endschema %}
