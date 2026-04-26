@@ -86,54 +86,50 @@
   <div class="fgp-hero__mobile">
 
     <div class="fgp-hero__card">
-      <!-- FIX: font-weight 700 on mobile headline to match Figma bold style -->
+
+      <!-- TEXT LAYER: headline + symptoms + CTA -->
       <div class="fgp-hero__content-wrapper">
         <h1 class="fgp-hero__headline">
           {{ section.settings.headline_text | default: 'Is it a gut feeling or' }}
         </h1>
-
-        <div class="fgp-hero__blank-answers">
-          <div class="fgp-hero__blank-line-wrap">
-            <span class="fgp-hero__underline-line"></span>
-            <span class="fgp-hero__question-mark">?</span>
-          </div>
-
-          <div class="fgp-hero__symptoms--wrapper">
-          <ul class="fgp-hero__symptoms">
-        {% for i in (1..5) %}
-          {% assign key = 'symptom_' | append: i %}
-          {% assign val = section.settings[key] %}
-          {% if val != blank %}
-            <li>{{ val }}</li>
-          {% else %}
-            {% case i %}
-              {% when 1 %}<li>Gluten intolerance</li>
-              {% when 2 %}<li>Lactose intolerance</li>
-              {% when 3 %}<li>Constipation or Diarrhea</li>
-              {% when 4 %}<li>Irritable Bowel Syndrome</li>
-              {% when 5 %}<li>Low defenses</li>
-            {% endcase %}
-          {% endif %}
-        {% endfor %}
-          </ul>
-                <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta">
-        {{ section.settings.cta_label | default: 'Take the Test!' }}
-      </a>
+        <div class="fgp-hero__blank-line-wrap">
+          <span class="fgp-hero__underline-line"></span>
+          <span class="fgp-hero__question-mark">?</span>
         </div>
-  
-      </div>
+        <ul class="fgp-hero__symptoms">
+          {% for i in (1..5) %}
+            {% assign key = 'symptom_' | append: i %}
+            {% assign val = section.settings[key] %}
+            {% if val != blank %}
+              <li>{{ val }}</li>
+            {% else %}
+              {% case i %}
+                {% when 1 %}<li>Gluten intolerance</li>
+                {% when 2 %}<li>Lactose intolerance</li>
+                {% when 3 %}<li>Constipation or Diarrhea</li>
+                {% when 4 %}<li>Irritable Bowel Syndrome</li>
+                {% when 5 %}<li>Low defenses</li>
+              {% endcase %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta">
+          {{ section.settings.cta_label | default: 'Take the Test!' }}
+        </a>
       </div>
 
+      <!-- IMAGE LAYER: absolutely pinned to bottom, behind nothing -->
       <div class="fgp-hero__products">
-            <div class="fgp-hero__products-wrapper">
-        {% if section.settings.product_combined_image != blank %}
-          <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
-        {% endif %}
-
-        {% if section.settings.badge_image != blank %}
-          <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
-        {% endif %}      </div>
+        <div class="fgp-hero__products-wrapper">
+          {% if section.settings.product_combined_image != blank %}
+            <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
+          {% endif %}
+          {% if section.settings.badge_image != blank %}
+            <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
+          {% endif %}
+        </div>
       </div>
+
     </div>
 
     <!-- Announcement Bar (mobile) -->
@@ -319,6 +315,8 @@
   margin: 0 24px;
   border-radius: 0 0 12px 12px;
   padding: 14px 20px;
+  flex-direction: column;
+  text-align: center;
 }
 
 .fgp-hero__stars {
@@ -348,117 +346,111 @@
 =============================================================== */
 .fgp-hero__mobile {
   display: none;
-  background: var(--fgp-blue);
+  background: var(--fgp-offwhite);
   padding-bottom: 16px;
 }
 
+/* Card: full-width, tall, relative container */
 .fgp-hero__card {
   background: var(--fgp-blue);
-  border-radius: 12px 12px 0 0;
-  margin: 24px 24px 0;
+  border-radius: 20px 20px 0 0;
+  margin: 20px 16px 0;
   overflow: hidden;
   position: relative;
-  height: 70vh;
-  padding: 45px 15px 280px;
+  min-height: 75vh;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
+/* TEXT LAYER: top of card, full width, normal flow */
 .fgp-hero__content-wrapper {
-  display: block;
-  margin-bottom: 20px;
   position: relative;
-  width: 100%;
+  z-index: 2;
+  padding: 36px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .fgp-hero__headline {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--fgp-offwhite);
-  line-height: 1.3;
-  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--fgp-white);
+  line-height: 1.2;
+  margin: 0 0 6px 0;
+  text-align: right;
   white-space: nowrap;
-  text-align: end;
 }
 
 .fgp-hero__blank-line-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 .fgp-hero__underline-line {
-  display: inline-block;
-  flex: 1 1 auto;
-  max-width: 180px;
+  display: block;
+  flex: 1;
+  max-width: 200px;
   height: 2px;
-  background: rgba(248,248,248,0.7);
+  background: rgba(255,255,255,0.6);
   border-radius: 2px;
-  align-self: flex-end;
 }
 
 .fgp-hero__question-mark {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  color: var(--fgp-offwhite);
+  color: var(--fgp-white);
   line-height: 1;
-}
-
-.fgp-hero__symptoms--wrapper {
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .fgp-hero__symptoms {
   list-style: none;
   padding: 0;
-  text-align: right;
-  margin: 0;
+  margin: 0 0 20px 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
 }
 
 .fgp-hero__symptoms li {
-  font-size: 16px;
-  font-weight: 100;
-  color: var(--fgp-offwhite);
-  line-height: 28px;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--fgp-white);
+  line-height: 1.5;
+  text-align: right;
 }
 
+/* CTA: right-aligned, above image layer */
 .fgp-hero__cta {
   background: var(--fgp-white);
   color: var(--fgp-navy);
   font-family: var(--fgp-font);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   border-radius: 100px;
-  padding: 10px 20px;
+  padding: 12px 28px;
   text-decoration: none;
   transition: opacity 0.2s;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-end;
+  display: inline-block;
   position: relative;
+  z-index: 3;
 }
 .fgp-hero__cta:hover { opacity: 0.85; }
 
+/* IMAGE LAYER: absolute, pinned to bottom-left */
 .fgp-hero__products {
   position: absolute;
-  left: -50px;
+  left: -20px;
   bottom: 0;
-  width: 100%;
-  height: 315px;
+  width: 75%;
+  z-index: 1;
   pointer-events: none;
-  display: flex;
-  align-items: flex-end;
 }
 
 .fgp-hero__products-wrapper {
@@ -467,7 +459,6 @@
 
 .fgp-hero__product-combined {
   width: 100%;
-  max-width: 320px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -475,11 +466,19 @@
 
 .fgp-hero__badge--mobile {
   position: absolute;
-  bottom: 35px;
-  right: -15%;
-  width: 60px;
+  bottom: 60px;
+  right: -40px;
+  width: 70px;
   height: auto;
   object-fit: contain;
+  pointer-events: auto;
+}
+
+/* Announcement bar sits flush below card */
+.fgp-hero__announcement--mobile {
+  margin: 0 16px;
+  border-radius: 0 0 16px 16px;
+  padding: 14px 20px;
 }
 
 /* ===============================================================
@@ -533,40 +532,19 @@
 
 /* --- LARGER MOBILE (600px - 767px) --- */
 @media (min-width: 600px) and (max-width: 767px) {
-  .fgp-hero__content-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 16px;
-  }
-  .fgp-hero__products { height: 400px; }
-  .fgp-hero__product-combined { max-width: 420px; }
-  .fgp-hero__badge--mobile { width: 90px; right: 12%; }
+  .fgp-hero__products { width: 60%; }
+  .fgp-hero__headline { font-size: 28px; }
+  .fgp-hero__symptoms li { font-size: 19px; }
+  .fgp-hero__badge--mobile { width: 80px; right: -50px; }
 }
 
-/* --- MEDIUM MOBILE (480px - 599px) --- */
-@media (min-width: 480px) and (max-width: 599px) {
-  .fgp-hero__content-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-  }
-  .fgp-hero__products { height: 360px; }
-  .fgp-hero__product-combined { max-width: 380px; }
-  {% comment %} .fgp-hero__badge--mobile { width: 80px;  } {% endcomment %}
-}
-
-/* --- SMALL MOBILE (375px - 479px) --- */
-@media (min-width: 375px) and (max-width: 479px) {
-  .fgp-hero__products { 
-    height: 340px;
-    left: -15%
-   }
-  .fgp-hero__product-combined { max-width: 300px; }
+/* --- SMALL MOBILE (below 375px) --- */
+@media (max-width: 374px) {
+  .fgp-hero__headline { font-size: 20px; white-space: normal; }
+  .fgp-hero__question-mark { font-size: 20px; }
+  .fgp-hero__symptoms li { font-size: 15px; }
+  .fgp-hero__cta { font-size: 13px; padding: 10px 20px; }
+  .fgp-hero__badge--mobile { width: 56px; right: -24px; }
 }
 </style>
 
@@ -654,4 +632,3 @@
   ]
 }
 {% endschema %}
-

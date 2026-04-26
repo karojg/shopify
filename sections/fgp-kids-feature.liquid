@@ -38,7 +38,11 @@
           </div>
         {% endif %}
         <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
-        <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        {% if section.settings.title_image != blank %}
+          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
+        {% else %}
+          <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        {% endif %}
         <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
           {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
@@ -77,7 +81,11 @@
           </div>
         {% endif %}
         <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
-        <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        {% if section.settings.title_image != blank %}
+          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
+        {% else %}
+          <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+        {% endif %}
         <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
           {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
@@ -205,6 +213,13 @@
   margin: 0;
   line-height: 1.1;
   letter-spacing: 1px;
+}
+
+.fgp-kids__title-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
 }
 
 .fgp-kids__description {
@@ -336,6 +351,11 @@
       "id": "title",
       "label": "Product Title",
       "default": "KIDS PROBIOTICS"
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image",
+      "label": "Title Logo Image (replaces text title when set)"
     },
     {
       "type": "richtext",

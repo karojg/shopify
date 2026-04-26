@@ -136,7 +136,7 @@
       "type": "fgp-goodbye-symptoms",
       "name": "FGP Say Goodbye",
       "settings": {
-        "heading": "With SYNBIOTIC+, say goodbye to:",
+        "heading": "",
         "icon_1": "shopify://shop_images/Harina.png",
         "label_1": "Gluten intolerance",
         "icon_2": "shopify://shop_images/Milk.png",

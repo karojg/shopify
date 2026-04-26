@@ -60,7 +60,7 @@
       <!-- BOTTOM: Name + quote + CTA -->
       <div class="fgp-founder__mobile-content">
         <h2 class="fgp-founder__mobile-name">{{ section.settings.founder_name | default: 'Dr. Katherine Jiménez, Founder' }}</h2>
-        <blockquote class="fgp-founder__quote">{{ section.settings.quote | default: 'I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body natural balance, so you can feel your best every day.' }}</blockquote>
+        <blockquote class="fgp-founder__quote">&ldquo;{{ section.settings.quote | default: 'I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body natural balance, so you can feel your best every day.' }}&rdquo;</blockquote>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-founder__cta">
           {{ section.settings.cta_label | default: 'View more' }}
         </a>
@@ -176,53 +176,66 @@
   .fgp-founder__mobile  { display: block; }
 
   .fgp-founder {
-    padding: 20px 20px 40px;
+    padding: 20px 0 40px;
   }
 
+  /* Wrapper: relative, full width — image bleeds, panel is inset */
   .fgp-founder__mobile-card {
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--fgp-white);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
+  /* Image: full width, rounded top corners, taller than panel */
   .fgp-founder__mobile-image-wrap {
-    overflow: hidden;
     line-height: 0;
-    border-radius: 16px 16px 0 0;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 16px;
   }
 
   .fgp-founder__mobile-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 15%;
   }
 
+  /* White panel: narrower than image, overlaps bottom of photo */
   .fgp-founder__mobile-content {
-    padding: 24px 20px 32px;
+    background: var(--fgp-white);
+    border-radius: 20px 20px 20px 20px;
+    margin: -40px 32px 0;
+    position: relative;
+    z-index: 2;
+    padding: 28px 24px 36px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.10);
   }
 
   .fgp-founder__mobile-name {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--fgp-navy);
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
     margin: 0;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    line-height: 1.3;
+    text-decoration: none;
+    line-height: 1.25;
   }
 
   .fgp-founder__quote {
     font-size: 16px;
-    line-height: 1.65;
-    color: var(--fgp-navy);
+    line-height: 1.7;
+    color: #333333;
     margin: 0;
     font-style: normal;
+    font-weight: 400;
   }
 
   .fgp-founder__cta {
