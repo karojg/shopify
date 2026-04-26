@@ -110,7 +110,7 @@
 /* Grid */
 .fgp-revs__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -218,6 +218,18 @@
   color: var(--fgp-navy);
   opacity: 0.55;
   margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-revs { padding: 48px 32px 56px; }
+  .fgp-revs__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+/* Desktop */
+@media (min-width: 1101px) {
+  .fgp-revs { padding: 64px 48px 72px; }
+  .fgp-revs__grid { gap: 28px; }
 }
 
 /* Mobile */

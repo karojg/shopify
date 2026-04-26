@@ -9,10 +9,16 @@
 
 <section class="fgp-ksym" aria-label="Kids Probiotics symptoms">
 
-  <h2 class="fgp-ksym__heading">{{ section.settings.heading | default: 'With <strong>KIDS PROBIOTICS</strong>, your child will never have to suffer from:' }}</h2>
+  <h2 class="fgp-ksym__heading">
+    {% if section.settings.heading != blank %}
+      {{ section.settings.heading }}
+    {% else %}
+      With <strong>KIDS PROBIOTICS,</strong><br>your child will never have to suffer from:
+    {% endif %}
+  </h2>
 
   <div class="fgp-ksym__grid">
-    {% for i in (1..5) %}
+    {% for i in (1..6) %}
       {% assign icon_key  = 'icon_' | append: i %}
       {% assign label_key = 'label_' | append: i %}
       {% assign icon  = section.settings[icon_key] %}
@@ -42,8 +48,9 @@
 <style>
 .fgp-ksym {
   --fgp-navy:     #234092;
-  --fgp-blue:     #45bfef;
+  --fgp-purple:   #65438a;
   --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
   --fgp-font:     'Poppins', sans-serif;
 
   font-family: var(--fgp-font);
@@ -54,17 +61,16 @@
 
 .fgp-ksym__heading {
   font-size: 28px;
-  font-weight: 400;
-  color: var(--fgp-navy);
-  margin: 0 auto 48px;
+  font-weight: 600;
+  color: var(--fgp-purple);
+  margin: 0 auto 40px;
   line-height: 1.3;
   max-width: 700px;
 }
 
-.fgp-ksym__heading strong {
-  font-weight: 800;
-}
+.fgp-ksym__heading strong { font-weight: 700; }
 
+/* Desktop: horizontal row */
 .fgp-ksym__grid {
   display: flex;
   flex-direction: row;
@@ -96,53 +102,87 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 2px solid var(--fgp-blue);
+  border: 2px solid var(--fgp-purple);
   background: transparent;
 }
 
 .fgp-ksym__label {
   font-size: 15px;
-  font-weight: 500;
-  color: var(--fgp-navy);
+  font-weight: 600;
+  color: var(--fgp-purple);
   line-height: 1.3;
   text-align: center;
 }
 
+/* Mobile: 2-col rows (icon left, label right) inside white card */
 @media (max-width: 767px) {
   .fgp-ksym {
-    padding: 40px 24px 48px;
+    padding: 40px 16px 48px;
   }
 
   .fgp-ksym__heading {
     font-size: 22px;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .fgp-ksym__grid {
     flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    align-items: stretch;
+    gap: 0;
+    background: var(--fgp-white);
+    border-radius: 16px;
+    padding: 8px 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .fgp-ksym__item {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
     flex: none;
     width: 100%;
-    max-width: 200px;
+    max-width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(101,67,138,0.1);
+    text-align: left;
+  }
+
+  .fgp-ksym__item:last-child {
+    border-bottom: none;
   }
 
   .fgp-ksym__icon {
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
   }
 
-  .fgp-ksym__label { font-size: 14px; }
+  .fgp-ksym__label {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+  }
 }
 
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-ksym { padding: 48px 32px 56px; }
   .fgp-ksym__heading { font-size: 24px; }
   .fgp-ksym__grid { gap: 28px; }
   .fgp-ksym__item { flex: 0 1 130px; }
   .fgp-ksym__icon { width: 76px; height: 76px; }
+}
+
+/* Desktop */
+@media (min-width: 1101px) {
+  .fgp-ksym { padding: 64px 48px 72px; }
+  .fgp-ksym__heading { font-size: 32px; }
+  .fgp-ksym__grid { max-width: 1300px; gap: 48px; }
+  .fgp-ksym__item { flex: 0 1 180px; }
+  .fgp-ksym__icon { width: 100px; height: 100px; }
+  .fgp-ksym__label { font-size: 16px; }
 }
 </style>
 
@@ -236,6 +276,20 @@
       "id": "label_5",
       "label": "Label 5",
       "default": "Allergies"
+    },
+    {
+      "type": "header",
+      "content": "Symptom 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_6",
+      "label": "Icon 6"
+    },
+    {
+      "type": "text",
+      "id": "label_6",
+      "label": "Label 6"
     }
   ],
   "presets": [

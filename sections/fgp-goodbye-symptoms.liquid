@@ -50,6 +50,7 @@
   --fgp-navy:     #234092;
   --fgp-purple:   #65438a;
   --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
   --fgp-font:     'Poppins', sans-serif;
 
   font-family: var(--fgp-font);
@@ -116,55 +117,76 @@
   text-align: center;
 }
 
-/* Mobile (≤767px) */
+/* Mobile: 2-col rows (icon left, label right) inside white card */
 @media (max-width: 767px) {
   .fgp-bye {
-    padding: 40px 24px 48px;
+    padding: 40px 16px 48px;
   }
 
   .fgp-bye__heading {
     font-size: 22px;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .fgp-bye__grid {
     flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    align-items: stretch;
+    gap: 0;
+    background: var(--fgp-white);
+    border-radius: 16px;
+    padding: 8px 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .fgp-bye__item {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
     flex: none;
     width: 100%;
-    max-width: 240px;
+    max-width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(101,67,138,0.1);
+    text-align: left;
+  }
+
+  .fgp-bye__item:last-child {
+    border-bottom: none;
   }
 
   .fgp-bye__icon {
-    width: 100px;
-    height: 100px;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
   }
 
   .fgp-bye__label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    text-align: left;
   }
-}
-
-/* Large mobile (480px–767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-  .fgp-bye__heading { font-size: 26px; }
-  .fgp-bye__icon { width: 110px; height: 110px; }
-  .fgp-bye__label { font-size: 18px; }
-  .fgp-bye__item { max-width: 280px; }
 }
 
 /* Tablet (768px–1100px) */
 @media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-bye { padding: 48px 32px 56px; }
   .fgp-bye__heading { font-size: 24px; }
   .fgp-bye__grid { gap: 28px; }
   .fgp-bye__item { flex: 0 1 140px; }
   .fgp-bye__icon { width: 84px; height: 84px; }
   .fgp-bye__label { font-size: 14px; }
+}
+
+/* Desktop (1101px+) */
+@media (min-width: 1101px) {
+  .fgp-bye { padding: 64px 48px 72px; }
+  .fgp-bye__heading { font-size: 32px; }
+  .fgp-bye__grid { max-width: 1300px; gap: 48px; }
+  .fgp-bye__item { flex: 0 1 180px; }
+  .fgp-bye__icon { width: 100px; height: 100px; }
+  .fgp-bye__label { font-size: 16px; }
 }
 </style>
 

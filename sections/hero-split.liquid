@@ -193,8 +193,8 @@
 }
 
 .fgp-hero__desktop-headline {
-  font-size: 60px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 700;
   color: var(--fgp-offwhite);
   line-height: 1.15;
   margin: 0;
@@ -238,7 +238,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  {% comment %} padding-bottom: 56px; {% endcomment %}
+  padding-top: 12px;
+  padding-bottom: 48px;
 }
 
 .fgp-hero__desktop-title-line {
@@ -255,12 +256,13 @@
   background: rgba(248,248,248,0.75);
   border-radius: 2px;
   margin-bottom: 10px;
-  min-width: 300px;
+  min-width: 160px;
+  max-width: 260px;
 }
 
 .fgp-hero__desktop-title-line .fgp-hero__question-mark {
-  font-size: 60px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 700;
   color: var(--fgp-offwhite);
   line-height: 1;
 }
@@ -277,24 +279,24 @@
 
 .fgp-hero__symptoms.fgp-hero__symptoms--desktop li {
   font-family: 'Poppins', sans-serif;
-  font-weight: 100;
-  font-size: 30px;
-  line-height: 1.2;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.25;
   color: var(--fgp-offwhite);
   text-align: left;
 }
 
 .fgp-hero__cta--desktop {
-  font-size: 35px;
-  font-weight: 400;
-  padding: 24px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 40px;
   border-radius: 100px;
   background: var(--fgp-white);
   color: var(--fgp-navy);
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: opacity 0.2s;
-  border: 1px solid red;
+  border: none;
 }
 .fgp-hero__cta--desktop:hover { opacity: 0.85; }
 
@@ -487,24 +489,25 @@
 
 /* --- LARGE MONITORS (1441px+) --- */
 @media (min-width: 1441px) {
-  .fgp-hero__desktop-headline { font-size: 72px; }
-  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 72px; }
-  .fgp-hero__desktop-underline { min-width: 400px; }
+  .fgp-hero__desktop-headline { font-size: 68px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 68px; }
+  .fgp-hero__desktop-underline { min-width: 200px; max-width: 320px; }
   .fgp-hero__symptoms.fgp-hero__symptoms--desktop li {
-    font-size: 48px;
+    font-size: 32px;
     line-height: 1.3;
   }
-  .fgp-hero__cta--desktop { font-size: 28px; padding: 28px 40px; }
+  .fgp-hero__cta--desktop { font-size: 20px; padding: 20px 48px; }
   .fgp-hero__badge--desktop { width: 120px; }
 }
 
 /* --- TABLET (768px - 1100px) --- */
 @media (max-width: 1100px) {
   .fgp-hero__desktop-inner { padding: 40px 40px 0; min-height: 420px; gap: 60px; }
-  .fgp-hero__desktop-headline { font-size: 48px; }
-  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 48px; }
-  .fgp-hero__desktop-underline { min-width: 250px; }
-  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 28px; }
+  .fgp-hero__desktop-headline { font-size: 44px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 44px; }
+  .fgp-hero__desktop-underline { min-width: 140px; max-width: 220px; }
+  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 22px; }
+  .fgp-hero__cta--desktop { font-size: 16px; padding: 16px 32px; }
   .fgp-hero__desktop-products { max-width: 400px; }
   .fgp-hero__product-combined-desktop { max-width: 350px; }
   .fgp-hero__badge--desktop { width: 85px; }
@@ -514,10 +517,11 @@
 /* --- SMALL TABLET (768px - 900px) --- */
 @media (max-width: 900px) and (min-width: 768px) {
   .fgp-hero__desktop-inner { padding: 40px 40px 0; min-height: 380px; gap: 40px; }
-  .fgp-hero__desktop-headline { font-size: 38px; }
-  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 38px; }
-  .fgp-hero__desktop-underline { min-width: 180px; }
-  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 24px; }
+  .fgp-hero__desktop-headline { font-size: 34px; }
+  .fgp-hero__desktop-title-line .fgp-hero__question-mark { font-size: 34px; }
+  .fgp-hero__desktop-underline { min-width: 100px; max-width: 180px; }
+  .fgp-hero__symptoms.fgp-hero__symptoms--desktop li { font-size: 18px; }
+  .fgp-hero__cta--desktop { font-size: 14px; padding: 14px 28px; }
   .fgp-hero__desktop-products { max-width: 350px; }
   .fgp-hero__product-combined-desktop { max-width: 300px; }
   .fgp-hero__badge--desktop { width: 75px; }

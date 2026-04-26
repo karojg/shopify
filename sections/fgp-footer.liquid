@@ -51,13 +51,14 @@
           {% endif %}
         </a>
 
-        {% if section.settings.address != blank %}
-          <p class="fgp-ft__address">{{ section.settings.address }}</p>
-        {% endif %}
-
-        {% if section.settings.hours != blank %}
-          <p class="fgp-ft__hours">{{ section.settings.hours }}</p>
-        {% endif %}
+        <div class="fgp-ft__brand-address">
+          {% if section.settings.address != blank %}
+            <p class="fgp-ft__address">{{ section.settings.address }}</p>
+          {% endif %}
+          {% if section.settings.hours != blank %}
+            <p class="fgp-ft__hours">{{ section.settings.hours }}</p>
+          {% endif %}
+        </div>
       </div>
 
       <!-- COL 2: Company links -->
@@ -160,7 +161,7 @@
       </div>
 
       <div class="fgp-ft__copyright">
-        <p>{{ section.settings.copyright | default: '© 2025 Feel Good Pharma – All rights reserved.' }}
+        <p>© {{ 'now' | date: '%Y' }} Feel Good Pharma – All rights reserved.
           <a href="https://www.shopify.com" class="fgp-ft__powered" target="_blank" rel="noopener">Powered by Shopify</a>
         </p>
       </div>
@@ -198,7 +199,7 @@
    TOP ROW
 ===================================================================== */
 .fgp-ft__top {
-  padding: 56px 24px 48px;
+  padding: 48px 48px 40px;
   position: relative;
   overflow: hidden;
 }
@@ -238,7 +239,15 @@
 .fgp-ft__col--brand {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+}
+
+.fgp-ft__brand-address {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .fgp-ft__logo-link { display: inline-block; }
@@ -391,7 +400,7 @@
 ===================================================================== */
 .fgp-ft__bottom {
   border-top: 1px solid rgba(255,255,255,0.15);
-  padding: 20px 24px;
+  padding: 20px 48px;
 }
 
 .fgp-ft__bottom-inner {
@@ -463,7 +472,9 @@
    MOBILE
 ===================================================================== */
 @media (max-width: 767px) {
-  .fgp-ft__top { padding: 40px 24px 36px; }
+  .fgp-ft__top { padding: 40px 24px 32px; }
+  .fgp-ft__bottom { padding: 16px 24px; }
+  .fgp-ft__deco { display: none; }
 
   .fgp-ft__inner {
     grid-template-columns: 1fr;

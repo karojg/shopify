@@ -1,7 +1,6 @@
 {% comment %}
   Feel Good Pharma — Sub-footer / Brand Banner
-  Gold background: tagline + #FeelGoodWithin + lifestyle photo + IG handle
-  Replaces fgp-newsletter sitewide
+  Gold background: tagline + hashtag + social links (IG + FB)
   Shopify OS 2.0 Section
 {% endcomment %}
 
@@ -21,35 +20,41 @@
       {% endif %}
     </div>
 
-    <!-- RIGHT: lifestyle photo + IG handle -->
+    <!-- RIGHT: social links -->
     <div class="fgp-subfooter__social">
-      {% if section.settings.lifestyle_image != blank %}
-        <img
-          class="fgp-subfooter__photo"
-          src="{{ section.settings.lifestyle_image | img_url: '400x400', crop: 'center' }}"
-          alt="{{ section.settings.lifestyle_image_alt | default: 'Feel Good Pharma lifestyle' }}"
-          loading="lazy"
-        >
-      {% endif %}
 
       {% if section.settings.ig_handle != blank %}
         <a
           href="https://instagram.com/{{ section.settings.ig_handle | remove: '@' }}"
-          class="fgp-subfooter__ig"
+          class="fgp-subfooter__social-link"
           target="_blank"
           rel="noopener"
           aria-label="Follow us on Instagram"
         >
-          <span class="fgp-subfooter__ig-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </span>
-          <span class="fgp-subfooter__ig-handle">{{ section.settings.ig_handle | remove: '@' | upcase }}</span>
+          <svg class="fgp-subfooter__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="fgp-subfooter__social-handle">{{ section.settings.ig_handle | remove: '@' | upcase }}</span>
         </a>
       {% endif %}
+
+      {% if section.settings.fb_url != blank %}
+        <a
+          href="{{ section.settings.fb_url }}"
+          class="fgp-subfooter__social-link"
+          target="_blank"
+          rel="noopener"
+          aria-label="Follow us on Facebook"
+        >
+          <svg class="fgp-subfooter__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          <span class="fgp-subfooter__social-handle">{{ section.settings.fb_label | default: 'FEELGOODPHARMA' }}</span>
+        </a>
+      {% endif %}
+
     </div>
 
   </div>
@@ -59,13 +64,13 @@
 <style>
 .fgp-subfooter {
   --fgp-navy:   #234092;
-  --fgp-gold:   #f5a623;
+  --fgp-gold:   #F5A623;
   --fgp-white:  #ffffff;
   --fgp-font:   'Poppins', sans-serif;
 
   font-family: var(--fgp-font);
   background: var(--fgp-gold);
-  padding: 48px 24px;
+  padding: 40px 48px;
 }
 
 .fgp-subfooter__inner {
@@ -75,112 +80,86 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 40px;
 }
 
 /* Left: text */
 .fgp-subfooter__text {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .fgp-subfooter__tagline {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: var(--fgp-navy);
   margin: 0;
   line-height: 1.5;
-  max-width: 480px;
-  opacity: 0.9;
+  max-width: 400px;
 }
 
 .fgp-subfooter__hashtag {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--fgp-navy);
   margin: 0;
   line-height: 1.2;
-  letter-spacing: -0.5px;
 }
 
-/* Right: photo + ig */
+/* Right: social links stacked */
 .fgp-subfooter__social {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.fgp-subfooter__social-link {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-}
-
-.fgp-subfooter__photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 20px;
-  display: block;
-  flex-shrink: 0;
-}
-
-.fgp-subfooter__ig {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
   color: var(--fgp-navy);
   transition: opacity 0.2s;
 }
-.fgp-subfooter__ig:hover { opacity: 0.7; }
+.fgp-subfooter__social-link:hover { opacity: 0.7; }
 
-.fgp-subfooter__ig-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: var(--fgp-navy);
-  color: var(--fgp-gold);
-  border-radius: 50%;
+.fgp-subfooter__social-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
-.fgp-subfooter__ig-handle {
-  font-size: 13px;
+.fgp-subfooter__social-handle {
+  font-size: 14px;
   font-weight: 700;
   color: var(--fgp-navy);
-  text-align: center;
   letter-spacing: 0.5px;
-  max-width: 120px;
-  word-break: break-all;
 }
 
 /* Mobile */
 @media (max-width: 767px) {
-  .fgp-subfooter { padding: 40px 20px; }
+  .fgp-subfooter { padding: 36px 24px; }
 
   .fgp-subfooter__inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 28px;
+    gap: 24px;
   }
 
   .fgp-subfooter__tagline { font-size: 15px; }
-  .fgp-subfooter__hashtag { font-size: 22px; }
+  .fgp-subfooter__hashtag { font-size: 20px; }
+  .fgp-subfooter__social-handle { font-size: 13px; }
+}
 
-  .fgp-subfooter__social {
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .fgp-subfooter__photo {
-    width: 140px;
-    height: 140px;
-  }
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-subfooter { padding: 40px 32px; }
+  .fgp-subfooter__tagline { font-size: 15px; }
+  .fgp-subfooter__hashtag { font-size: 20px; }
 }
 </style>
 
@@ -203,15 +182,8 @@
       "default": "#FeelGoodWithin"
     },
     {
-      "type": "image_picker",
-      "id": "lifestyle_image",
-      "label": "Lifestyle photo"
-    },
-    {
-      "type": "text",
-      "id": "lifestyle_image_alt",
-      "label": "Image alt text",
-      "default": "Feel Good Pharma family lifestyle"
+      "type": "header",
+      "content": "Instagram"
     },
     {
       "type": "text",
@@ -219,6 +191,21 @@
       "label": "Instagram handle",
       "info": "Enter with or without @. Example: feel.goodpharma",
       "default": "feel.goodpharma"
+    },
+    {
+      "type": "header",
+      "content": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "fb_url",
+      "label": "Facebook page URL"
+    },
+    {
+      "type": "text",
+      "id": "fb_label",
+      "label": "Facebook handle label",
+      "default": "FEELGOODPHARMA"
     }
   ],
   "presets": [

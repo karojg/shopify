@@ -260,11 +260,26 @@
    TABLET (768px - 1100px)
 =============================================================== */
 @media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-syn { padding: 0 32px 40px; }
   .fgp-syn__col-left {
     flex: 0 0 260px;
     padding: 36px 28px;
   }
   .fgp-syn__title { font-size: 30px; }
+}
+
+/* ===============================================================
+   DESKTOP (1101px+)
+=============================================================== */
+@media (min-width: 1101px) {
+  .fgp-syn { padding: 0 48px 56px; }
+  .fgp-syn__desktop { max-width: 1300px; }
+  .fgp-syn__col-left {
+    flex: 0 0 340px;
+    padding: 56px 44px;
+  }
+  .fgp-syn__title { font-size: 44px; }
+  .fgp-syn__description { font-size: 16px; }
 }
 </style>
 

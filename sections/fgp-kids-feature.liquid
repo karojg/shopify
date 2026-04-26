@@ -70,26 +70,27 @@
         {% endif %}
       </div>
 
-      <!-- BOTTOM: Blue panel with badge, text + CTA -->
+      <!-- BOTTOM: Gold panel with logo, description + CTAs -->
       <div class="fgp-kids__mobile-panel">
-        {% if section.settings.badge_text != blank %}
-          <div class="fgp-kids__badge-wrap">
-            <span class="fgp-kids__badge">{{ section.settings.badge_text }}</span>
-            {% if section.settings.badge_subtext != blank %}
-              <span class="fgp-kids__badge-sub">{{ section.settings.badge_subtext }}</span>
-            {% endif %}
-          </div>
-        {% endif %}
-        <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
         {% if section.settings.title_image != blank %}
           <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
         {% else %}
           <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
         {% endif %}
-        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
-        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
-          {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
-        </a>
+        {% if section.settings.panel_subtitle != blank %}
+          <p class="fgp-kids__panel-subtitle">{{ section.settings.panel_subtitle }}</p>
+        {% endif %}
+        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <div class="fgp-kids__cta-group">
+          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
+            {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
+          </a>
+          {% if section.settings.cta2_label != blank %}
+            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">
+              {{ section.settings.cta2_label }}
+            </a>
+          {% endif %}
+        </div>
       </div>
 
     </div>
@@ -281,24 +282,62 @@
   }
 
   .fgp-kids__mobile-panel {
-    background: var(--fgp-blue);
-    padding: 24px 20px 28px;
+    background: #F5A623;
+    padding: 32px 24px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 16px;
   }
 
-  .fgp-kids__mobile-panel .fgp-kids__badge-wrap { align-items: center; }
-  .fgp-kids__mobile-panel .fgp-kids__badge { font-size: 18px; }
-  .fgp-kids__mobile-panel .fgp-kids__eyebrow { font-size: 11px; }
-  .fgp-kids__mobile-panel .fgp-kids__title { font-size: 26px; }
-  .fgp-kids__mobile-panel .fgp-kids__description { font-size: 13px; }
+  .fgp-kids__mobile-panel .fgp-kids__title-img {
+    max-width: 220px;
+    width: 80%;
+  }
+
+  .fgp-kids__mobile-panel .fgp-kids__title {
+    font-size: 28px;
+    color: var(--fgp-navy);
+  }
+
+  .fgp-kids__panel-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fgp-navy);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: -8px 0 0;
+    opacity: 0.75;
+  }
+
+  .fgp-kids__mobile-panel .fgp-kids__description {
+    font-size: 16px;
+    color: var(--fgp-navy);
+    line-height: 1.6;
+  }
+
+  .fgp-kids__mobile-panel .fgp-kids__description strong {
+    font-weight: 700;
+  }
+
+  .fgp-kids__cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+    margin-top: 8px;
+  }
+
   .fgp-kids__mobile-panel .fgp-kids__cta {
+    background: var(--fgp-navy);
+    color: var(--fgp-white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 100px;
     align-self: center;
-    font-size: 14px;
-    padding: 12px 28px;
   }
 }
 
@@ -306,11 +345,26 @@
    TABLET
 =============================================================== */
 @media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-kids { padding: 40px 32px; }
   .fgp-kids__col-right {
     flex: 0 0 280px;
     padding: 36px 28px;
   }
   .fgp-kids__title { font-size: 26px; }
+}
+
+/* ===============================================================
+   DESKTOP
+=============================================================== */
+@media (min-width: 1101px) {
+  .fgp-kids { padding: 56px 48px; }
+  .fgp-kids__desktop { max-width: 1300px; }
+  .fgp-kids__col-right {
+    flex: 0 0 360px;
+    padding: 56px 44px;
+  }
+  .fgp-kids__title { font-size: 38px; }
+  .fgp-kids__description { font-size: 16px; }
 }
 </style>
 
@@ -364,19 +418,35 @@
       "default": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>"
     },
     {
+      "type": "text",
+      "id": "panel_subtitle",
+      "label": "Panel Subtitle (below logo, e.g. DIGESTIVE HEALTH)",
+      "default": "DIGESTIVE HEALTH"
+    },
+    {
       "type": "header",
-      "content": "CTA Button"
+      "content": "CTA Buttons"
     },
     {
       "type": "text",
       "id": "cta_label",
-      "label": "Button Label",
+      "label": "Button 1 Label",
       "default": "Shop Kids Probiotics"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "Button URL"
+      "label": "Button 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "cta2_label",
+      "label": "Button 2 Label (optional)"
+    },
+    {
+      "type": "url",
+      "id": "cta2_url",
+      "label": "Button 2 URL"
     },
     {
       "type": "header",
