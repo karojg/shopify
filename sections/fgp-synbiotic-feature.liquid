@@ -108,18 +108,23 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  min-height: 480px;
+  min-height: 560px;
+  max-height: 663px;
+  height: 60vw;
 }
 
 /* --- Left column: blue text panel --- */
 .fgp-syn__col-left {
-  flex: 0 0 300px;
+  width: 443px;
+  min-width: 443px;
+  max-width: 443px;
   background: var(--fgp-blue);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px 36px;
+  padding: 48px 44px;
   gap: 16px;
+  box-sizing: border-box;
 }
 
 .fgp-syn__eyebrow {
@@ -132,7 +137,7 @@
 }
 
 .fgp-syn__title {
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 800;
   color: var(--fgp-white);
   margin: 0;
@@ -262,8 +267,10 @@
 @media (min-width: 768px) and (max-width: 1100px) {
   .fgp-syn { padding: 0 32px 40px; }
   .fgp-syn__col-left {
-    flex: 0 0 260px;
-    padding: 36px 28px;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    padding: 36px 32px;
   }
   .fgp-syn__title { font-size: 30px; }
 }
@@ -274,9 +281,12 @@
 @media (min-width: 1101px) {
   .fgp-syn { padding: 0 48px 56px; }
   .fgp-syn__desktop { max-width: 1300px; }
+  .fgp-syn__card { min-height: 600px; max-height: 663px; }
   .fgp-syn__col-left {
-    flex: 0 0 340px;
-    padding: 56px 44px;
+    width: 443px;
+    min-width: 443px;
+    max-width: 443px;
+    padding: 56px 48px;
   }
   .fgp-syn__title { font-size: 44px; }
   .fgp-syn__description { font-size: 16px; }
