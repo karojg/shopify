@@ -1,0 +1,167 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-vid" aria-label="Video section">
+
+  <div class="fgp-vid__wrap">
+    {% if section.settings.video_url != blank %}
+      <div class="fgp-vid__player" id="fgp-vid-{{ section.id }}">
+        <img
+          class="fgp-vid__poster"
+          src="{{ section.settings.poster_image | img_url: '1200x' }}"
+          alt="{{ section.settings.alt | default: 'Watch our video' }}"
+          loading="lazy"
+        >
+        <button
+          class="fgp-vid__play-btn"
+          aria-label="Play video"
+          data-video-url="{{ section.settings.video_url }}"
+          data-player-id="fgp-vid-{{ section.id }}"
+        >
+          <svg class="fgp-vid__play-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="32" fill="white" fill-opacity="0.92"/>
+            <path d="M26 20L46 32L26 44V20Z" fill="#234092"/>
+          </svg>
+        </button>
+        <iframe
+          class="fgp-vid__iframe"
+          src=""
+          data-src="{{ section.settings.video_url | append: '?autoplay=1&rel=0' }}"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="{{ section.settings.alt | default: 'FGP Video' }}"
+          style="display:none;"
+        ></iframe>
+      </div>
+    {% elsif section.settings.poster_image != blank %}
+      <div class="fgp-vid__player">
+        <img
+          class="fgp-vid__poster"
+          src="{{ section.settings.poster_image | img_url: '1200x' }}"
+          alt="{{ section.settings.alt | default: 'Lifestyle image' }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+
+</section>
+
+<style>
+.fgp-vid {
+  --fgp-navy: #234092;
+  --fgp-font: 'Poppins', sans-serif;
+  font-family: var(--fgp-font);
+  background: #000;
+  width: 100%;
+}
+
+.fgp-vid__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fgp-vid__player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.fgp-vid__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.fgp-vid__player:hover .fgp-vid__poster { transform: scale(1.02); }
+
+.fgp-vid__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+.fgp-vid__play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
+
+.fgp-vid__play-icon {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.fgp-vid__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 3;
+}
+
+@media (max-width: 767px) {
+  .fgp-vid__player { aspect-ratio: 16 / 9; }
+  .fgp-vid__play-icon { width: 52px; height: 52px; }
+}
+</style>
+
+<script>
+(function() {
+  document.querySelectorAll('.fgp-vid__play-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var playerId = btn.getAttribute('data-player-id');
+      var player = document.getElementById(playerId);
+      if (!player) return;
+      var iframe = player.querySelector('.fgp-vid__iframe');
+      var poster = player.querySelector('.fgp-vid__poster');
+      if (!iframe) return;
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.style.display = 'block';
+      if (poster) poster.style.display = 'none';
+      btn.style.display = 'none';
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "FGP Video",
+  "tag": "section",
+  "class": "fgp-video",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster / Thumbnail Image"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "YouTube Embed URL",
+      "info": "Use the embed URL format: https://www.youtube.com/embed/VIDEO_ID"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt Text",
+      "default": "Feel Good Pharma lifestyle video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Video"
+    }
+  ]
+}
+{% endschema %}

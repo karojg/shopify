@@ -1,0 +1,278 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-bb" aria-label="Benefits banner">
+
+  <!-- Desktop -->
+  <div class="fgp-bb__inner fgp-bb__inner--desk">
+    <div class="fgp-bb__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fgp-bb__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h2 class="fgp-bb__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.subtext != blank %}
+        <p class="fgp-bb__subtext">{{ section.settings.subtext }}</p>
+      {% endif %}
+      {% if section.blocks.size > 0 %}
+        <ul class="fgp-bb__checklist">
+          {% for block in section.blocks %}
+            <li class="fgp-bb__check-item" {{ block.shopify_attributes }}>
+              <span class="fgp-bb__check-icon" aria-hidden="true">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '32x' }}" alt="" loading="lazy">
+                {% else %}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10" cy="10" r="10" fill="#45bfef" fill-opacity="0.2"/>
+                    <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#45bfef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {% endif %}
+              </span>
+              <span>{{ block.settings.label }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <div class="fgp-bb__image-wrap">
+      {% if section.settings.product_image != blank %}
+        <img
+          class="fgp-bb__product-image"
+          src="{{ section.settings.product_image | img_url: '600x' }}"
+          alt="{{ section.settings.heading }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Mobile -->
+  <div class="fgp-bb__inner fgp-bb__inner--mob">
+    <div class="fgp-bb__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fgp-bb__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h2 class="fgp-bb__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.subtext != blank %}
+        <p class="fgp-bb__subtext">{{ section.settings.subtext }}</p>
+      {% endif %}
+    </div>
+    <div class="fgp-bb__image-wrap">
+      {% if section.settings.product_image != blank %}
+        <img
+          class="fgp-bb__product-image"
+          src="{{ section.settings.product_image | img_url: '400x' }}"
+          alt="{{ section.settings.heading }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+    {% if section.blocks.size > 0 %}
+      <ul class="fgp-bb__checklist">
+        {% for block in section.blocks %}
+          <li class="fgp-bb__check-item" {{ block.shopify_attributes }}>
+            <span class="fgp-bb__check-icon" aria-hidden="true">
+              {% if block.settings.icon != blank %}
+                <img src="{{ block.settings.icon | img_url: '32x' }}" alt="" loading="lazy">
+              {% else %}
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="10" fill="#45bfef" fill-opacity="0.2"/>
+                  <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#45bfef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
+            </span>
+            <span>{{ block.settings.label }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+</section>
+
+<style>
+.fgp-bb {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-navy);
+  width: 100%;
+  overflow: hidden;
+}
+
+.fgp-bb__inner--desk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  gap: 48px;
+}
+
+.fgp-bb__inner--mob { display: none; }
+
+.fgp-bb__content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.fgp-bb__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fgp-blue);
+  margin: 0 0 12px;
+}
+
+.fgp-bb__heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.fgp-bb__subtext {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.fgp-bb__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fgp-bb__check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fgp-white);
+}
+
+.fgp-bb__check-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fgp-bb__check-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fgp-bb__image-wrap {
+  flex-shrink: 0;
+}
+
+.fgp-bb__product-image {
+  width: 360px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-bb__inner--desk { display: none; }
+
+  .fgp-bb__inner--mob {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 48px;
+    gap: 0;
+  }
+
+  .fgp-bb__heading { font-size: 24px; }
+
+  .fgp-bb__product-image {
+    width: 100%;
+    max-width: 260px;
+    margin: 20px auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-bb__inner--desk { padding: 48px 32px; gap: 32px; }
+  .fgp-bb__heading { font-size: 28px; }
+  .fgp-bb__product-image { width: 280px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Benefits Banner",
+  "tag": "section",
+  "class": "fgp-benefits-banner",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "WHY STRESSBIOTIC"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your journey to wellness, stress, mental health, and adaptability"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (optional — uses checkmark if blank)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Benefit Label",
+          "default": "Reduces Stress"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Benefits Banner",
+      "blocks": [
+        { "type": "benefit", "settings": { "label": "Reduces Stress" } },
+        { "type": "benefit", "settings": { "label": "Supports Gut Health" } },
+        { "type": "benefit", "settings": { "label": "Adaptogens and Psychobiotics" } },
+        { "type": "benefit", "settings": { "label": "Supports GI balance" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

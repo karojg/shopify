@@ -1,0 +1,475 @@
+{% render 'fgp-global' %}
+
+{% assign variant = section.settings.variant %}
+
+<section class="fgp-hb fgp-hb--{{ variant }}" aria-label="Hero banner">
+
+  {% if variant == 'stressbiotic' %}
+    <!-- Desktop -->
+    <div class="fgp-hb__inner fgp-hb__inner--desk">
+      <div class="fgp-hb__content">
+        {% if section.settings.eyebrow != blank %}
+          <p class="fgp-hb__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        {% if section.settings.subtext != blank %}
+          <p class="fgp-hb__subtext">{{ section.settings.subtext }}</p>
+        {% endif %}
+        {% if section.settings.pills != blank %}
+          <div class="fgp-hb__pills">
+            {% assign pills = section.settings.pills | split: '|' %}
+            {% for pill in pills %}
+              <span class="fgp-hb__pill">{{ pill | strip }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <div class="fgp-hb__ctas">
+          {% if section.settings.cta1_label != blank %}
+            <a href="{{ section.settings.cta1_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--primary">{{ section.settings.cta1_label }}</a>
+          {% endif %}
+          {% if section.settings.cta2_label != blank %}
+            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--secondary">{{ section.settings.cta2_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="fgp-hb__image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-hb__product-image"
+            src="{{ section.settings.product_image | img_url: '600x' }}"
+            alt="{{ section.settings.heading }}"
+            loading="eager"
+          >
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="fgp-hb__inner fgp-hb__inner--mob">
+      <div class="fgp-hb__content">
+        {% if section.settings.eyebrow != blank %}
+          <p class="fgp-hb__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        {% if section.settings.subtext != blank %}
+          <p class="fgp-hb__subtext">{{ section.settings.subtext }}</p>
+        {% endif %}
+        <div class="fgp-hb__ctas">
+          {% if section.settings.cta1_label != blank %}
+            <a href="{{ section.settings.cta1_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--primary">{{ section.settings.cta1_label }}</a>
+          {% endif %}
+          {% if section.settings.cta2_label != blank %}
+            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--secondary">{{ section.settings.cta2_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="fgp-hb__image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-hb__product-image"
+            src="{{ section.settings.product_image | img_url: '400x' }}"
+            alt="{{ section.settings.heading }}"
+            loading="eager"
+          >
+        {% endif %}
+      </div>
+    </div>
+
+  {% elsif variant == 'quiz' %}
+    <!-- Desktop -->
+    <div class="fgp-hb__inner fgp-hb__inner--desk">
+      <div class="fgp-hb__content">
+        <div class="fgp-hb__quiz-heading-row">
+          {% if section.settings.badge_image != blank %}
+            <img class="fgp-hb__badge" src="{{ section.settings.badge_image | img_url: '80x' }}" alt="badge" loading="eager">
+          {% endif %}
+          <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        </div>
+        {% if section.settings.symptoms != blank %}
+          <ul class="fgp-hb__symptoms">
+            {% assign symptoms = section.settings.symptoms | split: '|' %}
+            {% for symptom in symptoms %}
+              <li>{{ symptom | strip }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if section.settings.cta1_label != blank %}
+          <a href="{{ section.settings.cta1_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--quiz">{{ section.settings.cta1_label }}</a>
+        {% endif %}
+      </div>
+      <div class="fgp-hb__image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-hb__product-image fgp-hb__product-image--quiz"
+            src="{{ section.settings.product_image | img_url: '700x' }}"
+            alt="Products"
+            loading="eager"
+          >
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="fgp-hb__inner fgp-hb__inner--mob">
+      <div class="fgp-hb__content">
+        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        {% if section.settings.symptoms != blank %}
+          <ul class="fgp-hb__symptoms">
+            {% assign symptoms = section.settings.symptoms | split: '|' %}
+            {% for symptom in symptoms %}
+              <li>{{ symptom | strip }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if section.settings.cta1_label != blank %}
+          <a href="{{ section.settings.cta1_url | default: '#' }}" class="fgp-hb__cta fgp-hb__cta--quiz">{{ section.settings.cta1_label }}</a>
+        {% endif %}
+      </div>
+      <div class="fgp-hb__image-wrap">
+        {% if section.settings.product_image != blank %}
+          <img
+            class="fgp-hb__product-image fgp-hb__product-image--quiz"
+            src="{{ section.settings.product_image | img_url: '400x' }}"
+            alt="Products"
+            loading="eager"
+          >
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+</section>
+
+<style>
+.fgp-hb {
+  --fgp-navy:  #234092;
+  --fgp-blue:  #45bfef;
+  --fgp-gold:  #FED304;
+  --fgp-white: #ffffff;
+  --fgp-font:  'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Stressbiotic variant ── */
+.fgp-hb--stressbiotic { background: var(--fgp-navy); }
+
+.fgp-hb--stressbiotic .fgp-hb__inner--desk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  gap: 40px;
+}
+
+.fgp-hb--stressbiotic .fgp-hb__inner--mob { display: none; }
+
+.fgp-hb--stressbiotic .fgp-hb__content {
+  flex: 1;
+  max-width: 540px;
+}
+
+.fgp-hb--stressbiotic .fgp-hb__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fgp-blue);
+  margin: 0 0 12px;
+}
+
+.fgp-hb--stressbiotic .fgp-hb__heading {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+
+.fgp-hb--stressbiotic .fgp-hb__heading em {
+  color: var(--fgp-blue);
+  font-style: normal;
+}
+
+.fgp-hb--stressbiotic .fgp-hb__subtext {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 24px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.fgp-hb__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.fgp-hb__pill {
+  background: rgba(255,255,255,0.12);
+  color: var(--fgp-white);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 6px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.fgp-hb__ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fgp-hb__cta {
+  display: inline-block;
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 13px 28px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.fgp-hb__cta:hover { opacity: 0.85; }
+
+.fgp-hb__cta--primary {
+  background: var(--fgp-blue);
+  color: var(--fgp-white);
+}
+
+.fgp-hb__cta--secondary {
+  background: var(--fgp-gold);
+  color: var(--fgp-navy);
+}
+
+.fgp-hb__image-wrap { flex-shrink: 0; }
+
+.fgp-hb--stressbiotic .fgp-hb__product-image {
+  width: 340px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── Quiz variant ── */
+.fgp-hb--quiz { background: var(--fgp-blue); }
+
+.fgp-hb--quiz .fgp-hb__inner--desk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  gap: 40px;
+}
+
+.fgp-hb--quiz .fgp-hb__inner--mob { display: none; }
+
+.fgp-hb--quiz .fgp-hb__content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.fgp-hb__quiz-heading-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.fgp-hb__badge {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.fgp-hb--quiz .fgp-hb__heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--fgp-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fgp-hb__symptoms {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fgp-hb__symptoms li {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fgp-navy);
+  line-height: 1.4;
+}
+
+.fgp-hb__cta--quiz {
+  background: var(--fgp-white);
+  color: var(--fgp-navy);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 13px 28px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--fgp-font);
+  transition: opacity 0.2s;
+}
+
+.fgp-hb__cta--quiz:hover { opacity: 0.85; }
+
+.fgp-hb--quiz .fgp-hb__product-image--quiz {
+  width: 420px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .fgp-hb--stressbiotic .fgp-hb__inner--desk,
+  .fgp-hb--quiz .fgp-hb__inner--desk { display: none; }
+
+  .fgp-hb--stressbiotic .fgp-hb__inner--mob,
+  .fgp-hb--quiz .fgp-hb__inner--mob {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 0;
+    gap: 0;
+  }
+
+  .fgp-hb--stressbiotic .fgp-hb__heading,
+  .fgp-hb--quiz .fgp-hb__heading { font-size: 28px; }
+
+  .fgp-hb--stressbiotic .fgp-hb__product-image,
+  .fgp-hb--quiz .fgp-hb__product-image--quiz {
+    width: 100%;
+    max-width: 280px;
+    margin: 24px auto 0;
+  }
+}
+
+/* ── Tablet ── */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-hb--stressbiotic .fgp-hb__inner--desk,
+  .fgp-hb--quiz .fgp-hb__inner--desk {
+    padding: 48px 32px;
+  }
+
+  .fgp-hb--stressbiotic .fgp-hb__heading { font-size: 32px; }
+  .fgp-hb--quiz .fgp-hb__heading { font-size: 28px; }
+
+  .fgp-hb--stressbiotic .fgp-hb__product-image { width: 260px; }
+  .fgp-hb--quiz .fgp-hb__product-image--quiz { width: 320px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Hero Banner",
+  "tag": "section",
+  "class": "fgp-hero-banner",
+  "settings": [
+    {
+      "type": "select",
+      "id": "variant",
+      "label": "Banner Variant",
+      "options": [
+        { "value": "stressbiotic", "label": "Stressbiotic (Dark Navy)" },
+        { "value": "quiz", "label": "Quiz / Symptom (Light Blue)" }
+      ],
+      "default": "stressbiotic"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (Stressbiotic only)",
+      "default": "PLANT-BASED PSYCHOBIOTIC"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your mind & gut, finally made peace"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext (Stressbiotic only)"
+    },
+    {
+      "type": "text",
+      "id": "pills",
+      "label": "Benefit Pills (Stressbiotic) — pipe separated",
+      "info": "e.g. Improves Sleep | Reduce Stress | Improves your Gut Health | Adaptogen",
+      "default": "Improves Sleep | Reduce Stress | Improves your Gut Health | Adaptogen"
+    },
+    {
+      "type": "textarea",
+      "id": "symptoms",
+      "label": "Symptom List (Quiz) — pipe separated",
+      "info": "e.g. Stress | Gluten intolerance | Lactose intolerance",
+      "default": "Stress | Gluten intolerance | Lactose intolerance | Constipation or Diarrhea | Irritable Bowel Syndrome | Low defenses"
+    },
+    {
+      "type": "header",
+      "content": "CTAs"
+    },
+    {
+      "type": "text",
+      "id": "cta1_label",
+      "label": "Primary CTA Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "cta1_url",
+      "label": "Primary CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "cta2_label",
+      "label": "Secondary CTA Label (Stressbiotic only)",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta2_url",
+      "label": "Secondary CTA URL"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product / Group Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge Icon (Quiz only)"
+    }
+  ],
+  "templates": ["product"]
+}
+{% endschema %}

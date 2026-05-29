@@ -168,9 +168,12 @@
         "badge_subtext": "2 capsules · 3 times a day",
         "eyebrow": "KIDS",
         "title": "KIDS PROBIOTICS",
+        "title_image": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
         "description": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",
         "cta_label": "Shop Kids Probiotics",
         "cta_url": "",
+        "cta2_label": "",
+        "cta2_url": "",
         "product_image": "shopify://shop_images/Image.png",
         "product_image_alt": "Kids Probiotics product"
       }
@@ -187,7 +190,8 @@
         "icon_3": "shopify://shop_images/Alergologo.png",
         "label_3": "Low defenses",
         "label_4": "",
-        "label_5": ""
+        "label_5": "",
+        "label_6": ""
       }
     },
     "fgp_video_cards_main": {
@@ -363,9 +367,9 @@
       "settings": {
         "tagline": "Feel Good Pharma takes care of your microbiota and that of your family.",
         "hashtag": "#FeelGoodWithin",
-        "lifestyle_image": "shopify://shop_images/b045018f841846fc1a4ff6b51fb2b12540b1660c.png",
-        "lifestyle_image_alt": "Feel Good Pharma family lifestyle",
-        "ig_handle": "feel.goodpharma"
+        "ig_handle": "feel.goodpharma",
+        "fb_url": "",
+        "fb_label": "FEELGOODPHARMA"
       }
     }
   },

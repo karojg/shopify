@@ -1,0 +1,280 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-fy" aria-label="Is this product for you?">
+
+  <div class="fgp-fy__header">
+    {% if section.settings.eyebrow != blank %}
+      <p class="fgp-fy__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+    <h2 class="fgp-fy__heading">{{ section.settings.heading }}</h2>
+    {% if section.settings.subtext != blank %}
+      <p class="fgp-fy__subtext">{{ section.settings.subtext }}</p>
+    {% endif %}
+  </div>
+
+  <!-- Desktop grid -->
+  <div class="fgp-fy__grid fgp-fy__grid--desk">
+    {% for block in section.blocks %}
+      <div class="fgp-fy__card" {{ block.shopify_attributes }}>
+        <div class="fgp-fy__icon-wrap">
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.title }}" loading="lazy" class="fgp-fy__icon">
+          {% else %}
+            <div class="fgp-fy__icon-placeholder"></div>
+          {% endif %}
+        </div>
+        <h3 class="fgp-fy__card-title">{{ block.settings.title }}</h3>
+        {% if block.settings.description != blank %}
+          <p class="fgp-fy__card-desc">{{ block.settings.description }}</p>
+        {% endif %}
+        {% if block.settings.cta_label != blank %}
+          <a href="{{ block.settings.cta_url | default: '#' }}" class="fgp-fy__cta">{{ block.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Mobile grid -->
+  <div class="fgp-fy__grid fgp-fy__grid--mob">
+    {% for block in section.blocks %}
+      <div class="fgp-fy__card" {{ block.shopify_attributes }}>
+        <div class="fgp-fy__icon-wrap">
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.title }}" loading="lazy" class="fgp-fy__icon">
+          {% else %}
+            <div class="fgp-fy__icon-placeholder"></div>
+          {% endif %}
+        </div>
+        <h3 class="fgp-fy__card-title">{{ block.settings.title }}</h3>
+        {% if block.settings.description != blank %}
+          <p class="fgp-fy__card-desc">{{ block.settings.description }}</p>
+        {% endif %}
+        {% if block.settings.cta_label != blank %}
+          <a href="{{ block.settings.cta_url | default: '#' }}" class="fgp-fy__cta">{{ block.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<style>
+.fgp-fy {
+  --fgp-navy:     #234092;
+  --fgp-blue:     #45bfef;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-white:    #ffffff;
+  --fgp-font:     'Poppins', sans-serif;
+
+  font-family: var(--fgp-font);
+  background: var(--fgp-offwhite);
+  padding: 64px 24px;
+}
+
+.fgp-fy__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.fgp-fy__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fgp-blue);
+  margin: 0 0 10px;
+}
+
+.fgp-fy__heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0 auto 12px;
+  max-width: 600px;
+  line-height: 1.3;
+}
+
+.fgp-fy__subtext {
+  font-size: 15px;
+  color: var(--fgp-navy);
+  opacity: 0.7;
+  margin: 0 auto;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* Grid */
+.fgp-fy__grid--desk {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fgp-fy__grid--mob { display: none; }
+
+/* Card */
+.fgp-fy__card {
+  background: var(--fgp-white);
+  border-radius: 18px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.fgp-fy__icon-wrap {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fgp-fy__icon {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.fgp-fy__icon-placeholder {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #dce8f5;
+}
+
+.fgp-fy__card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.fgp-fy__card-desc {
+  font-size: 13px;
+  color: var(--fgp-navy);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.fgp-fy__cta {
+  display: inline-block;
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+  font-family: var(--fgp-font);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 9px 20px;
+  text-decoration: none;
+  margin-top: auto;
+  transition: opacity 0.2s;
+}
+
+.fgp-fy__cta:hover { opacity: 0.85; }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .fgp-fy { padding: 40px 20px; }
+  .fgp-fy__heading { font-size: 22px; }
+  .fgp-fy__grid--desk { display: none; }
+  .fgp-fy__grid--mob {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-fy__grid--desk {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Is It For You?",
+  "tag": "section",
+  "class": "fgp-for-you",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FIND YOUR FIT"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Is Stressbiotic® For You?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext (optional)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "persona",
+      "name": "Persona Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Business people"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Ideal for high-stress environments and demanding schedules."
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA Label",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Is It For You?",
+      "blocks": [
+        { "type": "persona", "settings": { "title": "Business people", "description": "A plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.", "cta_label": "Learn More" } },
+        { "type": "persona", "settings": { "title": "IBS patients", "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.", "cta_label": "Learn More" } },
+        { "type": "persona", "settings": { "title": "Very stressed people", "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.", "cta_label": "Learn More" } },
+        { "type": "persona", "settings": { "title": "Sleep-troubled people", "description": "Formulated with strains clinically linked to improved sleep quality and duration.", "cta_label": "Learn More" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

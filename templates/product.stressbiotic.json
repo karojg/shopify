@@ -1,0 +1,294 @@
+{
+  "sections": {
+    "fgp_hero_banner": {
+      "type": "fgp-hero-banner",
+      "settings": {
+        "variant": "stressbiotic",
+        "eyebrow": "PLANT-BASED PSYCHOBIOTIC",
+        "heading": "Your mind & gut, finally made peace",
+        "subtext": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within.",
+        "pills": "Improves Sleep | Reduce Stress | Improves your Gut Health | Adaptogen",
+        "cta1_label": "Learn More",
+        "cta1_url": "shopify://pages/about",
+        "cta2_label": "Shop Now",
+        "cta2_url": "shopify://products/stressbiotic"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_ingredients": {
+      "type": "fgp-product-benefits",
+      "name": "Ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Lorem Ipsum",
+            "sublabel": "Lorem ipsum dolor sit amet consectetur"
+          }
+        },
+        "ing_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Lorem Ipsum",
+            "sublabel": "Lorem ipsum dolor sit amet consectetur"
+          }
+        },
+        "ing_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Lorem Ipsum",
+            "sublabel": "Lorem ipsum dolor sit amet consectetur"
+          }
+        },
+        "ing_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Lorem Ipsum",
+            "sublabel": "Lorem ipsum dolor sit amet consectetur"
+          }
+        }
+      },
+      "block_order": ["ing_1", "ing_2", "ing_3", "ing_4"],
+      "settings": {
+        "eyebrow": "WHAT'S INSIDE",
+        "heading": "Formulated with the Best Ingredients",
+        "subtext": ""
+      }
+    },
+    "fgp_benefits_banner": {
+      "type": "fgp-benefits-banner",
+      "name": "Benefits Banner",
+      "blocks": {
+        "ben_1": {
+          "type": "benefit",
+          "settings": { "label": "Reduces Stress" }
+        },
+        "ben_2": {
+          "type": "benefit",
+          "settings": { "label": "Supports Gut Health" }
+        },
+        "ben_3": {
+          "type": "benefit",
+          "settings": { "label": "Adaptogens and Psychobiotics" }
+        },
+        "ben_4": {
+          "type": "benefit",
+          "settings": { "label": "Supports GI balance" }
+        }
+      },
+      "block_order": ["ben_1", "ben_2", "ben_3", "ben_4"],
+      "settings": {
+        "eyebrow": "YOUR JOURNEY TO WELLNESS",
+        "heading": "Your journey to wellness, stress, mental health, and adaptability",
+        "subtext": "Your gut-brain connection supported — a plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health."
+      }
+    },
+    "fgp_comparison_table": {
+      "type": "fgp-comparison-table",
+      "name": "Comparison Table",
+      "blocks": {
+        "row_1": { "type": "row", "settings": { "feature": "Digestive Enzymes", "our_value": "Stressbiotic®", "other_value": "Digestive Enzymes", "other_has": "yes" } },
+        "row_2": { "type": "row", "settings": { "feature": "Probiotic Strains", "our_value": "5 Strains", "other_has": "no" } },
+        "row_3": { "type": "row", "settings": { "feature": "Prebiotics", "other_has": "no" } },
+        "row_4": { "type": "row", "settings": { "feature": "Postbiotics", "other_has": "no" } },
+        "row_5": { "type": "row", "settings": { "feature": "Adaptogen", "other_has": "no" } },
+        "row_6": { "type": "row", "settings": { "feature": "Patented Ingredients", "our_value": "3 Included", "other_value": "Does not include patents" } },
+        "row_7": { "type": "row", "settings": { "feature": "Stress + sleep actions", "our_value": "Upto-proliferating", "other_value": "Only strains to sleep" } },
+        "row_8": { "type": "row", "settings": { "feature": "Refrigeration required", "our_value": "No refrigeration needed", "other_value": "No refrigeration needed" } },
+        "row_9": { "type": "row", "settings": { "feature": "Serving / Supply", "our_value": "2 caps/day, 30 servings", "other_value": "1 to 3 capsules a day" } }
+      },
+      "block_order": ["row_1","row_2","row_3","row_4","row_5","row_6","row_7","row_8","row_9"],
+      "settings": {
+        "eyebrow": "SEE THE DIFFERENCE",
+        "heading": "How Stressbiotic® Compares",
+        "col_feature": "Feature",
+        "col_ours": "Stressbiotic®",
+        "col_other": "Other Products"
+      }
+    },
+    "fgp_for_you": {
+      "type": "fgp-for-you",
+      "name": "Is It For You?",
+      "blocks": {
+        "p_1": { "type": "persona", "settings": { "title": "Business people", "description": "A plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.", "cta_label": "Learn More" } },
+        "p_2": { "type": "persona", "settings": { "title": "IBS patients", "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.", "cta_label": "Learn More" } },
+        "p_3": { "type": "persona", "settings": { "title": "Very stressed people", "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.", "cta_label": "Learn More" } },
+        "p_4": { "type": "persona", "settings": { "title": "Sleep-troubled people", "description": "Formulated with strains clinically linked to improved sleep quality and duration.", "cta_label": "Learn More" } }
+      },
+      "block_order": ["p_1","p_2","p_3","p_4"],
+      "settings": {
+        "eyebrow": "FIND YOUR FIT",
+        "heading": "Is Stressbiotic® For You?"
+      }
+    },
+    "fgp_products_grid": {
+      "type": "fgp-products-grid",
+      "name": "Best Friends",
+      "blocks": {
+        "prod_1": { "type": "product_card", "settings": { "product_handle": "" } },
+        "prod_2": { "type": "product_card", "settings": { "product_handle": "" } },
+        "prod_3": { "type": "product_card", "settings": { "product_handle": "" } }
+      },
+      "block_order": ["prod_1","prod_2","prod_3"],
+      "settings": {
+        "eyebrow": "OUR LINEUP",
+        "heading": "Your Gut's New Best Friends"
+      }
+    },
+    "fgp_video": {
+      "type": "fgp-video",
+      "name": "Video",
+      "settings": {
+        "alt": "Feel Good Pharma — Stressbiotic lifestyle video"
+      }
+    },
+    "fgp_product_faq": {
+      "type": "fgp-product-faq",
+      "name": "Product FAQ",
+      "blocks": {
+        "faq_1": { "type": "faq_item", "settings": { "question": "What is the recommended dosage?", "answer": "<p>Take 2 capsules once a day, preferably with a meal.</p>" } },
+        "faq_2": { "type": "faq_item", "settings": { "question": "How long before I see results?", "answer": "<p>Most customers notice improvements within 2–4 weeks of consistent daily use.</p>" } },
+        "faq_3": { "type": "faq_item", "settings": { "question": "Is it safe for long-term use?", "answer": "<p>Yes. Stressbiotic is formulated with safe, natural ingredients designed for daily, long-term use.</p>" } },
+        "faq_4": { "type": "faq_item", "settings": { "question": "Does it need refrigeration?", "answer": "<p>No. Store in a cool, dry place away from direct sunlight.</p>" } }
+      },
+      "block_order": ["faq_1","faq_2","faq_3","faq_4"],
+      "settings": {
+        "layout": "split",
+        "eyebrow": "YOU'VE GOT QUESTIONS?",
+        "heading": "We've Got Answers"
+      }
+    },
+    "fgp_doctor_testimonials": {
+      "type": "fgp-doctor-testimonials",
+      "name": "Doctor Testimonials",
+      "blocks": {
+        "doc_1": { "type": "doctor", "settings": { "name": "Dr. Name Lastname", "specialty": "Gastroenterologist", "stars": 5, "quote": "I recommend Stressbiotic to my patients for its complete and scientifically backed formulation." } },
+        "doc_2": { "type": "doctor", "settings": { "name": "Dr. Name Lastname", "specialty": "Internal Medicine", "stars": 5, "quote": "A trusted product with transparent ingredient labeling and proven clinical results." } },
+        "doc_3": { "type": "doctor", "settings": { "name": "Dr. Name Lastname", "specialty": "Nutritionist", "stars": 5, "quote": "The combination of adaptogens and psychobiotics is exactly what my stressed patients need." } }
+      },
+      "block_order": ["doc_1","doc_2","doc_3"],
+      "settings": {
+        "eyebrow": "TRUSTED BY PROFESSIONALS",
+        "heading": "Recommended by Doctors"
+      }
+    },
+    "fgp_customer_reviews": {
+      "type": "fgp-customer-reviews",
+      "name": "Customer Reviews",
+      "blocks": {
+        "rev_1": { "type": "review", "settings": { "stars": 5, "verified": true, "review": "I've been using Stressbiotic for 6 weeks and my stress levels have dropped noticeably. I sleep so much better now!", "name": "Valeria Muñoz", "location": "San José, Costa Rica" } },
+        "rev_2": { "type": "review", "settings": { "stars": 5, "verified": true, "review": "Great Flavors", "name": "Diana Torres", "location": "Alajuela, Costa Rica" } },
+        "rev_3": { "type": "review", "settings": { "stars": 5, "verified": true, "review": "Easy to Use", "name": "Sofía López", "location": "Heredia, Costa Rica" } },
+        "rev_4": { "type": "review", "settings": { "stars": 5, "verified": true, "review": "Best Probiotic", "name": "Marco Rodríguez", "location": "Cartago, Costa Rica" } }
+      },
+      "block_order": ["rev_1","rev_2","rev_3","rev_4"],
+      "settings": {
+        "eyebrow": "WHAT OUR CUSTOMERS SAY",
+        "heading": "Loved by Customers"
+      }
+    },
+    "fgp_newsletter": {
+      "type": "fgp-newsletter",
+      "settings": {
+        "heading": "Subscribe & Save",
+        "subtext": "Join the FGP community for exclusive deals and gut health tips."
+      }
+    },
+    "fgp_footer": {
+      "type": "fgp-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "fgp_hero_banner",
+    "main",
+    "fgp_ingredients",
+    "fgp_benefits_banner",
+    "fgp_comparison_table",
+    "fgp_for_you",
+    "fgp_products_grid",
+    "fgp_video",
+    "fgp_product_faq",
+    "fgp_doctor_testimonials",
+    "fgp_customer_reviews",
+    "fgp_newsletter",
+    "fgp_footer"
+  ]
+}
