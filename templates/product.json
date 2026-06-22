@@ -89,7 +89,6 @@
     },
     "fgp_product_benefits_syn": {
       "type": "fgp-product-benefits",
-      "name": "Synbiotic+ Benefits",
       "blocks": {
         "ben_1": {
           "type": "benefit",
@@ -120,7 +119,13 @@
           }
         }
       },
-      "block_order": ["ben_1", "ben_2", "ben_3", "ben_4"],
+      "block_order": [
+        "ben_1",
+        "ben_2",
+        "ben_3",
+        "ben_4"
+      ],
+      "name": "Synbiotic+ Benefits",
       "settings": {
         "eyebrow": "SYNBIOTIC+",
         "heading": "4 IN 1 Formula",
@@ -129,7 +134,6 @@
     },
     "fgp_how_it_works_syn": {
       "type": "fgp-how-it-works",
-      "name": "How It Works",
       "blocks": {
         "step_1": {
           "type": "step",
@@ -160,7 +164,13 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "name": "How It Works",
       "settings": {
         "eyebrow": "THE SCIENCE",
         "heading": "How do our formulations work?",
@@ -170,14 +180,12 @@
     },
     "fgp_doctor_testimonials_syn": {
       "type": "fgp-doctor-testimonials",
-      "name": "Doctor Testimonials",
       "blocks": {
         "doc_1": {
           "type": "doctor",
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Gastroenterologist",
-            "stars": 5,
             "quote": "I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation."
           }
         },
@@ -186,7 +194,6 @@
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Internal Medicine",
-            "stars": 5,
             "quote": "A trusted product with transparent ingredient labeling and proven clinical results."
           }
         },
@@ -195,12 +202,16 @@
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Nutritionist",
-            "stars": 5,
             "quote": "The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need."
           }
         }
       },
-      "block_order": ["doc_1", "doc_2", "doc_3"],
+      "block_order": [
+        "doc_1",
+        "doc_2",
+        "doc_3"
+      ],
+      "name": "Doctor Testimonials",
       "settings": {
         "eyebrow": "TRUSTED BY PROFESSIONALS",
         "heading": "Recommended by Doctors"
@@ -208,7 +219,6 @@
     },
     "fgp_product_faq_syn": {
       "type": "fgp-product-faq",
-      "name": "Product FAQ",
       "blocks": {
         "faq_1": {
           "type": "faq_item",
@@ -246,7 +256,14 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "name": "Product FAQ",
       "settings": {
         "layout": "split",
         "eyebrow": "GOT QUESTIONS?",
@@ -255,7 +272,6 @@
     },
     "fgp_customer_reviews_syn": {
       "type": "fgp-customer-reviews",
-      "name": "Customer Reviews",
       "blocks": {
         "rev_1": {
           "type": "review",
@@ -288,7 +304,12 @@
           }
         }
       },
-      "block_order": ["rev_1", "rev_2", "rev_3"],
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "name": "Customer Reviews",
       "settings": {
         "eyebrow": "WHAT OUR CUSTOMERS SAY",
         "heading": "Loved by Customers"

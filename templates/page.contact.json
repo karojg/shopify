@@ -81,9 +81,17 @@
         "hashtag": "#FeelGoodWithin",
         "ig_handle": "feel.goodpharma"
       }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
+    "main",
     "fgp_contact_hero",
     "fgp_contact_info",
     "form",

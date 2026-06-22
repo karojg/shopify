@@ -34,7 +34,6 @@
     },
     "fgp_team": {
       "type": "fgp-team-grid",
-      "name": "Our Team",
       "blocks": {
         "member_1": {
           "type": "member",
@@ -65,7 +64,13 @@
           }
         }
       },
-      "block_order": ["member_1", "member_2", "member_3", "member_4"],
+      "block_order": [
+        "member_1",
+        "member_2",
+        "member_3",
+        "member_4"
+      ],
+      "name": "Our Team",
       "settings": {
         "eyebrow": "OUR TEAM",
         "heading": "The people behind Feel Good Pharma"
@@ -89,9 +94,17 @@
         "hashtag": "#FeelGoodWithin",
         "ig_handle": "feel.goodpharma"
       }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
+    "main",
     "fgp_about_hero",
     "fgp_founder_about",
     "fgp_team",

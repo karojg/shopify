@@ -11,7 +11,6 @@
   "sections": {
     "fgp_store_locator": {
       "type": "fgp-store-locator",
-      "name": "Store Locator",
       "blocks": {
         "loc_1": {
           "type": "location",
@@ -22,7 +21,10 @@
           }
         }
       },
-      "block_order": ["loc_1"],
+      "block_order": [
+        "loc_1"
+      ],
+      "name": "Store Locator",
       "settings": {
         "eyebrow": "FIND US",
         "heading": "Puntos de Venta",
@@ -38,9 +40,17 @@
         "hashtag": "#FeelGoodWithin",
         "ig_handle": "feel.goodpharma"
       }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
+    "main",
     "fgp_store_locator",
     "fgp_subfooter_pdv"
   ]

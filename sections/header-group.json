@@ -45,9 +45,6 @@
       "block_order": [
         "announcement_pVWTkj"
       ],
-      "custom_css": [
-        ".announcement-bar-section {position: sticky; margin-bottom: 0px; top: 0; z-index: 10;}"
-      ],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -57,30 +54,10 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
-    },
-    "hero_split_BaWQc3": {
-      "type": "hero-split",
-      "name": "Hero – Products",
-      "settings": {
-        "headline_text": "Is it a gut feeling or",
-        "symptom_1": "Gluten intolerance",
-        "symptom_2": "Lactose intolerance",
-        "symptom_3": "Constipation or Diarrhea",
-        "symptom_4": "Irritable Bowel Syndrome",
-        "symptom_5": "Low defenses",
-        "cta_label": "Take the Test!",
-        "cta_url": "",
-        "product_combined_image": "shopify://shop_images/group-hb.png",
-        "product_combined_alt": "Feel Good Pharma Products",
-        "badge_image": "shopify://shop_images/trust-badge.png",
-        "badge_alt": "Recommended by health specialists",
-        "announcement_text": "+275,000 Happy Customers"
-      }
     }
   },
   "order": [
     "header",
-    "announcement-bar",
-    "hero_split_BaWQc3"
+    "announcement-bar"
   ]
 }

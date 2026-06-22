@@ -19,10 +19,10 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
-.template-product .shopify-section:first-child,
-.product__media-container,
-.section-main-product {
-  background-color: #45bfef;
+/* Media side — navy to match info side */
+.product__media-wrapper,
+.product__media-container {
+  background-color: #234092 !important;
 }
 
 /* Vendor text */
@@ -62,7 +62,7 @@
 .variant-picker .form__label,
 fieldset.js-contents legend {
   font-family: 'Poppins', sans-serif !important;
-  color: #ffffff !important;
+  color: #234092 !important;
   font-weight: 600 !important;
 }
 
@@ -128,17 +128,20 @@ fieldset.js-contents legend {
   font-weight: 600 !important;
 }
 
-/* Add to cart button — Navy */
+/* Add to cart button — White with navy text (including sold out state) */
 .product-form__submit,
-button.product-form__submit {
+button.product-form__submit,
+.product-form__submit[disabled],
+.product-form__submit:disabled {
   font-family: 'Poppins', sans-serif !important;
-  background: #234092 !important;
-  color: #ffffff !important;
-  border-color: #234092 !important;
+  background: #ffffff !important;
+  color: #234092 !important;
+  border: 2px solid #ffffff !important;
   border-radius: 100px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
   transition: opacity 0.2s !important;
+  opacity: 1 !important;
 }
 .product-form__submit:hover {
   opacity: 0.88 !important;
@@ -161,9 +164,14 @@ button.product-form__submit {
 /* Product description text */
 .product__description,
 .product__description p,
-.product__description li {
+.product__description li,
+.product__description h2,
+.product__description h3,
+.product__description strong {
   font-family: 'Poppins', sans-serif !important;
   color: #ffffff !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
 }
 
 

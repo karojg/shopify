@@ -11,7 +11,10 @@
         {% if section.settings.eyebrow != blank %}
           <p class="fgp-hb__eyebrow">{{ section.settings.eyebrow }}</p>
         {% endif %}
-        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        <h1 class="fgp-hb__heading">
+          {% if section.settings.heading_line1 != blank %}{{ section.settings.heading_line1 }}<br>{% endif %}
+          {% if section.settings.heading_line2 != blank %}<em>{{ section.settings.heading_line2 }}</em>{% endif %}
+        </h1>
         {% if section.settings.subtext != blank %}
           <p class="fgp-hb__subtext">{{ section.settings.subtext }}</p>
         {% endif %}
@@ -50,7 +53,10 @@
         {% if section.settings.eyebrow != blank %}
           <p class="fgp-hb__eyebrow">{{ section.settings.eyebrow }}</p>
         {% endif %}
-        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        <h1 class="fgp-hb__heading">
+          {% if section.settings.heading_line1 != blank %}{{ section.settings.heading_line1 }}<br>{% endif %}
+          {% if section.settings.heading_line2 != blank %}<em>{{ section.settings.heading_line2 }}</em>{% endif %}
+        </h1>
         {% if section.settings.subtext != blank %}
           <p class="fgp-hb__subtext">{{ section.settings.subtext }}</p>
         {% endif %}
@@ -72,6 +78,14 @@
             loading="eager"
           >
         {% endif %}
+        {% if section.settings.pills != blank %}
+          <div class="fgp-hb__pills-mob">
+            {% assign pills = section.settings.pills | split: '|' %}
+            {% for pill in pills %}
+              <span class="fgp-hb__pill fgp-hb__pill--mob">{{ pill | strip }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     </div>
 
@@ -83,7 +97,10 @@
           {% if section.settings.badge_image != blank %}
             <img class="fgp-hb__badge" src="{{ section.settings.badge_image | img_url: '80x' }}" alt="badge" loading="eager">
           {% endif %}
-          <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+          <h1 class="fgp-hb__heading">
+          {% if section.settings.heading_line1 != blank %}{{ section.settings.heading_line1 }}<br>{% endif %}
+          {% if section.settings.heading_line2 != blank %}<em>{{ section.settings.heading_line2 }}</em>{% endif %}
+        </h1>
         </div>
         {% if section.settings.symptoms != blank %}
           <ul class="fgp-hb__symptoms">
@@ -112,7 +129,10 @@
     <!-- Mobile -->
     <div class="fgp-hb__inner fgp-hb__inner--mob">
       <div class="fgp-hb__content">
-        <h1 class="fgp-hb__heading">{{ section.settings.heading }}</h1>
+        <h1 class="fgp-hb__heading">
+          {% if section.settings.heading_line1 != blank %}{{ section.settings.heading_line1 }}<br>{% endif %}
+          {% if section.settings.heading_line2 != blank %}<em>{{ section.settings.heading_line2 }}</em>{% endif %}
+        </h1>
         {% if section.settings.symptoms != blank %}
           <ul class="fgp-hb__symptoms">
             {% assign symptoms = section.settings.symptoms | split: '|' %}
@@ -160,34 +180,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 60px 48px;
-  gap: 40px;
+  padding: 72px 64px;
+  gap: 48px;
+  min-height: 480px;
 }
 
 .fgp-hb--stressbiotic .fgp-hb__inner--mob { display: none; }
 
 .fgp-hb--stressbiotic .fgp-hb__content {
   flex: 1;
-  max-width: 540px;
+  max-width: 520px;
+  align-self: center;
 }
 
 .fgp-hb--stressbiotic .fgp-hb__eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--fgp-blue);
+  color: var(--fgp-white);
   margin: 0 0 12px;
 }
 
 .fgp-hb--stressbiotic .fgp-hb__heading {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 800;
   color: var(--fgp-white);
   margin: 0 0 16px;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .fgp-hb--stressbiotic .fgp-hb__heading em {
@@ -208,6 +230,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 32px;
+  max-width: 460px;
 }
 
 .fgp-hb__pill {
@@ -252,10 +275,11 @@
 .fgp-hb__image-wrap { flex-shrink: 0; }
 
 .fgp-hb--stressbiotic .fgp-hb__product-image {
-  width: 340px;
-  height: auto;
+  width: 380px;
+  height: 480px;
   display: block;
   object-fit: contain;
+  object-position: center bottom;
 }
 
 /* ── Quiz variant ── */
@@ -352,6 +376,35 @@
     gap: 0;
   }
 
+  .fgp-hb--stressbiotic .fgp-hb__image-wrap {
+    background: var(--fgp-blue);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fgp-hb__pills-mob {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 16px 20px;
+    width: 100%;
+  }
+
+  .fgp-hb__pill--mob {
+    background: transparent;
+    color: var(--fgp-navy);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 8px 18px;
+    border: 2px solid var(--fgp-navy);
+  }
+
   .fgp-hb--stressbiotic .fgp-hb__heading,
   .fgp-hb--quiz .fgp-hb__heading { font-size: 28px; }
 
@@ -373,7 +426,7 @@
   .fgp-hb--stressbiotic .fgp-hb__heading { font-size: 32px; }
   .fgp-hb--quiz .fgp-hb__heading { font-size: 28px; }
 
-  .fgp-hb--stressbiotic .fgp-hb__product-image { width: 260px; }
+  .fgp-hb--stressbiotic .fgp-hb__product-image { width: 300px; height: 380px; }
   .fgp-hb--quiz .fgp-hb__product-image--quiz { width: 320px; }
 }
 </style>
@@ -405,10 +458,16 @@
       "default": "PLANT-BASED PSYCHOBIOTIC"
     },
     {
-      "type": "textarea",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Your mind & gut, finally made peace"
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — Line 1 (white)",
+      "default": "Your mind & gut,"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — Line 2 (blue)",
+      "default": "finally made peace"
     },
     {
       "type": "textarea",
