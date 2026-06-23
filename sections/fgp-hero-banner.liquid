@@ -40,7 +40,7 @@
           <img
             class="fgp-hb__product-image"
             src="{{ section.settings.product_image | img_url: '600x' }}"
-            alt="{{ section.settings.heading }}"
+            alt="{{ section.settings.heading_line1 }}"
             loading="eager"
           >
         {% endif %}
@@ -74,7 +74,7 @@
           <img
             class="fgp-hb__product-image"
             src="{{ section.settings.product_image | img_url: '400x' }}"
-            alt="{{ section.settings.heading }}"
+            alt="{{ section.settings.heading_line1 }}"
             loading="eager"
           >
         {% endif %}
@@ -162,12 +162,6 @@
 
 <style>
 .fgp-hb {
-  --fgp-navy:  #234092;
-  --fgp-blue:  #45bfef;
-  --fgp-gold:  #FED304;
-  --fgp-white: #ffffff;
-  --fgp-font:  'Poppins', sans-serif;
-
   font-family: var(--fgp-font);
   width: 100%;
   overflow: hidden;
@@ -234,13 +228,13 @@
 }
 
 .fgp-hb__pill {
-  background: rgba(255,255,255,0.12);
-  color: var(--fgp-white);
+  background: transparent;
+  color: var(--fgp-light-blue-pill);
   font-size: 12px;
   font-weight: 500;
   border-radius: 100px;
   padding: 6px 16px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid var(--fgp-light-blue-pill);
 }
 
 .fgp-hb__ctas {
@@ -374,6 +368,9 @@
     flex-direction: column;
     padding: 40px 20px 0;
     gap: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
   }
 
   .fgp-hb--stressbiotic .fgp-hb__image-wrap {

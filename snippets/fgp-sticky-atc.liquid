@@ -1,0 +1,220 @@
+{% comment %}
+  FGP Sticky Add to Cart Bar
+  Usage: {% render 'fgp-sticky-atc', product: product, section: section %}
+  Appears fixed at the bottom after user scrolls past the main ATC button.
+  All content driven by the product object + schema settings passed in.
+{% endcomment %}
+
+{% unless product == blank %}
+<div
+  class="fgp-satc"
+  id="fgp-satc-{{ section.id }}"
+  aria-hidden="true"
+  role="complementary"
+  aria-label="Quick add to cart"
+>
+  <div class="fgp-satc__inner">
+
+    <div class="fgp-satc__info">
+      {% if product.featured_image %}
+        <img
+          class="fgp-satc__thumb"
+          src="{{ product.featured_image | img_url: '80x80', crop: 'center' }}"
+          alt="{{ product.title | escape }}"
+          loading="lazy"
+          width="40"
+          height="40"
+        >
+      {% endif %}
+      <div class="fgp-satc__meta">
+        <p class="fgp-satc__title">{{ product.title }}</p>
+        <p class="fgp-satc__price">
+          {{ product.selected_or_first_available_variant.price | money }}
+        </p>
+      </div>
+    </div>
+
+    <div class="fgp-satc__actions">
+      {%- form 'product', product, id: 'fgp-satc-form', class: 'fgp-satc__form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" name="add" class="fgp-satc__btn fgp-satc__btn--atc">
+          {{ 'products.product.add_to_cart' | t | default: 'Add to Cart' }}
+        </button>
+      {%- endform -%}
+
+      {% if product.selling_plan_groups.size > 0 %}
+        <a href="{{ product.url }}" class="fgp-satc__btn fgp-satc__btn--bin">
+          Buy it now
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<style>
+.fgp-satc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--fgp-white);
+  border-top: 1px solid rgba(35, 64, 146, 0.12);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-family: var(--fgp-font-primary);
+}
+
+.fgp-satc.is-visible {
+  transform: translateY(0);
+}
+
+.fgp-satc__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 12px var(--section-px-mobile);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (min-width: 990px) {
+  .fgp-satc__inner {
+    padding: 14px var(--section-px-desktop);
+  }
+}
+
+.fgp-satc__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fgp-satc__thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-card-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.fgp-satc__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fgp-satc__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgp-dark-cornflower-blue);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fgp-satc__price {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fgp-muted-gray);
+  margin: 0;
+}
+
+.fgp-satc__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.fgp-satc__form { margin: 0; }
+
+.fgp-satc__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fgp-font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: var(--radius-atc-btn);
+  padding: 11px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+}
+
+.fgp-satc__btn:hover { opacity: 0.85; }
+
+.fgp-satc__btn--atc {
+  background: var(--fgp-deeper-blue);
+  color: var(--fgp-white);
+}
+
+.fgp-satc__btn--bin {
+  background: var(--fgp-orange-yellow);
+  color: var(--fgp-dark-cornflower-blue);
+}
+
+/* Hide product info on very small screens to keep bar compact */
+@media (max-width: 479px) {
+  .fgp-satc__info { display: none; }
+  .fgp-satc__actions { width: 100%; }
+  .fgp-satc__btn { flex: 1; }
+}
+</style>
+
+<script>
+(function() {
+  var bar = document.getElementById('fgp-satc-{{ section.id }}');
+  if (!bar) return;
+
+  /* Find the main ATC button on the page to use as the trigger sentinel */
+  var trigger = document.querySelector('.product-form__submit, [name="add"]');
+  if (!trigger) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        bar.classList.add('is-visible');
+        bar.setAttribute('aria-hidden', 'false');
+      } else {
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(trigger);
+
+  /* Sync variant selection from main product form */
+  document.addEventListener('change', function(e) {
+    var input = e.target.closest('[name="id"]');
+    if (!input) return;
+    var satcId = bar.querySelector('[name="id"]');
+    if (satcId) satcId.value = input.value;
+
+    var variant = window.__fgpVariants && window.__fgpVariants[input.value];
+    if (variant) {
+      var priceEl = bar.querySelector('.fgp-satc__price');
+      if (priceEl && variant.price) {
+        priceEl.textContent = (variant.price / 100).toLocaleString('en-US', {
+          style: 'currency', currency: '{{ shop.currency }}'
+        });
+      }
+    }
+  });
+})();
+</script>
+{% endunless %}

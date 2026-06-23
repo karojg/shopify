@@ -1,0 +1,189 @@
+/* ============================================================
+   Feel Good Pharma — Stressbiotic Design Tokens
+   Source of truth: design-tokens.md (extracted from Figma)
+   Import this file in layout/theme.liquid
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@300;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+
+  /* ── Colors ── */
+  --fgp-dark-cornflower-blue: #234092;   /* primary bg, hero, footer */
+  --fgp-picton-blue:          #45bfef;   /* header, slide menu, accent */
+  --fgp-cyber-grape:          #65438a;   /* section H2 headings */
+  --fgp-orange-yellow:        #fdb921;   /* yellow CTA, stepper, promo bar */
+  --fgp-orange-yellow-alt:    #fed304;   /* hero "Shop Now" button */
+  --fgp-save-badge:           #fed83f;   /* SAVE 5% badge */
+  --fgp-deeper-blue:          #144ca1;   /* desktop Add to Cart button */
+  --fgp-near-white:           #f8f8f8;   /* alternating section bg */
+  --fgp-white:                #ffffff;
+  --fgp-light-green:          #f6f9ea;   /* Stressbiotic table column */
+  --fgp-light-gray:           #ebebeb;   /* competitor table column */
+  --fgp-off-white:            #fdfbf7;   /* video card bg */
+  --fgp-dark-text:            #2e2a39;   /* body text */
+  --fgp-body-text:            #303c43;   /* product card text */
+  --fgp-heading-dark:         #252f35;   /* doctor / reviewer names */
+  --fgp-muted-gray:           #8e8e93;   /* social handles, secondary info */
+  --fgp-light-blue-pill:      #99dbfc;   /* hero benefit pill borders */
+  --fgp-star-gold:            #ffaa47;   /* star rating */
+  --fgp-hero-text-muted:      rgba(255, 255, 255, 0.8);
+  --fgp-nav-divider:          rgba(255, 255, 255, 0.2);
+
+  /* ── Typography ── */
+  --fgp-font-primary:   'Poppins', sans-serif;
+  --fgp-font-ui:        'Inter', sans-serif;
+  --fgp-font-display:   'Nunito', sans-serif;
+
+  /* ── Spacing ── */
+  --space-4:    4px;
+  --space-8:    8px;
+  --space-10:   10px;
+  --space-12:   12px;
+  --space-14:   14px;
+  --space-16:   16px;
+  --space-18:   18px;
+  --space-20:   20px;
+  --space-24:   24px;
+  --space-26:   26.5px;
+  --space-27:   27.264px;
+  --space-30:   30px;
+  --space-40:   40px;
+  --space-48:   48px;
+  --space-50:   50px;
+  --space-54:   54px;
+  --space-60:   60px;
+  --space-64:   64px;
+  --space-72:   72px;
+  --space-80:   80px;
+  --space-100:  100px;
+  --space-108:  108px;
+  --space-200:  200px;
+
+  /* ── Border Radius ── */
+  --radius-pill:       100px;    /* CTA buttons, benefit pills */
+  --radius-atc-btn:    41px;     /* Add to Cart / Buy it now */
+  --radius-card-sm:    16px;     /* review cards, thumbnails */
+  --radius-card-md:    20px;     /* FAQ accordion items */
+  --radius-card-lg:    24px;     /* video card, table, product images */
+  --radius-card-xl:    27.264px; /* "Who Is It For" cards */
+  --radius-avatar:     100px;    /* doctor profile photos */
+  --radius-tag:        8px;      /* table subheading cells */
+
+  /* ── Shadows ── */
+  --shadow-card:       0px 4px 3px rgba(0, 0, 0, 0.08);
+  --shadow-video:      10px 10px 17.5px rgba(46, 42, 57, 0.05);
+  --shadow-hero:       0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* ── Short aliases (used by existing section <style> blocks) ── */
+  --fgp-navy:    #234092;
+  --fgp-blue:    #45bfef;
+  --fgp-purple:  #65438a;
+  --fgp-gold:    #fdb921;
+  --fgp-offwhite: #f8f8f8;
+  --fgp-green:   #2ecc71;
+  --fgp-font:    'Poppins', sans-serif;
+
+  /* ── Section layout ── */
+  --section-px-desktop:  108px;
+  --section-py-desktop:  100px;
+  --section-px-mobile:   20px;
+  --section-py-mobile:   60px;
+  --content-max-width:   1280px;
+}
+
+/* ── Base resets scoped to FGP sections ── */
+.fgp-section *,
+.fgp-section *::before,
+.fgp-section *::after {
+  box-sizing: border-box;
+}
+
+.fgp-section {
+  font-family: var(--fgp-font-primary);
+  color: var(--fgp-dark-text);
+}
+
+/* ── Shared section heading styles ── */
+.fgp-section__eyebrow {
+  font-family: var(--fgp-font-primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.fgp-section__h2 {
+  font-family: var(--fgp-font-primary);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.68px;
+  color: var(--fgp-cyber-grape);
+  margin: 0 0 var(--space-16);
+}
+
+.fgp-section__subtext {
+  font-family: var(--fgp-font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Shared button styles ── */
+.fgp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fgp-font-primary);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  padding: 14px 32px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.fgp-btn:hover { opacity: 0.85; }
+
+.fgp-btn--primary {
+  background: var(--fgp-picton-blue);
+  color: var(--fgp-white);
+}
+
+.fgp-btn--secondary {
+  background: var(--fgp-orange-yellow-alt);
+  color: var(--fgp-dark-cornflower-blue);
+}
+
+.fgp-btn--dark {
+  background: var(--fgp-dark-cornflower-blue);
+  color: var(--fgp-white);
+}
+
+.fgp-btn--yellow {
+  background: var(--fgp-orange-yellow);
+  color: var(--fgp-dark-cornflower-blue);
+}
+
+.fgp-btn--atc {
+  background: var(--fgp-deeper-blue);
+  color: var(--fgp-white);
+  border-radius: var(--radius-atc-btn);
+  width: 100%;
+}
+
+.fgp-btn--bin {
+  background: var(--fgp-orange-yellow);
+  color: var(--fgp-dark-cornflower-blue);
+  border-radius: var(--radius-atc-btn);
+  width: 100%;
+}
