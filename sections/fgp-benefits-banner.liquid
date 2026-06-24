@@ -23,7 +23,7 @@
     {% endif %}
   </div>
 
-  <div class="fgp-bb__middle">
+  <div class="fgp-bb__right">
     {% if section.blocks.size > 0 %}
       <ul class="fgp-bb__list">
         {% for block in section.blocks %}
@@ -48,16 +48,16 @@
         {% endfor %}
       </ul>
     {% endif %}
-  </div>
 
-  <div class="fgp-bb__image-panel">
     {% if section.settings.product_image != blank %}
-      <img
-        class="fgp-bb__product-image"
-        src="{{ section.settings.product_image | img_url: '600x' }}"
-        alt="{{ section.settings.heading }}"
-        loading="lazy"
-      >
+      <div class="fgp-bb__bottle">
+        <img
+          class="fgp-bb__product-image"
+          src="{{ section.settings.product_image | img_url: '600x' }}"
+          alt="{{ section.settings.heading }}"
+          loading="lazy"
+        >
+      </div>
     {% endif %}
   </div>
 
@@ -69,12 +69,12 @@
   display: flex;
   width: 100%;
   min-height: 340px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* ── Left panel — navy ── */
 .fgp-bb__left {
-  flex: 0 0 40%;
+  flex: 0 0 50%;
   background: var(--fgp-navy);
   position: relative;
   display: flex;
@@ -91,13 +91,12 @@
 
 .fgp-bb__decoration {
   position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 90%;
+  right: 0;
+  top: 0;
+  height: 100%;
   width: auto;
   object-fit: contain;
-  opacity: 0.25;
+  object-position: right center;
   pointer-events: none;
 }
 
@@ -125,13 +124,16 @@
   line-height: 1.65;
 }
 
-/* ── Middle panel — light blue ── */
-.fgp-bb__middle {
-  flex: 1;
+/* ── Right panel — light blue ── */
+.fgp-bb__right {
+  flex: 0 0 50%;
   background: var(--fgp-blue);
   display: flex;
   align-items: center;
   padding: 48px 40px;
+  gap: 24px;
+  overflow: hidden;
+  position: relative;
 }
 
 .fgp-bb__list {
@@ -141,7 +143,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
+  flex: 1;
 }
 
 .fgp-bb__item {
@@ -159,7 +161,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
 }
 
 .fgp-bb__icon-img {
@@ -176,15 +177,12 @@
   line-height: 1.3;
 }
 
-/* ── Right panel — light blue + bottle ── */
-.fgp-bb__image-panel {
-  flex: 0 0 26%;
-  background: var(--fgp-blue);
+/* ── Bottle ── */
+.fgp-bb__bottle {
+  flex-shrink: 0;
   position: relative;
-  overflow: visible;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  width: 220px;
+  align-self: stretch;
 }
 
 .fgp-bb__product-image {
@@ -192,53 +190,43 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 140%;
+  height: 100%;
   width: auto;
-  max-width: none;
   object-fit: contain;
   object-position: bottom center;
-  display: block;
 }
 
 /* ── Mobile ── */
 @media (max-width: 767px) {
-  .fgp-bb {
-    flex-direction: column;
-    min-height: unset;
-  }
+  .fgp-bb { flex-direction: column; min-height: unset; }
 
-  .fgp-bb__left {
-    flex: none;
-    padding: 40px 20px;
-  }
-
+  .fgp-bb__left { flex: none; padding: 40px 20px; }
   .fgp-bb__decoration { display: none; }
-
   .fgp-bb__heading { font-size: 22px; }
 
-  .fgp-bb__middle {
+  .fgp-bb__right {
     flex: none;
-    padding: 32px 20px;
+    flex-direction: column;
+    padding: 32px 20px 0;
+    gap: 0;
   }
 
-  .fgp-bb__image-panel {
-    flex: none;
-    height: 220px;
+  .fgp-bb__bottle {
+    width: 180px;
+    height: 200px;
+    align-self: center;
+    margin-top: 24px;
   }
 
-  .fgp-bb__product-image {
-    height: 100%;
-    width: auto;
-    max-width: 200px;
-  }
+  .fgp-bb__product-image { height: 100%; }
 }
 
 /* ── Tablet ── */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-bb__left { flex: 0 0 38%; padding: 40px 28px; }
+  .fgp-bb__left { flex: 0 0 50%; padding: 40px 28px; }
   .fgp-bb__heading { font-size: 24px; }
-  .fgp-bb__middle { padding: 40px 28px; }
-  .fgp-bb__image-panel { flex: 0 0 24%; }
+  .fgp-bb__right { padding: 40px 28px; }
+  .fgp-bb__bottle { width: 180px; }
 }
 </style>
 
@@ -268,13 +256,13 @@
     {
       "type": "image_picker",
       "id": "decoration",
-      "label": "Left panel decoration image (optional)",
-      "info": "Subtle illustration shown on the right side of the navy panel"
+      "label": "Left panel decoration image",
+      "info": "Faint illustration on the right side of the navy panel"
     },
     {
       "type": "image_picker",
       "id": "product_image",
-      "label": "Product Image (right panel)"
+      "label": "Product Image"
     }
   ],
   "blocks": [
