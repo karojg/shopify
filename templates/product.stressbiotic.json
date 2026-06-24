@@ -559,26 +559,6 @@
         "eyebrow": "WHAT OUR CUSTOMERS SAY",
         "heading": "Loved by Customers"
       }
-    },
-    "fgp_footer": {
-      "type": "fgp-footer",
-      "settings": {
-        "address": "Plaza Florencia\nEscazú, Costa Rica",
-        "hours": "Mon - Fri 8 a.m. - 8 p.m.\nSat - Sun 9 a.m. - 4 p.m.",
-        "menu_1_heading": "Company",
-        "menu_1": "footer",
-        "menu_2_heading": "Resources",
-        "menu_2": "",
-        "nl_heading": "Subscribe & Save",
-        "nl_subtext": "Sign up for our newsletter and receive 5% off your first order!",
-        "nl_placeholder": "Email",
-        "nl_consent": "I agree to receiving marketing emails and special deals",
-        "nl_success": "Thanks for subscribing!",
-        "copyright": "© 2025 Feel Good Pharma – All rights reserved.",
-        "payment_enable": true,
-        "enable_language_selector": true,
-        "enable_country_selector": true
-      }
     }
   },
   "order": [
@@ -592,7 +572,6 @@
     "fgp_video",
     "fgp_product_faq",
     "fgp_doctor_testimonials",
-    "fgp_customer_reviews",
-    "fgp_footer"
+    "fgp_customer_reviews"
   ]
 }
