@@ -2,9 +2,8 @@
 
 <section class="fgp-bb" aria-label="Benefits banner">
 
-  <!-- Desktop -->
-  <div class="fgp-bb__inner fgp-bb__inner--desk">
-    <div class="fgp-bb__content">
+  <div class="fgp-bb__left">
+    <div class="fgp-bb__left-content">
       {% if section.settings.eyebrow != blank %}
         <p class="fgp-bb__eyebrow">{{ section.settings.eyebrow }}</p>
       {% endif %}
@@ -12,77 +11,53 @@
       {% if section.settings.subtext != blank %}
         <p class="fgp-bb__subtext">{{ section.settings.subtext }}</p>
       {% endif %}
-      {% if section.blocks.size > 0 %}
-        <ul class="fgp-bb__checklist">
-          {% for block in section.blocks %}
-            <li class="fgp-bb__check-item" {{ block.shopify_attributes }}>
-              <span class="fgp-bb__check-icon" aria-hidden="true">
-                {% if block.settings.icon != blank %}
-                  <img src="{{ block.settings.icon | img_url: '32x' }}" alt="" loading="lazy">
-                {% else %}
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="10" fill="#45bfef" fill-opacity="0.2"/>
-                    <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#45bfef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {% endif %}
-              </span>
-              <span>{{ block.settings.label }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
     </div>
-    <div class="fgp-bb__image-wrap">
-      {% if section.settings.product_image != blank %}
-        <img
-          class="fgp-bb__product-image"
-          src="{{ section.settings.product_image | img_url: '600x' }}"
-          alt="{{ section.settings.heading }}"
-          loading="lazy"
-        >
-      {% endif %}
-    </div>
+    {% if section.settings.decoration != blank %}
+      <img
+        class="fgp-bb__decoration"
+        src="{{ section.settings.decoration | img_url: '500x' }}"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      >
+    {% endif %}
   </div>
 
-  <!-- Mobile -->
-  <div class="fgp-bb__inner fgp-bb__inner--mob">
-    <div class="fgp-bb__content">
-      {% if section.settings.eyebrow != blank %}
-        <p class="fgp-bb__eyebrow">{{ section.settings.eyebrow }}</p>
-      {% endif %}
-      <h2 class="fgp-bb__heading">{{ section.settings.heading }}</h2>
-      {% if section.settings.subtext != blank %}
-        <p class="fgp-bb__subtext">{{ section.settings.subtext }}</p>
-      {% endif %}
-    </div>
-    <div class="fgp-bb__image-wrap">
-      {% if section.settings.product_image != blank %}
-        <img
-          class="fgp-bb__product-image"
-          src="{{ section.settings.product_image | img_url: '400x' }}"
-          alt="{{ section.settings.heading }}"
-          loading="lazy"
-        >
-      {% endif %}
-    </div>
+  <div class="fgp-bb__middle">
     {% if section.blocks.size > 0 %}
-      <ul class="fgp-bb__checklist">
+      <ul class="fgp-bb__list">
         {% for block in section.blocks %}
-          <li class="fgp-bb__check-item" {{ block.shopify_attributes }}>
-            <span class="fgp-bb__check-icon" aria-hidden="true">
+          <li class="fgp-bb__item" {{ block.shopify_attributes }}>
+            <span class="fgp-bb__icon-wrap" aria-hidden="true">
               {% if block.settings.icon != blank %}
-                <img src="{{ block.settings.icon | img_url: '32x' }}" alt="" loading="lazy">
+                <img
+                  class="fgp-bb__icon-img"
+                  src="{{ block.settings.icon | img_url: '48x' }}"
+                  alt=""
+                  loading="lazy"
+                >
               {% else %}
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <circle cx="10" cy="10" r="10" fill="#45bfef" fill-opacity="0.2"/>
-                  <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#45bfef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="10" stroke="white" stroke-width="1.5"/>
+                  <path d="M6.5 11.5L9.5 14.5L15.5 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               {% endif %}
             </span>
-            <span>{{ block.settings.label }}</span>
+            <span class="fgp-bb__label">{{ block.settings.label }}</span>
           </li>
         {% endfor %}
       </ul>
+    {% endif %}
+  </div>
+
+  <div class="fgp-bb__image-panel">
+    {% if section.settings.product_image != blank %}
+      <img
+        class="fgp-bb__product-image"
+        src="{{ section.settings.product_image | img_url: '600x' }}"
+        alt="{{ section.settings.heading }}"
+        loading="lazy"
+      >
     {% endif %}
   </div>
 
@@ -91,26 +66,39 @@
 <style>
 .fgp-bb {
   font-family: var(--fgp-font);
-  background: var(--fgp-navy);
+  display: flex;
   width: 100%;
-  overflow: hidden;
+  min-height: 340px;
+  overflow: visible;
 }
 
-.fgp-bb__inner--desk {
+/* ── Left panel — navy ── */
+.fgp-bb__left {
+  flex: 0 0 40%;
+  background: var(--fgp-navy);
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 48px;
-  gap: 48px;
+  overflow: hidden;
+  padding: 48px 40px;
 }
 
-.fgp-bb__inner--mob { display: none; }
+.fgp-bb__left-content {
+  position: relative;
+  z-index: 1;
+  max-width: 380px;
+}
 
-.fgp-bb__content {
-  flex: 1;
-  max-width: 520px;
+.fgp-bb__decoration {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 .fgp-bb__eyebrow {
@@ -123,89 +111,134 @@
 }
 
 .fgp-bb__heading {
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--fgp-white);
   margin: 0 0 16px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .fgp-bb__subtext {
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(255,255,255,0.75);
-  margin: 0 0 32px;
-  line-height: 1.6;
+  margin: 0;
+  line-height: 1.65;
 }
 
-.fgp-bb__checklist {
+/* ── Middle panel — light blue ── */
+.fgp-bb__middle {
+  flex: 1;
+  background: var(--fgp-blue);
+  display: flex;
+  align-items: center;
+  padding: 48px 40px;
+}
+
+.fgp-bb__list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.fgp-bb__item {
+  display: flex;
+  align-items: center;
   gap: 14px;
 }
 
-.fgp-bb__check-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--fgp-white);
-}
-
-.fgp-bb__check-icon {
+.fgp-bb__icon-wrap {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
-.fgp-bb__check-icon img {
+.fgp-bb__icon-img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
-.fgp-bb__image-wrap {
-  flex-shrink: 0;
+.fgp-bb__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fgp-white);
+  line-height: 1.3;
+}
+
+/* ── Right panel — light blue + bottle ── */
+.fgp-bb__image-panel {
+  flex: 0 0 26%;
+  background: var(--fgp-blue);
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .fgp-bb__product-image {
-  width: 360px;
-  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 140%;
+  width: auto;
+  max-width: none;
   object-fit: contain;
+  object-position: bottom center;
   display: block;
 }
 
-/* Mobile */
+/* ── Mobile ── */
 @media (max-width: 767px) {
-  .fgp-bb__inner--desk { display: none; }
-
-  .fgp-bb__inner--mob {
-    display: flex;
+  .fgp-bb {
     flex-direction: column;
-    padding: 40px 20px 48px;
-    gap: 0;
+    min-height: unset;
   }
 
-  .fgp-bb__heading { font-size: 24px; }
+  .fgp-bb__left {
+    flex: none;
+    padding: 40px 20px;
+  }
+
+  .fgp-bb__decoration { display: none; }
+
+  .fgp-bb__heading { font-size: 22px; }
+
+  .fgp-bb__middle {
+    flex: none;
+    padding: 32px 20px;
+  }
+
+  .fgp-bb__image-panel {
+    flex: none;
+    height: 220px;
+  }
 
   .fgp-bb__product-image {
-    width: 100%;
-    max-width: 260px;
-    margin: 20px auto;
+    height: 100%;
+    width: auto;
+    max-width: 200px;
   }
 }
 
-/* Tablet */
+/* ── Tablet ── */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-bb__inner--desk { padding: 48px 32px; gap: 32px; }
-  .fgp-bb__heading { font-size: 28px; }
-  .fgp-bb__product-image { width: 280px; }
+  .fgp-bb__left { flex: 0 0 38%; padding: 40px 28px; }
+  .fgp-bb__heading { font-size: 24px; }
+  .fgp-bb__middle { padding: 40px 28px; }
+  .fgp-bb__image-panel { flex: 0 0 24%; }
 }
 </style>
 
@@ -219,8 +252,7 @@
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "WHY STRESSBIOTIC"
+      "label": "Eyebrow"
     },
     {
       "type": "textarea",
@@ -235,8 +267,14 @@
     },
     {
       "type": "image_picker",
+      "id": "decoration",
+      "label": "Left panel decoration image (optional)",
+      "info": "Subtle illustration shown on the right side of the navy panel"
+    },
+    {
+      "type": "image_picker",
       "id": "product_image",
-      "label": "Product Image"
+      "label": "Product Image (right panel)"
     }
   ],
   "blocks": [
@@ -262,10 +300,11 @@
     {
       "name": "FGP Benefits Banner",
       "blocks": [
-        { "type": "benefit", "settings": { "label": "Reduces Stress" } },
+        { "type": "benefit", "settings": { "label": "Improves sleep" } },
+        { "type": "benefit", "settings": { "label": "Reduce Stress" } },
         { "type": "benefit", "settings": { "label": "Supports Gut Health" } },
-        { "type": "benefit", "settings": { "label": "Adaptogens and Psychobiotics" } },
-        { "type": "benefit", "settings": { "label": "Supports GI balance" } }
+        { "type": "benefit", "settings": { "label": "Adaptogen and Psychobiotic" } },
+        { "type": "benefit", "settings": { "label": "Supports IBS Patients" } }
       ]
     }
   ]

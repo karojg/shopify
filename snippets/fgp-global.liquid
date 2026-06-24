@@ -195,11 +195,16 @@ fieldset.js-contents legend,
 .product-form__submit,
 button.product-form__submit,
 .product-form__submit[disabled],
-.product-form__submit:disabled {
+.product-form__submit:disabled,
+.product-form__submit[aria-disabled="true"],
+.product-form__submit.button--secondary,
+.product-form__submit.button {
   font-family: var(--fgp-font-primary) !important;
   background: var(--fgp-deeper-blue) !important;
   color: var(--fgp-white) !important;
   border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   border-radius: var(--radius-pill) !important;
   font-weight: 600 !important;
   letter-spacing: 1px !important;
