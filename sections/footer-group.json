@@ -16,21 +16,13 @@
       "name": "FGP Footer",
       "settings": {
         "logo": "shopify://shop_images/FG-Logo_white.png",
-        "address": "Plaza Florencia\nEscazú, Costa Rica",
-        "hours": "Mon - Fri 8 a.m. - 8 p.m.\nSat -  Sun 9 a.m. - 4 p.m.",
-        "menu_1_heading": "Company",
         "menu_1": "footer",
-        "menu_2_heading": "Resources",
         "menu_2": "",
-        "nl_heading": "Subscribe & Save",
-        "nl_subtext": "Sign up for our newsletter and receive 5% off your first order!",
-        "nl_placeholder": "Email",
-        "nl_consent": "I agree to receiving marketing emails and special deals",
+        "nl_heading": "Subscribe to our newsletter",
+        "nl_placeholder": "your@email.com",
+        "nl_btn": "Join",
         "nl_success": "Thanks for subscribing!",
-        "copyright": "© 2025 Feel Good Pharma – All rights reserved.",
-        "payment_enable": true,
-        "enable_language_selector": true,
-        "enable_country_selector": true
+        "copyright": "© 2026 Feel Good Pharma. All rights reserved."
       }
     }
   },

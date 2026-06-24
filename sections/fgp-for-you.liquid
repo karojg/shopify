@@ -12,46 +12,40 @@
     {% endif %}
   </div>
 
-  <!-- Desktop grid -->
-  <div class="fgp-fy__grid fgp-fy__grid--desk">
+  <div class="fgp-fy__grid">
     {% for block in section.blocks %}
       <div class="fgp-fy__card" {{ block.shopify_attributes }}>
-        <div class="fgp-fy__icon-wrap">
-          {% if block.settings.icon != blank %}
-            <img src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.title }}" loading="lazy" class="fgp-fy__icon">
-          {% else %}
-            <div class="fgp-fy__icon-placeholder"></div>
-          {% endif %}
-        </div>
-        <h3 class="fgp-fy__card-title">{{ block.settings.title }}</h3>
-        {% if block.settings.description != blank %}
-          <p class="fgp-fy__card-desc">{{ block.settings.description }}</p>
-        {% endif %}
-        {% if block.settings.cta_label != blank %}
-          <a href="{{ block.settings.cta_url | default: '#' }}" class="fgp-fy__cta">{{ block.settings.cta_label }}</a>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
 
-  <!-- Mobile grid -->
-  <div class="fgp-fy__grid fgp-fy__grid--mob">
-    {% for block in section.blocks %}
-      <div class="fgp-fy__card" {{ block.shopify_attributes }}>
         <div class="fgp-fy__icon-wrap">
           {% if block.settings.icon != blank %}
-            <img src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.title }}" loading="lazy" class="fgp-fy__icon">
-          {% else %}
-            <div class="fgp-fy__icon-placeholder"></div>
+            <img
+              class="fgp-fy__icon-img"
+              src="{{ block.settings.icon | img_url: '80x' }}"
+              alt="{{ block.settings.title }}"
+              loading="lazy"
+            >
           {% endif %}
         </div>
+
+        {% if block.settings.for_label != blank %}
+          <p class="fgp-fy__for">{{ block.settings.for_label }}</p>
+        {% endif %}
+
         <h3 class="fgp-fy__card-title">{{ block.settings.title }}</h3>
+
         {% if block.settings.description != blank %}
           <p class="fgp-fy__card-desc">{{ block.settings.description }}</p>
         {% endif %}
-        {% if block.settings.cta_label != blank %}
-          <a href="{{ block.settings.cta_url | default: '#' }}" class="fgp-fy__cta">{{ block.settings.cta_label }}</a>
+
+        {% if block.settings.tags != blank %}
+          <div class="fgp-fy__tags">
+            {% assign tag_list = block.settings.tags | split: ',' %}
+            {% for tag in tag_list %}
+              <span class="fgp-fy__tag">{{ tag | strip }}</span>
+            {% endfor %}
+          </div>
         {% endif %}
+
       </div>
     {% endfor %}
   </div>
@@ -98,102 +92,109 @@
 }
 
 /* Grid */
-.fgp-fy__grid--desk {
+.fgp-fy__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.fgp-fy__grid--mob { display: none; }
-
 /* Card */
 .fgp-fy__card {
   background: var(--fgp-white);
-  border-radius: var(--radius-card-xl);
-  padding: 28px 20px;
+  border-radius: 20px;
+  padding: 24px 20px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 6px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
 }
 
+/* Purple circle icon */
 .fgp-fy__icon-wrap {
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--fgp-purple);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 14px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
-.fgp-fy__icon {
-  width: 68px;
-  height: 68px;
+.fgp-fy__icon-img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
-.fgp-fy__icon-placeholder {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  background: #dce8f5;
+/* "FOR" label */
+.fgp-fy__for {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--fgp-blue);
+  margin: 0;
+  line-height: 1;
 }
 
 .fgp-fy__card-title {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--fgp-navy);
-  margin: 0;
-  line-height: 1.3;
+  margin: 0 0 4px;
+  line-height: 1.25;
 }
 
 .fgp-fy__card-desc {
-  font-size: 13px;
-  color: var(--fgp-navy);
-  opacity: 0.7;
-  margin: 0;
-  line-height: 1.5;
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 12px;
+  line-height: 1.6;
   flex: 1;
 }
 
-.fgp-fy__cta {
-  display: inline-block;
-  background: var(--fgp-navy);
-  color: var(--fgp-white);
-  font-family: var(--fgp-font);
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 100px;
-  padding: 9px 20px;
-  text-decoration: none;
-  margin-top: auto;
-  transition: opacity 0.2s;
+/* Tags */
+.fgp-fy__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
 }
 
-.fgp-fy__cta:hover { opacity: 0.85; }
+.fgp-fy__tag {
+  background: #d8eefb;
+  color: var(--fgp-navy);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--fgp-font);
+  border-radius: 100px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-fy__grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+  }
+}
 
 /* Mobile */
 @media (max-width: 767px) {
   .fgp-fy { padding: 40px 20px; }
   .fgp-fy__heading { font-size: 22px; }
-  .fgp-fy__grid--desk { display: none; }
-  .fgp-fy__grid--mob {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-fy__grid--desk {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 700px;
+  .fgp-fy__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 480px;
   }
 }
 </style>
@@ -235,6 +236,13 @@
         },
         {
           "type": "text",
+          "id": "for_label",
+          "label": "\"For\" label",
+          "default": "FOR",
+          "info": "e.g. FOR"
+        },
+        {
+          "type": "text",
           "id": "title",
           "label": "Title",
           "default": "Business people"
@@ -247,14 +255,9 @@
         },
         {
           "type": "text",
-          "id": "cta_label",
-          "label": "CTA Label",
-          "default": "Learn More"
-        },
-        {
-          "type": "url",
-          "id": "cta_url",
-          "label": "CTA URL"
+          "id": "tags",
+          "label": "Tags (comma-separated)",
+          "info": "e.g. Cortisol support, Focus"
         }
       ]
     }
@@ -263,10 +266,42 @@
     {
       "name": "FGP Is It For You?",
       "blocks": [
-        { "type": "persona", "settings": { "title": "Business people", "description": "A plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.", "cta_label": "Learn More" } },
-        { "type": "persona", "settings": { "title": "IBS patients", "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.", "cta_label": "Learn More" } },
-        { "type": "persona", "settings": { "title": "Very stressed people", "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.", "cta_label": "Learn More" } },
-        { "type": "persona", "settings": { "title": "Sleep-troubled people", "description": "Formulated with strains clinically linked to improved sleep quality and duration.", "cta_label": "Learn More" } }
+        {
+          "type": "persona",
+          "settings": {
+            "for_label": "FOR",
+            "title": "Business people",
+            "description": "Stressbiotic addresses the gut-brain axis so performance doesn't come at the cost of gut health.",
+            "tags": "Cortisol support, Focus"
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "for_label": "FOR",
+            "title": "IBS patients",
+            "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.",
+            "tags": "Gut health, Microbiome"
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "for_label": "FOR",
+            "title": "Very stressed people",
+            "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.",
+            "tags": "Stress relief, Adaptogen"
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "for_label": "FOR",
+            "title": "Sleep-troubled people",
+            "description": "Formulated with strains clinically linked to improved sleep quality and duration.",
+            "tags": "Sleep, Recovery"
+          }
+        }
       ]
     }
   ]

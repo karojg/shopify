@@ -314,37 +314,37 @@
         "p_1": {
           "type": "persona",
           "settings": {
+            "for_label": "FOR",
             "title": "Business people",
-            "description": "A plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.",
-            "cta_label": "Learn More",
-            "cta_url": ""
+            "description": "Stressbiotic addresses the gut-brain axis so performance doesn't come at the cost of gut health.",
+            "tags": "Cortisol support, Focus"
           }
         },
         "p_2": {
           "type": "persona",
           "settings": {
+            "for_label": "FOR",
             "title": "IBS patients",
             "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.",
-            "cta_label": "Learn More",
-            "cta_url": ""
+            "tags": "Gut health, Microbiome"
           }
         },
         "p_3": {
           "type": "persona",
           "settings": {
+            "for_label": "FOR",
             "title": "Very stressed people",
             "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.",
-            "cta_label": "Learn More",
-            "cta_url": ""
+            "tags": "Stress relief, Adaptogen"
           }
         },
         "p_4": {
           "type": "persona",
           "settings": {
+            "for_label": "FOR",
             "title": "Sleep-troubled people",
             "description": "Formulated with strains clinically linked to improved sleep quality and duration.",
-            "cta_label": "Learn More",
-            "cta_url": ""
+            "tags": "Sleep, Recovery"
           }
         }
       },
