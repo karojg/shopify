@@ -224,17 +224,44 @@
   .fgp-revs__grid { gap: 28px; }
 }
 
-/* Mobile */
+/* Mobile — carousel */
 @media (max-width: 767px) {
   .fgp-revs {
-    padding: 40px 20px 48px;
+    padding: 40px 0 48px;
+  }
+
+  .fgp-revs__header {
+    padding: 0 20px;
   }
 
   .fgp-revs__heading { font-size: 22px; }
 
   .fgp-revs__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: unset;
     gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 20px 16px 20px;
+    margin: 0;
+    max-width: none;
+    scrollbar-width: none;
+  }
+
+  .fgp-revs__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fgp-revs__card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  .fgp-revs__card:last-child {
+    margin-right: 20px;
   }
 }
 </style>
