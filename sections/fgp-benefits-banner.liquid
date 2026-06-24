@@ -198,27 +198,77 @@
 
 /* ── Mobile ── */
 @media (max-width: 767px) {
-  .fgp-bb { flex-direction: column; min-height: unset; }
+  .fgp-benefits-banner {
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
 
-  .fgp-bb__left { flex: none; padding: 40px 20px; }
-  .fgp-bb__decoration { display: none; }
-  .fgp-bb__heading { font-size: 22px; }
+  .fgp-bb {
+    flex-direction: column;
+    min-height: unset;
+    border-radius: 20px;
+  }
 
+  /* Navy top */
+  .fgp-bb__left {
+    flex: none;
+    padding: 32px 20px 48px;
+    min-height: 260px;
+  }
+
+  /* Keep decoration visible on mobile */
+  .fgp-bb__decoration {
+    display: block;
+  }
+
+  .fgp-bb__heading { font-size: 26px; }
+
+  /* Light blue bottom: bottle left | benefits right */
   .fgp-bb__right {
     flex: none;
-    flex-direction: column;
-    padding: 32px 20px 0;
-    gap: 0;
+    background: var(--fgp-blue);
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 20px 20px 28px 0;
+    gap: 8px;
+    min-height: 260px;
+    overflow: hidden;
   }
 
+  .fgp-bb__list {
+    flex: 1;
+    gap: 14px;
+    padding-top: 16px;
+  }
+
+  .fgp-bb__label {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .fgp-bb__icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Bottle on LEFT, overflowing upward */
   .fgp-bb__bottle {
-    width: 180px;
-    height: 200px;
-    align-self: center;
-    margin-top: 24px;
+    order: -1;
+    flex-shrink: 0;
+    width: 150px;
+    align-self: flex-end;
+    height: 320px;
+    margin-top: -80px;
   }
 
-  .fgp-bb__product-image { height: 100%; }
+  .fgp-bb__product-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+  }
 }
 
 /* ── Tablet ── */
