@@ -29,10 +29,7 @@
               alt="{{ block.settings.name | default: 'Doctor' }}"
               loading="lazy"
             >
-          {% else %}
-            <div class="fgp-docs__photo fgp-docs__photo--placeholder"></div>
           {% endif %}
-
           <div class="fgp-docs__card-meta">
             <p class="fgp-docs__name">{{ block.settings.name | default: 'Dr. Name' }}</p>
             {% if block.settings.specialty != blank %}
@@ -50,14 +47,10 @@
         </div>
 
         {% if block.settings.quote != blank %}
-          <div class="fgp-docs__quote-wrap">
-            <p class="fgp-docs__quote">
-              <span class="fgp-docs__open-quote">&ldquo;</span>{{ block.settings.quote }}
-            </p>
-            {% if block.settings.quote_url != blank %}
-              <a href="{{ block.settings.quote_url }}" class="fgp-docs__quote-arrow" target="_blank" rel="noopener" aria-label="Read more">→</a>
-            {% endif %}
-          </div>
+          <p class="fgp-docs__quote">&ldquo;{{ block.settings.quote }}</p>
+          {% if block.settings.quote_url != blank %}
+            <a href="{{ block.settings.quote_url }}" class="fgp-docs__quote-arrow" target="_blank" rel="noopener" aria-label="Read more">→</a>
+          {% endif %}
         {% endif %}
 
       </div>
@@ -89,58 +82,49 @@
 }
 
 .fgp-docs__heading {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 600;
   color: var(--fgp-purple);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 /* Grid */
 .fgp-docs__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1200px;
+  gap: 20px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 /* Card */
 .fgp-docs__card {
   background: var(--fgp-white);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  box-shadow: 0px 4px 3px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .fgp-docs__card-top {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Photo — purple border */
+/* Photo — purple border, only shown when photo is uploaded */
 .fgp-docs__photo {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
   flex-shrink: 0;
-  border: 3px solid var(--fgp-purple);
-}
-
-.fgp-docs__photo--placeholder {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: #ede8f5;
-  border: 3px solid var(--fgp-purple);
+  border: 2px solid var(--fgp-purple);
 }
 
 /* Meta */
@@ -151,67 +135,52 @@
 }
 
 .fgp-docs__name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--fgp-navy);
+  font-size: 18px;
+  font-weight: 600;
+  color: #252f35;
   margin: 0;
-  line-height: 1.3;
+  line-height: 26px;
+  letter-spacing: -0.36px;
 }
 
 .fgp-docs__specialty {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--fgp-navy);
-  opacity: 0.65;
+  color: #8e8e93;
   margin: 0;
-  line-height: 1.4;
+  line-height: 26px;
+  letter-spacing: -0.36px;
 }
 
 .fgp-docs__ig {
-  font-size: 13px;
-  color: var(--fgp-navy);
-  opacity: 0.45;
+  font-size: 12px;
+  color: #8e8e93;
   text-decoration: none;
   margin: 0;
+  line-height: 26px;
+  letter-spacing: -0.36px;
   transition: opacity 0.2s;
 }
-.fgp-docs__ig:hover { opacity: 0.8; text-decoration: underline; }
+.fgp-docs__ig:hover { opacity: 0.7; text-decoration: underline; }
 
-/* Quote block — no left border, curly quote only */
-.fgp-docs__quote-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* Quote */
 .fgp-docs__quote {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  color: var(--fgp-navy);
-  line-height: 1.7;
+  color: #303c43;
+  line-height: 1.6;
   margin: 0;
-  font-style: normal;
-  opacity: 0.85;
-}
-
-.fgp-docs__open-quote {
-  font-size: 38px;
-  font-weight: 700;
-  color: var(--fgp-purple);
-  line-height: 0;
-  vertical-align: -0.35em;
-  margin-right: 2px;
-  font-style: normal;
+  flex: 1;
 }
 
 /* Arrow link */
 .fgp-docs__quote-arrow {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--fgp-purple);
   text-decoration: none;
-  align-self: flex-end;
+  align-self: flex-start;
   transition: transform 0.2s;
 }
 .fgp-docs__quote-arrow:hover { transform: translateX(4px); }
@@ -231,8 +200,10 @@
 /* Mobile */
 @media (max-width: 767px) {
   .fgp-docs { padding: 40px 20px 48px; }
-  .fgp-docs__heading { font-size: 22px; }
-  .fgp-docs__grid { grid-template-columns: 1fr; gap: 16px; }
+  .fgp-docs__heading { font-size: 26px; }
+  .fgp-docs__grid { grid-template-columns: 1fr; gap: 14px; }
+  .fgp-docs__name { font-size: 16px; }
+  .fgp-docs__quote { font-size: 14px; line-height: 1.6; }
 }
 </style>
 
