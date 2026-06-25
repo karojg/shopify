@@ -300,6 +300,58 @@
         "aria_label": "Product benefits"
       }
     },
+    "fgp_stressbiotic_feature_mtLqFb": {
+      "type": "fgp-stressbiotic-feature",
+      "blocks": {
+        "benefit_XeNT48": {
+          "type": "benefit",
+          "settings": {
+            "label": "Improves sleep"
+          }
+        },
+        "benefit_BGpXGF": {
+          "type": "benefit",
+          "settings": {
+            "label": "Reduce Stress"
+          }
+        },
+        "benefit_yNqrmt": {
+          "type": "benefit",
+          "settings": {
+            "label": "Supports Gut Health"
+          }
+        },
+        "benefit_gNKyqf": {
+          "type": "benefit",
+          "settings": {
+            "label": "Adaptogen and Psychobiotic"
+          }
+        },
+        "benefit_zXzEUx": {
+          "type": "benefit",
+          "settings": {
+            "label": "Supports IBS Patients"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_XeNT48",
+        "benefit_BGpXGF",
+        "benefit_yNqrmt",
+        "benefit_gNKyqf",
+        "benefit_zXzEUx"
+      ],
+      "name": "FGP Feature 3-Panel",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Your journey to wellness, stress, mental health, and adaptability",
+        "body": "<p>Your gut-brain connection, supported — a plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.</p>",
+        "cta_label": "",
+        "cta_url": "",
+        "product_image": "shopify://shop_images/render-stb.png",
+        "product_image_alt": "Product bottle"
+      }
+    },
     "fgp_products_grid_main": {
       "type": "fgp-products-grid",
       "blocks": {
@@ -468,6 +520,7 @@
     "fgp_kids_symptoms_main",
     "fgp_video_cards_main",
     "fgp_icon_strip_Ya38Fq",
+    "fgp_stressbiotic_feature_mtLqFb",
     "fgp_products_grid_main",
     "fgp_doctor_testimonials_main",
     "fgp_customer_reviews_main",
