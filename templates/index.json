@@ -21,7 +21,8 @@
         "cta1_label": "Learn More",
         "cta1_url": "",
         "cta2_label": "Shop Now",
-        "cta2_url": ""
+        "cta2_url": "",
+        "product_image": "shopify://shop_images/render-stb.png"
       }
     },
     "fgp_logo_carousel_main": {
@@ -283,7 +284,10 @@
       ],
       "name": "FGP Products Grid",
       "settings": {
-        "heading": "Formulated to Costa Rica"
+        "collection": "",
+        "products_to_show": 3,
+        "heading": "Formulated to Costa Rica",
+        "cta_label": "Shop Now"
       }
     },
     "fgp_doctor_testimonials_main": {
