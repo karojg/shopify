@@ -1,57 +1,73 @@
 {% render 'fgp-global' %}
 
+{% assign symptom_words = '' %}
+{% for block in section.blocks %}
+  {% if block.type == 'symptom' %}
+    {% unless forloop.first %}{% assign symptom_words = symptom_words | append: '|' %}{% endunless %}
+    {% assign symptom_words = symptom_words | append: block.settings.label %}
+  {% endif %}
+{% endfor %}
+
 <section class="fgp-hh fgp-hh--v2" aria-label="Hero banner">
   <div class="fgp-hh__inner">
 
-    <!-- LEFT: bottles + badge -->
-    <div class="fgp-hh__media">
-      {% if section.settings.badge_image != blank %}
-        <img class="fgp-hh__badge" src="{{ section.settings.badge_image | img_url: '200x' }}" alt="Recommended by Health Specialists" loading="lazy">
-      {% endif %}
-      <div class="fgp-hh__bottles">
-        {% if section.settings.bottle_1 != blank %}
-          <img class="fgp-hh__b" src="{{ section.settings.bottle_1 | img_url: '400x' }}" alt="" loading="eager">
-        {% endif %}
-        {% if section.settings.bottle_2 != blank %}
-          <img class="fgp-hh__b" src="{{ section.settings.bottle_2 | img_url: '400x' }}" alt="" loading="eager">
-        {% endif %}
-        {% if section.settings.bottle_3 != blank %}
-          <img class="fgp-hh__b" src="{{ section.settings.bottle_3 | img_url: '400x' }}" alt="" loading="eager">
-        {% endif %}
-      </div>
+    <!-- TOP: full-width heading -->
+    <div class="fgp-hh__top">
+      <h1 class="fgp-hh__heading">
+        <span class="fgp-hh__heading-text">{{ section.settings.heading_before | default: 'Is it a gut feeling or' }}</span>
+        <span class="fgp-hh__blank">
+          <span class="fgp-hh__cycle-target" data-words="{{ symptom_words }}">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'symptom' and forloop.first -%}{{ block.settings.label }}{%- endif -%}
+            {%- endfor -%}
+          </span>
+        </span>
+        <span class="fgp-hh__question">?</span>
+      </h1>
     </div>
 
-    <!-- RIGHT: heading + symptoms + CTA -->
-    <div class="fgp-hh__content">
-      <h1 class="fgp-hh__heading">
-        <span class="fgp-hh__heading-line">
-          {{ section.settings.heading_before | default: 'Is it a gut feeling or' }}
-          <span class="fgp-hh__blank" aria-live="polite">
+    <!-- BOTTOM: bottles (left) | symptoms + CTA (right) -->
+    <div class="fgp-hh__bottom">
+
+      <div class="fgp-hh__media">
+        {% if section.settings.badge_image != blank %}
+          <img class="fgp-hh__badge fgp-hh__badge--dk" src="{{ section.settings.badge_image | img_url: '200x' }}" alt="Recommended by Health Specialists" loading="lazy">
+        {% endif %}
+        <div class="fgp-hh__bottles">
+          {% if section.settings.bottle_1 != blank %}
+            <img class="fgp-hh__b" src="{{ section.settings.bottle_1 | img_url: '500x' }}" alt="" loading="eager">
+          {% endif %}
+          {% if section.settings.bottle_2 != blank %}
+            <img class="fgp-hh__b" src="{{ section.settings.bottle_2 | img_url: '500x' }}" alt="" loading="eager">
+          {% endif %}
+          {% if section.settings.bottle_3 != blank %}
+            <img class="fgp-hh__b" src="{{ section.settings.bottle_3 | img_url: '500x' }}" alt="" loading="eager">
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="fgp-hh__content">
+        {% if section.blocks.size > 0 %}
+          <ul class="fgp-hh__symptoms">
             {% for block in section.blocks %}
               {% if block.type == 'symptom' %}
-                <span class="fgp-hh__cycle-word{% if forloop.first %} is-active{% endif %}">{{ block.settings.label }}</span>
+                <li class="fgp-hh__symptom" {{ block.shopify_attributes }}>{{ block.settings.label }}</li>
               {% endif %}
             {% endfor %}
-            <span class="fgp-hh__underline" aria-hidden="true"></span>
-          </span>?
-        </span>
-      </h1>
+          </ul>
+        {% endif %}
 
-      {% if section.blocks.size > 0 %}
-        <ul class="fgp-hh__symptoms">
-          {% for block in section.blocks %}
-            {% if block.type == 'symptom' %}
-              <li class="fgp-hh__symptom" {{ block.shopify_attributes }}>{{ block.settings.label }}</li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      {% endif %}
+        <div class="fgp-hh__foot">
+          {% if section.settings.badge_image != blank %}
+            <img class="fgp-hh__badge fgp-hh__badge--mb" src="{{ section.settings.badge_image | img_url: '200x' }}" alt="Recommended by Health Specialists" loading="lazy">
+          {% endif %}
+          {% if section.settings.cta_label != blank %}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hh__cta">{{ section.settings.cta_label }}</a>
+          {% endif %}
+        </div>
+      </div>
 
-      {% if section.settings.cta_label != blank %}
-        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hh__cta">{{ section.settings.cta_label }}</a>
-      {% endif %}
     </div>
-
   </div>
 </section>
 
@@ -65,11 +81,69 @@
 
 .fgp-hh--v2 .fgp-hh__inner {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   min-height: 580px;
 }
 
-/* LEFT — bottles */
+/* ── Heading row ── */
+.fgp-hh--v2 .fgp-hh__top {
+  padding: 48px 64px 20px;
+}
+
+.fgp-hh--v2 .fgp-hh__heading {
+  font-size: 58px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.fgp-hh--v2 .fgp-hh__heading-text,
+.fgp-hh--v2 .fgp-hh__question {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Blank: grows to fill remaining width, underline via ::after */
+.fgp-hh--v2 .fgp-hh__blank {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  padding-bottom: 6px;
+}
+.fgp-hh--v2 .fgp-hh__blank::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+}
+
+/* Cycling word — JS swaps textContent, CSS fades */
+.fgp-hh--v2 .fgp-hh__cycle-target {
+  display: block;
+  color: #ffffff;
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.35s ease;
+}
+.fgp-hh--v2 .fgp-hh__cycle-target.is-fading { opacity: 0; }
+
+/* ── Bottom row ── */
+.fgp-hh--v2 .fgp-hh__bottom {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
+/* Left: bottles */
 .fgp-hh--v2 .fgp-hh__media {
   flex: 0 0 50%;
   position: relative;
@@ -77,187 +151,151 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 32px 0 0 40px;
+  padding: 0 0 0 40px;
 }
 
-.fgp-hh--v2 .fgp-hh__badge {
+.fgp-hh--v2 .fgp-hh__badge--dk {
   position: absolute;
-  top: 32px;
+  top: 0;
   left: 40px;
-  width: 100px;
-  z-index: 2;
+  width: 88px;
 }
+.fgp-hh--v2 .fgp-hh__badge--mb { display: none; }
 
 .fgp-hh--v2 .fgp-hh__bottles {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  gap: 0;
   width: 100%;
-  height: 100%;
 }
-
 .fgp-hh--v2 .fgp-hh__b {
-  flex: 0 0 auto;
-  width: 33%;
-  max-width: 220px;
+  flex: 1 1 0;
+  max-width: 210px;
   height: auto;
   object-fit: contain;
   object-position: bottom center;
-  align-self: flex-end;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1));
 }
 
-/* RIGHT — content */
+/* Right: symptoms + foot */
 .fgp-hh--v2 .fgp-hh__content {
   flex: 0 0 50%;
-  padding: 56px 64px 56px 40px;
+  padding: 16px 64px 48px 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  align-self: center;
+  justify-content: flex-start;
+  gap: 28px;
 }
 
-/* Heading */
-.fgp-hh--v2 .fgp-hh__heading {
-  font-size: 40px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
-  margin: 0;
-}
-
-.fgp-hh--v2 .fgp-hh__heading-line {
-  display: inline;
-}
-
-/* Cycling word + underline */
-.fgp-hh--v2 .fgp-hh__blank {
-  display: inline-block;
-  position: relative;
-  min-width: 200px;
-  vertical-align: bottom;
-}
-
-.fgp-hh__cycle-word {
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  color: #ffffff;
-  font-style: normal;
-}
-
-.fgp-hh__cycle-word.is-active {
-  opacity: 1;
-  position: relative;
-}
-
-.fgp-hh--v2 .fgp-hh__underline {
-  display: block;
-  border-bottom: 2px solid rgba(255,255,255,0.7);
-  width: 100%;
-  height: 4px;
-  margin-top: 2px;
-}
-
-/* Symptom list — no icons, white text */
 .fgp-hh--v2 .fgp-hh__symptoms {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
 }
-
 .fgp-hh--v2 .fgp-hh__symptom {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
   color: #ffffff;
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
-/* CTA */
+/* Footer: badge (mobile) + CTA */
+.fgp-hh--v2 .fgp-hh__foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .fgp-hh--v2 .fgp-hh__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
   font-family: var(--fgp-font);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   background: #ffffff;
   color: var(--fgp-navy);
   border-radius: 200px;
-  padding: 14px 36px;
+  padding: 15px 40px;
   text-decoration: none;
   transition: opacity 0.2s;
   white-space: nowrap;
-  margin-top: 8px;
 }
 .fgp-hh--v2 .fgp-hh__cta:hover { opacity: 0.88; }
 
-/* ── Mobile ── */
-@media (max-width: 767px) {
-  .fgp-hh--v2 .fgp-hh__inner {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: unset;
-  }
+/* ── Mobile ≤ 639px ── */
+@media (max-width: 639px) {
+  .fgp-hh--v2 .fgp-hh__inner { min-height: unset; }
 
-  .fgp-hh--v2 .fgp-hh__media {
-    flex: none;
-    order: 2;
-    padding: 0 16px;
-    min-height: 220px;
-    justify-content: center;
-  }
+  .fgp-hh--v2 .fgp-hh__top { padding: 32px 20px 12px; }
 
-  .fgp-hh--v2 .fgp-hh__badge {
-    top: 16px;
-    left: 16px;
-    width: 64px;
+  /* Two-line heading: "Is it a gut feeling or" / "[blank] ?" */
+  .fgp-hh--v2 .fgp-hh__heading {
+    font-size: 22px;
+    gap: 4px 8px;
+    flex-wrap: wrap;
+    align-items: flex-end;
   }
+  .fgp-hh--v2 .fgp-hh__heading-text { flex: 0 0 100%; }
+  .fgp-hh--v2 .fgp-hh__blank { padding-bottom: 4px; flex: 1; }
 
-  .fgp-hh--v2 .fgp-hh__b { width: 30%; }
+  .fgp-hh--v2 .fgp-hh__bottom { flex-direction: column; }
 
   .fgp-hh--v2 .fgp-hh__content {
-    flex: none;
-    order: 1;
-    padding: 32px 24px 24px;
-    gap: 14px;
-    align-items: center;
-    text-align: center;
+    flex: none; order: 1;
+    width: 100%; padding: 8px 20px 16px;
+    gap: 12px; align-items: flex-end; text-align: right;
   }
 
-  .fgp-hh--v2 .fgp-hh__heading { font-size: 22px; }
-  .fgp-hh--v2 .fgp-hh__blank { min-width: 100px; }
-  .fgp-hh--v2 .fgp-hh__symptom { font-size: 16px; }
-  .fgp-hh--v2 .fgp-hh__cta { font-size: 14px; padding: 11px 28px; align-self: center; }
+  .fgp-hh--v2 .fgp-hh__symptoms { gap: 10px; }
+  .fgp-hh--v2 .fgp-hh__symptom  { font-size: 20px; font-weight: 400; }
+
+  .fgp-hh--v2 .fgp-hh__badge--dk { display: none; }
+  .fgp-hh--v2 .fgp-hh__badge--mb { display: block; width: 60px; flex-shrink: 0; }
+  .fgp-hh--v2 .fgp-hh__foot { width: 100%; justify-content: space-between; }
+  .fgp-hh--v2 .fgp-hh__cta  { font-size: 14px; padding: 11px 24px; }
+
+  .fgp-hh--v2 .fgp-hh__media {
+    flex: none; order: 2;
+    width: 100%; padding: 0 8px;
+    min-height: 140px; justify-content: flex-end;
+  }
+  .fgp-hh--v2 .fgp-hh__b { max-width: none; max-height: 140px; }
 }
 
-/* ── Tablet ── */
-@media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-hh--v2 .fgp-hh__heading { font-size: 30px; }
+/* ── Small tablet 640–1023px ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fgp-hh--v2 .fgp-hh__inner   { min-height: 460px; }
+  .fgp-hh--v2 .fgp-hh__top     { padding: 36px 40px 16px; }
+  .fgp-hh--v2 .fgp-hh__heading { font-size: 36px; gap: 12px; }
+  .fgp-hh--v2 .fgp-hh__blank   { padding-bottom: 5px; }
   .fgp-hh--v2 .fgp-hh__symptom { font-size: 22px; }
-  .fgp-hh--v2 .fgp-hh__content { padding: 48px 40px 48px 32px; }
-  .fgp-hh--v2 .fgp-hh__blank { min-width: 140px; }
+  .fgp-hh--v2 .fgp-hh__content { padding: 12px 40px 36px 28px; gap: 18px; }
+  .fgp-hh--v2 .fgp-hh__media   { padding-left: 24px; }
+  .fgp-hh--v2 .fgp-hh__badge--dk { left: 24px; width: 70px; }
+  .fgp-hh--v2 .fgp-hh__cta     { font-size: 15px; padding: 12px 28px; }
+  .fgp-hh--v2 .fgp-hh__b       { max-width: 180px; }
 }
 </style>
 
 <script>
 (function () {
-  var words = document.querySelectorAll('.fgp-hh--v2 .fgp-hh__cycle-word');
+  var target = document.querySelector('.fgp-hh--v2 .fgp-hh__cycle-target');
+  if (!target) return;
+  var raw = target.getAttribute('data-words') || '';
+  var words = raw.split('|').map(function(w){ return w.trim(); }).filter(Boolean);
   if (words.length < 2) return;
   var idx = 0;
   setInterval(function () {
-    words[idx].classList.remove('is-active');
-    idx = (idx + 1) % words.length;
-    words[idx].classList.add('is-active');
-  }, 2200);
+    target.classList.add('is-fading');
+    setTimeout(function () {
+      idx = (idx + 1) % words.length;
+      target.textContent = words[idx];
+      target.classList.remove('is-fading');
+    }, 350);
+  }, 2400);
 })();
 </script>
 
@@ -269,12 +307,12 @@
   "max_blocks": 12,
   "settings": [
     { "type": "text", "id": "heading_before", "label": "Heading (before blank)", "default": "Is it a gut feeling or" },
-    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Take The 1 Minute Test!" },
-    { "type": "url", "id": "cta_url", "label": "CTA URL" },
-    { "type": "image_picker", "id": "badge_image", "label": "Badge image (top-left)" },
-    { "type": "image_picker", "id": "bottle_1", "label": "Bottle image 1 (left)" },
-    { "type": "image_picker", "id": "bottle_2", "label": "Bottle image 2 (center)" },
-    { "type": "image_picker", "id": "bottle_3", "label": "Bottle image 3 (right)" }
+    { "type": "text", "id": "cta_label",      "label": "CTA label",              "default": "Take The 1 Minute Test!" },
+    { "type": "url",  "id": "cta_url",        "label": "CTA URL" },
+    { "type": "image_picker", "id": "badge_image", "label": "Badge image" },
+    { "type": "image_picker", "id": "bottle_1",    "label": "Bottle image 1 (left)" },
+    { "type": "image_picker", "id": "bottle_2",    "label": "Bottle image 2 (center)" },
+    { "type": "image_picker", "id": "bottle_3",    "label": "Bottle image 3 (right)" }
   ],
   "blocks": [
     {

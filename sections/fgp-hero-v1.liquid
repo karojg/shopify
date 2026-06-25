@@ -47,7 +47,7 @@
         <img class="fgp-hh__deco" src="{{ section.settings.decoration | img_url: '800x' }}" alt="" aria-hidden="true" loading="eager">
       {% endif %}
       {% if section.settings.product_image != blank %}
-        <img class="fgp-hh__bottle" src="{{ section.settings.product_image | img_url: '600x' }}" alt="{{ section.settings.heading_white }}" loading="eager">
+        <img class="fgp-hh__bottle" src="{{ section.settings.product_image | img_url: '700x' }}" alt="{{ section.settings.heading_white }}" loading="eager">
       {% endif %}
       {% if section.settings.badge_image != blank %}
         <img class="fgp-hh__badge" src="{{ section.settings.badge_image | img_url: '300x' }}" alt="Recommended by" loading="lazy">
@@ -68,15 +68,15 @@
 .fgp-hh--v1 .fgp-hh__inner {
   display: flex;
   align-items: center;
-  min-height: 620px;
+  min-height: 640px;
 }
 
 .fgp-hh--v1 .fgp-hh__content {
   flex: 0 0 52%;
-  padding: 64px 48px 64px 108px;
+  padding: 64px 40px 64px 108px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
@@ -90,73 +90,70 @@
   justify-content: center;
 }
 
+/* Eyebrow */
 .fgp-hh--v1 .fgp-hh__eyebrow {
   font-size: 18px;
   font-weight: 300;
-  color: rgba(255,255,255,0.8);
-  letter-spacing: 1px;
-  margin: 0;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  margin: 0;
 }
 
+/* H1 two-tone */
 .fgp-hh--v1 .fgp-hh__heading {
   font-size: 72px;
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.05;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
+.fgp-hh--v1 .fgp-hh__heading-white { color: #ffffff; }
+.fgp-hh--v1 .fgp-hh__heading-blue  { color: var(--fgp-blue); }
 
-.fgp-hh--v1 .fgp-hh__heading-white {
-  color: #ffffff;
-}
-
-.fgp-hh--v1 .fgp-hh__heading-blue {
-  color: var(--fgp-blue);
-}
-
+/* Subtitle */
 .fgp-hh--v1 .fgp-hh__subtitle {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 400;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.88);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
+/* Pills */
 .fgp-hh--v1 .fgp-hh__pills {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
-
 .fgp-hh--v1 .fgp-hh__pill {
-  border: 1.5px solid rgba(255,255,255,0.55);
-  color: #ffffff;
+  border: 1.5px solid #99dbfc;
+  color: #99dbfc;
   border-radius: 200px;
-  padding: 7px 20px;
-  font-size: 15px;
-  font-weight: 400;
+  padding: 8px 22px;
+  font-size: 17px;
+  font-weight: 500;
   white-space: nowrap;
 }
 
+/* CTAs */
 .fgp-hh--v1 .fgp-hh__ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 4px;
+  gap: 20px;
+  margin-top: 8px;
 }
-
 .fgp-hh--v1 .fgp-hh__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--fgp-font);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   border-radius: 200px;
-  padding: 13px 32px;
+  padding: 14px 36px;
   text-decoration: none;
   transition: opacity 0.2s;
   white-space: nowrap;
@@ -165,6 +162,7 @@
 .fgp-hh--v1 .fgp-hh__cta--blue { background: var(--fgp-blue); color: var(--fgp-navy); }
 .fgp-hh--v1 .fgp-hh__cta--gold { background: var(--fgp-gold); color: var(--fgp-navy); }
 
+/* Media */
 .fgp-hh--v1 .fgp-hh__deco {
   position: absolute;
   top: 0; right: 0;
@@ -172,42 +170,45 @@
   object-fit: contain;
   object-position: right top;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.3;
 }
-
 .fgp-hh--v1 .fgp-hh__bottle {
   position: relative;
   z-index: 1;
-  max-height: 90%;
+  max-height: 92%;
   width: auto;
   object-fit: contain;
   object-position: bottom center;
   align-self: flex-end;
 }
-
 .fgp-hh--v1 .fgp-hh__badge {
   position: absolute;
   bottom: 24px; left: 16px;
-  width: 120px;
+  width: 110px;
   z-index: 2;
 }
 
-@media (max-width: 767px) {
-  .fgp-hh--v1 .fgp-hh__inner { flex-direction: column; min-height: unset; }
-  .fgp-hh--v1 .fgp-hh__content { flex: none; width: 100%; padding: 40px 24px 32px; gap: 16px; order: 2; }
-  .fgp-hh--v1 .fgp-hh__media { flex: none; width: 100%; min-height: 260px; order: 1; }
-  .fgp-hh--v1 .fgp-hh__heading { font-size: 38px; }
-  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 17px; }
-  .fgp-hh--v1 .fgp-hh__pill { font-size: 13px; padding: 6px 14px; }
-  .fgp-hh--v1 .fgp-hh__cta { font-size: 15px; padding: 12px 24px; }
+/* ── Mobile ≤ 639px ── */
+@media (max-width: 639px) {
+  .fgp-hh--v1 .fgp-hh__inner   { flex-direction: column; min-height: unset; }
+  .fgp-hh--v1 .fgp-hh__content { flex: none; width: 100%; padding: 32px 20px 24px; gap: 14px; order: 2; }
+  .fgp-hh--v1 .fgp-hh__media   { flex: none; width: 100%; min-height: 240px; order: 1; }
+  .fgp-hh--v1 .fgp-hh__heading  { font-size: 34px; }
+  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 15px; }
+  .fgp-hh--v1 .fgp-hh__pill     { font-size: 12px; padding: 5px 12px; }
+  .fgp-hh--v1 .fgp-hh__cta      { font-size: 14px; padding: 11px 22px; }
+  .fgp-hh--v1 .fgp-hh__ctas     { gap: 10px; }
 }
 
-@media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-hh--v1 .fgp-hh__content { padding: 48px 32px 48px 56px; }
-  .fgp-hh--v1 .fgp-hh__heading { font-size: 52px; }
-  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 19px; }
-  .fgp-hh--v1 .fgp-hh__pill { font-size: 13px; }
-  .fgp-hh--v1 .fgp-hh__cta { font-size: 15px; padding: 12px 28px; }
+/* ── Small tablet 640–1023px ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fgp-hh--v1 .fgp-hh__inner   { min-height: 460px; }
+  .fgp-hh--v1 .fgp-hh__content { padding: 44px 28px 44px 48px; gap: 16px; }
+  .fgp-hh--v1 .fgp-hh__heading  { font-size: 48px; }
+  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 18px; }
+  .fgp-hh--v1 .fgp-hh__pill     { font-size: 13px; padding: 6px 16px; }
+  .fgp-hh--v1 .fgp-hh__cta      { font-size: 15px; padding: 12px 28px; }
+  .fgp-hh--v1 .fgp-hh__ctas     { gap: 14px; }
 }
 </style>
 
@@ -217,21 +218,19 @@
   "tag": "section",
   "class": "fgp-homepage-hero-v1",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Plant-based Psychobiotic" },
-    { "type": "text", "id": "heading_white", "label": "Heading — white line", "default": "Your mind & gut," },
-    { "type": "text", "id": "heading_blue", "label": "Heading — blue line", "default": "finally made peace." },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within." },
-    { "type": "text", "id": "pills", "label": "Benefit pills (comma-separated)", "default": "Improves Sleep, Reduce Stress, Improves your Gut Health, Psychobiotic" },
-    { "type": "text", "id": "cta1_label", "label": "CTA 1 label", "default": "Learn More" },
-    { "type": "url", "id": "cta1_url", "label": "CTA 1 URL" },
-    { "type": "text", "id": "cta2_label", "label": "CTA 2 label", "default": "Shop Now" },
-    { "type": "url", "id": "cta2_url", "label": "CTA 2 URL" },
+    { "type": "text",     "id": "eyebrow",       "label": "Eyebrow",              "default": "Plant-based Psychobiotic" },
+    { "type": "text",     "id": "heading_white",  "label": "Heading — white line", "default": "Your mind & gut," },
+    { "type": "text",     "id": "heading_blue",   "label": "Heading — blue line",  "default": "finally made peace." },
+    { "type": "textarea", "id": "subtitle",       "label": "Subtitle",             "default": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within." },
+    { "type": "text",     "id": "pills",          "label": "Benefit pills (comma-separated)", "default": "Improves Sleep, Reduce Stress, Improves your Gut Health, Psychobiotic" },
+    { "type": "text",     "id": "cta1_label",     "label": "CTA 1 label",          "default": "Learn More" },
+    { "type": "url",      "id": "cta1_url",       "label": "CTA 1 URL" },
+    { "type": "text",     "id": "cta2_label",     "label": "CTA 2 label",          "default": "Shop Now" },
+    { "type": "url",      "id": "cta2_url",       "label": "CTA 2 URL" },
     { "type": "image_picker", "id": "product_image", "label": "Product image" },
-    { "type": "image_picker", "id": "badge_image", "label": "Trust badge image" },
-    { "type": "image_picker", "id": "decoration", "label": "Decoration illustration" }
+    { "type": "image_picker", "id": "badge_image",   "label": "Trust badge image" },
+    { "type": "image_picker", "id": "decoration",    "label": "Decoration illustration" }
   ],
-  "presets": [
-    { "name": "FGP Hero — Navy" }
-  ]
+  "presets": [{ "name": "FGP Hero — Navy" }]
 }
 {% endschema %}

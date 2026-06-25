@@ -11,6 +11,7 @@
   "sections": {
     "fgp_homepage_hero": {
       "type": "fgp-hero-v1",
+      "disabled": true,
       "name": "FGP Hero — Navy",
       "settings": {
         "eyebrow": "Plant-based Psychobiotic",
@@ -390,6 +391,61 @@
         "fb_url": "",
         "fb_label": "FEELGOODPHARMA"
       }
+    },
+    "fgp_hero_v2_7DtwTc": {
+      "type": "fgp-hero-v2",
+      "blocks": {
+        "symptom_HTCn9U": {
+          "type": "symptom",
+          "settings": {
+            "label": "Stress"
+          }
+        },
+        "symptom_z3WP8k": {
+          "type": "symptom",
+          "settings": {
+            "label": "Gluten intolerance"
+          }
+        },
+        "symptom_7Nh8hJ": {
+          "type": "symptom",
+          "settings": {
+            "label": "Lactose intolerance"
+          }
+        },
+        "symptom_tgAW3F": {
+          "type": "symptom",
+          "settings": {
+            "label": "Constipation or Diarrhea"
+          }
+        },
+        "symptom_TXLjDA": {
+          "type": "symptom",
+          "settings": {
+            "label": "Irritable Bowel Syndrome"
+          }
+        },
+        "symptom_zgFC3W": {
+          "type": "symptom",
+          "settings": {
+            "label": "Low defenses"
+          }
+        }
+      },
+      "block_order": [
+        "symptom_HTCn9U",
+        "symptom_z3WP8k",
+        "symptom_7Nh8hJ",
+        "symptom_tgAW3F",
+        "symptom_TXLjDA",
+        "symptom_zgFC3W"
+      ],
+      "name": "FGP Hero — Blue",
+      "settings": {
+        "heading_before": "Is it a gut feeling or",
+        "cta_label": "Take The 1 Minute Test!",
+        "cta_url": ""
+      }
     }
   },
   "order": [
@@ -405,6 +461,7 @@
     "fgp_products_grid_main",
     "fgp_doctor_testimonials_main",
     "fgp_customer_reviews_main",
-    "fgp_subfooter_main"
+    "fgp_subfooter_main",
+    "fgp_hero_v2_7DtwTc"
   ]
 }

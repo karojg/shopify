@@ -1,0 +1,195 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-is fgp-is--{{ section.settings.bg }}" aria-label="{{ section.settings.aria_label | default: 'Product benefits' }}">
+  <div class="fgp-is__inner">
+    {% for block in section.blocks %}
+      {% if block.type == 'item' %}
+        <div class="fgp-is__item" {{ block.shopify_attributes }}>
+          <div class="fgp-is__icon-wrap">
+            {% if block.settings.icon != blank %}
+              <img
+                class="fgp-is__icon"
+                src="{{ block.settings.icon | img_url: '80x' }}"
+                alt="{{ block.settings.label }}"
+                loading="lazy"
+                width="36"
+                height="36"
+              >
+            {% else %}
+              <svg class="fgp-is__icon-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 14.5L12.5 18L19 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            {% endif %}
+          </div>
+          {% if block.settings.label != blank %}
+            <p class="fgp-is__label">{{ block.settings.label }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+/* ── Strip container ── */
+.fgp-is {
+  font-family: var(--fgp-font);
+  width: 100%;
+}
+
+.fgp-is--white    { background: #ffffff; }
+.fgp-is--offwhite { background: var(--fgp-offwhite, #f8f8f8); }
+.fgp-is--navy     { background: var(--fgp-navy); }
+.fgp-is--blue     { background: var(--fgp-blue); }
+
+.fgp-is__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: 8px;
+  padding: 28px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Each item: icon + label inline ── */
+.fgp-is__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Icon circle */
+.fgp-is__icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--fgp-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.fgp-is__icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.fgp-is__icon-svg {
+  color: var(--fgp-purple);
+}
+
+/* Label */
+.fgp-is__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fgp-navy);
+  line-height: 1.35;
+  margin: 0;
+  max-width: 120px;
+}
+
+/* Color variants for label + icon on dark bgs */
+.fgp-is--navy .fgp-is__label,
+.fgp-is--blue .fgp-is__label { color: #ffffff; }
+
+.fgp-is--navy .fgp-is__icon-wrap,
+.fgp-is--blue .fgp-is__icon-wrap { border-color: rgba(255,255,255,0.7); }
+
+.fgp-is--navy .fgp-is__icon-svg,
+.fgp-is--blue .fgp-is__icon-svg { color: #ffffff; }
+
+/* Divider between items (optional) */
+.fgp-is--dividers .fgp-is__item + .fgp-is__item {
+  border-left: 1px solid rgba(0,0,0,0.1);
+  padding-left: 16px;
+}
+
+/* ── Tablet 640–1023px ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fgp-is__inner { padding: 24px 32px; gap: 6px; }
+  .fgp-is__icon-wrap { width: 44px; height: 44px; }
+  .fgp-is__icon { width: 24px; height: 24px; }
+  .fgp-is__label { font-size: 12px; max-width: 100px; }
+}
+
+/* ── Mobile ≤ 639px: 2-col grid ── */
+@media (max-width: 639px) {
+  .fgp-is__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 12px;
+    padding: 24px 20px;
+    justify-items: start;
+  }
+  .fgp-is__item { gap: 10px; }
+  .fgp-is__icon-wrap { width: 40px; height: 40px; }
+  .fgp-is__icon { width: 22px; height: 22px; }
+  .fgp-is__label { font-size: 12px; max-width: none; }
+  .fgp-is--dividers .fgp-is__item + .fgp-is__item {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Icon Strip",
+  "tag": "section",
+  "class": "fgp-icon-strip",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "select",
+      "id": "bg",
+      "label": "Background",
+      "options": [
+        { "value": "white",    "label": "White" },
+        { "value": "offwhite", "label": "Off-white" },
+        { "value": "navy",     "label": "Navy" },
+        { "value": "blue",     "label": "Blue" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Accessibility label",
+      "default": "Product benefits"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit item",
+      "settings": [
+        { "type": "image_picker", "id": "icon",  "label": "Icon image" },
+        { "type": "text",         "id": "label", "label": "Label", "default": "Benefit label" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Icon Strip",
+      "settings": { "bg": "white" },
+      "blocks": [
+        { "type": "item", "settings": { "label": "Spore based probiotics" } },
+        { "type": "item", "settings": { "label": "Plant Based ingredients" } },
+        { "type": "item", "settings": { "label": "Replenishes Beneficial Bacteria®" } },
+        { "type": "item", "settings": { "label": "Strengthens Gut Barrier®" } },
+        { "type": "item", "settings": { "label": "Improves Nutrient Absorption®" } },
+        { "type": "item", "settings": { "label": "Non GMO" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
