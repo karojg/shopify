@@ -1,0 +1,223 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-hh fgp-hh--v2" aria-label="Hero banner">
+  <div class="fgp-hh__inner">
+
+    <div class="fgp-hh__content">
+      <h1 class="fgp-hh__heading">
+        {{ section.settings.heading_before | default: 'Is it a gut feeling or' }}
+        <span class="fgp-hh__cycler" aria-live="polite">
+          {% for block in section.blocks %}
+            {% if block.type == 'symptom' %}
+              <span class="fgp-hh__cycle-word{% if forloop.first %} is-active{% endif %}">{{ block.settings.label }}</span>
+            {% endif %}
+          {% endfor %}
+        </span>?
+      </h1>
+
+      {% if section.blocks.size > 0 %}
+        <ul class="fgp-hh__symptoms">
+          {% for block in section.blocks %}
+            {% if block.type == 'symptom' %}
+              <li class="fgp-hh__symptom" {{ block.shopify_attributes }}>
+                <svg class="fgp-hh__check" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <circle cx="11" cy="11" r="10" stroke="#234092" stroke-width="1.5"/>
+                  <path d="M6.5 11.5L9.5 14.5L15.5 8" stroke="#234092" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {{ block.settings.label }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if section.settings.cta_label != blank %}
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hh__cta">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+
+    <div class="fgp-hh__media">
+      {% if section.settings.bottle_1 != blank %}
+        <img class="fgp-hh__b1" src="{{ section.settings.bottle_1 | img_url: '400x' }}" alt="" loading="eager">
+      {% endif %}
+      {% if section.settings.bottle_2 != blank %}
+        <img class="fgp-hh__b2" src="{{ section.settings.bottle_2 | img_url: '400x' }}" alt="" loading="eager">
+      {% endif %}
+      {% if section.settings.bottle_3 != blank %}
+        <img class="fgp-hh__b3" src="{{ section.settings.bottle_3 | img_url: '400x' }}" alt="" loading="eager">
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-hh--v2 {
+  font-family: var(--fgp-font);
+  background: var(--fgp-blue);
+  width: 100%;
+  overflow: hidden;
+}
+
+.fgp-hh--v2 .fgp-hh__inner {
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+}
+
+.fgp-hh--v2 .fgp-hh__content {
+  flex: 0 0 55%;
+  padding: 64px 48px 64px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.fgp-hh--v2 .fgp-hh__media {
+  flex: 0 0 45%;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fgp-hh--v2 .fgp-hh__heading {
+  font-size: 52px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.fgp-hh--v2 .fgp-hh__cycler {
+  display: inline-block;
+  color: var(--fgp-navy);
+}
+
+.fgp-hh__cycle-word {
+  display: none;
+  font-style: italic;
+}
+.fgp-hh__cycle-word.is-active { display: inline; }
+
+.fgp-hh--v2 .fgp-hh__symptoms {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fgp-hh--v2 .fgp-hh__symptom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2e2a39;
+  line-height: 1.2;
+}
+
+.fgp-hh--v2 .fgp-hh__check { flex-shrink: 0; }
+
+.fgp-hh--v2 .fgp-hh__cta {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--fgp-font);
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--fgp-navy);
+  color: #ffffff;
+  border-radius: 200px;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.fgp-hh--v2 .fgp-hh__cta:hover { opacity: 0.85; }
+
+.fgp-hh--v2 .fgp-hh__b1,
+.fgp-hh--v2 .fgp-hh__b2,
+.fgp-hh--v2 .fgp-hh__b3 {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
+}
+
+.fgp-hh--v2 .fgp-hh__b1 { left: 10%; z-index: 1; transform: rotate(-6deg); }
+.fgp-hh--v2 .fgp-hh__b2 { left: 50%; transform: translateX(-50%); z-index: 3; }
+.fgp-hh--v2 .fgp-hh__b3 { right: 10%; z-index: 2; transform: rotate(6deg); }
+
+@media (max-width: 767px) {
+  .fgp-hh--v2 .fgp-hh__inner { flex-direction: column; min-height: unset; }
+  .fgp-hh--v2 .fgp-hh__content { flex: none; width: 100%; padding: 40px 20px 32px; gap: 16px; order: 2; }
+  .fgp-hh--v2 .fgp-hh__media { flex: none; width: 100%; min-height: 240px; order: 1; }
+  .fgp-hh--v2 .fgp-hh__heading { font-size: 28px; }
+  .fgp-hh--v2 .fgp-hh__symptom { font-size: 18px; }
+  .fgp-hh--v2 .fgp-hh__cta { font-size: 14px; padding: 12px 24px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-hh--v2 .fgp-hh__content { padding: 48px 32px 48px 48px; }
+  .fgp-hh--v2 .fgp-hh__heading { font-size: 40px; }
+  .fgp-hh--v2 .fgp-hh__symptom { font-size: 20px; }
+}
+</style>
+
+<script>
+(function () {
+  var words = document.querySelectorAll('.fgp-hh--v2 .fgp-hh__cycle-word');
+  if (words.length < 2) return;
+  var idx = 0;
+  setInterval(function () {
+    words[idx].classList.remove('is-active');
+    idx = (idx + 1) % words.length;
+    words[idx].classList.add('is-active');
+  }, 2000);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "FGP Hero — Blue",
+  "tag": "section",
+  "class": "fgp-homepage-hero-v2",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "heading_before", "label": "Heading (before animated word)", "default": "Is it a gut feeling or" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Take The 1 Minute Test!" },
+    { "type": "url", "id": "cta_url", "label": "CTA URL" },
+    { "type": "image_picker", "id": "bottle_1", "label": "Bottle image 1 (left)" },
+    { "type": "image_picker", "id": "bottle_2", "label": "Bottle image 2 (center)" },
+    { "type": "image_picker", "id": "bottle_3", "label": "Bottle image 3 (right)" }
+  ],
+  "blocks": [
+    {
+      "type": "symptom",
+      "name": "Symptom",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Symptom label", "default": "Stress" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Hero — Blue",
+      "blocks": [
+        { "type": "symptom", "settings": { "label": "Stress" } },
+        { "type": "symptom", "settings": { "label": "Anxiety" } },
+        { "type": "symptom", "settings": { "label": "Poor Sleep" } },
+        { "type": "symptom", "settings": { "label": "Bloating" } },
+        { "type": "symptom", "settings": { "label": "Constipation" } },
+        { "type": "symptom", "settings": { "label": "Low Energy" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

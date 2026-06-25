@@ -1,0 +1,237 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-hh fgp-hh--v1" aria-label="Hero banner">
+  <div class="fgp-hh__inner">
+
+    <div class="fgp-hh__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="fgp-hh__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+
+      {% if section.settings.heading_white != blank or section.settings.heading_blue != blank %}
+        <h1 class="fgp-hh__heading">
+          {% if section.settings.heading_white != blank %}
+            <span class="fgp-hh__heading-white">{{ section.settings.heading_white }}</span>
+          {% endif %}
+          {% if section.settings.heading_blue != blank %}
+            <span class="fgp-hh__heading-blue">{{ section.settings.heading_blue }}</span>
+          {% endif %}
+        </h1>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="fgp-hh__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      {% if section.settings.pills != blank %}
+        <div class="fgp-hh__pills">
+          {% assign pill_list = section.settings.pills | split: ',' %}
+          {% for pill in pill_list %}
+            <span class="fgp-hh__pill">{{ pill | strip }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="fgp-hh__ctas">
+        {% if section.settings.cta1_label != blank %}
+          <a href="{{ section.settings.cta1_url | default: '#' }}" class="fgp-hh__cta fgp-hh__cta--blue">{{ section.settings.cta1_label }}</a>
+        {% endif %}
+        {% if section.settings.cta2_label != blank %}
+          <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-hh__cta fgp-hh__cta--gold">{{ section.settings.cta2_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="fgp-hh__media">
+      {% if section.settings.decoration != blank %}
+        <img class="fgp-hh__deco" src="{{ section.settings.decoration | img_url: '800x' }}" alt="" aria-hidden="true" loading="eager">
+      {% endif %}
+      {% if section.settings.product_image != blank %}
+        <img class="fgp-hh__bottle" src="{{ section.settings.product_image | img_url: '600x' }}" alt="{{ section.settings.heading_white }}" loading="eager">
+      {% endif %}
+      {% if section.settings.badge_image != blank %}
+        <img class="fgp-hh__badge" src="{{ section.settings.badge_image | img_url: '300x' }}" alt="Recommended by" loading="lazy">
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-hh--v1 {
+  font-family: var(--fgp-font);
+  background: var(--fgp-navy);
+  width: 100%;
+  overflow: hidden;
+}
+
+.fgp-hh--v1 .fgp-hh__inner {
+  display: flex;
+  align-items: center;
+  min-height: 620px;
+}
+
+.fgp-hh--v1 .fgp-hh__content {
+  flex: 0 0 52%;
+  padding: 64px 48px 64px 108px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.fgp-hh--v1 .fgp-hh__media {
+  flex: 0 0 48%;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fgp-hh--v1 .fgp-hh__eyebrow {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fgp-hh--v1 .fgp-hh__heading {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-hh--v1 .fgp-hh__heading-white {
+  color: #ffffff;
+}
+
+.fgp-hh--v1 .fgp-hh__heading-blue {
+  color: var(--fgp-blue);
+}
+
+.fgp-hh--v1 .fgp-hh__subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fgp-hh--v1 .fgp-hh__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fgp-hh--v1 .fgp-hh__pill {
+  border: 1.5px solid rgba(255,255,255,0.55);
+  color: #ffffff;
+  border-radius: 200px;
+  padding: 7px 20px;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.fgp-hh--v1 .fgp-hh__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.fgp-hh--v1 .fgp-hh__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fgp-font);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 200px;
+  padding: 13px 32px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.fgp-hh--v1 .fgp-hh__cta:hover { opacity: 0.88; }
+.fgp-hh--v1 .fgp-hh__cta--blue { background: var(--fgp-blue); color: var(--fgp-navy); }
+.fgp-hh--v1 .fgp-hh__cta--gold { background: var(--fgp-gold); color: var(--fgp-navy); }
+
+.fgp-hh--v1 .fgp-hh__deco {
+  position: absolute;
+  top: 0; right: 0;
+  height: 100%; width: auto;
+  object-fit: contain;
+  object-position: right top;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.fgp-hh--v1 .fgp-hh__bottle {
+  position: relative;
+  z-index: 1;
+  max-height: 90%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  align-self: flex-end;
+}
+
+.fgp-hh--v1 .fgp-hh__badge {
+  position: absolute;
+  bottom: 24px; left: 16px;
+  width: 120px;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .fgp-hh--v1 .fgp-hh__inner { flex-direction: column; min-height: unset; }
+  .fgp-hh--v1 .fgp-hh__content { flex: none; width: 100%; padding: 40px 24px 32px; gap: 16px; order: 2; }
+  .fgp-hh--v1 .fgp-hh__media { flex: none; width: 100%; min-height: 260px; order: 1; }
+  .fgp-hh--v1 .fgp-hh__heading { font-size: 38px; }
+  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 17px; }
+  .fgp-hh--v1 .fgp-hh__pill { font-size: 13px; padding: 6px 14px; }
+  .fgp-hh--v1 .fgp-hh__cta { font-size: 15px; padding: 12px 24px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .fgp-hh--v1 .fgp-hh__content { padding: 48px 32px 48px 56px; }
+  .fgp-hh--v1 .fgp-hh__heading { font-size: 52px; }
+  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 19px; }
+  .fgp-hh--v1 .fgp-hh__pill { font-size: 13px; }
+  .fgp-hh--v1 .fgp-hh__cta { font-size: 15px; padding: 12px 28px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Hero — Navy",
+  "tag": "section",
+  "class": "fgp-homepage-hero-v1",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Plant-based Psychobiotic" },
+    { "type": "text", "id": "heading_white", "label": "Heading — white line", "default": "Your mind & gut," },
+    { "type": "text", "id": "heading_blue", "label": "Heading — blue line", "default": "finally made peace." },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within." },
+    { "type": "text", "id": "pills", "label": "Benefit pills (comma-separated)", "default": "Improves Sleep, Reduce Stress, Improves your Gut Health, Psychobiotic" },
+    { "type": "text", "id": "cta1_label", "label": "CTA 1 label", "default": "Learn More" },
+    { "type": "url", "id": "cta1_url", "label": "CTA 1 URL" },
+    { "type": "text", "id": "cta2_label", "label": "CTA 2 label", "default": "Shop Now" },
+    { "type": "url", "id": "cta2_url", "label": "CTA 2 URL" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image" },
+    { "type": "image_picker", "id": "badge_image", "label": "Trust badge image" },
+    { "type": "image_picker", "id": "decoration", "label": "Decoration illustration" }
+  ],
+  "presets": [
+    { "name": "FGP Hero — Navy" }
+  ]
+}
+{% endschema %}

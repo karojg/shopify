@@ -9,6 +9,21 @@
  */
 {
   "sections": {
+    "fgp_homepage_hero": {
+      "type": "fgp-hero-v1",
+      "name": "FGP Hero — Navy",
+      "settings": {
+        "eyebrow": "Plant-based Psychobiotic",
+        "heading_white": "Your mind & gut,",
+        "heading_blue": "finally made peace.",
+        "subtitle": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within.",
+        "pills": "Improves Sleep, Reduce Stress, Improves your Gut Health, Psychobiotic",
+        "cta1_label": "Learn More",
+        "cta1_url": "",
+        "cta2_label": "Shop Now",
+        "cta2_url": ""
+      }
+    },
     "fgp_logo_carousel_main": {
       "type": "fgp-logo-carousel",
       "blocks": {
@@ -374,6 +389,7 @@
     }
   },
   "order": [
+    "fgp_homepage_hero",
     "fgp_logo_carousel_main",
     "b8b0c886-8d85-4099-b9f2-61e11d876167",
     "fgp_synbiotic_feature_jkwUPt",
