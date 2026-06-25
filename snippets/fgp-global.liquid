@@ -23,15 +23,147 @@
   text-decoration: none !important;
 }
 
+.header__icon,
 .header__icon svg,
+.header__icon .svg-wrapper,
 .header__icon .svg-wrapper svg {
-  color: var(--fgp-dark-cornflower-blue) !important;
-  fill: var(--fgp-dark-cornflower-blue) !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .cart-count-bubble {
   background: var(--fgp-dark-cornflower-blue) !important;
   color: var(--fgp-white) !important;
+}
+
+/* ── Cart drawer — navy system, matches nav panel ── */
+.cart-drawer .drawer__inner,
+cart-drawer .drawer__inner {
+  background: var(--fgp-navy, #234092) !important;
+  backdrop-filter: none !important;
+}
+
+/* All text white */
+.cart-drawer .drawer__inner .drawer__heading,
+.cart-drawer .drawer__inner .cart__empty-text,
+.cart-drawer .drawer__inner .cart__login-title,
+.cart-drawer .drawer__inner h2,
+.cart-drawer .drawer__inner h3,
+.cart-drawer .drawer__inner p,
+.cart-drawer .drawer__inner span:not(.cart-count-bubble),
+.cart-drawer .drawer__inner li,
+.cart-drawer .drawer__inner td,
+.cart-drawer .drawer__inner label {
+  color: #ffffff !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+}
+
+.cart-drawer .drawer__inner .cart__login-paragraph,
+.cart-drawer .drawer__inner .cart__login-paragraph p,
+.cart-drawer .drawer__inner .cart-item__details .price--on-sale,
+.cart-drawer .drawer__inner .visually-hidden {
+  color: rgba(255,255,255,0.65) !important;
+}
+
+/* Close button — white X */
+.cart-drawer .drawer__inner .drawer__close,
+.cart-drawer .drawer__inner .drawer__close svg,
+.cart-drawer .drawer__inner .drawer__close path {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+.cart-drawer .drawer__inner .drawer__close {
+  background: none !important;
+  border: none !important;
+  border-radius: 50% !important;
+  transition: background 0.2s !important;
+}
+.cart-drawer .drawer__inner .drawer__close:hover {
+  background: rgba(255,255,255,0.12) !important;
+}
+
+/* Divider lines */
+.cart-drawer .drawer__inner .drawer__header,
+.cart-drawer .drawer__inner .cart-drawer__footer {
+  border-color: rgba(255,255,255,0.18) !important;
+}
+
+/* Prices — gold accent */
+.cart-drawer .drawer__inner .price,
+.cart-drawer .drawer__inner .price__regular,
+.cart-drawer .drawer__inner .cart-item__price-wrapper .price-item {
+  color: var(--fgp-gold, #fed304) !important;
+}
+
+/* "Continue shopping" button — white outline pill */
+.cart-drawer .drawer__inner .button {
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255,255,255,0.5) !important;
+  border-radius: 200px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.4px !important;
+  transition: background 0.2s, border-color 0.2s !important;
+}
+.cart-drawer .drawer__inner .button:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: #ffffff !important;
+}
+
+/* Checkout button — gold CTA */
+.cart-drawer .drawer__inner .cart__checkout-button,
+.cart-drawer .drawer__inner button[name="checkout"] {
+  background: var(--fgp-gold, #fed304) !important;
+  color: var(--fgp-navy, #234092) !important;
+  border: none !important;
+  border-radius: 200px !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+}
+.cart-drawer .drawer__inner .cart__checkout-button:hover,
+.cart-drawer .drawer__inner button[name="checkout"]:hover {
+  opacity: 0.9 !important;
+}
+
+/* Subtotal label */
+.cart-drawer .drawer__inner .totals__subtotal,
+.cart-drawer .drawer__inner .totals__subtotal-value {
+  color: #ffffff !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-weight: 600 !important;
+}
+
+/* Cart item product title */
+.cart-drawer .drawer__inner .cart-item__name,
+.cart-drawer .drawer__inner .cart-item__name:visited {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+/* Quantity stepper */
+.cart-drawer .drawer__inner .quantity {
+  border-color: rgba(255,255,255,0.3) !important;
+  background: transparent !important;
+  border-radius: 200px !important;
+}
+.cart-drawer .drawer__inner .quantity__button,
+.cart-drawer .drawer__inner .quantity__input {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+/* Remove button */
+.cart-drawer .drawer__inner .button--tertiary,
+.cart-drawer .drawer__inner cart-remove-button a,
+.cart-drawer .drawer__inner .cart-item__quantity-wrapper .button--tertiary {
+  color: rgba(255,255,255,0.5) !important;
+}
+.cart-drawer .drawer__inner .button--tertiary:hover {
+  color: #ffffff !important;
 }
 
 /* ── Mobile drawer / slide menu ──────────── */

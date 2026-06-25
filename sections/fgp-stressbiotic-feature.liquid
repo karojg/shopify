@@ -1,0 +1,328 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-sbf" aria-label="{{ section.settings.heading | default: 'Stressbiotic feature' }}">
+  <div class="fgp-sbf__card">
+
+    <!-- LEFT: Navy — heading + body + decoration -->
+    <div class="fgp-sbf__left">
+      {% if section.settings.decoration != blank %}
+        <img class="fgp-sbf__deco" src="{{ section.settings.decoration | img_url: '500x' }}" alt="" aria-hidden="true" loading="lazy">
+      {% endif %}
+      <div class="fgp-sbf__left-content">
+        {% if section.settings.eyebrow != blank %}
+          <p class="fgp-sbf__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="fgp-sbf__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.body != blank %}
+          <div class="fgp-sbf__body">{{ section.settings.body }}</div>
+        {% endif %}
+        {% if section.settings.cta_label != blank %}
+          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-sbf__cta">{{ section.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- CENTER: Blue — icon benefit list -->
+    <div class="fgp-sbf__center">
+      {% if section.blocks.size > 0 %}
+        <ul class="fgp-sbf__benefits">
+          {% for block in section.blocks %}
+            {% if block.type == 'benefit' %}
+              <li class="fgp-sbf__benefit" {{ block.shopify_attributes }}>
+                <div class="fgp-sbf__icon-wrap">
+                  {% if block.settings.icon != blank %}
+                    <img class="fgp-sbf__icon" src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.label }}" loading="lazy">
+                  {% else %}
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                      <circle cx="11" cy="11" r="10" stroke="white" stroke-width="1.5"/>
+                      <path d="M6.5 11.5L9.5 14.5L15.5 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  {% endif %}
+                </div>
+                <span class="fgp-sbf__benefit-label">{{ block.settings.label }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- RIGHT: Product bottle (floating) -->
+    <div class="fgp-sbf__right">
+      {% if section.settings.product_image != blank %}
+        <img
+          class="fgp-sbf__bottle"
+          src="{{ section.settings.product_image | img_url: '600x' }}"
+          alt="{{ section.settings.product_image_alt | default: 'Product' }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-sbf {
+  font-family: var(--fgp-font);
+  padding: 0 48px 56px;
+}
+
+.fgp-sbf__card {
+  display: flex;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 400px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+}
+
+/* ── LEFT: navy panel ── */
+.fgp-sbf__left {
+  flex: 0 0 38%;
+  background: var(--fgp-navy);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fgp-sbf__deco {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: auto;
+  opacity: 0.15;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.fgp-sbf__left-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fgp-sbf__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fgp-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.fgp-sbf__heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.fgp-sbf__body {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+}
+.fgp-sbf__body p { margin: 0; }
+
+.fgp-sbf__cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--fgp-font);
+  font-size: 14px;
+  font-weight: 600;
+  background: #ffffff;
+  color: var(--fgp-navy);
+  border-radius: 200px;
+  padding: 11px 28px;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: 4px;
+  transition: opacity 0.2s;
+}
+.fgp-sbf__cta:hover { opacity: 0.85; }
+
+/* ── CENTER: blue panel with benefit list ── */
+.fgp-sbf__center {
+  flex: 0 0 34%;
+  background: var(--fgp-blue);
+  display: flex;
+  align-items: center;
+  padding: 40px 32px;
+}
+
+.fgp-sbf__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.fgp-sbf__benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fgp-sbf__icon-wrap {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.fgp-sbf__icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.fgp-sbf__benefit-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* ── RIGHT: floating bottle ── */
+.fgp-sbf__right {
+  flex: 0 0 28%;
+  background: var(--fgp-blue);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+
+.fgp-sbf__bottle {
+  position: relative;
+  z-index: 2;
+  max-height: 110%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  align-self: flex-end;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.18));
+  margin-bottom: -4px;
+}
+
+/* ── Tablet 640–1023px ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fgp-sbf { padding: 0 24px 40px; }
+  .fgp-sbf__left { flex: 0 0 40%; }
+  .fgp-sbf__left-content { padding: 36px 28px; gap: 12px; }
+  .fgp-sbf__heading { font-size: 20px; }
+  .fgp-sbf__center { flex: 0 0 36%; padding: 28px 20px; }
+  .fgp-sbf__benefit-label { font-size: 13px; }
+  .fgp-sbf__icon-wrap { width: 38px; height: 38px; }
+  .fgp-sbf__icon { width: 20px; height: 20px; }
+  .fgp-sbf__benefits { gap: 14px; }
+  .fgp-sbf__right { flex: 0 0 24%; }
+}
+
+/* ── Mobile ≤ 639px: stacked ── */
+@media (max-width: 639px) {
+  .fgp-sbf { padding: 0 16px 32px; }
+
+  .fgp-sbf__card {
+    flex-direction: column;
+    min-height: unset;
+    border-radius: 16px;
+  }
+
+  /* Mobile: image on top, then navy, then blue list */
+  .fgp-sbf__right {
+    flex: none;
+    order: 1;
+    min-height: 220px;
+    justify-content: center;
+    padding: 16px;
+  }
+  .fgp-sbf__bottle {
+    max-height: 200px;
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .fgp-sbf__left {
+    flex: none;
+    order: 2;
+  }
+  .fgp-sbf__left-content { padding: 28px 24px; gap: 12px; }
+  .fgp-sbf__heading { font-size: 20px; }
+  .fgp-sbf__body { font-size: 13px; }
+
+  .fgp-sbf__center {
+    flex: none;
+    order: 3;
+    padding: 28px 24px;
+  }
+  .fgp-sbf__benefit-label { font-size: 14px; }
+  .fgp-sbf__benefits { gap: 16px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Feature 3-Panel",
+  "tag": "section",
+  "class": "fgp-stressbiotic-feature",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "header",       "content": "Left panel — navy" },
+    { "type": "text",         "id": "eyebrow",   "label": "Eyebrow" },
+    { "type": "textarea",     "id": "heading",   "label": "Heading",  "default": "Your journey to wellness, stress, mental health, and adaptability" },
+    { "type": "richtext",     "id": "body",      "label": "Body text", "default": "<p>Your gut-brain connection, supported — a plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.</p>" },
+    { "type": "text",         "id": "cta_label", "label": "CTA label" },
+    { "type": "url",          "id": "cta_url",   "label": "CTA URL" },
+    { "type": "image_picker", "id": "decoration","label": "Decoration illustration (gut/brain line art)" },
+    { "type": "header",       "content": "Right — product bottle" },
+    { "type": "image_picker", "id": "product_image",     "label": "Bottle image" },
+    { "type": "text",         "id": "product_image_alt", "label": "Image alt text", "default": "Product bottle" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit item",
+      "settings": [
+        { "type": "image_picker", "id": "icon",  "label": "Icon image" },
+        { "type": "text",         "id": "label", "label": "Label", "default": "Benefit" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Feature 3-Panel",
+      "blocks": [
+        { "type": "benefit", "settings": { "label": "Improves sleep" } },
+        { "type": "benefit", "settings": { "label": "Reduce Stress" } },
+        { "type": "benefit", "settings": { "label": "Supports Gut Health" } },
+        { "type": "benefit", "settings": { "label": "Adaptogen and Psychobiotic" } },
+        { "type": "benefit", "settings": { "label": "Supports IBS Patients" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

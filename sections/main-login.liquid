@@ -1,173 +1,367 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{% render 'fgp-global' %}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+<div class="fgp-login">
+  <div class="fgp-login__card">
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-{%- if section.settings.enable_shop_login_button == false -%}
-  {%- assign hide_shop_login_button = true -%}
-{%- endif -%}
-
-<div class="customer login section-{{ section.id }}-padding">
-  <h1 id="recover" tabindex="-1">
-    {{ 'customer.recover_password.title' | t }}
-  </h1>
-  <div>
-    <p>
-      {{ 'customer.recover_password.subtext' | t }}
-    </p>
-
-    {%- form 'recover_customer_password' -%}
-      {% assign recover_success = form.posted_successfully? %}
-      <div class="field">
-        <input
-          type="email"
-          value=""
-          name="email"
-          id="RecoverEmail"
-          autocorrect="off"
-          autocapitalize="off"
-          autocomplete="email"
-          {% if form.errors %}
-            aria-invalid="true"
-            aria-describedby="RecoverEmail-email-error"
-            autofocus
-          {% endif %}
-          placeholder="{{ 'customer.login_page.email' | t }}"
+    {%- if settings.logo != blank -%}
+      <a href="{{ routes.root_url }}" class="fgp-login__logo-link">
+        <img
+          class="fgp-login__logo"
+          src="{{ settings.logo | img_url: '300x' }}"
+          alt="{{ shop.name }}"
+          width="140"
+          height="auto"
         >
-        <label for="RecoverEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
-      </div>
-      {%- if form.errors -%}
-        <small id="RecoverEmail-email-error" class="form__message">
-          <span class="svg-wrapper">
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
-          {{ form.errors.messages.form }}
-        </small>
-      {%- endif -%}
-
-      <button>
-        {{ 'customer.login_page.submit' | t }}
-      </button>
-
-      <a href="#login">
-        {{ 'customer.login_page.cancel' | t }}
       </a>
-    {%- endform -%}
-  </div>
-
-  <h1 id="login" tabindex="-1">
-    {{ 'customer.login_page.title' | t }}
-  </h1>
-  <div>
-    {%- if recover_success == true -%}
-      <h3 class="form__message" tabindex="-1" autofocus>
-        <span class="svg-wrapper">
-          {{- 'icon-success.svg' | inline_asset_content -}}
-        </span>
-        {{ 'customer.recover_password.success' | t }}
-      </h3>
+    {%- else -%}
+      <a href="{{ routes.root_url }}" class="fgp-login__shop-name">{{ shop.name }}</a>
     {%- endif -%}
-    {%- form 'customer_login', novalidate: 'novalidate' -%}
-      {%- if form.errors -%}
-        <h2 class="form__message" tabindex="-1" autofocus>
-          <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
-          <span class="svg-wrapper">
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
-          {{ 'templates.contact.form.error_heading' | t }}
-        </h2>
-        {{ form.errors | default_errors }}
-      {%- endif -%}
 
-      {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
-        <section name="sign-in-with-shop-provider">
-          {{ shop | login_button: hide_button: hide_shop_login_button }}
+    <!-- ── Recover password form (hidden by default) ── -->
+    <div id="fgp-recover" class="fgp-login__section" style="display:none">
+      <h1 class="fgp-login__title">{{ 'customer.recover_password.title' | t }}</h1>
+      <p class="fgp-login__subtitle">{{ 'customer.recover_password.subtext' | t }}</p>
 
-          {%- unless hide_shop_login_button -%}
-            <p>
-              {{ 'customer.login_page.alternate_provider_separator' | t }}
-            </p>
-          {%- endunless -%}
-        </section>
-      {%- endif -%}
-
-      <div class="field">
-        <input
-          type="email"
-          name="customer[email]"
-          id="CustomerEmail"
-          autocomplete="email"
-          autocorrect="off"
-          autocapitalize="off"
-          {% if form.errors contains 'form' %}
-            aria-invalid="true"
-          {% endif %}
-          placeholder="{{ 'customer.login_page.email' | t }}"
-        >
-        <label for="CustomerEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
-      </div>
-
-      {%- if form.password_needed -%}
-        <div class="field">
+      {%- form 'recover_customer_password' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="fgp-login__field">
+          <label class="fgp-login__label" for="RecoverEmail">{{ 'customer.login_page.email' | t }}</label>
           <input
-            type="password"
-            value=""
-            name="customer[password]"
-            id="CustomerPassword"
-            autocomplete="current-password"
-            {% if form.errors contains 'form' %}
-              aria-invalid="true"
-            {% endif %}
-            placeholder="{{ 'customer.login_page.password' | t }}"
+            class="fgp-login__input"
+            type="email"
+            name="email"
+            id="RecoverEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}aria-invalid="true" aria-describedby="RecoverEmail-error"{% endif %}
           >
-          <label for="CustomerPassword">
-            {{ 'customer.login_page.password' | t }}
-          </label>
+          {%- if form.errors -%}
+            <p class="fgp-login__field-error" id="RecoverEmail-error" role="alert">{{ form.errors.messages.form }}</p>
+          {%- endif -%}
         </div>
-
-        <a href="#recover">
-          {{ 'customer.login_page.forgot_password' | t }}
-        </a>
-      {%- endif -%}
-
-      <button>
-        {{ 'customer.login_page.sign_in' | t }}
-      </button>
-
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
-    {%- endform -%}
-  </div>
-
-  {%- if shop.checkout.guest_login -%}
-    <div>
-      <hr>
-      <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
-
-      {%- form 'guest_login' -%}
-        <button>
-          {{ 'customer.login_page.guest_continue' | t }}
+        <button class="fgp-login__btn fgp-login__btn--primary" type="submit">
+          {{ 'customer.login_page.submit' | t }}
         </button>
+        <a href="#login" class="fgp-login__link fgp-login__link--cancel" id="fgp-cancel-recover">
+          {{ 'customer.login_page.cancel' | t }}
+        </a>
       {%- endform -%}
     </div>
-  {%- endif -%}
+
+    <!-- ── Login form ── -->
+    <div id="fgp-login" class="fgp-login__section">
+      <h1 class="fgp-login__title">{{ 'customer.login_page.title' | t }}</h1>
+
+      {%- form 'customer_login', novalidate: 'novalidate' -%}
+        {%- if recover_success == true -%}
+          <p class="fgp-login__success" role="status">{{ 'customer.recover_password.success' | t }}</p>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <p class="fgp-login__error" role="alert">{{ 'templates.contact.form.error_heading' | t }}</p>
+        {%- endif -%}
+
+        <div class="fgp-login__field">
+          <label class="fgp-login__label" for="CustomerEmail">{{ 'customer.login_page.email' | t }}</label>
+          <input
+            class="fgp-login__input"
+            type="email"
+            name="customer[email]"
+            id="CustomerEmail"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors contains 'form' %}aria-invalid="true"{% endif %}
+          >
+        </div>
+
+        {%- if form.password_needed -%}
+          <div class="fgp-login__field">
+            <label class="fgp-login__label" for="CustomerPassword">{{ 'customer.login_page.password' | t }}</label>
+            <input
+              class="fgp-login__input"
+              type="password"
+              name="customer[password]"
+              id="CustomerPassword"
+              autocomplete="current-password"
+              {% if form.errors contains 'form' %}aria-invalid="true"{% endif %}
+            >
+          </div>
+          <a href="#recover" class="fgp-login__link fgp-login__link--forgot" id="fgp-show-recover">
+            {{ 'customer.login_page.forgot_password' | t }}
+          </a>
+        {%- endif -%}
+
+        <button class="fgp-login__btn fgp-login__btn--primary" type="submit">
+          {{ 'customer.login_page.sign_in' | t }}
+        </button>
+
+        <div class="fgp-login__divider" aria-hidden="true">
+          <span>¿No tienes cuenta?</span>
+        </div>
+
+        <a href="{{ routes.account_register_url }}" class="fgp-login__btn fgp-login__btn--outline">
+          {{ 'customer.login_page.create_account' | t }}
+        </a>
+      {%- endform -%}
+    </div>
+
+  </div>
 </div>
+
+<style>
+.fgp-login {
+  min-height: calc(100vh - 80px);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-login__card {
+  background: #ffffff;
+  border: 1px solid rgba(35,64,146,0.1);
+  border-radius: 20px;
+  padding: 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 32px rgba(35,64,146,0.08);
+}
+
+/* Logo */
+.fgp-login__logo-link { display: block; margin-bottom: 36px; }
+.fgp-login__logo {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+.fgp-login__shop-name {
+  color: var(--fgp-navy, #234092);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 36px;
+  display: block;
+}
+
+/* Sections */
+.fgp-login__section { width: 100%; }
+
+/* Title */
+.fgp-login__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fgp-navy, #234092);
+  margin: 0 0 6px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.fgp-login__subtitle {
+  font-size: 14px;
+  color: rgba(35,64,146,0.6);
+  text-align: center;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* Fields */
+.fgp-login__field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fgp-login__label {
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: #234092;
+  letter-spacing: 0.3px;
+}
+
+.fgp-login__input {
+  width: 100%;
+  background: #f5f7fc !important;
+  border: 1.5px solid #9aaad4 !important;
+  border-radius: 12px !important;
+  padding: 13px 16px !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-size: 15px !important;
+  color: #234092 !important;
+  outline: none !important;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.fgp-login__input::placeholder {
+  color: #8a9bc4 !important;
+}
+.fgp-login__input:focus {
+  border-color: #45bfef !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(69,191,239,0.2) !important;
+}
+.fgp-login__input[aria-invalid="true"] {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.15) !important;
+}
+
+.fgp-login__field-error {
+  font-size: 12px;
+  color: #c0392b;
+  margin: 2px 0 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+/* Buttons */
+.fgp-login__btn {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  transition: opacity 0.2s;
+}
+.fgp-login__btn:hover { opacity: 0.88; }
+
+.fgp-login__btn--primary {
+  background: var(--fgp-navy, #234092);
+  color: #ffffff;
+}
+
+.fgp-login__btn--outline {
+  background: transparent;
+  color: #234092;
+  border: 1.5px solid #9aaad4;
+  border-radius: 12px !important;
+  margin-top: 12px;
+}
+.fgp-login__btn--outline:hover {
+  border-color: #234092;
+  opacity: 1;
+  background: rgba(35,64,146,0.04);
+}
+
+/* Forgot / links */
+.fgp-login__link {
+  display: block;
+  text-align: center;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  font-size: 13px;
+  color: rgba(35,64,146,0.5);
+  text-decoration: none;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: color 0.2s;
+}
+.fgp-login__link:hover { color: var(--fgp-navy, #234092); }
+
+.fgp-login__link--forgot {
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #234092;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fgp-login__link--cancel {
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+/* Divider */
+.fgp-login__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.fgp-login__divider::before,
+.fgp-login__divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid rgba(35,64,146,0.12);
+}
+.fgp-login__divider span {
+  font-size: 12px;
+  color: rgba(35,64,146,0.4);
+  white-space: nowrap;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+/* Messages */
+.fgp-login__error {
+  font-size: 13px;
+  color: #d64040;
+  margin: 0 0 12px;
+  text-align: center;
+}
+.fgp-login__success {
+  font-size: 13px;
+  color: #1a7a4a;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.fgp-login__guest {
+  margin-top: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Hide Seal Subscriptions login helper injection */
+#seal-login-helper { display: none !important; }
+
+/* Mobile */
+@media (max-width: 639px) {
+  .fgp-login__card { padding: 36px 24px; }
+  .fgp-login__title { font-size: 20px; }
+}
+</style>
+
+<script>
+(function () {
+  var showRecover = document.getElementById('fgp-show-recover');
+  var cancelRecover = document.getElementById('fgp-cancel-recover');
+  var recoverSection = document.getElementById('fgp-recover');
+  var loginSection = document.getElementById('fgp-login');
+
+  if (showRecover) {
+    showRecover.addEventListener('click', function (e) {
+      e.preventDefault();
+      loginSection.style.display = 'none';
+      recoverSection.style.display = 'block';
+    });
+  }
+  if (cancelRecover) {
+    cancelRecover.addEventListener('click', function (e) {
+      e.preventDefault();
+      recoverSection.style.display = 'none';
+      loginSection.style.display = 'block';
+    });
+  }
+})();
+</script>
 
 {% schema %}
 {
@@ -177,7 +371,7 @@
       "type": "checkbox",
       "id": "enable_shop_login_button",
       "label": "t:sections.main-login.shop_login_button.enable",
-      "default": true
+      "default": false
     },
     {
       "type": "header",

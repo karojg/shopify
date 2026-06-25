@@ -91,7 +91,7 @@
 .fgp-is__label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--fgp-navy);
+  color: var(--fgp-purple);
   line-height: 1.35;
   margin: 0;
   max-width: 120px;
@@ -121,19 +121,19 @@
   .fgp-is__label { font-size: 12px; max-width: 100px; }
 }
 
-/* ── Mobile ≤ 639px: 2-col grid ── */
+/* ── Mobile ≤ 639px: single column ── */
 @media (max-width: 639px) {
   .fgp-is__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 12px;
-    padding: 24px 20px;
-    justify-items: start;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 28px;
+    padding: 32px 28px;
   }
-  .fgp-is__item { gap: 10px; }
-  .fgp-is__icon-wrap { width: 40px; height: 40px; }
-  .fgp-is__icon { width: 22px; height: 22px; }
-  .fgp-is__label { font-size: 12px; max-width: none; }
+  .fgp-is__item { gap: 16px; }
+  .fgp-is__icon-wrap { width: 60px; height: 60px; border-width: 1.5px; }
+  .fgp-is__icon { width: 32px; height: 32px; }
+  .fgp-is__label { font-size: 16px; font-weight: 600; max-width: none; color: var(--fgp-purple); }
   .fgp-is--dividers .fgp-is__item + .fgp-is__item {
     border-left: none;
     padding-left: 0;

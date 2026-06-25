@@ -11,7 +11,6 @@
   "sections": {
     "fgp_homepage_hero": {
       "type": "fgp-hero-v1",
-      "disabled": true,
       "name": "FGP Hero — Navy",
       "settings": {
         "eyebrow": "Plant-based Psychobiotic",
@@ -247,13 +246,67 @@
         "section_label": "Products"
       }
     },
+    "fgp_icon_strip_Ya38Fq": {
+      "type": "fgp-icon-strip",
+      "blocks": {
+        "item_CyxFwm": {
+          "type": "item",
+          "settings": {
+            "label": "Spore based probiotics"
+          }
+        },
+        "item_yaLXzU": {
+          "type": "item",
+          "settings": {
+            "label": "Plant Based ingredients"
+          }
+        },
+        "item_wJkJVN": {
+          "type": "item",
+          "settings": {
+            "label": "Replenishes Beneficial Bacteria®"
+          }
+        },
+        "item_8QpQbU": {
+          "type": "item",
+          "settings": {
+            "label": "Strengthens Gut Barrier®"
+          }
+        },
+        "item_UFd4ai": {
+          "type": "item",
+          "settings": {
+            "label": "Improves Nutrient Absorption®"
+          }
+        },
+        "item_cnazY9": {
+          "type": "item",
+          "settings": {
+            "label": "Non GMO"
+          }
+        }
+      },
+      "block_order": [
+        "item_CyxFwm",
+        "item_yaLXzU",
+        "item_wJkJVN",
+        "item_8QpQbU",
+        "item_UFd4ai",
+        "item_cnazY9"
+      ],
+      "name": "FGP Icon Strip",
+      "settings": {
+        "bg": "white",
+        "aria_label": "Product benefits"
+      }
+    },
     "fgp_products_grid_main": {
       "type": "fgp-products-grid",
       "blocks": {
         "product_1": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "kids-organic-probiotic-gummies",
             "eyebrow": "DIGESTIVE ENZYMES",
             "placeholder_title": "Synbiotic+",
             "cta_label": "Shop Synbiotic+"
@@ -262,7 +315,7 @@
         "product_2": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "enzimas-digestivas-con-sinbiotico",
             "eyebrow": "KIDS",
             "placeholder_title": "Kids Probiotics",
             "cta_label": "Shop Kids Probiotics"
@@ -271,7 +324,7 @@
         "product_3": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "pastilleros-magneticos-feel-good-eucalipto",
             "eyebrow": "DIGESTIVE ENZYMES",
             "placeholder_title": "Digestive Enzymes",
             "cta_label": "Shop Enzymes"
@@ -287,7 +340,7 @@
       "settings": {
         "collection": "",
         "products_to_show": 3,
-        "heading": "Formulated to Costa Rica",
+        "heading": "",
         "cta_label": "Shop Now"
       }
     },
@@ -339,6 +392,16 @@
     "fgp_customer_reviews_main": {
       "type": "fgp-customer-reviews",
       "blocks": {
+        "review_fXj9kK": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "I've been using this product for 3 months and I feel incredible. My digestion has improved tremendously and I have more energy than ever!",
+            "name": "Maria G.",
+            "location": "San José, Costa Rica"
+          }
+        },
         "review_1": {
           "type": "review",
           "settings": {
@@ -371,6 +434,7 @@
         }
       },
       "block_order": [
+        "review_fXj9kK",
         "review_1",
         "review_2",
         "review_3"
@@ -391,61 +455,6 @@
         "fb_url": "",
         "fb_label": "FEELGOODPHARMA"
       }
-    },
-    "fgp_hero_v2_7DtwTc": {
-      "type": "fgp-hero-v2",
-      "blocks": {
-        "symptom_HTCn9U": {
-          "type": "symptom",
-          "settings": {
-            "label": "Stress"
-          }
-        },
-        "symptom_z3WP8k": {
-          "type": "symptom",
-          "settings": {
-            "label": "Gluten intolerance"
-          }
-        },
-        "symptom_7Nh8hJ": {
-          "type": "symptom",
-          "settings": {
-            "label": "Lactose intolerance"
-          }
-        },
-        "symptom_tgAW3F": {
-          "type": "symptom",
-          "settings": {
-            "label": "Constipation or Diarrhea"
-          }
-        },
-        "symptom_TXLjDA": {
-          "type": "symptom",
-          "settings": {
-            "label": "Irritable Bowel Syndrome"
-          }
-        },
-        "symptom_zgFC3W": {
-          "type": "symptom",
-          "settings": {
-            "label": "Low defenses"
-          }
-        }
-      },
-      "block_order": [
-        "symptom_HTCn9U",
-        "symptom_z3WP8k",
-        "symptom_7Nh8hJ",
-        "symptom_tgAW3F",
-        "symptom_TXLjDA",
-        "symptom_zgFC3W"
-      ],
-      "name": "FGP Hero — Blue",
-      "settings": {
-        "heading_before": "Is it a gut feeling or",
-        "cta_label": "Take The 1 Minute Test!",
-        "cta_url": ""
-      }
     }
   },
   "order": [
@@ -458,10 +467,10 @@
     "fgp_kids_feature_main",
     "fgp_kids_symptoms_main",
     "fgp_video_cards_main",
+    "fgp_icon_strip_Ya38Fq",
     "fgp_products_grid_main",
     "fgp_doctor_testimonials_main",
     "fgp_customer_reviews_main",
-    "fgp_subfooter_main",
-    "fgp_hero_v2_7DtwTc"
+    "fgp_subfooter_main"
   ]
 }
