@@ -137,6 +137,19 @@
     endif
   -%}
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+    <button
+      id="fgp-mob-trigger"
+      class="header__icon fgp-mob__trigger large-up-hide"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="fgp-mob"
+    >
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+        <path d="M0 1H20M0 7H20M0 13H20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      </svg>
+      <span class="visually-hidden">Menu</span>
+    </button>
+
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -302,6 +315,8 @@
         {%- endif -%}
       </a>
     </div>
+
+    {% render 'fgp-mobile-menu' %}
   </header>
 </{{ header_tag }}>
 

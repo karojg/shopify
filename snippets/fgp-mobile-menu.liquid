@@ -1,0 +1,176 @@
+{% assign fgp_nav = linklists['main-menu'] %}
+
+<!-- FGP Mobile Slide Menu -->
+<div id="fgp-mob" class="fgp-mob" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site navigation">
+  <div class="fgp-mob__backdrop" id="fgp-mob-backdrop"></div>
+  <div class="fgp-mob__panel">
+    <button class="fgp-mob__close" id="fgp-mob-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M2 2L18 18M18 2L2 18" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav class="fgp-mob__nav">
+      {% if fgp_nav.links.size > 0 %}
+        {% for link in fgp_nav.links %}
+          <a href="{{ link.url }}" class="fgp-mob__link">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="{{ routes.root_url }}" class="fgp-mob__link">Home</a>
+        <a href="/collections" class="fgp-mob__link">Formulations</a>
+        <a href="/pages/science-behind-it" class="fgp-mob__link">Science Behind It</a>
+        <a href="/pages/about-us" class="fgp-mob__link">About Us</a>
+      {% endif %}
+    </nav>
+  </div>
+</div>
+
+<style>
+/* Trigger — uses Dawn's left-icons grid area on mobile */
+.fgp-mob__trigger {
+  grid-area: left-icons;
+  justify-self: start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 749px) {
+  .fgp-mob__trigger {
+    display: flex;
+    color: #ffffff !important;
+  }
+
+  .fgp-mob__trigger svg path {
+    stroke: #ffffff !important;
+  }
+
+  /* All header icons white on mobile */
+  .header__icon,
+  .header__icon svg,
+  .header__icon .svg-wrapper svg,
+  .header__icon .svg-wrapper {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+}
+
+/* Backdrop */
+.fgp-mob__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Panel */
+.fgp-mob__panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 72vw;
+  max-width: 300px;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--fgp-blue, #45bfef);
+  z-index: 9002;
+  transform: translateX(-100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 56px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Open state */
+.fgp-mob--open .fgp-mob__backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fgp-mob--open .fgp-mob__panel {
+  transform: translateX(0);
+}
+
+/* Close button */
+.fgp-mob__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nav links */
+.fgp-mob__nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.fgp-mob__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--fgp-font, 'Poppins', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.fgp-mob__link:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.fgp-mob__link:hover {
+  opacity: 0.75;
+}
+</style>
+
+<script>
+(function () {
+  var mob = document.getElementById('fgp-mob');
+  var trigger = document.getElementById('fgp-mob-trigger');
+  var closeBtn = document.getElementById('fgp-mob-close');
+  var backdrop = document.getElementById('fgp-mob-backdrop');
+
+  if (!mob || !trigger) return;
+
+  function open() {
+    mob.classList.add('fgp-mob--open');
+    mob.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn && closeBtn.focus();
+  }
+
+  function close() {
+    mob.classList.remove('fgp-mob--open');
+    mob.setAttribute('aria-hidden', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    trigger.focus();
+  }
+
+  trigger.addEventListener('click', open);
+  closeBtn && closeBtn.addEventListener('click', close);
+  backdrop && backdrop.addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mob.classList.contains('fgp-mob--open')) close();
+  });
+})();
+</script>
