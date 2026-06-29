@@ -23,9 +23,10 @@
         <p class="fgp-hh__subtitle">{{ section.settings.subtitle }}</p>
       {% endif %}
 
+      <!-- Pills: visible inside content on desktop only -->
       {% if section.settings.pills != blank %}
+        {% assign pill_list = section.settings.pills | split: ',' %}
         <div class="fgp-hh__pills">
-          {% assign pill_list = section.settings.pills | split: ',' %}
           {% for pill in pill_list %}
             <span class="fgp-hh__pill">{{ pill | strip }}</span>
           {% endfor %}
@@ -54,6 +55,16 @@
       {% endif %}
     </div>
 
+    <!-- Mobile-only pill strip at bottom -->
+    {% if section.settings.pills != blank %}
+      <div class="fgp-hh__pill-strip" aria-hidden="true">
+        {% assign pill_list = section.settings.pills | split: ',' %}
+        {% for pill in pill_list %}
+          <span class="fgp-hh__pill-strip-item">{{ pill | strip }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
   </div>
 </section>
 
@@ -63,6 +74,10 @@
   background: var(--fgp-navy);
   width: 100%;
   overflow: hidden;
+}
+
+@media (max-width: 639px) {
+  .fgp-hh--v1 { overflow: visible; }
 }
 
 .fgp-hh--v1 .fgp-hh__inner {
@@ -188,16 +203,94 @@
   z-index: 2;
 }
 
+/* ── Mobile-only pill strip ── */
+.fgp-hh__pill-strip {
+  display: none;
+}
+
 /* ── Mobile ≤ 639px ── */
 @media (max-width: 639px) {
-  .fgp-hh--v1 .fgp-hh__inner   { flex-direction: column; min-height: unset; }
-  .fgp-hh--v1 .fgp-hh__content { flex: none; width: 100%; padding: 32px 20px 24px; gap: 14px; order: 2; }
-  .fgp-hh--v1 .fgp-hh__media   { flex: none; width: 100%; min-height: 240px; order: 1; }
-  .fgp-hh--v1 .fgp-hh__heading  { font-size: 34px; }
-  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 15px; }
-  .fgp-hh--v1 .fgp-hh__pill     { font-size: 12px; padding: 5px 12px; }
-  .fgp-hh--v1 .fgp-hh__cta      { font-size: 14px; padding: 11px 22px; }
-  .fgp-hh--v1 .fgp-hh__ctas     { gap: 10px; }
+  .fgp-hh--v1 .fgp-hh__inner {
+    flex-direction: column;
+    min-height: unset;
+    align-items: stretch;
+  }
+
+  /* Content: first, centered */
+  .fgp-hh--v1 .fgp-hh__content {
+    flex: none;
+    width: 100%;
+    padding: 28px 24px 20px;
+    gap: 12px;
+    order: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Media: second, full width — height capped to viewport */
+  .fgp-hh--v1 .fgp-hh__media {
+    flex: none;
+    width: 100%;
+    height: 44vw;
+    max-height: 240px;
+    min-height: 160px;
+    order: 2;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Pill strip: third — light blue card with rounded bottom */
+  .fgp-hh__pill-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    order: 3;
+    padding: 14px 16px 20px;
+    background: #b8e4f7;
+    border-radius: 0 0 20px 20px;
+    border-top: none;
+  }
+  .fgp-hh__pill-strip-item {
+    background: #ffffff;
+    border: 1.5px solid #9aaad4;
+    color: #234092;
+    border-radius: 200px;
+    padding: 5px 14px;
+    font-family: var(--fgp-font, 'Poppins', sans-serif);
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* Hide inline pills on mobile — moved to strip */
+  .fgp-hh--v1 .fgp-hh__pills { display: none; }
+
+  /* Typography */
+  .fgp-hh--v1 .fgp-hh__eyebrow  { font-size: 11px; letter-spacing: 1.5px; }
+  .fgp-hh--v1 .fgp-hh__heading  { font-size: 32px; text-align: center; }
+  .fgp-hh--v1 .fgp-hh__subtitle { font-size: 14px; text-align: center; }
+  .fgp-hh--v1 .fgp-hh__ctas     { gap: 8px; justify-content: center; }
+  .fgp-hh--v1 .fgp-hh__cta      { font-size: 13px; padding: 8px 20px; }
+
+  /* Bottle: height-driven, scales with container */
+  .fgp-hh--v1 .fgp-hh__bottle {
+    width: auto;
+    height: 100%;
+    max-height: 100%;
+    max-width: 75%;
+    align-self: flex-end;
+    object-fit: contain;
+    object-position: bottom center;
+    margin: 0 auto;
+  }
+  .fgp-hh--v1 .fgp-hh__badge {
+    bottom: 12px;
+    left: 12px;
+    width: 80px;
+  }
 }
 
 /* ── Small tablet 640–1023px ── */
@@ -209,6 +302,7 @@
   .fgp-hh--v1 .fgp-hh__pill     { font-size: 13px; padding: 6px 16px; }
   .fgp-hh--v1 .fgp-hh__cta      { font-size: 15px; padding: 12px 28px; }
   .fgp-hh--v1 .fgp-hh__ctas     { gap: 14px; }
+  .fgp-hh--v1 .fgp-hh__bottle   { max-height: 88%; }
 }
 </style>
 
