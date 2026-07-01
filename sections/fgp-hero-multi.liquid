@@ -128,10 +128,14 @@
   gap: 0 6px;
 }
 .fgp-hv2__q { white-space: nowrap; }
+
+/* Fixed-width blank so cycling words never shift layout */
 .fgp-hv2__blank {
   position: relative;
   display: inline-block;
-  min-width: 120px;
+  /* wide enough for the longest word — set per breakpoint */
+  width: 220px;
+  overflow: hidden;
 }
 .fgp-hv2__blank::after {
   content: '';
@@ -140,11 +144,13 @@
   border-bottom: 2px solid rgba(255,255,255,0.7);
 }
 .fgp-hv2__cycle {
-  display: inline-block;
+  display: block;
   color: #fff;
   font-size: inherit;
   font-weight: 700;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: opacity 0.3s ease;
 }
 .fgp-hv2__cycle.is-fading { opacity: 0; }
@@ -174,7 +180,7 @@
 
 /* Bottles */
 .fgp-hv2__bottles { display: flex; flex-direction: row; align-items: flex-end; }
-.fgp-hv2__bottle  { object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2)); }
+.fgp-hv2__bottle  { object-fit: contain; }
 
 
 /* ══════════════════════════════════════
@@ -183,20 +189,32 @@
 ══════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Heading: centered, wraps naturally */
+  /* Heading: block element, centered text, flows naturally */
   .fgp-hv2__top {
-    padding: 16px 16px 0;
-    text-align: center;
+    padding: 28px 30px 0;
+    overflow: hidden;
   }
   .fgp-hv2__heading {
-    font-size: clamp(16px, 4.5vw, 22px);
+    font-size: clamp(24px, 7vw, 36px);
     font-weight: 400;
-    justify-content: center;
-    gap: 0 5px;
     line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .fgp-hv2__blank-row { gap: 0 4px; }
-  .fgp-hv2__blank { min-width: 70px; }
+  /* Line 1: "Is it a gut feeling or" — left */
+  .fgp-hv2__heading-text { display: block; }
+  /* Line 2: underline + ? — right */
+  .fgp-hv2__blank-row {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0 4px;
+    white-space: nowrap;
+    align-self: flex-end;
+  }
+  .fgp-hv2__blank { width: clamp(110px, 32vw, 200px); vertical-align: baseline; }
+  /* Mobile: hide cycling word, show only the underline */
+  .fgp-hv2__cycle { visibility: hidden; }
 
   /* Body: column — content on top, bottles on bottom */
   .fgp-hv2__body { flex-direction: column; }
@@ -207,11 +225,15 @@
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-    padding: 8px 16px 0;
-    gap: 8px;
+    padding: 16px 20px 0;
+    gap: 12px;
   }
-  .fgp-hv2__symptoms { gap: 1px; }
-  .fgp-hv2__symptom  { font-size: clamp(11px, 3vw, 14px); font-weight: 400; }
+  .fgp-hv2__symptoms { gap: 4px; }
+  .fgp-hv2__symptom  {
+    font-size: clamp(16px, 5vw, 22px);
+    font-weight: 400;
+    line-height: 1.4;
+  }
 
   /* Footer row: badge left, CTA right */
   .fgp-hv2__foot {
@@ -219,20 +241,21 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-top: 8px;
+    padding-top: 12px;
   }
   .fgp-hv2__badge--dk { display: none; }
-  .fgp-hv2__badge--mb { display: block; width: 40px; height: auto; flex-shrink: 0; }
+  .fgp-hv2__badge--mb { display: none; }
   .fgp-hv2__cta {
-    font-size: clamp(11px, 2.8vw, 13px);
-    padding: 8px 16px;
+    font-size: 13px;
+    padding: 10px 20px;
+    font-weight: 700;
   }
 
-  /* Media: fixed height, overflow hidden, top of bottles visible */
+  /* Media: bottles at bottom, top portion visible */
   .fgp-hv2__media {
     width: 100%;
-    height: 160px;
-    margin-top: 10px;
+    height: 200px;
+    margin-top: 24px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -242,19 +265,17 @@
     height: 100%;
     align-items: flex-start;
     justify-content: center;
-    overflow: hidden;
   }
-  /* All 3 bottles visible side by side, tops showing */
   .fgp-hv2__bottle {
-    height: 280px;
+    height: 340px;
     width: auto;
     flex-shrink: 0;
   }
-  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 120px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 110px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -20px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 100px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -18px; }
+  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 140px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 140px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -90px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 110px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -60px; }
   .fgp-hv2__bottle--center { z-index: 1; }
 }
 
@@ -306,16 +327,7 @@
     overflow: visible;
   }
 
-  /* Badge top-left of this column */
-  .fgp-hv2__badge--dk {
-    display: block;
-    position: absolute;
-    top: clamp(8px, 1.5vw, 20px);
-    left: clamp(32px, 5vw, 80px);
-    width: clamp(48px, 4vw, 68px);
-    height: auto;
-    z-index: 2;
-  }
+  .fgp-hv2__badge--dk { display: none; }
   .fgp-hv2__badge--mb { display: none; }
 
   /* Bottles: bottom-aligned, clipped 15% at bottom by .fgp-hv2 overflow:hidden */
@@ -335,9 +347,9 @@
 
   .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 clamp(160px, 22vw, 320px); }
   .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 clamp(130px, 18vw, 260px); }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-16px, -2vw, -8px); }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-80px, -8vw, -50px); }
   .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 clamp(100px, 13vw, 195px); }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-20px, -2.5vw, -10px); }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-60px, -6vw, -36px); }
   .fgp-hv2__bottle--center {
     flex: 0 0 clamp(115px, 15vw, 220px) !important;
     transform: scale(1.08);
