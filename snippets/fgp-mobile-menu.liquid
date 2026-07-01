@@ -19,7 +19,7 @@
     <nav class="fgp-mob__nav">
       {% if fgp_nav.links.size > 0 %}
         {% for link in fgp_nav.links %}
-          <a href="{{ link.url }}" class="fgp-mob__link">{{ link.title }}</a>
+          <a href="{{ link.url }}" class="fgp-mob__link{% if link.active %} fgp-mob__link--active{% endif %}">{{ link.title }}</a>
         {% endfor %}
       {% else %}
         <a href="{{ routes.root_url }}" class="fgp-mob__link">Home</a>
@@ -28,6 +28,33 @@
         <a href="/pages/about-us" class="fgp-mob__link">About Us</a>
       {% endif %}
     </nav>
+
+    <div class="fgp-mob__footer">
+      <form action="{{ routes.search_url }}" method="get" class="fgp-mob__search">
+        <input type="search" name="q" placeholder="Search products…" class="fgp-mob__search-input" autocomplete="off">
+        <button type="submit" class="fgp-mob__search-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6.5" stroke="white" stroke-width="1.75"/><path d="M13.5 13.5L18 18" stroke="white" stroke-width="1.75" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+
+      <div class="fgp-mob__icons">
+        {%- if shop.customer_accounts_enabled -%}
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+             class="fgp-mob__icon-link" rel="nofollow">
+            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+            <span>{%- if customer -%}Account{%- else -%}Log in{%- endif -%}</span>
+          </a>
+        {%- endif -%}
+        <a href="{{ routes.cart_url }}" class="fgp-mob__icon-link">
+          {%- if cart == empty -%}
+            <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+          {%- else -%}
+            <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+          {%- endif -%}
+          <span>Cart{%- if cart.item_count > 0 -%} ({{ cart.item_count }}){%- endif -%}</span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -158,8 +185,68 @@
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.fgp-mob__link:hover {
-  opacity: 0.65;
+.fgp-mob__link:hover { opacity: 0.65; }
+.fgp-mob__link--active { font-weight: 700; }
+
+/* Footer: search + icons at bottom of panel */
+.fgp-mob__footer {
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fgp-mob__icons {
+  display: flex;
+  gap: 20px;
+}
+
+.fgp-mob__icon-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--fgp-font, 'Poppins', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.fgp-mob__icon-link:hover { opacity: 1; }
+.fgp-mob__icon-link .svg-wrapper svg { stroke: #fff; fill: none; width: 20px; height: 20px; }
+
+/* Search form */
+.fgp-mob__search {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 200px;
+  padding: 10px 14px;
+  gap: 10px;
+}
+.fgp-mob__search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: var(--fgp-font, 'Poppins', sans-serif);
+  font-size: 12px;
+  padding: 0;
+  min-width: 0;
+}
+.fgp-mob__search-input::placeholder { color: rgba(255,255,255,0.55); }
+.fgp-mob__search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 </style>
 

@@ -1,0 +1,466 @@
+{% render 'fgp-global' %}
+
+{% assign symptom_words = '' %}
+{% for block in section.blocks %}
+  {% if block.type == 'symptom' %}
+    {% unless forloop.first %}{% assign symptom_words = symptom_words | append: '|' %}{% endunless %}
+    {% assign symptom_words = symptom_words | append: block.settings.label %}
+  {% endif %}
+{% endfor %}
+
+<section class="fgp-hv2" aria-label="Hero banner">
+  <div class="fgp-hv2__inner">
+
+    <!-- Heading row: spans full width -->
+    <div class="fgp-hv2__top">
+      <h1 class="fgp-hv2__heading">
+        <span class="fgp-hv2__heading-text">{{ section.settings.heading_before | default: 'Is it a gut feeling or' }}</span>
+        <span class="fgp-hv2__blank-row">
+          <span class="fgp-hv2__blank">
+            <span class="fgp-hv2__cycle" data-words="{{ symptom_words }}">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'symptom' and forloop.first -%}{{ block.settings.label }}{%- endif -%}
+              {%- endfor -%}
+            </span>
+          </span>
+          <span class="fgp-hv2__q">?</span>
+        </span>
+      </h1>
+    </div>
+
+    {% assign bottle_count = 0 %}
+    {% if section.settings.bottle_1 != blank %}{% assign bottle_count = bottle_count | plus: 1 %}{% endif %}
+    {% if section.settings.bottle_2 != blank %}{% assign bottle_count = bottle_count | plus: 1 %}{% endif %}
+    {% if section.settings.bottle_3 != blank %}{% assign bottle_count = bottle_count | plus: 1 %}{% endif %}
+
+    <!-- Body: on desktop = row (media left, content right)
+               on mobile  = column (content first, media second — via DOM order) -->
+    <div class="fgp-hv2__body">
+
+      <!-- Symptoms + CTA — first in DOM = first on mobile, right column on desktop -->
+      <div class="fgp-hv2__content">
+        {% if section.blocks.size > 0 %}
+          <ul class="fgp-hv2__symptoms">
+            {% for block in section.blocks %}
+              {% if block.type == 'symptom' %}
+                <li class="fgp-hv2__symptom" {{ block.shopify_attributes }}>{{ block.settings.label }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <div class="fgp-hv2__foot">
+          {% if section.settings.badge_image != blank %}
+            <img
+              class="fgp-hv2__badge fgp-hv2__badge--mb"
+              src="{{ section.settings.badge_image | img_url: '160x' }}"
+              alt="Recommended by Health Specialists"
+              loading="lazy"
+              width="56" height="56">
+          {% endif %}
+          {% if section.settings.cta_label != blank %}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hv2__cta">
+              {{ section.settings.cta_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Bottles — second in DOM = bottom on mobile, left column on desktop -->
+      <div class="fgp-hv2__media">
+        {% if section.settings.badge_image != blank %}
+          <img
+            class="fgp-hv2__badge fgp-hv2__badge--dk"
+            src="{{ section.settings.badge_image | img_url: '200x' }}"
+            alt="Recommended by Health Specialists"
+            loading="lazy"
+            width="88" height="88">
+        {% endif %}
+        <div class="fgp-hv2__bottles" data-count="{{ bottle_count }}">
+          {% if section.settings.bottle_1 != blank %}
+            <img class="fgp-hv2__bottle" src="{{ section.settings.bottle_1 | img_url: '600x' }}" alt="" loading="eager">
+          {% endif %}
+          {% if section.settings.bottle_2 != blank %}
+            <img class="fgp-hv2__bottle{% if bottle_count == 3 %} fgp-hv2__bottle--center{% endif %}" src="{{ section.settings.bottle_2 | img_url: '600x' }}" alt="" loading="eager">
+          {% endif %}
+          {% if section.settings.bottle_3 != blank %}
+            <img class="fgp-hv2__bottle" src="{{ section.settings.bottle_3 | img_url: '600x' }}" alt="" loading="eager">
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ═══════════════════════════════════════════
+   FGP Hero Multi — clean rewrite from Figma spec
+   Mobile  (≤768px): stacked, heading top-center, symptoms right, bottles bottom
+   Desktop (>768px): heading centered top, bottles left 55%, content right 45%
+   ═══════════════════════════════════════════ */
+
+/* ── BASE (shared all sizes) ── */
+.fgp-hv2 {
+  font-family: var(--fgp-font, 'Poppins', sans-serif);
+  background: #45bfef;
+  width: 100%;
+  overflow: hidden;
+}
+.fgp-hv2__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Heading */
+.fgp-hv2__heading {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.fgp-hv2__heading-text { white-space: nowrap; }
+.fgp-hv2__blank-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0 6px;
+}
+.fgp-hv2__q { white-space: nowrap; }
+.fgp-hv2__blank {
+  position: relative;
+  display: inline-block;
+  min-width: 120px;
+}
+.fgp-hv2__blank::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0; right: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+}
+.fgp-hv2__cycle {
+  display: inline-block;
+  color: #fff;
+  font-size: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+.fgp-hv2__cycle.is-fading { opacity: 0; }
+
+/* Body */
+.fgp-hv2__body { display: flex; flex: 1; }
+
+/* Symptoms */
+.fgp-hv2__symptoms { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.fgp-hv2__symptom  { color: #fff; line-height: 1.4; }
+
+/* CTA */
+.fgp-hv2__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 700;
+  background: #fff;
+  color: #234092;
+  border-radius: 200px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.fgp-hv2__cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Bottles */
+.fgp-hv2__bottles { display: flex; flex-direction: row; align-items: flex-end; }
+.fgp-hv2__bottle  { object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2)); }
+
+
+/* ══════════════════════════════════════
+   MOBILE — ≤ 768px
+   Layout: heading | symptoms+CTA | bottles
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Heading: centered, wraps naturally */
+  .fgp-hv2__top {
+    padding: 16px 16px 0;
+    text-align: center;
+  }
+  .fgp-hv2__heading {
+    font-size: clamp(16px, 4.5vw, 22px);
+    font-weight: 400;
+    justify-content: center;
+    gap: 0 5px;
+    line-height: 1.3;
+  }
+  .fgp-hv2__blank-row { gap: 0 4px; }
+  .fgp-hv2__blank { min-width: 70px; }
+
+  /* Body: column — content on top, bottles on bottom */
+  .fgp-hv2__body { flex-direction: column; }
+
+  /* Content: symptoms right-aligned */
+  .fgp-hv2__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding: 8px 16px 0;
+    gap: 8px;
+  }
+  .fgp-hv2__symptoms { gap: 1px; }
+  .fgp-hv2__symptom  { font-size: clamp(11px, 3vw, 14px); font-weight: 400; }
+
+  /* Footer row: badge left, CTA right */
+  .fgp-hv2__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 8px;
+  }
+  .fgp-hv2__badge--dk { display: none; }
+  .fgp-hv2__badge--mb { display: block; width: 40px; height: auto; flex-shrink: 0; }
+  .fgp-hv2__cta {
+    font-size: clamp(11px, 2.8vw, 13px);
+    padding: 8px 16px;
+  }
+
+  /* Media: fixed height, overflow hidden, top of bottles visible */
+  .fgp-hv2__media {
+    width: 100%;
+    height: 160px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .fgp-hv2__bottles {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+  }
+  /* All 3 bottles visible side by side, tops showing */
+  .fgp-hv2__bottle {
+    height: 280px;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 120px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 110px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -20px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 100px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -18px; }
+  .fgp-hv2__bottle--center { z-index: 1; }
+}
+
+
+/* ══════════════════════════════════════
+   DESKTOP — > 768px
+   Layout: [heading full width]
+            [bottles left 55% | content right 45%]
+══════════════════════════════════════ */
+@media (min-width: 769px) {
+
+  /* Section clips bottle overflow at bottom */
+  .fgp-hv2 { overflow: hidden; }
+  .fgp-hv2__inner { min-height: clamp(380px, 46vw, 580px); }
+
+  /* Heading: centered, single line */
+  .fgp-hv2__top {
+    padding: clamp(24px, 3vw, 44px) clamp(40px, 6vw, 100px) 0;
+    display: flex;
+    justify-content: center;
+  }
+  .fgp-hv2__heading {
+    font-size: clamp(26px, 3.8vw, 62px);
+    font-weight: 400;
+    flex-wrap: nowrap;
+    gap: 0 clamp(6px, 0.8vw, 12px);
+    line-height: 1.1;
+  }
+  .fgp-hv2__blank-row { gap: 0 clamp(4px, 0.6vw, 10px); }
+  .fgp-hv2__blank { min-width: clamp(80px, 12vw, 200px); }
+
+  /* Body: row */
+  .fgp-hv2__body {
+    flex: 1;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* ── Left: bottles ── */
+  .fgp-hv2__media {
+    order: -1;
+    flex: 0 0 55%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: clamp(32px, 5vw, 80px);
+    overflow: visible;
+  }
+
+  /* Badge top-left of this column */
+  .fgp-hv2__badge--dk {
+    display: block;
+    position: absolute;
+    top: clamp(8px, 1.5vw, 20px);
+    left: clamp(32px, 5vw, 80px);
+    width: clamp(48px, 4vw, 68px);
+    height: auto;
+    z-index: 2;
+  }
+  .fgp-hv2__badge--mb { display: none; }
+
+  /* Bottles: bottom-aligned, clipped 15% at bottom by .fgp-hv2 overflow:hidden */
+  .fgp-hv2__bottles {
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    flex: 1;
+    margin-bottom: -15%;
+  }
+  .fgp-hv2__bottle {
+    width: auto;
+    height: 100%;
+    max-height: clamp(260px, 44vw, 580px);
+    flex-shrink: 0;
+  }
+
+  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 clamp(160px, 22vw, 320px); }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 clamp(130px, 18vw, 260px); }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-16px, -2vw, -8px); }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 clamp(100px, 13vw, 195px); }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-20px, -2.5vw, -10px); }
+  .fgp-hv2__bottle--center {
+    flex: 0 0 clamp(115px, 15vw, 220px) !important;
+    transform: scale(1.08);
+    transform-origin: bottom center;
+    z-index: 1;
+  }
+
+  /* ── Right: symptoms + CTA ── */
+  .fgp-hv2__content {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: clamp(20px, 2.5vw, 40px) clamp(40px, 5vw, 80px) clamp(40px, 6vw, 80px) clamp(16px, 2vw, 28px);
+    gap: clamp(16px, 2vw, 32px);
+  }
+  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 6px); }
+  .fgp-hv2__symptom  {
+    font-size: clamp(14px, 1.7vw, 28px);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .fgp-hv2__foot { padding-top: 0; justify-content: flex-start; }
+  .fgp-hv2__cta {
+    font-size: clamp(12px, 1.1vw, 16px);
+    padding: clamp(10px, 1vw, 14px) clamp(24px, 2.5vw, 40px);
+    letter-spacing: 0.3px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var target = document.querySelector('.fgp-hv2__cycle');
+  if (!target) return;
+  var raw   = target.getAttribute('data-words') || '';
+  var words = raw.split('|').map(function (w) { return w.trim(); }).filter(Boolean);
+  if (words.length < 2) return;
+  var idx = 0;
+  setInterval(function () {
+    target.classList.add('is-fading');
+    setTimeout(function () {
+      idx = (idx + 1) % words.length;
+      target.textContent = words[idx];
+      target.classList.remove('is-fading');
+    }, 300);
+  }, 2400);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "FGP Hero — Multi Product",
+  "tag": "section",
+  "class": "fgp-hero-multi",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Heading text (before blank)",
+      "default": "Is it a gut feeling or"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button label",
+      "default": "Take The 1 Minute Test!"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Trust badge image (top-left on desktop, bottom-left on mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottle_1",
+      "label": "Bottle image — left"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottle_2",
+      "label": "Bottle image — center (featured, slightly larger)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottle_3",
+      "label": "Bottle image — right"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "symptom",
+      "name": "Symptom",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Symptom label",
+          "default": "Stress"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Hero — Multi Product",
+      "blocks": [
+        { "type": "symptom", "settings": { "label": "Stress" } },
+        { "type": "symptom", "settings": { "label": "Gluten intolerance" } },
+        { "type": "symptom", "settings": { "label": "Lactose intolerance" } },
+        { "type": "symptom", "settings": { "label": "Constipation or Diarrhea" } },
+        { "type": "symptom", "settings": { "label": "Irritable Bowel Syndrome" } },
+        { "type": "symptom", "settings": { "label": "Low defenses" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

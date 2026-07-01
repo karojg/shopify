@@ -9,20 +9,62 @@
  */
 {
   "sections": {
-    "fgp_homepage_hero": {
-      "type": "fgp-hero-v1",
-      "name": "FGP Hero — Navy",
+    "fgp_hero_multi_Qt6XNd": {
+      "type": "fgp-hero-multi",
+      "blocks": {
+        "symptom_9LcLEX": {
+          "type": "symptom",
+          "settings": {
+            "label": "Stress"
+          }
+        },
+        "symptom_Czacg9": {
+          "type": "symptom",
+          "settings": {
+            "label": "Gluten intolerance"
+          }
+        },
+        "symptom_84T8f3": {
+          "type": "symptom",
+          "settings": {
+            "label": "Lactose intolerance"
+          }
+        },
+        "symptom_8DJzUP": {
+          "type": "symptom",
+          "settings": {
+            "label": "Constipation or Diarrhea"
+          }
+        },
+        "symptom_hijUjK": {
+          "type": "symptom",
+          "settings": {
+            "label": "Irritable Bowel Syndrome"
+          }
+        },
+        "symptom_en4tU4": {
+          "type": "symptom",
+          "settings": {
+            "label": "Low defenses"
+          }
+        }
+      },
+      "block_order": [
+        "symptom_9LcLEX",
+        "symptom_Czacg9",
+        "symptom_84T8f3",
+        "symptom_8DJzUP",
+        "symptom_hijUjK",
+        "symptom_en4tU4"
+      ],
+      "name": "FGP Hero — Multi Product",
       "settings": {
-        "eyebrow": "Plant-based Psychobiotic",
-        "heading_white": "Your mind & gut,",
-        "heading_blue": "finally made peace.",
-        "subtitle": "Stressbiotic combines digestive enzymes, ashwagandha, prebiotics, and postbiotics to calm stress from within.",
-        "pills": "Improves Sleep, Reduce Stress, Improves your Gut Health, Psychobiotic",
-        "cta1_label": "Learn More",
-        "cta1_url": "",
-        "cta2_label": "Shop Now",
-        "cta2_url": "shopify://products/karo-test-new",
-        "product_image": "shopify://shop_images/Stressbiotic-xl.png"
+        "heading_before": "Is it a gut feeling or",
+        "cta_label": "Take The 1 Minute Test!",
+        "cta_url": "",
+        "badge_image": "shopify://shop_images/trust-badge.png",
+        "bottle_2": "shopify://shop_images/FLGD_SYNB__FRASCO_Front_1.png",
+        "bottle_3": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png"
       }
     },
     "fgp_logo_carousel_main": {
@@ -510,7 +552,7 @@
     }
   },
   "order": [
-    "fgp_homepage_hero",
+    "fgp_hero_multi_Qt6XNd",
     "fgp_logo_carousel_main",
     "b8b0c886-8d85-4099-b9f2-61e11d876167",
     "fgp_synbiotic_feature_jkwUPt",

@@ -11,6 +11,16 @@
   border-bottom: none !important;
 }
 
+/* Desktop: logo left | nav centered | icons right
+   Override Dawn's middle-left (auto auto 1fr) to match middle-center (1fr auto 1fr)
+   but keeping heading on the left grid-area, not swapped to center */
+@media screen and (min-width: 990px) {
+  .header--middle-left {
+    grid-template-areas: 'heading navigation icons' !important;
+    grid-template-columns: 1fr auto 1fr !important;
+  }
+}
+
 .header__heading-link,
 .header__heading-link:visited,
 .list-menu__item--link,
@@ -21,6 +31,14 @@
   font-weight: 400 !important;
   letter-spacing: 0.6px !important;
   text-decoration: none !important;
+  text-transform: uppercase !important;
+}
+
+/* Active / current page link */
+.list-menu__item--link.header__active-menu-item {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
 }
 
 .header__icon,
