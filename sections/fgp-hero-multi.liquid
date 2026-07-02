@@ -103,10 +103,31 @@
 /* ── BASE (shared all sizes) ── */
 .fgp-hv2 {
   font-family: var(--fgp-font, 'Poppins', sans-serif);
-  background: #45bfef;
+  background: linear-gradient(180deg, var(--fgp-picton-blue) 0%, #2a9fd4 60%, #1878b8 100%);
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
+/* Decorative blobs */
+.fgp-hv2::before,
+.fgp-hv2::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.fgp-hv2::before {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  top: -120px; left: -100px;
+}
+.fgp-hv2::after {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(35,64,146,0.12) 0%, transparent 70%);
+  bottom: -80px; right: 10%;
+}
+.fgp-hv2__inner { position: relative; z-index: 1; }
 .fgp-hv2__inner {
   display: flex;
   flex-direction: column;
@@ -151,9 +172,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.fgp-hv2__cycle.is-fading { opacity: 0; }
+.fgp-hv2__cycle.is-fading {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+.fgp-hv2__cycle.is-entering {
+  opacity: 0;
+  transform: translateY(12px);
+}
 
 /* Body */
 .fgp-hv2__body { display: flex; flex: 1; }
@@ -228,9 +256,9 @@
     padding: 16px 20px 0;
     gap: 12px;
   }
-  .fgp-hv2__symptoms { gap: 4px; }
+  .fgp-hv2__symptoms { gap: 6px; }
   .fgp-hv2__symptom  {
-    font-size: clamp(16px, 5vw, 22px);
+    font-size: clamp(14px, 4vw, 20px);
     font-weight: 400;
     line-height: 1.4;
   }
@@ -407,10 +435,16 @@
     target.classList.add('is-fading');
     setTimeout(function () {
       idx = (idx + 1) % words.length;
-      target.textContent = words[idx];
+      target.classList.add('is-entering');
       target.classList.remove('is-fading');
-    }, 300);
-  }, 2400);
+      target.textContent = words[idx];
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          target.classList.remove('is-entering');
+        });
+      });
+    }, 260);
+  }, 2600);
 })();
 </script>
 
