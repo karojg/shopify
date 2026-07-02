@@ -239,15 +239,15 @@
   .fgp-hv2__foot {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     padding-top: 12px;
   }
   .fgp-hv2__badge--dk { display: none; }
   .fgp-hv2__badge--mb { display: none; }
   .fgp-hv2__cta {
-    font-size: 13px;
-    padding: 10px 20px;
+    font-size: 15px;
+    padding: 10px 22px;
     font-weight: 700;
   }
 
@@ -289,23 +289,33 @@
 
   /* Section clips bottle overflow at bottom */
   .fgp-hv2 { overflow: hidden; }
-  .fgp-hv2__inner { min-height: clamp(380px, 46vw, 580px); }
+  .fgp-hv2__inner { min-height: clamp(420px, 50vw, 640px); }
 
   /* Heading: centered, single line */
   .fgp-hv2__top {
-    padding: clamp(24px, 3vw, 44px) clamp(40px, 6vw, 100px) 0;
+    padding: clamp(32px, 4vw, 56px) clamp(40px, 6vw, 100px) clamp(8px, 1.2vw, 20px);
     display: flex;
     justify-content: center;
   }
   .fgp-hv2__heading {
-    font-size: clamp(26px, 3.8vw, 62px);
-    font-weight: 400;
+    font-size: clamp(30px, 4.2vw, 68px);
+    font-weight: 700;
     flex-wrap: nowrap;
     gap: 0 clamp(6px, 0.8vw, 12px);
     line-height: 1.1;
   }
-  .fgp-hv2__blank-row { gap: 0 clamp(4px, 0.6vw, 10px); }
-  .fgp-hv2__blank { min-width: clamp(80px, 12vw, 200px); }
+  .fgp-hv2__blank-row { gap: 0 clamp(4px, 0.6vw, 10px); align-items: baseline; }
+  .fgp-hv2__blank { width: auto; overflow: visible; }
+  .fgp-hv2__cycle {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+    font-size: 1em;
+    font-weight: 400;
+    min-width: 15vw;
+    text-align: center;
+    padding: 5px;
+  }
 
   /* Body: row */
   .fgp-hv2__body {
@@ -368,16 +378,17 @@
     padding: clamp(20px, 2.5vw, 40px) clamp(40px, 5vw, 80px) clamp(40px, 6vw, 80px) clamp(16px, 2vw, 28px);
     gap: clamp(16px, 2vw, 32px);
   }
-  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 6px); }
+  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 8px); }
   .fgp-hv2__symptom  {
-    font-size: clamp(14px, 1.7vw, 28px);
-    font-weight: 400;
+    font-size: clamp(18px, 2.2vw, 38px);
+    font-weight: 500;
     white-space: nowrap;
+    line-height: 1.5;
   }
   .fgp-hv2__foot { padding-top: 0; justify-content: flex-start; }
   .fgp-hv2__cta {
-    font-size: clamp(12px, 1.1vw, 16px);
-    padding: clamp(10px, 1vw, 14px) clamp(24px, 2.5vw, 40px);
+    font-size: clamp(14px, 1.3vw, 20px);
+    padding: clamp(12px, 1.2vw, 18px) clamp(28px, 3vw, 48px);
     letter-spacing: 0.3px;
   }
 }
