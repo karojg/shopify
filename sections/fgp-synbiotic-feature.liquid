@@ -47,10 +47,11 @@
 
       <!-- TOP: Full product image -->
       <div class="fgp-syn__mobile-image-wrap">
-        {% if section.settings.product_image != blank %}
+        {%- assign mobile_img = section.settings.product_image_mobile | default: section.settings.product_image -%}
+        {% if mobile_img != blank %}
           <img
             class="fgp-syn__mobile-product-img"
-            src="{{ section.settings.product_image | img_url: 'master' }}"
+            src="{{ mobile_img | img_url: 'master' }}"
             alt="{{ section.settings.product_image_alt | default: 'Synbiotic+ product' }}"
             loading="lazy"
           >
@@ -88,7 +89,7 @@
 
   font-family: var(--fgp-font);
   background: var(--fgp-offwhite);
-  padding: 0 24px 40px;
+  padding: 40px 24px 40px;
 }
 
 /* ===============================================================
@@ -115,9 +116,7 @@
 
 /* --- Left column: blue text panel --- */
 .fgp-syn__col-left {
-  width: 443px;
-  min-width: 443px;
-  max-width: 443px;
+  flex: 0 0 36%;
   background: var(--fgp-blue);
   display: flex;
   flex-direction: column;
@@ -130,6 +129,7 @@
 .fgp-syn__eyebrow {
   font-size: 13px;
   font-weight: 700;
+  font-family: 'Nunito', sans-serif;
   color: var(--fgp-gold);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -139,6 +139,7 @@
 .fgp-syn__title {
   font-size: 42px;
   font-weight: 800;
+  font-family: 'Nunito', sans-serif;
   color: var(--fgp-white);
   margin: 0;
   line-height: 1.1;
@@ -185,9 +186,10 @@
 .fgp-syn__product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
+  background: #fff;
 }
 
 .fgp-syn__product-img-placeholder {
@@ -223,8 +225,8 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    background: #fff;
   }
 
   .fgp-syn__mobile-panel {
@@ -237,13 +239,13 @@
     gap: 10px;
   }
 
-  .fgp-syn__mobile-panel .fgp-syn__eyebrow { font-size: 11px; }
-  .fgp-syn__mobile-panel .fgp-syn__title   { font-size: 28px; }
-  .fgp-syn__mobile-panel .fgp-syn__description { font-size: 13px; }
+  .fgp-syn__mobile-panel .fgp-syn__eyebrow { font-size: 12px; letter-spacing: 2.5px; }
+  .fgp-syn__mobile-panel .fgp-syn__title   { font-size: 32px; }
+  .fgp-syn__mobile-panel .fgp-syn__description { font-size: 16px; line-height: 1.7; }
   .fgp-syn__mobile-panel .fgp-syn__cta {
     align-self: center;
-    font-size: 14px;
-    padding: 12px 28px;
+    font-size: 15px;
+    padding: 12px 32px;
   }
 }
 
@@ -265,13 +267,8 @@
    TABLET (768px - 1100px)
 =============================================================== */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-syn { padding: 0 32px 40px; }
-  .fgp-syn__col-left {
-    width: 320px;
-    min-width: 320px;
-    max-width: 320px;
-    padding: 36px 32px;
-  }
+  .fgp-syn { padding: 32px 32px 40px; }
+  .fgp-syn__col-left { padding: 36px 32px; }
   .fgp-syn__title { font-size: 30px; }
 }
 
@@ -279,15 +276,10 @@
    DESKTOP (1101px+)
 =============================================================== */
 @media (min-width: 1101px) {
-  .fgp-syn { padding: 0 48px 56px; }
+  .fgp-syn { padding: 48px 48px 56px; }
   .fgp-syn__desktop { max-width: 1300px; }
   .fgp-syn__card { min-height: 600px; max-height: 663px; }
-  .fgp-syn__col-left {
-    width: 443px;
-    min-width: 443px;
-    max-width: 443px;
-    padding: 56px 48px;
-  }
+  .fgp-syn__col-left { padding: 56px 48px; }
   .fgp-syn__title { font-size: 44px; }
   .fgp-syn__description { font-size: 16px; }
 }
@@ -343,7 +335,12 @@
     {
       "type": "image_picker",
       "id": "product_image",
-      "label": "Product Image"
+      "label": "Product Image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_mobile",
+      "label": "Product Image (mobile) — falls back to desktop image if blank"
     },
     {
       "type": "text",
