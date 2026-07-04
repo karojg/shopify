@@ -120,37 +120,39 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px 40px;
-  gap: 14px;
+  align-items: center;
+  text-align: center;
+  padding: 40px 36px;
+  gap: 0;
   box-sizing: border-box;
 }
 
 .fgp-syn__eyebrow {
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   font-family: 'Nunito', sans-serif;
   color: var(--fgp-gold);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0 2px;
 }
 
 .fgp-syn__title {
-  font-size: 42px;
+  font-size: 54px;
   font-weight: 800;
   font-family: 'Nunito', sans-serif;
   color: var(--fgp-white);
-  margin: 0;
-  line-height: 1.1;
+  margin: 0 0 20px;
+  line-height: 1.0;
   letter-spacing: 1px;
 }
 
 .fgp-syn__description {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--fgp-white);
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.5;
+  margin: 0 0 20px;
 }
 
 .fgp-syn__description p { margin: 0; }
@@ -164,15 +166,16 @@
   background: var(--fgp-navy);
   color: var(--fgp-white);
   font-family: var(--fgp-font);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   border-radius: 100px;
-  padding: 14px 28px;
+  padding: 16px 40px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
-  margin-top: 8px;
-  align-self: flex-start;
+  margin-top: 12px;
+  align-self: center;
+  white-space: nowrap;
 }
 .fgp-syn__cta:hover { opacity: 0.85; }
 
