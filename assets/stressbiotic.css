@@ -93,6 +93,33 @@
   --content-max-width:   1280px;
 }
 
+/* ── Global FGP content constraint ──────────────────────────────
+   Section backgrounds bleed full viewport width.
+   Content inside is capped at 1200px and auto-centered via
+   padding math: max(gutter, (100vw - 1200px) / 2).
+
+   Applied to ALL content-bearing FGP sections except the hero
+   (which is full-bleed by design).
+──────────────────────────────────────────────────────────────────── */
+.fgp-syn,
+.fgp-bye,
+.fgp-founder,
+.fgp-kids,
+.fgp-ksym,
+.fgp-vcards,
+.fgp-is,
+.fgp-sbf,
+.fgp-pgrid,
+.fgp-docs,
+.fgp-revs,
+.fgp-subfooter,
+.fgp-section {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: max(20px, calc((100vw - 1200px) / 2));
+  padding-right: max(20px, calc((100vw - 1200px) / 2));
+}
+
 /* ── Base resets scoped to FGP sections ── */
 .fgp-section *,
 .fgp-section *::before,

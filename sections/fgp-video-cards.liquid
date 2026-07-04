@@ -88,7 +88,8 @@
 
   font-family: var(--fgp-font);
   background: var(--fgp-offwhite);
-  padding: 48px 24px 64px;
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 .fgp-vcards__heading {
@@ -202,19 +203,19 @@
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-vcards { padding: 40px 32px 56px; }
+  .fgp-vcards { padding-top: 40px; padding-bottom: 56px; }
   .fgp-vcards__grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* Desktop */
 @media (min-width: 1101px) {
-  .fgp-vcards { padding: 48px 48px 64px; }
+  .fgp-vcards { padding-top: 48px; padding-bottom: 64px; }
   .fgp-vcards__grid { gap: 28px; }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
-  .fgp-vcards { padding: 32px 16px 48px; }
+  .fgp-vcards { padding-top: 32px; padding-bottom: 48px; }
   .fgp-vcards__grid {
     grid-template-columns: 1fr;
     gap: 16px;

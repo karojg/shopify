@@ -89,7 +89,8 @@
 
   font-family: var(--fgp-font);
   background: var(--fgp-offwhite);
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 /* ===============================================================
@@ -110,6 +111,7 @@
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   height: clamp(320px, 35vw, 500px);
+  width: 100%;
 }
 
 /* --- Left column: blue text panel --- */
@@ -175,20 +177,20 @@
 }
 .fgp-syn__cta:hover { opacity: 0.85; }
 
-/* --- Right column: natural image width --- */
+/* --- Right column --- */
 .fgp-syn__col-right {
-  flex: 0 0 auto;
+  flex: 1;
   overflow: hidden;
   background: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .fgp-syn__product-img {
   display: block;
   height: 100%;
   width: auto;
-  max-width: clamp(400px, 55vw, 800px);
   object-fit: contain;
 }
 
@@ -207,7 +209,8 @@
   .fgp-syn__mobile  { display: block; }
 
   .fgp-syn {
-    padding: 20px 20px 32px;
+    padding-top: 20px;
+    padding-bottom: 32px;
   }
 
   .fgp-syn__mobile-card {
@@ -267,7 +270,7 @@
    TABLET (768px - 1100px)
 =============================================================== */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-syn { padding: 32px 32px 40px; }
+  .fgp-syn { padding-top: 32px; padding-bottom: 40px; }
   .fgp-syn__col-left { padding: 36px 32px; }
   .fgp-syn__title { font-size: 30px; }
 }
@@ -276,10 +279,8 @@
    DESKTOP (1101px+)
 =============================================================== */
 @media (min-width: 1101px) {
-  .fgp-syn { padding: 48px 48px 56px; }
-  .fgp-syn__desktop { max-width: 1300px; display: flex; justify-content: center; }
-  .fgp-syn__col-left { min-height: 400px; }
-  .fgp-syn__col-left { padding: 56px 48px; }
+  .fgp-syn { padding-top: 48px; padding-bottom: 56px; }
+  .fgp-syn__col-left { min-height: 400px; padding: 56px 48px; }
   .fgp-syn__title { font-size: 44px; }
   .fgp-syn__description { font-size: 16px; }
 }

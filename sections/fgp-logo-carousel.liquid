@@ -12,6 +12,7 @@
 
 {% if logo_count > 0 %}
 <section class="fgp-logos" aria-label="{{ section.settings.section_label | default: 'As seen in' }}">
+  <div class="fgp-logos__inner">
 
   {% if section.settings.heading != blank %}
     <p class="fgp-logos__heading">{{ section.settings.heading }}</p>
@@ -50,6 +51,7 @@
     </div>
   </div>
 
+  </div>{% comment %}/.fgp-logos__inner{% endcomment %}
 </section>
 {% endif %}
 
@@ -63,6 +65,13 @@
   font-family: var(--fgp-font);
   background: var(--fgp-offwhite);
   padding: {{ section.settings.padding_top | default: 32 }}px 0 {{ section.settings.padding_bottom | default: 32 }}px;
+}
+
+.fgp-logos__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
 }
 
 .fgp-logos__heading {

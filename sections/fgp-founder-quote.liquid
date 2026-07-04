@@ -81,7 +81,8 @@
 
   font-family: var(--fgp-font);
   background: var(--fgp-offwhite);
-  padding: 40px 24px 56px;
+  padding-top: 40px;
+  padding-bottom: 56px;
 }
 
 /* ===============================================================
@@ -90,7 +91,6 @@
 .fgp-founder__mobile { display: none; }
 
 .fgp-founder__desktop {
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -102,21 +102,22 @@
   overflow: hidden;
   background: var(--fgp-white);
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  min-height: 420px;
+  height: clamp(300px, 32vw, 460px);
+  width: 100%;
 }
 
 /* Image column */
 .fgp-founder__image-col {
-  flex: 0 0 40%;
+  flex: 0 0 38%;
   overflow: hidden;
 }
 
 .fgp-founder__image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  display: block;
 }
 
 .fgp-founder__image--placeholder {
@@ -128,7 +129,7 @@
 
 /* Content column */
 .fgp-founder__content {
-  flex: 1;
+  flex: 0 0 clamp(280px, 35vw, 520px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -249,7 +250,7 @@
    TABLET
 =============================================================== */
 @media (min-width: 768px) and (max-width: 1100px) {
-  .fgp-founder { padding: 40px 32px 56px; }
+  .fgp-founder { padding-top: 40px; padding-bottom: 56px; }
   .fgp-founder__content { padding: 36px 36px; }
   .fgp-founder__quote { font-size: 17px; }
   .fgp-founder__image-col { flex: 0 0 38%; }
@@ -259,8 +260,7 @@
    DESKTOP
 =============================================================== */
 @media (min-width: 1101px) {
-  .fgp-founder { padding: 56px 48px 72px; }
-  .fgp-founder__desktop { max-width: 1200px; }
+  .fgp-founder { padding-top: 56px; padding-bottom: 72px; }
 }
 </style>
 
