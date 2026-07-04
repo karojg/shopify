@@ -110,13 +110,12 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  height: clamp(320px, 35vw, 500px);
   width: 100%;
 }
 
 /* --- Left column: blue text panel --- */
 .fgp-syn__col-left {
-  flex: 0 0 clamp(260px, 28vw, 400px);
+  flex: 0 0 44%;
   background: var(--fgp-blue);
   display: flex;
   flex-direction: column;
@@ -182,16 +181,14 @@
   flex: 1;
   overflow: hidden;
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .fgp-syn__product-img {
   display: block;
+  width: 100%;
   height: 100%;
-  width: auto;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .fgp-syn__product-img-placeholder {
