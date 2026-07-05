@@ -27,26 +27,27 @@
         {% endif %}
       </div>
 
-      <!-- RIGHT: Text + badge + CTA -->
+      <!-- RIGHT: Text + CTA -->
       <div class="fgp-kids__col-right">
-        {% if section.settings.badge_text != blank %}
-          <div class="fgp-kids__badge-wrap">
-            <span class="fgp-kids__badge">{{ section.settings.badge_text }}</span>
-            {% if section.settings.badge_subtext != blank %}
-              <span class="fgp-kids__badge-sub">{{ section.settings.badge_subtext }}</span>
-            {% endif %}
-          </div>
-        {% endif %}
-        <p class="fgp-kids__eyebrow">{{ section.settings.eyebrow | default: 'KIDS' }}</p>
         {% if section.settings.title_image != blank %}
           <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
         {% else %}
           <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
         {% endif %}
+        {% if section.settings.panel_subtitle != blank %}
+          <p class="fgp-kids__panel-subtitle">{{ section.settings.panel_subtitle }}</p>
+        {% endif %}
         <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
-        <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
-          {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
-        </a>
+        <div class="fgp-kids__cta-group">
+          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
+            {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
+          </a>
+          {% if section.settings.cta2_label != blank %}
+            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">
+              {{ section.settings.cta2_label }}
+            </a>
+          {% endif %}
+        </div>
       </div>
 
     </div>
@@ -161,8 +162,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px 36px;
-  gap: 14px;
+  align-items: center;
+  text-align: center;
+  padding: 40px 32px;
+  gap: 0;
   position: relative;
 }
 
@@ -216,36 +219,54 @@
 
 .fgp-kids__title-img {
   width: 100%;
-  max-width: 260px;
+  max-width: 220px;
   height: auto;
   display: block;
+  margin-bottom: 20px;
+}
+
+.fgp-kids__panel-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fgp-navy);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 16px;
 }
 
 .fgp-kids__description {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  color: var(--fgp-white);
-  line-height: 1.6;
-  margin: 0;
+  color: var(--fgp-navy);
+  line-height: 1.5;
+  margin: 0 0 20px;
 }
 
 .fgp-kids__description p { margin: 0; }
-.fgp-kids__description strong { font-weight: 700; }
+.fgp-kids__description strong { font-weight: 700; color: var(--fgp-navy); }
+
+.fgp-kids__cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
 
 .fgp-kids__cta {
   display: inline-block;
   background: var(--fgp-navy);
   color: var(--fgp-white);
   font-family: var(--fgp-font);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   border-radius: 100px;
-  padding: 14px 28px;
+  padding: 14px 32px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
-  margin-top: 8px;
-  align-self: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
 .fgp-kids__cta:hover { opacity: 0.85; }
 
@@ -423,7 +444,7 @@
       "type": "text",
       "id": "cta_label",
       "label": "Button 1 Label",
-      "default": "Shop Kids Probiotics"
+      "default": "Shop Kids 60"
     },
     {
       "type": "url",
@@ -433,7 +454,8 @@
     {
       "type": "text",
       "id": "cta2_label",
-      "label": "Button 2 Label (optional)"
+      "label": "Button 2 Label (optional)",
+      "default": "Shop Kids 30"
     },
     {
       "type": "url",
