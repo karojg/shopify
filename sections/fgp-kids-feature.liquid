@@ -39,13 +39,25 @@
         {% endif %}
         <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
         <div class="fgp-kids__cta-group">
-          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
-            {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
-          </a>
+          {% if section.settings.cta_variant_id != blank %}
+            <form action="/cart/add" method="post">
+              <input type="hidden" name="id" value="{{ section.settings.cta_variant_id }}">
+              <input type="hidden" name="quantity" value="1">
+              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</button>
+            </form>
+          {% else %}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</a>
+          {% endif %}
           {% if section.settings.cta2_label != blank %}
-            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">
-              {{ section.settings.cta2_label }}
-            </a>
+            {% if section.settings.cta2_variant_id != blank %}
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ section.settings.cta2_variant_id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="fgp-kids__cta">{{ section.settings.cta2_label }}</button>
+              </form>
+            {% else %}
+              <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta2_label }}</a>
+            {% endif %}
           {% endif %}
         </div>
       </div>
@@ -83,13 +95,25 @@
         {% endif %}
         <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
         <div class="fgp-kids__cta-group">
-          <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">
-            {{ section.settings.cta_label | default: 'Shop Kids Probiotics' }}
-          </a>
+          {% if section.settings.cta_variant_id != blank %}
+            <form action="/cart/add" method="post">
+              <input type="hidden" name="id" value="{{ section.settings.cta_variant_id }}">
+              <input type="hidden" name="quantity" value="1">
+              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</button>
+            </form>
+          {% else %}
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</a>
+          {% endif %}
           {% if section.settings.cta2_label != blank %}
-            <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">
-              {{ section.settings.cta2_label }}
-            </a>
+            {% if section.settings.cta2_variant_id != blank %}
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ section.settings.cta2_variant_id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="fgp-kids__cta">{{ section.settings.cta2_label }}</button>
+              </form>
+            {% else %}
+              <a href="{{ section.settings.cta2_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta2_label }}</a>
+            {% endif %}
           {% endif %}
         </div>
       </div>
@@ -267,8 +291,11 @@
   transition: opacity 0.2s;
   width: 100%;
   box-sizing: border-box;
+  border: none;
+  cursor: pointer;
 }
 .fgp-kids__cta:hover { opacity: 0.85; }
+.fgp-kids__cta-group form { width: 100%; }
 
 /* ===============================================================
    MOBILE LAYOUT
@@ -447,9 +474,15 @@
       "default": "Shop Kids 60"
     },
     {
+      "type": "text",
+      "id": "cta_variant_id",
+      "label": "Button 1 Variant ID (for Add to Cart)",
+      "info": "Paste the Shopify variant ID. If set, clicking adds directly to cart. Leave blank to use URL instead."
+    },
+    {
       "type": "url",
       "id": "cta_url",
-      "label": "Button 1 URL"
+      "label": "Button 1 URL (fallback if no variant ID)"
     },
     {
       "type": "text",
@@ -458,9 +491,15 @@
       "default": "Shop Kids 30"
     },
     {
+      "type": "text",
+      "id": "cta2_variant_id",
+      "label": "Button 2 Variant ID (for Add to Cart)",
+      "info": "Paste the Shopify variant ID. If set, clicking adds directly to cart. Leave blank to use URL instead."
+    },
+    {
       "type": "url",
       "id": "cta2_url",
-      "label": "Button 2 URL"
+      "label": "Button 2 URL (fallback if no variant ID)"
     },
     {
       "type": "header",

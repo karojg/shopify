@@ -106,7 +106,13 @@
           }
         }
       },
-      "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5"],
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5"
+      ],
       "name": "FGP Logo Carousel",
       "settings": {
         "heading": "",
@@ -273,7 +279,10 @@
           }
         }
       },
-      "block_order": ["vcard_1", "vcard_2"],
+      "block_order": [
+        "vcard_1",
+        "vcard_2"
+      ],
       "name": "FGP Video Cards",
       "settings": {
         "heading": "",
@@ -331,7 +340,7 @@
       ],
       "name": "FGP Icon Strip",
       "settings": {
-        "bg": "white",
+        "bg": "offwhite",
         "aria_label": "Product benefits"
       }
     },
@@ -366,7 +375,11 @@
           }
         }
       },
-      "block_order": ["product_1", "product_2", "product_3"],
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ],
       "name": "FGP Products Grid",
       "settings": {
         "collection": "",
@@ -409,7 +422,11 @@
           }
         }
       },
-      "block_order": ["doctor_1", "doctor_2", "doctor_3"],
+      "block_order": [
+        "doctor_1",
+        "doctor_2",
+        "doctor_3"
+      ],
       "name": "FGP Doctor Testimonials",
       "settings": {
         "eyebrow": "TRUSTED BY PROFESSIONALS",
@@ -460,7 +477,12 @@
           }
         }
       },
-      "block_order": ["review_fXj9kK", "review_1", "review_2", "review_3"],
+      "block_order": [
+        "review_fXj9kK",
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
       "name": "FGP Customer Reviews",
       "settings": {
         "eyebrow": "WHAT OUR CUSTOMERS SAY",
