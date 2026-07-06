@@ -54,6 +54,30 @@
           "type": "description",
           "settings": {}
         },
+        "tab_dosage": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dosage",
+            "icon": "none",
+            "content": "<p>Children 4+: 1 gummy per day. Adults: 1–2 gummies per day.</p>"
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "none",
+            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>"
+          }
+        },
+        "tab_returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return policy",
+            "icon": "none",
+            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>"
+          }
+        },
         "share": {
           "type": "share",
           "disabled": true,
@@ -71,6 +95,9 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "tab_dosage",
+        "tab_shipping",
+        "tab_returns",
         "share"
       ],
       "settings": {

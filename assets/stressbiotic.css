@@ -215,3 +215,227 @@
   border-radius: var(--radius-atc-btn);
   width: 100%;
 }
+
+
+/* ══════════════════════════════════════════
+   PDP — Product Detail Page overrides
+   Matches Figma: dark navy bg, white text,
+   gold stepper, no vendor, larger title/price
+══════════════════════════════════════════ */
+
+/* Hide vendor */
+.product__info-wrapper a.product__text,
+.product__info-wrapper .product__text.caption-with-letter-spacing:first-child {
+  display: none;
+}
+
+/* Hide star rating */
+.product__info-wrapper .product__rating,
+.product__info-wrapper .spr-badge {
+  display: none;
+}
+
+/* Title */
+.product__info-wrapper .product__title h1 {
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 600;
+  color: var(--fgp-white);
+  line-height: 1.1;
+  font-family: var(--fgp-font-primary);
+}
+
+/* Price */
+.product__info-wrapper .price__regular .price-item,
+.product__info-wrapper .price__sale .price-item {
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 600;
+  color: var(--fgp-white);
+}
+
+.product__info-wrapper .price {
+  color: var(--fgp-white);
+}
+
+/* Shipping/tax note + links */
+.product__info-wrapper .product__policies,
+.product__info-wrapper .caption,
+.product__info-wrapper .caption a {
+  color: rgba(255,255,255,0.7);
+}
+
+.product__info-wrapper a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+}
+
+/* Pickup availability — hidden */
+.product__info-wrapper pickup-availability {
+  display: none !important;
+}
+
+/* Quantity label */
+.product__info-wrapper .quantity__label {
+  color: var(--fgp-white);
+  font-weight: 600;
+}
+
+/* Quantity stepper — gold */
+.product__info-wrapper .quantity {
+  background: var(--fgp-orange-yellow);
+  border-color: var(--fgp-orange-yellow);
+  border-radius: 100px;
+}
+
+.product__info-wrapper .quantity__button,
+.product__info-wrapper .quantity__input {
+  color: var(--fgp-dark-cornflower-blue);
+  background: transparent;
+  font-weight: 700;
+}
+
+/* Purchase options / form labels */
+.product__info-wrapper .form__label {
+  color: var(--fgp-white);
+  font-weight: 600;
+}
+
+/* Variant pills (button type) — unselected */
+.product__info-wrapper .product-form__input--pill input[type='radio'] + label {
+  color: var(--fgp-white) !important;
+  border-color: rgba(255,255,255,0.5) !important;
+  background: transparent !important;
+}
+
+/* Variant pills (button type) — selected */
+.product__info-wrapper .product-form__input--pill input[type='radio']:checked + label {
+  background: var(--fgp-white) !important;
+  color: var(--fgp-dark-cornflower-blue) !important;
+  border-color: var(--fgp-white) !important;
+  font-weight: 700 !important;
+}
+
+/* Variant swatches — unselected */
+.product__info-wrapper .swatch-input__input + .swatch-input__label {
+  color: var(--fgp-white) !important;
+  border-color: rgba(255,255,255,0.4) !important;
+  background: transparent !important;
+}
+
+/* Variant swatches — selected */
+.product__info-wrapper .swatch-input__input:checked + .swatch-input__label {
+  background: var(--fgp-white) !important;
+  color: var(--fgp-dark-cornflower-blue) !important;
+  border-color: var(--fgp-white) !important;
+  font-weight: 700 !important;
+}
+
+/* Add to cart button */
+.product__info-wrapper .product-form__submit[name="add"] {
+  background: var(--fgp-deeper-blue);
+  color: var(--fgp-white);
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+}
+
+/* Buy it now button */
+.product__info-wrapper .shopify-payment-button__button {
+  background: var(--fgp-orange-yellow) !important;
+  color: var(--fgp-dark-cornflower-blue) !important;
+  border-radius: 100px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+/* ── Description — always visible above accordions ── */
+.product__info-wrapper .product__description {
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 0;
+  padding-bottom: 28px;
+}
+
+/* ── Accordions — Seed/Figma style ── */
+
+/* Reset Dawn's defaults */
+.product__info-wrapper .accordion {
+  border-top: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+
+/* Top divider on first accordion = visual separator from description */
+.product__info-wrapper .product__accordion:first-of-type {
+  border-top: 1px solid rgba(255,255,255,0.5) !important;
+}
+
+/* Adjacent accordions — no double borders */
+.product__info-wrapper .accordion + .accordion {
+  border-top: none !important;
+  margin-top: 0 !important;
+}
+
+/* Remove any underline on summary and all its children */
+.product__info-wrapper .accordion summary,
+.product__info-wrapper .accordion summary *,
+.product__info-wrapper .accordion summary::after,
+.product__info-wrapper .accordion summary::before,
+.product__info-wrapper .accordion .summary__title,
+.product__info-wrapper .accordion .accordion__title,
+.product__info-wrapper .accordion .accordion__title * {
+  border: none !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Summary row */
+.product__info-wrapper .accordion summary {
+  padding: 14px 0 6px !important;
+  cursor: pointer;
+}
+
+/* Accordion title */
+.product__info-wrapper .accordion .accordion__title {
+  color: var(--fgp-white) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  max-width: calc(100% - 3rem) !important;
+  text-decoration: none !important;
+  font-family: var(--fgp-font-primary) !important;
+}
+
+/* Caret — white */
+.product__info-wrapper .accordion .icon-caret {
+  fill: var(--fgp-white) !important;
+  color: var(--fgp-white) !important;
+  opacity: 0.7;
+}
+
+/* Hide decorative icon (plant/leaf/etc), keep caret */
+.product__info-wrapper .accordion .svg-wrapper {
+  display: none !important;
+}
+
+/* Accordion content */
+.product__info-wrapper .accordion .accordion__content {
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  padding: 0 0 14px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
+}
+
+.product__info-wrapper .accordion .accordion__content p:first-child {
+  margin-top: 0 !important;
+}
+
+.product__info-wrapper .accordion .accordion__content p {
+  margin-bottom: 0 !important;
+}

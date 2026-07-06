@@ -229,9 +229,11 @@
         "title": "KIDS PROBIOTICS",
         "title_image": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
         "description": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",
-        "cta_label": "Shop Kids Probiotics",
+        "cta_label": "Shop Kids 60",
+        "cta_variant_id": "50086279315777",
         "cta_url": "shopify://products/kids-organic-probiotic-gummies",
-        "cta2_label": "",
+        "cta2_label": "Shop Kids 30",
+        "cta2_variant_id": "50086553846081",
         "cta2_url": "",
         "product_image": "shopify://shop_images/Image.png",
         "product_image_alt": "Kids Probiotics product"
