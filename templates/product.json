@@ -35,7 +35,8 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "button",
+            "swatch_shape": "circle"
           }
         },
         "quantity_selector": {
@@ -58,7 +59,8 @@
           "settings": {
             "heading": "Dosage",
             "icon": "none",
-            "content": "<p>Take 2 capsules with breakfast and 2 capsules with lunch or dinner.</p>"
+            "content": "<p>Take 2 capsules with breakfast and 2 capsules with lunch or dinner.</p>",
+            "page": ""
           }
         },
         "tab_shipping": {
@@ -66,7 +68,8 @@
           "settings": {
             "heading": "Shipping",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>"
+            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "page": ""
           }
         },
         "tab_returns": {
@@ -74,7 +77,8 @@
           "settings": {
             "heading": "Return policy",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>"
+            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "page": ""
           }
         },
         "share": {
@@ -101,6 +105,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "color_scheme": "",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "cover",
@@ -114,49 +119,149 @@
         "padding_bottom": 60
       }
     },
-    "fgp_product_benefits_syn": {
-      "type": "fgp-product-benefits",
+    "fgp_icon_strip_kHPbNY": {
+      "type": "fgp-icon-strip",
       "blocks": {
-        "ben_1": {
-          "type": "benefit",
+        "item_LpgaHg": {
+          "type": "item",
           "settings": {
-            "label": "Prebiotics",
-            "sublabel": "Feed good bacteria"
+            "label": "Spore based probiotics"
           }
         },
-        "ben_2": {
-          "type": "benefit",
+        "item_nay7nC": {
+          "type": "item",
           "settings": {
-            "label": "Probiotics",
-            "sublabel": "Replenish the microbiome"
+            "label": "Plant Based ingredients"
           }
         },
-        "ben_3": {
-          "type": "benefit",
+        "item_dgAD4W": {
+          "type": "item",
           "settings": {
-            "label": "Postbiotics",
-            "sublabel": "Strengthen gut barrier"
+            "label": "Replenishes Beneficial Bacteria®"
           }
         },
-        "ben_4": {
-          "type": "benefit",
+        "item_TcimT9": {
+          "type": "item",
           "settings": {
-            "label": "Enzymes",
-            "sublabel": "Improve digestion"
+            "label": "Strengthens Gut Barrier®"
+          }
+        },
+        "item_PRhJVm": {
+          "type": "item",
+          "settings": {
+            "label": "Improves Nutrient Absorption®"
+          }
+        },
+        "item_9mGtpM": {
+          "type": "item",
+          "settings": {
+            "label": "Non GMO"
           }
         }
       },
       "block_order": [
-        "ben_1",
-        "ben_2",
-        "ben_3",
-        "ben_4"
+        "item_LpgaHg",
+        "item_nay7nC",
+        "item_dgAD4W",
+        "item_TcimT9",
+        "item_PRhJVm",
+        "item_9mGtpM"
       ],
-      "name": "Synbiotic+ Benefits",
+      "name": "FGP Icon Strip",
       "settings": {
-        "eyebrow": "SYNBIOTIC+",
-        "heading": "4 IN 1 Formula",
-        "subtext": "2 capsules · 3 times a day · No refrigeration needed"
+        "bg": "white",
+        "aria_label": "Product benefits"
+      }
+    },
+    "fgp_synbiotic_spotlight_aNxgHJ": {
+      "type": "fgp-synbiotic-spotlight",
+      "blocks": {
+        "badge_XmWhhj": {
+          "type": "badge",
+          "settings": {
+            "label": "PRE",
+            "underline": false
+          }
+        },
+        "badge_rPLQiY": {
+          "type": "badge",
+          "settings": {
+            "label": "PRO",
+            "underline": true
+          }
+        },
+        "badge_MUQziH": {
+          "type": "badge",
+          "settings": {
+            "label": "POST",
+            "underline": false
+          }
+        }
+      },
+      "block_order": [
+        "badge_XmWhhj",
+        "badge_rPLQiY",
+        "badge_MUQziH"
+      ],
+      "name": "FGP Synbiotic Spotlight",
+      "settings": {
+        "eyebrow": "DIGESTIVE ENZYMES",
+        "title": "SYNBIOTIC+",
+        "sublabel": "BIOTICS",
+        "enzyme_label": "18 DIGESTIVE\nENZYMES",
+        "enzyme_icon": "shopify://shop_images/Balance.png",
+        "bottle_image": "shopify://shop_images/FLGD_SYNB__FRASCO_Front_1.png",
+        "bottle_alt": "Synbiotic+ bottle",
+        "badge_text": "4 IN 1",
+        "capsule_image": "shopify://shop_images/icon_Synbiotic_21.png",
+        "dosage_line1": "2 capsules",
+        "dosage_line2": "2 times a day",
+        "dosage_sub": "with the main meals",
+        "note": "No refrigeration required"
+      }
+    },
+    "fgp_origin_card_nMkFRa": {
+      "type": "fgp-origin-card",
+      "blocks": {
+        "cert_logo_9i9QdL": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "DE111 Probiotic"
+          }
+        },
+        "cert_logo_kFiMbT": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "FDA"
+          }
+        },
+        "cert_logo_kYTAjP": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "GMP"
+          }
+        },
+        "cert_logo_bCWzEb": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "Made in USA"
+          }
+        }
+      },
+      "block_order": [
+        "cert_logo_9i9QdL",
+        "cert_logo_kFiMbT",
+        "cert_logo_kYTAjP",
+        "cert_logo_bCWzEb"
+      ],
+      "name": "FGP Origin Card",
+      "settings": {
+        "heading": "Formulated in Costa Rica",
+        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
+        "cta_label": "Explore Ingredients",
+        "cta_url": "",
+        "photo": "shopify://shop_images/FLGD_SYNB__FRASCO_Front_1.png",
+        "photo_alt": ""
       }
     },
     "fgp_how_it_works_syn": {
@@ -165,6 +270,7 @@
         "step_1": {
           "type": "step",
           "settings": {
+            "icon": "shopify://shop_images/icon_Synbiotic_21.png",
             "title": "Prebiotics feed good bacteria",
             "description": "Prebiotic fibers serve as food for beneficial bacteria, helping them thrive and multiply in your gut."
           }
@@ -201,6 +307,7 @@
       "settings": {
         "eyebrow": "THE SCIENCE",
         "heading": "How do our formulations work?",
+        "subtext": "",
         "cta_label": "View all ingredients",
         "cta_url": "shopify://pages/product-information"
       }
@@ -213,7 +320,9 @@
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Gastroenterologist",
-            "quote": "I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation."
+            "ig_handle": "",
+            "quote": "I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation.",
+            "quote_url": ""
           }
         },
         "doc_2": {
@@ -221,7 +330,9 @@
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Internal Medicine",
-            "quote": "A trusted product with transparent ingredient labeling and proven clinical results."
+            "ig_handle": "",
+            "quote": "A trusted product with transparent ingredient labeling and proven clinical results.",
+            "quote_url": ""
           }
         },
         "doc_3": {
@@ -229,7 +340,9 @@
           "settings": {
             "name": "Dr. Name Lastname",
             "specialty": "Nutritionist",
-            "quote": "The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need."
+            "ig_handle": "",
+            "quote": "The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need.",
+            "quote_url": ""
           }
         }
       },
@@ -294,7 +407,8 @@
       "settings": {
         "layout": "split",
         "eyebrow": "GOT QUESTIONS?",
-        "heading": "Frequently Asked Questions"
+        "heading": "Frequently Asked Questions",
+        "subtext": ""
       }
     },
     "fgp_customer_reviews_syn": {
@@ -352,6 +466,7 @@
         "columns_mobile": "2",
         "color_scheme": "scheme-3",
         "image_ratio": "portrait",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
         "show_rating": false,
@@ -362,7 +477,9 @@
   },
   "order": [
     "main",
-    "fgp_product_benefits_syn",
+    "fgp_icon_strip_kHPbNY",
+    "fgp_synbiotic_spotlight_aNxgHJ",
+    "fgp_origin_card_nMkFRa",
     "fgp_how_it_works_syn",
     "fgp_doctor_testimonials_syn",
     "fgp_product_faq_syn",

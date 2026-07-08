@@ -1,0 +1,547 @@
+{% render 'fgp-global' %}
+
+<section class="fgp-sbspot" aria-label="Synbiotic+ Spotlight">
+  <div class="fgp-sbspot__inner">
+
+    <!-- LEFT: Logo + badges -->
+    <div class="fgp-sbspot__left">
+      <p class="fgp-sbspot__eyebrow">{{ section.settings.eyebrow | default: 'DIGESTIVE ENZYMES' }}</p>
+      <h2 class="fgp-sbspot__title">{{ section.settings.title | default: 'SYNBIOTIC+' }}</h2>
+
+      <div class="fgp-sbspot__badges">
+        {% assign badge_index = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'badge' %}
+            <div class="fgp-sbspot__badge" {{ block.shopify_attributes }}>
+              <div class="fgp-sbspot__badge-icon">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '80x' }}" alt="{{ block.settings.label }}" loading="lazy">
+                {% elsif badge_index == 0 %}
+                  {%- comment -%}PRE — spiral prebiotic fiber{%- endcomment -%}
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6C14 6 10 9 10 13C10 17 13 19 16 19C19 19 21 17 21 15C21 13 19.5 12 18 12C16.5 12 15.5 13 15.5 14.5" stroke="#65438a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                    <path d="M18 30C22 30 26 27 26 23C26 19 23 17 20 17C17 17 15 19 15 21C15 23 16.5 24 18 24C19.5 24 20.5 23 20.5 21.5" stroke="#65438a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                    <circle cx="10" cy="13" r="1.5" fill="#65438a"/>
+                    <circle cx="26" cy="23" r="1.5" fill="#65438a"/>
+                  </svg>
+                {% elsif badge_index == 1 %}
+                  {%- comment -%}PRO — flagellated rod bacteria{%- endcomment -%}
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="18" cy="18" rx="5" ry="8" stroke="#65438a" stroke-width="1.8" fill="none"/>
+                    <path d="M13 14C10 12 8 9 9 7" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M13 18C9 18 7 16 7 13" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M13 22C10 24 9 27 11 29" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M23 14C26 12 28 9 27 7" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M23 18C27 18 29 16 29 13" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M23 22C26 24 27 27 25 29" stroke="#65438a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  </svg>
+                {% elsif badge_index == 2 %}
+                  {%- comment -%}POST — cluster of cocci bacteria{%- endcomment -%}
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="18" cy="12" r="4" stroke="#65438a" stroke-width="1.8" fill="none"/>
+                    <circle cx="12" cy="22" r="4" stroke="#65438a" stroke-width="1.8" fill="none"/>
+                    <circle cx="24" cy="22" r="4" stroke="#65438a" stroke-width="1.8" fill="none"/>
+                    <circle cx="18" cy="12" r="1.2" fill="#65438a"/>
+                    <circle cx="12" cy="22" r="1.2" fill="#65438a"/>
+                    <circle cx="24" cy="22" r="1.2" fill="#65438a"/>
+                  </svg>
+                {% endif %}
+                {% assign badge_index = badge_index | plus: 1 %}
+              </div>
+              <span class="fgp-sbspot__badge-label{% if block.settings.underline %} fgp-sbspot__badge-label--underline{% endif %}">{{ block.settings.label }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if section.settings.sublabel != blank %}
+        <div class="fgp-sbspot__sublabel-wrap">
+          <p class="fgp-sbspot__sublabel">{{ section.settings.sublabel }}</p>
+        </div>
+      {% endif %}
+
+      <div class="fgp-sbspot__enzyme-row">
+        {% if section.settings.enzyme_label != blank %}
+          <span class="fgp-sbspot__enzyme-text">{{ section.settings.enzyme_label }}</span>
+        {% endif %}
+        <div class="fgp-sbspot__enzyme-icon">
+          {% if section.settings.enzyme_icon != blank %}
+            <img src="{{ section.settings.enzyme_icon | img_url: '80x' }}" alt="Enzyme icon" loading="lazy">
+          {% else %}
+            {%- comment -%}Enzyme — stylized gut/intestine{%- endcomment -%}
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 8C10 8 8 10 8 13C8 16 10 17 12 17C14 17 15 16 15 14C15 12 14 11 12 11C10 11 9 12 9 14C9 17 11 19 14 20C17 21 19 23 19 26C19 28 17 30 15 30" stroke="#65438a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M20 8C23 8 26 10 26 14C26 18 23 20 20 20" stroke="#65438a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <circle cx="26" cy="8" r="2" fill="#65438a"/>
+              <circle cx="15" cy="30" r="2" fill="#65438a"/>
+            </svg>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER: Bottle image -->
+    <div class="fgp-sbspot__center">
+      {% if section.settings.bottle_image != blank %}
+        <img
+          class="fgp-sbspot__bottle"
+          src="{{ section.settings.bottle_image | img_url: 'master' }}"
+          alt="{{ section.settings.bottle_alt | default: 'Synbiotic+ bottle' }}"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="fgp-sbspot__bottle-placeholder"></div>
+      {% endif %}
+    </div>
+
+    <!-- RIGHT: 4 in 1 + dosage -->
+    <div class="fgp-sbspot__right">
+      <div class="fgp-sbspot__pill-row">
+        <span class="fgp-sbspot__four-in-one">{{ section.settings.badge_text | default: '4 IN 1' }}</span>
+        {% if section.settings.capsule_image != blank %}
+          <img class="fgp-sbspot__capsule-img" src="{{ section.settings.capsule_image | img_url: '200x' }}" alt="Capsules" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="fgp-sbspot__dosage">
+        {% if section.settings.dosage_line1 != blank %}
+          <p class="fgp-sbspot__dosage-main">{{ section.settings.dosage_line1 }}</p>
+        {% endif %}
+        {% if section.settings.dosage_line2 != blank %}
+          <p class="fgp-sbspot__dosage-main">{{ section.settings.dosage_line2 }}</p>
+        {% endif %}
+        {% if section.settings.dosage_sub != blank %}
+          <p class="fgp-sbspot__dosage-sub">{{ section.settings.dosage_sub }}</p>
+        {% endif %}
+      </div>
+
+      {% if section.settings.note != blank %}
+        <p class="fgp-sbspot__note">{{ section.settings.note }}</p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-sbspot {
+  background: #ebebeb;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── LEFT ── */
+.fgp-sbspot__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.fgp-sbspot__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--fgp-orange-yellow, #fdb921);
+  margin: 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__title {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  color: var(--fgp-picton-blue, #45bfef);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 1px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  white-space: nowrap;
+}
+
+/* Badge row: PRE / PRO / POST */
+.fgp-sbspot__badges {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.fgp-sbspot__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.fgp-sbspot__badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--fgp-cyber-grape, #65438a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.fgp-sbspot__badge-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.fgp-sbspot__badge-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fgp-cyber-grape, #65438a);
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__badge-label--underline {
+  border-bottom: 2.5px solid var(--fgp-cyber-grape, #65438a);
+  padding-bottom: 2px;
+}
+
+/* BIOTICS sublabel — centered under the full badge group */
+.fgp-sbspot__sublabel-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.fgp-sbspot__sublabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fgp-cyber-grape, #65438a);
+  margin: -4px 0 0;
+  text-align: center;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__enzyme-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.fgp-sbspot__enzyme-text {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--fgp-cyber-grape, #65438a);
+  line-height: 1.3;
+  white-space: pre-line;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__enzyme-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--fgp-cyber-grape, #65438a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fgp-sbspot__enzyme-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* ── CENTER ── */
+.fgp-sbspot__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fgp-sbspot__bottle {
+  width: auto;
+  height: clamp(280px, 30vw, 380px);
+  object-fit: contain;
+  display: block;
+}
+
+.fgp-sbspot__bottle-placeholder {
+  width: 200px;
+  height: 320px;
+  background: #dce8f5;
+  border-radius: 12px;
+}
+
+/* ── RIGHT ── */
+.fgp-sbspot__right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* "4 IN 1" + capsule image side by side, capsule at top */
+.fgp-sbspot__pill-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.fgp-sbspot__four-in-one {
+  font-size: clamp(48px, 5.5vw, 72px);
+  font-weight: 300;
+  color: var(--fgp-picton-blue, #45bfef);
+  line-height: 1;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+/* Capsule photo — angled, sits beside "4 IN 1" at top */
+.fgp-sbspot__capsule-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transform: rotate(-20deg);
+  margin-top: 4px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.fgp-sbspot__dosage {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fgp-sbspot__dosage-main {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 700;
+  color: var(--fgp-dark-text, #2e2a39);
+  margin: 0;
+  line-height: 1.3;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__dosage-sub {
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 400;
+  color: var(--fgp-dark-text, #2e2a39);
+  margin: 2px 0 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-sbspot__note {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7a7a7a;
+  margin: 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 767px) {
+  .fgp-sbspot {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .fgp-sbspot__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .fgp-sbspot__left {
+    align-items: center;
+    order: 2;
+  }
+
+  .fgp-sbspot__center {
+    order: 1;
+  }
+
+  .fgp-sbspot__right {
+    align-items: center;
+    order: 3;
+    text-align: center;
+  }
+
+  .fgp-sbspot__bottle {
+    height: 240px;
+  }
+
+  .fgp-sbspot__badges {
+    justify-content: center;
+  }
+
+  .fgp-sbspot__enzyme-row {
+    justify-content: center;
+  }
+}
+
+/* ── TABLET ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fgp-sbspot__inner {
+    gap: 0 16px;
+  }
+  .fgp-sbspot__bottle {
+    height: 260px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Synbiotic Spotlight",
+  "tag": "section",
+  "class": "fgp-synbiotic-spotlight",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column — Branding"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (gold caps)",
+      "default": "DIGESTIVE ENZYMES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Product Title (blue)",
+      "default": "SYNBIOTIC+"
+    },
+    {
+      "type": "text",
+      "id": "sublabel",
+      "label": "Badge group sublabel",
+      "default": "BIOTICS",
+      "info": "Shows centered below the PRE/PRO/POST icons"
+    },
+    {
+      "type": "text",
+      "id": "enzyme_label",
+      "label": "Enzyme label",
+      "default": "18 DIGESTIVE\nENZYMES"
+    },
+    {
+      "type": "image_picker",
+      "id": "enzyme_icon",
+      "label": "Enzyme icon image"
+    },
+    {
+      "type": "header",
+      "content": "Center — Bottle"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottle_image",
+      "label": "Bottle image"
+    },
+    {
+      "type": "text",
+      "id": "bottle_alt",
+      "label": "Bottle image alt text",
+      "default": "Synbiotic+ bottle"
+    },
+    {
+      "type": "header",
+      "content": "Right Column — Dosage"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Large badge text",
+      "default": "4 IN 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "capsule_image",
+      "label": "Capsule image (next to badge)"
+    },
+    {
+      "type": "text",
+      "id": "dosage_line1",
+      "label": "Dosage line 1 (bold)",
+      "default": "2 capsules"
+    },
+    {
+      "type": "text",
+      "id": "dosage_line2",
+      "label": "Dosage line 2 (bold)",
+      "default": "2 times a day"
+    },
+    {
+      "type": "text",
+      "id": "dosage_sub",
+      "label": "Dosage subtitle",
+      "default": "with the main meals"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note (small gray)",
+      "default": "No refrigeration required"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "PRE"
+        },
+        {
+          "type": "checkbox",
+          "id": "underline",
+          "label": "Underline label",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Synbiotic Spotlight",
+      "blocks": [
+        { "type": "badge", "settings": { "label": "PRE", "underline": false } },
+        { "type": "badge", "settings": { "label": "PRO", "underline": true } },
+        { "type": "badge", "settings": { "label": "POST", "underline": false } }
+      ]
+    }
+  ]
+}
+{% endschema %}
