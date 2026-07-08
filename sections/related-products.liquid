@@ -1,63 +1,243 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
-
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<section class="fgp-rp">
   <product-recommendations
-    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="fgp-rp__inner"
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product.id }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
-      <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% assign skip_card_product_styles = false %}
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              skip_styles: skip_card_product_styles,
-              product_view_context: 'recommendation'
-            %}
-          </li>
-          {%- assign skip_card_product_styles = true -%}
+      <h2 class="fgp-rp__heading">{{ section.settings.heading }}</h2>
+      <div class="fgp-rp__grid">
+        {% for p in recommendations.products %}
+          <div class="fgp-rp__card">
+            <a href="{{ p.url }}" class="fgp-rp__img-link">
+              {% if p.featured_image %}
+                <img
+                  class="fgp-rp__img"
+                  src="{{ p.featured_image | image_url: width: 600 }}"
+                  alt="{{ p.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="600"
+                  height="{{ 600 | divided_by: p.featured_image.aspect_ratio | round }}"
+                >
+              {% endif %}
+            </a>
+            <div class="fgp-rp__info">
+              <p class="fgp-rp__vendor">{{ p.vendor }}</p>
+              <h3 class="fgp-rp__title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+              <p class="fgp-rp__price">{{ p.price | money }}</p>
+              {% if p.metafields.custom.availability != blank %}
+                <p class="fgp-rp__availability">{{ p.metafields.custom.availability }}</p>
+              {% endif %}
+              <div class="fgp-rp__bottom">
+                {% if p.metafields.reviews.rating.value != blank %}
+                  <div class="fgp-rp__stars">
+                    {% assign rating = p.metafields.reviews.rating.value.rating | round %}
+                    {% for i in (1..5) %}
+                      {% if i <= rating %}
+                        <span class="fgp-rp__star fgp-rp__star--filled">★</span>
+                      {% else %}
+                        <span class="fgp-rp__star">★</span>
+                      {% endif %}
+                    {% endfor %}
+                    <span class="fgp-rp__rating-val">{{ p.metafields.reviews.rating.value.rating | round: 1 }}</span>
+                  </div>
+                {% else %}
+                  <span></span>
+                {% endif %}
+                <a href="{{ p.url }}" class="fgp-rp__add-btn">Add</a>
+              </div>
+            </div>
+          </div>
         {% endfor %}
-      </ul>
+      </div>
     {% endif %}
+    <style>
+.fgp-rp {
+  background: #f4f4f4;
+  padding: 56px max(20px, calc((100vw - 960px) / 2));
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-rp__heading {
+  text-align: center;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--fgp-cyber-grape, #65438a);
+  margin: 0 0 36px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-rp__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.fgp-rp__card {
+  background: #f8f8f8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.fgp-rp__img-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 8px 8px 0;
+  line-height: 0;
+}
+
+.fgp-rp__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.fgp-rp__card:hover .fgp-rp__img {
+  transform: scale(1.03);
+}
+
+.fgp-rp__info {
+  padding: 16px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.fgp-rp__vendor {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8e8e93;
+  margin: 0;
+}
+
+.fgp-rp__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e2a39;
+  margin: 4px 0 0;
+  line-height: 1.2;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-rp__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fgp-rp__price {
+  font-size: 15px;
+  font-weight: 400;
+  color: #2e2a39;
+  margin: 4px 0 0;
+}
+
+.fgp-rp__availability {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.fgp-rp__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.fgp-rp__stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.fgp-rp__star {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.fgp-rp__star--filled {
+  color: #ffaa47;
+}
+
+.fgp-rp__rating-val {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.fgp-rp__add-btn {
+  background: var(--fgp-cyber-grape, #65438a);
+  color: #fff;
+  border-radius: 100px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.fgp-rp__add-btn:hover {
+  opacity: 0.88;
+}
+
+@media (max-width: 767px) {
+  .fgp-rp {
+    padding-top: 40px;
+    padding-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .fgp-rp__heading {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .fgp-rp__grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+  .fgp-rp__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .fgp-rp__card {
+    flex: 0 0 72vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+  .fgp-rp__img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fgp-rp__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+    </style>
   </product-recommendations>
-  {% if section.settings.image_shape == 'arch' %}
-    {{ 'mask-arch.svg' | inline_asset_content }}
-  {%- endif -%}
-</div>
+</section>
 
 {% schema %}
 {
