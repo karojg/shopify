@@ -106,12 +106,25 @@
 .fgp-kids,
 .fgp-ksym,
 .fgp-vcards,
-/* .fgp-is, */
+.fgp-is,
 .fgp-sbf,
 .fgp-pgrid,
 .fgp-docs,
 .fgp-revs,
 .fgp-subfooter,
+.fgp-benefits,
+.fgp-faq,
+.fgp-fy,
+.fgp-hiw,
+.fgp-ct,
+.fgp-bb,
+.fgp-lifestyle,
+.fgp-logos,
+.fgp-nl,
+.fgp-team,
+.fgp-rart,
+.fgp-kspot,
+.fgp-origin,
 .fgp-section {
   width: 100%;
   box-sizing: border-box;

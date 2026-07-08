@@ -59,7 +59,8 @@
           "settings": {
             "heading": "Dosage",
             "icon": "none",
-            "content": "<p>Children 4+: 1 gummy per day. Adults: 1–2 gummies per day.</p>"
+            "content": "<p>Children 4+: 1 gummy per day. Adults: 1–2 gummies per day.</p>",
+            "page": ""
           }
         },
         "tab_shipping": {
@@ -67,7 +68,8 @@
           "settings": {
             "heading": "Shipping",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>"
+            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "page": ""
           }
         },
         "tab_returns": {
@@ -75,7 +77,8 @@
           "settings": {
             "heading": "Return policy",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>"
+            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "page": ""
           }
         },
         "share": {
@@ -116,161 +119,122 @@
         "padding_bottom": 60
       }
     },
-    "fgp_logo_carousel_tUznXW": {
-      "type": "fgp-logo-carousel",
+    "fgp_icon_strip_wgq3eM": {
+      "type": "fgp-icon-strip",
       "blocks": {
-        "logo_7yaPdX": {
-          "type": "logo",
+        "item_LC8rQ6": {
+          "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Harina.png",
-            "logo_alt": "Partner"
+            "label": "Spore based probiotics"
           }
         },
-        "logo_DTdViB": {
-          "type": "logo",
+        "item_3B3Enx": {
+          "type": "item",
           "settings": {
-            "logo_alt": "Partner"
+            "label": "Plant Based ingredients"
           }
         },
-        "logo_XyBDyA": {
-          "type": "logo",
+        "item_rYpm8E": {
+          "type": "item",
           "settings": {
-            "logo_alt": "Partner"
+            "label": "Replenishes Beneficial Bacteria®"
           }
         },
-        "logo_RACmNf": {
-          "type": "logo",
+        "item_xGNe7c": {
+          "type": "item",
           "settings": {
-            "logo_alt": "Partner"
+            "label": "Strengthens Gut Barrier®"
           }
         },
-        "logo_9873JB": {
-          "type": "logo",
+        "item_8pmneL": {
+          "type": "item",
           "settings": {
-            "logo_alt": "Partner"
+            "label": "Improves Nutrient Absorption®"
+          }
+        },
+        "item_XWe9N7": {
+          "type": "item",
+          "settings": {
+            "label": "Non GMO"
           }
         }
       },
       "block_order": [
-        "logo_7yaPdX",
-        "logo_DTdViB",
-        "logo_XyBDyA",
-        "logo_RACmNf",
-        "logo_9873JB"
+        "item_LC8rQ6",
+        "item_3B3Enx",
+        "item_rYpm8E",
+        "item_xGNe7c",
+        "item_8pmneL",
+        "item_XWe9N7"
       ],
-      "name": "FGP Logo Carousel",
+      "name": "FGP Icon Strip",
       "settings": {
-        "heading": "Hola",
-        "section_label": "As seen in",
-        "speed": 30,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "bg": "white",
+        "aria_label": "Product benefits"
       }
     },
-    "fgp_product_benefits_kids": {
-      "type": "fgp-product-benefits",
+    "fgp_kids_spotlight_GX9tMK": {
+      "type": "fgp-kids-spotlight",
+      "name": "FGP Kids Spotlight",
+      "settings": {
+        "product_logo": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
+        "product_logo_alt": "Kids Probiotics",
+        "badge_icon": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
+        "strawberry_icon": "shopify://shop_images/Harina.png",
+        "badge_name": "DE111®",
+        "badge_subtitle": "Bacillus Subtilis",
+        "note": "No refrigeration required",
+        "bottle_image": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png",
+        "bottle_image_alt": "Kids Probiotics bottle",
+        "description": "<h1>The gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</h1>",
+        "gummy_child_image": "shopify://shop_images/Harina.png",
+        "child_label": "Children",
+        "gummy_adult_image": "shopify://shop_images/Harina.png",
+        "adult_label": "Adults"
+      }
+    },
+    "fgp_origin_card_Mhi8hB": {
+      "type": "fgp-origin-card",
       "blocks": {
-        "ben_1": {
-          "type": "benefit",
+        "cert_logo_7CtmGL": {
+          "type": "cert_logo",
           "settings": {
-            "icon_emoji": "",
-            "label": "Probiotics",
-            "sublabel": "Replenish good bacteria"
+            "logo_alt": "DE111 Probiotic"
           }
         },
-        "ben_2": {
-          "type": "benefit",
+        "cert_logo_TKLwk3": {
+          "type": "cert_logo",
           "settings": {
-            "icon_emoji": "",
-            "label": "Prebiotics",
-            "sublabel": "Feed the microbiome"
+            "logo_alt": "FDA"
           }
         },
-        "ben_3": {
-          "type": "benefit",
+        "cert_logo_V744tW": {
+          "type": "cert_logo",
           "settings": {
-            "icon_emoji": "",
-            "label": "Immunity",
-            "sublabel": "Strengthen defenses"
+            "logo_alt": "GMP"
           }
         },
-        "ben_4": {
-          "type": "benefit",
+        "cert_logo_tBm7hE": {
+          "type": "cert_logo",
           "settings": {
-            "icon_emoji": "",
-            "label": "Digestion",
-            "sublabel": "Reduce tummy aches"
+            "logo_alt": "Made in USA"
           }
         }
       },
       "block_order": [
-        "ben_1",
-        "ben_2",
-        "ben_3",
-        "ben_4"
+        "cert_logo_7CtmGL",
+        "cert_logo_TKLwk3",
+        "cert_logo_V744tW",
+        "cert_logo_tBm7hE"
       ],
-      "name": "Kids Probiotics Benefits",
+      "name": "FGP Origin Card",
       "settings": {
-        "eyebrow": "KIDS PROBIOTICS",
-        "heading": "4 IN 1 Formula for Kids",
-        "subtext": "1 capsule · 1 time a day · Can be opened and mixed with food"
-      }
-    },
-    "fgp_how_it_works_kids": {
-      "type": "fgp-how-it-works",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "title": "Supports a healthy gut microbiome",
-            "description": "Probiotic strains specifically selected for children help establish and maintain a healthy gut from an early age."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "title": "Strengthens the immune system",
-            "description": "Over 70% of the immune system lives in the gut. A balanced microbiome helps kids fight off infections more effectively."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "title": "Reduces tummy aches and discomfort",
-            "description": "The prebiotic and probiotic combination reduces bloating, constipation, diarrhea, and general digestive discomfort."
-          }
-        },
-        "step_4": {
-          "type": "step",
-          "settings": {
-            "title": "Safe and easy to give",
-            "description": "Capsules can be opened and mixed into food or drinks — no unpleasant taste, no fuss."
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "step_4"
-      ],
-      "name": "How It Works — Kids",
-      "settings": {
-        "eyebrow": "THE SCIENCE",
-        "heading": "How do our Kids formulations work?",
-        "subtext": "",
-        "cta_label": "",
-        "cta_url": ""
-      }
-    },
-    "fgp_lifestyle_kids": {
-      "type": "fgp-lifestyle-grid",
-      "name": "Kids Lifestyle Photos",
-      "settings": {
-        "image_1_alt": "Child with Feel Good Pharma Kids Probiotics",
-        "image_2_alt": "Happy healthy child",
-        "image_3_alt": "Kids Probiotics product",
-        "image_4_alt": "Family with Feel Good Pharma"
+        "heading": "Formulated in Costa Rica",
+        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
+        "cta_label": "Explore Ingredients",
+        "cta_url": "",
+        "photo": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png",
+        "photo_alt": ""
       }
     },
     "fgp_doctor_testimonials_kids": {
@@ -438,10 +402,9 @@
   },
   "order": [
     "main",
-    "fgp_logo_carousel_tUznXW",
-    "fgp_product_benefits_kids",
-    "fgp_how_it_works_kids",
-    "fgp_lifestyle_kids",
+    "fgp_icon_strip_wgq3eM",
+    "fgp_kids_spotlight_GX9tMK",
+    "fgp_origin_card_Mhi8hB",
     "fgp_doctor_testimonials_kids",
     "fgp_product_faq_kids",
     "fgp_customer_reviews_kids",

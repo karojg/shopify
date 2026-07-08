@@ -1,0 +1,385 @@
+{% comment %}
+  Feel Good Pharma — Kids Spotlight Section
+  3-column layout: left (logo + badge + note), center (product bottle), right (description + dosage icons)
+  Shopify OS 2.0 Section
+{% endcomment %}
+
+{% render 'fgp-global' %}
+
+<section class="fgp-kspot" aria-label="Kids Probiotics Spotlight">
+  <div class="fgp-kspot__inner">
+
+    <!-- LEFT: Logo + DE111 badge + no refrigeration -->
+    <div class="fgp-kspot__col fgp-kspot__col--left">
+      {% if section.settings.product_logo != blank %}
+        <img
+          class="fgp-kspot__logo"
+          src="{{ section.settings.product_logo | img_url: 'master' }}"
+          alt="{{ section.settings.product_logo_alt | default: 'Kids Probiotics' }}"
+          loading="lazy"
+        >
+      {% endif %}
+
+      <div class="fgp-kspot__badge-row">
+        {% if section.settings.badge_icon != blank %}
+          <img
+            class="fgp-kspot__badge-icon"
+            src="{{ section.settings.badge_icon | img_url: 'master' }}"
+            alt="DE111 Bacillus Subtilis"
+            loading="lazy"
+          >
+        {% endif %}
+        {% if section.settings.strawberry_icon != blank %}
+          <img
+            class="fgp-kspot__strawberry"
+            src="{{ section.settings.strawberry_icon | img_url: 'master' }}"
+            alt=""
+            loading="lazy"
+          >
+        {% endif %}
+        <div class="fgp-kspot__badge-text">
+          <span class="fgp-kspot__badge-name">{{ section.settings.badge_name | default: 'DE111®' }}</span>
+          <span class="fgp-kspot__badge-sub">{{ section.settings.badge_subtitle | default: 'Bacillus Subtilis' }}</span>
+        </div>
+      </div>
+
+      <p class="fgp-kspot__note">{{ section.settings.note | default: 'No refrigeration required' }}</p>
+    </div>
+
+    <!-- CENTER: Product bottle image -->
+    <div class="fgp-kspot__col fgp-kspot__col--center">
+      {% if section.settings.bottle_image != blank %}
+        <img
+          class="fgp-kspot__bottle"
+          src="{{ section.settings.bottle_image | img_url: 'master' }}"
+          alt="{{ section.settings.bottle_image_alt | default: 'Kids Probiotics bottle' }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+
+    <!-- RIGHT: Description + dosage rows -->
+    <div class="fgp-kspot__col fgp-kspot__col--right">
+      <div class="fgp-kspot__description">
+        {{ section.settings.description | default: '<p>They gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</p>' }}
+      </div>
+
+      <div class="fgp-kspot__dosage">
+        <div class="fgp-kspot__dosage-row">
+          {% if section.settings.gummy_child_image != blank %}
+            <img
+              class="fgp-kspot__gummy-img"
+              src="{{ section.settings.gummy_child_image | img_url: 'master' }}"
+              alt="1 gummy"
+              loading="lazy"
+            >
+          {% endif %}
+          <span class="fgp-kspot__dosage-label">{{ section.settings.child_label | default: 'Children' }}</span>
+        </div>
+        <div class="fgp-kspot__dosage-row">
+          {% if section.settings.gummy_adult_image != blank %}
+            <img
+              class="fgp-kspot__gummy-img"
+              src="{{ section.settings.gummy_adult_image | img_url: 'master' }}"
+              alt="2 gummies"
+              loading="lazy"
+            >
+          {% endif %}
+          <span class="fgp-kspot__dosage-label">{{ section.settings.adult_label | default: 'Adults' }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.fgp-kspot {
+  background: var(--fgp-near-white, #f8f8f8);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+}
+
+.fgp-kspot__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Left column ── */
+.fgp-kspot__col--left {
+  flex: 0 0 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.fgp-kspot__logo {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+}
+
+.fgp-kspot__badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+
+.fgp-kspot__badge-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.fgp-kspot__strawberry {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+}
+
+.fgp-kspot__badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.fgp-kspot__badge-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fgp-cyber-grape, #65438a);
+  line-height: 1.1;
+}
+
+.fgp-kspot__badge-sub {
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--fgp-cyber-grape, #65438a);
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fgp-kspot__note {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--fgp-cyber-grape, #65438a);
+  margin: 0;
+}
+
+/* ── Center column ── */
+.fgp-kspot__col--center {
+  flex: 0 0 34%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fgp-kspot__bottle {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Right column ── */
+.fgp-kspot__col--right {
+  flex: 0 0 34%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 20px;
+}
+
+.fgp-kspot__description {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--fgp-cyber-grape, #65438a) !important;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.fgp-kspot__description *,
+.fgp-kspot__description h1,
+.fgp-kspot__description h2,
+.fgp-kspot__description p {
+  color: var(--fgp-cyber-grape, #65438a) !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  margin: 0 !important;
+}
+
+.fgp-kspot__description em {
+  font-style: italic;
+}
+
+.fgp-kspot__dosage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fgp-kspot__dosage-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fgp-kspot__gummy-img {
+  width: 72px;
+  height: auto;
+  object-fit: contain;
+}
+
+.fgp-kspot__dosage-label {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--fgp-cyber-grape, #65438a) !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .fgp-kspot__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .fgp-kspot__col--left,
+  .fgp-kspot__col--center,
+  .fgp-kspot__col--right {
+    flex: none;
+    width: 100%;
+  }
+
+  .fgp-kspot__bottle {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .fgp-kspot__description {
+    font-size: 18px;
+  }
+
+  .fgp-kspot__dosage-label {
+    font-size: 20px;
+  }
+
+  .fgp-kspot__col--right {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "FGP Kids Spotlight",
+  "tag": "section",
+  "class": "fgp-kids-spotlight",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_logo",
+      "label": "Kids Probiotics Logo"
+    },
+    {
+      "type": "text",
+      "id": "product_logo_alt",
+      "label": "Logo Alt Text",
+      "default": "Kids Probiotics"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_icon",
+      "label": "DE111 Badge Icon (bacteria illustration)"
+    },
+    {
+      "type": "image_picker",
+      "id": "strawberry_icon",
+      "label": "Strawberry Icon"
+    },
+    {
+      "type": "text",
+      "id": "badge_name",
+      "label": "Badge Name",
+      "default": "DE111®"
+    },
+    {
+      "type": "text",
+      "id": "badge_subtitle",
+      "label": "Badge Subtitle",
+      "default": "Bacillus Subtilis"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note (below badge)",
+      "default": "No refrigeration required"
+    },
+    {
+      "type": "header",
+      "content": "Center Column"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottle_image",
+      "label": "Product Bottle Image"
+    },
+    {
+      "type": "text",
+      "id": "bottle_image_alt",
+      "label": "Bottle Image Alt Text",
+      "default": "Kids Probiotics bottle"
+    },
+    {
+      "type": "header",
+      "content": "Right Column"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>They gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "gummy_child_image",
+      "label": "Children Dosage Gummy Image (1 gummy)"
+    },
+    {
+      "type": "text",
+      "id": "child_label",
+      "label": "Children Label",
+      "default": "Children"
+    },
+    {
+      "type": "image_picker",
+      "id": "gummy_adult_image",
+      "label": "Adult Dosage Gummy Image (2 gummies)"
+    },
+    {
+      "type": "text",
+      "id": "adult_label",
+      "label": "Adults Label",
+      "default": "Adults"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FGP Kids Spotlight"
+    }
+  ]
+}
+{% endschema %}
