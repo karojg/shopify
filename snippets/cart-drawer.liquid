@@ -15,6 +15,213 @@
   .drawer {
     visibility: hidden;
   }
+
+  /* ── Cart drawer typography ── */
+  .cart-drawer .drawer__heading {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .cart-drawer .caption-with-letter-spacing {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    opacity: 0.6;
+  }
+
+  .cart-drawer .cart-item__title,
+  .cart-drawer .cart-item__name {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 15px !important;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .cart-drawer .cart-item__details {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 14px;
+  }
+
+  .cart-drawer .cart-item__details .product-option {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .cart-drawer .price,
+  .cart-drawer .cart-item__old-price,
+  .cart-drawer .cart-item__final-price {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .cart-drawer .totals__total {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .cart-drawer .totals__total-value {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .cart-drawer .tax-note {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 12px;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+
+  .cart-drawer .cart__checkout-button {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 749px) {
+    /* Kill table layout */
+    .cart-drawer .cart-items,
+    .cart-drawer .cart-items tbody { display: block; width: 100%; }
+    .cart-drawer .cart-items thead { display: none; }
+
+    /* Row = image left + content right, content stacks vertically */
+    .cart-drawer .cart-items .cart-item {
+      display: grid !important;
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 14px;
+      row-gap: 12px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      width: 100%;
+    }
+
+    /* Image: row 1, col 1 — spans both rows so it's tall enough */
+    .cart-drawer .cart-item__media {
+      display: block !important;
+      grid-column: 1;
+      grid-row: 1 / 3;
+      align-self: start;
+    }
+    .cart-drawer .cart-item__image {
+      width: 80px !important;
+      height: 80px !important;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Details: row 1, col 2 — name + price on same line, variant below */
+    .cart-drawer .cart-item__details {
+      display: flex !important;
+      flex-direction: column;
+      grid-column: 2;
+      grid-row: 1;
+      padding: 0 !important;
+      min-width: 0;
+      gap: 4px;
+    }
+
+    /* Name + line price side by side */
+    .cart-drawer .cart-item__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .cart-drawer .cart-item__name {
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      line-height: 1.3;
+      white-space: normal !important;
+      overflow-wrap: break-word;
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    /* Unit price in details — muted, small */
+    .cart-drawer .cart-item__details .product-option {
+      font-size: 13px;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* Line total — shown top-right, prominent */
+    .cart-drawer .cart-item__totals {
+      display: none !important;
+    }
+
+    /* Show line total via the totals cell — re-enable and place it */
+    .cart-drawer .cart-item__totals {
+      display: flex !important;
+      align-items: flex-start;
+      justify-content: flex-end;
+      grid-column: 2;
+      padding: 0 !important;
+    }
+    .cart-drawer .cart-item__totals .price {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      white-space: nowrap;
+    }
+
+    /* Quantity + delete: row 2, col 2 — tight, left-aligned */
+    .cart-drawer .cart-item__quantity {
+      display: block !important;
+      grid-column: 2;
+      grid-row: 2;
+      align-self: center;
+    }
+    .cart-drawer .cart-item__quantity-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Stepper — compact pill */
+    .cart-drawer .cart-quantity {
+      display: flex !important;
+      width: 108px !important;
+      height: 38px !important;
+      min-height: 38px !important;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .cart-drawer .cart-quantity .quantity__button {
+      width: 38px !important;
+      height: 38px !important;
+      min-height: 38px !important;
+      flex-shrink: 0;
+    }
+    .cart-drawer .cart-quantity .quantity__input {
+      width: 32px !important;
+      height: 38px !important;
+      min-height: 38px !important;
+      font-size: 15px;
+    }
+
+    /* Delete button — small ghost circle */
+    .cart-drawer .cart-remove-button .button {
+      width: 34px !important;
+      height: 34px !important;
+      min-width: unset !important;
+      padding: 0 !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+    }
+    .cart-drawer .cart-remove-button .button svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
