@@ -1,0 +1,359 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "tab_whats_included": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's included",
+            "icon": "none",
+            "content": "<p>This kit includes Synbiotic+, Kids Probiotics, and Stressbiotic® — one full bottle of each.</p>",
+            "page": ""
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "none",
+            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "page": ""
+          }
+        },
+        "tab_returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return policy",
+            "icon": "none",
+            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "tab_whats_included",
+        "tab_shipping",
+        "tab_returns",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_icon_strip_kit": {
+      "type": "fgp-icon-strip",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "label": "Complete gut health system"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "label": "One bottle of each formula"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "label": "Save vs. buying separately"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "label": "Non GMO"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "name": "FGP Icon Strip",
+      "settings": {
+        "bg": "white",
+        "aria_label": "Kit benefits"
+      }
+    },
+    "fgp_products_grid_kit": {
+      "type": "fgp-products-grid",
+      "blocks": {
+        "prod_synbiotic": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "DIGESTIVE ENZYMES",
+            "placeholder_title": "Synbiotic+",
+            "cta_label": "Shop Synbiotic+"
+          }
+        },
+        "prod_kids": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "KIDS",
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Shop Kids Probiotics"
+          }
+        },
+        "prod_stressbiotic": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "STRESS + GUT",
+            "placeholder_title": "Stressbiotic®",
+            "cta_label": "Shop Stressbiotic®"
+          }
+        }
+      },
+      "block_order": [
+        "prod_synbiotic",
+        "prod_kids",
+        "prod_stressbiotic"
+      ],
+      "name": "What's In The Kit",
+      "settings": {
+        "collection": "",
+        "products_to_show": 3,
+        "heading": "What's In The Kit",
+        "cta_label": "Shop Now"
+      }
+    },
+    "fgp_origin_card_kit": {
+      "type": "fgp-origin-card",
+      "blocks": {
+        "cert_logo_1": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "DE111 Probiotic"
+          }
+        },
+        "cert_logo_2": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "FDA"
+          }
+        },
+        "cert_logo_3": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "GMP"
+          }
+        },
+        "cert_logo_4": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "Made in USA"
+          }
+        }
+      },
+      "block_order": [
+        "cert_logo_1",
+        "cert_logo_2",
+        "cert_logo_3",
+        "cert_logo_4"
+      ],
+      "name": "FGP Origin Card",
+      "settings": {
+        "heading": "Formulated in Costa Rica",
+        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
+        "cta_label": "Explore Ingredients",
+        "cta_url": "",
+        "photo": "",
+        "photo_alt": ""
+      }
+    },
+    "fgp_product_faq_kit": {
+      "type": "fgp-product-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's included in the Kit?",
+            "answer": "<p>One full bottle each of Synbiotic+, Kids Probiotics, and Stressbiotic®.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can the whole family use it?",
+            "answer": "<p>Yes — the Kit is designed to cover adults, kids, and stress/gut-brain support in one purchase.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I take all three at once?",
+            "answer": "<p>No — each product has its own dosage instructions on the bottle. Use the one that matches your (or your child's) needs.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the Kit cheaper than buying separately?",
+            "answer": "<p>Yes, the Kit is priced below the combined cost of buying each product on its own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "name": "Kit FAQ",
+      "settings": {
+        "layout": "split",
+        "eyebrow": "GOT QUESTIONS?",
+        "heading": "Frequently Asked Questions",
+        "subtext": ""
+      }
+    },
+    "fgp_customer_reviews_kit": {
+      "type": "fgp-customer-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Got the Kit for the whole family — kids love their gummies and I finally found something that helps with my stress and digestion together.",
+            "name": "Fernanda C.",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Great value buying all three together instead of separately. Easy to keep track of who takes what.",
+            "name": "Luis A.",
+            "location": "Heredia, Costa Rica"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2"
+      ],
+      "name": "Customer Reviews",
+      "settings": {
+        "eyebrow": "WHAT OUR CUSTOMERS SAY",
+        "heading": "Loved by Families"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-3",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_icon_strip_kit",
+    "fgp_products_grid_kit",
+    "fgp_origin_card_kit",
+    "fgp_product_faq_kit",
+    "fgp_customer_reviews_kit",
+    "related-products"
+  ]
+}
