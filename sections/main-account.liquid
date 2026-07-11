@@ -1,20 +1,231 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+<style>
+  .customer.account {
+    font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  /* ── Header row: title + logout ── */
+  .customer.account > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .customer.account .customer__title {
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    color: var(--fgp-dark-cornflower-blue, #234092);
+    margin: 0;
+  }
+
+  .customer.account > div:first-child a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fgp-cyber-grape, #65438a);
+    text-decoration: none;
+  }
+
+  .customer.account > div:first-child a:hover {
+    opacity: 0.75;
+  }
+
+  /* ── Two-column layout: orders left, details right ── */
+  .customer.account > div:last-child {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* ── Section headings ── */
+  .customer.account h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--fgp-dark-cornflower-blue, #234092);
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ebebeb;
+  }
+
+  /* ── Orders table ── */
+  .order-history {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .order-history thead tr {
+    border-bottom: 2px solid #ebebeb;
+  }
+
+  .order-history th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #234092;
+    padding: 0 16px 10px 0;
+    white-space: nowrap;
+  }
+
+  .order-history tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+  }
+
+  .order-history tbody tr:hover {
+    background: #f8f8f8;
+  }
+
+  .order-history td {
+    padding: 12px 16px 12px 0;
+    color: #2e2a39;
+    font-size: 14px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /* Order number — kill Dawn's button/box style, plain link */
+  .order-history td:first-child a,
+  .order-history td:first-child a:visited {
+    font-weight: 700;
+    color: var(--fgp-cyber-grape, #65438a) !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    display: inline !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .order-history td:first-child a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Status badges */
+  .order-history td:nth-child(3),
+  .order-history td:nth-child(4) {
+    font-size: 12px;
+    color: #6b6b6b;
+  }
+
+  /* Total — bold, nowrap */
+  .order-history td:last-child {
+    font-weight: 700;
+    color: #2e2a39;
+    white-space: nowrap;
+  }
+
+  /* ── Account details sidebar ── */
+  .customer.account > div:last-child > div:last-child {
+    background: #f8f8f8;
+    border-radius: 16px;
+    padding: 24px;
+    position: sticky;
+    top: 24px;
+  }
+
+  .customer.account > div:last-child > div:last-child address,
+  .customer.account > div:last-child > div:last-child p {
+    font-size: 14px;
+    font-style: normal;
+    color: #2e2a39;
+    line-height: 1.7;
+    margin: 0 0 16px;
+  }
+
+  .customer.account > div:last-child > div:last-child a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fgp-cyber-grape, #65438a);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--fgp-cyber-grape, #65438a);
+    margin-top: 4px;
+  }
+
+  .customer.account > div:last-child > div:last-child a:hover {
+    opacity: 0.75;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 749px) {
+    .customer.account {
+      padding: 32px 16px 48px;
+    }
+
+    .customer.account > div:last-child {
+      grid-template-columns: 1fr;
+    }
+
+    /* Kill Dawn's mobile table-to-block conversion */
+    .order-history,
+    .order-history thead,
+    .order-history tbody,
+    .order-history tr,
+    .order-history th,
+    .order-history td {
+      display: revert !important;
+    }
+
+    /* Hide data-label pseudo content Dawn adds */
+    .order-history td::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    /* Keep only: order #, date, total */
+    .order-history th:nth-child(3),
+    .order-history td:nth-child(3),
+    .order-history th:nth-child(4),
+    .order-history td:nth-child(4) {
+      display: none !important;
+    }
+
+    .order-history {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .order-history th:nth-child(1),
+    .order-history td:nth-child(1) { width: 30%; }
+    .order-history th:nth-child(2),
+    .order-history td:nth-child(2) { width: 42%; }
+    .order-history th:nth-child(5),
+    .order-history td:nth-child(5) { width: 28%; text-align: right; }
+
+    .order-history th {
+      font-size: 10px;
+      padding: 0 8px 10px 0;
+    }
+
+    .order-history td {
+      font-size: 13px;
+      padding: 12px 8px 12px 0;
+      white-space: normal;
+    }
+
+    .order-history td:nth-child(5) {
+      text-align: right;
+      padding-right: 0;
     }
   }
-{%- endstyle -%}
+</style>
 
-<div class="customer account section-{{ section.id }}-padding">
+<div class="customer account">
   <div>
     <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
     <a href="{{ routes.account_logout_url }}">
