@@ -175,6 +175,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 2px 6px 6px;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .fgp-hv2__cycle.is-fading {
@@ -218,73 +219,79 @@
    MOBILE — ≤ 768px
    Layout: heading | symptoms+CTA | bottles
 ══════════════════════════════════════ */
-@media (max-width: 768px) {
+@media (max-width: 639px) {
 
-  /* Heading: block element, centered text, flows naturally */
+  /* Heading: compact single block, flows left, matches Figma mobile spec */
   .fgp-hv2__top {
     padding: 16px 20px 0;
+    padding-bottom: 2px;
   }
   .fgp-hv2__heading {
-    font-size: clamp(20px, 5.5vw, 32px);
+    font-size: clamp(16px, 4.4vw, 22px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    row-gap: 2px;
+    column-gap: 6px;
   }
-  /* Line 1: "Is it a gut feeling or" — left */
-  .fgp-hv2__heading-text { display: block; }
-  /* Line 2: underline + ? — right */
+  .fgp-hv2__heading-text { display: inline; }
+  /* Flows right after the heading text — reads as one natural sentence
+     instead of leaving a gap by pinning to the far right edge */
   .fgp-hv2__blank-row {
     display: inline-flex;
     align-items: baseline;
     gap: 0 4px;
     white-space: nowrap;
-    align-self: flex-end;
   }
-  .fgp-hv2__blank { width: 45vw; vertical-align: baseline; }
-  /* Mobile: hide cycling word, show only the underline */
-  .fgp-hv2__cycle { visibility: hidden; }
+  .fgp-hv2__blank { width: auto; max-width: none; vertical-align: baseline; }
+  .fgp-hv2__cycle {
+    visibility: visible;
+    font-size: 1em;
+    font-weight: 400;
+  }
 
   /* Body: column — content on top, bottles on bottom */
   .fgp-hv2__body { flex-direction: column; }
 
-  /* Content: symptoms right-aligned */
+  /* Content: symptoms right-aligned, compact */
   .fgp-hv2__content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-    padding: 4px 20px 0;
-    gap: 4px;
+    padding: 2px 20px 0;
+    gap: 2px;
   }
-  .fgp-hv2__symptoms { gap: 4px; }
+  .fgp-hv2__symptoms { gap: 2px; }
   .fgp-hv2__symptom  {
-    font-size: clamp(13px, 3vw, 18px);
+    font-size: clamp(11px, 2.4vw, 14px);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
-  /* Footer row: CTA right */
+  /* Footer row: badge left, CTA right — matches Figma spec */
   .fgp-hv2__foot {
-    padding-top: 10px;
+    padding-top: 8px;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
   }
   .fgp-hv2__badge--dk { display: none; }
-  .fgp-hv2__badge--mb { display: none; }
+  .fgp-hv2__badge--mb { display: block; width: 36px; height: 36px; }
   .fgp-hv2__cta {
     font-size: 12px;
-    padding: 10px 22px;
+    padding: 9px 20px;
     font-weight: 700;
   }
 
   /* Media: bottles at bottom, top portion visible */
   .fgp-hv2__media {
     width: 100%;
-    height: 280px;
-    margin-top: 16px;
+    height: 220px;
+    margin-top: 10px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -296,15 +303,15 @@
     justify-content: center;
   }
   .fgp-hv2__bottle {
-    height: 340px;
+    height: 300px;
     width: auto;
     flex-shrink: 0;
   }
-  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 140px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 120px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -50px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 110px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -60px; }
+  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 130px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 115px; }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -80px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 105px; }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -56px; }
   .fgp-hv2__bottle--center { z-index: 1; }
 }
 
@@ -314,31 +321,38 @@
    Layout: [heading full width]
             [bottles left 55% | content right 45%]
 ══════════════════════════════════════ */
-@media (min-width: 769px) {
+@media (min-width: 640px) {
 
   /* Section clips bottle overflow at bottom */
   .fgp-hv2 { overflow: hidden; }
 
-  /* Heading: centered, single line */
+  /* Both heading and body share the same max-width so the whole hero's
+     proportions freeze together past ~1536px instead of the two rows
+     drifting to different effective widths on very large screens. */
+  .fgp-hv2__inner { max-width: 1536px; }
+
   .fgp-hv2__top {
-    padding: clamp(16px, 2vw, 28px) 20px clamp(8px, 1.2vw, 20px);
+    max-width: 1536px;
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(16px, 2vw, 28px) 40px clamp(8px, 1.2vw, 20px);
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
   }
   .fgp-hv2__heading {
-    font-size: clamp(22px, 2.6vw, 44px);
+    font-size: clamp(22px, 2.6vw, 40px);
     font-weight: 700;
     flex-wrap: nowrap;
     gap: 0 clamp(6px, 0.8vw, 12px);
     line-height: 1.1;
     max-width: 100%;
-    overflow: hidden;
   }
-  .fgp-hv2__blank-row { gap: 0 clamp(4px, 0.6vw, 10px); align-items: baseline; }
-  .fgp-hv2__blank { width: auto; overflow: visible; }
+  .fgp-hv2__blank-row { gap: 0 clamp(4px, 0.6vw, 9px); align-items: baseline; min-width: 0; }
+  .fgp-hv2__blank { width: auto; min-width: 0; overflow: hidden; }
   .fgp-hv2__cycle {
-    overflow: visible;
-    text-overflow: clip;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1em;
     font-weight: 400;
@@ -347,17 +361,22 @@
     padding: 5px;
   }
 
-  /* Body: row */
+  /* Body: row — same horizontal inset as the heading so bottles/content
+     line up with the heading's left/right edges instead of the wider
+     unpadded .fgp-hv2__inner box */
   .fgp-hv2__body {
     flex: 1;
     flex-direction: row;
     align-items: stretch;
+    padding: 0 40px;
+    box-sizing: border-box;
   }
 
   /* ── Left: bottles ── */
   .fgp-hv2__media {
     order: -1;
-    flex: 0 0 55%;
+    flex: 1 1 55%;
+    min-width: 0;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -373,7 +392,7 @@
   /* Bottles: bottom-aligned, clipped 15% at bottom by .fgp-hv2 overflow:hidden */
   .fgp-hv2__bottles {
     align-items: flex-end;
-    justify-content: flex-start;
+    justify-content: flex-end;
     width: 100%;
     flex: 1;
     margin-bottom: -15%;
@@ -381,17 +400,17 @@
   .fgp-hv2__bottle {
     width: auto;
     height: 100%;
-    max-height: 520px;
+    max-height: clamp(280px, 32vw, 480px);
     flex-shrink: 0;
   }
 
-  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { flex: 0 0 220px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { flex: 0 0 220px; }
-  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -100px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { flex: 0 0 140px; }
-  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: -32px; }
+  .fgp-hv2__bottles[data-count="1"] .fgp-hv2__bottle { max-width: clamp(160px, 30vw, 340px); }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle { max-width: clamp(160px, 30vw, 340px); }
+  .fgp-hv2__bottles[data-count="2"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-90px, -14vw, -150px); }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle { max-width: clamp(110px, 19vw, 210px); }
+  .fgp-hv2__bottles[data-count="3"] .fgp-hv2__bottle + .fgp-hv2__bottle { margin-left: clamp(-30px, -5vw, -48px); }
   .fgp-hv2__bottle--center {
-    flex: 0 0 160px !important;
+    max-width: clamp(120px, 22vw, 240px) !important;
     transform: scale(1.08);
     transform-origin: bottom center;
     z-index: 1;
@@ -399,18 +418,19 @@
 
   /* ── Right: symptoms + CTA ── */
   .fgp-hv2__content {
-    flex: 0 0 45%;
+    flex: 1 1 45%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding: clamp(20px, 2.5vw, 40px) 20px clamp(40px, 6vw, 80px) clamp(16px, 2vw, 28px);
-    gap: clamp(16px, 2vw, 32px);
+    padding: clamp(20px, 2.5vw, 38px) 20px clamp(40px, 6vw, 92px) clamp(16px, 2vw, 31px);
+    gap: clamp(16px, 2vw, 31px);
   }
-  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 8px); }
+  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 6px); }
   .fgp-hv2__symptom  {
-    font-size: clamp(16px, 1.8vw, 34px);
+    font-size: clamp(14px, 1.8vw, 28px);
     font-weight: 400;
     white-space: normal;
     word-break: keep-all;
@@ -418,10 +438,11 @@
   }
   .fgp-hv2__foot { padding-top: 0; justify-content: flex-start; }
   .fgp-hv2__cta {
-    font-size: clamp(14px, 1.3vw, 18px);
-    padding: clamp(12px, 1.2vw, 16px) clamp(28px, 2.5vw, 40px);
+    font-size: clamp(12px, 1.3vw, 20px);
+    padding: clamp(10px, 1.2vw, 18px) clamp(20px, 2.5vw, 38px);
     letter-spacing: 0.3px;
     width: fit-content;
+    white-space: nowrap;
   }
 }
 </style>
@@ -429,9 +450,30 @@
 <script>
 (function () {
   var target = document.querySelector('.fgp-hv2__cycle');
-  if (!target) return;
+  var heading = document.querySelector('.fgp-hv2__heading');
+  if (!target || !heading) return;
   var raw   = target.getAttribute('data-words') || '';
   var words = raw.split('|').map(function (w) { return w.trim(); }).filter(Boolean);
+  if (!words.length) return;
+
+  // Shrink the word's font-size just enough to fit on one line within
+  // whatever horizontal room the heading has left, instead of wrapping
+  // or clipping. Runs after each swap and on resize.
+  function fitWord() {
+    target.style.fontSize = '';
+    var wordWidth = target.scrollWidth; // natural width at 100% size
+    var otherWidth = heading.scrollWidth - wordWidth; // rest of the heading (text, "?", gaps)
+    var available = heading.clientWidth - otherWidth;
+    if (available <= 0 || wordWidth <= 0) return;
+    var ratio = available / wordWidth;
+    if (ratio < 1) {
+      target.style.fontSize = (Math.max(ratio, 0.4) * 100).toFixed(1) + '%';
+    }
+  }
+
+  fitWord();
+  window.addEventListener('resize', fitWord);
+
   if (words.length < 2) return;
   var idx = 0;
   setInterval(function () {
@@ -441,6 +483,7 @@
       target.classList.add('is-entering');
       target.classList.remove('is-fading');
       target.textContent = words[idx];
+      fitWord();
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           target.classList.remove('is-entering');
