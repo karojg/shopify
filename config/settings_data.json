@@ -140,6 +140,20 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "5537102726230261467": {
+        "type": "shopify://apps/product-recommendation-quiz/blocks/v2-link-quiz/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+        "disabled": false,
+        "settings": {
+          "quiz_width": "50",
+          "quiz_height": "50",
+          "quiz_z_index": 100,
+          "popup_close_color": "#777777",
+          "show_list": true,
+          "quiz_id": ""
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
