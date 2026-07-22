@@ -259,7 +259,7 @@
         "heading": "Formulated in Costa Rica",
         "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
         "cta_label": "Explore Ingredients",
-        "cta_url": "",
+        "cta_url": "shopify://pages/product-information",
         "photo": "shopify://shop_images/FLGD_SYNB__FRASCO_Front_1.png",
         "photo_alt": ""
       }

@@ -352,7 +352,7 @@
         "product_1": {
           "type": "product_card",
           "settings": {
-            "product": "kids-organic-probiotic-gummies",
+            "product": "enzimas-digestivas-con-sinbiotico",
             "eyebrow": "DIGESTIVE ENZYMES",
             "placeholder_title": "Synbiotic+",
             "cta_label": "Shop Synbiotic+"
@@ -361,7 +361,7 @@
         "product_2": {
           "type": "product_card",
           "settings": {
-            "product": "enzimas-digestivas-con-sinbiotico",
+            "product": "kids-organic-probiotic-gummies",
             "eyebrow": "KIDS",
             "placeholder_title": "Kids Probiotics",
             "cta_label": "Shop Kids Probiotics"

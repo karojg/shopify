@@ -330,24 +330,30 @@
         font-family: 'Poppins', sans-serif;
       }
 
-      .rte table thead th,
-      .rte table tr:first-child th,
-      .rte table tr:first-child td {
-        background: #184ca1;
-        color: #ffffff;
-        font-weight: 600;
-        text-align: left;
-      }
-
       .rte table th,
       .rte table td {
         padding: 12px 16px;
         border: 1px solid #65438a;
         font-weight: 400;
+        color: #1a1a1a;
+        text-align: left;
         vertical-align: top;
+        background: #ffffff;
       }
 
-      .rte table tr:nth-child(even) td {
+      .rte table thead tr th,
+      .rte table thead tr td,
+      .rte table:not(:has(thead)) > tbody:first-of-type > tr:first-child th,
+      .rte table:not(:has(thead)) > tbody:first-of-type > tr:first-child td {
+        background: #184ca1;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .rte table thead ~ tbody tr:nth-child(even) th,
+      .rte table thead ~ tbody tr:nth-child(even) td,
+      .rte table:not(:has(thead)) tbody tr:nth-child(even):not(:first-child) th,
+      .rte table:not(:has(thead)) tbody tr:nth-child(even):not(:first-child) td {
         background: rgba(101, 67, 138, 0.05);
       }
 
