@@ -131,6 +131,10 @@
         {%- endif -%}
       </div>
 
+      {% if section.settings.show_social %}
+        {%- render 'social-icons', class: 'fgp-ft__social' -%}
+      {% endif %}
+
       {% if section.settings.payment_enable %}
         <ul class="fgp-ft__payment" role="list">
           {%- for type in shop.enabled_payment_types -%}
@@ -275,10 +279,18 @@
   align-items: flex-start;
   gap: 8px;
   font-size: 12px;
+  line-height: 1.4;
   color: rgba(255,255,255,0.7);
   cursor: pointer;
+  padding-left: 10px;
+  padding-top: 8px;
 }
-.fgp-ft__nl-consent input { margin-top: 2px; }
+.fgp-ft__nl-consent input {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin: 2px 0 0;
+}
 
 .fgp-ft__nl-success {
   font-size: 13px;
@@ -328,6 +340,29 @@
   font-size: 12px;
 }
 
+.fgp-ft__social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fgp-ft__social .list-social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: var(--fgp-white);
+  transition: background 0.2s;
+}
+.fgp-ft__social .list-social__link:hover { background: rgba(255,255,255,0.3); }
+.fgp-ft__social .list-social__link svg { width: 13px; height: 13px; fill: currentColor; }
+
 .fgp-ft__payment {
   list-style: none;
   padding: 0;
@@ -348,12 +383,14 @@
 
 /* Mobile */
 @media (max-width: 767px) {
-  .fgp-ft__inner { padding: 36px 20px 32px; }
+  .fgp-ft__inner { padding: 40px 24px 36px; }
 
   .fgp-ft__top {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
   }
+
+  .fgp-ft__nl { padding-top: 4px; }
 
   .fgp-ft__deco {
     position: static;
@@ -364,7 +401,7 @@
     opacity: 0.7;
   }
 
-  .fgp-ft__bottom { padding: 16px 20px; }
+  .fgp-ft__bottom { padding: 20px 24px; }
 
   .fgp-ft__bottom-inner {
     flex-direction: column;
@@ -476,6 +513,12 @@
     {
       "type": "header",
       "content": "Bottom bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social icons",
+      "default": true
     },
     {
       "type": "checkbox",
