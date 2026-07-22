@@ -50,8 +50,16 @@
         {% endif %}
 
         <div class="fgp-hv2__foot">
+          {% if section.settings.badge_image != blank %}
+            <img
+              class="fgp-hv2__badge fgp-hv2__badge--mb"
+              src="{{ section.settings.badge_image | img_url: '160x' }}"
+              alt="Recommended by Health Specialists"
+              loading="lazy"
+              width="56" height="56">
+          {% endif %}
           {% if section.settings.cta_label != blank %}
-            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hv2__cta">
+            <a href="{{ section.settings.cta_url | default: '#quiz' }}" class="fgp-hv2__cta">
               {{ section.settings.cta_label }}
             </a>
           {% endif %}
@@ -60,20 +68,13 @@
 
       <!-- Bottles — second in DOM = bottom on mobile, left column on desktop -->
       <div class="fgp-hv2__media">
-        {% if section.settings.show_badge %}
-          <div class="fgp-hv2__badge-row">
-            {% if section.settings.badge_image != blank %}
-              <img
-                class="fgp-hv2__badge"
-                src="{{ section.settings.badge_image | img_url: '160x' }}"
-                alt=""
-                loading="lazy"
-                width="32" height="32">
-            {% else %}
-              <span class="fgp-hv2__badge" aria-hidden="true">{{- 'icon-badge-recommended.svg' | inline_asset_content -}}</span>
-            {% endif %}
-            <span class="fgp-hv2__badge-text">Recommended by<br>Health Specialists</span>
-          </div>
+        {% if section.settings.badge_image != blank %}
+          <img
+            class="fgp-hv2__badge fgp-hv2__badge--dk"
+            src="{{ section.settings.badge_image | img_url: '200x' }}"
+            alt="Recommended by Health Specialists"
+            loading="lazy"
+            width="88" height="88">
         {% endif %}
         <div class="fgp-hv2__bottles" data-count="{{ bottle_count }}">
           {% if section.settings.bottle_1 != blank %}
@@ -160,10 +161,14 @@
   width: 220px;
   overflow: hidden;
 }
+.fgp-hv2__blank::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0; right: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+}
 .fgp-hv2__cycle {
   display: block;
-  /* White fill for contrast (yellow fill fails 4.5:1 against the light end
-     of the hero gradient) + a yellow underline to keep the emphasis */
   color: #fff;
   font-size: inherit;
   font-weight: 700;
@@ -171,7 +176,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 2px 6px 6px;
-  border-bottom: 3px solid #ffe27a;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .fgp-hv2__cycle.is-fading {
@@ -188,7 +192,7 @@
 
 /* Symptoms */
 .fgp-hv2__symptoms { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
-.fgp-hv2__symptom  { color: #fff; line-height: 1.55; }
+.fgp-hv2__symptom  { color: #fff; line-height: 1.4; }
 
 /* CTA */
 .fgp-hv2__cta {
@@ -219,10 +223,11 @@
 
   /* Heading: compact single block, flows left, matches Figma mobile spec */
   .fgp-hv2__top {
-    padding: 24px 20px 0;
+    padding: 16px 20px 0;
+    padding-bottom: 2px;
   }
   .fgp-hv2__heading {
-    font-size: clamp(20px, 5.6vw, 26px);
+    font-size: clamp(16px, 4.4vw, 22px);
     font-weight: 700;
     line-height: 1.25;
     display: flex;
@@ -244,6 +249,7 @@
   .fgp-hv2__cycle {
     visibility: visible;
     font-size: 1em;
+    font-weight: 400;
   }
 
   /* Body: column — content on top, bottles on bottom */
@@ -253,53 +259,35 @@
   .fgp-hv2__content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding: 16px 20px 0;
-    gap: 8px;
+    align-items: flex-end;
+    text-align: right;
+    padding: 2px 20px 0;
+    gap: 2px;
   }
-  .fgp-hv2__symptoms { gap: 4px; }
+  .fgp-hv2__symptoms { gap: 2px; }
   .fgp-hv2__symptom  {
-    font-size: clamp(13px, 2.8vw, 16px);
+    font-size: clamp(11px, 2.4vw, 14px);
     font-weight: 400;
+    line-height: 1.3;
   }
 
-  /* Badge: icon + straight horizontal text, sits above the CTA,
-     left-aligned with it */
-  .fgp-hv2__badge-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .fgp-hv2__badge {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-    color: #fff;
-    display: inline-flex;
-  }
-  .fgp-hv2__badge svg { width: 100%; height: 100%; }
-  .fgp-hv2__badge-text {
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.25;
-  }
-
+  /* Footer row: badge left, CTA right — matches Figma spec */
   .fgp-hv2__foot {
-    padding-top: 16px;
+    padding-top: 8px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
+  .fgp-hv2__badge--dk { display: none; }
+  .fgp-hv2__badge--mb { display: block; width: 36px; height: 36px; }
   .fgp-hv2__cta {
-    font-size: 14px;
-    padding: 14px 28px;
+    font-size: 12px;
+    padding: 9px 20px;
     font-weight: 700;
   }
 
-  /* Media: bottles at bottom; badge is desktop-only, hidden here */
+  /* Media: bottles at bottom, top portion visible */
   .fgp-hv2__media {
     width: 100%;
     height: 220px;
@@ -307,16 +295,10 @@
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .fgp-hv2__media .fgp-hv2__badge-row {
-    display: none;
   }
   .fgp-hv2__bottles {
     width: 100%;
-    flex: 1;
+    height: 100%;
     align-items: flex-start;
     justify-content: center;
   }
@@ -341,16 +323,14 @@
 ══════════════════════════════════════ */
 @media (min-width: 640px) {
 
-  /* Section clips bottle overflow at bottom; modest bottom padding to
-     match the original compact design proportions */
-  .fgp-hv2 { overflow: hidden; padding-bottom: clamp(16px, 2vw, 28px); }
+  /* Section clips bottle overflow at bottom */
+  .fgp-hv2 { overflow: hidden; }
 
   /* Both heading and body share the same max-width so the whole hero's
      proportions freeze together past ~1536px instead of the two rows
      drifting to different effective widths on very large screens. */
   .fgp-hv2__inner { max-width: 1536px; }
 
-  /* Centered as a block above both columns, independent of their edges */
   .fgp-hv2__top {
     max-width: 1536px;
     width: 100%;
@@ -375,6 +355,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1em;
+    font-weight: 400;
     min-width: 120px;
     text-align: center;
     padding: 5px;
@@ -400,28 +381,26 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     padding-left: 0;
     overflow: visible;
   }
-  .fgp-hv2__media .fgp-hv2__badge-row {
-    justify-content: center;
-    padding-bottom: clamp(8px, 1vw, 16px);
-  }
 
-  /* Bottles: bottom-aligned and oversized so the bottom ~15% bleeds past
-     the section edge, clipped by .fgp-hv2 overflow:hidden */
+  .fgp-hv2__badge--dk { display: none; }
+  .fgp-hv2__badge--mb { display: none; }
+
+  /* Bottles: bottom-aligned, clipped 15% at bottom by .fgp-hv2 overflow:hidden */
   .fgp-hv2__bottles {
     align-items: flex-end;
     justify-content: flex-end;
     width: 100%;
     flex: 1;
-    margin-bottom: clamp(-66px, -4.5vw, -44px);
+    margin-bottom: -15%;
   }
   .fgp-hv2__bottle {
     width: auto;
     height: 100%;
-    max-height: clamp(320px, 34vw, 500px);
+    max-height: clamp(280px, 32vw, 480px);
     flex-shrink: 0;
   }
 
@@ -438,47 +417,29 @@
   }
 
   /* ── Right: symptoms + CTA ── */
-  /* justify-content: flex-start (not center) so the list starts at the
-     same vertical position as the bottles, which fill from the top of
-     the media column */
   .fgp-hv2__content {
     flex: 1 1 45%;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding: clamp(20px, 2.5vw, 38px) 20px clamp(20px, 3vw, 40px) clamp(16px, 2vw, 31px);
-    gap: clamp(12px, 1.6vw, 24px);
+    padding: clamp(20px, 2.5vw, 38px) 20px clamp(40px, 6vw, 92px) clamp(16px, 2vw, 31px);
+    gap: clamp(16px, 2vw, 31px);
   }
-  .fgp-hv2__symptoms { gap: clamp(4px, 0.4vw, 8px); }
+  .fgp-hv2__symptoms { gap: clamp(2px, 0.4vw, 6px); }
   .fgp-hv2__symptom  {
     font-size: clamp(14px, 1.8vw, 28px);
     font-weight: 400;
     white-space: normal;
     word-break: keep-all;
+    line-height: 1.4;
   }
-  .fgp-hv2__badge-row { display: flex; align-items: center; gap: 10px; }
-  .fgp-hv2__badge {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    color: #fff;
-    display: inline-flex;
-  }
-  .fgp-hv2__badge svg { width: 100%; height: 100%; }
-  .fgp-hv2__badge-text {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-  .fgp-hv2__foot { padding-top: clamp(16px, 2vw, 24px); justify-content: flex-start; }
-  /* Modest pill size, matching the original design's proportions */
+  .fgp-hv2__foot { padding-top: 0; justify-content: flex-start; }
   .fgp-hv2__cta {
-    font-size: clamp(13px, 1.1vw, 16px);
-    padding: clamp(10px, 1vw, 14px) clamp(22px, 2vw, 28px);
+    font-size: clamp(12px, 1.3vw, 20px);
+    padding: clamp(10px, 1.2vw, 18px) clamp(20px, 2.5vw, 38px);
     letter-spacing: 0.3px;
     width: fit-content;
     white-space: nowrap;
@@ -558,15 +519,9 @@
       "label": "CTA button URL"
     },
     {
-      "type": "checkbox",
-      "id": "show_badge",
-      "label": "Show trust badge",
-      "default": true
-    },
-    {
       "type": "image_picker",
       "id": "badge_image",
-      "label": "Trust badge icon override (optional)"
+      "label": "Trust badge image (top-left on desktop, bottom-left on mobile)"
     },
     {
       "type": "image_picker",
