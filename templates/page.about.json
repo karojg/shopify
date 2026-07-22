@@ -13,12 +13,22 @@
       "type": "fgp-about-hero",
       "name": "About Hero",
       "settings": {
-        "eyebrow": "OUR STORY",
-        "heading": "We were founded to help you truly feel good.",
-        "subtext": "<p>Feel Good Pharma was created by Dr. Katherine Jiménez, a pharmacist passionate about health who always seeks the best for her family and community.</p>",
-        "cta_label": "Meet Dr. Katherine",
+        "eyebrow": "NUESTRA HISTORIA",
+        "heading": "Ayudándote a vivir una vida más saludable y plena.",
+        "subtext": "<p>En Feel Good, nuestro objetivo es ayudarte a vivir una vida más saludable, plena y satisfactoria. Sabemos que el bienestar es un viaje, y estamos aquí para apoyarte en cada paso del camino. Nuestros productos están diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles.</p>",
+        "cta_label": "Conoce a la Dra. Katherine",
         "cta_url": "",
-        "image_alt": "Dr. Katherine Jiménez, Feel Good Pharma Founder"
+        "image": "shopify://shop_images/IMG_0462.jpg",
+        "image_alt": "Dra. Katherine Jiménez, fundadora de Feel Good Pharma"
+      }
+    },
+    "fgp_mission_about": {
+      "type": "fgp-mission-text",
+      "name": "Mission Text",
+      "settings": {
+        "eyebrow": "NUESTRA MISIÓN",
+        "heading": "Ciencia y cuidado, en cada fórmula",
+        "body": "<p>Nos enorgullece ofrecer productos diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles. Estos productos son fáciles de incorporar en tu estilo de vida diario, para ayudarte a moverte, sentirte y lucir lo mejor posible, de adentro hacia afuera.</p><p>Nuestras enzimas digestivas de origen vegetal, prebióticos, probióticos y postbióticos están diseñados para mejorar la salud gastrointestinal y apoyar el sistema inmunológico. Creemos que cada cliente es único y merece una atención personalizada. Es por eso que nos esforzamos en proporcionarte un servicio al cliente excepcional, para asegurarnos de que estés completamente satisfecho con nuestros productos.</p>"
       }
     },
     "fgp_founder_about": {
@@ -26,64 +36,10 @@
       "name": "Founder Section",
       "settings": {
         "founder_image": "shopify://shop_images/IMG_0462.jpg",
-        "founder_name": "Dr. Katherine Jiménez, Founder",
-        "quote": "I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body's natural balance, so you can feel your best every day.",
-        "cta_label": "Shop Our Products",
+        "founder_name": "Dra. Katherine Jiménez, Fundadora",
+        "quote": "Feel Good Pharma fue creado por la Dra. Katherine Jiménez, una mujer y farmacéutica apasionada por la salud, que siempre busca lo mejor para su familia y amigos. Su compromiso con la salud y el bienestar llevó a la Dra. Jiménez a crear productos que hacen la diferencia en la vida de las personas, y este compromiso se refleja en cada uno de nuestros productos y en el servicio que brindamos.",
+        "cta_label": "Ver nuestros productos",
         "cta_url": "shopify://collections/all"
-      }
-    },
-    "fgp_team": {
-      "type": "fgp-team-grid",
-      "blocks": {
-        "member_1": {
-          "type": "member",
-          "settings": {
-            "name": "Dr. Katherine Jiménez",
-            "role": "Founder & Pharmacist"
-          }
-        },
-        "member_2": {
-          "type": "member",
-          "settings": {
-            "name": "Team Member",
-            "role": "Role"
-          }
-        },
-        "member_3": {
-          "type": "member",
-          "settings": {
-            "name": "Team Member",
-            "role": "Role"
-          }
-        },
-        "member_4": {
-          "type": "member",
-          "settings": {
-            "name": "Team Member",
-            "role": "Role"
-          }
-        }
-      },
-      "block_order": [
-        "member_1",
-        "member_2",
-        "member_3",
-        "member_4"
-      ],
-      "name": "Our Team",
-      "settings": {
-        "eyebrow": "OUR TEAM",
-        "heading": "The people behind Feel Good Pharma"
-      }
-    },
-    "fgp_lifestyle_about": {
-      "type": "fgp-lifestyle-grid",
-      "name": "Office / Clinic Photos",
-      "settings": {
-        "image_1_alt": "Feel Good Pharma office",
-        "image_2_alt": "Feel Good Pharma team",
-        "image_3_alt": "Feel Good Pharma products",
-        "image_4_alt": "Feel Good Pharma clinic"
       }
     },
     "fgp_subfooter_about": {
@@ -98,6 +54,7 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "color_scheme": "scheme-3",
         "padding_top": 36,
         "padding_bottom": 28
       }
@@ -106,9 +63,8 @@
   "order": [
     "main",
     "fgp_about_hero",
+    "fgp_mission_about",
     "fgp_founder_about",
-    "fgp_team",
-    "fgp_lifestyle_about",
     "fgp_subfooter_about"
   ]
 }
