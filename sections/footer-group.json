@@ -16,11 +16,17 @@
       "name": "FGP Footer",
       "settings": {
         "logo": "shopify://shop_images/FG-Logo_white.png",
+        "address": "Plaza Florencia\nEscazú, Costa Rica",
+        "hours": "Mon – Fri 8 a.m. – 8 p.m.\nSat – Sun 9 a.m. – 4 p.m.",
+        "menu_1_heading": "Company",
         "menu_1": "footer",
+        "menu_2_heading": "Resources",
         "menu_2": "",
         "nl_heading": "",
+        "nl_subtext": "Sign up for our newsletter and receive 5% off your first order",
         "nl_placeholder": "",
         "nl_btn": "",
+        "nl_consent": "I agree to receiving marketing emails and special deals",
         "nl_success": "",
         "copyright": ""
       }

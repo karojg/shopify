@@ -4,67 +4,148 @@
 
   <div class="fgp-ft__inner">
 
-    <!-- Logo -->
-    <a href="{{ routes.root_url }}" class="fgp-ft__logo-link" aria-label="{{ shop.name }}">
-      {% if section.settings.logo != blank %}
+    <div class="fgp-ft__top">
+
+      <!-- Brand column: logo, address, hours -->
+      <div class="fgp-ft__brand">
+        <a href="{{ routes.root_url }}" class="fgp-ft__logo-link" aria-label="{{ shop.name }}">
+          {% if section.settings.logo != blank %}
+            <img
+              class="fgp-ft__logo"
+              src="{{ section.settings.logo | img_url: '240x' }}"
+              alt="{{ shop.name }}"
+              loading="lazy"
+            >
+          {% else %}
+            <span class="fgp-ft__logo-text">{{ shop.name }}</span>
+          {% endif %}
+        </a>
+
+        {% if section.settings.address != blank %}
+          <p class="fgp-ft__address">{{ section.settings.address }}</p>
+        {% endif %}
+
+        {% if section.settings.hours != blank %}
+          <p class="fgp-ft__hours">{{ section.settings.hours }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Link columns -->
+      <div class="fgp-ft__links-col">
+        {% if section.settings.menu_1_heading != blank %}
+          <h2 class="fgp-ft__col-heading">{{ section.settings.menu_1_heading }}</h2>
+        {% endif %}
+        {% if section.settings.menu_1 != blank %}
+          <ul class="fgp-ft__links">
+            {% assign menu1 = linklists[section.settings.menu_1] %}
+            {% for link in menu1.links %}
+              <li><a href="{{ link.url }}" class="fgp-ft__link">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <div class="fgp-ft__links-col">
+        {% if section.settings.menu_2_heading != blank %}
+          <h2 class="fgp-ft__col-heading">{{ section.settings.menu_2_heading }}</h2>
+        {% endif %}
+        {% if section.settings.menu_2 != blank %}
+          <ul class="fgp-ft__links">
+            {% assign menu2 = linklists[section.settings.menu_2] %}
+            {% for link in menu2.links %}
+              <li><a href="{{ link.url }}" class="fgp-ft__link">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <!-- Newsletter -->
+      <div class="fgp-ft__nl">
+        <p class="fgp-ft__nl-label">{% if section.settings.nl_heading != blank %}{{ section.settings.nl_heading }}{% else %}{{ 'fgp.footer.newsletter_heading' | t }}{% endif %}</p>
+        {% if section.settings.nl_subtext != blank %}
+          <p class="fgp-ft__nl-subtext">{{ section.settings.nl_subtext }}</p>
+        {% endif %}
+        {% form 'customer', id: 'fgp-ft-nl-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="fgp-ft__nl-row">
+            <label for="fgp-ft-email" class="visually-hidden">Email</label>
+            <input
+              id="fgp-ft-email"
+              type="email"
+              name="contact[email]"
+              class="fgp-ft__nl-input"
+              placeholder="{% if section.settings.nl_placeholder != blank %}{{ section.settings.nl_placeholder }}{% else %}{{ 'fgp.footer.newsletter_placeholder' | t }}{% endif %}"
+              required
+              autocomplete="email"
+            >
+            <button type="submit" class="fgp-ft__nl-btn" aria-label="{% if section.settings.nl_btn != blank %}{{ section.settings.nl_btn }}{% else %}{{ 'fgp.footer.newsletter_button' | t }}{% endif %}">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          {% if section.settings.nl_consent != blank %}
+            <label class="fgp-ft__nl-consent">
+              <input type="checkbox" name="contact[accepts_marketing]" value="1">
+              <span>{{ section.settings.nl_consent }}</span>
+            </label>
+          {% endif %}
+          {%- if form.posted_successfully? -%}
+            <p class="fgp-ft__nl-success">{% if section.settings.nl_success != blank %}{{ section.settings.nl_success }}{% else %}{{ 'fgp.footer.newsletter_success' | t }}{% endif %}</p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+
+      <!-- Decorative gut illustration -->
+      {% if section.settings.decoration_image != blank %}
         <img
-          class="fgp-ft__logo"
-          src="{{ section.settings.logo | img_url: '240x' }}"
-          alt="{{ shop.name }}"
+          class="fgp-ft__deco"
+          src="{{ section.settings.decoration_image | img_url: '200x' }}"
+          alt=""
+          aria-hidden="true"
           loading="lazy"
         >
-      {% else %}
-        <span class="fgp-ft__logo-text">{{ shop.name }}</span>
       {% endif %}
-    </a>
-
-    <!-- 2-column links grid -->
-    <nav class="fgp-ft__links" aria-label="Footer navigation">
-      {% if section.settings.menu_1 != blank %}
-        {% assign menu1 = linklists[section.settings.menu_1] %}
-        {% for link in menu1.links %}
-          <a href="{{ link.url }}" class="fgp-ft__link">{{ link.title }}</a>
-        {% endfor %}
-      {% endif %}
-      {% if section.settings.menu_2 != blank %}
-        {% assign menu2 = linklists[section.settings.menu_2] %}
-        {% for link in menu2.links %}
-          <a href="{{ link.url }}" class="fgp-ft__link">{{ link.title }}</a>
-        {% endfor %}
-      {% endif %}
-    </nav>
-
-    <!-- Simple newsletter -->
-    <div class="fgp-ft__nl">
-      <p class="fgp-ft__nl-label">{% if section.settings.nl_heading != blank %}{{ section.settings.nl_heading }}{% else %}{{ 'fgp.footer.newsletter_heading' | t }}{% endif %}</p>
-      {% form 'customer', id: 'fgp-ft-nl-form' %}
-        <input type="hidden" name="contact[tags]" value="newsletter">
-        <div class="fgp-ft__nl-row">
-          <label for="fgp-ft-email" class="visually-hidden">Email</label>
-          <input
-            id="fgp-ft-email"
-            type="email"
-            name="contact[email]"
-            class="fgp-ft__nl-input"
-            placeholder="{% if section.settings.nl_placeholder != blank %}{{ section.settings.nl_placeholder }}{% else %}{{ 'fgp.footer.newsletter_placeholder' | t }}{% endif %}"
-            required
-            autocomplete="email"
-          >
-          <button type="submit" class="fgp-ft__nl-btn">
-            {% if section.settings.nl_btn != blank %}{{ section.settings.nl_btn }}{% else %}{{ 'fgp.footer.newsletter_button' | t }}{% endif %}
-          </button>
-        </div>
-        {%- if form.posted_successfully? -%}
-          <p class="fgp-ft__nl-success">{% if section.settings.nl_success != blank %}{{ section.settings.nl_success }}{% else %}{{ 'fgp.footer.newsletter_success' | t }}{% endif %}</p>
-        {%- endif -%}
-      {% endform %}
     </div>
 
   </div>
 
   <!-- Bottom bar -->
   <div class="fgp-ft__bottom">
-    <p class="fgp-ft__copyright">{% if section.settings.copyright != blank %}{{ section.settings.copyright }}{% else %}{{ 'fgp.footer.copyright' | t }}{% endif %}</p>
+    <div class="fgp-ft__bottom-inner">
+      <div class="fgp-ft__localization">
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'FgpFooterLanguageForm', class: 'localization-form' -%}
+              {%- render 'language-localization', localPosition: 'FgpFooterLanguage' -%}
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'FgpFooterCountryForm', class: 'localization-form' -%}
+              {%- render 'country-localization', localPosition: 'FgpFooterCountry' -%}
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+
+      {% if section.settings.payment_enable %}
+        <ul class="fgp-ft__payment" role="list">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="fgp-ft__payment-item">
+              {{ type | payment_type_svg_tag: class: 'fgp-ft__payment-icon' }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {% endif %}
+    </div>
+
+    <p class="fgp-ft__copyright">
+      {% if section.settings.copyright != blank %}{{ section.settings.copyright }}{% else %}{{ 'fgp.footer.copyright' | t }}{% endif %}
+      &middot; {{ powered_by_link }}
+    </p>
   </div>
 
 </footer>
@@ -77,24 +158,48 @@
 }
 
 .fgp-ft__inner {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 40px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  padding: 56px 40px 40px;
 }
 
-/* Logo */
-.fgp-ft__logo-link { display: inline-block; }
+.fgp-ft__top {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+  gap: 32px;
+  overflow: hidden;
+}
+
+/* Brand */
+.fgp-ft__logo-link { display: inline-block; margin-bottom: 16px; }
 .fgp-ft__logo { max-width: 160px; height: auto; display: block; }
 .fgp-ft__logo-text { font-size: 22px; font-weight: 800; color: var(--fgp-white); }
 
-/* 2-col links */
+.fgp-ft__address,
+.fgp-ft__hours {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 8px;
+  white-space: pre-line;
+}
+
+/* Link columns */
+.fgp-ft__col-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fgp-white);
+  margin: 0 0 14px;
+}
+
 .fgp-ft__links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .fgp-ft__link {
@@ -104,7 +209,6 @@
   text-decoration: none;
   opacity: 0.85;
   transition: opacity 0.2s;
-  line-height: 1.5;
 }
 .fgp-ft__link:hover { opacity: 1; }
 
@@ -112,52 +216,69 @@
 .fgp-ft__nl {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .fgp-ft__nl-label {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--fgp-white);
-  opacity: 0.85;
   margin: 0;
+}
+
+.fgp-ft__nl-subtext {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 4px;
 }
 
 .fgp-ft__nl-row {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .fgp-ft__nl-input {
   flex: 1;
-  background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.35);
+  min-width: 0;
+  background: var(--fgp-white);
+  border: none;
   border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 14px;
+  padding: 12px 14px;
+  font-size: 13px;
   font-family: var(--fgp-font);
-  color: var(--fgp-white);
+  color: var(--fgp-navy);
   outline: none;
-  transition: border-color 0.2s;
 }
-.fgp-ft__nl-input::placeholder { color: rgba(255,255,255,0.45); }
-.fgp-ft__nl-input:focus { border-color: rgba(255,255,255,0.7); }
+.fgp-ft__nl-input::placeholder { color: rgba(35,64,146,0.5); }
 
 .fgp-ft__nl-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--fgp-blue);
-  color: var(--fgp-white);
+  color: var(--fgp-navy);
   border: none;
-  border-radius: var(--radius-pill);
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: var(--fgp-font);
+  border-radius: 8px;
   cursor: pointer;
-  white-space: nowrap;
   transition: opacity 0.2s;
 }
 .fgp-ft__nl-btn:hover { opacity: 0.88; }
+
+.fgp-ft__nl-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+.fgp-ft__nl-consent input { margin-top: 2px; }
 
 .fgp-ft__nl-success {
   font-size: 13px;
@@ -165,12 +286,59 @@
   margin: 0;
 }
 
+/* Decorative illustration */
+.fgp-ft__deco {
+  position: absolute;
+  top: -8px;
+  right: -20px;
+  height: calc(100% + 16px);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
 /* Bottom bar */
 .fgp-ft__bottom {
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.15);
   padding: 20px 40px;
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.fgp-ft__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.fgp-ft__localization {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fgp-ft__localization .localization-form { display: inline-flex; }
+.fgp-ft__localization .disclosure__button {
+  color: var(--fgp-white);
+  font-size: 12px;
+}
+
+.fgp-ft__payment {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fgp-ft__payment-item { display: flex; }
+.fgp-ft__payment-icon { width: 32px; height: auto; }
 
 .fgp-ft__copyright {
   font-size: 12px;
@@ -180,8 +348,28 @@
 
 /* Mobile */
 @media (max-width: 767px) {
-  .fgp-ft__inner { padding: 36px 20px 32px; gap: 28px; }
+  .fgp-ft__inner { padding: 36px 20px 32px; }
+
+  .fgp-ft__top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .fgp-ft__deco {
+    position: static;
+    height: auto;
+    width: 100%;
+    max-height: 140px;
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
   .fgp-ft__bottom { padding: 16px 20px; }
+
+  .fgp-ft__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
 
@@ -197,21 +385,60 @@
       "label": "Logo"
     },
     {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "textarea",
+      "id": "hours",
+      "label": "Store hours"
+    },
+    {
+      "type": "header",
+      "content": "Link column 1"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_heading",
+      "label": "Heading",
+      "default": "Company"
+    },
+    {
       "type": "link_list",
       "id": "menu_1",
-      "label": "Links — left column",
+      "label": "Menu",
       "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Link column 2"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_heading",
+      "label": "Heading",
+      "default": "Resources"
     },
     {
       "type": "link_list",
       "id": "menu_2",
-      "label": "Links — right column"
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
     },
     {
       "type": "text",
       "id": "nl_heading",
-      "label": "Newsletter label",
+      "label": "Heading",
       "info": "Leave blank to use the translated default text"
+    },
+    {
+      "type": "text",
+      "id": "nl_subtext",
+      "label": "Subtext"
     },
     {
       "type": "text",
@@ -222,14 +449,51 @@
     {
       "type": "text",
       "id": "nl_btn",
-      "label": "Button label",
+      "label": "Button label (used as aria-label)",
       "info": "Leave blank to use the translated default text"
+    },
+    {
+      "type": "text",
+      "id": "nl_consent",
+      "label": "Consent checkbox text",
+      "info": "Leave blank to hide the consent checkbox"
     },
     {
       "type": "text",
       "id": "nl_success",
       "label": "Success message",
       "info": "Leave blank to use the translated default text"
+    },
+    {
+      "type": "header",
+      "content": "Decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decoration_image",
+      "label": "Decorative image (right side, desktop)"
+    },
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "label": "Show country/region selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "label": "Show payment icons",
+      "default": true
     },
     {
       "type": "text",
