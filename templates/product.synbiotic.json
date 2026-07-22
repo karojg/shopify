@@ -187,7 +187,7 @@
           "type": "badge",
           "settings": {
             "label": "PRO",
-            "underline": true
+            "underline": false
           }
         },
         "badge_MUQziH": {

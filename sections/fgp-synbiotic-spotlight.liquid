@@ -300,14 +300,14 @@
   gap: 12px;
 }
 
-/* "4 IN 1" + capsule image side by side, capsule at top */
+/* "4 IN 1" text with capsule image layered on top of it */
 .fgp-sbspot__pill-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
+  position: relative;
+  display: inline-block;
 }
 
 .fgp-sbspot__four-in-one {
+  display: block;
   font-size: clamp(48px, 5.5vw, 72px);
   font-weight: 300;
   color: var(--fgp-picton-blue, #45bfef);
@@ -317,15 +317,18 @@
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
-/* Capsule photo — angled, sits beside "4 IN 1" at top */
+/* Capsule photo — angled, layered directly over the "4 IN 1" text */
 .fgp-sbspot__capsule-img {
-  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 70%;
   width: auto;
+  max-width: 60%;
   object-fit: contain;
-  transform: rotate(-20deg);
-  margin-top: 4px;
-  flex-shrink: 0;
-  align-self: flex-start;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .fgp-sbspot__dosage {
@@ -336,8 +339,8 @@
 
 .fgp-sbspot__dosage-main {
   font-size: clamp(20px, 2.2vw, 28px);
-  font-weight: 700;
-  color: var(--fgp-dark-text, #2e2a39);
+  font-weight: 400;
+  color: var(--fgp-cyber-grape, #65438a);
   margin: 0;
   line-height: 1.3;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
@@ -346,7 +349,7 @@
 .fgp-sbspot__dosage-sub {
   font-size: clamp(15px, 1.6vw, 19px);
   font-weight: 400;
-  color: var(--fgp-dark-text, #2e2a39);
+  color: var(--fgp-cyber-grape, #65438a);
   margin: 2px 0 0;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
@@ -354,27 +357,32 @@
 .fgp-sbspot__note {
   font-size: 14px;
   font-weight: 400;
-  color: #7a7a7a;
+  color: var(--fgp-cyber-grape, #65438a);
   margin: 0;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
-/* ── MOBILE ── */
+/* ── MOBILE ──
+   No Figma mobile reference exists for this section — layout below is a
+   deliberate reflow (stacked, not scaled-down desktop), verified at 390px:
+   bottle → wordmark/PRE-PRO-POST → 4-in-1/dosage. Icons are held at a
+   legible floor size rather than shrinking with the rest of the column. */
 @media (max-width: 767px) {
   .fgp-sbspot {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   .fgp-sbspot__inner {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 24px;
+    gap: 32px;
     text-align: center;
   }
 
   .fgp-sbspot__left {
     align-items: center;
+    gap: 16px;
     order: 2;
   }
 
@@ -385,19 +393,97 @@
   .fgp-sbspot__right {
     align-items: center;
     order: 3;
+    gap: 16px;
     text-align: center;
   }
 
   .fgp-sbspot__bottle {
-    height: 240px;
+    height: 220px;
+  }
+
+  /* Wordmark: re-derived for mobile, not scaled from desktop's clamp() */
+  .fgp-sbspot__eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .fgp-sbspot__title {
+    font-size: 34px;
+    white-space: normal;
   }
 
   .fgp-sbspot__badges {
     justify-content: center;
+    gap: 16px;
+  }
+
+  /* Icon floor size — do not shrink proportionally with viewport */
+  .fgp-sbspot__badge-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fgp-sbspot__badge-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .fgp-sbspot__badge-label {
+    font-size: 11px;
+  }
+
+  .fgp-sbspot__sublabel {
+    margin-top: 0;
   }
 
   .fgp-sbspot__enzyme-row {
     justify-content: center;
+    gap: 12px;
+  }
+
+  .fgp-sbspot__enzyme-text {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .fgp-sbspot__enzyme-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .fgp-sbspot__enzyme-icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Capsule image: overlapping the "4 IN 1" text doesn't read cleanly at
+     this width (text becomes illegible against the photo), so it's placed
+     as its own element above the text instead of layered on top. */
+  .fgp-sbspot__pill-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fgp-sbspot__capsule-img {
+    position: static;
+    transform: rotate(-14deg);
+    height: 56px;
+    max-width: none;
+  }
+
+  .fgp-sbspot__four-in-one {
+    font-size: 44px;
+    white-space: normal;
+  }
+
+  .fgp-sbspot__dosage-main {
+    font-size: 19px;
+  }
+
+  .fgp-sbspot__dosage-sub {
+    font-size: 15px;
   }
 }
 
@@ -538,7 +624,7 @@
       "name": "FGP Synbiotic Spotlight",
       "blocks": [
         { "type": "badge", "settings": { "label": "PRE", "underline": false } },
-        { "type": "badge", "settings": { "label": "PRO", "underline": true } },
+        { "type": "badge", "settings": { "label": "PRO", "underline": false } },
         { "type": "badge", "settings": { "label": "POST", "underline": false } }
       ]
     }
