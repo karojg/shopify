@@ -1,0 +1,14 @@
+{%- comment -%}
+  Translates known symptom block labels via locale; unknown/custom labels
+  render as-is since merchants can type any symptom text.
+  Usage: {% render 'fgp-symptom-label', label: block.settings.label %}
+{%- endcomment -%}
+{%- case label -%}
+  {%- when 'Stress' -%}{{ 'fgp.hero_multi.symptom_stress' | t }}
+  {%- when 'Gluten intolerance' -%}{{ 'fgp.hero_multi.symptom_gluten' | t }}
+  {%- when 'Lactose intolerance' -%}{{ 'fgp.hero_multi.symptom_lactose' | t }}
+  {%- when 'Constipation or Diarrhea' -%}{{ 'fgp.hero_multi.symptom_constipation' | t }}
+  {%- when 'Irritable Bowel Syndrome' -%}{{ 'fgp.hero_multi.symptom_ibs' | t }}
+  {%- when 'Low defenses' -%}{{ 'fgp.hero_multi.symptom_low_defenses' | t }}
+  {%- else -%}{{ label }}
+{%- endcase -%}

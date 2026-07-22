@@ -36,7 +36,7 @@
 
     <!-- Simple newsletter -->
     <div class="fgp-ft__nl">
-      <p class="fgp-ft__nl-label">{{ section.settings.nl_heading | default: 'Subscribe to our newsletter' }}</p>
+      <p class="fgp-ft__nl-label">{% if section.settings.nl_heading != blank %}{{ section.settings.nl_heading }}{% else %}{{ 'fgp.footer.newsletter_heading' | t }}{% endif %}</p>
       {% form 'customer', id: 'fgp-ft-nl-form' %}
         <input type="hidden" name="contact[tags]" value="newsletter">
         <div class="fgp-ft__nl-row">
@@ -46,16 +46,16 @@
             type="email"
             name="contact[email]"
             class="fgp-ft__nl-input"
-            placeholder="{{ section.settings.nl_placeholder | default: 'your@email.com' }}"
+            placeholder="{% if section.settings.nl_placeholder != blank %}{{ section.settings.nl_placeholder }}{% else %}{{ 'fgp.footer.newsletter_placeholder' | t }}{% endif %}"
             required
             autocomplete="email"
           >
           <button type="submit" class="fgp-ft__nl-btn">
-            {{ section.settings.nl_btn | default: 'Join' }}
+            {% if section.settings.nl_btn != blank %}{{ section.settings.nl_btn }}{% else %}{{ 'fgp.footer.newsletter_button' | t }}{% endif %}
           </button>
         </div>
         {%- if form.posted_successfully? -%}
-          <p class="fgp-ft__nl-success">{{ section.settings.nl_success | default: 'Thanks for subscribing!' }}</p>
+          <p class="fgp-ft__nl-success">{% if section.settings.nl_success != blank %}{{ section.settings.nl_success }}{% else %}{{ 'fgp.footer.newsletter_success' | t }}{% endif %}</p>
         {%- endif -%}
       {% endform %}
     </div>
@@ -64,7 +64,7 @@
 
   <!-- Bottom bar -->
   <div class="fgp-ft__bottom">
-    <p class="fgp-ft__copyright">{{ section.settings.copyright | default: '© 2026 Feel Good Pharma. All rights reserved.' }}</p>
+    <p class="fgp-ft__copyright">{% if section.settings.copyright != blank %}{{ section.settings.copyright }}{% else %}{{ 'fgp.footer.copyright' | t }}{% endif %}</p>
   </div>
 
 </footer>
@@ -211,31 +211,31 @@
       "type": "text",
       "id": "nl_heading",
       "label": "Newsletter label",
-      "default": "Subscribe to our newsletter"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
       "id": "nl_placeholder",
       "label": "Email placeholder",
-      "default": "your@email.com"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
       "id": "nl_btn",
       "label": "Button label",
-      "default": "Join"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
       "id": "nl_success",
       "label": "Success message",
-      "default": "Thanks for subscribing!"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
       "id": "copyright",
       "label": "Copyright text",
-      "default": "© 2026 Feel Good Pharma. All rights reserved."
+      "info": "Leave blank to use the translated default text"
     }
   ],
   "presets": [

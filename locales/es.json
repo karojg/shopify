@@ -549,5 +549,24 @@
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
     }
+  },
+  "fgp": {
+    "hero_multi": {
+      "heading_before": "¿Es una simple sensación o",
+      "cta_label": "¡Haz El Test De 1 Minuto!",
+      "symptom_stress": "Estrés",
+      "symptom_gluten": "Intolerancia al gluten",
+      "symptom_lactose": "Intolerancia a la lactosa",
+      "symptom_constipation": "Estreñimiento o diarrea",
+      "symptom_ibs": "Síndrome de intestino irritable",
+      "symptom_low_defenses": "Bajas defensas"
+    },
+    "footer": {
+      "newsletter_heading": "Suscríbete a nuestro boletín",
+      "newsletter_placeholder": "tu@correo.com",
+      "newsletter_button": "Unirme",
+      "newsletter_success": "¡Gracias por suscribirte!",
+      "copyright": "© 2026 Feel Good Pharma. Todos los derechos reservados."
+    }
   }
 }

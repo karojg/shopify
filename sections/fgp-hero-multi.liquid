@@ -4,7 +4,9 @@
 {% for block in section.blocks %}
   {% if block.type == 'symptom' %}
     {% unless forloop.first %}{% assign symptom_words = symptom_words | append: '|' %}{% endunless %}
-    {% assign symptom_words = symptom_words | append: block.settings.label %}
+    {% capture symptom_word %}{% render 'fgp-symptom-label', label: block.settings.label %}{% endcapture %}
+    {% assign symptom_word = symptom_word | strip %}
+    {% assign symptom_words = symptom_words | append: symptom_word %}
   {% endif %}
 {% endfor %}
 
@@ -14,12 +16,12 @@
     <!-- Heading row: spans full width -->
     <div class="fgp-hv2__top">
       <h1 class="fgp-hv2__heading">
-        <span class="fgp-hv2__heading-text">{{ section.settings.heading_before | default: 'Is it a gut feeling or' }}</span>
+        <span class="fgp-hv2__heading-text">{% if section.settings.heading_before != blank %}{{ section.settings.heading_before }}{% else %}{{ 'fgp.hero_multi.heading_before' | t }}{% endif %}</span>
         <span class="fgp-hv2__blank-row">
           <span class="fgp-hv2__blank">
             <span class="fgp-hv2__cycle" data-words="{{ symptom_words }}">
               {%- for block in section.blocks -%}
-                {%- if block.type == 'symptom' and forloop.first -%}{{ block.settings.label }}{%- endif -%}
+                {%- if block.type == 'symptom' and forloop.first -%}{% render 'fgp-symptom-label', label: block.settings.label %}{%- endif -%}
               {%- endfor -%}
             </span>
           </span>
@@ -43,7 +45,7 @@
           <ul class="fgp-hv2__symptoms">
             {% for block in section.blocks %}
               {% if block.type == 'symptom' %}
-                <li class="fgp-hv2__symptom" {{ block.shopify_attributes }}>{{ block.settings.label }}</li>
+                <li class="fgp-hv2__symptom" {{ block.shopify_attributes }}>{% render 'fgp-symptom-label', label: block.settings.label %}</li>
               {% endif %}
             {% endfor %}
           </ul>
@@ -58,11 +60,9 @@
               loading="lazy"
               width="56" height="56">
           {% endif %}
-          {% if section.settings.cta_label != blank %}
-            <a href="{{ section.settings.cta_url | default: '#quiz' }}" class="fgp-hv2__cta">
-              {{ section.settings.cta_label }}
-            </a>
-          {% endif %}
+          <a href="{{ section.settings.cta_url | default: '#quiz' }}" class="fgp-hv2__cta">
+            {% if section.settings.cta_label != blank %}{{ section.settings.cta_label }}{% else %}{{ 'fgp.hero_multi.cta_label' | t }}{% endif %}
+          </a>
         </div>
       </div>
 
@@ -505,13 +505,13 @@
       "type": "text",
       "id": "heading_before",
       "label": "Heading text (before blank)",
-      "default": "Is it a gut feeling or"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
       "id": "cta_label",
       "label": "CTA button label",
-      "default": "Take The 1 Minute Test!"
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "url",

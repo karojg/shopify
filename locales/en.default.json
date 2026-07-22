@@ -537,5 +537,24 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "fgp": {
+    "hero_multi": {
+      "heading_before": "Is it a gut feeling or",
+      "cta_label": "Take The 1 Minute Test!",
+      "symptom_stress": "Stress",
+      "symptom_gluten": "Gluten intolerance",
+      "symptom_lactose": "Lactose intolerance",
+      "symptom_constipation": "Constipation or Diarrhea",
+      "symptom_ibs": "Irritable Bowel Syndrome",
+      "symptom_low_defenses": "Low defenses"
+    },
+    "footer": {
+      "newsletter_heading": "Subscribe to our newsletter",
+      "newsletter_placeholder": "your@email.com",
+      "newsletter_button": "Join",
+      "newsletter_success": "Thanks for subscribing!",
+      "copyright": "© 2026 Feel Good Pharma. All rights reserved."
+    }
   }
 }

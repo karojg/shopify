@@ -18,11 +18,11 @@
         "logo": "shopify://shop_images/FG-Logo_white.png",
         "menu_1": "footer",
         "menu_2": "",
-        "nl_heading": "Subscribe to our newsletter",
-        "nl_placeholder": "your@email.com",
-        "nl_btn": "Join",
-        "nl_success": "Thanks for subscribing!",
-        "copyright": "© 2026 Feel Good Pharma. All rights reserved."
+        "nl_heading": "",
+        "nl_placeholder": "",
+        "nl_btn": "",
+        "nl_success": "",
+        "copyright": ""
       }
     }
   },
