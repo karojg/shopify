@@ -46,7 +46,7 @@
       "type": "fgp-subfooter",
       "name": "FGP Sub-footer",
       "settings": {
-        "tagline": "Feel Good Pharma takes care of your microbiota and that of your family.",
+        "tagline": "",
         "hashtag": "#FeelGoodWithin",
         "ig_handle": "feel.goodpharma"
       }
@@ -56,7 +56,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "padding_top": 36,
-        "padding_bottom": 28
+        "padding_bottom": 0
       }
     }
   },

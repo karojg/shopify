@@ -555,6 +555,9 @@
       "newsletter_button": "Join",
       "newsletter_success": "Thanks for subscribing!",
       "copyright": "© 2026 Feel Good Pharma. All rights reserved."
+    },
+    "subfooter": {
+      "tagline": "Feel Good Pharma takes care of your microbiota and that of your family."
     }
   }
 }

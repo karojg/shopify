@@ -12,9 +12,7 @@
 
     <!-- LEFT: tagline + hashtag -->
     <div class="fgp-subfooter__text">
-      {% if section.settings.tagline != blank %}
-        <p class="fgp-subfooter__tagline">{{ section.settings.tagline }}</p>
-      {% endif %}
+      <p class="fgp-subfooter__tagline">{% if section.settings.tagline != blank %}{{ section.settings.tagline }}{% else %}{{ 'fgp.subfooter.tagline' | t }}{% endif %}</p>
       {% if section.settings.hashtag != blank %}
         <p class="fgp-subfooter__hashtag">{{ section.settings.hashtag }}</p>
       {% endif %}
@@ -173,7 +171,7 @@
       "type": "textarea",
       "id": "tagline",
       "label": "Tagline",
-      "default": "Feel Good Pharma takes care of your microbiota and that of your family."
+      "info": "Leave blank to use the translated default text"
     },
     {
       "type": "text",
@@ -212,7 +210,6 @@
     {
       "name": "FGP Sub-footer",
       "settings": {
-        "tagline": "Feel Good Pharma takes care of your microbiota and that of your family.",
         "hashtag": "#FeelGoodWithin",
         "ig_handle": "feel.goodpharma"
       }
