@@ -576,9 +576,11 @@
           '.quiz-content, .quiz-content * { font-family: "Poppins", sans-serif !important; }',
           '.question-heading, .heading { color: #184ca1 !important; font-weight: 600 !important; }',
           '.question-choice-item, .question-choice__label { border-radius: 100px !important; border: 1.5px solid rgba(24, 76, 161, 0.25) !important; }',
+          '[role="option"]:not([aria-selected="true"]) { color: #234092 !important; }',
+          '[role="option"]:not([aria-selected="true"]) * { color: #234092 !important; }',
           '[role="option"][aria-selected="true"] { background: #184ca1 !important; border-color: #184ca1 !important; color: #ffffff !important; }',
           '[role="option"][aria-selected="true"] * { color: #ffffff !important; }',
-          '[role="option"]:hover:not([aria-selected="true"]) { background: rgba(24, 76, 161, 0.08) !important; border-color: #184ca1 !important; }',
+          '[role="option"]:hover:not([aria-selected="true"]) { background: rgba(24, 76, 161, 0.08) !important; border-color: #184ca1 !important; color: #234092 !important; }',
           '.question-choice-item:hover:not([aria-selected="true"]) { background: rgba(24, 76, 161, 0.08) !important; border-color: #184ca1 !important; }',
           'input[type="radio"] { accent-color: #184ca1 !important; }',
           '.navigation-bar__progress > div, .navigation-bar__progress-fill { background: #184ca1 !important; }',
@@ -596,7 +598,11 @@
           '[class*="slot-product__button"] { background: #eaf0f9 !important; color: #184ca1 !important; }',
           '.slot-product__button-item-text { color: #184ca1 !important; }',
           '.results-slot, .results-slot.in-cart { border: none !important; box-shadow: none !important; width: auto !important; min-height: 0 !important; padding: 0 !important; }',
-          '.navigation-bar, .result-bottom-bar { height: auto !important; }'
+          '.navigation-bar, .result-bottom-bar { height: auto !important; }',
+          '[class*="result" i] h1, [class*="result" i] h2 { font-weight: 600 !important; color: #184ca1 !important; }',
+          '[class*="result" i] p { font-weight: 400 !important; }',
+          '.slot-product__button-item-text { font-weight: 700 !important; }',
+          '[data-fgp-outline="true"] { background: transparent !important; color: #184ca1 !important; border: 1.5px solid #184ca1 !important; }'
         ].join('\n');
 
         /* Text nodes translated as English → Spanish, {n} keeps any digits
@@ -630,6 +636,24 @@
           }
         }
 
+        /* "Repetir quiz" is a secondary action next to "Ir al carrito"; both
+           match the same `.result button` selector above so CSS alone can't
+           tell them apart. Matched by text (English or already-translated
+           Spanish, since translateTextNodes may or may not have run yet on
+           a given pass) and flagged with a data attribute the CSS above
+           keys off of. */
+        var OUTLINE_BUTTON_TEXT = /^(Retake quiz|Repetir quiz)$/i;
+
+        function markOutlineButtons(root) {
+          var buttons = root.querySelectorAll('.result button, .result-content button, [class*="result"] button');
+          for (var i = 0; i < buttons.length; i++) {
+            var text = (buttons[i].textContent || '').trim();
+            if (OUTLINE_BUTTON_TEXT.test(text)) {
+              buttons[i].setAttribute('data-fgp-outline', 'true');
+            }
+          }
+        }
+
         function findShadowRoots(root, found) {
           found = found || [];
           var walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
@@ -657,6 +681,7 @@
               shadowRoot.appendChild(style);
             }
             translateTextNodes(shadowRoot);
+            markOutlineButtons(shadowRoot);
           });
         }
 
