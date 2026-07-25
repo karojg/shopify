@@ -67,51 +67,51 @@
         "bottle_3": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png"
       }
     },
-    "fgp_logo_carousel_main": {
+    "fgp_logo_carousel_jRLBaA": {
       "type": "fgp-logo-carousel",
       "blocks": {
-        "logo_1": {
+        "logo_Mpn7K6": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/amazon.png",
-            "logo_alt": "Amazon"
+            "logo": "shopify://shop_images/logo-amazon.png",
+            "logo_alt": "Amazon Partner"
           }
         },
-        "logo_2": {
+        "logo_QmkzCL": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/amazon.png",
-            "logo_alt": "Amazon"
+            "logo": "shopify://shop_images/logo-clinica-biclica.png",
+            "logo_alt": "Clinica Biblica Partner"
           }
         },
-        "logo_3": {
+        "logo_ezYUPA": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/amazon.png",
-            "logo_alt": "Amazon"
+            "logo": "shopify://shop_images/logo-amazon.png",
+            "logo_alt": "Partner"
           }
         },
-        "logo_4": {
+        "logo_wcx4TA": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/amazon.png",
-            "logo_alt": "Amazon"
+            "logo": "shopify://shop_images/logo-clinica-biclica.png",
+            "logo_alt": "Partner"
           }
         },
-        "logo_5": {
+        "logo_CmkGqk": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/amazon.png",
-            "logo_alt": "Amazon"
+            "logo": "shopify://shop_images/logo-amazon.png",
+            "logo_alt": "Partner"
           }
         }
       },
       "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4",
-        "logo_5"
+        "logo_Mpn7K6",
+        "logo_QmkzCL",
+        "logo_ezYUPA",
+        "logo_wcx4TA",
+        "logo_CmkGqk"
       ],
       "name": "FGP Logo Carousel",
       "settings": {
@@ -186,8 +186,8 @@
         "description": "<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>",
         "cta_label": "Shop Synbiotic+",
         "cta_url": "shopify://products/enzimas-digestivas-con-sinbiotico",
-        "product_image": "shopify://shop_images/Image_3.png",
-        "product_image_mobile": "shopify://shop_images/image_b80f97cd-7daf-4063-951b-3b96fb061880.png",
+        "product_image": "shopify://shop_images/hb-syn-desk.png",
+        "product_image_mobile": "shopify://shop_images/hb-syn-mob.png",
         "product_image_alt": "Synbiotic+ product"
       }
     },
@@ -216,7 +216,7 @@
         "founder_name": "Dr. Katherine Jiménez, Founder",
         "quote": "I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body's natural balance, so you can feel your best every day.",
         "cta_label": "View more",
-        "cta_url": ""
+        "cta_url": "shopify://pages/sobre-nosotros"
       }
     },
     "fgp_kids_feature_main": {
@@ -227,7 +227,6 @@
         "badge_subtext": "2 capsules · 3 times a day",
         "eyebrow": "KIDS",
         "title": "KIDS PROBIOTICS",
-        "title_image": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
         "description": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",
         "cta_label": "Shop Kids 60",
         "cta_variant_id": "50086279315777",
@@ -297,37 +296,42 @@
         "item_CyxFwm": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Gut.png",
+            "icon": "shopify://shop_images/Micro.png",
             "label": "Spore based probiotics"
           }
         },
         "item_yaLXzU": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Plant_based.png",
             "label": "Plant Based ingredients"
           }
         },
         "item_wJkJVN": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Beneficial_Bacteria.png",
             "label": "Replenishes Beneficial Bacteria®"
           }
         },
         "item_8QpQbU": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Gut_Barrier.png",
             "label": "Strengthens Gut Barrier®"
           }
         },
         "item_UFd4ai": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Bacteria.png",
             "label": "Improves Nutrient Absorption®"
           }
         },
         "item_cnazY9": {
           "type": "item",
           "settings": {
+            "icon": "shopify://shop_images/Non_GMO.png",
             "label": "Non GMO"
           }
         }
@@ -505,7 +509,7 @@
   },
   "order": [
     "fgp_hero_multi_Qt6XNd",
-    "fgp_logo_carousel_main",
+    "fgp_logo_carousel_jRLBaA",
     "b8b0c886-8d85-4099-b9f2-61e11d876167",
     "fgp_synbiotic_feature_jkwUPt",
     "fgp_goodbye_symptoms_ULcw7q",

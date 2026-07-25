@@ -28,6 +28,11 @@
         "nl_btn": "",
         "nl_consent": "I agree to receiving marketing emails and special deals",
         "nl_success": "",
+        "decoration_image": "shopify://shop_images/Gut_Line_Blue.png",
+        "show_social": true,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "payment_enable": true,
         "copyright": ""
       }
     }
