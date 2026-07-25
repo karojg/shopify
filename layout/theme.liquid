@@ -453,6 +453,28 @@
           padding: 40px 20px 64px;
         }
       }
+
+      /* RevenueHunt quiz popup — mobile width fix. The app sets the modal's
+         width/height via inline style (JS, based on the popup's configured
+         percentage — 50% here), which is too narrow on small screens and
+         breaks the heading into single-word lines. #quiz-container itself is
+         regular light DOM (unlike the quiz content inside it), so this CSS
+         reaches it; !important is needed to beat the inline style. */
+      /* RevenueHunt quiz popup — minimum height, both breakpoints. The app
+         sets height via inline style from its configured percentage (50%),
+         which left a lot of empty/cramped space depending on question
+         length; !important is needed to beat the inline style either way. */
+      #quiz-container .quiz-content {
+        min-height: 80vh !important;
+        max-height: 92vh !important;
+        overflow-y: auto !important;
+      }
+
+      @media screen and (max-width: 749px) {
+        #quiz-container .quiz-content {
+          width: 92% !important;
+        }
+      }
     </style>
   </head>
 
@@ -536,5 +558,120 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+      /* RevenueHunt Quiz Kit brand override.
+         The quiz renders inside an *open* shadow root (quiz-renderer >
+         .preview-shadow__container > [data-cy="shadow-dom"] > shadowRoot),
+         so external theme CSS never reaches it — the shadow boundary blocks
+         it regardless of selector specificity. Since the root is open (not
+         closed), a <style> can be injected directly inside it via JS. This
+         is inherently fragile: it depends on RevenueHunt's current internal
+         class names and DOM structure, and will silently stop working if
+         they change it in an update. No paid plan/design-panel access
+         needed since this bypasses the app's own customization UI entirely. */
+      (function () {
+        var QUIZ_STYLE_ID = 'fgp-quiz-brand-override';
+        var QUIZ_CSS = [
+          '.quiz-content, .quiz-content * { font-family: "Poppins", sans-serif !important; }',
+          '.question-heading, .heading { color: #184ca1 !important; font-weight: 600 !important; }',
+          '.question-choice-item, .question-choice__label { border-radius: 100px !important; border: 1.5px solid rgba(24, 76, 161, 0.25) !important; }',
+          '[role="option"][aria-selected="true"] { background: #184ca1 !important; border-color: #184ca1 !important; color: #ffffff !important; }',
+          '[role="option"][aria-selected="true"] * { color: #ffffff !important; }',
+          '[role="option"]:hover:not([aria-selected="true"]) { background: rgba(24, 76, 161, 0.08) !important; border-color: #184ca1 !important; }',
+          '.question-choice-item:hover:not([aria-selected="true"]) { background: rgba(24, 76, 161, 0.08) !important; border-color: #184ca1 !important; }',
+          'input[type="radio"] { accent-color: #184ca1 !important; }',
+          '.navigation-bar__progress > div, .navigation-bar__progress-fill { background: #184ca1 !important; }',
+          '@media screen and (max-width: 749px) { .navigation-bar__container { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; } .navigation-bar__buttons { justify-content: flex-end !important; } }',
+          '.navigation-bar__button { background: #184ca1 !important; border-radius: 100px !important; min-width: 0 !important; padding: 8px 14px !important; }',
+          '.navigation-bar__button svg { display: none !important; }',
+          '.navigation-bar__button::after { font-family: "Poppins", sans-serif !important; font-size: 13px !important; font-weight: 600 !important; color: #ffffff !important; white-space: nowrap !important; }',
+          '.navigation-bar__button[aria-label*="revious" i]::after, .navigation-bar__button[aria-label*="No previous" i]::after { content: "Anterior" !important; }',
+          '.navigation-bar__button[aria-label*="Next" i]::after, .navigation-bar__button[aria-label*="proceeding" i]::after, .navigation-bar__button[aria-label*="Answer" i]::after { content: "Siguiente" !important; }',
+          '.navigation-bar__button:disabled { opacity: 0.75 !important; }',
+          '.question-button, .block.question-block button[type="button"], .question-content button:not(.navigation-bar__button) { background: #184ca1 !important; border-radius: 100px !important; color: #ffffff !important; font-family: "Poppins", sans-serif !important; font-weight: 600 !important; border: none !important; }',
+          '.result button, .result-content button, [class*="result"] button { background: #184ca1 !important; border-radius: 100px !important; color: #ffffff !important; font-family: "Poppins", sans-serif !important; font-weight: 600 !important; border: none !important; }',
+          '[class*="quantity"] button, [class*="stepper"] button, [class*="counter"] button, [class*="qty"] button { background: #184ca1 !important; color: #ffffff !important; border: none !important; }',
+          '[class*="quantity"], [class*="stepper"], [class*="counter"], [class*="qty"] { background: #eaf0f9 !important; color: #184ca1 !important; }',
+          '[class*="slot-product__button"] { background: #eaf0f9 !important; color: #184ca1 !important; }',
+          '.slot-product__button-item-text { color: #184ca1 !important; }',
+          '.results-slot, .results-slot.in-cart { border: none !important; box-shadow: none !important; width: auto !important; min-height: 0 !important; padding: 0 !important; }',
+          '.navigation-bar, .result-bottom-bar { height: auto !important; }'
+        ].join('\n');
+
+        /* Text nodes translated as English → Spanish, {n} keeps any digits
+           found in the original (e.g. cart counts) so dynamic numbers like
+           "Proceed to cart (2)" or "1 in cart" survive the swap. */
+        var TEXT_TRANSLATIONS = [
+          { match: /^Retake quiz$/i, replace: 'Repetir quiz' },
+          { match: /^Proceed to cart(?:\s*\(\s*(\d+)\s*\))?$/i, replace: function (m, n) { return n ? 'Ir al carrito (' + n + ')' : 'Ir al carrito'; } },
+          { match: /^(\d+)\s+in cart$/i, replace: function (m, n) { return n + ' en el carrito'; } },
+          { match: /^View product$/i, replace: 'Ver producto' },
+          { match: /^Add to cart$/i, replace: 'Agregar al carrito' },
+          { match: /^Sold out$/i, replace: 'Agotado' }
+        ];
+
+        function translateTextNodes(root) {
+          var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+          var node;
+          while ((node = walker.nextNode())) {
+            var original = node.nodeValue;
+            var trimmed = original.trim();
+            if (!trimmed) continue;
+            for (var i = 0; i < TEXT_TRANSLATIONS.length; i++) {
+              var rule = TEXT_TRANSLATIONS[i];
+              var m = trimmed.match(rule.match);
+              if (m) {
+                var replacement = typeof rule.replace === 'function' ? rule.replace(m[0], m[1]) : rule.replace;
+                node.nodeValue = original.replace(trimmed, replacement);
+                break;
+              }
+            }
+          }
+        }
+
+        function findShadowRoots(root, found) {
+          found = found || [];
+          var walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
+          var node = root.nodeType === 1 ? root : walker.nextNode();
+          while (node) {
+            if (node.shadowRoot) {
+              found.push(node.shadowRoot);
+              findShadowRoots(node.shadowRoot, found);
+            }
+            node = walker.nextNode();
+          }
+          return found;
+        }
+
+        function injectIntoShadowRoots() {
+          var quizContainer = document.getElementById('quiz-container');
+          if (!quizContainer) return;
+
+          var roots = findShadowRoots(quizContainer);
+          roots.forEach(function (shadowRoot) {
+            if (!shadowRoot.getElementById(QUIZ_STYLE_ID)) {
+              var style = document.createElement('style');
+              style.id = QUIZ_STYLE_ID;
+              style.textContent = QUIZ_CSS;
+              shadowRoot.appendChild(style);
+            }
+            translateTextNodes(shadowRoot);
+          });
+        }
+
+        var pending = null;
+        var observer = new MutationObserver(function () {
+          if (pending) return;
+          pending = requestAnimationFrame(function () {
+            pending = null;
+            injectIntoShadowRoots();
+          });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        injectIntoShadowRoots();
+      })();
+    </script>
   </body>
 </html>
