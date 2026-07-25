@@ -117,6 +117,9 @@
                 >
                   {{ 'sections.cart.checkout' | t }}
                 </button>
+                <a href="{{ routes.all_products_collection_url }}" class="button button--tertiary cart__continue-shopping-link medium-hide large-up-hide">
+                  {{- 'general.continue_shopping' | t -}}
+                </a>
               </div>
 
               {%- if additional_checkout_buttons -%}
