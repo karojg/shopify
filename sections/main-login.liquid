@@ -4,11 +4,12 @@
 <div class="fgp-login">
   <div class="fgp-login__card">
 
-    {%- if settings.logo != blank -%}
+    {%- assign login_logo = settings.logo_light | default: settings.logo -%}
+    {%- if login_logo != blank -%}
       <a href="{{ routes.root_url }}" class="fgp-login__logo-link">
         <img
           class="fgp-login__logo"
-          src="{{ settings.logo | img_url: '300x' }}"
+          src="{{ login_logo | image_url: width: 300 }}"
           alt="{{ shop.name }}"
           width="140"
           height="auto"

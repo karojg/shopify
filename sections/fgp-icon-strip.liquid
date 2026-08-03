@@ -33,9 +33,12 @@
 
 <style>
 /* ── Strip container ── */
+/* Full-bleed: intentionally excluded from the shared .fgp-* content
+   constraint in stressbiotic.css so the strip spans the viewport. */
 .fgp-is {
   font-family: var(--fgp-font);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .fgp-is--white    { background: #ffffff; }
@@ -46,18 +49,19 @@
 .fgp-is__inner {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 8px;
-  max-width: 1400px;
-  margin: 0 auto;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 48px 40px;
 }
 
 /* ── Each item: icon + label inline ── */
 .fgp-is__item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex: 0 1 auto;
   min-width: 0;
 }
@@ -92,7 +96,7 @@
   color: var(--fgp-purple);
   line-height: 1.35;
   margin: 0;
-  max-width: 120px;
+  min-width: 0;
 }
 
 /* Color variants for label + icon on dark bgs */
@@ -113,10 +117,10 @@
 
 /* ── Tablet 640–1023px ── */
 @media (min-width: 640px) and (max-width: 1023px) {
-  .fgp-is__inner { padding: 24px 32px; gap: 6px; }
+  .fgp-is__inner { padding: 32px 32px; gap: 16px; }
   .fgp-is__icon-wrap { width: 44px; height: 44px; }
   .fgp-is__icon { width: 24px; height: 24px; }
-  .fgp-is__label { font-size: 12px; max-width: 100px; }
+  .fgp-is__label { font-size: 12px; min-width: 90px; }
 }
 
 /* ── Mobile ≤ 639px: single column ── */
@@ -131,7 +135,7 @@
   .fgp-is__item { gap: 16px; }
   .fgp-is__icon-wrap { width: 60px; height: 60px; border-width: 1.5px; }
   .fgp-is__icon { width: 32px; height: 32px; }
-  .fgp-is__label { font-size: 16px; font-weight: 600; max-width: none; color: var(--fgp-purple); }
+  .fgp-is__label { font-size: 16px; font-weight: 600; min-width: 0; color: var(--fgp-purple); }
   .fgp-is--dividers .fgp-is__item + .fgp-is__item {
     border-left: none;
     padding-left: 0;

@@ -16,6 +16,12 @@
         "label": "t:settings_schema.logo.settings.logo_image.label"
       },
       {
+        "type": "image_picker",
+        "id": "logo_light",
+        "label": "Logo (white / light version)",
+        "info": "Used on dark backgrounds, e.g. the login page. Falls back to the main logo if empty."
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 50,
