@@ -400,20 +400,20 @@
         "doctor_1": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Gastroenterologist",
-            "ig_handle": "",
-            "quote": "I recommend Feel Good Pharma products to my patients because of their proven formulation and high-quality ingredients.",
+            "name": "Dra. Nancy Conejo",
+            "specialty": "Pediatrician | Neonatologist",
+            "ig_handle": "@pediatranancyconejo",
+            "quote": "Pairing probiotics with a balanced diet rich in whole foods, fiber, and hydration is the key to long-term wellness. That's why synbiotic and kids probiotics are designed to complement your family healthy lifestyle.\"",
             "quote_url": ""
           }
         },
         "doctor_2": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Pediatrician",
-            "ig_handle": "",
-            "quote": "The Kids Probiotics formula is one of the best I've seen. Safe, effective, and kids love the taste.",
+            "name": "Doctora Von Saalfeld",
+            "specialty": "Nutricionista",
+            "ig_handle": "@cnvs_nutricion",
+            "quote": "Synbiotic + works amazing as a complement to a balanced diet on patients with Irritable Bowel Sindrome and other digestive issues.\"",
             "quote_url": ""
           }
         },
