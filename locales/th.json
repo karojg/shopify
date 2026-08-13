@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "เลือกซื้อต่อ",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "การแบ่งหน้า",
       "page": "หน้า {{ number }}",

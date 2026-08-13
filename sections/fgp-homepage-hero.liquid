@@ -84,14 +84,18 @@
     </div>
 
     <div class="fgp-hh__media fgp-hh__media--bottles">
+      {% comment %}
+        Product shots, not decoration — alt comes from the image's own alt text
+        in the Shopify media library, so it stays editable without a code change.
+      {% endcomment %}
       {% if section.settings.h2_bottle_1 != blank %}
-        <img class="fgp-hh__b1" src="{{ section.settings.h2_bottle_1 | img_url: '400x' }}" alt="" loading="eager">
+        <img class="fgp-hh__b1" src="{{ section.settings.h2_bottle_1 | img_url: '400x' }}" alt="{{ section.settings.h2_bottle_1.alt | default: shop.name | escape }}" loading="eager">
       {% endif %}
       {% if section.settings.h2_bottle_2 != blank %}
-        <img class="fgp-hh__b2" src="{{ section.settings.h2_bottle_2 | img_url: '400x' }}" alt="" loading="eager">
+        <img class="fgp-hh__b2" src="{{ section.settings.h2_bottle_2 | img_url: '400x' }}" alt="{{ section.settings.h2_bottle_2.alt | default: shop.name | escape }}" loading="eager">
       {% endif %}
       {% if section.settings.h2_bottle_3 != blank %}
-        <img class="fgp-hh__b3" src="{{ section.settings.h2_bottle_3 | img_url: '400x' }}" alt="" loading="eager">
+        <img class="fgp-hh__b3" src="{{ section.settings.h2_bottle_3 | img_url: '400x' }}" alt="{{ section.settings.h2_bottle_3.alt | default: shop.name | escape }}" loading="eager">
       {% endif %}
     </div>
   </div>

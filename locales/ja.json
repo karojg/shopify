@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "買い物を続ける",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "ページネーション",
       "page": "{{ number }}ページ",

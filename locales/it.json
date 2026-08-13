@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Continua lo shopping",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Impaginazione",
       "page": "Pagina {{ number }}",

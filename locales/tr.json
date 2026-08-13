@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Alışverişe devam et",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Sayfalara ayırma",
       "page": "Sayfa {{ number }}",

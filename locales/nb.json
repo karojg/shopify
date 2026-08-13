@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Fortsett å handle",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Sideinndeling",
       "page": "Side {{ number }}",

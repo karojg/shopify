@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Fortsätt shoppa",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Paginering",
       "page": "Sida {{ number }}",

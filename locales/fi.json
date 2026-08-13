@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Jatka ostoksia",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Sivunumerointi",
       "page": "Sivu {{ number }}",

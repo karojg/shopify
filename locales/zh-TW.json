@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "繼續購物",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "分頁",
       "page": "第 {{ number }} 頁",

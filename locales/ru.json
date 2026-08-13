@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Продолжить покупки",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Разбивка на страницы",
       "page": "Страница {{ number }}",

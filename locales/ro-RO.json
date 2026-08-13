@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Continuați cumpărăturile",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Paginare",
       "page": "Pagina {{ number }}",

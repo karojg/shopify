@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Vásárlás folytatása",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Tördelés",
       "page": "{{ number }}. oldal",

@@ -38,6 +38,10 @@
       }
     },
     "continue_shopping": "Nadaljuj nakup",
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
     "pagination": {
       "label": "Oštevilčevanje strani",
       "page": "Stran {{ number }}",
