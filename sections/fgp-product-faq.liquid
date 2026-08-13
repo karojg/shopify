@@ -51,38 +51,6 @@
 
 </section>
 
-{%- comment -%}
-  FAQPage structured data. Google can surface these questions expanded directly
-  in the results page, which takes up more vertical space than a plain listing.
-  The content is already authored in the blocks — this only exposes it.
-
-  Answers are rich text, so tags are stripped: schema.org expects plain text and
-  Google rejects markup it can't parse. Only rendered when blocks exist, since
-  an empty FAQPage is a structured-data error.
-{%- endcomment -%}
-{%- if section.blocks.size > 0 -%}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {%- for block in section.blocks -%}
-          {%- if block.settings.question != blank and block.settings.answer != blank -%}
-            {
-              "@type": "Question",
-              "name": {{ block.settings.question | strip_html | json }},
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": {{ block.settings.answer | strip_html | strip_newlines | json }}
-              }
-            }{% unless forloop.last %},{% endunless %}
-          {%- endif -%}
-        {%- endfor -%}
-      ]
-    }
-  </script>
-{%- endif -%}
-
 <style>
 .fgp-faq {
   font-family: var(--fgp-font);

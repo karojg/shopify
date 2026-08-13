@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Voltar à loja",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Paginação",
       "page": "Página {{ number }}",

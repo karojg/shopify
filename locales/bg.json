@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Продължете да пазарувате",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Страниране",
       "page": "Страница {{ number }}",

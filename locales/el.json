@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Συνέχιση αγορών",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Σελιδοποίηση",
       "page": "Σελίδα {{ number }}",

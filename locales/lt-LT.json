@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Tęsti apsipirkimą",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Puslapių numeravimas",
       "page": "{{ number }} psl.",

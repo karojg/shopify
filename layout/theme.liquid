@@ -4,11 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    {%- comment -%}
-      Tints the browser UI on mobile (Chrome Android address bar, iOS PWA).
-      Was shipped empty, so the browser fell back to its own grey chrome.
-    {%- endcomment -%}
-    <meta name="theme-color" content="#234092">
+    <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon != blank -%}
@@ -19,14 +15,10 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {%- comment -%}
-      The tag and page suffixes were hardcoded English ("tagged", "Page") and
-      showed up verbatim in Google results for a Spanish-language store.
-    {%- endcomment -%}
     <title>
       {{ page_title }}
-      {%- if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif -%}
-      {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
@@ -484,8 +476,6 @@
         }
       }
     </style>
-
-    {% render 'fgp-breadcrumb-schema' %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

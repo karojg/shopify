@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Terugkeren naar winkel",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Paginering",
       "page": "Pagina {{ number }}",

@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Tiếp tục mua sắm",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Phân trang",
       "page": "Trang {{ number }}",

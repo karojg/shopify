@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Tilbage til butikken",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Sideinddeling",
       "page": "Side {{ number }}",

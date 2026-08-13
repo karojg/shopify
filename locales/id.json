@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Lanjutkan belanja",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Pembagian Halaman",
       "page": "Halaman {{ number }}",

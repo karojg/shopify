@@ -38,10 +38,6 @@
       }
     },
     "continue_shopping": "Pokračovat v nákupu",
-    "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
-    },
     "pagination": {
       "label": "Stránkování",
       "page": "Strana {{ number }}",

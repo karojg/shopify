@@ -465,29 +465,6 @@
       {{ settings.social_youtube_link | json }},
       {{ settings.social_vimeo_link | json }}
     ],
-    {% comment %}
-      Contact and locale data help Google associate the brand with Costa Rica
-      for local/regional queries — Organization alone is country-agnostic.
-    {% endcomment %}
-    {% if shop.address.country_code != blank %}
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": {{ shop.address.country_code | json }}
-        {% if shop.address.city != blank %}, "addressLocality": {{ shop.address.city | json }}{% endif %}
-        {% if shop.address.province != blank %}, "addressRegion": {{ shop.address.province | json }}{% endif %}
-        {% if shop.address.zip != blank %}, "postalCode": {{ shop.address.zip | json }}{% endif %}
-        {% if shop.address.street != blank %}, "streetAddress": {{ shop.address.street | json }}{% endif %}
-      },
-    {% endif %}
-    {% if shop.email != blank %}
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": {{ shop.email | json }},
-        "areaServed": "CR",
-        "availableLanguage": ["es", "en"]
-      },
-    {% endif %}
     "url": {{ request.origin | append: page.url | json }}
   }
 </script>
