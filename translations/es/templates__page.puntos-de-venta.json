@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 92
+      }
+    },
+    "fgp_store_locator": {
+      "type": "fgp-store-locator",
+      "name": "Store Locator",
+      "settings": {
+        "eyebrow": "ENCUÉNTRANOS",
+        "heading": "Puntos de Venta",
+        "subtext": "Encuentra nuestros productos en estos puntos de venta."
+      }
+    },
+    "1786420062f1d93a38": {
+      "type": "apps",
+      "blocks": {
+        "progus_store_locator_app_block_aibUML": {
+          "type": "shopify://apps/progus-store-locator/blocks/app-block/d7896016-8cc9-45e0-860e-ba85ba3d5be4",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "progus_store_locator_app_block_aibUML"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "fgp_subfooter_pdv": {
+      "type": "fgp-subfooter",
+      "name": "FGP Sub-footer",
+      "settings": {
+        "tagline": "",
+        "hashtag": "#FeelGoodWithin",
+        "ig_handle": "feel.goodpharma",
+        "fb_url": "",
+        "fb_label": "FEELGOODPHARMA"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_store_locator",
+    "1786420062f1d93a38",
+    "fgp_subfooter_pdv"
+  ]
+}

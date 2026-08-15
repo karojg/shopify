@@ -1,0 +1,436 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "tab_dosage": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dosis",
+            "icon": "none",
+            "content": "<p>Niños de 4 años en adelante: 1 gomita al día. Adultos: 1–2 gomitas al día.</p>",
+            "page": ""
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envíos",
+            "icon": "none",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
+            "page": ""
+          }
+        },
+        "tab_returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Política de devoluciones",
+            "icon": "none",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Compartir"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "tab_dosage",
+        "tab_shipping",
+        "tab_returns",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_icon_strip_9UJFwJ": {
+      "type": "fgp-icon-strip",
+      "blocks": {
+        "item_kQXbLK": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Micro.png",
+            "label": "Probióticos a base de esporas"
+          }
+        },
+        "item_k6jfBi": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Plant_based.png",
+            "label": "Ingredientes de origen vegetal"
+          }
+        },
+        "item_9tHJwk": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Beneficial_Bacteria.png",
+            "label": "Repone bacterias beneficiosas®"
+          }
+        },
+        "item_D7DMG6": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Gut_Barrier.png",
+            "label": "Fortalece la barrera intestinal®"
+          }
+        },
+        "item_ArpCQp": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Bacteria.png",
+            "label": "Mejora la absorción de nutrientes®"
+          }
+        },
+        "item_crjKxV": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Non_GMO.png",
+            "label": "Sin OGM"
+          }
+        }
+      },
+      "block_order": [
+        "item_kQXbLK",
+        "item_k6jfBi",
+        "item_9tHJwk",
+        "item_D7DMG6",
+        "item_ArpCQp",
+        "item_crjKxV"
+      ],
+      "name": "FGP Icon Strip",
+      "settings": {
+        "bg": "white",
+        "aria_label": "Beneficios del producto"
+      }
+    },
+    "fgp_kids_spotlight_GX9tMK": {
+      "type": "fgp-kids-spotlight",
+      "name": "FGP Kids Spotlight",
+      "settings": {
+        "product_logo": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
+        "product_logo_alt": "Probióticos para Niños",
+        "badge_icon": "shopify://shop_images/Bacillus_Subtilis.png",
+        "strawberry_icon": "shopify://shop_images/fresa-caricatura.png",
+        "badge_name": "DE111®",
+        "badge_subtitle": "Bacillus Subtilis",
+        "note": "No requiere refrigeración",
+        "bottle_image": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png",
+        "bottle_image_alt": "Kids Probiotics bottle",
+        "description": "<h1>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</h1>",
+        "gummy_child_image": "shopify://shop_images/Kids_Gummie-1.png",
+        "child_label": "Niños",
+        "gummy_adult_image": "shopify://shop_images/Kids_Gummie-2.png",
+        "adult_label": "Adultos"
+      }
+    },
+    "fgp_origin_card_Mhi8hB": {
+      "type": "fgp-origin-card",
+      "blocks": {
+        "cert_logo_7CtmGL": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "Probiótico DE111"
+          }
+        },
+        "cert_logo_TKLwk3": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "FDA"
+          }
+        },
+        "cert_logo_V744tW": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "GMP"
+          }
+        },
+        "cert_logo_tBm7hE": {
+          "type": "cert_logo",
+          "settings": {
+            "logo_alt": "Hecho en EE. UU."
+          }
+        }
+      },
+      "block_order": [
+        "cert_logo_7CtmGL",
+        "cert_logo_TKLwk3",
+        "cert_logo_V744tW",
+        "cert_logo_tBm7hE"
+      ],
+      "name": "FGP Origin Card",
+      "settings": {
+        "heading": "Formulado en Costa Rica",
+        "body": "<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>",
+        "cta_label": "Explorar ingredientes",
+        "cta_url": "shopify://pages/product-information",
+        "photo": "shopify://shop_images/kids-hb.png",
+        "photo_alt": ""
+      }
+    },
+    "fgp_doctor_testimonials_kids": {
+      "type": "fgp-doctor-testimonials",
+      "blocks": {
+        "doc_1": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Pediatra",
+            "ig_handle": "",
+            "quote": "La fórmula de Probióticos para Niños es una de las más seguras y eficaces que he visto para la salud intestinal infantil.",
+            "quote_url": ""
+          }
+        },
+        "doc_2": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Gastroenteróloga pediátrica",
+            "ig_handle": "",
+            "quote": "Se lo recomiendo a padres de niños con dolores de barriga frecuentes o infecciones recurrentes.",
+            "quote_url": ""
+          }
+        },
+        "doc_3": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Nutricionista",
+            "ig_handle": "",
+            "quote": "Un producto bien formulado que apoya la inmunidad y el desarrollo digestivo de los niños.",
+            "quote_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "doc_1",
+        "doc_2",
+        "doc_3"
+      ],
+      "name": "Doctor Testimonials — Kids",
+      "settings": {
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
+      }
+    },
+    "fgp_product_faq_kids": {
+      "type": "fgp-product-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Cómo le doy Probióticos para Niños a mi hijo?",
+            "answer": "<p>Dale 1 cápsula al día con una comida. Puedes abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿A partir de qué edad se puede tomar?",
+            "answer": "<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consulta a tu pediatra.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Es seguro darlo todos los días?",
+            "answer": "<p>Sí. La fórmula utiliza cepas probióticas bien estudiadas, seguras y beneficiosas para el uso diario en niños.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Cuándo empezará mi hijo a notar resultados?",
+            "answer": "<p>La mayoría de los padres nota mejoras en la digestión y menos resfriados entre 3 y 6 semanas de uso diario constante.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Contiene alérgenos?",
+            "answer": "<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consulta la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "name": "Kids FAQ",
+      "settings": {
+        "layout": "split",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Los padres preguntan, nosotros respondemos",
+        "subtext": ""
+      }
+    },
+    "fgp_customer_reviews_kids": {
+      "type": "fgp-customer-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Los dolores de barriga de mi hija desaparecieron en el primer mes. ¡Hasta me recuerda que se lo dé todos los días!",
+            "name": "Sofía L.",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Mi hijo se enfermaba cada dos semanas. Desde que empezó con Probióticos para Niños casi no se ha enfermado. ¡Un cambio total!",
+            "name": "Ricardo M.",
+            "location": "Alajuela, Costa Rica"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Súper fácil de usar: lo mezclo en su batido y ni lo nota. Y los resultados hablan por sí solos.",
+            "name": "Carla V.",
+            "location": "Heredia, Costa Rica"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "name": "Customer Reviews — Kids",
+      "settings": {
+        "eyebrow": "LO QUE DICEN LOS PADRES",
+        "heading": "Preferido por las familias"
+      }
+    },
+    "video_agqNLD": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "Video",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/FLGD_KIDS_PRO_DDM_CLEAN_5.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_icon_strip_9UJFwJ",
+    "fgp_kids_spotlight_GX9tMK",
+    "fgp_origin_card_Mhi8hB",
+    "fgp_doctor_testimonials_kids",
+    "fgp_product_faq_kids",
+    "fgp_customer_reviews_kids",
+    "video_agqNLD",
+    "related-products"
+  ]
+}

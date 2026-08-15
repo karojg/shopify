@@ -1,6 +1,6 @@
 {% render 'fgp-global' %}
 
-<section class="fgp-ct" aria-label="Product comparison">
+<section class="fgp-ct" aria-label="{{ 'fgp.aria.comparison_table' | t }}">
 
   <div class="fgp-ct__header">
     {% if section.settings.eyebrow != blank %}
@@ -36,7 +36,7 @@
               {% if block.settings.our_value != blank %}
                 <span class="fgp-ct__val fgp-ct__val--highlight">{{ block.settings.our_value }}</span>
               {% else %}
-                <span class="fgp-ct__check fgp-ct__check--yes" aria-label="Yes">
+                <span class="fgp-ct__check fgp-ct__check--yes" aria-label="{{ 'fgp.shared.yes' | t }}">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#45bfef"/><path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
               {% endif %}
@@ -46,7 +46,7 @@
                 <span class="fgp-ct__val">{{ block.settings.other_value }}</span>
               {% else %}
                 {% if block.settings.other_has == 'yes' %}
-                  <span class="fgp-ct__check fgp-ct__check--yes" aria-label="Yes">
+                  <span class="fgp-ct__check fgp-ct__check--yes" aria-label="{{ 'fgp.shared.yes' | t }}">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#ccc"/><path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </span>
                 {% else %}

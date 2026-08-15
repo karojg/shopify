@@ -7,7 +7,14 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-kids" aria-label="Kids Probiotics Feature">
+{%- assign fgp_kids_title       = 'fgp.kids.title'                 | t -%}
+{%- assign fgp_kids_title_plain = 'fgp.kids.title_plain'           | t -%}
+{%- assign fgp_kids_description = 'fgp.kids.description_html'      | t -%}
+{%- assign fgp_kids_cta         = 'fgp.kids.cta_label'             | t -%}
+{%- assign fgp_kids_product_alt = 'fgp.kids.product_alt'           | t -%}
+{%- assign fgp_syn_description  = 'fgp.synbiotic.description_html' | t -%}
+
+<section class="fgp-kids" aria-label="{{ 'fgp.aria.kids_feature' | t }}">
 
   <!-- ---- DESKTOP ---- -->
   <div class="fgp-kids__desktop">
@@ -19,7 +26,7 @@
           <img
             class="fgp-kids__product-img"
             src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: 'Kids Probiotics product' }}"
+            alt="{{ section.settings.product_image_alt | default: fgp_kids_product_alt }}"
             loading="lazy"
           >
         {% else %}
@@ -30,23 +37,23 @@
       <!-- RIGHT: Text + CTA -->
       <div class="fgp-kids__col-right">
         {% if section.settings.title_image != blank %}
-          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
+          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: fgp_kids_title_plain }}" loading="lazy">
         {% else %}
-          <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+          <h2 class="fgp-kids__title">{{ section.settings.title | default: fgp_kids_title }}</h2>
         {% endif %}
         {% if section.settings.panel_subtitle != blank %}
           <p class="fgp-kids__panel-subtitle">{{ section.settings.panel_subtitle }}</p>
         {% endif %}
-        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>' }}</div>
+        <div class="fgp-kids__description">{{ section.settings.description | default: fgp_kids_description }}</div>
         <div class="fgp-kids__cta-group">
           {% if section.settings.cta_variant_id != blank %}
             <form action="/cart/add" method="post">
               <input type="hidden" name="id" value="{{ section.settings.cta_variant_id }}">
               <input type="hidden" name="quantity" value="1">
-              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</button>
+              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: fgp_kids_cta }}</button>
             </form>
           {% else %}
-            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</a>
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: fgp_kids_cta }}</a>
           {% endif %}
           {% if section.settings.cta2_label != blank %}
             {% if section.settings.cta2_variant_id != blank %}
@@ -75,7 +82,7 @@
           <img
             class="fgp-kids__mobile-product-img"
             src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: 'Kids Probiotics product' }}"
+            alt="{{ section.settings.product_image_alt | default: fgp_kids_product_alt }}"
             loading="lazy"
           >
         {% else %}
@@ -86,23 +93,23 @@
       <!-- BOTTOM: Gold panel with logo, description + CTAs -->
       <div class="fgp-kids__mobile-panel">
         {% if section.settings.title_image != blank %}
-          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: 'Kids Probiotics' }}" loading="lazy">
+          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: fgp_kids_title_plain }}" loading="lazy">
         {% else %}
-          <h2 class="fgp-kids__title">{{ section.settings.title | default: 'KIDS PROBIOTICS' }}</h2>
+          <h2 class="fgp-kids__title">{{ section.settings.title | default: fgp_kids_title }}</h2>
         {% endif %}
         {% if section.settings.panel_subtitle != blank %}
           <p class="fgp-kids__panel-subtitle">{{ section.settings.panel_subtitle }}</p>
         {% endif %}
-        <div class="fgp-kids__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <div class="fgp-kids__description">{{ section.settings.description | default: fgp_syn_description }}</div>
         <div class="fgp-kids__cta-group">
           {% if section.settings.cta_variant_id != blank %}
             <form action="/cart/add" method="post">
               <input type="hidden" name="id" value="{{ section.settings.cta_variant_id }}">
               <input type="hidden" name="quantity" value="1">
-              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</button>
+              <button type="submit" class="fgp-kids__cta">{{ section.settings.cta_label | default: fgp_kids_cta }}</button>
             </form>
           {% else %}
-            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: 'Shop Kids 60' }}</a>
+            <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-kids__cta">{{ section.settings.cta_label | default: fgp_kids_cta }}</a>
           {% endif %}
           {% if section.settings.cta2_label != blank %}
             {% if section.settings.cta2_variant_id != blank %}

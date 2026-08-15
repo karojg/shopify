@@ -145,14 +145,14 @@
     <button
       id="fgp-mob-trigger"
       class="header__icon fgp-mob__trigger large-up-hide"
-      aria-label="Open navigation"
+      aria-label="{{ 'fgp.aria.open_navigation' | t }}"
       aria-expanded="false"
       aria-controls="fgp-mob"
     >
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
         <path d="M0 1H20M0 7H20M0 13H20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
       </svg>
-      <span class="visually-hidden">Menu</span>
+      <span class="visually-hidden">{{ 'fgp.menu.title' | t }}</span>
     </button>
 
     {%- liquid

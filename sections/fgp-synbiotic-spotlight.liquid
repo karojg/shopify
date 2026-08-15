@@ -1,6 +1,6 @@
 {% render 'fgp-global' %}
 
-<section class="fgp-sbspot" aria-label="Synbiotic+ Spotlight">
+<section class="fgp-sbspot" aria-label="{{ 'fgp.aria.synbiotic_spotlight' | t }}">
   <div class="fgp-sbspot__inner">
 
     <!-- LEFT: Logo + badges -->
@@ -67,7 +67,7 @@
         {% endif %}
         <div class="fgp-sbspot__enzyme-icon">
           {% if section.settings.enzyme_icon != blank %}
-            <img src="{{ section.settings.enzyme_icon | img_url: '80x' }}" alt="Enzyme icon" loading="lazy">
+            <img src="{{ section.settings.enzyme_icon | img_url: '80x' }}" alt="{{ 'fgp.synbiotic.enzyme_icon_alt' | t }}" loading="lazy">
           {% else %}
             {%- comment -%}Enzyme — stylized gut/intestine{%- endcomment -%}
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
       <div class="fgp-sbspot__pill-row">
         <span class="fgp-sbspot__four-in-one">{{ section.settings.badge_text | default: '4 IN 1' }}</span>
         {% if section.settings.capsule_image != blank %}
-          <img class="fgp-sbspot__capsule-img" src="{{ section.settings.capsule_image | img_url: '200x' }}" alt="Capsules" loading="lazy">
+          <img class="fgp-sbspot__capsule-img" src="{{ section.settings.capsule_image | img_url: '200x' }}" alt="{{ 'fgp.synbiotic.capsules_alt' | t }}" loading="lazy">
         {% endif %}
       </div>
 

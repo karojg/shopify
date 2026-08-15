@@ -7,7 +7,7 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-nl" aria-label="Newsletter signup">
+<section class="fgp-nl" aria-label="{{ 'fgp.aria.newsletter' | t }}">
   <div class="fgp-nl__inner">
 
     <div class="fgp-nl__text">
@@ -24,7 +24,7 @@
       {% form 'customer', id: 'fgp-newsletter-form' %}
         <input type="hidden" name="contact[tags]" value="newsletter">
         <div class="fgp-nl__form">
-          <label for="fgp-nl-email" class="visually-hidden">Email address</label>
+          <label for="fgp-nl-email" class="visually-hidden">{{ 'fgp.shared.email_address' | t }}</label>
           <input
             id="fgp-nl-email"
             type="email"

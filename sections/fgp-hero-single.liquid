@@ -1,6 +1,6 @@
 {% render 'fgp-global' %}
 
-<section class="fgp-hh fgp-hh--v1" aria-label="Hero banner">
+<section class="fgp-hh fgp-hh--v1" aria-label="{{ 'fgp.aria.hero_banner' | t }}">
   <div class="fgp-hh__inner">
 
     <div class="fgp-hh__content">
@@ -51,7 +51,7 @@
         <img class="fgp-hh__bottle" src="{{ section.settings.product_image | img_url: '700x' }}" alt="{{ section.settings.heading_white }}" loading="eager">
       {% endif %}
       {% if section.settings.badge_image != blank %}
-        <img class="fgp-hh__badge" src="{{ section.settings.badge_image | img_url: '300x' }}" alt="Recommended by" loading="lazy">
+        <img class="fgp-hh__badge" src="{{ section.settings.badge_image | img_url: '300x' }}" alt="{{ 'fgp.shared.recommended_by' | t }}" loading="lazy">
       {% endif %}
     </div>
 

@@ -6,7 +6,7 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-mission" aria-label="Our mission">
+<section class="fgp-mission" aria-label="{{ 'fgp.aria.mission_text' | t }}">
   <div class="fgp-mission__inner">
     {% if section.settings.eyebrow != blank %}
       <p class="fgp-mission__eyebrow">{{ section.settings.eyebrow }}</p>

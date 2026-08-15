@@ -6,7 +6,10 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-kspot" aria-label="Kids Probiotics Spotlight">
+{%- assign fgp_kids_gummies    = 'fgp.kids.gummies_text_html' | t -%}
+{%- assign fgp_kids_bottle_alt = 'fgp.kids.bottle_alt'        | t -%}
+
+<section class="fgp-kspot" aria-label="{{ 'fgp.aria.kids_spotlight' | t }}">
   <div class="fgp-kspot__inner">
 
     <!-- LEFT: Logo + DE111 badge + no refrigeration -->
@@ -25,7 +28,7 @@
           <img
             class="fgp-kspot__badge-icon"
             src="{{ section.settings.badge_icon | img_url: 'master' }}"
-            alt="DE111 Bacillus Subtilis"
+            alt="{{ 'fgp.kids.de111_alt' | t }}"
             loading="lazy"
           >
         {% endif %}
@@ -53,7 +56,7 @@
         <img
           class="fgp-kspot__bottle"
           src="{{ section.settings.bottle_image | img_url: 'master' }}"
-          alt="{{ section.settings.bottle_image_alt | default: 'Kids Probiotics bottle' }}"
+          alt="{{ section.settings.bottle_image_alt | default: fgp_kids_bottle_alt }}"
           loading="lazy"
         >
       {% endif %}
@@ -62,7 +65,7 @@
     <!-- RIGHT: Description + dosage rows -->
     <div class="fgp-kspot__col fgp-kspot__col--right">
       <div class="fgp-kspot__description">
-        {{ section.settings.description | default: '<p>They gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</p>' }}
+        {{ section.settings.description | default: fgp_kids_gummies }}
       </div>
 
       <div class="fgp-kspot__dosage">
@@ -71,7 +74,7 @@
             <img
               class="fgp-kspot__gummy-img"
               src="{{ section.settings.gummy_child_image | img_url: 'master' }}"
-              alt="1 gummy"
+              alt="{{ 'fgp.kids.gummy_1_alt' | t }}"
               loading="lazy"
             >
           {% endif %}
@@ -82,7 +85,7 @@
             <img
               class="fgp-kspot__gummy-img"
               src="{{ section.settings.gummy_adult_image | img_url: 'master' }}"
-              alt="2 gummies"
+              alt="{{ 'fgp.kids.gummy_2_alt' | t }}"
               loading="lazy"
             >
           {% endif %}

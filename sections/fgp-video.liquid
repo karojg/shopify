@@ -1,6 +1,6 @@
 {% render 'fgp-global' %}
 
-<section class="fgp-vid" aria-label="Video section">
+<section class="fgp-vid" aria-label="{{ 'fgp.aria.video' | t }}">
 
   <div class="fgp-vid__wrap">
     {% if section.settings.video_url != blank %}
@@ -13,7 +13,7 @@
         >
         <button
           class="fgp-vid__play-btn"
-          aria-label="Play video"
+          aria-label="{{ 'fgp.shared.play_video' | t }}"
           data-video-url="{{ section.settings.video_url }}"
           data-player-id="fgp-vid-{{ section.id }}"
         >

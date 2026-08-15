@@ -6,7 +6,7 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-blhero" aria-label="Blog">
+<section class="fgp-blhero" aria-label="{{ 'fgp.aria.blog_hero' | t }}">
   <div class="fgp-blhero__inner">
     {% if section.settings.eyebrow != blank %}
       <p class="fgp-blhero__eyebrow">{{ section.settings.eyebrow }}</p>

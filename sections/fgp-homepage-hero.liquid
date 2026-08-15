@@ -2,7 +2,7 @@
 
 {% assign v = section.settings.variant %}
 
-<section class="fgp-hh fgp-hh--{{ v }}" aria-label="Hero banner">
+<section class="fgp-hh fgp-hh--{{ v }}" aria-label="{{ 'fgp.aria.hero_banner' | t }}">
 
   {%- if v == 'hero_1' -%}
   <!-- ── Hero 1: Navy — product bottle + pills ── -->
@@ -43,7 +43,7 @@
         <img class="fgp-hh__bottle" src="{{ section.settings.h1_product_image | img_url: '600x' }}" alt="{{ section.settings.h1_heading }}" loading="eager">
       {% endif %}
       {% if section.settings.h1_badge_image != blank %}
-        <img class="fgp-hh__badge" src="{{ section.settings.h1_badge_image | img_url: '300x' }}" alt="Recommended by" loading="lazy">
+        <img class="fgp-hh__badge" src="{{ section.settings.h1_badge_image | img_url: '300x' }}" alt="{{ 'fgp.shared.recommended_by' | t }}" loading="lazy">
       {% endif %}
     </div>
   </div>

@@ -6,7 +6,7 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-docs" aria-label="Recommended by Doctors">
+<section class="fgp-docs" aria-label="{{ 'fgp.aria.doctor_testimonials' | t }}">
 
   <div class="fgp-docs__header">
     {% if section.settings.eyebrow != blank %}
@@ -49,7 +49,7 @@
         {% if block.settings.quote != blank %}
           <p class="fgp-docs__quote">&ldquo;{{ block.settings.quote }}</p>
           {% if block.settings.quote_url != blank %}
-            <a href="{{ block.settings.quote_url }}" class="fgp-docs__quote-arrow" target="_blank" rel="noopener" aria-label="Read more">→</a>
+            <a href="{{ block.settings.quote_url }}" class="fgp-docs__quote-arrow" target="_blank" rel="noopener" aria-label="{{ 'fgp.shared.read_more' | t }}">→</a>
           {% endif %}
         {% endif %}
 

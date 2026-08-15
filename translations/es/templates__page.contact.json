@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "fgp_contact_hero": {
+      "type": "fgp-contact-hero",
+      "name": "Contact Hero",
+      "settings": {
+        "eyebrow": "CONTÁCTANOS",
+        "heading": "Contáctanos",
+        "subtext": "Nos encantaría saber de ti. Completa el formulario y te responderemos lo antes posible."
+      }
+    },
+    "fgp_contact_info": {
+      "type": "fgp-contact-info",
+      "blocks": {
+        "card_email": {
+          "type": "info_card",
+          "settings": {
+            "type": "email",
+            "label": "Correo electrónico",
+            "value": "hola@feelgoodpharma.com"
+          }
+        },
+        "card_phone": {
+          "type": "info_card",
+          "settings": {
+            "type": "phone",
+            "label": "Teléfono",
+            "value": "+506 XXXX XXXX"
+          }
+        },
+        "card_location": {
+          "type": "info_card",
+          "settings": {
+            "type": "location",
+            "label": "Ubicación",
+            "value": "San José, Costa Rica"
+          }
+        },
+        "card_hours": {
+          "type": "info_card",
+          "settings": {
+            "type": "hours",
+            "label": "Horario",
+            "value": "Lun–Vie: 8 a.m. – 5 p.m."
+          }
+        }
+      },
+      "block_order": [
+        "card_email",
+        "card_phone",
+        "card_location",
+        "card_hours"
+      ],
+      "name": "Contact Info Cards",
+      "settings": {}
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Envíanos un mensaje",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 48,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_subfooter_contact": {
+      "type": "fgp-subfooter",
+      "name": "FGP Sub-footer",
+      "settings": {
+        "tagline": "",
+        "hashtag": "#FeelGoodWithin",
+        "ig_handle": "feel.goodpharma"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_contact_hero",
+    "fgp_contact_info",
+    "form",
+    "fgp_subfooter_contact"
+  ]
+}

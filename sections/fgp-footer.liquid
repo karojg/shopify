@@ -1,6 +1,6 @@
 {% render 'fgp-global' %}
 
-<footer class="fgp-ft" aria-label="Site footer">
+<footer class="fgp-ft" aria-label="{{ 'fgp.aria.footer' | t }}">
 
   <div class="fgp-ft__inner">
 
@@ -68,7 +68,7 @@
         {% form 'customer', id: 'fgp-ft-nl-form' %}
           <input type="hidden" name="contact[tags]" value="newsletter">
           <div class="fgp-ft__nl-row">
-            <label for="fgp-ft-email" class="visually-hidden">Email</label>
+            <label for="fgp-ft-email" class="visually-hidden">{{ 'fgp.shared.email' | t }}</label>
             <input
               id="fgp-ft-email"
               type="email"

@@ -7,13 +7,13 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-bye" aria-label="Say goodbye to symptoms">
+<section class="fgp-bye" aria-label="{{ 'fgp.aria.goodbye_symptoms' | t }}">
 
   <h2 class="fgp-bye__heading">
     {% if section.settings.heading != blank %}
       {{ section.settings.heading }}
     {% else %}
-      With <strong>SYNBIOTIC+,</strong><br>say goodbye to:
+      {{ 'fgp.goodbye.heading_html' | t }}
     {% endif %}
   </h2>
 

@@ -64,6 +64,10 @@
       "next_slide": "Diapositiva a la derecha",
       "previous_slide": "Diapositiva a la izquierda",
       "name": "Carrusel"
+    },
+    "meta": {
+      "tags": "Etiquetado \"{{ tags }}\"",
+      "page": "Página {{ page }}"
     }
   },
   "newsletter": {
@@ -570,6 +574,114 @@
     },
     "subfooter": {
       "tagline": "Feel Good Pharma cuida tu microbiota y la de tu familia."
+    },
+    "shared": {
+      "read_more": "Leer más",
+      "yes": "Sí",
+      "stars_5": "5 estrellas",
+      "play_video": "Reproducir video",
+      "email": "Correo electrónico",
+      "email_address": "Dirección de correo electrónico",
+      "recommended_by": "Recomendado por especialistas de la salud",
+      "products_alt": "Productos Feel Good Pharma"
+    },
+    "symptoms": {
+      "gluten": "Intolerancia al gluten",
+      "lactose": "Intolerancia a la lactosa",
+      "constipation": "Estreñimiento o diarrea",
+      "ibs": "Síndrome de intestino irritable",
+      "low_defenses": "Bajas defensas",
+      "antibiotics": "Desequilibrio intestinal por antibióticos"
+    },
+    "aria": {
+      "about_hero": "Sobre Feel Good Pharma",
+      "article_header": "Encabezado del artículo",
+      "benefits_banner": "Banner de beneficios",
+      "blog_hero": "Blog",
+      "comparison_table": "Comparación de productos",
+      "contact_hero": "Contáctanos",
+      "contact_info": "Información de contacto",
+      "customer_reviews": "Opiniones de clientes",
+      "doctor_testimonials": "Recomendado por médicos",
+      "footer": "Pie de página",
+      "for_you": "¿Este producto es para ti?",
+      "founder_quote": "Cita de la fundadora",
+      "hero_banner": "Banner principal",
+      "hero": "Portada",
+      "how_it_works": "Cómo funciona",
+      "kids_feature": "Sección Probióticos para Niños",
+      "kids_spotlight": "Destacado Probióticos para Niños",
+      "kids_symptoms": "Síntomas Probióticos para Niños",
+      "lifestyle_grid": "Fotos de estilo de vida",
+      "mission_text": "Nuestra misión",
+      "newsletter": "Suscripción al boletín",
+      "product_benefits": "Beneficios del producto",
+      "product_faq": "Preguntas frecuentes",
+      "products_grid": "Productos destacados",
+      "related_articles": "Artículos relacionados",
+      "store_locator": "Puntos de venta",
+      "brand": "Marca Feel Good Pharma",
+      "synbiotic_feature": "Sección Synbiotic+",
+      "synbiotic_spotlight": "Destacado Synbiotic+",
+      "goodbye_symptoms": "Dile adiós a los síntomas",
+      "team_grid": "Nuestro equipo",
+      "video": "Sección de video",
+      "page_not_found": "Página no encontrada",
+      "sticky_atc": "Agregar al carrito rápido",
+      "site_navigation": "Navegación del sitio",
+      "open_navigation": "Abrir navegación",
+      "close_menu": "Cerrar menú",
+      "search": "Buscar",
+      "follow_instagram": "Síguenos en Instagram",
+      "follow_facebook": "Síguenos en Facebook"
+    },
+    "menu": {
+      "title": "Menú",
+      "home": "Inicio",
+      "formulations": "Formulaciones",
+      "science": "La ciencia detrás",
+      "about": "Sobre nosotros",
+      "search_placeholder": "Buscar productos…",
+      "account": "Mi cuenta",
+      "log_in": "Iniciar sesión",
+      "cart": "Carrito"
+    },
+    "hero": {
+      "headline": "¿Es una simple sensación o",
+      "cta_label": "¡Haz el test!",
+      "announcement": "+275.000 clientes felices",
+      "badge_alt": "Recomendado por especialistas de la salud"
+    },
+    "synbiotic": {
+      "eyebrow": "ENZIMAS DIGESTIVAS",
+      "title": "SYNBIOTIC+",
+      "description_html": "<p>Formulación diseñada para brindar <strong>apoyo digestivo e inmunológico y equilibrar la microbiota intestinal.</strong></p>",
+      "cta_label": "Comprar Synbiotic+",
+      "product_alt": "Producto Synbiotic+",
+      "enzyme_icon_alt": "Icono de enzima",
+      "capsules_alt": "Cápsulas"
+    },
+    "kids": {
+      "title": "PROBIÓTICOS PARA NIÑOS",
+      "title_plain": "Probióticos para Niños",
+      "description_html": "<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>",
+      "cta_label": "Comprar Kids 60",
+      "product_alt": "Producto Probióticos para Niños",
+      "gummies_text_html": "<p>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</p>",
+      "gummy_1_alt": "1 gomita",
+      "gummy_2_alt": "2 gomitas",
+      "de111_alt": "DE111 Bacillus Subtilis",
+      "bottle_alt": "Frasco de Probióticos para Niños"
+    },
+    "goodbye": {
+      "heading_html": "Con <strong>SYNBIOTIC+,</strong><br>dile adiós a:"
+    },
+    "kids_symptoms": {
+      "heading": "Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:",
+      "heading_html": "Con <strong>PROBIÓTICOS PARA NIÑOS,</strong><br>tu hijo nunca más tendrá que sufrir de:"
+    },
+    "login": {
+      "no_account": "¿No tienes cuenta?"
     }
   }
 }

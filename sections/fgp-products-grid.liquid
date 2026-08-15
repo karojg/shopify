@@ -10,7 +10,7 @@
 
 {% assign source_collection = collections[section.settings.collection] %}
 
-<section class="fgp-pgrid" aria-label="Featured products">
+<section class="fgp-pgrid" aria-label="{{ 'fgp.aria.products_grid' | t }}">
 
   {% if section.settings.heading != blank %}
     <h2 class="fgp-pgrid__heading">{{ section.settings.heading }}</h2>

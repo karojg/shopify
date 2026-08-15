@@ -1,0 +1,604 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "tab_dosage": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dosis",
+            "icon": "none",
+            "content": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envíos",
+            "icon": "none",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>"
+          }
+        },
+        "tab_returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Política de devoluciones",
+            "icon": "none",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Compartir"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "tab_dosage",
+        "tab_shipping",
+        "tab_returns",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-2",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_ingredients": {
+      "type": "fgp-product-benefits",
+      "blocks": {
+        "ing_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Postbióticos psicobióticos",
+            "sublabel": "Modula el eje intestino-cerebro"
+          }
+        },
+        "ing_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Prebiótico de bacteriófagos",
+            "sublabel": "Apoya la salud intestinal"
+          }
+        },
+        "ing_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Ashwagandha",
+            "sublabel": "Adaptógeno. Regula el estrés"
+          }
+        },
+        "ing_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Mezcla de enzimas",
+            "sublabel": "Amplio espectro para la digestión de carbohidratos, grasas y proteínas"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2",
+        "ing_3",
+        "ing_4"
+      ],
+      "name": "Ingredients",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Formulado con los mejores ingredientes",
+        "subtext": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-3",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "fgp_benefits_banner": {
+      "type": "fgp-benefits-banner",
+      "blocks": {
+        "ben_1": {
+          "type": "benefit",
+          "settings": {
+            "label": "Mejora el sueño"
+          }
+        },
+        "ben_2": {
+          "type": "benefit",
+          "settings": {
+            "label": "Reduce el estrés"
+          }
+        },
+        "ben_3": {
+          "type": "benefit",
+          "settings": {
+            "label": "Apoya la salud intestinal"
+          }
+        },
+        "ben_4": {
+          "type": "benefit",
+          "settings": {
+            "label": "Adaptógeno y psicobiótico"
+          }
+        },
+        "ben_5": {
+          "type": "benefit",
+          "settings": {
+            "label": "Apoya a pacientes con SII"
+          }
+        }
+      },
+      "block_order": [
+        "ben_1",
+        "ben_2",
+        "ben_3",
+        "ben_4",
+        "ben_5"
+      ],
+      "name": "Benefits Banner",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Tu camino hacia el bienestar, el manejo del estrés, la salud mental y la adaptabilidad",
+        "subtext": "Apoyo para tu conexión intestino-cerebro: un psicobiótico de origen vegetal formulado para reducir el estrés, mejorar el sueño y favorecer la salud digestiva.",
+        "decoration": "shopify://shop_images/Group_141.png",
+        "product_image": "shopify://shop_images/render-stb.png"
+      }
+    },
+    "fgp_comparison_table": {
+      "type": "fgp-comparison-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Enzimas digestivas",
+            "our_value": "Stressbiotic®",
+            "other_value": "Enzimas digestivas",
+            "other_has": "yes"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Cepas probióticas",
+            "our_value": "5 cepas",
+            "other_value": "",
+            "other_has": "no"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Prebióticos",
+            "our_value": "",
+            "other_value": "",
+            "other_has": "no"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Postbióticos",
+            "our_value": "",
+            "other_value": "",
+            "other_has": "no"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Adaptógeno",
+            "our_value": "",
+            "other_value": "",
+            "other_has": "no"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Ingredientes patentados",
+            "our_value": "3 incluidos",
+            "other_value": "No incluye patentes",
+            "other_has": "no"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "feature": "Acción sobre estrés y sueño",
+            "our_value": "De alta proliferación",
+            "other_value": "Solo cepas para el sueño",
+            "other_has": "no"
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "feature": "Requiere refrigeración",
+            "our_value": "No requiere refrigeración",
+            "other_value": "No requiere refrigeración",
+            "other_has": "no"
+          }
+        },
+        "row_9": {
+          "type": "row",
+          "settings": {
+            "feature": "Porción / Duración",
+            "our_value": "2 cápsulas/día, 30 porciones",
+            "other_value": "1 a 3 cápsulas al día",
+            "other_has": "no"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8",
+        "row_9"
+      ],
+      "name": "Comparison Table",
+      "settings": {
+        "eyebrow": "NOTA LA DIFERENCIA",
+        "heading": "Cómo se compara Stressbiotic®",
+        "col_feature": "Característica",
+        "col_ours": "Stressbiotic®",
+        "col_other": "Otros productos"
+      }
+    },
+    "fgp_for_you": {
+      "type": "fgp-for-you",
+      "blocks": {
+        "p_1": {
+          "type": "persona",
+          "settings": {
+            "for_label": "PARA",
+            "title": "Profesionales y ejecutivos",
+            "description": "Stressbiotic actúa sobre el eje intestino-cerebro para que el rendimiento no cueste tu salud intestinal.",
+            "tags": "Apoyo al cortisol, concentración"
+          }
+        },
+        "p_2": {
+          "type": "persona",
+          "settings": {
+            "for_label": "PARA",
+            "title": "Pacientes con SII",
+            "description": "Cepas clínicamente estudiadas que calman el intestino y alivian los síntomas del SII día a día.",
+            "tags": "Salud intestinal, microbiota"
+          }
+        },
+        "p_3": {
+          "type": "persona",
+          "settings": {
+            "for_label": "PARA",
+            "title": "Personas con mucho estrés",
+            "description": "Los adaptógenos y psicobióticos trabajan juntos para calmar tu sistema nervioso desde adentro.",
+            "tags": "Alivio del estrés, adaptógeno"
+          }
+        },
+        "p_4": {
+          "type": "persona",
+          "settings": {
+            "for_label": "PARA",
+            "title": "Personas con problemas de sueño",
+            "description": "Formulado con cepas vinculadas clínicamente a una mejor calidad y duración del sueño.",
+            "tags": "Sueño, recuperación"
+          }
+        }
+      },
+      "block_order": [
+        "p_1",
+        "p_2",
+        "p_3",
+        "p_4"
+      ],
+      "name": "Is It For You?",
+      "settings": {
+        "eyebrow": "ENCUENTRA TU FÓRMULA",
+        "heading": "¿Stressbiotic® es para ti?",
+        "subtext": ""
+      }
+    },
+    "fgp_products_grid": {
+      "type": "fgp-products-grid",
+      "blocks": {
+        "prod_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
+          }
+        },
+        "prod_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
+          }
+        },
+        "prod_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3"
+      ],
+      "name": "Best Friends",
+      "settings": {
+        "collection": "",
+        "products_to_show": 3,
+        "heading": "Los nuevos mejores amigos de tu intestino",
+        "cta_label": "Comprar ahora"
+      }
+    },
+    "fgp_video": {
+      "type": "fgp-video",
+      "name": "Video",
+      "settings": {
+        "video_url": "",
+        "alt": "Feel Good Pharma — video de estilo de vida Stressbiotic"
+      }
+    },
+    "fgp_product_faq": {
+      "type": "fgp-product-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Cuál es la dosis recomendada?",
+            "answer": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Cuánto tarda en verse resultados?",
+            "answer": "<p>La mayoría de los clientes nota mejoras entre 2 y 4 semanas de uso diario constante.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Es seguro para uso prolongado?",
+            "answer": "<p>Sí. Stressbiotic está formulado con ingredientes naturales y seguros, diseñados para uso diario y prolongado.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "¿Necesita refrigeración?",
+            "answer": "<p>No. Consérvalo en un lugar fresco y seco, lejos de la luz solar directa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "name": "Product FAQ",
+      "settings": {
+        "layout": "split",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Tenemos las respuestas",
+        "subtext": ""
+      }
+    },
+    "fgp_doctor_testimonials": {
+      "type": "fgp-doctor-testimonials",
+      "blocks": {
+        "doc_1": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Gastroenterólogo",
+            "ig_handle": "",
+            "quote": "Recomiendo Stressbiotic a mis pacientes por su formulación completa y respaldada científicamente.",
+            "quote_url": ""
+          }
+        },
+        "doc_2": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Medicina interna",
+            "ig_handle": "",
+            "quote": "Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",
+            "quote_url": ""
+          }
+        },
+        "doc_3": {
+          "type": "doctor",
+          "settings": {
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Nutricionista",
+            "ig_handle": "",
+            "quote": "La combinación de adaptógenos y psicobióticos es justo lo que necesitan mis pacientes con estrés.",
+            "quote_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "doc_1",
+        "doc_2",
+        "doc_3"
+      ],
+      "name": "Doctor Testimonials",
+      "settings": {
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
+      }
+    },
+    "fgp_customer_reviews": {
+      "type": "fgp-customer-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Llevo 6 semanas usando Stressbiotic y mis niveles de estrés han bajado notablemente. ¡Ahora duermo mucho mejor!",
+            "name": "Valeria Muñoz",
+            "location": "San José, Costa Rica"
+          }
+        },
+        "rev_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Muy buen sabor",
+            "name": "Diana Torres",
+            "location": "Alajuela, Costa Rica"
+          }
+        },
+        "rev_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "Fácil de usar",
+            "name": "Sofía López",
+            "location": "Heredia, Costa Rica"
+          }
+        },
+        "rev_4": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "verified": true,
+            "review": "El mejor probiótico",
+            "name": "Marco Rodríguez",
+            "location": "Cartago, Costa Rica"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4"
+      ],
+      "name": "Customer Reviews",
+      "settings": {
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por los clientes"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fgp_ingredients",
+    "related-products",
+    "fgp_benefits_banner",
+    "fgp_comparison_table",
+    "fgp_for_you",
+    "fgp_products_grid",
+    "fgp_video",
+    "fgp_product_faq",
+    "fgp_doctor_testimonials",
+    "fgp_customer_reviews"
+  ]
+}

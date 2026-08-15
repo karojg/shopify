@@ -7,13 +7,13 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-ksym" aria-label="Kids Probiotics symptoms">
+<section class="fgp-ksym" aria-label="{{ 'fgp.aria.kids_symptoms' | t }}">
 
   <h2 class="fgp-ksym__heading">
     {% if section.settings.heading != blank %}
       {{ section.settings.heading }}
     {% else %}
-      With <strong>KIDS PROBIOTICS,</strong><br>your child will never have to suffer from:
+      {{ 'fgp.kids_symptoms.heading_html' | t }}
     {% endif %}
   </h2>
 

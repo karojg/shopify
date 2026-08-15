@@ -7,8 +7,13 @@
 
 {% render 'fgp-global' %}
 
+{%- assign fgp_syn_eyebrow     = 'fgp.synbiotic.eyebrow'          | t -%}
+{%- assign fgp_syn_description = 'fgp.synbiotic.description_html' | t -%}
+{%- assign fgp_syn_cta         = 'fgp.synbiotic.cta_label'        | t -%}
+{%- assign fgp_syn_product_alt = 'fgp.synbiotic.product_alt'      | t -%}
+
 <!-- ===================== SYNBIOTIC FEATURE SECTION ===================== -->
-<section class="fgp-syn" aria-label="Synbiotic+ Feature">
+<section class="fgp-syn" aria-label="{{ 'fgp.aria.synbiotic_feature' | t }}">
 
   <!-- ---- DESKTOP ---- -->
   <div class="fgp-syn__desktop">
@@ -16,11 +21,11 @@
 
       <!-- LEFT: Text + CTA -->
       <div class="fgp-syn__col-left">
-        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: 'DIGESTIVE ENZYMES' }}</p>
+        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: fgp_syn_eyebrow }}</p>
         <h2 class="fgp-syn__title">{{ section.settings.title | default: 'SYNBIOTIC+' }}</h2>
-        <div class="fgp-syn__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <div class="fgp-syn__description">{{ section.settings.description | default: fgp_syn_description }}</div>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-syn__cta">
-          {{ section.settings.cta_label | default: 'Shop Synbiotic+' }}
+          {{ section.settings.cta_label | default: fgp_syn_cta }}
         </a>
       </div>
 
@@ -30,7 +35,7 @@
           <img
             class="fgp-syn__product-img"
             src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: 'Synbiotic+ product' }}"
+            alt="{{ section.settings.product_image_alt | default: fgp_syn_product_alt }}"
             loading="lazy"
           >
         {% else %}
@@ -52,7 +57,7 @@
           <img
             class="fgp-syn__mobile-product-img"
             src="{{ mobile_img | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: 'Synbiotic+ product' }}"
+            alt="{{ section.settings.product_image_alt | default: fgp_syn_product_alt }}"
             loading="lazy"
           >
         {% else %}
@@ -62,11 +67,11 @@
 
       <!-- BOTTOM: Blue panel with text + CTA -->
       <div class="fgp-syn__mobile-panel">
-        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: 'DIGESTIVE ENZYMES' }}</p>
+        <p class="fgp-syn__eyebrow">{{ section.settings.eyebrow | default: fgp_syn_eyebrow }}</p>
         <h2 class="fgp-syn__title">{{ section.settings.title | default: 'SYNBIOTIC+' }}</h2>
-        <div class="fgp-syn__description">{{ section.settings.description | default: '<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>' }}</div>
+        <div class="fgp-syn__description">{{ section.settings.description | default: fgp_syn_description }}</div>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-syn__cta">
-          {{ section.settings.cta_label | default: 'Shop Synbiotic+' }}
+          {{ section.settings.cta_label | default: fgp_syn_cta }}
         </a>
       </div>
 

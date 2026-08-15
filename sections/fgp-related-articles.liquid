@@ -11,7 +11,7 @@
 {% assign articles_to_show = section.settings.articles_to_show | default: 3 %}
 
 {% if other_articles.size > 0 %}
-<section class="fgp-rart" aria-label="Related articles">
+<section class="fgp-rart" aria-label="{{ 'fgp.aria.related_articles' | t }}">
 
   <div class="fgp-rart__header">
     <h2 class="fgp-rart__heading">{{ section.settings.heading | default: 'More from our Blog' }}</h2>
@@ -45,7 +45,7 @@
           {% if section.settings.show_excerpt and art.excerpt_or_content != blank %}
             <p class="fgp-rart__excerpt">{{ art.excerpt_or_content | strip_html | truncate: 100 }}</p>
           {% endif %}
-          <a href="{{ art.url }}" class="fgp-rart__read-more">Read more</a>
+          <a href="{{ art.url }}" class="fgp-rart__read-more">{{ 'fgp.shared.read_more' | t }}</a>
         </div>
       </article>
     {% endfor %}

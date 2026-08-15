@@ -13,6 +13,12 @@
 
 {% render 'fgp-global' %}
 
+{%- assign fgp_hero_headline     = 'fgp.hero.headline'          | t -%}
+{%- assign fgp_hero_cta          = 'fgp.hero.cta_label'         | t -%}
+{%- assign fgp_hero_announcement = 'fgp.hero.announcement'      | t -%}
+{%- assign fgp_products_alt      = 'fgp.shared.products_alt'    | t -%}
+{%- assign fgp_badge_alt         = 'fgp.hero.badge_alt'         | t -%}
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +26,7 @@
 
 
 <!-- ===================== HERO SECTION ===================== -->
-<section class="fgp-hero" aria-label="Hero">
+<section class="fgp-hero" aria-label="{{ 'fgp.aria.hero' | t }}">
 
   <!-- ---- DESKTOP HERO ---- -->
   <div class="fgp-hero__desktop">
@@ -29,16 +35,16 @@
       <!-- COLUMN 1: Headline + Product Image -->
       <div class="fgp-hero__desktop-col-left">
         <h1 class="fgp-hero__desktop-headline">
-          {{ section.settings.headline_text | default: 'Is it a gut feeling or' }}
+          {{ section.settings.headline_text | default: fgp_hero_headline }}
         </h1>
 
         <div class="fgp-hero__desktop-products">
           {% if section.settings.product_combined_image != blank %}
-            <img class="fgp-hero__product-combined-desktop" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
+            <img class="fgp-hero__product-combined-desktop" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
           {% endif %}
 
           {% if section.settings.badge_image != blank %}
-            <img class="fgp-hero__badge fgp-hero__badge--desktop" src="{{ section.settings.badge_image | img_url: '160x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
+            <img class="fgp-hero__badge fgp-hero__badge--desktop" src="{{ section.settings.badge_image | img_url: '160x' }}" alt="{{ section.settings.badge_alt | default: fgp_badge_alt }}" loading="lazy">
           {% endif %}
         </div>
       </div>
@@ -58,18 +64,18 @@
               <li>{{ val }}</li>
             {% elsif section.settings.symptom_1 == blank %}
               {% case i %}
-                {% when 1 %}<li>Gluten intolerance</li>
-                {% when 2 %}<li>Lactose intolerance</li>
-                {% when 3 %}<li>Constipation or Diarrhea</li>
-                {% when 4 %}<li>Irritable Bowel Syndrome</li>
-                {% when 5 %}<li>Low defenses</li>
+                {% when 1 %}<li>{{ 'fgp.symptoms.gluten' | t }}</li>
+                {% when 2 %}<li>{{ 'fgp.symptoms.lactose' | t }}</li>
+                {% when 3 %}<li>{{ 'fgp.symptoms.constipation' | t }}</li>
+                {% when 4 %}<li>{{ 'fgp.symptoms.ibs' | t }}</li>
+                {% when 5 %}<li>{{ 'fgp.symptoms.low_defenses' | t }}</li>
               {% endcase %}
             {% endif %}
           {% endfor %}
         </ul>
 
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta fgp-hero__cta--desktop">
-          {{ section.settings.cta_label | default: 'Take the Test!' }}
+          {{ section.settings.cta_label | default: fgp_hero_cta }}
         </a>
       </div>
 
@@ -77,8 +83,8 @@
 
     <!-- Announcement Bar (desktop) -->
     <div class="fgp-hero__announcement fgp-hero__announcement--desktop">
-      <span class="fgp-hero__stars" aria-label="5 stars">★★★★★</span>
-      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: '+275,000 Happy Customers' }}</span>
+      <span class="fgp-hero__stars" aria-label="{{ 'fgp.shared.stars_5' | t }}">★★★★★</span>
+      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: fgp_hero_announcement }}</span>
     </div>
   </div>
 
@@ -90,7 +96,7 @@
       <!-- TEXT LAYER: headline + symptoms + CTA -->
       <div class="fgp-hero__content-wrapper">
         <h1 class="fgp-hero__headline">
-          {{ section.settings.headline_text | default: 'Is it a gut feeling or' }}
+          {{ section.settings.headline_text | default: fgp_hero_headline }}
         </h1>
         <div class="fgp-hero__blank-line-wrap">
           <span class="fgp-hero__underline-line"></span>
@@ -104,17 +110,17 @@
               <li>{{ val }}</li>
             {% else %}
               {% case i %}
-                {% when 1 %}<li>Gluten intolerance</li>
-                {% when 2 %}<li>Lactose intolerance</li>
-                {% when 3 %}<li>Constipation or Diarrhea</li>
-                {% when 4 %}<li>Irritable Bowel Syndrome</li>
-                {% when 5 %}<li>Low defenses</li>
+                {% when 1 %}<li>{{ 'fgp.symptoms.gluten' | t }}</li>
+                {% when 2 %}<li>{{ 'fgp.symptoms.lactose' | t }}</li>
+                {% when 3 %}<li>{{ 'fgp.symptoms.constipation' | t }}</li>
+                {% when 4 %}<li>{{ 'fgp.symptoms.ibs' | t }}</li>
+                {% when 5 %}<li>{{ 'fgp.symptoms.low_defenses' | t }}</li>
               {% endcase %}
             {% endif %}
           {% endfor %}
         </ul>
         <a href="{{ section.settings.cta_url | default: '#' }}" class="fgp-hero__cta">
-          {{ section.settings.cta_label | default: 'Take the Test!' }}
+          {{ section.settings.cta_label | default: fgp_hero_cta }}
         </a>
       </div>
 
@@ -122,10 +128,10 @@
       <div class="fgp-hero__products">
         <div class="fgp-hero__products-wrapper">
           {% if section.settings.product_combined_image != blank %}
-            <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: 'Feel Good Pharma Products' }}" loading="lazy">
+            <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
           {% endif %}
           {% if section.settings.badge_image != blank %}
-            <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: 'Recommended by health specialists' }}" loading="lazy">
+            <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: fgp_badge_alt }}" loading="lazy">
           {% endif %}
         </div>
       </div>
@@ -134,8 +140,8 @@
 
     <!-- Announcement Bar (mobile) -->
     <div class="fgp-hero__announcement fgp-hero__announcement--mobile">
-      <span class="fgp-hero__stars" aria-label="5 stars">★★★★★</span>
-      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: '+275,000 Happy Customers' }}</span>
+      <span class="fgp-hero__stars" aria-label="{{ 'fgp.shared.stars_5' | t }}">★★★★★</span>
+      <span class="fgp-hero__announcement-text">{{ section.settings.announcement_text | default: fgp_hero_announcement }}</span>
     </div>
 
   </div>
@@ -627,7 +633,7 @@
       "id": "announcement_text",
       "label": "Announcement Text",
       "default": "+275,000 Happy Customers"
-    },
+    }
   ],
   "presets": [
     {

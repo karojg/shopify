@@ -7,7 +7,7 @@
 
 {% render 'fgp-global' %}
 
-<section class="fgp-cinfo" aria-label="Contact information">
+<section class="fgp-cinfo" aria-label="{{ 'fgp.aria.contact_info' | t }}">
   <div class="fgp-cinfo__grid">
     {% for block in section.blocks %}
       <div class="fgp-cinfo__card" {{ block.shopify_attributes }}>

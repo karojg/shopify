@@ -10,7 +10,7 @@
   {% endif %}
 {% endfor %}
 
-<section class="fgp-hv2" aria-label="Hero banner">
+<section class="fgp-hv2" aria-label="{{ 'fgp.aria.hero_banner' | t }}">
   <div class="fgp-hv2__inner">
 
     <!-- Heading row: spans full width -->
@@ -56,7 +56,7 @@
             <img
               class="fgp-hv2__badge fgp-hv2__badge--mb"
               src="{{ section.settings.badge_image | img_url: '160x' }}"
-              alt="Recommended by Health Specialists"
+              alt="{{ 'fgp.shared.recommended_by' | t }}"
               loading="lazy"
               width="56" height="56">
           {% endif %}
@@ -72,7 +72,7 @@
           <img
             class="fgp-hv2__badge fgp-hv2__badge--dk"
             src="{{ section.settings.badge_image | img_url: '200x' }}"
-            alt="Recommended by Health Specialists"
+            alt="{{ 'fgp.shared.recommended_by' | t }}"
             loading="lazy"
             width="88" height="88">
         {% endif %}
