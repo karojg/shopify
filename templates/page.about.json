@@ -13,10 +13,10 @@
       "type": "fgp-about-hero",
       "name": "About Hero",
       "settings": {
-        "eyebrow": "OUR STORY",
-        "heading": "Helping you live a healthier, fuller life.",
-        "subtext": "<p>At Feel Good, our goal is to help you live a healthier, fuller, more satisfying life. We know wellness is a journey, and we're here to support you every step of the way. Our products are made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results.</p>",
-        "cta_label": "Meet Dr. Katherine",
+        "eyebrow": "NUESTRA HISTORIA",
+        "heading": "Ayudándote a vivir una vida más saludable y plena.",
+        "subtext": "<p>En Feel Good, nuestro objetivo es ayudarte a vivir una vida más saludable, plena y satisfactoria. Sabemos que el bienestar es un viaje, y estamos aquí para apoyarte en cada paso del camino. Nuestros productos están diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles.</p>",
+        "cta_label": "Conoce a la Dra. Katherine",
         "cta_url": "",
         "image": "shopify://shop_images/IMG_0462.jpg",
         "image_alt": "Dr. Katherine Jiménez, founder of Feel Good Pharma"
@@ -26,9 +26,9 @@
       "type": "fgp-mission-text",
       "name": "Mission Text",
       "settings": {
-        "eyebrow": "OUR MISSION",
-        "heading": "Science and care, in every formula",
-        "body": "<p>We take pride in offering products made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results. They're easy to fit into your daily routine, helping you move, feel, and look your best from the inside out.</p><p>Our plant-based digestive enzymes, prebiotics, probiotics, and postbiotics are designed to improve gastrointestinal health and support the immune system. We believe every customer is unique and deserves personal attention. That's why we work hard to give you exceptional service, so you're completely satisfied with our products.</p>"
+        "eyebrow": "NUESTRA MISIÓN",
+        "heading": "Ciencia y cuidado, en cada fórmula",
+        "body": "<p>Nos enorgullece ofrecer productos diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles. Estos productos son fáciles de incorporar en tu estilo de vida diario, para ayudarte a moverte, sentirte y lucir lo mejor posible, de adentro hacia afuera.</p><p>Nuestras enzimas digestivas de origen vegetal, prebióticos, probióticos y postbióticos están diseñados para mejorar la salud gastrointestinal y apoyar el sistema inmunológico. Creemos que cada cliente es único y merece una atención personalizada. Es por eso que nos esforzamos en proporcionarte un servicio al cliente excepcional, para asegurarnos de que estés completamente satisfecho con nuestros productos.</p>"
       }
     },
     "fgp_founder_about": {
@@ -36,9 +36,9 @@
       "name": "Founder Section",
       "settings": {
         "founder_image": "shopify://shop_images/IMG_0462.jpg",
-        "founder_name": "Dr. Katherine Jiménez, Founder",
-        "quote": "Feel Good Pharma was founded by Dr. Katherine Jiménez — a pharmacist with a passion for health who has always sought the best for her family and friends. That commitment to health and wellbeing led her to create products that make a real difference in people's lives, and it shows in every product we make and every interaction we have.",
-        "cta_label": "View our products",
+        "founder_name": "Dra. Katherine Jiménez, Fundadora",
+        "quote": "Feel Good Pharma fue creado por la Dra. Katherine Jiménez, una mujer y farmacéutica apasionada por la salud, que siempre busca lo mejor para su familia y amigos. Su compromiso con la salud y el bienestar llevó a la Dra. Jiménez a crear productos que hacen la diferencia en la vida de las personas, y este compromiso se refleja en cada uno de nuestros productos y en el servicio que brindamos.",
+        "cta_label": "Ver nuestros productos",
         "cta_url": "shopify://collections/all"
       }
     },

@@ -32,7 +32,7 @@
         "template--18641843257665__23cb49cd-699f-4bea-a5e2-ad07db6241cd-168108581238f5d118-1": {
           "type": "text",
           "settings": {
-            "text": "<p>At Feel Good, our goal is to help you live a healthier, fuller, more satisfying life. We know wellness is a journey, and we're here to support you every step of the way. Our products are made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results.</p><p>We take pride in offering products made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results. They're easy to fit into your daily routine, helping you move, feel, and look your best from the inside out.</p><p>Our plant-based digestive enzymes, prebiotics, probiotics, and postbiotics are designed to improve gastrointestinal health and support the immune system.</p><p>We believe every customer is unique and deserves personal attention. That's why we work hard to give you exceptional service, so you're completely satisfied with our products.</p><p>Feel Good Pharma was founded by Dr. Katherine Jiménez — a pharmacist with a passion for health who has always sought the best for her family and friends.</p><p>Her commitment to health and wellbeing led Dr. Jiménez to create products that make a real difference in people's lives, and that commitment shows in every product we make and every interaction we have.</p>",
+            "text": "<p>En Feel Good, nuestro objetivo es ayudarte a vivir una vida más saludable, plena y satisfactoria. Sabemos que el bienestar es un viaje, y estamos aquí para apoyarte en cada paso del camino. Nuestros productos están diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles.</p><p>Nos enorgullece ofrecer productos diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles. Estos productos son fáciles de incorporar en tu estilo de vida diario, para ayudarte a moverte, sentirte y lucir lo mejor posible, de adentro hacia afuera.</p><p>Nuestras enzimas digestivas de origen vegetal, prebióticos, probióticos y postbióticos están diseñados para mejorar la salud gastrointestinal y apoyar el sistema inmunológico. </p><p>Creemos que cada cliente es único y merece una atención personalizada. Es por eso que nos esforzamos en proporcionarte un servicio al cliente excepcional, para asegurarnos de que estés completamente satisfecho con nuestros productos.</p><p>Feel Good Pharma fue creado por la Dra. Katherine Jiménez, una mujer y farmacéutica apasionada por la salud, que siempre busca lo mejor para su familia y amigos. </p><p>Su compromiso con la salud y el bienestar llevó a la Dra. Jiménez a crear productos que hacen la diferencia en la vida de las personas, y este compromiso se refleja en cada uno de nuestros productos y en el servicio que brindamos.</p>",
             "text_style": "body"
           }
         },
@@ -40,7 +40,7 @@
           "type": "button",
           "disabled": true,
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Texto del botón",
             "button_link": ""
           }
         }

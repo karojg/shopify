@@ -57,27 +57,27 @@
         "tab_whats_included": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "What's included",
+            "heading": "Qué incluye",
             "icon": "none",
-            "content": "<p>This kit includes Synbiotic+, Kids Probiotics, and Stressbiotic® — one full bottle of each.</p>",
+            "content": "<p>Este kit incluye Synbiotic+, Probióticos para Niños y Stressbiotic®: un frasco completo de cada uno.</p>",
             "page": ""
           }
         },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
             "page": ""
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -85,7 +85,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -125,25 +125,25 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "label": "Complete gut health system"
+            "label": "Sistema completo para la salud intestinal"
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "label": "One bottle of each formula"
+            "label": "Un frasco de cada fórmula"
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
-            "label": "Save vs. buying separately"
+            "label": "Ahorra frente a comprarlos por separado"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
-            "label": "Non GMO"
+            "label": "Sin OGM"
           }
         }
       },
@@ -156,7 +156,7 @@
       "name": "FGP Icon Strip",
       "settings": {
         "bg": "white",
-        "aria_label": "Kit benefits"
+        "aria_label": "Beneficios del kit"
       }
     },
     "fgp_products_grid_kit": {
@@ -166,27 +166,27 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "DIGESTIVE ENZYMES",
+            "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Synbiotic+",
-            "cta_label": "Shop Synbiotic+"
+            "cta_label": "Comprar Synbiotic+"
           }
         },
         "prod_kids": {
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "KIDS",
-            "placeholder_title": "Kids Probiotics",
-            "cta_label": "Shop Kids Probiotics"
+            "eyebrow": "NIÑOS",
+            "placeholder_title": "Probióticos para Niños",
+            "cta_label": "Comprar Probióticos para Niños"
           }
         },
         "prod_stressbiotic": {
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "STRESS + GUT",
+            "eyebrow": "ESTRÉS + INTESTINO",
             "placeholder_title": "Stressbiotic®",
-            "cta_label": "Shop Stressbiotic®"
+            "cta_label": "Comprar Stressbiotic®"
           }
         }
       },
@@ -199,8 +199,8 @@
       "settings": {
         "collection": "",
         "products_to_show": 3,
-        "heading": "What's In The Kit",
-        "cta_label": "Shop Now"
+        "heading": "Qué contiene el kit",
+        "cta_label": "Comprar ahora"
       }
     },
     "fgp_origin_card_kit": {
@@ -209,7 +209,7 @@
         "cert_logo_1": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "DE111 Probiotic"
+            "logo_alt": "Probiótico DE111"
           }
         },
         "cert_logo_2": {
@@ -227,7 +227,7 @@
         "cert_logo_4": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "Made in USA"
+            "logo_alt": "Hecho en EE. UU."
           }
         }
       },
@@ -239,9 +239,9 @@
       ],
       "name": "FGP Origin Card",
       "settings": {
-        "heading": "Formulated in Costa Rica",
-        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
-        "cta_label": "Explore Ingredients",
+        "heading": "Formulado en Costa Rica",
+        "body": "<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>",
+        "cta_label": "Explorar ingredientes",
         "cta_url": "",
         "photo": "",
         "photo_alt": ""
@@ -253,29 +253,29 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "What's included in the Kit?",
-            "answer": "<p>One full bottle each of Synbiotic+, Kids Probiotics, and Stressbiotic®.</p>"
+            "question": "¿Qué incluye el kit?",
+            "answer": "<p>Un frasco completo de Synbiotic+, Probióticos para Niños y Stressbiotic®.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Can the whole family use it?",
-            "answer": "<p>Yes — the Kit is designed to cover adults, kids, and stress/gut-brain support in one purchase.</p>"
+            "question": "¿Lo puede usar toda la familia?",
+            "answer": "<p>Sí: el kit está diseñado para cubrir adultos, niños y el apoyo al eje intestino-cerebro en una sola compra.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Do I take all three at once?",
-            "answer": "<p>No — each product has its own dosage instructions on the bottle. Use the one that matches your (or your child's) needs.</p>"
+            "question": "¿Debo tomar los tres a la vez?",
+            "answer": "<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usa el que se ajuste a tus necesidades o a las de tu hijo.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Is the Kit cheaper than buying separately?",
-            "answer": "<p>Yes, the Kit is priced below the combined cost of buying each product on its own.</p>"
+            "question": "¿El kit es más barato que comprar por separado?",
+            "answer": "<p>Sí, el precio del kit es inferior al costo combinado de comprar cada producto por separado.</p>"
           }
         }
       },
@@ -288,8 +288,8 @@
       "name": "Kit FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "GOT QUESTIONS?",
-        "heading": "Frequently Asked Questions",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Preguntas frecuentes",
         "subtext": ""
       }
     },
@@ -301,7 +301,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Got the Kit for the whole family — kids love their gummies and I finally found something that helps with my stress and digestion together.",
+            "review": "Compré el kit para toda la familia: a los niños les encantan sus gomitas y por fin encontré algo que me ayuda con el estrés y la digestión a la vez.",
             "name": "Fernanda C.",
             "location": "San José, Costa Rica"
           }
@@ -311,7 +311,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Great value buying all three together instead of separately. Easy to keep track of who takes what.",
+            "review": "Excelente relación calidad-precio comprando los tres juntos en vez de por separado. Es fácil llevar el control de quién toma qué.",
             "name": "Luis A.",
             "location": "Heredia, Costa Rica"
           }
@@ -323,15 +323,15 @@
       ],
       "name": "Customer Reviews",
       "settings": {
-        "eyebrow": "WHAT OUR CUSTOMERS SAY",
-        "heading": "Loved by Families"
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por las familias"
       }
     },
     "related-products": {
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,

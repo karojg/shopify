@@ -1,0 +1,509 @@
+﻿file,section_type,json_path,setting,spanish_default,english_translation,status
+templates/article.json,main-article,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/article.json,fgp-related-articles,sections.fgp_related_articles.settings,heading,Más de nuestro blog,More from our Blog,translated
+templates/article.json,fgp-subfooter,sections.fgp_subfooter_article.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/article.json,fgp-subfooter,sections.fgp_subfooter_article.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/blog.json,fgp-blog-hero,sections.fgp_blog_hero.settings,eyebrow,CONSEJOS DE BIENESTAR Y NOVEDADES,WELLNESS TIPS & UPDATES,translated
+templates/blog.json,fgp-blog-hero,sections.fgp_blog_hero.settings,heading,Blog,Blog,identical
+templates/blog.json,fgp-blog-hero,sections.fgp_blog_hero.settings,subtext,Consejos respaldados por la ciencia para ayudarte a sentirte bien de adentro hacia afuera.,Science-backed tips to help you feel good from the inside out.,translated
+templates/blog.json,fgp-subfooter,sections.fgp_subfooter_blog.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/blog.json,fgp-subfooter,sections.fgp_subfooter_blog.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_9LcLEX.settings,label,Estrés,Stress,translated
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_Czacg9.settings,label,Intolerancia al gluten,Gluten intolerance,translated
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_84T8f3.settings,label,Intolerancia a la lactosa,Lactose intolerance,translated
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_8DJzUP.settings,label,Estreñimiento o diarrea,Constipation or Diarrhea,translated
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_hijUjK.settings,label,Síndrome de intestino irritable,Irritable Bowel Syndrome,translated
+templates/index.json,fgp-hero-multi,sections.fgp_hero_multi_Qt6XNd.blocks.symptom_en4tU4.settings,label,Bajas defensas,Low defenses,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.settings,section_label,Como se vio en,As seen in,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.blocks.logo_Mpn7K6.settings,logo_alt,Socio Amazon,Amazon Partner,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.blocks.logo_QmkzCL.settings,logo_alt,Socio Clínica Bíblica,Clinica Biblica Partner,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.blocks.logo_ezYUPA.settings,logo_alt,Socio,Partner,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.blocks.logo_wcx4TA.settings,logo_alt,Socio,Partner,translated
+templates/index.json,fgp-logo-carousel,sections.fgp_logo_carousel_jRLBaA.blocks.logo_CmkGqk.settings,logo_alt,Socio,Partner,translated
+templates/index.json,image-with-text,sections.b8b0c886-8d85-4099-b9f2-61e11d876167.blocks.template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-0.settings,heading,<strong>¿Es una simple sensación o</strong>,<strong>Is it a gut feeling or</strong>,translated
+templates/index.json,image-with-text,sections.b8b0c886-8d85-4099-b9f2-61e11d876167.blocks.template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-1.settings,text,<h2>prebiótico<br/>probiótico<br/>postbiótico</h2>,<h2>prebiótico<br/>probiótico<br/>postbiótico</h2>,identical
+templates/index.json,image-with-text,sections.b8b0c886-8d85-4099-b9f2-61e11d876167.blocks.template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-2.settings,button_label,Comprar,Comprar,identical
+templates/index.json,fgp-synbiotic-feature,sections.fgp_synbiotic_feature_jkwUPt.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/index.json,fgp-synbiotic-feature,sections.fgp_synbiotic_feature_jkwUPt.settings,title,SYNBIOTIC+,SYNBIOTIC+,identical
+templates/index.json,fgp-synbiotic-feature,sections.fgp_synbiotic_feature_jkwUPt.settings,description,<p>Formulación diseñada para brindar <strong>apoyo digestivo e inmunológico y equilibrar la microbiota intestinal.</strong></p>,<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>,translated
+templates/index.json,fgp-synbiotic-feature,sections.fgp_synbiotic_feature_jkwUPt.settings,cta_label,Comprar Synbiotic+,Shop Synbiotic+,translated
+templates/index.json,fgp-goodbye-symptoms,sections.fgp_goodbye_symptoms_ULcw7q.settings,label_1,Intolerancia al gluten,Gluten intolerance,translated
+templates/index.json,fgp-goodbye-symptoms,sections.fgp_goodbye_symptoms_ULcw7q.settings,label_2,Intolerancia a la lactosa,Lactose intolerance,translated
+templates/index.json,fgp-goodbye-symptoms,sections.fgp_goodbye_symptoms_ULcw7q.settings,label_3,Estreñimiento o diarrea,Constipation or diarrhea,translated
+templates/index.json,fgp-goodbye-symptoms,sections.fgp_goodbye_symptoms_ULcw7q.settings,label_4,Desequilibrio intestinal por antibióticos,Intestinal imbalance due to antibiotics,translated
+templates/index.json,fgp-goodbye-symptoms,sections.fgp_goodbye_symptoms_ULcw7q.settings,label_5,Bajas defensas,Low defenses,translated
+templates/index.json,fgp-founder-quote,sections.fgp_founder_quote_q3JAYQ.settings,founder_name,"Dra. Katherine Jiménez, Fundadora","Dr. Katherine Jiménez, Founder",translated
+templates/index.json,fgp-founder-quote,sections.fgp_founder_quote_q3JAYQ.settings,quote,"Fundé Feel Good Pharma para ayudar a las personas a volver a sentirse verdaderamente bien, de adentro hacia afuera. Cada fórmula se desarrolla con precisión científica e ingredientes innovadores que apoyan el equilibrio natural del cuerpo, para que puedas sentirte al máximo cada día.","I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body's natural balance, so you can feel your best every day.",translated
+templates/index.json,fgp-founder-quote,sections.fgp_founder_quote_q3JAYQ.settings,cta_label,Ver más,View more,translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,badge_subtext,2 cápsulas · 3 veces al día,2 capsules · 3 times a day,translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,eyebrow,NIÑOS,KIDS,translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,title,PROBIÓTICOS PARA NIÑOS,KIDS PROBIOTICS,translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,description,"<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>","<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,cta_label,Comprar Kids 60,Shop Kids 60,translated
+templates/index.json,fgp-kids-feature,sections.fgp_kids_feature_main.settings,cta2_label,Comprar Kids 30,Shop Kids 30,translated
+templates/index.json,fgp-kids-symptoms,sections.fgp_kids_symptoms_main.settings,heading,"Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:","With KIDS PROBIOTICS, your child will never have to suffer from:",translated
+templates/index.json,fgp-kids-symptoms,sections.fgp_kids_symptoms_main.settings,label_1,Estreñimiento o diarrea,Constipation or diarrhea,translated
+templates/index.json,fgp-kids-symptoms,sections.fgp_kids_symptoms_main.settings,label_2,Desequilibrio intestinal por antibióticos,Intestinal imbalance due to antibiotics,translated
+templates/index.json,fgp-kids-symptoms,sections.fgp_kids_symptoms_main.settings,label_3,Bajas defensas,Low defenses,translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.settings,section_label,Productos,Products,translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_1.settings,title,SYNBIOTIC +,SYNBIOTIC +,identical
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_1.settings,subtitle,"Prebiótico, probiótico, postbiótico y enzimas","Prebiotic, probiotic, postbiotic and enzymes",translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_1.settings,cta_label,Comprar,Shop,translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_2.settings,title,PROBIÓTICOS PARA NIÑOS,KIDS PROBIOTICS,translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_2.settings,subtitle,Fórmula 4 en 1 para los más pequeños,4 in 1 formula for your little ones,translated
+templates/index.json,fgp-video-cards,sections.fgp_video_cards_main.blocks.vcard_2.settings,cta_label,Comprar,Shop,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.settings,aria_label,Beneficios del producto,Product benefits,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_CyxFwm.settings,label,Probióticos a base de esporas,Spore based probiotics,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_yaLXzU.settings,label,Ingredientes de origen vegetal,Plant Based ingredients,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_wJkJVN.settings,label,Repone bacterias beneficiosas®,Replenishes Beneficial Bacteria®,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_8QpQbU.settings,label,Fortalece la barrera intestinal®,Strengthens Gut Barrier®,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_UFd4ai.settings,label,Mejora la absorción de nutrientes®,Improves Nutrient Absorption®,translated
+templates/index.json,fgp-icon-strip,sections.fgp_icon_strip_Ya38Fq.blocks.item_cnazY9.settings,label,Sin OGM,Non GMO,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_1.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_1.settings,placeholder_title,Synbiotic+,Synbiotic+,identical
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_1.settings,cta_label,Comprar Synbiotic+,Shop Synbiotic+,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_2.settings,eyebrow,NIÑOS,KIDS,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_2.settings,placeholder_title,Probióticos para Niños,Kids Probiotics,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_2.settings,cta_label,Comprar Probióticos para Niños,Shop Kids Probiotics,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_3.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_3.settings,placeholder_title,Enzimas digestivas,Digestive Enzymes,translated
+templates/index.json,fgp-products-grid,sections.fgp_products_grid_main.blocks.product_3.settings,cta_label,Comprar enzimas,Shop Enzymes,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.settings,eyebrow,RESPALDADO POR PROFESIONALES,TRUSTED BY PROFESSIONALS,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.settings,heading,Recomendado por médicos,Recommended by Doctors,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_1.settings,name,Dra. Nancy Conejo,Dra. Nancy Conejo,identical
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_1.settings,specialty,Pediatra | Neonatóloga,Pediatrician | Neonatologist,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_1.settings,ig_handle,@pediatranancyconejo,@pediatranancyconejo,identical
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_1.settings,quote,"Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Probióticos para Niños están diseñados para complementar el estilo de vida saludable de tu familia.""","Pairing probiotics with a balanced diet rich in whole foods, fiber, and hydration is the key to long-term wellness. That's why synbiotic and kids probiotics are designed to complement your family healthy lifestyle.""",translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_2.settings,name,Doctora Von Saalfeld,Doctora Von Saalfeld,identical
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_2.settings,specialty,Nutricionista,Nutricionista,identical
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_2.settings,ig_handle,@cnvs_nutricion,@cnvs_nutricion,identical
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_2.settings,quote,"Synbiotic + funciona increíblemente bien como complemento de una dieta equilibrada en pacientes con síndrome de intestino irritable y otros problemas digestivos.""","Synbiotic + works amazing as a complement to a balanced diet on patients with Irritable Bowel Sindrome and other digestive issues.""",translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_3.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_3.settings,specialty,Medicina interna,Internal Medicine,translated
+templates/index.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_main.blocks.doctor_3.settings,quote,Un producto científicamente sólido que realmente da resultados. Confío en Feel Good Pharma por su calidad y transparencia.,A scientifically sound product that truly delivers results. I trust Feel Good Pharma for its quality and transparency.,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.settings,eyebrow,LO QUE DICEN NUESTROS CLIENTES,WHAT OUR CUSTOMERS SAY,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.settings,heading,Preferido por los clientes,Loved by Customers,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_fXj9kK.settings,review,Llevo 3 meses usando este producto y me siento increíble. Mi digestión ha mejorado muchísimo y tengo más energía que nunca.,I've been using this product for 3 months and I feel incredible. My digestion has improved tremendously and I have more energy than ever!,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_fXj9kK.settings,name,Maria G.,Maria G.,identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_fXj9kK.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_1.settings,review,Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.,I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_1.settings,name,Maria G.,Maria G.,identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_2.settings,review,Mi hija empezó con Probióticos para Niños y en pocas semanas se le quitaron los dolores de barriga. ¡Estoy muy agradecida!,My daughter started Kids Probiotics and within weeks her tummy aches were gone. I'm so grateful for this product!,translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_2.settings,name,Ana R.,Ana R.,identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_2.settings,location,"Heredia, Costa Rica","Heredia, Costa Rica",identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_3.settings,review,¡Por fin un probiótico que sí funciona! Se acabó la hinchazón y las molestias. Feel Good Pharma me cambió la vida.,"Finally a probiotic that actually works! No more bloating, no more discomfort. Feel Good Pharma changed my life.",translated
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_3.settings,name,Carlos M.,Carlos M.,identical
+templates/index.json,fgp-customer-reviews,sections.fgp_customer_reviews_main.blocks.review_3.settings,location,"Cartago, Costa Rica","Cartago, Costa Rica",identical
+templates/index.json,fgp-subfooter,sections.fgp_subfooter_main.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/index.json,fgp-subfooter,sections.fgp_subfooter_main.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/index.json,fgp-subfooter,sections.fgp_subfooter_main.settings,fb_label,FEELGOODPHARMA,FEELGOODPHARMA,identical
+templates/list-collections.json,slideshow,sections.slideshow.settings,accessibility_info,Presentación sobre nuestra marca,Slideshow about our brand,translated
+templates/list-collections.json,slideshow,sections.slideshow.blocks.slide.settings,heading,Colecciones,Collections,translated
+templates/page.about.json,fgp-about-hero,sections.fgp_about_hero.settings,eyebrow,NUESTRA HISTORIA,OUR STORY,translated
+templates/page.about.json,fgp-about-hero,sections.fgp_about_hero.settings,heading,Ayudándote a vivir una vida más saludable y plena.,"Helping you live a healthier, fuller life.",translated
+templates/page.about.json,fgp-about-hero,sections.fgp_about_hero.settings,subtext,"<p>En Feel Good, nuestro objetivo es ayudarte a vivir una vida más saludable, plena y satisfactoria. Sabemos que el bienestar es un viaje, y estamos aquí para apoyarte en cada paso del camino. Nuestros productos están diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles.</p>","<p>At Feel Good, our goal is to help you live a healthier, fuller, more satisfying life. We know wellness is a journey, and we're here to support you every step of the way. Our products are made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results.</p>",translated
+templates/page.about.json,fgp-about-hero,sections.fgp_about_hero.settings,cta_label,Conoce a la Dra. Katherine,Meet Dr. Katherine,translated
+templates/page.about.json,fgp-mission-text,sections.fgp_mission_about.settings,eyebrow,NUESTRA MISIÓN,OUR MISSION,translated
+templates/page.about.json,fgp-mission-text,sections.fgp_mission_about.settings,heading,"Ciencia y cuidado, en cada fórmula","Science and care, in every formula",translated
+templates/page.about.json,fgp-mission-text,sections.fgp_mission_about.settings,body,"<p>Nos enorgullece ofrecer productos diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles. Estos productos son fáciles de incorporar en tu estilo de vida diario, para ayudarte a moverte, sentirte y lucir lo mejor posible, de adentro hacia afuera.</p><p>Nuestras enzimas digestivas de origen vegetal, prebióticos, probióticos y postbióticos están diseñados para mejorar la salud gastrointestinal y apoyar el sistema inmunológico. Creemos que cada cliente es único y merece una atención personalizada. Es por eso que nos esforzamos en proporcionarte un servicio al cliente excepcional, para asegurarnos de que estés completamente satisfecho con nuestros productos.</p>","<p>We take pride in offering products made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results. They're easy to fit into your daily routine, helping you move, feel, and look your best from the inside out.</p><p>Our plant-based digestive enzymes, prebiotics, probiotics, and postbiotics are designed to improve gastrointestinal health and support the immune system. We believe every customer is unique and deserves personal attention. That's why we work hard to give you exceptional service, so you're completely satisfied with our products.</p>",translated
+templates/page.about.json,fgp-founder-quote,sections.fgp_founder_about.settings,founder_name,"Dra. Katherine Jiménez, Fundadora","Dr. Katherine Jiménez, Founder",translated
+templates/page.about.json,fgp-founder-quote,sections.fgp_founder_about.settings,quote,"Feel Good Pharma fue creado por la Dra. Katherine Jiménez, una mujer y farmacéutica apasionada por la salud, que siempre busca lo mejor para su familia y amigos. Su compromiso con la salud y el bienestar llevó a la Dra. Jiménez a crear productos que hacen la diferencia en la vida de las personas, y este compromiso se refleja en cada uno de nuestros productos y en el servicio que brindamos.","Feel Good Pharma was founded by Dr. Katherine Jiménez — a pharmacist with a passion for health who has always sought the best for her family and friends. That commitment to health and wellbeing led her to create products that make a real difference in people's lives, and it shows in every product we make and every interaction we have.",translated
+templates/page.about.json,fgp-founder-quote,sections.fgp_founder_about.settings,cta_label,Ver nuestros productos,View our products,translated
+templates/page.about.json,fgp-subfooter,sections.fgp_subfooter_about.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/page.about.json,fgp-subfooter,sections.fgp_subfooter_about.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/page.contact.json,fgp-contact-hero,sections.fgp_contact_hero.settings,eyebrow,CONTÁCTANOS,GET IN TOUCH,translated
+templates/page.contact.json,fgp-contact-hero,sections.fgp_contact_hero.settings,heading,Contáctanos,Contact us,translated
+templates/page.contact.json,fgp-contact-hero,sections.fgp_contact_hero.settings,subtext,Nos encantaría saber de ti. Completa el formulario y te responderemos lo antes posible.,We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.,translated
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_email.settings,label,Correo electrónico,Email,translated
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_email.settings,value,hola@feelgoodpharma.com,hola@feelgoodpharma.com,identical
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_phone.settings,label,Teléfono,Phone,translated
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_phone.settings,value,+506 XXXX XXXX,+506 XXXX XXXX,identical
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_location.settings,label,Ubicación,Location,translated
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_location.settings,value,"San José, Costa Rica","San José, Costa Rica",identical
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_hours.settings,label,Horario,Hours,translated
+templates/page.contact.json,fgp-contact-info,sections.fgp_contact_info.blocks.card_hours.settings,value,Lun–Vie: 8 a.m. – 5 p.m.,Mon–Fri: 8am – 5pm,translated
+templates/page.contact.json,contact-form,sections.form.settings,heading,Envíanos un mensaje,Send us a message,translated
+templates/page.contact.json,fgp-subfooter,sections.fgp_subfooter_contact.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/page.contact.json,fgp-subfooter,sections.fgp_subfooter_contact.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/page.json,image-with-text,sections.23cb49cd-699f-4bea-a5e2-ad07db6241cd.blocks.template--18641843257665__23cb49cd-699f-4bea-a5e2-ad07db6241cd-168108581238f5d118-1.settings,text,"<p>En Feel Good, nuestro objetivo es ayudarte a vivir una vida más saludable, plena y satisfactoria. Sabemos que el bienestar es un viaje, y estamos aquí para apoyarte en cada paso del camino. Nuestros productos están diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles.</p><p>Nos enorgullece ofrecer productos diseñados con ingredientes naturales de la más alta calidad, clínicamente estudiados y cuidadosamente seleccionados para proporcionarte los mejores resultados posibles. Estos productos son fáciles de incorporar en tu estilo de vida diario, para ayudarte a moverte, sentirte y lucir lo mejor posible, de adentro hacia afuera.</p><p>Nuestras enzimas digestivas de origen vegetal, prebióticos, probióticos y postbióticos están diseñados para mejorar la salud gastrointestinal y apoyar el sistema inmunológico. </p><p>Creemos que cada cliente es único y merece una atención personalizada. Es por eso que nos esforzamos en proporcionarte un servicio al cliente excepcional, para asegurarnos de que estés completamente satisfecho con nuestros productos.</p><p>Feel Good Pharma fue creado por la Dra. Katherine Jiménez, una mujer y farmacéutica apasionada por la salud, que siempre busca lo mejor para su familia y amigos. </p><p>Su compromiso con la salud y el bienestar llevó a la Dra. Jiménez a crear productos que hacen la diferencia en la vida de las personas, y este compromiso se refleja en cada uno de nuestros productos y en el servicio que brindamos.</p>","<p>At Feel Good, our goal is to help you live a healthier, fuller, more satisfying life. We know wellness is a journey, and we're here to support you every step of the way. Our products are made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results.</p><p>We take pride in offering products made with the highest-quality natural ingredients — clinically studied and carefully selected to give you the best possible results. They're easy to fit into your daily routine, helping you move, feel, and look your best from the inside out.</p><p>Our plant-based digestive enzymes, prebiotics, probiotics, and postbiotics are designed to improve gastrointestinal health and support the immune system.</p><p>We believe every customer is unique and deserves personal attention. That's why we work hard to give you exceptional service, so you're completely satisfied with our products.</p><p>Feel Good Pharma was founded by Dr. Katherine Jiménez — a pharmacist with a passion for health who has always sought the best for her family and friends.</p><p>Her commitment to health and wellbeing led Dr. Jiménez to create products that make a real difference in people's lives, and that commitment shows in every product we make and every interaction we have.</p>",translated
+templates/page.json,image-with-text,sections.23cb49cd-699f-4bea-a5e2-ad07db6241cd.blocks.template--18641843257665__23cb49cd-699f-4bea-a5e2-ad07db6241cd-168108581238f5d118-2.settings,button_label,Texto del botón,Button label,translated
+templates/page.puntos-de-venta.json,fgp-store-locator,sections.fgp_store_locator.settings,eyebrow,ENCUÉNTRANOS,FIND US,translated
+templates/page.puntos-de-venta.json,fgp-store-locator,sections.fgp_store_locator.settings,heading,Puntos de Venta,Puntos de Venta,identical
+templates/page.puntos-de-venta.json,fgp-store-locator,sections.fgp_store_locator.settings,subtext,Encuentra nuestros productos en estos puntos de venta.,Encuentra nuestros productos en estos puntos de venta.,identical
+templates/page.puntos-de-venta.json,fgp-subfooter,sections.fgp_subfooter_pdv.settings,hashtag,#FeelGoodWithin,#FeelGoodWithin,identical
+templates/page.puntos-de-venta.json,fgp-subfooter,sections.fgp_subfooter_pdv.settings,ig_handle,feel.goodpharma,feel.goodpharma,identical
+templates/page.puntos-de-venta.json,fgp-subfooter,sections.fgp_subfooter_pdv.settings,fb_label,FEELGOODPHARMA,FEELGOODPHARMA,identical
+templates/password.json,email-signup-banner,sections.main.blocks.heading.settings,heading,Próxima apertura,Opening soon,translated
+templates/password.json,email-signup-banner,sections.main.blocks.paragraph.settings,text,<p>Sé el primero en enterarte de nuestro lanzamiento.</p>,<p>Be the first to know when we launch.</p>,translated
+templates/product.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+templates/product.kids.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.kids.json,main-product,sections.main.blocks.tab_dosage.settings,heading,Dosis,Dosage,translated
+templates/product.kids.json,main-product,sections.main.blocks.tab_dosage.settings,content,<p>Niños de 4 años en adelante: 1 gomita al día. Adultos: 1–2 gomitas al día.</p>,<p>Children 4+: 1 gummy per day. Adults: 1–2 gummies per day.</p>,translated
+templates/product.kids.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.kids.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.kids.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.kids.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.kids.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.settings,aria_label,Beneficios del producto,Product benefits,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_kQXbLK.settings,label,Probióticos a base de esporas,Spore based probiotics,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_k6jfBi.settings,label,Ingredientes de origen vegetal,Plant Based ingredients,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_9tHJwk.settings,label,Repone bacterias beneficiosas®,Replenishes Beneficial Bacteria®,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_D7DMG6.settings,label,Fortalece la barrera intestinal®,Strengthens Gut Barrier®,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_ArpCQp.settings,label,Mejora la absorción de nutrientes®,Improves Nutrient Absorption®,translated
+templates/product.kids.json,fgp-icon-strip,sections.fgp_icon_strip_9UJFwJ.blocks.item_crjKxV.settings,label,Sin OGM,Non GMO,translated
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,product_logo_alt,Probióticos para Niños,Kids Probiotics,translated
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,badge_subtitle,Bacillus Subtilis,Bacillus Subtilis,identical
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,note,No requiere refrigeración,No refrigeration required,translated
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,description,<h1>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</h1>,<h1>The gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</h1>,translated
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,child_label,Niños,Children,translated
+templates/product.kids.json,fgp-kids-spotlight,sections.fgp_kids_spotlight_GX9tMK.settings,adult_label,Adultos,Adults,translated
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.settings,heading,Formulado en Costa Rica,Formulated in Costa Rica,translated
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.settings,body,<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>,<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>,translated
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.settings,cta_label,Explorar ingredientes,Explore Ingredients,translated
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.blocks.cert_logo_7CtmGL.settings,logo_alt,Probiótico DE111,DE111 Probiotic,translated
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.blocks.cert_logo_TKLwk3.settings,logo_alt,FDA,FDA,identical
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.blocks.cert_logo_V744tW.settings,logo_alt,GMP,GMP,identical
+templates/product.kids.json,fgp-origin-card,sections.fgp_origin_card_Mhi8hB.blocks.cert_logo_tBm7hE.settings,logo_alt,Hecho en EE. UU.,Made in USA,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.settings,eyebrow,RESPALDADO POR PROFESIONALES,TRUSTED BY PROFESSIONALS,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.settings,heading,Recomendado por médicos,Recommended by Doctors,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_1.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_1.settings,specialty,Pediatra,Pediatrician,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_1.settings,quote,La fórmula de Probióticos para Niños es una de las más seguras y eficaces que he visto para la salud intestinal infantil.,The Kids Probiotics formula is one of the safest and most effective I've seen for children's gut health.,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_2.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_2.settings,specialty,Gastroenteróloga pediátrica,Pediatric Gastroenterologist,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_2.settings,quote,Se lo recomiendo a padres de niños con dolores de barriga frecuentes o infecciones recurrentes.,I recommend this to parents of children with frequent tummy aches or recurring infections.,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_3.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_3.settings,specialty,Nutricionista,Nutritionist,translated
+templates/product.kids.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_kids.blocks.doc_3.settings,quote,Un producto bien formulado que apoya la inmunidad y el desarrollo digestivo de los niños.,A well-formulated product that supports children's immunity and digestive development.,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.settings,eyebrow,¿TIENES PREGUNTAS?,GOT QUESTIONS?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.settings,heading,"Los padres preguntan, nosotros respondemos","Parents Ask, We Answer",translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_1.settings,question,¿Cómo le doy Probióticos para Niños a mi hijo?,How do I give Kids Probiotics to my child?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_1.settings,answer,<p>Dale 1 cápsula al día con una comida. Puedes abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>,<p>Give 1 capsule per day with a meal. You can open the capsule and mix the contents into food or a cold drink — it has no unpleasant taste.</p>,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_2.settings,question,¿A partir de qué edad se puede tomar?,What age is it suitable for?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_2.settings,answer,"<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consulta a tu pediatra.</p>","<p>Kids Probiotics is formulated for children aged 3 and older. For younger children, please consult your pediatrician.</p>",translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_3.settings,question,¿Es seguro darlo todos los días?,Is it safe to give every day?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_3.settings,answer,"<p>Sí. La fórmula utiliza cepas probióticas bien estudiadas, seguras y beneficiosas para el uso diario en niños.</p>",<p>Yes. The formula uses well-studied probiotic strains that are safe and beneficial for daily use in children.</p>,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_4.settings,question,¿Cuándo empezará mi hijo a notar resultados?,When will my child start feeling results?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_4.settings,answer,<p>La mayoría de los padres nota mejoras en la digestión y menos resfriados entre 3 y 6 semanas de uso diario constante.</p>,<p>Most parents notice improvements in digestion and fewer colds within 3–6 weeks of consistent daily use.</p>,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_5.settings,question,¿Contiene alérgenos?,Does it contain allergens?,translated
+templates/product.kids.json,fgp-product-faq,sections.fgp_product_faq_kids.blocks.faq_5.settings,answer,"<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consulta la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>","<p>Kids Probiotics is free from gluten, dairy, and artificial colors. Please read the full ingredient list on the label if your child has known allergies.</p>",translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.settings,eyebrow,LO QUE DICEN LOS PADRES,WHAT PARENTS SAY,translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.settings,heading,Preferido por las familias,Loved by Families,translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_1.settings,review,Los dolores de barriga de mi hija desaparecieron en el primer mes. ¡Hasta me recuerda que se lo dé todos los días!,My daughter's tummy aches disappeared within the first month. She even reminds me to give it to her every day!,translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_1.settings,name,Sofía L.,Sofía L.,identical
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_2.settings,review,Mi hijo se enfermaba cada dos semanas. Desde que empezó con Probióticos para Niños casi no se ha enfermado. ¡Un cambio total!,My son used to get sick every other week. Since starting Kids Probiotics he's barely been sick. Game changer!,translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_2.settings,name,Ricardo M.,Ricardo M.,identical
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_2.settings,location,"Alajuela, Costa Rica","Alajuela, Costa Rica",identical
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_3.settings,review,Súper fácil de usar: lo mezclo en su batido y ni lo nota. Y los resultados hablan por sí solos.,So easy to use — I just mix it in his smoothie. He doesn't even notice it. And the results speak for themselves.,translated
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_3.settings,name,Carla V.,Carla V.,identical
+templates/product.kids.json,fgp-customer-reviews,sections.fgp_customer_reviews_kids.blocks.rev_3.settings,location,"Heredia, Costa Rica","Heredia, Costa Rica",identical
+templates/product.kids.json,video,sections.video_agqNLD.settings,heading,Video,Video,identical
+templates/product.kids.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+templates/product.kit.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.kit.json,main-product,sections.main.blocks.tab_whats_included.settings,heading,Qué incluye,What's included,translated
+templates/product.kit.json,main-product,sections.main.blocks.tab_whats_included.settings,content,"<p>Este kit incluye Synbiotic+, Probióticos para Niños y Stressbiotic®: un frasco completo de cada uno.</p>","<p>This kit includes Synbiotic+, Kids Probiotics, and Stressbiotic® — one full bottle of each.</p>",translated
+templates/product.kit.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.kit.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.kit.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.kit.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.kit.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.kit.json,fgp-icon-strip,sections.fgp_icon_strip_kit.settings,aria_label,Beneficios del kit,Kit benefits,translated
+templates/product.kit.json,fgp-icon-strip,sections.fgp_icon_strip_kit.blocks.item_1.settings,label,Sistema completo para la salud intestinal,Complete gut health system,translated
+templates/product.kit.json,fgp-icon-strip,sections.fgp_icon_strip_kit.blocks.item_2.settings,label,Un frasco de cada fórmula,One bottle of each formula,translated
+templates/product.kit.json,fgp-icon-strip,sections.fgp_icon_strip_kit.blocks.item_3.settings,label,Ahorra frente a comprarlos por separado,Save vs. buying separately,translated
+templates/product.kit.json,fgp-icon-strip,sections.fgp_icon_strip_kit.blocks.item_4.settings,label,Sin OGM,Non GMO,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.settings,heading,Qué contiene el kit,What's In The Kit,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_synbiotic.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_synbiotic.settings,placeholder_title,Synbiotic+,Synbiotic+,identical
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_synbiotic.settings,cta_label,Comprar Synbiotic+,Shop Synbiotic+,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_kids.settings,eyebrow,NIÑOS,KIDS,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_kids.settings,placeholder_title,Probióticos para Niños,Kids Probiotics,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_kids.settings,cta_label,Comprar Probióticos para Niños,Shop Kids Probiotics,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_stressbiotic.settings,eyebrow,ESTRÉS + INTESTINO,STRESS + GUT,translated
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_stressbiotic.settings,placeholder_title,Stressbiotic®,Stressbiotic®,identical
+templates/product.kit.json,fgp-products-grid,sections.fgp_products_grid_kit.blocks.prod_stressbiotic.settings,cta_label,Comprar Stressbiotic®,Shop Stressbiotic®,translated
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.settings,heading,Formulado en Costa Rica,Formulated in Costa Rica,translated
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.settings,body,<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>,<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>,translated
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.settings,cta_label,Explorar ingredientes,Explore Ingredients,translated
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.blocks.cert_logo_1.settings,logo_alt,Probiótico DE111,DE111 Probiotic,translated
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.blocks.cert_logo_2.settings,logo_alt,FDA,FDA,identical
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.blocks.cert_logo_3.settings,logo_alt,GMP,GMP,identical
+templates/product.kit.json,fgp-origin-card,sections.fgp_origin_card_kit.blocks.cert_logo_4.settings,logo_alt,Hecho en EE. UU.,Made in USA,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.settings,eyebrow,¿TIENES PREGUNTAS?,GOT QUESTIONS?,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.settings,heading,Preguntas frecuentes,Frequently Asked Questions,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_1.settings,question,¿Qué incluye el kit?,What's included in the Kit?,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_1.settings,answer,"<p>Un frasco completo de Synbiotic+, Probióticos para Niños y Stressbiotic®.</p>","<p>One full bottle each of Synbiotic+, Kids Probiotics, and Stressbiotic®.</p>",translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_2.settings,question,¿Lo puede usar toda la familia?,Can the whole family use it?,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_2.settings,answer,"<p>Sí: el kit está diseñado para cubrir adultos, niños y el apoyo al eje intestino-cerebro en una sola compra.</p>","<p>Yes — the Kit is designed to cover adults, kids, and stress/gut-brain support in one purchase.</p>",translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_3.settings,question,¿Debo tomar los tres a la vez?,Do I take all three at once?,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_3.settings,answer,<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usa el que se ajuste a tus necesidades o a las de tu hijo.</p>,<p>No — each product has its own dosage instructions on the bottle. Use the one that matches your (or your child's) needs.</p>,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_4.settings,question,¿El kit es más barato que comprar por separado?,Is the Kit cheaper than buying separately?,translated
+templates/product.kit.json,fgp-product-faq,sections.fgp_product_faq_kit.blocks.faq_4.settings,answer,"<p>Sí, el precio del kit es inferior al costo combinado de comprar cada producto por separado.</p>","<p>Yes, the Kit is priced below the combined cost of buying each product on its own.</p>",translated
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.settings,eyebrow,LO QUE DICEN NUESTROS CLIENTES,WHAT OUR CUSTOMERS SAY,translated
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.settings,heading,Preferido por las familias,Loved by Families,translated
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_1.settings,review,Compré el kit para toda la familia: a los niños les encantan sus gomitas y por fin encontré algo que me ayuda con el estrés y la digestión a la vez.,Got the Kit for the whole family — kids love their gummies and I finally found something that helps with my stress and digestion together.,translated
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_1.settings,name,Fernanda C.,Fernanda C.,identical
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_2.settings,review,Excelente relación calidad-precio comprando los tres juntos en vez de por separado. Es fácil llevar el control de quién toma qué.,Great value buying all three together instead of separately. Easy to keep track of who takes what.,translated
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_2.settings,name,Luis A.,Luis A.,identical
+templates/product.kit.json,fgp-customer-reviews,sections.fgp_customer_reviews_kit.blocks.rev_2.settings,location,"Heredia, Costa Rica","Heredia, Costa Rica",identical
+templates/product.kit.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_materials.settings,heading,Materiales y cuidado,Materials & care,translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_materials.settings,content,"<p>Construcción duradera y apta para alimentos, con cierre magnético seguro. Límpialo con un paño seco o ligeramente húmedo.</p>","<p>Durable, food-safe construction with a secure magnetic close. Wipe clean with a dry or lightly damp cloth.</p>",translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.magnetic-pill-container.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.magnetic-pill-container.json,fgp-icon-strip,sections.fgp_icon_strip_pillcase.settings,aria_label,Características del producto,Product features,translated
+templates/product.magnetic-pill-container.json,fgp-icon-strip,sections.fgp_icon_strip_pillcase.blocks.item_1.settings,label,Cierre magnético seguro,Secure magnetic close,translated
+templates/product.magnetic-pill-container.json,fgp-icon-strip,sections.fgp_icon_strip_pillcase.blocks.item_2.settings,label,Ideal para viajar,Travel friendly,translated
+templates/product.magnetic-pill-container.json,fgp-icon-strip,sections.fgp_icon_strip_pillcase.blocks.item_3.settings,label,Materiales aptos para alimentos,Food-safe materials,translated
+templates/product.magnetic-pill-container.json,fgp-icon-strip,sections.fgp_icon_strip_pillcase.blocks.item_4.settings,label,Fácil de limpiar,Easy to clean,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.settings,eyebrow,DISEÑADO PARA TU RUTINA,DESIGNED FOR YOUR ROUTINE,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.settings,heading,Hecho para mantenerte al día,Built to Keep You On Track,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_1.settings,label,Cierre magnético,Magnetic Close,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_1.settings,sublabel,Cierra con firmeza y se mantiene cerrado en el trayecto,"Snaps shut securely, stays closed in transit",translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_2.settings,label,Diseño compacto,Compact Design,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_2.settings,sublabel,"Cabe en un bolso, cartera o bolsillo","Fits in a bag, purse, or pocket",translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_3.settings,label,Varios compartimentos,Multi-Compartment,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_3.settings,sublabel,Mantén las dosis diarias organizadas y separadas,Keep daily doses organized and separated,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_4.settings,label,Construcción duradera,Durable Build,translated
+templates/product.magnetic-pill-container.json,fgp-product-benefits,sections.fgp_features_pillcase.blocks.feat_4.settings,sublabel,Materiales aptos para alimentos hechos para durar,Food-safe materials made to last,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.settings,eyebrow,¿TIENES PREGUNTAS?,GOT QUESTIONS?,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.settings,heading,Preguntas frecuentes,Frequently Asked Questions,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_1.settings,question,¿De qué está hecho?,What is it made of?,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_1.settings,answer,"<p>Materiales duraderos y aptos para alimentos, diseñados para el uso diario y una limpieza sencilla.</p>","<p>Durable, food-safe materials designed for daily use and easy cleaning.</p>",translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_2.settings,question,¿Cómo funciona el cierre magnético?,How does the magnetic close work?,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_2.settings,answer,"<p>La tapa se cierra con un imán integrado, manteniéndola bien cerrada durante los viajes o dentro del bolso.</p>","<p>The lid snaps shut with a built-in magnet, keeping it securely closed while traveling or in a bag.</p>",translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_3.settings,question,¿Cuántos compartimentos tiene?,How many compartments does it have?,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_3.settings,answer,<p>Varios compartimentos para que organices las dosis por hora del día o por producto.</p>,<p>Multiple compartments so you can organize doses by time of day or by product.</p>,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_4.settings,question,¿Cómo lo limpio?,How do I clean it?,translated
+templates/product.magnetic-pill-container.json,fgp-product-faq,sections.fgp_product_faq_pillcase.blocks.faq_4.settings,answer,<p>Límpialo con un paño seco o ligeramente húmedo. Evita sumergirlo en agua.</p>,<p>Wipe clean with a dry or lightly damp cloth. Avoid submerging in water.</p>,translated
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.settings,eyebrow,LO QUE DICEN NUESTROS CLIENTES,WHAT OUR CUSTOMERS SAY,translated
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.settings,heading,Preferido por los clientes,Loved by Customers,translated
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_1.settings,review,"Tamaño perfecto para mi bolso y la tapa magnética de verdad se mantiene cerrada, a diferencia de mi pastillero anterior.","Perfect size for my bag and the magnetic lid actually stays shut, unlike my old pill case.",translated
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_1.settings,name,Patricia N.,Patricia N.,identical
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_2.settings,review,Muy buena calidad y se ve mucho mejor que un pastillero de plástico común.,Great quality and looks a lot nicer than a typical plastic pill organizer.,translated
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_2.settings,name,Jorge S.,Jorge S.,identical
+templates/product.magnetic-pill-container.json,fgp-customer-reviews,sections.fgp_customer_reviews_pillcase.blocks.rev_2.settings,location,"Alajuela, Costa Rica","Alajuela, Costa Rica",identical
+templates/product.magnetic-pill-container.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_dosage.settings,heading,Dosis,Dosage,translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_dosage.settings,content,"<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>","<p>Take 2 capsules once a day, preferably with a meal.</p>",translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.stressbiotic.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.settings,heading,Formulado con los mejores ingredientes,Formulated with the Best Ingredients,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_1.settings,label,Postbióticos psicobióticos,Psychobiotic Postbiotics,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_1.settings,sublabel,Modula el eje intestino-cerebro,Modulates gut brain axis,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_2.settings,label,Prebiótico de bacteriófagos,Bateriophage Prebiotic,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_2.settings,sublabel,Apoya la salud intestinal,Supports gut health,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_3.settings,label,Ashwagandha,Ashwaganda,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_3.settings,sublabel,Adaptógeno. Regula el estrés,Adaptogen. Regulates stress,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_4.settings,label,Mezcla de enzimas,Enzyme Blend,translated
+templates/product.stressbiotic.json,fgp-product-benefits,sections.fgp_ingredients.blocks.ing_4.settings,sublabel,"Amplio espectro para la digestión de carbohidratos, grasas y proteínas",Broad spectrum for carbohydrate fat and protein digestion,translated
+templates/product.stressbiotic.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.settings,heading,"Tu camino hacia el bienestar, el manejo del estrés, la salud mental y la adaptabilidad","Your journey to wellness, stress, mental health, and adaptability",translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.settings,subtext,"Apoyo para tu conexión intestino-cerebro: un psicobiótico de origen vegetal formulado para reducir el estrés, mejorar el sueño y favorecer la salud digestiva.","Your gut-brain connection supported — a plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.",translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.blocks.ben_1.settings,label,Mejora el sueño,Improves sleep,translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.blocks.ben_2.settings,label,Reduce el estrés,Reduce Stress,translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.blocks.ben_3.settings,label,Apoya la salud intestinal,Supports Gut Health,translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.blocks.ben_4.settings,label,Adaptógeno y psicobiótico,Adaptogen and Psychobiotic,translated
+templates/product.stressbiotic.json,fgp-benefits-banner,sections.fgp_benefits_banner.blocks.ben_5.settings,label,Apoya a pacientes con SII,Supports IBS Patients,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.settings,eyebrow,NOTA LA DIFERENCIA,SEE THE DIFFERENCE,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.settings,heading,Cómo se compara Stressbiotic®,How Stressbiotic® Compares,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.settings,col_feature,Característica,Feature,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.settings,col_ours,Stressbiotic®,Stressbiotic®,identical
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.settings,col_other,Otros productos,Other Products,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_1.settings,feature,Enzimas digestivas,Digestive Enzymes,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_1.settings,our_value,Stressbiotic®,Stressbiotic®,identical
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_1.settings,other_value,Enzimas digestivas,Digestive Enzymes,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_2.settings,feature,Cepas probióticas,Probiotic Strains,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_2.settings,our_value,5 cepas,5 Strains,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_3.settings,feature,Prebióticos,Prebiotics,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_4.settings,feature,Postbióticos,Postbiotics,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_5.settings,feature,Adaptógeno,Adaptogen,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_6.settings,feature,Ingredientes patentados,Patented Ingredients,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_6.settings,our_value,3 incluidos,3 Included,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_6.settings,other_value,No incluye patentes,Does not include patents,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,feature,Acción sobre estrés y sueño,Stress + sleep actions,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,our_value,De alta proliferación,Upto-proliferating,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,other_value,Solo cepas para el sueño,Only strains to sleep,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,feature,Requiere refrigeración,Refrigeration required,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,our_value,No requiere refrigeración,No refrigeration needed,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,other_value,No requiere refrigeración,No refrigeration needed,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_9.settings,feature,Porción / Duración,Serving / Supply,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_9.settings,our_value,"2 cápsulas/día, 30 porciones","2 caps/day, 30 servings",translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_9.settings,other_value,1 a 3 cápsulas al día,1 to 3 capsules a day,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.settings,eyebrow,ENCUENTRA TU FÓRMULA,FIND YOUR FIT,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.settings,heading,¿Stressbiotic® es para ti?,Is Stressbiotic® For You?,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_1.settings,for_label,PARA,FOR,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_1.settings,title,Profesionales y ejecutivos,Business people,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_1.settings,description,Stressbiotic actúa sobre el eje intestino-cerebro para que el rendimiento no cueste tu salud intestinal.,Stressbiotic addresses the gut-brain axis so performance doesn't come at the cost of gut health.,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_1.settings,tags,"Apoyo al cortisol, concentración","Cortisol support, Focus",translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_2.settings,for_label,PARA,FOR,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_2.settings,title,Pacientes con SII,IBS patients,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_2.settings,description,Cepas clínicamente estudiadas que calman el intestino y alivian los síntomas del SII día a día.,Clinically studied strains that soothe the gut and ease IBS symptoms day by day.,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_2.settings,tags,"Salud intestinal, microbiota","Gut health, Microbiome",translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_3.settings,for_label,PARA,FOR,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_3.settings,title,Personas con mucho estrés,Very stressed people,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_3.settings,description,Los adaptógenos y psicobióticos trabajan juntos para calmar tu sistema nervioso desde adentro.,Adaptogens and psychobiotics work together to calm your nervous system from within.,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_3.settings,tags,"Alivio del estrés, adaptógeno","Stress relief, Adaptogen",translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_4.settings,for_label,PARA,FOR,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_4.settings,title,Personas con problemas de sueño,Sleep-troubled people,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_4.settings,description,Formulado con cepas vinculadas clínicamente a una mejor calidad y duración del sueño.,Formulated with strains clinically linked to improved sleep quality and duration.,translated
+templates/product.stressbiotic.json,fgp-for-you,sections.fgp_for_you.blocks.p_4.settings,tags,"Sueño, recuperación","Sleep, Recovery",translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.settings,heading,Los nuevos mejores amigos de tu intestino,Your Gut's New Best Friends,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_1.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_1.settings,placeholder_title,Nombre del producto,Product name,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_1.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_2.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_2.settings,placeholder_title,Nombre del producto,Product name,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_2.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_3.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_3.settings,placeholder_title,Nombre del producto,Product name,translated
+templates/product.stressbiotic.json,fgp-products-grid,sections.fgp_products_grid.blocks.prod_3.settings,cta_label,Comprar ahora,Shop Now,translated
+templates/product.stressbiotic.json,fgp-video,sections.fgp_video.settings,alt,Feel Good Pharma — video de estilo de vida Stressbiotic,Feel Good Pharma — Stressbiotic lifestyle video,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.settings,eyebrow,¿TIENES PREGUNTAS?,YOU'VE GOT QUESTIONS?,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.settings,heading,Tenemos las respuestas,We've Got Answers,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_1.settings,question,¿Cuál es la dosis recomendada?,What is the recommended dosage?,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_1.settings,answer,"<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>","<p>Take 2 capsules once a day, preferably with a meal.</p>",translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_2.settings,question,¿Cuánto tarda en verse resultados?,How long before I see results?,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_2.settings,answer,<p>La mayoría de los clientes nota mejoras entre 2 y 4 semanas de uso diario constante.</p>,<p>Most customers notice improvements within 2–4 weeks of consistent daily use.</p>,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_3.settings,question,¿Es seguro para uso prolongado?,Is it safe for long-term use?,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_3.settings,answer,"<p>Sí. Stressbiotic está formulado con ingredientes naturales y seguros, diseñados para uso diario y prolongado.</p>","<p>Yes. Stressbiotic is formulated with safe, natural ingredients designed for daily, long-term use.</p>",translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_4.settings,question,¿Necesita refrigeración?,Does it need refrigeration?,translated
+templates/product.stressbiotic.json,fgp-product-faq,sections.fgp_product_faq.blocks.faq_4.settings,answer,"<p>No. Consérvalo en un lugar fresco y seco, lejos de la luz solar directa.</p>","<p>No. Store in a cool, dry place away from direct sunlight.</p>",translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.settings,eyebrow,RESPALDADO POR PROFESIONALES,TRUSTED BY PROFESSIONALS,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.settings,heading,Recomendado por médicos,Recommended by Doctors,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_1.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_1.settings,specialty,Gastroenterólogo,Gastroenterologist,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_1.settings,quote,Recomiendo Stressbiotic a mis pacientes por su formulación completa y respaldada científicamente.,I recommend Stressbiotic to my patients for its complete and scientifically backed formulation.,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_2.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_2.settings,specialty,Medicina interna,Internal Medicine,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_2.settings,quote,"Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",A trusted product with transparent ingredient labeling and proven clinical results.,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_3.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_3.settings,specialty,Nutricionista,Nutritionist,translated
+templates/product.stressbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials.blocks.doc_3.settings,quote,La combinación de adaptógenos y psicobióticos es justo lo que necesitan mis pacientes con estrés.,The combination of adaptogens and psychobiotics is exactly what my stressed patients need.,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.settings,eyebrow,LO QUE DICEN NUESTROS CLIENTES,WHAT OUR CUSTOMERS SAY,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.settings,heading,Preferido por los clientes,Loved by Customers,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_1.settings,review,Llevo 6 semanas usando Stressbiotic y mis niveles de estrés han bajado notablemente. ¡Ahora duermo mucho mejor!,I've been using Stressbiotic for 6 weeks and my stress levels have dropped noticeably. I sleep so much better now!,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_1.settings,name,Valeria Muñoz,Valeria Muñoz,identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_2.settings,review,Muy buen sabor,Great Flavors,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_2.settings,name,Diana Torres,Diana Torres,identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_2.settings,location,"Alajuela, Costa Rica","Alajuela, Costa Rica",identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_3.settings,review,Fácil de usar,Easy to Use,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_3.settings,name,Sofía López,Sofía López,identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_3.settings,location,"Heredia, Costa Rica","Heredia, Costa Rica",identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_4.settings,review,El mejor probiótico,Best Probiotic,translated
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_4.settings,name,Marco Rodríguez,Marco Rodríguez,identical
+templates/product.stressbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews.blocks.rev_4.settings,location,"Cartago, Costa Rica","Cartago, Costa Rica",identical
+templates/product.synbiotic.json,main-product,sections.main.blocks.vendor.settings,text,{{ product.vendor }},{{ product.vendor }},identical
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_dosage.settings,heading,Dosis,Dosage,translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_dosage.settings,content,<p>Toma 2 cápsulas con el desayuno y 2 cápsulas con el almuerzo o la cena.</p>,<p>Take 2 capsules with breakfast and 2 capsules with lunch or dinner.</p>,translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_shipping.settings,heading,Envíos,Shipping,translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_shipping.settings,content,<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>,<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>,translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_returns.settings,heading,Política de devoluciones,Return policy,translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.tab_returns.settings,content,"<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>","<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",translated
+templates/product.synbiotic.json,main-product,sections.main.blocks.share.settings,share_label,Compartir,Share,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.settings,aria_label,Beneficios del producto,Product benefits,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_3XyLHk.settings,label,Probióticos a base de esporas,Spore based probiotics,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_EXGYem.settings,label,Ingredientes de origen vegetal,Plant Based ingredients,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_QkGjVX.settings,label,Repone bacterias beneficiosas®,Replenishes Beneficial Bacteria®,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_jhTLfw.settings,label,Fortalece la barrera intestinal®,Strengthens Gut Barrier®,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_tBdjmK.settings,label,Mejora la absorción de nutrientes®,Improves Nutrient Absorption®,translated
+templates/product.synbiotic.json,fgp-icon-strip,sections.fgp_icon_strip_NKaMTe.blocks.item_67d8Mk.settings,label,Sin OGM,Non GMO,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,eyebrow,ENZIMAS DIGESTIVAS,DIGESTIVE ENZYMES,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,title,SYNBIOTIC+,SYNBIOTIC+,identical
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,sublabel,BIÓTICOS,BIOTICS,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,enzyme_label,18 ENZIMAS DIGESTIVAS,18 DIGESTIVEENZYMES,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,bottle_alt,Frasco Synbiotic+,Synbiotic+ bottle,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,dosage_line1,2 cápsulas,2 capsules,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,dosage_line2,2 veces al día,2 times a day,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,dosage_sub,con las comidas principales,with the main meals,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.settings,note,No requiere refrigeración,No refrigeration required,translated
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.blocks.badge_XmWhhj.settings,label,PRE,PRE,identical
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.blocks.badge_rPLQiY.settings,label,PRO,PRO,identical
+templates/product.synbiotic.json,fgp-synbiotic-spotlight,sections.fgp_synbiotic_spotlight_aNxgHJ.blocks.badge_MUQziH.settings,label,POST,POST,identical
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.settings,heading,Formulado en Costa Rica,Formulated in Costa Rica,translated
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.settings,body,<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>,<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>,translated
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.settings,cta_label,Explorar ingredientes,Explore Ingredients,translated
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.blocks.cert_logo_9i9QdL.settings,logo_alt,Probiótico DE111,DE111 Probiotic,translated
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.blocks.cert_logo_kFiMbT.settings,logo_alt,FDA,FDA,identical
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.blocks.cert_logo_kYTAjP.settings,logo_alt,GMP,GMP,identical
+templates/product.synbiotic.json,fgp-origin-card,sections.fgp_origin_card_nMkFRa.blocks.cert_logo_bCWzEb.settings,logo_alt,Hecho en EE. UU.,Made in USA,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.settings,eyebrow,LA CIENCIA,THE SCIENCE,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.settings,heading,¿Cómo funcionan nuestras formulaciones?,How do our formulations work?,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.settings,cta_label,Ver todos los ingredientes,View all ingredients,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_1.settings,title,Los prebióticos alimentan las bacterias buenas,Prebiotics feed good bacteria,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_1.settings,description,"Las fibras prebióticas sirven de alimento para las bacterias beneficiosas, ayudándolas a prosperar y multiplicarse en tu intestino.","Prebiotic fibers serve as food for beneficial bacteria, helping them thrive and multiply in your gut.",translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_2.settings,title,Los probióticos repueblan la microbiota,Probiotics replenish the microbiome,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_2.settings,description,"Las cepas probióticas vivas colonizan el intestino y restauran el equilibrio microbiano, apoyando la digestión y la inmunidad.","Live probiotic strains colonize the gut and restore microbial balance, supporting digestion and immunity.",translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_3.settings,title,Los postbióticos fortalecen la barrera intestinal,Postbiotics strengthen the gut barrier,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_3.settings,description,"Los compuestos postbióticos refuerzan el revestimiento intestinal, reduciendo la inflamación y mejorando la absorción de nutrientes.","Postbiotic compounds reinforce the intestinal lining, reducing inflammation and improving nutrient absorption.",translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_4.settings,title,Las enzimas mejoran la digestión,Enzymes improve digestion,translated
+templates/product.synbiotic.json,fgp-how-it-works,sections.fgp_how_it_works_syn.blocks.step_4.settings,description,"18 enzimas digestivas de amplio espectro descomponen proteínas, grasas y carbohidratos de forma eficiente, reduciendo la hinchazón.","18 broad-spectrum digestive enzymes break down proteins, fats, and carbohydrates efficiently, reducing bloating.",translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.settings,eyebrow,RESPALDADO POR PROFESIONALES,TRUSTED BY PROFESSIONALS,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.settings,heading,Recomendado por médicos,Recommended by Doctors,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_1.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_1.settings,specialty,Gastroenterólogo,Gastroenterologist,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_1.settings,quote,Recomiendo SYNBIOTIC+ a mis pacientes por su formulación completa y respaldada científicamente.,I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation.,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_2.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_2.settings,specialty,Medicina interna,Internal Medicine,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_2.settings,quote,"Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",A trusted product with transparent ingredient labeling and proven clinical results.,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_3.settings,name,Dr. Nombre Apellido,Dr. Name Lastname,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_3.settings,specialty,Nutricionista,Nutritionist,translated
+templates/product.synbiotic.json,fgp-doctor-testimonials,sections.fgp_doctor_testimonials_syn.blocks.doc_3.settings,quote,"La combinación de pre, pro y postbióticos con enzimas es justo lo que necesitan mis pacientes.","The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need.",translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.settings,eyebrow,¿TIENES PREGUNTAS?,GOT QUESTIONS?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.settings,heading,Preguntas frecuentes,Frequently Asked Questions,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_1.settings,question,¿Cómo tomo SYNBIOTIC+?,How do I take SYNBIOTIC+?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_1.settings,answer,"<p>Toma 2 cápsulas 3 veces al día con las comidas. Para mejores resultados, tómalo todos los días de forma constante.</p>","<p>Take 2 capsules 3 times a day with meals. For best results, take consistently every day.</p>",translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_2.settings,question,¿Necesita refrigeración?,Does it need refrigeration?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_2.settings,answer,"<p>No requiere refrigeración. Consérvalo en un lugar fresco y seco, lejos de la luz solar directa.</p>","<p>No refrigeration needed. Store in a cool, dry place away from direct sunlight.</p>",translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_3.settings,question,¿Cuándo empezaré a notar resultados?,When will I start feeling results?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_3.settings,answer,"<p>La mayoría de los clientes nota mejoras entre 2 y 4 semanas de uso constante, aunque los resultados pueden variar.</p>","<p>Most customers notice improvements within 2–4 weeks of consistent use, though results may vary.</p>",translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_4.settings,question,¿Es seguro para uso prolongado?,Is it safe for long-term use?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_4.settings,answer,"<p>Sí. SYNBIOTIC+ está formulado con ingredientes naturales y seguros, diseñados para uso diario y prolongado.</p>","<p>Yes. SYNBIOTIC+ is formulated with safe, natural ingredients designed for daily, long-term use.</p>",translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_5.settings,question,¿Quién debería tomar SYNBIOTIC+?,Who should take SYNBIOTIC+?,translated
+templates/product.synbiotic.json,fgp-product-faq,sections.fgp_product_faq_syn.blocks.faq_5.settings,answer,"<p>SYNBIOTIC+ es ideal para adultos que buscan mejorar la salud digestiva, fortalecer la inmunidad y restaurar el equilibrio intestinal. Consulta a tu médico si estás embarazada, en período de lactancia o tienes alguna condición médica.</p>","<p>SYNBIOTIC+ is ideal for adults looking to improve digestive health, strengthen immunity, and restore gut balance. Consult your doctor if you are pregnant, nursing, or have a medical condition.</p>",translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.settings,eyebrow,LO QUE DICEN NUESTROS CLIENTES,WHAT OUR CUSTOMERS SAY,translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.settings,heading,Preferido por los clientes,Loved by Customers,translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_1.settings,review,Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.,I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!,translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_1.settings,name,Maria G.,Maria G.,identical
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_1.settings,location,"San José, Costa Rica","San José, Costa Rica",identical
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_2.settings,review,"Se acabó la hinchazón después de comer. Al principio era escéptica, pero este producto de verdad funciona. ¡Muy recomendado!",No more bloating after meals. I was skeptical at first but this product truly works. Highly recommend!,translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_2.settings,name,Carlos M.,Carlos M.,identical
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_2.settings,location,"Cartago, Costa Rica","Cartago, Costa Rica",identical
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_3.settings,review,Por fin un probiótico que da resultados de verdad. Mi salud intestinal nunca ha estado mejor.,Finally a probiotic that actually delivers results. My gut health has never been better.,translated
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_3.settings,name,Ana R.,Ana R.,identical
+templates/product.synbiotic.json,fgp-customer-reviews,sections.fgp_customer_reviews_syn.blocks.rev_3.settings,location,"Heredia, Costa Rica","Heredia, Costa Rica",identical
+templates/product.synbiotic.json,video,sections.video_fzzDHA.settings,heading,Video,Video,identical
+templates/product.synbiotic.json,related-products,sections.related-products.settings,heading,También te puede gustar,You may also like,translated
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,address,"Plaza Florencia
+Escazú, Costa Rica","Plaza Florencia
+Escazú, Costa Rica",identical
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,hours,"Lun – Vie 8 a.m. – 8 p.m.
+Sáb – Dom 9 a.m. – 4 p.m.","Mon – Fri 8 a.m. – 8 p.m.
+Sat – Sun 9 a.m. – 4 p.m.",translated
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,menu_1_heading,Empresa,Company,translated
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,menu_2_heading,Recursos,Resources,translated
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,nl_subtext,Suscríbete a nuestro boletín y recibe un 5% de descuento en tu primera compra,Sign up for our newsletter and receive 5% off your first order,translated
+sections/footer-group.json,fgp-footer,sections.fgp_footer.settings,nl_consent,Acepto recibir correos de marketing y ofertas especiales,I agree to receiving marketing emails and special deals,translated
+sections/header-group.json,announcement-bar,sections.announcement-bar.blocks.announcement_pVWTkj.settings,text,Ya disponible con envío a EE. UU. 🇺🇸,Now available for shipping in the U.S 🇺🇸,translated

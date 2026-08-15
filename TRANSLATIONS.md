@@ -1,13 +1,19 @@
 # Translations — EN / ES
 
-The site targets **English** and **Spanish** only. Text on this theme lives in three
-separate layers, and only two of them are controlled by files in this repo.
+The site targets **Spanish** and **English** only.
+
+**Spanish is the store's default language** (Settings → Languages). English is the
+*localized* layer, served through Translate & Adapt. Default content therefore lives
+in Spanish in `templates/*.json`; English is an overlay on top of it.
+
+Text on this theme lives in three separate layers, and only two of them are controlled
+by files in this repo.
 
 | Layer | Where it lives | Locale-aware? | Status |
 |---|---|---|---|
 | 1. Theme strings | `locales/en.default.json`, `locales/es.json` | Yes — via `\| t` | **Done** |
 | 2. Schema `default` values | `{% schema %}` in each section | **No** (see below) | N/A by design |
-| 3. Merchant content | `templates/*.json`, `sections/*group.json` | Via Shopify admin | **Generated, needs import** |
+| 3. Merchant content | `templates/*.json` (Spanish base) | English via Shopify admin | **Spanish applied; English needs import** |
 
 ---
 
@@ -55,47 +61,48 @@ They were therefore left as-is. Real page copy is Layer 3.
 
 ---
 
-## Layer 3 — merchant content (generated — needs one import)
+## Layer 3 — merchant content
 
 504 storefront strings live in `templates/*.json`. This is the actual page copy.
-Shopify serves the Spanish version of these through **Translate & Adapt**, which
-stores translations server-side rather than in theme files.
 
-Spanish has been written for **all 504** — nothing needs to be translated by hand:
+**`templates/*.json` now holds Spanish** — 414 values were converted so the default
+content matches the store's default language. Verified: 223 Spanish strings, 0 English
+remaining, all JSON valid.
 
-- **`translations-es.csv`** — every string with `file`, `section_type`, `json_path`,
-  `setting`, `english`, `spanish`, `status`. Use this to review or paste into
-  Translate & Adapt.
-- **`translations/es/*.json`** — full Spanish copies of each template, ready to use.
+**English is the overlay**, delivered via Translate & Adapt:
 
-Breakdown: 438 translated, 66 intentionally identical (brand names, `@handles`,
-emails, reviewer names, Costa Rican place names). Nothing left to review.
+- **`translations-en.csv`** — 504 rows: `file`, `section_type`, `json_path`, `setting`,
+  `spanish_default`, `english_translation`, `status`.
+  414 translated, 90 identical (brand names, `@handles`, emails, reviewer names,
+  Costa Rican place names).
 
-### To apply
+### To apply the English layer
 
-Recommended — **Translate & Adapt** (Shopify admin → Apps → Translate & Adapt →
-Spanish → Theme). Auto-translate first, then correct against `translations-es.csv`.
-This keeps one set of template files and is the supported path.
+1. In Translate & Adapt, **delete the auto-generated English layer**. It was produced
+   while `templates/*.json` was still English, so it translated English → English and is
+   a copy, not a translation. It is also now stale against the Spanish base.
+2. Import `translations-en.csv`, or paste its `english_translation` column.
 
-Alternative — if Spanish is served by a **separate theme**, copy
-`translations/es/templates__*.json` over that theme's `templates/` (strip the
-`templates__` / `sections__` prefix to recover the original path).
+Do not re-run auto-translate for English: the reviewed copy in `translations-en.csv`
+includes hand-written About-page copy that machine translation will overwrite.
+
+### Direction note
+
+An earlier pass had this backwards — templates in English with a Spanish overlay. That
+was corrected once the store's default language was confirmed as Spanish. The obsolete
+`translations/es/` and `translations-es.csv` were removed.
 
 ---
 
-## Resolved: About page English copy
+## About page copy
 
-`templates/page.about.json` and `templates/page.json` previously held Spanish-only copy,
-so English visitors saw Spanish. English has now been **authored and applied** — the
-Spanish was the original source copy, so this was a translation job rather than writing
-from nothing:
+The About narrative exists in both languages. Spanish is the authored original and is
+what now sits in `templates/page.about.json` and `templates/page.json` (the 6-paragraph
+block in `image-with-text`).
 
-- `templates/page.about.json` — 11 strings (eyebrows, headings, hero subtext, mission
-  body, founder bio, CTAs, image alt)
-- `templates/page.json` — the 6-paragraph About narrative in the `image-with-text` block
-
-The Spanish originals are preserved verbatim in `translations/es/` so no source copy was
-lost. `templates/page.contact.json` was already fully English and needed no work.
+English was written by hand for these — 11 strings on the About page plus the 6
+paragraphs — and lives in `translations-en.csv`. It is a faithful translation of the
+Spanish, not machine output.
 
 **This is authored marketing copy — please read it once before launch** and adjust tone or
 claims to taste. It is a faithful translation, not a rewrite.

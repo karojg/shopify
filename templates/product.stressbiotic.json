@@ -57,32 +57,32 @@
         "tab_dosage": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dosage",
+            "heading": "Dosis",
             "icon": "none",
-            "content": "<p>Take 2 capsules once a day, preferably with a meal.</p>"
+            "content": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
           }
         },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>"
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>"
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>"
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>"
           }
         },
         "share": {
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -122,29 +122,29 @@
         "ing_1": {
           "type": "benefit",
           "settings": {
-            "label": "Psychobiotic Postbiotics",
-            "sublabel": "Modulates gut brain axis"
+            "label": "Postbióticos psicobióticos",
+            "sublabel": "Modula el eje intestino-cerebro"
           }
         },
         "ing_2": {
           "type": "benefit",
           "settings": {
-            "label": "Bateriophage Prebiotic",
-            "sublabel": "Supports gut health"
+            "label": "Prebiótico de bacteriófagos",
+            "sublabel": "Apoya la salud intestinal"
           }
         },
         "ing_3": {
           "type": "benefit",
           "settings": {
-            "label": "Ashwaganda",
-            "sublabel": "Adaptogen. Regulates stress"
+            "label": "Ashwagandha",
+            "sublabel": "Adaptógeno. Regula el estrés"
           }
         },
         "ing_4": {
           "type": "benefit",
           "settings": {
-            "label": "Enzyme Blend",
-            "sublabel": "Broad spectrum for carbohydrate fat and protein digestion"
+            "label": "Mezcla de enzimas",
+            "sublabel": "Amplio espectro para la digestión de carbohidratos, grasas y proteínas"
           }
         }
       },
@@ -157,7 +157,7 @@
       "name": "Ingredients",
       "settings": {
         "eyebrow": "",
-        "heading": "Formulated with the Best Ingredients",
+        "heading": "Formulado con los mejores ingredientes",
         "subtext": ""
       }
     },
@@ -165,7 +165,7 @@
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,
@@ -186,31 +186,31 @@
         "ben_1": {
           "type": "benefit",
           "settings": {
-            "label": "Improves sleep"
+            "label": "Mejora el sueño"
           }
         },
         "ben_2": {
           "type": "benefit",
           "settings": {
-            "label": "Reduce Stress"
+            "label": "Reduce el estrés"
           }
         },
         "ben_3": {
           "type": "benefit",
           "settings": {
-            "label": "Supports Gut Health"
+            "label": "Apoya la salud intestinal"
           }
         },
         "ben_4": {
           "type": "benefit",
           "settings": {
-            "label": "Adaptogen and Psychobiotic"
+            "label": "Adaptógeno y psicobiótico"
           }
         },
         "ben_5": {
           "type": "benefit",
           "settings": {
-            "label": "Supports IBS Patients"
+            "label": "Apoya a pacientes con SII"
           }
         }
       },
@@ -224,8 +224,8 @@
       "name": "Benefits Banner",
       "settings": {
         "eyebrow": "",
-        "heading": "Your journey to wellness, stress, mental health, and adaptability",
-        "subtext": "Your gut-brain connection supported — a plant-based psychobiotic formulated to reduce stress, improve sleep, and support digestive health.",
+        "heading": "Tu camino hacia el bienestar, el manejo del estrés, la salud mental y la adaptabilidad",
+        "subtext": "Apoyo para tu conexión intestino-cerebro: un psicobiótico de origen vegetal formulado para reducir el estrés, mejorar el sueño y favorecer la salud digestiva.",
         "decoration": "shopify://shop_images/Group_141.png",
         "product_image": "shopify://shop_images/render-stb.png"
       }
@@ -236,17 +236,17 @@
         "row_1": {
           "type": "row",
           "settings": {
-            "feature": "Digestive Enzymes",
+            "feature": "Enzimas digestivas",
             "our_value": "Stressbiotic®",
-            "other_value": "Digestive Enzymes",
+            "other_value": "Enzimas digestivas",
             "other_has": "yes"
           }
         },
         "row_2": {
           "type": "row",
           "settings": {
-            "feature": "Probiotic Strains",
-            "our_value": "5 Strains",
+            "feature": "Cepas probióticas",
+            "our_value": "5 cepas",
             "other_value": "",
             "other_has": "no"
           }
@@ -254,7 +254,7 @@
         "row_3": {
           "type": "row",
           "settings": {
-            "feature": "Prebiotics",
+            "feature": "Prebióticos",
             "our_value": "",
             "other_value": "",
             "other_has": "no"
@@ -263,7 +263,7 @@
         "row_4": {
           "type": "row",
           "settings": {
-            "feature": "Postbiotics",
+            "feature": "Postbióticos",
             "our_value": "",
             "other_value": "",
             "other_has": "no"
@@ -272,7 +272,7 @@
         "row_5": {
           "type": "row",
           "settings": {
-            "feature": "Adaptogen",
+            "feature": "Adaptógeno",
             "our_value": "",
             "other_value": "",
             "other_has": "no"
@@ -281,36 +281,36 @@
         "row_6": {
           "type": "row",
           "settings": {
-            "feature": "Patented Ingredients",
-            "our_value": "3 Included",
-            "other_value": "Does not include patents",
+            "feature": "Ingredientes patentados",
+            "our_value": "3 incluidos",
+            "other_value": "No incluye patentes",
             "other_has": "no"
           }
         },
         "row_7": {
           "type": "row",
           "settings": {
-            "feature": "Stress + sleep actions",
-            "our_value": "Upto-proliferating",
-            "other_value": "Only strains to sleep",
+            "feature": "Acción sobre estrés y sueño",
+            "our_value": "De alta proliferación",
+            "other_value": "Solo cepas para el sueño",
             "other_has": "no"
           }
         },
         "row_8": {
           "type": "row",
           "settings": {
-            "feature": "Refrigeration required",
-            "our_value": "No refrigeration needed",
-            "other_value": "No refrigeration needed",
+            "feature": "Requiere refrigeración",
+            "our_value": "No requiere refrigeración",
+            "other_value": "No requiere refrigeración",
             "other_has": "no"
           }
         },
         "row_9": {
           "type": "row",
           "settings": {
-            "feature": "Serving / Supply",
-            "our_value": "2 caps/day, 30 servings",
-            "other_value": "1 to 3 capsules a day",
+            "feature": "Porción / Duración",
+            "our_value": "2 cápsulas/día, 30 porciones",
+            "other_value": "1 a 3 cápsulas al día",
             "other_has": "no"
           }
         }
@@ -328,11 +328,11 @@
       ],
       "name": "Comparison Table",
       "settings": {
-        "eyebrow": "SEE THE DIFFERENCE",
-        "heading": "How Stressbiotic® Compares",
-        "col_feature": "Feature",
+        "eyebrow": "NOTA LA DIFERENCIA",
+        "heading": "Cómo se compara Stressbiotic®",
+        "col_feature": "Característica",
         "col_ours": "Stressbiotic®",
-        "col_other": "Other Products"
+        "col_other": "Otros productos"
       }
     },
     "fgp_for_you": {
@@ -341,37 +341,37 @@
         "p_1": {
           "type": "persona",
           "settings": {
-            "for_label": "FOR",
-            "title": "Business people",
-            "description": "Stressbiotic addresses the gut-brain axis so performance doesn't come at the cost of gut health.",
-            "tags": "Cortisol support, Focus"
+            "for_label": "PARA",
+            "title": "Profesionales y ejecutivos",
+            "description": "Stressbiotic actúa sobre el eje intestino-cerebro para que el rendimiento no cueste tu salud intestinal.",
+            "tags": "Apoyo al cortisol, concentración"
           }
         },
         "p_2": {
           "type": "persona",
           "settings": {
-            "for_label": "FOR",
-            "title": "IBS patients",
-            "description": "Clinically studied strains that soothe the gut and ease IBS symptoms day by day.",
-            "tags": "Gut health, Microbiome"
+            "for_label": "PARA",
+            "title": "Pacientes con SII",
+            "description": "Cepas clínicamente estudiadas que calman el intestino y alivian los síntomas del SII día a día.",
+            "tags": "Salud intestinal, microbiota"
           }
         },
         "p_3": {
           "type": "persona",
           "settings": {
-            "for_label": "FOR",
-            "title": "Very stressed people",
-            "description": "Adaptogens and psychobiotics work together to calm your nervous system from within.",
-            "tags": "Stress relief, Adaptogen"
+            "for_label": "PARA",
+            "title": "Personas con mucho estrés",
+            "description": "Los adaptógenos y psicobióticos trabajan juntos para calmar tu sistema nervioso desde adentro.",
+            "tags": "Alivio del estrés, adaptógeno"
           }
         },
         "p_4": {
           "type": "persona",
           "settings": {
-            "for_label": "FOR",
-            "title": "Sleep-troubled people",
-            "description": "Formulated with strains clinically linked to improved sleep quality and duration.",
-            "tags": "Sleep, Recovery"
+            "for_label": "PARA",
+            "title": "Personas con problemas de sueño",
+            "description": "Formulado con cepas vinculadas clínicamente a una mejor calidad y duración del sueño.",
+            "tags": "Sueño, recuperación"
           }
         }
       },
@@ -383,8 +383,8 @@
       ],
       "name": "Is It For You?",
       "settings": {
-        "eyebrow": "FIND YOUR FIT",
-        "heading": "Is Stressbiotic® For You?",
+        "eyebrow": "ENCUENTRA TU FÓRMULA",
+        "heading": "¿Stressbiotic® es para ti?",
         "subtext": ""
       }
     },
@@ -395,27 +395,27 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "DIGESTIVE ENZYMES",
-            "placeholder_title": "Product name",
-            "cta_label": "Shop Now"
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
           }
         },
         "prod_2": {
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "DIGESTIVE ENZYMES",
-            "placeholder_title": "Product name",
-            "cta_label": "Shop Now"
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
           }
         },
         "prod_3": {
           "type": "product_card",
           "settings": {
             "product": "",
-            "eyebrow": "DIGESTIVE ENZYMES",
-            "placeholder_title": "Product name",
-            "cta_label": "Shop Now"
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Nombre del producto",
+            "cta_label": "Comprar ahora"
           }
         }
       },
@@ -428,8 +428,8 @@
       "settings": {
         "collection": "",
         "products_to_show": 3,
-        "heading": "Your Gut's New Best Friends",
-        "cta_label": "Shop Now"
+        "heading": "Los nuevos mejores amigos de tu intestino",
+        "cta_label": "Comprar ahora"
       }
     },
     "fgp_video": {
@@ -437,7 +437,7 @@
       "name": "Video",
       "settings": {
         "video_url": "",
-        "alt": "Feel Good Pharma — Stressbiotic lifestyle video"
+        "alt": "Feel Good Pharma — video de estilo de vida Stressbiotic"
       }
     },
     "fgp_product_faq": {
@@ -446,29 +446,29 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "What is the recommended dosage?",
-            "answer": "<p>Take 2 capsules once a day, preferably with a meal.</p>"
+            "question": "¿Cuál es la dosis recomendada?",
+            "answer": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "How long before I see results?",
-            "answer": "<p>Most customers notice improvements within 2–4 weeks of consistent daily use.</p>"
+            "question": "¿Cuánto tarda en verse resultados?",
+            "answer": "<p>La mayoría de los clientes nota mejoras entre 2 y 4 semanas de uso diario constante.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe for long-term use?",
-            "answer": "<p>Yes. Stressbiotic is formulated with safe, natural ingredients designed for daily, long-term use.</p>"
+            "question": "¿Es seguro para uso prolongado?",
+            "answer": "<p>Sí. Stressbiotic está formulado con ingredientes naturales y seguros, diseñados para uso diario y prolongado.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it need refrigeration?",
-            "answer": "<p>No. Store in a cool, dry place away from direct sunlight.</p>"
+            "question": "¿Necesita refrigeración?",
+            "answer": "<p>No. Consérvalo en un lugar fresco y seco, lejos de la luz solar directa.</p>"
           }
         }
       },
@@ -481,8 +481,8 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "YOU'VE GOT QUESTIONS?",
-        "heading": "We've Got Answers",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Tenemos las respuestas",
         "subtext": ""
       }
     },
@@ -492,30 +492,30 @@
         "doc_1": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Gastroenterologist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Gastroenterólogo",
             "ig_handle": "",
-            "quote": "I recommend Stressbiotic to my patients for its complete and scientifically backed formulation.",
+            "quote": "Recomiendo Stressbiotic a mis pacientes por su formulación completa y respaldada científicamente.",
             "quote_url": ""
           }
         },
         "doc_2": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Internal Medicine",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Medicina interna",
             "ig_handle": "",
-            "quote": "A trusted product with transparent ingredient labeling and proven clinical results.",
+            "quote": "Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",
             "quote_url": ""
           }
         },
         "doc_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Nutritionist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Nutricionista",
             "ig_handle": "",
-            "quote": "The combination of adaptogens and psychobiotics is exactly what my stressed patients need.",
+            "quote": "La combinación de adaptógenos y psicobióticos es justo lo que necesitan mis pacientes con estrés.",
             "quote_url": ""
           }
         }
@@ -527,8 +527,8 @@
       ],
       "name": "Doctor Testimonials",
       "settings": {
-        "eyebrow": "TRUSTED BY PROFESSIONALS",
-        "heading": "Recommended by Doctors"
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
       }
     },
     "fgp_customer_reviews": {
@@ -539,7 +539,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "I've been using Stressbiotic for 6 weeks and my stress levels have dropped noticeably. I sleep so much better now!",
+            "review": "Llevo 6 semanas usando Stressbiotic y mis niveles de estrés han bajado notablemente. ¡Ahora duermo mucho mejor!",
             "name": "Valeria Muñoz",
             "location": "San José, Costa Rica"
           }
@@ -549,7 +549,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Great Flavors",
+            "review": "Muy buen sabor",
             "name": "Diana Torres",
             "location": "Alajuela, Costa Rica"
           }
@@ -559,7 +559,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Easy to Use",
+            "review": "Fácil de usar",
             "name": "Sofía López",
             "location": "Heredia, Costa Rica"
           }
@@ -569,7 +569,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Best Probiotic",
+            "review": "El mejor probiótico",
             "name": "Marco Rodríguez",
             "location": "Cartago, Costa Rica"
           }
@@ -583,8 +583,8 @@
       ],
       "name": "Customer Reviews",
       "settings": {
-        "eyebrow": "WHAT OUR CUSTOMERS SAY",
-        "heading": "Loved by Customers"
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por los clientes"
       }
     }
   },

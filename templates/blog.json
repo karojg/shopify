@@ -13,9 +13,9 @@
       "type": "fgp-blog-hero",
       "name": "Blog Hero",
       "settings": {
-        "eyebrow": "WELLNESS TIPS & UPDATES",
+        "eyebrow": "CONSEJOS DE BIENESTAR Y NOVEDADES",
         "heading": "Blog",
-        "subtext": "Science-backed tips to help you feel good from the inside out."
+        "subtext": "Consejos respaldados por la ciencia para ayudarte a sentirte bien de adentro hacia afuera."
       }
     },
     "main": {

@@ -15,37 +15,37 @@
         "symptom_9LcLEX": {
           "type": "symptom",
           "settings": {
-            "label": "Stress"
+            "label": "Estrés"
           }
         },
         "symptom_Czacg9": {
           "type": "symptom",
           "settings": {
-            "label": "Gluten intolerance"
+            "label": "Intolerancia al gluten"
           }
         },
         "symptom_84T8f3": {
           "type": "symptom",
           "settings": {
-            "label": "Lactose intolerance"
+            "label": "Intolerancia a la lactosa"
           }
         },
         "symptom_8DJzUP": {
           "type": "symptom",
           "settings": {
-            "label": "Constipation or Diarrhea"
+            "label": "Estreñimiento o diarrea"
           }
         },
         "symptom_hijUjK": {
           "type": "symptom",
           "settings": {
-            "label": "Irritable Bowel Syndrome"
+            "label": "Síndrome de intestino irritable"
           }
         },
         "symptom_en4tU4": {
           "type": "symptom",
           "settings": {
-            "label": "Low defenses"
+            "label": "Bajas defensas"
           }
         }
       },
@@ -74,35 +74,35 @@
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/logo-amazon.png",
-            "logo_alt": "Amazon Partner"
+            "logo_alt": "Socio Amazon"
           }
         },
         "logo_QmkzCL": {
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/logo-clinica-biclica.png",
-            "logo_alt": "Clinica Biblica Partner"
+            "logo_alt": "Socio Clínica Bíblica"
           }
         },
         "logo_ezYUPA": {
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/logo-amazon.png",
-            "logo_alt": "Partner"
+            "logo_alt": "Socio"
           }
         },
         "logo_wcx4TA": {
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/logo-clinica-biclica.png",
-            "logo_alt": "Partner"
+            "logo_alt": "Socio"
           }
         },
         "logo_CmkGqk": {
           "type": "logo",
           "settings": {
             "logo": "shopify://shop_images/logo-amazon.png",
-            "logo_alt": "Partner"
+            "logo_alt": "Socio"
           }
         }
       },
@@ -116,7 +116,7 @@
       "name": "FGP Logo Carousel",
       "settings": {
         "heading": "",
-        "section_label": "As seen in",
+        "section_label": "Como se vio en",
         "speed": 30,
         "padding_top": 24,
         "padding_bottom": 24
@@ -128,7 +128,7 @@
         "template--18478760722753__b8b0c886-8d85-4099-b9f2-61e11d876167-16798913418e874d38-0": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Is it a gut feeling or</strong>",
+            "heading": "<strong>¿Es una simple sensación o</strong>",
             "heading_size": "h1"
           }
         },
@@ -181,10 +181,10 @@
       "type": "fgp-synbiotic-feature",
       "name": "FGP Synbiotic Feature",
       "settings": {
-        "eyebrow": "DIGESTIVE ENZYMES",
+        "eyebrow": "ENZIMAS DIGESTIVAS",
         "title": "SYNBIOTIC+",
-        "description": "<p>Formulation designed to provide <strong>digestive and immune support and balance the gut microbiome.</strong></p>",
-        "cta_label": "Shop Synbiotic+",
+        "description": "<p>Formulación diseñada para brindar <strong>apoyo digestivo e inmunológico y equilibrar la microbiota intestinal.</strong></p>",
+        "cta_label": "Comprar Synbiotic+",
         "cta_url": "shopify://products/enzimas-digestivas-con-sinbiotico",
         "product_image": "shopify://shop_images/hb-syn-desk.png",
         "product_image_mobile": "shopify://shop_images/hb-syn-mob.png",
@@ -197,15 +197,15 @@
       "settings": {
         "heading": "",
         "icon_1": "shopify://shop_images/Harina.png",
-        "label_1": "Gluten intolerance",
+        "label_1": "Intolerancia al gluten",
         "icon_2": "shopify://shop_images/Milk.png",
-        "label_2": "Lactose intolerance",
+        "label_2": "Intolerancia a la lactosa",
         "icon_3": "shopify://shop_images/Gut.png",
-        "label_3": "Constipation or diarrhea",
+        "label_3": "Estreñimiento o diarrea",
         "icon_4": "shopify://shop_images/Balance.png",
-        "label_4": "Intestinal imbalance due to antibiotics",
+        "label_4": "Desequilibrio intestinal por antibióticos",
         "icon_5": "shopify://shop_images/Alergologo.png",
-        "label_5": "Low defenses"
+        "label_5": "Bajas defensas"
       }
     },
     "fgp_founder_quote_q3JAYQ": {
@@ -213,9 +213,9 @@
       "name": "FGP Founder Quote",
       "settings": {
         "founder_image": "shopify://shop_images/IMG_0462.jpg",
-        "founder_name": "Dr. Katherine Jiménez, Founder",
-        "quote": "I founded Feel Good Pharma to help people truly feel good again - from the inside out. Each formula is developed with scientific precision and innovative ingredients that support the body's natural balance, so you can feel your best every day.",
-        "cta_label": "View more",
+        "founder_name": "Dra. Katherine Jiménez, Fundadora",
+        "quote": "Fundé Feel Good Pharma para ayudar a las personas a volver a sentirse verdaderamente bien, de adentro hacia afuera. Cada fórmula se desarrolla con precisión científica e ingredientes innovadores que apoyan el equilibrio natural del cuerpo, para que puedas sentirte al máximo cada día.",
+        "cta_label": "Ver más",
         "cta_url": "shopify://pages/sobre-nosotros"
       }
     },
@@ -224,14 +224,14 @@
       "name": "FGP Kids Probiotics Feature",
       "settings": {
         "badge_text": "4 IN 1",
-        "badge_subtext": "2 capsules · 3 times a day",
-        "eyebrow": "KIDS",
-        "title": "KIDS PROBIOTICS",
-        "description": "<p>Formulation specially designed to <strong>support digestive health, strengthen immunity, and balance the gut microbiome</strong> of your little ones.</p>",
-        "cta_label": "Shop Kids 60",
+        "badge_subtext": "2 cápsulas · 3 veces al día",
+        "eyebrow": "NIÑOS",
+        "title": "PROBIÓTICOS PARA NIÑOS",
+        "description": "<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>",
+        "cta_label": "Comprar Kids 60",
         "cta_variant_id": "50086279315777",
         "cta_url": "shopify://products/kids-organic-probiotic-gummies",
-        "cta2_label": "Shop Kids 30",
+        "cta2_label": "Comprar Kids 30",
         "cta2_variant_id": "50086553846081",
         "cta2_url": "",
         "product_image": "shopify://shop_images/Image.png",
@@ -242,13 +242,13 @@
       "type": "fgp-kids-symptoms",
       "name": "FGP Kids Symptoms",
       "settings": {
-        "heading": "With KIDS PROBIOTICS, your child will never have to suffer from:",
+        "heading": "Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:",
         "icon_1": "shopify://shop_images/Gut.png",
-        "label_1": "Constipation or diarrhea",
+        "label_1": "Estreñimiento o diarrea",
         "icon_2": "shopify://shop_images/Balance.png",
-        "label_2": "Intestinal imbalance due to antibiotics",
+        "label_2": "Desequilibrio intestinal por antibióticos",
         "icon_3": "shopify://shop_images/Alergologo.png",
-        "label_3": "Low defenses",
+        "label_3": "Bajas defensas",
         "label_4": "",
         "label_5": "",
         "label_6": ""
@@ -263,8 +263,8 @@
             "video": "shopify://files/videos/FLGD_SINBIOTIC_DDM_CLEAN_1.mp4",
             "video_url": "",
             "title": "SYNBIOTIC +",
-            "subtitle": "Prebiotic, probiotic, postbiotic and enzymes",
-            "cta_label": "Shop",
+            "subtitle": "Prebiótico, probiótico, postbiótico y enzimas",
+            "cta_label": "Comprar",
             "cta_url": "shopify://products/enzimas-digestivas-con-sinbiotico"
           }
         },
@@ -273,9 +273,9 @@
           "settings": {
             "video": "shopify://files/videos/FLGD_KIDS_PRO_DDM_CLEAN_5.mp4",
             "video_url": "",
-            "title": "KIDS PROBIOTICS",
-            "subtitle": "4 in 1 formula for your little ones",
-            "cta_label": "Shop",
+            "title": "PROBIÓTICOS PARA NIÑOS",
+            "subtitle": "Fórmula 4 en 1 para los más pequeños",
+            "cta_label": "Comprar",
             "cta_url": "shopify://products/kids-organic-probiotic-gummies"
           }
         }
@@ -287,7 +287,7 @@
       "name": "FGP Video Cards",
       "settings": {
         "heading": "",
-        "section_label": "Products"
+        "section_label": "Productos"
       }
     },
     "fgp_icon_strip_Ya38Fq": {
@@ -297,42 +297,42 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Micro.png",
-            "label": "Spore based probiotics"
+            "label": "Probióticos a base de esporas"
           }
         },
         "item_yaLXzU": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Plant_based.png",
-            "label": "Plant Based ingredients"
+            "label": "Ingredientes de origen vegetal"
           }
         },
         "item_wJkJVN": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Beneficial_Bacteria.png",
-            "label": "Replenishes Beneficial Bacteria®"
+            "label": "Repone bacterias beneficiosas®"
           }
         },
         "item_8QpQbU": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Gut_Barrier.png",
-            "label": "Strengthens Gut Barrier®"
+            "label": "Fortalece la barrera intestinal®"
           }
         },
         "item_UFd4ai": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Bacteria.png",
-            "label": "Improves Nutrient Absorption®"
+            "label": "Mejora la absorción de nutrientes®"
           }
         },
         "item_cnazY9": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Non_GMO.png",
-            "label": "Non GMO"
+            "label": "Sin OGM"
           }
         }
       },
@@ -347,7 +347,7 @@
       "name": "FGP Icon Strip",
       "settings": {
         "bg": "offwhite",
-        "aria_label": "Product benefits"
+        "aria_label": "Beneficios del producto"
       }
     },
     "fgp_products_grid_main": {
@@ -357,27 +357,27 @@
           "type": "product_card",
           "settings": {
             "product": "enzimas-digestivas-con-sinbiotico",
-            "eyebrow": "DIGESTIVE ENZYMES",
+            "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Synbiotic+",
-            "cta_label": "Shop Synbiotic+"
+            "cta_label": "Comprar Synbiotic+"
           }
         },
         "product_2": {
           "type": "product_card",
           "settings": {
             "product": "kids-organic-probiotic-gummies",
-            "eyebrow": "KIDS",
-            "placeholder_title": "Kids Probiotics",
-            "cta_label": "Shop Kids Probiotics"
+            "eyebrow": "NIÑOS",
+            "placeholder_title": "Probióticos para Niños",
+            "cta_label": "Comprar Probióticos para Niños"
           }
         },
         "product_3": {
           "type": "product_card",
           "settings": {
             "product": "pastilleros-magneticos-feel-good-eucalipto",
-            "eyebrow": "DIGESTIVE ENZYMES",
-            "placeholder_title": "Digestive Enzymes",
-            "cta_label": "Shop Enzymes"
+            "eyebrow": "ENZIMAS DIGESTIVAS",
+            "placeholder_title": "Enzimas digestivas",
+            "cta_label": "Comprar enzimas"
           }
         }
       },
@@ -391,7 +391,7 @@
         "collection": "",
         "products_to_show": 3,
         "heading": "",
-        "cta_label": "Shop Now"
+        "cta_label": "Comprar ahora"
       }
     },
     "fgp_doctor_testimonials_main": {
@@ -401,9 +401,9 @@
           "type": "doctor",
           "settings": {
             "name": "Dra. Nancy Conejo",
-            "specialty": "Pediatrician | Neonatologist",
+            "specialty": "Pediatra | Neonatóloga",
             "ig_handle": "@pediatranancyconejo",
-            "quote": "Pairing probiotics with a balanced diet rich in whole foods, fiber, and hydration is the key to long-term wellness. That's why synbiotic and kids probiotics are designed to complement your family healthy lifestyle.\"",
+            "quote": "Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Probióticos para Niños están diseñados para complementar el estilo de vida saludable de tu familia.\"",
             "quote_url": ""
           }
         },
@@ -413,17 +413,17 @@
             "name": "Doctora Von Saalfeld",
             "specialty": "Nutricionista",
             "ig_handle": "@cnvs_nutricion",
-            "quote": "Synbiotic + works amazing as a complement to a balanced diet on patients with Irritable Bowel Sindrome and other digestive issues.\"",
+            "quote": "Synbiotic + funciona increíblemente bien como complemento de una dieta equilibrada en pacientes con síndrome de intestino irritable y otros problemas digestivos.\"",
             "quote_url": ""
           }
         },
         "doctor_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Internal Medicine",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Medicina interna",
             "ig_handle": "",
-            "quote": "A scientifically sound product that truly delivers results. I trust Feel Good Pharma for its quality and transparency.",
+            "quote": "Un producto científicamente sólido que realmente da resultados. Confío en Feel Good Pharma por su calidad y transparencia.",
             "quote_url": ""
           }
         }
@@ -435,8 +435,8 @@
       ],
       "name": "FGP Doctor Testimonials",
       "settings": {
-        "eyebrow": "TRUSTED BY PROFESSIONALS",
-        "heading": "Recommended by Doctors"
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
       }
     },
     "fgp_customer_reviews_main": {
@@ -447,7 +447,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "I've been using this product for 3 months and I feel incredible. My digestion has improved tremendously and I have more energy than ever!",
+            "review": "Llevo 3 meses usando este producto y me siento increíble. Mi digestión ha mejorado muchísimo y tengo más energía que nunca.",
             "name": "Maria G.",
             "location": "San José, Costa Rica"
           }
@@ -457,7 +457,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!",
+            "review": "Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.",
             "name": "Maria G.",
             "location": "San José, Costa Rica"
           }
@@ -467,7 +467,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "My daughter started Kids Probiotics and within weeks her tummy aches were gone. I'm so grateful for this product!",
+            "review": "Mi hija empezó con Probióticos para Niños y en pocas semanas se le quitaron los dolores de barriga. ¡Estoy muy agradecida!",
             "name": "Ana R.",
             "location": "Heredia, Costa Rica"
           }
@@ -477,7 +477,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Finally a probiotic that actually works! No more bloating, no more discomfort. Feel Good Pharma changed my life.",
+            "review": "¡Por fin un probiótico que sí funciona! Se acabó la hinchazón y las molestias. Feel Good Pharma me cambió la vida.",
             "name": "Carlos M.",
             "location": "Cartago, Costa Rica"
           }
@@ -491,8 +491,8 @@
       ],
       "name": "FGP Customer Reviews",
       "settings": {
-        "eyebrow": "WHAT OUR CUSTOMERS SAY",
-        "heading": "Loved by Customers"
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por los clientes"
       }
     },
     "fgp_subfooter_main": {

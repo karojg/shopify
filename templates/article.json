@@ -37,7 +37,7 @@
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         },
         "content": {
@@ -57,7 +57,7 @@
       "type": "fgp-related-articles",
       "name": "Related Articles",
       "settings": {
-        "heading": "More from our Blog",
+        "heading": "Más de nuestro blog",
         "articles_to_show": 3,
         "show_date": true,
         "show_excerpt": true

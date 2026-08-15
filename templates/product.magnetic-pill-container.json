@@ -57,27 +57,27 @@
         "tab_materials": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials & care",
+            "heading": "Materiales y cuidado",
             "icon": "none",
-            "content": "<p>Durable, food-safe construction with a secure magnetic close. Wipe clean with a dry or lightly damp cloth.</p>",
+            "content": "<p>Construcción duradera y apta para alimentos, con cierre magnético seguro. Límpialo con un paño seco o ligeramente húmedo.</p>",
             "page": ""
           }
         },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
             "page": ""
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -85,7 +85,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -125,25 +125,25 @@
         "item_1": {
           "type": "item",
           "settings": {
-            "label": "Secure magnetic close"
+            "label": "Cierre magnético seguro"
           }
         },
         "item_2": {
           "type": "item",
           "settings": {
-            "label": "Travel friendly"
+            "label": "Ideal para viajar"
           }
         },
         "item_3": {
           "type": "item",
           "settings": {
-            "label": "Food-safe materials"
+            "label": "Materiales aptos para alimentos"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
-            "label": "Easy to clean"
+            "label": "Fácil de limpiar"
           }
         }
       },
@@ -156,7 +156,7 @@
       "name": "FGP Icon Strip",
       "settings": {
         "bg": "white",
-        "aria_label": "Product features"
+        "aria_label": "Características del producto"
       }
     },
     "fgp_features_pillcase": {
@@ -165,29 +165,29 @@
         "feat_1": {
           "type": "benefit",
           "settings": {
-            "label": "Magnetic Close",
-            "sublabel": "Snaps shut securely, stays closed in transit"
+            "label": "Cierre magnético",
+            "sublabel": "Cierra con firmeza y se mantiene cerrado en el trayecto"
           }
         },
         "feat_2": {
           "type": "benefit",
           "settings": {
-            "label": "Compact Design",
-            "sublabel": "Fits in a bag, purse, or pocket"
+            "label": "Diseño compacto",
+            "sublabel": "Cabe en un bolso, cartera o bolsillo"
           }
         },
         "feat_3": {
           "type": "benefit",
           "settings": {
-            "label": "Multi-Compartment",
-            "sublabel": "Keep daily doses organized and separated"
+            "label": "Varios compartimentos",
+            "sublabel": "Mantén las dosis diarias organizadas y separadas"
           }
         },
         "feat_4": {
           "type": "benefit",
           "settings": {
-            "label": "Durable Build",
-            "sublabel": "Food-safe materials made to last"
+            "label": "Construcción duradera",
+            "sublabel": "Materiales aptos para alimentos hechos para durar"
           }
         }
       },
@@ -199,8 +199,8 @@
       ],
       "name": "Features",
       "settings": {
-        "eyebrow": "DESIGNED FOR YOUR ROUTINE",
-        "heading": "Built to Keep You On Track",
+        "eyebrow": "DISEÑADO PARA TU RUTINA",
+        "heading": "Hecho para mantenerte al día",
         "subtext": ""
       }
     },
@@ -210,29 +210,29 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "What is it made of?",
-            "answer": "<p>Durable, food-safe materials designed for daily use and easy cleaning.</p>"
+            "question": "¿De qué está hecho?",
+            "answer": "<p>Materiales duraderos y aptos para alimentos, diseñados para el uso diario y una limpieza sencilla.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "How does the magnetic close work?",
-            "answer": "<p>The lid snaps shut with a built-in magnet, keeping it securely closed while traveling or in a bag.</p>"
+            "question": "¿Cómo funciona el cierre magnético?",
+            "answer": "<p>La tapa se cierra con un imán integrado, manteniéndola bien cerrada durante los viajes o dentro del bolso.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "How many compartments does it have?",
-            "answer": "<p>Multiple compartments so you can organize doses by time of day or by product.</p>"
+            "question": "¿Cuántos compartimentos tiene?",
+            "answer": "<p>Varios compartimentos para que organices las dosis por hora del día o por producto.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I clean it?",
-            "answer": "<p>Wipe clean with a dry or lightly damp cloth. Avoid submerging in water.</p>"
+            "question": "¿Cómo lo limpio?",
+            "answer": "<p>Límpialo con un paño seco o ligeramente húmedo. Evita sumergirlo en agua.</p>"
           }
         }
       },
@@ -245,8 +245,8 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "GOT QUESTIONS?",
-        "heading": "Frequently Asked Questions",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Preguntas frecuentes",
         "subtext": ""
       }
     },
@@ -258,7 +258,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Perfect size for my bag and the magnetic lid actually stays shut, unlike my old pill case.",
+            "review": "Tamaño perfecto para mi bolso y la tapa magnética de verdad se mantiene cerrada, a diferencia de mi pastillero anterior.",
             "name": "Patricia N.",
             "location": "San José, Costa Rica"
           }
@@ -268,7 +268,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Great quality and looks a lot nicer than a typical plastic pill organizer.",
+            "review": "Muy buena calidad y se ve mucho mejor que un pastillero de plástico común.",
             "name": "Jorge S.",
             "location": "Alajuela, Costa Rica"
           }
@@ -280,14 +280,14 @@
       ],
       "name": "Customer Reviews",
       "settings": {
-        "eyebrow": "WHAT OUR CUSTOMERS SAY",
-        "heading": "Loved by Customers"
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por los clientes"
       }
     },
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,

@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 10,
-            "heading": "Collections",
+            "heading": "Colecciones",
             "heading_size": "h0",
             "subheading": "",
             "button_label": "",
@@ -40,7 +40,7 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "accessibility_info": "Presentación sobre nuestra marca"
       }
     },
     "rich-text-0": {

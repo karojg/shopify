@@ -57,18 +57,18 @@
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
             "page": ""
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -76,7 +76,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -112,7 +112,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,

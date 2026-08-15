@@ -57,27 +57,27 @@
         "tab_dosage": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dosage",
+            "heading": "Dosis",
             "icon": "none",
-            "content": "<p>Take 2 capsules with breakfast and 2 capsules with lunch or dinner.</p>",
+            "content": "<p>Toma 2 cápsulas con el desayuno y 2 cápsulas con el almuerzo o la cena.</p>",
             "page": ""
           }
         },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
             "page": ""
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -85,7 +85,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -126,42 +126,42 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Micro.png",
-            "label": "Spore based probiotics"
+            "label": "Probióticos a base de esporas"
           }
         },
         "item_EXGYem": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Plant_based.png",
-            "label": "Plant Based ingredients"
+            "label": "Ingredientes de origen vegetal"
           }
         },
         "item_QkGjVX": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Beneficial_Bacteria.png",
-            "label": "Replenishes Beneficial Bacteria®"
+            "label": "Repone bacterias beneficiosas®"
           }
         },
         "item_jhTLfw": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Gut_Barrier.png",
-            "label": "Strengthens Gut Barrier®"
+            "label": "Fortalece la barrera intestinal®"
           }
         },
         "item_tBdjmK": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Bacteria.png",
-            "label": "Improves Nutrient Absorption®"
+            "label": "Mejora la absorción de nutrientes®"
           }
         },
         "item_67d8Mk": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Non_GMO.png",
-            "label": "Non GMO"
+            "label": "Sin OGM"
           }
         }
       },
@@ -176,7 +176,7 @@
       "name": "FGP Icon Strip",
       "settings": {
         "bg": "white",
-        "aria_label": "Product benefits"
+        "aria_label": "Beneficios del producto"
       }
     },
     "fgp_synbiotic_spotlight_aNxgHJ": {
@@ -214,19 +214,19 @@
       ],
       "name": "FGP Synbiotic Spotlight",
       "settings": {
-        "eyebrow": "DIGESTIVE ENZYMES",
+        "eyebrow": "ENZIMAS DIGESTIVAS",
         "title": "SYNBIOTIC+",
-        "sublabel": "BIOTICS",
-        "enzyme_label": "18 DIGESTIVEENZYMES",
+        "sublabel": "BIÓTICOS",
+        "enzyme_label": "18 ENZIMAS DIGESTIVAS",
         "enzyme_icon": "shopify://shop_images/Enzymes.png",
         "bottle_image": "shopify://shop_images/FLGD_SYN_FRASCO_1.png",
-        "bottle_alt": "Synbiotic+ bottle",
+        "bottle_alt": "Frasco Synbiotic+",
         "badge_text": "4 IN 1",
         "capsule_image": "shopify://shop_images/syn-caps-2.png",
-        "dosage_line1": "2 capsules",
-        "dosage_line2": "2 times a day",
-        "dosage_sub": "with the main meals",
-        "note": "No refrigeration required"
+        "dosage_line1": "2 cápsulas",
+        "dosage_line2": "2 veces al día",
+        "dosage_sub": "con las comidas principales",
+        "note": "No requiere refrigeración"
       }
     },
     "fgp_origin_card_nMkFRa": {
@@ -235,7 +235,7 @@
         "cert_logo_9i9QdL": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "DE111 Probiotic"
+            "logo_alt": "Probiótico DE111"
           }
         },
         "cert_logo_kFiMbT": {
@@ -253,7 +253,7 @@
         "cert_logo_bCWzEb": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "Made in USA"
+            "logo_alt": "Hecho en EE. UU."
           }
         }
       },
@@ -265,9 +265,9 @@
       ],
       "name": "FGP Origin Card",
       "settings": {
-        "heading": "Formulated in Costa Rica",
-        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
-        "cta_label": "Explore Ingredients",
+        "heading": "Formulado en Costa Rica",
+        "body": "<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>",
+        "cta_label": "Explorar ingredientes",
         "cta_url": "shopify://pages/product-information",
         "photo": "shopify://shop_images/syn-hb.png",
         "photo_alt": ""
@@ -280,32 +280,32 @@
           "type": "step",
           "settings": {
             "icon": "shopify://shop_images/PREBIOTICOS.png",
-            "title": "Prebiotics feed good bacteria",
-            "description": "Prebiotic fibers serve as food for beneficial bacteria, helping them thrive and multiply in your gut."
+            "title": "Los prebióticos alimentan las bacterias buenas",
+            "description": "Las fibras prebióticas sirven de alimento para las bacterias beneficiosas, ayudándolas a prosperar y multiplicarse en tu intestino."
           }
         },
         "step_2": {
           "type": "step",
           "settings": {
             "icon": "shopify://shop_images/PROBIOTICOS.png",
-            "title": "Probiotics replenish the microbiome",
-            "description": "Live probiotic strains colonize the gut and restore microbial balance, supporting digestion and immunity."
+            "title": "Los probióticos repueblan la microbiota",
+            "description": "Las cepas probióticas vivas colonizan el intestino y restauran el equilibrio microbiano, apoyando la digestión y la inmunidad."
           }
         },
         "step_3": {
           "type": "step",
           "settings": {
             "icon": "shopify://shop_images/POSBIOTICOS.png",
-            "title": "Postbiotics strengthen the gut barrier",
-            "description": "Postbiotic compounds reinforce the intestinal lining, reducing inflammation and improving nutrient absorption."
+            "title": "Los postbióticos fortalecen la barrera intestinal",
+            "description": "Los compuestos postbióticos refuerzan el revestimiento intestinal, reduciendo la inflamación y mejorando la absorción de nutrientes."
           }
         },
         "step_4": {
           "type": "step",
           "settings": {
             "icon": "shopify://shop_images/ENZIMAS.png",
-            "title": "Enzymes improve digestion",
-            "description": "18 broad-spectrum digestive enzymes break down proteins, fats, and carbohydrates efficiently, reducing bloating."
+            "title": "Las enzimas mejoran la digestión",
+            "description": "18 enzimas digestivas de amplio espectro descomponen proteínas, grasas y carbohidratos de forma eficiente, reduciendo la hinchazón."
           }
         }
       },
@@ -317,10 +317,10 @@
       ],
       "name": "How It Works",
       "settings": {
-        "eyebrow": "THE SCIENCE",
-        "heading": "How do our formulations work?",
+        "eyebrow": "LA CIENCIA",
+        "heading": "¿Cómo funcionan nuestras formulaciones?",
         "subtext": "",
-        "cta_label": "View all ingredients",
+        "cta_label": "Ver todos los ingredientes",
         "cta_url": "shopify://pages/product-information"
       }
     },
@@ -330,30 +330,30 @@
         "doc_1": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Gastroenterologist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Gastroenterólogo",
             "ig_handle": "",
-            "quote": "I recommend SYNBIOTIC+ to my patients for its complete and scientifically backed formulation.",
+            "quote": "Recomiendo SYNBIOTIC+ a mis pacientes por su formulación completa y respaldada científicamente.",
             "quote_url": ""
           }
         },
         "doc_2": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Internal Medicine",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Medicina interna",
             "ig_handle": "",
-            "quote": "A trusted product with transparent ingredient labeling and proven clinical results.",
+            "quote": "Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",
             "quote_url": ""
           }
         },
         "doc_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Nutritionist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Nutricionista",
             "ig_handle": "",
-            "quote": "The combination of pre, pro, and postbiotics with enzymes is exactly what my patients need.",
+            "quote": "La combinación de pre, pro y postbióticos con enzimas es justo lo que necesitan mis pacientes.",
             "quote_url": ""
           }
         }
@@ -365,8 +365,8 @@
       ],
       "name": "Doctor Testimonials",
       "settings": {
-        "eyebrow": "TRUSTED BY PROFESSIONALS",
-        "heading": "Recommended by Doctors"
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
       }
     },
     "fgp_product_faq_syn": {
@@ -375,36 +375,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I take SYNBIOTIC+?",
-            "answer": "<p>Take 2 capsules 3 times a day with meals. For best results, take consistently every day.</p>"
+            "question": "¿Cómo tomo SYNBIOTIC+?",
+            "answer": "<p>Toma 2 cápsulas 3 veces al día con las comidas. Para mejores resultados, tómalo todos los días de forma constante.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it need refrigeration?",
-            "answer": "<p>No refrigeration needed. Store in a cool, dry place away from direct sunlight.</p>"
+            "question": "¿Necesita refrigeración?",
+            "answer": "<p>No requiere refrigeración. Consérvalo en un lugar fresco y seco, lejos de la luz solar directa.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "When will I start feeling results?",
-            "answer": "<p>Most customers notice improvements within 2–4 weeks of consistent use, though results may vary.</p>"
+            "question": "¿Cuándo empezaré a notar resultados?",
+            "answer": "<p>La mayoría de los clientes nota mejoras entre 2 y 4 semanas de uso constante, aunque los resultados pueden variar.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe for long-term use?",
-            "answer": "<p>Yes. SYNBIOTIC+ is formulated with safe, natural ingredients designed for daily, long-term use.</p>"
+            "question": "¿Es seguro para uso prolongado?",
+            "answer": "<p>Sí. SYNBIOTIC+ está formulado con ingredientes naturales y seguros, diseñados para uso diario y prolongado.</p>"
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "Who should take SYNBIOTIC+?",
-            "answer": "<p>SYNBIOTIC+ is ideal for adults looking to improve digestive health, strengthen immunity, and restore gut balance. Consult your doctor if you are pregnant, nursing, or have a medical condition.</p>"
+            "question": "¿Quién debería tomar SYNBIOTIC+?",
+            "answer": "<p>SYNBIOTIC+ es ideal para adultos que buscan mejorar la salud digestiva, fortalecer la inmunidad y restaurar el equilibrio intestinal. Consulta a tu médico si estás embarazada, en período de lactancia o tienes alguna condición médica.</p>"
           }
         }
       },
@@ -418,8 +418,8 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "GOT QUESTIONS?",
-        "heading": "Frequently Asked Questions",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Preguntas frecuentes",
         "subtext": ""
       }
     },
@@ -431,7 +431,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "I've been using Synbiotic+ for 3 months and my digestion has improved tremendously. I have more energy and feel incredible!",
+            "review": "Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.",
             "name": "Maria G.",
             "location": "San José, Costa Rica"
           }
@@ -441,7 +441,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "No more bloating after meals. I was skeptical at first but this product truly works. Highly recommend!",
+            "review": "Se acabó la hinchazón después de comer. Al principio era escéptica, pero este producto de verdad funciona. ¡Muy recomendado!",
             "name": "Carlos M.",
             "location": "Cartago, Costa Rica"
           }
@@ -451,7 +451,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Finally a probiotic that actually delivers results. My gut health has never been better.",
+            "review": "Por fin un probiótico que da resultados de verdad. Mi salud intestinal nunca ha estado mejor.",
             "name": "Ana R.",
             "location": "Heredia, Costa Rica"
           }
@@ -464,8 +464,8 @@
       ],
       "name": "Customer Reviews",
       "settings": {
-        "eyebrow": "WHAT OUR CUSTOMERS SAY",
-        "heading": "Loved by Customers"
+        "eyebrow": "LO QUE DICEN NUESTROS CLIENTES",
+        "heading": "Preferido por los clientes"
       }
     },
     "video_fzzDHA": {
@@ -487,7 +487,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,

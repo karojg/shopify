@@ -57,27 +57,27 @@
         "tab_dosage": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dosage",
+            "heading": "Dosis",
             "icon": "none",
-            "content": "<p>Children 4+: 1 gummy per day. Adults: 1–2 gummies per day.</p>",
+            "content": "<p>Niños de 4 años en adelante: 1 gomita al día. Adultos: 1–2 gomitas al día.</p>",
             "page": ""
           }
         },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping",
+            "heading": "Envíos",
             "icon": "none",
-            "content": "<p>Free shipping on orders over $50. Standard delivery 3–5 business days.</p>",
+            "content": "<p>Envío gratis en pedidos superiores a $50. Entrega estándar de 3 a 5 días hábiles.</p>",
             "page": ""
           }
         },
         "tab_returns": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Return policy",
+            "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>We offer a 30-day satisfaction guarantee. If you're not happy, contact us for a full refund.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -85,7 +85,7 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "share_label": "Compartir"
           }
         }
       },
@@ -126,42 +126,42 @@
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Micro.png",
-            "label": "Spore based probiotics"
+            "label": "Probióticos a base de esporas"
           }
         },
         "item_k6jfBi": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Plant_based.png",
-            "label": "Plant Based ingredients"
+            "label": "Ingredientes de origen vegetal"
           }
         },
         "item_9tHJwk": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Beneficial_Bacteria.png",
-            "label": "Replenishes Beneficial Bacteria®"
+            "label": "Repone bacterias beneficiosas®"
           }
         },
         "item_D7DMG6": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Gut_Barrier.png",
-            "label": "Strengthens Gut Barrier®"
+            "label": "Fortalece la barrera intestinal®"
           }
         },
         "item_ArpCQp": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Bacteria.png",
-            "label": "Improves Nutrient Absorption®"
+            "label": "Mejora la absorción de nutrientes®"
           }
         },
         "item_crjKxV": {
           "type": "item",
           "settings": {
             "icon": "shopify://shop_images/Non_GMO.png",
-            "label": "Non GMO"
+            "label": "Sin OGM"
           }
         }
       },
@@ -176,7 +176,7 @@
       "name": "FGP Icon Strip",
       "settings": {
         "bg": "white",
-        "aria_label": "Product benefits"
+        "aria_label": "Beneficios del producto"
       }
     },
     "fgp_kids_spotlight_GX9tMK": {
@@ -184,19 +184,19 @@
       "name": "FGP Kids Spotlight",
       "settings": {
         "product_logo": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
-        "product_logo_alt": "Kids Probiotics",
+        "product_logo_alt": "Probióticos para Niños",
         "badge_icon": "shopify://shop_images/Bacillus_Subtilis.png",
         "strawberry_icon": "shopify://shop_images/fresa-caricatura.png",
         "badge_name": "DE111®",
         "badge_subtitle": "Bacillus Subtilis",
-        "note": "No refrigeration required",
+        "note": "No requiere refrigeración",
         "bottle_image": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png",
         "bottle_image_alt": "Kids Probiotics bottle",
-        "description": "<h1>The gummies consist of 2.5 billion <em>Bacillus Subtilis</em> per gummy.</h1>",
+        "description": "<h1>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</h1>",
         "gummy_child_image": "shopify://shop_images/Kids_Gummie-1.png",
-        "child_label": "Children",
+        "child_label": "Niños",
         "gummy_adult_image": "shopify://shop_images/Kids_Gummie-2.png",
-        "adult_label": "Adults"
+        "adult_label": "Adultos"
       }
     },
     "fgp_origin_card_Mhi8hB": {
@@ -205,7 +205,7 @@
         "cert_logo_7CtmGL": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "DE111 Probiotic"
+            "logo_alt": "Probiótico DE111"
           }
         },
         "cert_logo_TKLwk3": {
@@ -223,7 +223,7 @@
         "cert_logo_tBm7hE": {
           "type": "cert_logo",
           "settings": {
-            "logo_alt": "Made in USA"
+            "logo_alt": "Hecho en EE. UU."
           }
         }
       },
@@ -235,9 +235,9 @@
       ],
       "name": "FGP Origin Card",
       "settings": {
-        "heading": "Formulated in Costa Rica",
-        "body": "<p>Manufactured in United States in facilities with FDA standards with source materials from GMP.</p>",
-        "cta_label": "Explore Ingredients",
+        "heading": "Formulado en Costa Rica",
+        "body": "<p>Fabricado en Estados Unidos en instalaciones con estándares de la FDA y con materias primas bajo normas GMP.</p>",
+        "cta_label": "Explorar ingredientes",
         "cta_url": "shopify://pages/product-information",
         "photo": "shopify://shop_images/kids-hb.png",
         "photo_alt": ""
@@ -249,30 +249,30 @@
         "doc_1": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Pediatrician",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Pediatra",
             "ig_handle": "",
-            "quote": "The Kids Probiotics formula is one of the safest and most effective I've seen for children's gut health.",
+            "quote": "La fórmula de Probióticos para Niños es una de las más seguras y eficaces que he visto para la salud intestinal infantil.",
             "quote_url": ""
           }
         },
         "doc_2": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Pediatric Gastroenterologist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Gastroenteróloga pediátrica",
             "ig_handle": "",
-            "quote": "I recommend this to parents of children with frequent tummy aches or recurring infections.",
+            "quote": "Se lo recomiendo a padres de niños con dolores de barriga frecuentes o infecciones recurrentes.",
             "quote_url": ""
           }
         },
         "doc_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Name Lastname",
-            "specialty": "Nutritionist",
+            "name": "Dr. Nombre Apellido",
+            "specialty": "Nutricionista",
             "ig_handle": "",
-            "quote": "A well-formulated product that supports children's immunity and digestive development.",
+            "quote": "Un producto bien formulado que apoya la inmunidad y el desarrollo digestivo de los niños.",
             "quote_url": ""
           }
         }
@@ -284,8 +284,8 @@
       ],
       "name": "Doctor Testimonials — Kids",
       "settings": {
-        "eyebrow": "TRUSTED BY PROFESSIONALS",
-        "heading": "Recommended by Doctors"
+        "eyebrow": "RESPALDADO POR PROFESIONALES",
+        "heading": "Recomendado por médicos"
       }
     },
     "fgp_product_faq_kids": {
@@ -294,36 +294,36 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I give Kids Probiotics to my child?",
-            "answer": "<p>Give 1 capsule per day with a meal. You can open the capsule and mix the contents into food or a cold drink — it has no unpleasant taste.</p>"
+            "question": "¿Cómo le doy Probióticos para Niños a mi hijo?",
+            "answer": "<p>Dale 1 cápsula al día con una comida. Puedes abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "What age is it suitable for?",
-            "answer": "<p>Kids Probiotics is formulated for children aged 3 and older. For younger children, please consult your pediatrician.</p>"
+            "question": "¿A partir de qué edad se puede tomar?",
+            "answer": "<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consulta a tu pediatra.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe to give every day?",
-            "answer": "<p>Yes. The formula uses well-studied probiotic strains that are safe and beneficial for daily use in children.</p>"
+            "question": "¿Es seguro darlo todos los días?",
+            "answer": "<p>Sí. La fórmula utiliza cepas probióticas bien estudiadas, seguras y beneficiosas para el uso diario en niños.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "When will my child start feeling results?",
-            "answer": "<p>Most parents notice improvements in digestion and fewer colds within 3–6 weeks of consistent daily use.</p>"
+            "question": "¿Cuándo empezará mi hijo a notar resultados?",
+            "answer": "<p>La mayoría de los padres nota mejoras en la digestión y menos resfriados entre 3 y 6 semanas de uso diario constante.</p>"
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "Does it contain allergens?",
-            "answer": "<p>Kids Probiotics is free from gluten, dairy, and artificial colors. Please read the full ingredient list on the label if your child has known allergies.</p>"
+            "question": "¿Contiene alérgenos?",
+            "answer": "<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consulta la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
           }
         }
       },
@@ -337,8 +337,8 @@
       "name": "Kids FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "GOT QUESTIONS?",
-        "heading": "Parents Ask, We Answer",
+        "eyebrow": "¿TIENES PREGUNTAS?",
+        "heading": "Los padres preguntan, nosotros respondemos",
         "subtext": ""
       }
     },
@@ -350,7 +350,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "My daughter's tummy aches disappeared within the first month. She even reminds me to give it to her every day!",
+            "review": "Los dolores de barriga de mi hija desaparecieron en el primer mes. ¡Hasta me recuerda que se lo dé todos los días!",
             "name": "Sofía L.",
             "location": "San José, Costa Rica"
           }
@@ -360,7 +360,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "My son used to get sick every other week. Since starting Kids Probiotics he's barely been sick. Game changer!",
+            "review": "Mi hijo se enfermaba cada dos semanas. Desde que empezó con Probióticos para Niños casi no se ha enfermado. ¡Un cambio total!",
             "name": "Ricardo M.",
             "location": "Alajuela, Costa Rica"
           }
@@ -370,7 +370,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "So easy to use — I just mix it in his smoothie. He doesn't even notice it. And the results speak for themselves.",
+            "review": "Súper fácil de usar: lo mezclo en su batido y ni lo nota. Y los resultados hablan por sí solos.",
             "name": "Carla V.",
             "location": "Heredia, Costa Rica"
           }
@@ -383,8 +383,8 @@
       ],
       "name": "Customer Reviews — Kids",
       "settings": {
-        "eyebrow": "WHAT PARENTS SAY",
-        "heading": "Loved by Families"
+        "eyebrow": "LO QUE DICEN LOS PADRES",
+        "heading": "Preferido por las familias"
       }
     },
     "video_agqNLD": {
@@ -406,7 +406,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "También te puede gustar",
         "heading_size": "h2",
         "products_to_show": 3,
         "columns_desktop": 3,
