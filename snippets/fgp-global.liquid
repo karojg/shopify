@@ -245,15 +245,12 @@ media-gallery > *,
   border-radius: 0 !important;
 }
 
-/* Product media is set to media_fit: contain so the bottle is never cropped.
-   Contained packshots need a light canvas — on the navy section they would
-   otherwise float on dark blue.
-
-   Dawn absolutely positions these images inside a ratio box, so padding on
-   the <img> pushes it out of its container. The inset goes on the wrapper. */
+/* Product photography is already shot on white, so the media frame needs no
+   canvas of its own — forcing one letterboxed the portrait shots with white
+   bars. The frame follows each image's own proportions instead. */
 .product__media .media,
 .product__media-container .media {
-  background-color: var(--fgp-white, #fff) !important;
+  background-color: transparent !important;
   border-radius: 16px !important;
   overflow: hidden;
 }
@@ -261,23 +258,26 @@ media-gallery > *,
 .product__media .media img,
 .product__media-container .media img {
   padding: 0 !important;
-  /* contain already letterboxes; a small inset keeps it off the edges */
-  width: 92% !important;
-  height: 92% !important;
-  left: 4% !important;
-  top: 4% !important;
-  object-fit: contain !important;
+  /* fill the frame; media_fit: contain on the section prevents any crop */
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  object-fit: cover !important;
+  border-radius: 16px;
 }
 
-/* Thumbnails keep Dawn's own sizing — only the backdrop changes */
+/* Thumbnails: same treatment, no white bars around portrait crops */
 .thumbnail {
-  background-color: var(--fgp-white, #fff) !important;
+  background-color: transparent !important;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .thumbnail img {
   padding: 0 !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  border-radius: 10px;
 }
 
 /* ── Product cards (related products, collections, search) ──
