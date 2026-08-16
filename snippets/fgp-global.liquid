@@ -614,23 +614,50 @@ button.product-form__submit,
   border-radius: 14px !important;
   box-shadow: none !important;
   outline: none !important;
-  padding: 16px 18px !important;
+  /* top padding leaves room for the label once it floats up */
+  padding: 22px 20px 10px !important;
 }
 
+.contact .text-area {
+  padding-top: 24px !important;
+}
+
+/* Dawn's floating label sits on top of the input and uses :placeholder-shown
+   purely to detect an empty field — it assumes the placeholder itself is
+   invisible. Showing it duplicated every label ("Nombre" over "Nombre"), so
+   the placeholder is hidden and the label remains the visible one. */
 .contact .field__input::placeholder,
 .contact .text-area::placeholder {
-  color: rgba(35, 64, 146, 0.45) !important;
-  opacity: 1;
+  color: transparent !important;
+  opacity: 0 !important;
 }
 
 /* focus is handled on .field:focus-within:after above */
 
-/* Floating label needs a solid backdrop to sit on */
+/* The label floats inside the field, so it needs no backdrop of its own —
+   adding one boxed it against the border. */
 .contact .field__label {
-  color: rgba(35, 64, 146, 0.7) !important;
+  color: rgba(35, 64, 146, 0.55) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
-  background: var(--fgp-white, #fff);
-  padding: 0 6px;
+  background: transparent !important;
+  padding: 0 !important;
+  letter-spacing: 0;
+  /* match the input's 20px horizontal padding, not Dawn's 2rem */
+  left: 20px !important;
+}
+
+.contact .field__input:not(:placeholder-shown) ~ .field__label,
+.contact .text-area:not(:placeholder-shown) ~ .field__label,
+.contact .field:focus-within .field__label {
+  left: 20px !important;
+}
+
+/* Once the field has a value the label shrinks upward; keep it readable
+   and give the text below it room */
+.contact .field__input:not(:placeholder-shown) ~ .field__label,
+.contact .text-area:not(:placeholder-shown) ~ .field__label {
+  color: rgba(35, 64, 146, 0.7) !important;
+  font-weight: 500;
 }
 
 /* Submit — navy pill, centred with the fields */
