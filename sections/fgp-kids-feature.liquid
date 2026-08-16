@@ -175,7 +175,8 @@
 .fgp-kids__product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* packshot, not a lifestyle photo — cover was cropping the bottle */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -330,7 +331,7 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center top;
   }
 

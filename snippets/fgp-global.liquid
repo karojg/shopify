@@ -245,6 +245,34 @@ media-gallery > *,
   border-radius: 0 !important;
 }
 
+/* Product media is set to media_fit: contain so the bottle is never cropped.
+   Contained packshots need a light canvas — on the navy section they would
+   otherwise float on dark blue. */
+.product__media .media,
+.product__media-container .media {
+  background-color: var(--fgp-white, #fff) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.product__media img,
+.product__media-container img {
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Thumbnails follow the same treatment so the strip matches the main image */
+.thumbnail__badge,
+.product__media-toggle {
+  border-radius: 12px;
+}
+
+.thumbnail img {
+  background-color: var(--fgp-white, #fff) !important;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
 .product__text.caption-with-letter-spacing {
   font-family: var(--fgp-font-primary) !important;
   color: var(--fgp-hero-text-muted) !important;

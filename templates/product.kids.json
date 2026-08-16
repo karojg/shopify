@@ -56,6 +56,7 @@
         },
         "tab_dosage": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Dosis",
             "icon": "none",
@@ -65,6 +66,7 @@
         },
         "tab_shipping": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Envíos",
             "icon": "none",
@@ -74,6 +76,7 @@
         },
         "tab_returns": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Política de devoluciones",
             "icon": "none",

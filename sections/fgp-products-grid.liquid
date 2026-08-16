@@ -147,19 +147,26 @@
   display: block;
   overflow: hidden;
   line-height: 0;
+  /* packshots sit on white, so the frame carries it rather than the crop */
+  background: var(--fgp-white, #fff);
+  padding: 20px 20px 8px;
 }
 
 .fgp-pgrid__img {
   width: 100%;
   height: 260px;
-  object-fit: cover;
-  object-position: center;
+  /* contain, not cover: these are bottles on a white background and cover
+     was slicing the cap and the base off */
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
   transition: transform 0.3s;
 }
 
 .fgp-pgrid__card:hover .fgp-pgrid__img {
-  transform: scale(1.03);
+  /* gentler than before — with contain the image already fills less of the
+     frame, so a large scale reads as a jump */
+  transform: scale(1.04);
 }
 
 .fgp-pgrid__img-placeholder {

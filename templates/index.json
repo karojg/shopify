@@ -366,18 +366,18 @@
           "type": "product_card",
           "settings": {
             "product": "kids-organic-probiotic-gummies",
-            "eyebrow": "NIÑOS",
-            "placeholder_title": "Probióticos para Niños",
-            "cta_label": "Comprar Probióticos para Niños"
+            "eyebrow": "Gomitas",
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Kids Probiotics"
           }
         },
         "product_3": {
           "type": "product_card",
           "settings": {
             "product": "pastilleros-magneticos-feel-good-eucalipto",
-            "eyebrow": "ENZIMAS DIGESTIVAS",
-            "placeholder_title": "Enzimas digestivas",
-            "cta_label": "Comprar enzimas"
+            "eyebrow": "Pastilleros",
+            "placeholder_title": "Pastilleros Magnéticos Feel Good",
+            "cta_label": "Comprar Pastilleros"
           }
         }
       },
@@ -400,6 +400,7 @@
         "doctor_1": {
           "type": "doctor",
           "settings": {
+            "photo": "shopify://shop_images/FLGD_DRA_NANCY_CONEJO-7404682.jpg",
             "name": "Dra. Nancy Conejo",
             "specialty": "Pediatra | Neonatóloga",
             "ig_handle": "@pediatranancyconejo",
@@ -410,7 +411,8 @@
         "doctor_2": {
           "type": "doctor",
           "settings": {
-            "name": "Doctora Von Saalfeld",
+            "photo": "shopify://shop_images/FLGD_VS.png",
+            "name": "Dra. Von Saalfeld",
             "specialty": "Nutricionista",
             "ig_handle": "@cnvs_nutricion",
             "quote": "Synbiotic + funciona increíblemente bien como complemento de una dieta equilibrada en pacientes con síndrome de intestino irritable y otros problemas digestivos.\"",
