@@ -541,22 +541,56 @@ button.product-form__submit,
    Dawn's colour scheme renders the fields in solid picton blue with white
    placeholder text, which fails contrast and reads as disabled. Fields are
    white with navy text; labels stay visible once a value is entered. */
-.section-contact-form .contact__fields,
-.section-contact-form .contact form {
+/* Dawn paints inputs from the scheme's own custom properties, so those have to
+   be neutralised at the source or the !important rules below still lose. */
+.contact,
+.contact .field,
+.contact .field__input,
+.contact .text-area {
+  --color-background: 255, 255, 255;
+  --color-foreground: 35, 64, 146;
+}
+
+.contact .contact__fields,
+.contact form {
   max-width: 620px;
   margin: 0 auto;
 }
 
-.section-contact-form .contact h2,
-.section-contact-form .contact .form__heading {
+/* Name + email share a row on desktop, stack on mobile */
+.contact .contact__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact .contact__fields > .field:nth-child(n + 3),
+.contact .contact__fields > .field:has(.text-area) {
+  grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 749px) {
+  .contact .contact__fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The comment box was the same height as a single-line input */
+.contact .text-area {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact > h2,
+.contact .title {
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
   color: var(--fgp-dark-cornflower-blue, #234092) !important;
   text-align: center;
   margin-bottom: 28px;
 }
 
-.section-contact-form .field__input,
-.section-contact-form .text-area {
+.contact .field__input,
+.contact .text-area {
   background: var(--fgp-white, #fff) !important;
   color: var(--fgp-dark-cornflower-blue, #234092) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
@@ -566,21 +600,21 @@ button.product-form__submit,
   padding: 16px 18px !important;
 }
 
-.section-contact-form .field__input::placeholder,
-.section-contact-form .text-area::placeholder {
+.contact .field__input::placeholder,
+.contact .text-area::placeholder {
   color: rgba(35, 64, 146, 0.45) !important;
   opacity: 1;
 }
 
-.section-contact-form .field__input:focus,
-.section-contact-form .text-area:focus {
+.contact .field__input:focus,
+.contact .text-area:focus {
   border-color: var(--fgp-picton-blue, #45bfef) !important;
   box-shadow: 0 0 0 3px rgba(69, 191, 239, 0.25) !important;
   outline: none !important;
 }
 
 /* Floating label needs a solid backdrop to sit on */
-.section-contact-form .field__label {
+.contact .field__label {
   color: rgba(35, 64, 146, 0.7) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
   background: var(--fgp-white, #fff);
@@ -588,13 +622,13 @@ button.product-form__submit,
 }
 
 /* Submit — navy pill, centred with the fields */
-.section-contact-form .contact__button {
+.contact .contact__button {
   display: flex;
   justify-content: center;
   margin-top: 8px;
 }
 
-.section-contact-form .contact__button .button {
+.contact .contact__button .button {
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
   background: var(--fgp-dark-cornflower-blue, #234092) !important;
   color: var(--fgp-white, #fff) !important;
@@ -607,7 +641,7 @@ button.product-form__submit,
   transition: opacity 0.2s, transform 0.2s !important;
 }
 
-.section-contact-form .contact__button .button:hover {
+.contact .contact__button .button:hover {
   opacity: 0.9 !important;
   transform: translateY(-1px);
 }

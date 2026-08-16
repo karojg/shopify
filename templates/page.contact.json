@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "fgp_contact_hero": {
       "type": "fgp-contact-hero",
       "name": "Contact Hero",
@@ -27,7 +35,9 @@
             "type": "whatsapp",
             "label": "WhatsApp",
             "value": "+506 7109 0960",
+            "display_value": "",
             "wa_message": "¡Hola! Tengo una consulta sobre los productos de Feel Good Pharma.",
+            "map_url": "",
             "subvalue": "Respuesta el mismo día hábil"
           }
         },
@@ -36,7 +46,11 @@
           "settings": {
             "type": "phone",
             "label": "Teléfono",
-            "value": "+506 7164 3200"
+            "value": "+506 7164 3200",
+            "display_value": "",
+            "wa_message": "",
+            "map_url": "",
+            "subvalue": ""
           }
         },
         "info_email": {
@@ -44,7 +58,11 @@
           "settings": {
             "type": "email",
             "label": "Correo electrónico",
-            "value": "hola@feelgoodpharma.com"
+            "value": "hola@feelgoodpharma.com",
+            "display_value": "",
+            "wa_message": "",
+            "map_url": "",
+            "subvalue": ""
           }
         },
         "info_hours": {
@@ -53,6 +71,9 @@
             "type": "hours",
             "label": "Horario",
             "value": "Lun – Vie: 8 a.m. – 8 p.m.",
+            "display_value": "",
+            "wa_message": "",
+            "map_url": "",
             "subvalue": "Sáb – Dom: 9 a.m. – 4 p.m."
           }
         }
@@ -72,8 +93,8 @@
         "heading": "Envíanos un mensaje",
         "heading_size": "h2",
         "color_scheme": "background-1",
-        "padding_top": 48,
-        "padding_bottom": 60
+        "padding_top": 40,
+        "padding_bottom": 56
       }
     },
     "fgp_subfooter_contact": {
@@ -82,14 +103,9 @@
       "settings": {
         "tagline": "",
         "hashtag": "#FeelGoodWithin",
-        "ig_handle": "feel.goodpharma"
-      }
-    },
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "ig_handle": "feel.goodpharma",
+        "fb_url": "",
+        "fb_label": "FEELGOODPHARMA"
       }
     }
   },

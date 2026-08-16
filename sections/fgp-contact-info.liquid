@@ -101,10 +101,11 @@
 
 .fgp-cinfo__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 20px;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .fgp-cinfo__card {
@@ -197,6 +198,9 @@
   text-decoration: none;
   line-height: 1.4;
   transition: color 0.2s;
+  /* the email address is long enough to overflow a 210px card */
+  overflow-wrap: anywhere;
+  hyphens: none;
 }
 
 a.fgp-cinfo__value:hover {
@@ -210,6 +214,10 @@ a.fgp-cinfo__value:hover {
   opacity: 0.6;
   margin: 0;
   line-height: 1.4;
+  /* keeps the sub-line on the bottom edge so cards with and without one
+     still line up their labels and values */
+  margin-top: auto;
+  padding-top: 6px;
 }
 
 @media (max-width: 767px) {
