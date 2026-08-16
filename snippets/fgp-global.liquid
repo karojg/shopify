@@ -274,46 +274,96 @@ media-gallery > *,
 }
 
 /* ── Product cards (related products, collections, search) ──
-   Same packshot problem as the product page: Dawn's card CSS uses cover,
-   which crops the cap and base off the bottles. */
+   Per the Figma design the image is a square that fills its frame, with no
+   white card behind it. Lifestyle shots crop happily; the catalogue is
+   shot with the bottle centred so cover is safe at 1:1. */
 .card__media .media img,
 .card .media img {
-  object-fit: contain !important;
-  background-color: var(--fgp-white, #fff);
+  object-fit: cover !important;
+  object-position: center;
 }
 
 .card__inner,
 .card__media {
-  background-color: var(--fgp-white, #fff) !important;
+  background-color: transparent !important;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .card__media .media {
-  padding: 14px;
-  box-sizing: border-box;
+  padding: 0;
+  border-radius: 12px;
 }
 
-/* Card buttons picked up the scheme's purple; bring them back to brand navy */
-.card__inner ~ .card__content .button,
-.card-information .button,
+/* No card chrome — the image sits directly on the section background */
+.card--standard .card__inner,
+.card-wrapper .card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.card__content {
+  padding: 14px 2px 0 !important;
+}
+
+/* Add button — cyber grape pill, matching the Figma card */
 .card__content .quick-add__submit,
+.card-information .button,
 product-form .quick-add__submit {
-  background: var(--fgp-dark-cornflower-blue, #234092) !important;
+  background: var(--fgp-cyber-grape, #65438a) !important;
   color: var(--fgp-white, #fff) !important;
+  border: none !important;
   border-radius: var(--radius-pill, 200px) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
   font-weight: 600 !important;
+  min-width: 88px;
+  padding: 11px 26px !important;
+  transition: opacity 0.2s !important;
+}
+
+.card__content .quick-add__submit:hover,
+product-form .quick-add__submit:hover {
+  opacity: 0.88 !important;
 }
 
 .card__heading a,
 .card__heading a:visited {
   color: var(--fgp-dark-cornflower-blue, #234092) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-weight: 700 !important;
 }
 
-/* The vendor line repeats "FEELGOODPHARMA" under every card — every product
-   is ours, so it carries no information */
+/* Price and Add sit on one row, price left, button right — as in the design */
+.card__content .card-information {
+  display: grid;
+  grid-template-areas:
+    'vendor vendor'
+    'title  title'
+    'price  button';
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.card__content .caption-with-letter-spacing.light { grid-area: vendor; }
+.card__content .card__heading { grid-area: title; }
+.card__content .price { grid-area: price; margin: 0; }
+.card__content .quick-add { grid-area: button; margin: 0; justify-self: end; }
+
+.card__content .price .price-item {
+  color: var(--fgp-dark-cornflower-blue, #234092) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-weight: 500 !important;
+}
+
+/* Vendor caption is part of the card in the Figma design, so it stays */
 .card__content .caption-with-letter-spacing.light {
-  display: none;
+  color: rgba(35, 64, 146, 0.55) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 
 .product__text.caption-with-letter-spacing {
