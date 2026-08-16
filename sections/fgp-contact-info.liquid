@@ -10,7 +10,7 @@
 <section class="fgp-cinfo" aria-label="{{ 'fgp.aria.contact_info' | t }}">
   <div class="fgp-cinfo__grid">
     {% for block in section.blocks %}
-      <div class="fgp-cinfo__card" {{ block.shopify_attributes }}>
+      <div class="fgp-cinfo__card fgp-cinfo__card--{{ block.settings.type }}" {{ block.shopify_attributes }}>
         {% if block.settings.icon != blank %}
           <img
             class="fgp-cinfo__icon"
@@ -101,9 +101,9 @@
 
 .fgp-cinfo__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 1040px;
+  max-width: 900px;
   margin: 0 auto;
   align-items: stretch;
 }
@@ -198,9 +198,35 @@
   text-decoration: none;
   line-height: 1.4;
   transition: color 0.2s;
-  /* the email address is long enough to overflow a 210px card */
-  overflow-wrap: anywhere;
+  /* the email must not break mid-address; shrink it slightly instead so
+     hola@feelgoodpharma.com stays on one line */
+  overflow-wrap: normal;
+  word-break: keep-all;
   hyphens: none;
+  max-width: 100%;
+}
+
+/* Email is the longest value — give it a size that fits the card */
+.fgp-cinfo__card:has(a[href^="mailto:"]) .fgp-cinfo__value {
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+/* Hours read as two equal lines rather than a value and a faint footnote */
+.fgp-cinfo__card--hours .fgp-cinfo__value,
+.fgp-cinfo__card--hours .fgp-cinfo__subvalue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.fgp-cinfo__card--hours .fgp-cinfo__subvalue {
+  margin-top: 4px;
+  padding-top: 0;
+  font-weight: 500;
+  opacity: 0.75;
 }
 
 a.fgp-cinfo__value:hover {
@@ -222,12 +248,15 @@ a.fgp-cinfo__value:hover {
 
 @media (max-width: 767px) {
   .fgp-cinfo { padding: 32px 20px 40px; }
+  /* single column — three cards in a 2-col grid leave one orphaned */
   .fgp-cinfo__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 14px;
+    max-width: 420px;
   }
-  .fgp-cinfo__card { padding: 20px 14px; }
-  .fgp-cinfo__value { font-size: 13px; }
+  .fgp-cinfo__card { padding: 22px 18px; }
+  .fgp-cinfo__value { font-size: 15px; }
+  .fgp-cinfo__card:has(a[href^="mailto:"]) .fgp-cinfo__value { font-size: 15px; }
 }
 </style>
 

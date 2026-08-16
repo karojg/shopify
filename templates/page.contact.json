@@ -35,22 +35,8 @@
             "type": "whatsapp",
             "label": "WhatsApp",
             "value": "+506 7109 0960",
-            "display_value": "",
             "wa_message": "¡Hola! Tengo una consulta sobre los productos de Feel Good Pharma.",
-            "map_url": "",
             "subvalue": "Respuesta el mismo día hábil"
-          }
-        },
-        "info_phone": {
-          "type": "info_card",
-          "settings": {
-            "type": "phone",
-            "label": "Teléfono",
-            "value": "+506 7164 3200",
-            "display_value": "",
-            "wa_message": "",
-            "map_url": "",
-            "subvalue": ""
           }
         },
         "info_email": {
@@ -59,10 +45,7 @@
             "type": "email",
             "label": "Correo electrónico",
             "value": "hola@feelgoodpharma.com",
-            "display_value": "",
-            "wa_message": "",
-            "map_url": "",
-            "subvalue": ""
+            "subvalue": "Te respondemos en 24 h"
           }
         },
         "info_hours": {
@@ -70,17 +53,13 @@
           "settings": {
             "type": "hours",
             "label": "Horario",
-            "value": "Lun – Vie: 8 a.m. – 8 p.m.",
-            "display_value": "",
-            "wa_message": "",
-            "map_url": "",
-            "subvalue": "Sáb – Dom: 9 a.m. – 4 p.m."
+            "value": "Lun – Vie · 8 a.m. – 8 p.m.",
+            "subvalue": "Sáb y Dom · 9 a.m. – 4 p.m."
           }
         }
       },
       "block_order": [
         "info_whatsapp",
-        "info_phone",
         "info_email",
         "info_hours"
       ],
