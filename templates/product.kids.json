@@ -193,7 +193,7 @@
         "badge_name": "DE111®",
         "badge_subtitle": "Bacillus Subtilis",
         "note": "No requiere refrigeración",
-        "bottle_image": "shopify://shop_images/FLGD_KIDZ_FRASCO_Front_1.png",
+        "bottle_image": "shopify://shop_images/kids-side.png",
         "bottle_image_alt": "Kids Probiotics bottle",
         "description": "<h1>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</h1>",
         "gummy_child_image": "shopify://shop_images/Kids_Gummie-1.png",
@@ -205,15 +205,31 @@
     "fgp_origin_card_Mhi8hB": {
       "type": "fgp-origin-card",
       "blocks": {
+        "cert_logo_QPF7y6": {
+          "type": "cert_logo",
+          "settings": {
+            "logo": "shopify://shop_images/DE111_Probiotic_Logo.png",
+            "logo_alt": ""
+          }
+        },
+        "cert_logo_wWYHYf": {
+          "type": "cert_logo",
+          "settings": {
+            "logo": "shopify://shop_images/FDA_Logo.png",
+            "logo_alt": ""
+          }
+        },
         "cert_logo_7CtmGL": {
           "type": "cert_logo",
           "settings": {
+            "logo": "shopify://shop_images/GMP_Logo.png",
             "logo_alt": "Probiótico DE111"
           }
         },
         "cert_logo_TKLwk3": {
           "type": "cert_logo",
           "settings": {
+            "logo": "shopify://shop_images/Frame_223_5ae9e74a-aecc-4692-bf45-ec8b2c5ced2c.png",
             "logo_alt": "FDA"
           }
         },
@@ -231,6 +247,8 @@
         }
       },
       "block_order": [
+        "cert_logo_QPF7y6",
+        "cert_logo_wWYHYf",
         "cert_logo_7CtmGL",
         "cert_logo_TKLwk3",
         "cert_logo_V744tW",
