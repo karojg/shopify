@@ -589,14 +589,31 @@ button.product-form__submit,
   margin-bottom: 28px;
 }
 
+/* Dawn draws the visible outline with .field:after, not on the input itself.
+   Styling the input's own border produced a second, offset outline, so the
+   border lives on the pseudo-element and the input stays borderless. */
+.contact .field:after,
+.contact .select:after {
+  border: 1.5px solid rgba(35, 64, 146, 0.22) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact .field:focus-within:after {
+  border-color: var(--fgp-picton-blue, #45bfef) !important;
+  box-shadow: 0 0 0 3px rgba(69, 191, 239, 0.25) !important;
+}
+
 .contact .field__input,
 .contact .text-area {
   background: var(--fgp-white, #fff) !important;
   color: var(--fgp-dark-cornflower-blue, #234092) !important;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
-  border: 1.5px solid rgba(35, 64, 146, 0.22) !important;
+  border: 0 !important;
   border-radius: 14px !important;
   box-shadow: none !important;
+  outline: none !important;
   padding: 16px 18px !important;
 }
 
@@ -606,12 +623,7 @@ button.product-form__submit,
   opacity: 1;
 }
 
-.contact .field__input:focus,
-.contact .text-area:focus {
-  border-color: var(--fgp-picton-blue, #45bfef) !important;
-  box-shadow: 0 0 0 3px rgba(69, 191, 239, 0.25) !important;
-  outline: none !important;
-}
+/* focus is handled on .field:focus-within:after above */
 
 /* Floating label needs a solid backdrop to sit on */
 .contact .field__label {
