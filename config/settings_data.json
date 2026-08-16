@@ -10,6 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/FG-Logo.png",
+    "logo_light": "shopify://shop_images/FG-Logo_white.png",
     "logo_width": 140,
     "favicon": "shopify://shop_images/android-chrome-192x192.png",
     "type_header_font": "poppins_n4",
@@ -163,8 +164,6 @@
           "background_color": "#FFFFFF",
           "font_color": "#000000",
           "button_color": "#000000",
-          "secondary_color": "#FFFFFF",
-          "ternary_color": "#6A6A6A",
           "button_icon": "chat_bubble",
           "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",

@@ -4,7 +4,11 @@
 <div class="fgp-login">
   <div class="fgp-login__card">
 
-    {%- assign login_logo = settings.logo_light | default: settings.logo -%}
+    {%- comment -%}
+      The login card sits on a light background, so it takes the standard
+      (blue) logo. The white one is for the picton-blue header.
+    {%- endcomment -%}
+    {%- assign login_logo = settings.logo | default: settings.logo_light -%}
     {%- if login_logo != blank -%}
       <a href="{{ routes.root_url }}" class="fgp-login__logo-link">
         <img
