@@ -247,7 +247,10 @@ media-gallery > *,
 
 /* Product media is set to media_fit: contain so the bottle is never cropped.
    Contained packshots need a light canvas — on the navy section they would
-   otherwise float on dark blue. */
+   otherwise float on dark blue.
+
+   Dawn absolutely positions these images inside a ratio box, so padding on
+   the <img> pushes it out of its container. The inset goes on the wrapper. */
 .product__media .media,
 .product__media-container .media {
   background-color: var(--fgp-white, #fff) !important;
@@ -255,22 +258,26 @@ media-gallery > *,
   overflow: hidden;
 }
 
-.product__media img,
-.product__media-container img {
-  padding: 24px;
-  box-sizing: border-box;
+.product__media .media img,
+.product__media-container .media img {
+  padding: 0 !important;
+  /* contain already letterboxes; a small inset keeps it off the edges */
+  width: 92% !important;
+  height: 92% !important;
+  left: 4% !important;
+  top: 4% !important;
+  object-fit: contain !important;
 }
 
-/* Thumbnails follow the same treatment so the strip matches the main image */
-.thumbnail__badge,
-.product__media-toggle {
-  border-radius: 12px;
+/* Thumbnails keep Dawn's own sizing — only the backdrop changes */
+.thumbnail {
+  background-color: var(--fgp-white, #fff) !important;
+  border-radius: 10px;
 }
 
 .thumbnail img {
-  background-color: var(--fgp-white, #fff) !important;
-  padding: 6px;
-  box-sizing: border-box;
+  padding: 0 !important;
+  object-fit: contain !important;
 }
 
 /* ── Product cards (related products, collections, search) ──
@@ -295,15 +302,9 @@ media-gallery > *,
   border-radius: 12px;
 }
 
-/* No card chrome — the image sits directly on the section background */
-.card--standard .card__inner,
-.card-wrapper .card {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.card__content {
+/* No card chrome — card_style is 'standard' so the image sits directly on
+   the section background */
+.card-wrapper .card__content {
   padding: 14px 2px 0 !important;
 }
 
@@ -334,22 +335,34 @@ product-form .quick-add__submit:hover {
   font-weight: 700 !important;
 }
 
-/* Price and Add sit on one row, price left, button right — as in the design */
-.card__content .card-information {
+/* Price and Add share one row, price left, button right — as in the design.
+   .quick-add is a sibling of .card-information, not a child, so the grid has
+   to live on .card__content. */
+.card-wrapper .card__content {
   display: grid;
-  grid-template-areas:
-    'vendor vendor'
-    'title  title'
-    'price  button';
   grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 4px 12px;
+  align-items: end;
+  column-gap: 12px;
 }
 
-.card__content .caption-with-letter-spacing.light { grid-area: vendor; }
-.card__content .card__heading { grid-area: title; }
-.card__content .price { grid-area: price; margin: 0; }
-.card__content .quick-add { grid-area: button; margin: 0; justify-self: end; }
+.card-wrapper .card__content .card-information {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-wrapper .card__content .quick-add {
+  grid-column: 2;
+  align-self: end;
+  margin: 0 !important;
+  padding-bottom: 2px;
+}
+
+.card-wrapper .card__content .quick-add .button {
+  width: auto !important;
+  min-width: 88px;
+}
 
 .card__content .price .price-item {
   color: var(--fgp-dark-cornflower-blue, #234092) !important;
