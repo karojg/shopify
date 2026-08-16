@@ -16,7 +16,7 @@
       "login_form_password_placeholder": "Tu contraseña",
       "login_form_error": "Contraseña incorrecta",
       "login_form_submit": "Ingresar",
-      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"/admin\" class=\"link underlined-link\">Inicia sesión aquí</a>",
+      "admin_link_html": "¿Sos el propietario de la tienda? <a href=\"/admin\" class=\"link underlined-link\">Iniciá sesión aquí</a>",
       "powered_by_shopify_html": "Esta tienda contará con tecnología Shopify {{ shopify }}"
     },
     "social": {
@@ -235,7 +235,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "No se encontraron resultados para “{{ terms }}” Revisa la ortografía o usa una palabra o frase diferente.",
+      "no_results": "No se encontraron resultados para “{{ terms }}”. Revisá la ortografía o usá una palabra o frase diferente.",
       "results_with_count": {
         "one": "{{ count }} resultado",
         "other": "{{ count }} resultados",
@@ -308,7 +308,7 @@
       "product_disclosure": "Aviso sobre el producto",
       "product_disclosures": "Avisos sobre el producto",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
-      "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
+      "cart_quantity_error_html": "Solo podés agregar {{ quantity }} de este artículo a tu carrito.",
       "headings": {
         "product": "Producto",
         "price": "Precio",
@@ -318,7 +318,7 @@
       },
       "update": "Actualizar",
       "login": {
-        "title": "¿Tienes una cuenta?",
+        "title": "¿Tenés una cuenta?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia sesión</a> para finalizar tus compras con mayor rapidez."
       },
       "estimated_total": "Total estimado",
@@ -350,7 +350,7 @@
     "collection_template": {
       "title": "Colección",
       "empty": "No se encontró ningún producto",
-      "use_fewer_filters_html": "Usa menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">elimínalos todos</a>"
+      "use_fewer_filters_html": "Usá menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">eliminalos todos</a>"
     },
     "video": {
       "load_video": "Cargar video: {{ description }}"
@@ -399,7 +399,7 @@
       "remove_all_single_item_confirmation": "¿Eliminar 1 artículo de tu carrito?",
       "min_error": "Este artículo tiene un mínimo de {{ min }}.",
       "max_error": "Este artículo tiene un máximo de {{ max }}.",
-      "step_error": "Solo puedes agregar este artículo en incrementos de {{ step }}"
+      "step_error": "Solo podés agregar este artículo en incrementos de {{ step }}"
     }
   },
   "localization": {
@@ -604,7 +604,7 @@
       "customer_reviews": "Opiniones de clientes",
       "doctor_testimonials": "Recomendado por médicos",
       "footer": "Pie de página",
-      "for_you": "¿Este producto es para ti?",
+      "for_you": "¿Este producto es para vos?",
       "founder_quote": "Cita de la fundadora",
       "hero_banner": "Banner principal",
       "hero": "Portada",
@@ -681,7 +681,7 @@
       "heading_html": "Con <strong>PROBIÓTICOS PARA NIÑOS,</strong><br>tu hijo nunca más tendrá que sufrir de:"
     },
     "login": {
-      "no_account": "¿No tienes cuenta?"
+      "no_account": "¿No tenés cuenta?"
     }
   }
 }

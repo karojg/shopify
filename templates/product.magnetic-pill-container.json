@@ -245,7 +245,7 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Preguntas frecuentes",
         "subtext": ""
       }

@@ -59,7 +59,7 @@
           "settings": {
             "heading": "Dosis",
             "icon": "none",
-            "content": "<p>Toma 2 cápsulas con el desayuno y 2 cápsulas con el almuerzo o la cena.</p>",
+            "content": "<p>Tomá 2 cápsulas con el desayuno y 2 cápsulas con el almuerzo o la cena.</p>",
             "page": ""
           }
         },
@@ -376,7 +376,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Cómo tomo SYNBIOTIC+?",
-            "answer": "<p>Toma 2 cápsulas 3 veces al día con las comidas. Para mejores resultados, tómalo todos los días de forma constante.</p>"
+            "answer": "<p>Tomá 2 cápsulas 3 veces al día con las comidas. Para mejores resultados, tomalo todos los días de forma constante.</p>"
           }
         },
         "faq_2": {
@@ -404,7 +404,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Quién debería tomar SYNBIOTIC+?",
-            "answer": "<p>SYNBIOTIC+ es ideal para adultos que buscan mejorar la salud digestiva, fortalecer la inmunidad y restaurar el equilibrio intestinal. Consulta a tu médico si estás embarazada, en período de lactancia o tienes alguna condición médica.</p>"
+            "answer": "<p>SYNBIOTIC+ es ideal para adultos que buscan mejorar la salud digestiva, fortalecer la inmunidad y restaurar el equilibrio intestinal. Consultá a tu médico si estás embarazada, en período de lactancia o tenés alguna condición médica.</p>"
           }
         }
       },
@@ -418,7 +418,7 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Preguntas frecuentes",
         "subtext": ""
       }

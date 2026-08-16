@@ -268,7 +268,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Debo tomar los tres a la vez?",
-            "answer": "<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usa el que se ajuste a tus necesidades o a las de tu hijo.</p>"
+            "answer": "<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usá el que se ajuste a tus necesidades o a las de tu hijo.</p>"
           }
         },
         "faq_4": {
@@ -288,7 +288,7 @@
       "name": "Kit FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Preguntas frecuentes",
         "subtext": ""
       }

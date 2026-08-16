@@ -59,7 +59,7 @@
           "settings": {
             "heading": "Dosis",
             "icon": "none",
-            "content": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
+            "content": "<p>Tomá 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
           }
         },
         "tab_shipping": {
@@ -384,7 +384,7 @@
       "name": "Is It For You?",
       "settings": {
         "eyebrow": "ENCUENTRA TU FÓRMULA",
-        "heading": "¿Stressbiotic® es para ti?",
+        "heading": "¿Stressbiotic® es para vos?",
         "subtext": ""
       }
     },
@@ -447,7 +447,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Cuál es la dosis recomendada?",
-            "answer": "<p>Toma 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
+            "answer": "<p>Tomá 2 cápsulas una vez al día, preferiblemente con una comida.</p>"
           }
         },
         "faq_2": {
@@ -481,7 +481,7 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Tenemos las respuestas",
         "subtext": ""
       }

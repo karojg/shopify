@@ -295,14 +295,14 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Cómo le doy Probióticos para Niños a mi hijo?",
-            "answer": "<p>Dale 1 cápsula al día con una comida. Puedes abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>"
+            "answer": "<p>Dale 1 cápsula al día con una comida. Podés abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "¿A partir de qué edad se puede tomar?",
-            "answer": "<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consulta a tu pediatra.</p>"
+            "answer": "<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consultá a tu pediatra.</p>"
           }
         },
         "faq_3": {
@@ -323,7 +323,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Contiene alérgenos?",
-            "answer": "<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consulta la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
+            "answer": "<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consultá la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
           }
         }
       },
@@ -337,7 +337,7 @@
       "name": "Kids FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Los padres preguntan, nosotros respondemos",
         "subtext": ""
       }
