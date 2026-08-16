@@ -13,15 +13,33 @@
       "type": "fgp-contact-hero",
       "name": "Contact Hero",
       "settings": {
-        "eyebrow": "CONTÁCTANOS",
+        "eyebrow": "ESTAMOS PARA AYUDARTE",
         "heading": "Contáctanos",
-        "subtext": "Nos encantaría saber de ti. Completa el formulario y te responderemos lo antes posible."
+        "subtext": "¿Dudas sobre cuál fórmula es para ti? Escríbenos por WhatsApp y te respondemos el mismo día hábil."
       }
     },
     "fgp_contact_info": {
       "type": "fgp-contact-info",
       "blocks": {
-        "card_email": {
+        "info_whatsapp": {
+          "type": "info_card",
+          "settings": {
+            "type": "whatsapp",
+            "label": "WhatsApp",
+            "value": "+506 7109 0960",
+            "wa_message": "¡Hola! Tengo una consulta sobre los productos de Feel Good Pharma.",
+            "subvalue": "Respuesta el mismo día hábil"
+          }
+        },
+        "info_phone": {
+          "type": "info_card",
+          "settings": {
+            "type": "phone",
+            "label": "Teléfono",
+            "value": "+506 7164 3200"
+          }
+        },
+        "info_email": {
           "type": "info_card",
           "settings": {
             "type": "email",
@@ -29,36 +47,21 @@
             "value": "hola@feelgoodpharma.com"
           }
         },
-        "card_phone": {
-          "type": "info_card",
-          "settings": {
-            "type": "phone",
-            "label": "Teléfono",
-            "value": "+506 XXXX XXXX"
-          }
-        },
-        "card_location": {
-          "type": "info_card",
-          "settings": {
-            "type": "location",
-            "label": "Ubicación",
-            "value": "San José, Costa Rica"
-          }
-        },
-        "card_hours": {
+        "info_hours": {
           "type": "info_card",
           "settings": {
             "type": "hours",
             "label": "Horario",
-            "value": "Lun–Vie: 8 a.m. – 5 p.m."
+            "value": "Lun – Vie: 8 a.m. – 8 p.m.",
+            "subvalue": "Sáb – Dom: 9 a.m. – 4 p.m."
           }
         }
       },
       "block_order": [
-        "card_email",
-        "card_phone",
-        "card_location",
-        "card_hours"
+        "info_whatsapp",
+        "info_phone",
+        "info_email",
+        "info_hours"
       ],
       "name": "Contact Info Cards",
       "settings": {}

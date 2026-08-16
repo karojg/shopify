@@ -21,13 +21,35 @@
         {% elsif block.settings.icon_svg != blank %}
           <div class="fgp-cinfo__icon-svg">{{ block.settings.icon_svg }}</div>
         {% else %}
-          <div class="fgp-cinfo__icon-fallback">
+          <div class="fgp-cinfo__icon-fallback" aria-hidden="true">
             {% case block.settings.type %}
-              {% when 'email' %}✉
-              {% when 'phone' %}📞
-              {% when 'location' %}📍
-              {% when 'hours' %}🕐
-              {% else %}•
+              {% when 'email' %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                  <path d="M3 7l8.2 5.6a1.4 1.4 0 0 0 1.6 0L21 7"/>
+                </svg>
+              {% when 'phone' %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6.2 3.5h3l1.5 3.8-1.9 1.4a12.5 12.5 0 0 0 5.5 5.5l1.4-1.9 3.8 1.5v3a1.8 1.8 0 0 1-2 1.8A15.6 15.6 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/>
+                </svg>
+              {% when 'whatsapp' %}
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.1 4c-.2 0-.5 0-.7.4-.3.4-.9 1-.9 2.2s.9 2.5 1 2.7c.2.2 1.8 3 4.5 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.2-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5z"/>
+                </svg>
+              {% when 'location' %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/>
+                  <circle cx="12" cy="10.2" r="2.6"/>
+                </svg>
+              {% when 'hours' %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 6.8V12l3.4 2"/>
+                </svg>
+              {% else %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="9"/>
+                </svg>
             {% endcase %}
           </div>
         {% endif %}
@@ -39,6 +61,16 @@
             <a href="mailto:{{ block.settings.value }}" class="fgp-cinfo__value">{{ block.settings.value }}</a>
           {% elsif block.settings.type == 'phone' %}
             <a href="tel:{{ block.settings.value | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}" class="fgp-cinfo__value">{{ block.settings.value }}</a>
+          {% elsif block.settings.type == 'whatsapp' %}
+            {%- assign wa_number = block.settings.value | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '+' -%}
+            <a
+              href="https://wa.me/{{ wa_number }}{% if block.settings.wa_message != blank %}?text={{ block.settings.wa_message | url_encode }}{% endif %}"
+              class="fgp-cinfo__value"
+              target="_blank"
+              rel="noopener"
+            >{{ block.settings.value }}</a>
+          {% elsif block.settings.type == 'location' and block.settings.map_url != blank %}
+            <a href="{{ block.settings.map_url }}" class="fgp-cinfo__value" target="_blank" rel="noopener">{{ block.settings.value }}</a>
           {% elsif block.settings.type == 'url' %}
             <a href="{{ block.settings.value }}" class="fgp-cinfo__value" target="_blank" rel="noopener">{{ block.settings.display_value | default: block.settings.value }}</a>
           {% else %}
@@ -104,9 +136,48 @@
 }
 
 .fgp-cinfo__icon-fallback {
-  font-size: 32px;
-  line-height: 1;
-  margin-bottom: 4px;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: rgba(69, 191, 239, 0.12);
+  color: var(--fgp-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fgp-cinfo__icon-fallback svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* Cards that link somewhere read as interactive */
+.fgp-cinfo__card:has(a.fgp-cinfo__value) {
+  cursor: pointer;
+}
+
+.fgp-cinfo__card:has(a.fgp-cinfo__value):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(35, 64, 146, 0.14);
+}
+
+.fgp-cinfo__card:has(a.fgp-cinfo__value):hover .fgp-cinfo__icon-fallback {
+  background: var(--fgp-navy);
+  color: var(--fgp-white);
+}
+
+.fgp-cinfo__card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Keyboard focus stays visible */
+.fgp-cinfo__value:focus-visible {
+  outline: 2px solid var(--fgp-navy);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .fgp-cinfo__label {
@@ -171,7 +242,8 @@ a.fgp-cinfo__value:hover {
           "options": [
             { "value": "email", "label": "Email (mailto link)" },
             { "value": "phone", "label": "Phone (tel link)" },
-            { "value": "location", "label": "Location (plain text)" },
+            { "value": "whatsapp", "label": "WhatsApp (chat link)" },
+            { "value": "location", "label": "Location (map link)" },
             { "value": "hours", "label": "Hours (plain text)" },
             { "value": "url", "label": "URL (external link)" },
             { "value": "text", "label": "Text (plain)" }
@@ -200,6 +272,18 @@ a.fgp-cinfo__value:hover {
           "id": "display_value",
           "label": "Display text (for URL type only)",
           "info": "What to show as the link text when type is URL"
+        },
+        {
+          "type": "text",
+          "id": "wa_message",
+          "label": "WhatsApp prefilled message (WhatsApp type only)",
+          "info": "Text the chat opens with, e.g. \"Hola, tengo una consulta sobre...\""
+        },
+        {
+          "type": "url",
+          "id": "map_url",
+          "label": "Map link (Location type only)",
+          "info": "Google Maps link so the card opens directions"
         },
         {
           "type": "text",

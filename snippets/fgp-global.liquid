@@ -536,4 +536,79 @@ button.product-form__submit,
     padding: 0 var(--section-px-mobile);
   }
 }
+
+/* ── Contact form — brand styling ─────────
+   Dawn's colour scheme renders the fields in solid picton blue with white
+   placeholder text, which fails contrast and reads as disabled. Fields are
+   white with navy text; labels stay visible once a value is entered. */
+.section-contact-form .contact__fields,
+.section-contact-form .contact form {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.section-contact-form .contact h2,
+.section-contact-form .contact .form__heading {
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  color: var(--fgp-dark-cornflower-blue, #234092) !important;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-contact-form .field__input,
+.section-contact-form .text-area {
+  background: var(--fgp-white, #fff) !important;
+  color: var(--fgp-dark-cornflower-blue, #234092) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  border: 1.5px solid rgba(35, 64, 146, 0.22) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  padding: 16px 18px !important;
+}
+
+.section-contact-form .field__input::placeholder,
+.section-contact-form .text-area::placeholder {
+  color: rgba(35, 64, 146, 0.45) !important;
+  opacity: 1;
+}
+
+.section-contact-form .field__input:focus,
+.section-contact-form .text-area:focus {
+  border-color: var(--fgp-picton-blue, #45bfef) !important;
+  box-shadow: 0 0 0 3px rgba(69, 191, 239, 0.25) !important;
+  outline: none !important;
+}
+
+/* Floating label needs a solid backdrop to sit on */
+.section-contact-form .field__label {
+  color: rgba(35, 64, 146, 0.7) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  background: var(--fgp-white, #fff);
+  padding: 0 6px;
+}
+
+/* Submit — navy pill, centred with the fields */
+.section-contact-form .contact__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.section-contact-form .contact__button .button {
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  background: var(--fgp-dark-cornflower-blue, #234092) !important;
+  color: var(--fgp-white, #fff) !important;
+  border: none !important;
+  border-radius: var(--radius-pill, 200px) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  min-width: 220px;
+  padding: 15px 34px !important;
+  transition: opacity 0.2s, transform 0.2s !important;
+}
+
+.section-contact-form .contact__button .button:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px);
+}
 </style>
