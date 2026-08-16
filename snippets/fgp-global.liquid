@@ -273,6 +273,49 @@ media-gallery > *,
   box-sizing: border-box;
 }
 
+/* ── Product cards (related products, collections, search) ──
+   Same packshot problem as the product page: Dawn's card CSS uses cover,
+   which crops the cap and base off the bottles. */
+.card__media .media img,
+.card .media img {
+  object-fit: contain !important;
+  background-color: var(--fgp-white, #fff);
+}
+
+.card__inner,
+.card__media {
+  background-color: var(--fgp-white, #fff) !important;
+}
+
+.card__media .media {
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+/* Card buttons picked up the scheme's purple; bring them back to brand navy */
+.card__inner ~ .card__content .button,
+.card-information .button,
+.card__content .quick-add__submit,
+product-form .quick-add__submit {
+  background: var(--fgp-dark-cornflower-blue, #234092) !important;
+  color: var(--fgp-white, #fff) !important;
+  border-radius: var(--radius-pill, 200px) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+  font-weight: 600 !important;
+}
+
+.card__heading a,
+.card__heading a:visited {
+  color: var(--fgp-dark-cornflower-blue, #234092) !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif) !important;
+}
+
+/* The vendor line repeats "FEELGOODPHARMA" under every card — every product
+   is ours, so it carries no information */
+.card__content .caption-with-letter-spacing.light {
+  display: none;
+}
+
 .product__text.caption-with-letter-spacing {
   font-family: var(--fgp-font-primary) !important;
   color: var(--fgp-hero-text-muted) !important;
