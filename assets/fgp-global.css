@@ -280,13 +280,15 @@ media-gallery > *,
 }
 
 /* ── Product cards (related products, collections, search) ──
-   Per the Figma design the image is a square that fills its frame, with no
-   white card behind it. Lifestyle shots crop happily; the catalogue is
-   shot with the bottle centred so cover is safe at 1:1. */
+   The frame is portrait (0.8) so the bottle gets more height and does not sit
+   tight against the top edge. contain keeps the whole product visible: the
+   packshots are framed with almost no headroom, so cover clipped the cap. */
 .card__media .media img,
 .card .media img {
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center;
+  padding: 6%;
+  box-sizing: border-box;
 }
 
 .card__inner,
