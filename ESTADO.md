@@ -56,7 +56,12 @@ Docs: `TRANSLATIONS.md` · `POLITICAS.md` (4 políticas redactadas, con
    que no existen. Es lo más serio del sitio. Solo hay 2 reales (Dra. Nancy
    Conejo, Doctora Von Saalfeld).
 2. **14 reseñas sin verificar** — si son inventadas, aplica lo mismo.
-3. **Sin analítica** — no hay GA4 ni Meta Pixel. Lanzar sin medición.
+3. ~~Sin analítica~~ — **GA4 sí está activo**: app Google & YouTube instalada
+   (mar 2025), pixel *Connected*, Store analytics recibiendo datos. Lo reporté
+   mal: busqué scripts en el tema, pero las apps se inyectan vía
+   `content_for_header` y no son visibles desde el repo.
+   **Falta confirmar Meta Pixel** (Apps → Facebook & Instagram, o
+   Settings → Customer events).
 
 ## 🟡 Pendientes
 
