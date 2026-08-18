@@ -65,8 +65,12 @@ Docs: `TRANSLATIONS.md` · `POLITICAS.md` (4 políticas redactadas, con
 
 ## 🟡 Pendientes
 
-- `share_image` vacío → al compartir en WhatsApp no sale imagen
-- Placeholders: `Nombre del producto`, `Texto del botón`
+- ~~`share_image` vacío~~ — falso positivo: `meta-tags.liquid:20` cae de vuelta
+  a `settings.logo`, que sí está configurado, así que el enlace compartido sí
+  muestra imagen. Mejorable con una imagen social propia, pero no está roto.
+- ~~Placeholders~~ — el botón muerto de `page.json` ya se quitó. Quedan tres
+  `placeholder_title` en Stressbiotic (on hold) que solo se ven si no hay
+  producto asignado.
 - Políticas: pegar `POLITICAS.md` en Settings → Policies y completar corchetes
 - Home dice "envío a EE. UU." pero no hay política de envíos internacionales
 - Verificar que la página de contacto tenga asignada la plantilla `contact`
