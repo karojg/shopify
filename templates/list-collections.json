@@ -43,43 +43,19 @@
         "accessibility_info": "Presentación sobre nuestra marca"
       }
     },
-    "rich-text-0": {
-      "type": "rich-text",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 60
-      }
-    },
     "main": {
       "type": "main-list-collections",
       "settings": {
         "title": "",
         "sort": "alphabetical",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "columns_desktop": 4,
         "columns_mobile": "2"
-      }
-    },
-    "rich-text-1": {
-      "type": "rich-text",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 60
       }
     }
   },
   "order": [
     "slideshow",
-    "rich-text-0",
-    "main",
-    "rich-text-1"
+    "main"
   ]
 }
