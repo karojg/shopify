@@ -280,27 +280,14 @@ media-gallery > *,
 }
 
 /* ── Product cards (related products, collections, search) ──
-   The frame is portrait (0.8) so the bottle gets more height and does not sit
-   tight against the top edge. contain keeps the whole product visible: the
-   packshots are framed with almost no headroom, so cover clipped the cap. */
-.card__media .media img,
-.card .media img {
-  object-fit: contain !important;
-  object-position: center;
-  padding: 6%;
-  box-sizing: border-box;
-}
-
+   Image sizing is left to Dawn. Overriding object-fit here fought the theme
+   without fixing anything: the Synbiotic+ packshot is cropped in the source
+   file itself, so no fit value can recover the cap and base. Only the rounded
+   corners are ours. */
 .card__inner,
 .card__media {
-  background-color: transparent !important;
   border-radius: 12px;
   overflow: hidden;
-}
-
-.card__media .media {
-  padding: 0;
-  border-radius: 12px;
 }
 
 /* No card chrome — card_style is 'standard' so the image sits directly on
