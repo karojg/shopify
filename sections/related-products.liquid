@@ -45,26 +45,31 @@
             <div class="fgp-rp__info">
               <p class="fgp-rp__vendor">{{ p.vendor }}</p>
               <h3 class="fgp-rp__title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
-              <p class="fgp-rp__price">{{ p.price | money }}</p>
-              {% if p.metafields.custom.availability != blank %}
-                <p class="fgp-rp__availability">{{ p.metafields.custom.availability }}</p>
-              {% endif %}
+              {%- comment -%}
+                Price, availability and rating stack on the left with the Add
+                button centred against them on the right, matching the 349x62
+                block in the design.
+              {%- endcomment -%}
               <div class="fgp-rp__bottom">
-                {% if p.metafields.reviews.rating.value != blank %}
-                  <div class="fgp-rp__stars">
-                    {% assign rating = p.metafields.reviews.rating.value.rating | round %}
-                    {% for i in (1..5) %}
-                      {% if i <= rating %}
-                        <span class="fgp-rp__star fgp-rp__star--filled">★</span>
-                      {% else %}
-                        <span class="fgp-rp__star">★</span>
-                      {% endif %}
-                    {% endfor %}
-                    <span class="fgp-rp__rating-val">{{ p.metafields.reviews.rating.value.rating | round: 1 }}</span>
-                  </div>
-                {% else %}
-                  <span></span>
-                {% endif %}
+                <div class="fgp-rp__meta">
+                  <p class="fgp-rp__price">{{ p.price | money }}</p>
+                  {% if p.metafields.custom.availability != blank %}
+                    <p class="fgp-rp__availability">{{ p.metafields.custom.availability }}</p>
+                  {% endif %}
+                  {% if p.metafields.reviews.rating.value != blank %}
+                    <div class="fgp-rp__stars">
+                      {% assign rating = p.metafields.reviews.rating.value.rating | round %}
+                      {% for i in (1..5) %}
+                        {% if i <= rating %}
+                          <span class="fgp-rp__star fgp-rp__star--filled">★</span>
+                        {% else %}
+                          <span class="fgp-rp__star">★</span>
+                        {% endif %}
+                      {% endfor %}
+                      <span class="fgp-rp__rating-val">{{ p.metafields.reviews.rating.value.rating | round: 1 }}</span>
+                    </div>
+                  {% endif %}
+                </div>
                 <a href="{{ p.url }}" class="fgp-rp__add-btn">Add</a>
               </div>
             </div>
@@ -125,28 +130,29 @@
 }
 
 .fgp-rp__info {
-  padding: 16px 16px 20px;
+  padding: 16px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
 }
 
 .fgp-rp__vendor {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #8e8e93;
+  color: #8a8a8e;
   margin: 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
 .fgp-rp__title {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
-  color: #2e2a39;
-  margin: 4px 0 0;
-  line-height: 1.2;
+  color: #33303d;
+  margin: 6px 0 0;
+  line-height: 1.25;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
@@ -156,35 +162,53 @@
 }
 
 .fgp-rp__price {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
-  color: #2e2a39;
-  margin: 4px 0 0;
+  color: #33303d;
+  margin: 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  line-height: 1.3;
 }
 
 .fgp-rp__availability {
   font-size: 13px;
-  color: #6b6b6b;
-  margin: 0;
+  color: #6f6f74;
+  margin: 2px 0 0;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  line-height: 1.3;
 }
 
+/* 349x62 block in the design: meta stacked left, button centred right */
 .fgp-rp__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 8px;
+  min-height: 62px;
+}
+
+.fgp-rp__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .fgp-rp__stars {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
+  margin-top: 4px;
 }
 
 .fgp-rp__star {
-  color: #ddd;
-  font-size: 18px;
+  color: #d8d8dc;
+  font-size: 17px;
   line-height: 1;
+}
+
+.fgp-rp__star--filled {
+  color: var(--fgp-orange-yellow, #fdb921);
 }
 
 .fgp-rp__star--filled {
@@ -193,9 +217,10 @@
 
 .fgp-rp__rating-val {
   font-size: 13px;
-  color: #6b6b6b;
-  margin-left: 6px;
+  color: #6f6f74;
+  margin-left: 10px;
   font-weight: 400;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
 .fgp-rp__add-btn {
