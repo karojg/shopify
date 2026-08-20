@@ -44,10 +44,12 @@
             <h3 class="fgp-pgrid__title">
               <a href="{{ prod.url }}">{{ prod.title }}</a>
             </h3>
-            <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-            <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-              {{ section.settings.cta_label | default: 'Shop Now' }}
-            </a>
+            <div class="fgp-pgrid__price-row">
+              <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
+              <a href="{{ prod.url }}" class="fgp-pgrid__cta">
+                {{ section.settings.cta_label | default: 'Shop Now' }}
+              </a>
+            </div>
           </div>
         </div>
       {% endfor %}
@@ -80,10 +82,12 @@
               <h3 class="fgp-pgrid__title">
                 <a href="{{ prod.url }}">{{ prod.title }}</a>
               </h3>
-              <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-              <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                {{ block.settings.cta_label | default: 'Shop Now' }}
-              </a>
+              <div class="fgp-pgrid__price-row">
+                <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
+                <a href="{{ prod.url }}" class="fgp-pgrid__cta">
+                  {{ block.settings.cta_label | default: 'Shop Now' }}
+                </a>
+              </div>
             </div>
           </div>
         {% else %}
@@ -92,8 +96,10 @@
             <div class="fgp-pgrid__info">
               <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
               <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
-              <p class="fgp-pgrid__price">—</p>
-              <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+              <div class="fgp-pgrid__price-row">
+                <p class="fgp-pgrid__price">—</p>
+                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+              </div>
             </div>
           </div>
         {% endif %}
@@ -135,38 +141,30 @@
 }
 
 /* Card */
+/* No card chrome in the design — only the image is rounded */
 .fgp-pgrid__card {
-  background: var(--fgp-white);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  background: transparent;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.fgp-pgrid__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
+.fgp-pgrid__img-link { border-radius: 12px; }
 
-/* Image */
+/* Image — full-bleed square, as in the design. The padded white frame here
+   was compensating for packshots; lifestyle photos fill the card instead. */
 .fgp-pgrid__img-link {
   display: block;
   overflow: hidden;
   line-height: 0;
-  /* packshots sit on white, so the frame carries it rather than the crop */
-  background: var(--fgp-white, #fff);
-  padding: 20px 20px 8px;
+  aspect-ratio: 1 / 1;
 }
 
 .fgp-pgrid__img {
   width: 100%;
-  height: 260px;
-  /* contain, not cover: these are bottles on a white background and cover
-     was slicing the cap and the base off */
-  object-fit: contain;
-  object-position: center bottom;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.3s;
 }
@@ -179,16 +177,16 @@
 
 .fgp-pgrid__img-placeholder {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 1 / 1;
   background: #dce8f5;
 }
 
 /* Info */
 .fgp-pgrid__info {
-  padding: 20px 24px 28px;
+  padding: 14px 2px 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   flex: 1;
 }
 
@@ -225,20 +223,28 @@
   margin: 0;
 }
 
+/* Compact cyber-grape pill sitting on the price row, per the design */
+.fgp-pgrid__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
 .fgp-pgrid__cta {
   display: inline-block;
-  background: var(--fgp-navy);
+  background: var(--fgp-cyber-grape, #65438a);
   color: var(--fgp-white);
   font-family: var(--fgp-font);
   font-size: 14px;
   font-weight: 600;
   border-radius: 100px;
-  padding: 12px 24px;
+  padding: 10px 26px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
-  margin-top: auto;
-  align-self: flex-start;
+  white-space: nowrap;
 }
 
 .fgp-pgrid__cta:hover { opacity: 0.85; }
