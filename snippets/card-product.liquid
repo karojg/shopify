@@ -37,17 +37,34 @@
       image is the fallback.
     endcomment
     assign card_media = card_product.featured_media
-    if card_product.metafields.custom.card_image != blank
-      assign card_media = card_product.metafields.custom.card_image.value
+    assign card_image_mf = card_product.metafields.custom.card_image
+    if card_image_mf != blank and card_image_mf.value != blank
+      comment
+        A File-type metafield returns a generic file object, not a product
+        Media object, so aspect_ratio is unavailable and width/height come
+        straight off the image.
+      endcomment
+      assign card_media = card_image_mf.value
     endif
 
     assign ratio = 1
     if card_media and media_aspect_ratio == 'portrait'
       assign ratio = 0.8
     elsif card_media and media_aspect_ratio == 'adapt'
-      assign ratio = card_media.aspect_ratio
+      comment
+        Product Media exposes aspect_ratio; a File metafield does not, so fall
+        back to width/height. Forcing a float first keeps divided_by from
+        truncating to an integer.
+      endcomment
+      assign w = card_media.width | times: 1.0
+      assign h = card_media.height | times: 1.0
+      if card_media.aspect_ratio
+        assign ratio = card_media.aspect_ratio
+      elsif w > 0 and h > 0
+        assign ratio = w | divided_by: h
+      endif
     endif
-    if ratio == 0 or ratio == null
+    if ratio == 0 or ratio == null or ratio == blank
       assign ratio = 1
     endif
   -%}
