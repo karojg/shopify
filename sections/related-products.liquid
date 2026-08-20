@@ -91,7 +91,8 @@
 .fgp-rp__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  /* 40px gap per the Figma spec */
+  gap: 40px;
 }
 
 /* No card panel in the design — the image carries the rounding */
@@ -201,14 +202,20 @@
   background: var(--fgp-cyber-grape, #65438a);
   color: #fff;
   border-radius: 100px;
-  padding: 12px 28px;
+  /* ~100px wide in the design, so the pill stays compact */
+  min-width: 100px;
+  padding: 11px 24px;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
   white-space: nowrap;
   display: inline-block;
+  transition: opacity 0.2s;
 }
+
+.fgp-rp__add-btn:hover { opacity: 0.88; }
 
 .fgp-rp__add-btn:hover {
   opacity: 0.88;

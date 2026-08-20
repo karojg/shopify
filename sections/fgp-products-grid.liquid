@@ -135,7 +135,8 @@
 .fgp-pgrid__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  /* 40px gap per the Figma spec */
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -240,7 +241,8 @@
   font-size: 14px;
   font-weight: 600;
   border-radius: 100px;
-  padding: 10px 26px;
+  min-width: 100px;
+  padding: 11px 24px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
