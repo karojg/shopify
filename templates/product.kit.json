@@ -341,7 +341,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 0,
         "padding_bottom": 60
       }

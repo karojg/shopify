@@ -218,6 +218,15 @@
               {%- endif -%}
 
               {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+
+              {%- comment -%}
+                Availability line from the Figma card ("Available in Amazon").
+                Optional per product via the custom.availability metafield; the
+                line is skipped entirely when the metafield is empty.
+              {%- endcomment -%}
+              {%- if card_product.metafields.custom.availability != blank -%}
+                <p class="card__availability">{{ card_product.metafields.custom.availability }}</p>
+              {%- endif -%}
               {%- if card_product.quantity_price_breaks_configured? -%}
                 {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                   {% liquid

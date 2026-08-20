@@ -290,6 +290,33 @@ media-gallery > *,
   overflow: hidden;
 }
 
+/* Availability line + rating, per the Figma card */
+.card__availability {
+  margin: 2px 0 0 !important;
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  font-size: 13px;
+  color: rgba(35, 64, 146, 0.6);
+  line-height: 1.3;
+}
+
+.card__content .rating {
+  margin: 4px 0 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card__content .rating-star {
+  --color-rating-star: var(--fgp-orange-yellow, #fdb921);
+  font-size: 14px;
+}
+
+.card__content .rating-count {
+  font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
+  font-size: 13px;
+  color: rgba(35, 64, 146, 0.6);
+}
+
 /* No card chrome — card_style is 'standard' so the image sits directly on
    the section background */
 .card-wrapper .card__content {
