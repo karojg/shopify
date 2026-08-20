@@ -10,15 +10,35 @@
       <div class="fgp-rp__grid">
         {% for p in recommendations.products %}
           <div class="fgp-rp__card">
+            {%- comment -%}
+              The featured image is the packshot the product page needs; cards
+              read better with a lifestyle shot, so custom.card_image wins when
+              it is set. A File metafield has no aspect_ratio, hence the
+              width/height fallback for the height attribute.
+            {%- endcomment -%}
+            {%- liquid
+              assign rp_img = p.featured_image
+              if p.metafields.custom.card_image.value != blank
+                assign rp_img = p.metafields.custom.card_image.value
+              endif
+            -%}
             <a href="{{ p.url }}" class="fgp-rp__img-link">
-              {% if p.featured_image %}
+              {% if rp_img %}
+                {%- liquid
+                  assign rp_h = 600
+                  if rp_img.aspect_ratio
+                    assign rp_h = 600 | divided_by: rp_img.aspect_ratio | round
+                  elsif rp_img.width > 0 and rp_img.height > 0
+                    assign rp_h = rp_img.height | times: 600 | divided_by: rp_img.width | round
+                  endif
+                -%}
                 <img
                   class="fgp-rp__img"
-                  src="{{ p.featured_image | image_url: width: 600 }}"
-                  alt="{{ p.featured_image.alt | escape }}"
+                  src="{{ rp_img | image_url: width: 600 }}"
+                  alt="{{ rp_img.alt | default: p.title | escape }}"
                   loading="lazy"
                   width="600"
-                  height="{{ 600 | divided_by: p.featured_image.aspect_ratio | round }}"
+                  height="{{ rp_h }}"
                 >
               {% endif %}
             </a>

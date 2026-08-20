@@ -22,11 +22,15 @@
       {% for prod in source_collection.products limit: limit %}
         <div class="fgp-pgrid__card">
           <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
-            {% if prod.featured_image %}
+            {%- assign pg_img = prod.featured_image -%}
+            {%- if prod.metafields.custom.card_image.value != blank -%}
+              {%- assign pg_img = prod.metafields.custom.card_image.value -%}
+            {%- endif -%}
+            {% if pg_img %}
               <img
                 class="fgp-pgrid__img"
-                src="{{ prod.featured_image | img_url: '600x' }}"
-                alt="{{ prod.featured_image.alt | default: prod.title }}"
+                src="{{ pg_img | image_url: width: 600 }}"
+                alt="{{ pg_img.alt | default: prod.title }}"
                 loading="lazy"
               >
             {% else %}
@@ -54,11 +58,15 @@
         {% if prod != blank %}
           <div class="fgp-pgrid__card" {{ block.shopify_attributes }}>
             <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
-              {% if prod.featured_image %}
+              {%- assign pg_img = prod.featured_image -%}
+              {%- if prod.metafields.custom.card_image.value != blank -%}
+                {%- assign pg_img = prod.metafields.custom.card_image.value -%}
+              {%- endif -%}
+              {% if pg_img %}
                 <img
                   class="fgp-pgrid__img"
-                  src="{{ prod.featured_image | img_url: '600x' }}"
-                  alt="{{ prod.featured_image.alt | default: prod.title }}"
+                  src="{{ pg_img | image_url: width: 600 }}"
+                  alt="{{ pg_img.alt | default: prod.title }}"
                   loading="lazy"
                 >
               {% else %}
