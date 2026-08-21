@@ -168,7 +168,7 @@
             "product": "",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Synbiotic+",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         },
         "prod_kids": {
@@ -177,7 +177,7 @@
             "product": "",
             "eyebrow": "NIÑOS",
             "placeholder_title": "Probióticos para Niños",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         },
         "prod_stressbiotic": {
@@ -186,7 +186,7 @@
             "product": "",
             "eyebrow": "ESTRÉS + INTESTINO",
             "placeholder_title": "Stressbiotic®",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         }
       },
@@ -200,7 +200,7 @@
         "collection": "",
         "products_to_show": 3,
         "heading": "Qué contiene el kit",
-        "cta_label": "Comprar"
+        "cta_label": "Ver producto"
       }
     },
     "fgp_origin_card_kit": {

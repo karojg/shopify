@@ -397,7 +397,7 @@
             "product": "",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Nombre del producto",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         },
         "prod_2": {
@@ -406,7 +406,7 @@
             "product": "",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Nombre del producto",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         },
         "prod_3": {
@@ -415,7 +415,7 @@
             "product": "",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Nombre del producto",
-            "cta_label": "Comprar"
+            "cta_label": "Ver producto"
           }
         }
       },
@@ -429,7 +429,7 @@
         "collection": "",
         "products_to_show": 3,
         "heading": "Los nuevos mejores amigos de tu intestino",
-        "cta_label": "Comprar"
+        "cta_label": "Ver producto"
       }
     },
     "fgp_video": {

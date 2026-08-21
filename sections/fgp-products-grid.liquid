@@ -65,7 +65,7 @@
                   {% endif %}
               </div>
               <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                {{ section.settings.cta_label | default: 'Comprar' }}
+                {{ section.settings.cta_label | default: 'Ver producto' }}
               </a>
             </div>
           </div>
@@ -121,7 +121,7 @@
                   {% endif %}
                 </div>
                 <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                  {{ block.settings.cta_label | default: 'Comprar' }}
+                  {{ block.settings.cta_label | default: 'Ver producto' }}
                 </a>
               </div>
             </div>
@@ -134,7 +134,7 @@
               <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
               <div class="fgp-pgrid__price-row">
                 <p class="fgp-pgrid__price">—</p>
-                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Comprar' }}</span>
+                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Ver producto' }}</span>
               </div>
             </div>
           </div>
@@ -404,7 +404,7 @@
       "type": "text",
       "id": "cta_label",
       "label": "Button Label",
-      "default": "Comprar"
+      "default": "Ver producto"
     }
   ],
   "blocks": [
@@ -433,7 +433,7 @@
           "type": "text",
           "id": "cta_label",
           "label": "Button Label",
-          "default": "Comprar"
+          "default": "Ver producto"
         }
       ]
     }

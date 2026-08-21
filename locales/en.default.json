@@ -571,7 +571,8 @@
       "email": "Email",
       "email_address": "Email address",
       "recommended_by": "Recommended by Health Specialists",
-      "products_alt": "Feel Good Pharma Products"
+      "products_alt": "Feel Good Pharma Products",
+      "view_product": "View product"
     },
     "symptoms": {
       "gluten": "Gluten intolerance",

@@ -70,7 +70,11 @@
                     </div>
                   {% endif %}
                 </div>
-                <a href="{{ p.url }}" class="fgp-rp__add-btn">Add</a>
+                {%- comment -%}
+                  This links through to the product page rather than adding to
+                  cart, so the label says so.
+                {%- endcomment -%}
+                <a href="{{ p.url }}" class="fgp-rp__add-btn">{{ 'fgp.shared.view_product' | t }}</a>
               </div>
             </div>
           </div>
