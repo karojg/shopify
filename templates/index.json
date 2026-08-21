@@ -359,7 +359,7 @@
             "product": "enzimas-digestivas-con-sinbiotico",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Synbiotic+",
-            "cta_label": "Comprar Synbiotic+"
+            "cta_label": "Comprar"
           }
         },
         "product_2": {
@@ -368,7 +368,7 @@
             "product": "kids-organic-probiotic-gummies",
             "eyebrow": "Gomitas",
             "placeholder_title": "Kids Probiotics",
-            "cta_label": "Comprar Kids Probiotics"
+            "cta_label": "Comprar"
           }
         },
         "product_3": {
@@ -377,7 +377,7 @@
             "product": "pastilleros-magneticos-feel-good-eucalipto",
             "eyebrow": "Pastilleros",
             "placeholder_title": "Pastilleros Magnéticos Feel Good",
-            "cta_label": "Comprar Pastilleros"
+            "cta_label": "Comprar"
           }
         }
       },
@@ -391,7 +391,7 @@
         "collection": "",
         "products_to_show": 3,
         "heading": "",
-        "cta_label": "Comprar ahora"
+        "cta_label": "Comprar"
       }
     },
     "fgp_doctor_testimonials_main": {

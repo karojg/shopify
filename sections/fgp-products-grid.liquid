@@ -65,7 +65,7 @@
                   {% endif %}
               </div>
               <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                {{ section.settings.cta_label | default: 'Shop Now' }}
+                {{ section.settings.cta_label | default: 'Comprar' }}
               </a>
             </div>
           </div>
@@ -121,7 +121,7 @@
                   {% endif %}
                 </div>
                 <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                  {{ block.settings.cta_label | default: 'Shop Now' }}
+                  {{ block.settings.cta_label | default: 'Comprar' }}
                 </a>
               </div>
             </div>
@@ -134,7 +134,7 @@
               <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
               <div class="fgp-pgrid__price-row">
                 <p class="fgp-pgrid__price">—</p>
-                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Comprar' }}</span>
               </div>
             </div>
           </div>
@@ -319,13 +319,8 @@
   font-weight: 600;
   border-radius: 100px;
   min-width: 100px;
-  /* labels here are merchant-set and can be long ("Comprar Synbiotic+"),
-     so the pill shrinks rather than pushing the price out of the row */
-  padding: 11px 22px;
-  flex-shrink: 1;
-  max-width: 60%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 11px 26px;
+  flex-shrink: 0;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
@@ -409,7 +404,7 @@
       "type": "text",
       "id": "cta_label",
       "label": "Button Label",
-      "default": "Shop Now"
+      "default": "Comprar"
     }
   ],
   "blocks": [
@@ -438,7 +433,7 @@
           "type": "text",
           "id": "cta_label",
           "label": "Button Label",
-          "default": "Shop Now"
+          "default": "Comprar"
         }
       ]
     }
