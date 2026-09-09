@@ -16,15 +16,20 @@ visibles para cualquier cliente. Aquí se rellenaron con datos reales del sitio:
 | `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica | dato del propietario |
 | `[INSERTAR NÚMERO DE TELÉFONO COMERCIAL]` | +506 7109 0960 | página de contacto (WhatsApp) |
 
-## ⚠️ Faltan 3 datos que no están en ningún lado del sitio
+## ⚠️ Faltan 2 datos que no están en ningún lado del sitio
 
 Hay que completarlos **antes de publicar**. Son datos registrales:
 
 1. `[RAZÓN SOCIAL]` — el nombre legal inscrito en el Registro Nacional.
    No es necesariamente "Feel Good Pharma"; suele ser una S.A. o S.R.L.
-2. `[CÉDULA JURÍDICA]` — formato `3-101-XXXXXX`.
-3. `[NÚMERO DE CONTRIBUYENTE IVA]` — si no aplica, **borrar esa línea entera**
+2. `[NÚMERO DE CONTRIBUYENTE IVA]` — si no aplica, **borrar esa línea entera**
    en lugar de dejarla vacía.
+
+**Cédula jurídica:** se quitó por decisión del propietario. La plantilla de
+Shopify la traía como "número de registro comercial" y no es obligatoria en el
+texto. Si algún día se necesita (por ejemplo si un banco, una pasarela de pago o
+un cliente corporativo la pide por escrito), se vuelve a agregar como una línea
+más en el bloque de contacto de la Sección 25.
 
 `[nombre del agente]` en la Sección 14.4 **se deja tal cual**: es una plantilla
 literal que los agentes de IA deben rellenar en su cabecera `user-agent`, no un
@@ -159,5 +164,4 @@ A continuación figura nuestra información de contacto:
 hola@feelgoodpharmacr.com 
 Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica 
 +506 7109 0960 
-[CÉDULA JURÍDICA — p. ej. 3-101-XXXXXX] 
 [NÚMERO DE CONTRIBUYENTE IVA — o eliminar esta línea si no aplica]
