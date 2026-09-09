@@ -24,7 +24,10 @@
       {% else %}
         <a href="{{ routes.root_url }}" class="fgp-mob__link">{{ 'fgp.menu.home' | t }}</a>
         <a href="/collections" class="fgp-mob__link">{{ 'fgp.menu.formulations' | t }}</a>
-        <a href="/pages/science-behind-it" class="fgp-mob__link">{{ 'fgp.menu.science' | t }}</a>
+        {%- comment -%}
+          "La ciencia detrás" pointed at /pages/science-behind-it, which does not
+          exist (404). Restore the link here once that page is created.
+        {%- endcomment -%}
         <a href="/pages/about-us" class="fgp-mob__link">{{ 'fgp.menu.about' | t }}</a>
       {% endif %}
     </nav>

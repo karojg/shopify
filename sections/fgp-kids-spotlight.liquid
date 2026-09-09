@@ -17,7 +17,9 @@
       {% if section.settings.product_logo != blank %}
         <img
           class="fgp-kspot__logo"
-          src="{{ section.settings.product_logo | img_url: 'master' }}"
+          src="{{ section.settings.product_logo | image_url: width: 600 }}"
+          srcset="{{ section.settings.product_logo | image_url: width: 300 }} 300w, {{ section.settings.product_logo | image_url: width: 400 }} 400w, {{ section.settings.product_logo | image_url: width: 600 }} 600w"
+          sizes="(max-width: 767px) 70vw, 320px"
           alt="{{ section.settings.product_logo_alt | default: 'Kids Probiotics' }}"
           loading="lazy"
         >
@@ -27,7 +29,7 @@
         {% if section.settings.badge_icon != blank %}
           <img
             class="fgp-kspot__badge-icon"
-            src="{{ section.settings.badge_icon | img_url: 'master' }}"
+            src="{{ section.settings.badge_icon | image_url: width: 300 }}"
             alt="{{ 'fgp.kids.de111_alt' | t }}"
             loading="lazy"
           >
@@ -35,7 +37,7 @@
         {% if section.settings.strawberry_icon != blank %}
           <img
             class="fgp-kspot__strawberry"
-            src="{{ section.settings.strawberry_icon | img_url: 'master' }}"
+            src="{{ section.settings.strawberry_icon | image_url: width: 300 }}"
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -55,7 +57,9 @@
       {% if section.settings.bottle_image != blank %}
         <img
           class="fgp-kspot__bottle"
-          src="{{ section.settings.bottle_image | img_url: 'master' }}"
+          src="{{ section.settings.bottle_image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.bottle_image | image_url: width: 300 }} 300w, {{ section.settings.bottle_image | image_url: width: 400 }} 400w, {{ section.settings.bottle_image | image_url: width: 600 }} 600w, {{ section.settings.bottle_image | image_url: width: 800 }} 800w, {{ section.settings.bottle_image | image_url: width: 1000 }} 1000w"
+          sizes="(max-width: 767px) 100vw, 50vw"
           alt="{{ section.settings.bottle_image_alt | default: fgp_kids_bottle_alt }}"
           loading="lazy"
         >
@@ -73,7 +77,9 @@
           {% if section.settings.gummy_child_image != blank %}
             <img
               class="fgp-kspot__gummy-img"
-              src="{{ section.settings.gummy_child_image | img_url: 'master' }}"
+              src="{{ section.settings.gummy_child_image | image_url: width: 600 }}"
+              srcset="{{ section.settings.gummy_child_image | image_url: width: 300 }} 300w, {{ section.settings.gummy_child_image | image_url: width: 400 }} 400w, {{ section.settings.gummy_child_image | image_url: width: 600 }} 600w"
+              sizes="(max-width: 767px) 50vw, 300px"
               alt="{{ 'fgp.kids.gummy_1_alt' | t }}"
               loading="lazy"
             >
@@ -84,7 +90,9 @@
           {% if section.settings.gummy_adult_image != blank %}
             <img
               class="fgp-kspot__gummy-img"
-              src="{{ section.settings.gummy_adult_image | img_url: 'master' }}"
+              src="{{ section.settings.gummy_adult_image | image_url: width: 600 }}"
+              srcset="{{ section.settings.gummy_adult_image | image_url: width: 300 }} 300w, {{ section.settings.gummy_adult_image | image_url: width: 400 }} 400w, {{ section.settings.gummy_adult_image | image_url: width: 600 }} 600w"
+              sizes="(max-width: 767px) 50vw, 300px"
               alt="{{ 'fgp.kids.gummy_2_alt' | t }}"
               loading="lazy"
             >

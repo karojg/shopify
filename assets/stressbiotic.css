@@ -78,6 +78,11 @@
   /* ── Short aliases (used by existing section <style> blocks) ── */
   --fgp-navy: #234092;
   --fgp-blue: #45bfef;
+  /* Accessible text variant of --fgp-blue. The brand blue is 2.11:1 on white,
+     which fails WCAG AA (4.5:1) for the small uppercase eyebrow labels it was
+     used for. This darkened tone is 4.87:1 on white and 4.58:1 on --fgp-offwhite.
+     Use --fgp-blue for fills/borders, --fgp-blue-text for text on light grounds. */
+  --fgp-blue-text: #1479a6;
   --fgp-purple: #65438a;
   --fgp-gold: #fdb921;
   --fgp-offwhite: #f8f8f8;

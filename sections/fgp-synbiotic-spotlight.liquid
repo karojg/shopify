@@ -86,7 +86,9 @@
       {% if section.settings.bottle_image != blank %}
         <img
           class="fgp-sbspot__bottle"
-          src="{{ section.settings.bottle_image | img_url: 'master' }}"
+          src="{{ section.settings.bottle_image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.bottle_image | image_url: width: 300 }} 300w, {{ section.settings.bottle_image | image_url: width: 400 }} 400w, {{ section.settings.bottle_image | image_url: width: 600 }} 600w, {{ section.settings.bottle_image | image_url: width: 800 }} 800w, {{ section.settings.bottle_image | image_url: width: 1000 }} 1000w"
+          sizes="(max-width: 767px) 100vw, 50vw"
           alt="{{ section.settings.bottle_alt | default: 'Synbiotic+ bottle' }}"
           loading="lazy"
         >

@@ -324,51 +324,7 @@
         "cta_url": "shopify://pages/product-information"
       }
     },
-    "fgp_doctor_testimonials_syn": {
-      "type": "fgp-doctor-testimonials",
-      "blocks": {
-        "doc_1": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Gastroenterólogo",
-            "ig_handle": "",
-            "quote": "Recomiendo SYNBIOTIC+ a mis pacientes por su formulación completa y respaldada científicamente.",
-            "quote_url": ""
-          }
-        },
-        "doc_2": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Medicina interna",
-            "ig_handle": "",
-            "quote": "Un producto confiable, con etiquetado transparente de ingredientes y resultados clínicos comprobados.",
-            "quote_url": ""
-          }
-        },
-        "doc_3": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Nutricionista",
-            "ig_handle": "",
-            "quote": "La combinación de pre, pro y postbióticos con enzimas es justo lo que necesitan mis pacientes.",
-            "quote_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "doc_1",
-        "doc_2",
-        "doc_3"
-      ],
-      "name": "Doctor Testimonials",
-      "settings": {
-        "eyebrow": "RESPALDADO POR PROFESIONALES",
-        "heading": "Recomendado por médicos"
-      }
-    },
+    
     "fgp_product_faq_syn": {
       "type": "fgp-product-faq",
       "blocks": {
@@ -509,7 +465,6 @@
     "fgp_synbiotic_spotlight_aNxgHJ",
     "fgp_origin_card_nMkFRa",
     "fgp_how_it_works_syn",
-    "fgp_doctor_testimonials_syn",
     "fgp_product_faq_syn",
     "fgp_customer_reviews_syn",
     "video_fzzDHA",

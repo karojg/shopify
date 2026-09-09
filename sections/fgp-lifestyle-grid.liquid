@@ -15,7 +15,9 @@
       {% if section.settings.image_1 != blank %}
         <div class="fgp-lifestyle__img-wrap fgp-lifestyle__img-wrap--tall">
           <img
-            src="{{ section.settings.image_1 | img_url: 'master' }}"
+            src="{{ section.settings.image_1 | image_url: width: 1000 }}"
+            srcset="{{ section.settings.image_1 | image_url: width: 300 }} 300w, {{ section.settings.image_1 | image_url: width: 400 }} 400w, {{ section.settings.image_1 | image_url: width: 600 }} 600w, {{ section.settings.image_1 | image_url: width: 800 }} 800w, {{ section.settings.image_1 | image_url: width: 1000 }} 1000w"
+            sizes="(max-width: 767px) 100vw, 50vw"
             alt="{{ section.settings.image_1_alt | default: 'Lifestyle photo 1' }}"
             class="fgp-lifestyle__img"
             loading="lazy"
@@ -31,7 +33,9 @@
       {% if section.settings.image_2 != blank %}
         <div class="fgp-lifestyle__img-wrap">
           <img
-            src="{{ section.settings.image_2 | img_url: 'master' }}"
+            src="{{ section.settings.image_2 | image_url: width: 1000 }}"
+            srcset="{{ section.settings.image_2 | image_url: width: 300 }} 300w, {{ section.settings.image_2 | image_url: width: 400 }} 400w, {{ section.settings.image_2 | image_url: width: 600 }} 600w, {{ section.settings.image_2 | image_url: width: 800 }} 800w, {{ section.settings.image_2 | image_url: width: 1000 }} 1000w"
+            sizes="(max-width: 767px) 100vw, 50vw"
             alt="{{ section.settings.image_2_alt | default: 'Lifestyle photo 2' }}"
             class="fgp-lifestyle__img"
             loading="lazy"
@@ -44,7 +48,9 @@
       {% if section.settings.image_3 != blank %}
         <div class="fgp-lifestyle__img-wrap">
           <img
-            src="{{ section.settings.image_3 | img_url: 'master' }}"
+            src="{{ section.settings.image_3 | image_url: width: 1000 }}"
+            srcset="{{ section.settings.image_3 | image_url: width: 300 }} 300w, {{ section.settings.image_3 | image_url: width: 400 }} 400w, {{ section.settings.image_3 | image_url: width: 600 }} 600w, {{ section.settings.image_3 | image_url: width: 800 }} 800w, {{ section.settings.image_3 | image_url: width: 1000 }} 1000w"
+            sizes="(max-width: 767px) 100vw, 50vw"
             alt="{{ section.settings.image_3_alt | default: 'Lifestyle photo 3' }}"
             class="fgp-lifestyle__img"
             loading="lazy"
@@ -61,7 +67,9 @@
   {% if section.settings.image_4 != blank %}
     <div class="fgp-lifestyle__img-wrap fgp-lifestyle__img-wrap--wide">
       <img
-        src="{{ section.settings.image_4 | img_url: 'master' }}"
+        src="{{ section.settings.image_4 | image_url: width: 1000 }}"
+        srcset="{{ section.settings.image_4 | image_url: width: 300 }} 300w, {{ section.settings.image_4 | image_url: width: 400 }} 400w, {{ section.settings.image_4 | image_url: width: 600 }} 600w, {{ section.settings.image_4 | image_url: width: 800 }} 800w, {{ section.settings.image_4 | image_url: width: 1000 }} 1000w"
+        sizes="(max-width: 767px) 100vw, 50vw"
         alt="{{ section.settings.image_4_alt | default: 'Lifestyle photo 4' }}"
         class="fgp-lifestyle__img"
         loading="lazy"

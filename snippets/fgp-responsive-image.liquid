@@ -1,0 +1,63 @@
+{%- comment -%}
+  FGP RESPONSIVE IMAGE
+
+  Renders an <img> with a width-descriptor srcset so the browser downloads a
+  variant sized for the device instead of the full-resolution original.
+
+  Several fgp-* sections used `img_url: 'master'`, which serves the raw upload:
+  the homepage alone shipped ~10 MB of images, including one 4.8 MB PNG that
+  displays at well under 800 CSS px. Shopify generates the resized variants on
+  demand, so this is purely a markup change — no re-uploading needed.
+
+  Usage:
+    {% render 'fgp-responsive-image',
+       image: section.settings.product_image,
+       class: 'fgp-syn__product-img',
+       alt: 'Synbiotic+',
+       sizes: '(max-width: 767px) 100vw, 50vw',
+       widths: '400,600,800,1200,1600',
+       loading: 'lazy' %}
+
+  Parameters
+    image    (required) an image_picker / product image drop
+    class    css class for the <img>
+    alt      alt text; pass '' for decorative images
+    sizes    CSS `sizes` attribute; defaults to full viewport width
+    widths   comma-separated candidate widths; defaults below
+    loading  'lazy' (default) or 'eager' for above-the-fold images
+    fetchpriority  optional, e.g. 'high' for the LCP image
+{%- endcomment -%}
+
+{%- liquid
+  assign img = image
+  assign img_class = class | default: ''
+  assign img_sizes = sizes | default: '100vw'
+  assign img_loading = loading | default: 'lazy'
+  assign candidate_widths = widths | default: '400,600,800,1200,1600'
+-%}
+
+{%- if img != blank -%}
+  {%- capture srcset_value -%}
+    {%- assign width_list = candidate_widths | split: ',' -%}
+    {%- for w in width_list -%}
+      {%- assign w_num = w | strip | times: 1 -%}
+      {%- if img.width >= w_num -%}
+        {{ img | image_url: width: w_num }} {{ w_num }}w,
+      {%- endif -%}
+    {%- endfor -%}
+    {{ img | image_url: width: img.width }} {{ img.width }}w
+  {%- endcapture -%}
+
+  <img
+    {% if img_class != blank %}class="{{ img_class }}"{% endif %}
+    src="{{ img | image_url: width: 800 }}"
+    srcset="{{ srcset_value | strip | strip_newlines }}"
+    sizes="{{ img_sizes }}"
+    {% if img.width %}width="{{ img.width }}"{% endif %}
+    {% if img.height %}height="{{ img.height }}"{% endif %}
+    alt="{{ alt | escape }}"
+    loading="{{ img_loading }}"
+    {% if img_loading == 'lazy' %}decoding="async"{% endif %}
+    {% if fetchpriority != blank %}fetchpriority="{{ fetchpriority }}"{% endif %}
+  >
+{%- endif -%}

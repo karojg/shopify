@@ -264,51 +264,7 @@
         "photo_alt": ""
       }
     },
-    "fgp_doctor_testimonials_kids": {
-      "type": "fgp-doctor-testimonials",
-      "blocks": {
-        "doc_1": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Pediatra",
-            "ig_handle": "",
-            "quote": "La fórmula de Probióticos para Niños es una de las más seguras y eficaces que he visto para la salud intestinal infantil.",
-            "quote_url": ""
-          }
-        },
-        "doc_2": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Gastroenteróloga pediátrica",
-            "ig_handle": "",
-            "quote": "Se lo recomiendo a padres de niños con dolores de barriga frecuentes o infecciones recurrentes.",
-            "quote_url": ""
-          }
-        },
-        "doc_3": {
-          "type": "doctor",
-          "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Nutricionista",
-            "ig_handle": "",
-            "quote": "Un producto bien formulado que apoya la inmunidad y el desarrollo digestivo de los niños.",
-            "quote_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "doc_1",
-        "doc_2",
-        "doc_3"
-      ],
-      "name": "Doctor Testimonials — Kids",
-      "settings": {
-        "eyebrow": "RESPALDADO POR PROFESIONALES",
-        "heading": "Recomendado por médicos"
-      }
-    },
+    
     "fgp_product_faq_kids": {
       "type": "fgp-product-faq",
       "blocks": {
@@ -448,7 +404,6 @@
     "fgp_icon_strip_9UJFwJ",
     "fgp_kids_spotlight_GX9tMK",
     "fgp_origin_card_Mhi8hB",
-    "fgp_doctor_testimonials_kids",
     "fgp_product_faq_kids",
     "fgp_customer_reviews_kids",
     "video_agqNLD",
