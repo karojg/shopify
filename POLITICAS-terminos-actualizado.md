@@ -14,13 +14,19 @@ visibles para cualquier cliente. Aquí se rellenaron con datos reales del sitio:
 | `[LINK]` / `[ENLACE]` (×3) | URLs reales de las políticas | `/policies/privacy-policy`, `/policies/refund-policy` |
 | `[EMPRENDEDOR]` (×2) | FEEL GOOD PHARMA | nombre de marca |
 | `[INSERTAR NOMBRE COMERCIAL]` | Feel Good Biotics S.R.L. | dato del propietario |
-| `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica | dato del propietario |
+| `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Escazú, Costa Rica | dato del propietario |
 | `[INSERTAR NÚMERO DE TELÉFONO COMERCIAL]` | +506 7109 0960 | página de contacto (WhatsApp) |
 
-## ⚠️ Falta 1 dato
+## ✅ Datos completos
 
-1. `[NÚMERO DE CONTRIBUYENTE IVA]` — si no aplica, **borrar esa línea entera**
-   en lugar de dejarla vacía.
+No quedan marcadores por rellenar. El bloque de contacto de la Sección 25 lleva
+razón social, cédula jurídica, correo, dirección y teléfono.
+
+**IVA:** se eliminó la línea por decisión del propietario.
+
+**Cédula jurídica:** 3-102-908874. (Se había quitado antes; el propietario pidió
+volver a incluirla. El prefijo `3-102` corresponde a S.R.L., consistente con la
+razón social.)
 
 **Razón social:** Feel Good Biotics S.R.L. (dato del propietario). Se agregó al
 párrafo de apertura, ligando el nombre comercial "feelgoodpharma" a la sociedad
@@ -163,7 +169,7 @@ SECCIÓN 25 - INFORMACIÓN DE CONTACTO
 Las preguntas sobre los Términos del Servicio deben enviarse a hola@feelgoodpharmacr.com. 
 A continuación figura nuestra información de contacto: 
 Feel Good Biotics S.R.L. 
+Cédula jurídica 3-102-908874 
 hola@feelgoodpharmacr.com 
-Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica 
-+506 7109 0960 
-[NÚMERO DE CONTRIBUYENTE IVA — o eliminar esta línea si no aplica]
+Plaza Florencia, Escazú, Costa Rica 
++506 7109 0960
