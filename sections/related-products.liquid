@@ -70,11 +70,7 @@
                     </div>
                   {% endif %}
                 </div>
-                {%- comment -%}
-                  This links through to the product page rather than adding to
-                  cart, so the label says so.
-                {%- endcomment -%}
-                <a href="{{ p.url }}" class="fgp-rp__add-btn">{{ 'fgp.shared.view_product' | t }}</a>
+                <a href="{{ p.url }}" class="fgp-rp__add-btn">Add</a>
               </div>
             </div>
           </div>
@@ -134,10 +130,10 @@
 }
 
 .fgp-rp__info {
-  padding: 20px 0 0;
+  padding: 16px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
   flex: 1;
 }
 
@@ -155,8 +151,8 @@
   font-size: 21px;
   font-weight: 700;
   color: #33303d;
-  margin: 10px 0 0;
-  line-height: 1.3;
+  margin: 6px 0 0;
+  line-height: 1.25;
   font-family: var(--fgp-font-primary, 'Poppins', sans-serif);
 }
 
@@ -188,7 +184,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 8px;
   min-height: 62px;
 }
 

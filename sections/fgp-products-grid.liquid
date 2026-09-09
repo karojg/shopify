@@ -45,27 +45,9 @@
               <a href="{{ prod.url }}">{{ prod.title }}</a>
             </h3>
             <div class="fgp-pgrid__price-row">
-              <div class="fgp-pgrid__meta">
-                <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-                  {% if prod.metafields.custom.availability != blank %}
-                    <p class="fgp-pgrid__availability">{{ prod.metafields.custom.availability }}</p>
-                  {% endif %}
-                  {% if prod.metafields.reviews.rating.value != blank %}
-                    <div class="fgp-pgrid__stars">
-                      {% assign pg_rating = prod.metafields.reviews.rating.value.rating | round %}
-                      {% for i in (1..5) %}
-                        {% if i <= pg_rating %}
-                          <span class="fgp-pgrid__star fgp-pgrid__star--filled">★</span>
-                        {% else %}
-                          <span class="fgp-pgrid__star">★</span>
-                        {% endif %}
-                      {% endfor %}
-                      <span class="fgp-pgrid__rating-val">{{ prod.metafields.reviews.rating.value.rating | round: 1 }}</span>
-                    </div>
-                  {% endif %}
-              </div>
+              <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
               <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                {{ section.settings.cta_label | default: 'Ver producto' }}
+                {{ section.settings.cta_label | default: 'Shop Now' }}
               </a>
             </div>
           </div>
@@ -101,27 +83,9 @@
                 <a href="{{ prod.url }}">{{ prod.title }}</a>
               </h3>
               <div class="fgp-pgrid__price-row">
-                <div class="fgp-pgrid__meta">
-                  <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-                  {% if prod.metafields.custom.availability != blank %}
-                    <p class="fgp-pgrid__availability">{{ prod.metafields.custom.availability }}</p>
-                  {% endif %}
-                  {% if prod.metafields.reviews.rating.value != blank %}
-                    <div class="fgp-pgrid__stars">
-                      {% assign pg_rating = prod.metafields.reviews.rating.value.rating | round %}
-                      {% for i in (1..5) %}
-                        {% if i <= pg_rating %}
-                          <span class="fgp-pgrid__star fgp-pgrid__star--filled">★</span>
-                        {% else %}
-                          <span class="fgp-pgrid__star">★</span>
-                        {% endif %}
-                      {% endfor %}
-                      <span class="fgp-pgrid__rating-val">{{ prod.metafields.reviews.rating.value.rating | round: 1 }}</span>
-                    </div>
-                  {% endif %}
-                </div>
+                <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
                 <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                  {{ block.settings.cta_label | default: 'Ver producto' }}
+                  {{ block.settings.cta_label | default: 'Shop Now' }}
                 </a>
               </div>
             </div>
@@ -134,7 +98,7 @@
               <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
               <div class="fgp-pgrid__price-row">
                 <p class="fgp-pgrid__price">—</p>
-                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Ver producto' }}</span>
+                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
               </div>
             </div>
           </div>
@@ -220,31 +184,28 @@
 
 /* Info */
 .fgp-pgrid__info {
-  padding: 20px 0 0;
+  padding: 14px 2px 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   flex: 1;
 }
 
-/* Neutral grey like the design's vendor line, not the gold eyebrow */
 .fgp-pgrid__eyebrow {
   font-size: 11px;
-  font-weight: 500;
-  color: #8a8a8e;
-  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--fgp-gold);
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
-  font-family: var(--fgp-font);
 }
 
 .fgp-pgrid__title {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
-  color: #33303d;
-  margin: 10px 0 0;
+  color: var(--fgp-navy);
+  margin: 0;
   line-height: 1.3;
-  font-family: var(--fgp-font);
 }
 
 .fgp-pgrid__title a {
@@ -257,57 +218,19 @@
 }
 
 .fgp-pgrid__price {
-  font-size: 17px;
-  font-weight: 400;
-  color: #33303d;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fgp-navy);
   margin: 0;
-  line-height: 1.3;
-  font-family: var(--fgp-font);
-}
-
-.fgp-pgrid__availability {
-  font-size: 13px;
-  color: #6f6f74;
-  margin: 2px 0 0;
-  line-height: 1.3;
-}
-
-.fgp-pgrid__stars {
-  display: flex;
-  align-items: center;
-  gap: 1px;
-  margin-top: 4px;
-}
-
-.fgp-pgrid__star {
-  color: #d8d8dc;
-  font-size: 17px;
-  line-height: 1;
-}
-
-.fgp-pgrid__star--filled { color: var(--fgp-gold, #fdb921); }
-
-.fgp-pgrid__rating-val {
-  font-size: 13px;
-  color: #6f6f74;
-  margin-left: 10px;
-}
-
-.fgp-pgrid__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
 /* Compact cyber-grape pill sitting on the price row, per the design */
-/* 349x62 block from the design: meta left, button centred right */
 .fgp-pgrid__price-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 16px;
-  min-height: 62px;
+  margin-top: 4px;
 }
 
 .fgp-pgrid__cta {
@@ -319,8 +242,7 @@
   font-weight: 600;
   border-radius: 100px;
   min-width: 100px;
-  padding: 11px 26px;
-  flex-shrink: 0;
+  padding: 11px 24px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
@@ -404,7 +326,7 @@
       "type": "text",
       "id": "cta_label",
       "label": "Button Label",
-      "default": "Ver producto"
+      "default": "Shop Now"
     }
   ],
   "blocks": [
@@ -433,7 +355,7 @@
           "type": "text",
           "id": "cta_label",
           "label": "Button Label",
-          "default": "Ver producto"
+          "default": "Shop Now"
         }
       ]
     }

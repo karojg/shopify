@@ -359,7 +359,7 @@
             "product": "enzimas-digestivas-con-sinbiotico",
             "eyebrow": "ENZIMAS DIGESTIVAS",
             "placeholder_title": "Synbiotic+",
-            "cta_label": "Ver producto"
+            "cta_label": "Comprar Synbiotic+"
           }
         },
         "product_2": {
@@ -368,7 +368,7 @@
             "product": "kids-organic-probiotic-gummies",
             "eyebrow": "Gomitas",
             "placeholder_title": "Kids Probiotics",
-            "cta_label": "Ver producto"
+            "cta_label": "Comprar Kids Probiotics"
           }
         },
         "product_3": {
@@ -377,7 +377,7 @@
             "product": "pastilleros-magneticos-feel-good-eucalipto",
             "eyebrow": "Pastilleros",
             "placeholder_title": "Pastilleros Magnéticos Feel Good",
-            "cta_label": "Ver producto"
+            "cta_label": "Comprar Pastilleros"
           }
         }
       },
@@ -391,7 +391,7 @@
         "collection": "",
         "products_to_show": 3,
         "heading": "",
-        "cta_label": "Ver producto"
+        "cta_label": "Comprar ahora"
       }
     },
     "fgp_doctor_testimonials_main": {
@@ -422,10 +422,11 @@
         "doctor_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Medicina interna",
-            "ig_handle": "",
-            "quote": "Un producto científicamente sólido que realmente da resultados. Confío en Feel Good Pharma por su calidad y transparencia.",
+            "photo": "shopify://shop_images/dra-masis.jpg",
+            "name": "Dra. Andrea Masis",
+            "specialty": "Dermatóloga",
+            "ig_handle": "drm.dermatologia",
+            "quote": "Tenemos un eje que conecta el intestino con la piel, algunas enfermedades infamatorias en la piel, por ejemplo el acné, psoriasis, eccema y dermatitis atópica, tienen un componente inflamatorio qué se ven directamente afectadas cuando las bacterias que están en el intestino están en disbiosis y cuando están balanceadas la piel esta saludable.\"",
             "quote_url": ""
           }
         }
@@ -449,8 +450,8 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Llevo 3 meses usando este producto y me siento increíble. Mi digestión ha mejorado muchísimo y tengo más energía que nunca.",
-            "name": "Maria G.",
+            "review": "\"Ha sido un cambio rotundo en mi estómago y en mi vida.\"",
+            "name": "Cliente Verificado",
             "location": "San José, Costa Rica"
           }
         },
@@ -459,9 +460,9 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.",
-            "name": "Maria G.",
-            "location": "San José, Costa Rica"
+            "review": "\"Mi experiencia ha sido muy buena con Synbiotic+. Me ha encantado el producto y lo recomiendo a ojos cerrados. A nivel digestivo mejoré muchísimo y sentí un cambio positivo en mi salud.\"",
+            "name": "Cliente Verificado",
+            "location": "Cartago, Costa Rica"
           }
         },
         "review_2": {
@@ -469,8 +470,8 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Mi hija empezó con Probióticos para Niños y en pocas semanas se le quitaron los dolores de barriga. ¡Estoy muy agradecida!",
-            "name": "Ana R.",
+            "review": "\"Nos ha ido súper. Ya llevamos 2 meses y acabamos de comprar 2 Kids Probiotics más. ¡Lo amamos!\"",
+            "name": "Cliente Verificado",
             "location": "Heredia, Costa Rica"
           }
         },
@@ -479,9 +480,9 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "¡Por fin un probiótico que sí funciona! Se acabó la hinchazón y las molestias. Feel Good Pharma me cambió la vida.",
-            "name": "Carlos M.",
-            "location": "Cartago, Costa Rica"
+            "review": "\"Ha sido un excelente aliado para mi problema de estreñimiento. Muchas gracias.\"",
+            "name": "Cliente Verificado",
+            "location": "San José, Costa Rica"
           }
         }
       },
