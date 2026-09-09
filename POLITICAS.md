@@ -18,10 +18,11 @@ El tema solo las lee (`shop.privacy_policy`, `shop.refund_policy`,
 Lo que está **publicado en vivo** no es este borrador: es la plantilla del
 generador de Shopify sin editar, con marcadores `[INSERTAR ...]` visibles para
 los clientes. El texto corregido y listo para pegar está en
-**`POLITICAS-terminos-actualizado.md`**, junto con los 2 datos registrales que
-todavía faltan (razón social, IVA). La cédula jurídica se quitó de los Términos
+**`POLITICAS-terminos-actualizado.md`**. La razón social es
+**Feel Good Biotics S.R.L.** y ya está puesta; solo falta el número de IVA
+(o borrar esa línea si no aplica). La cédula jurídica se quitó de los Términos
 por decisión del propietario — ojo que los borradores de Privacidad más abajo
-todavía la piden.
+todavía piden razón social y cédula.
 
 La Política de Devoluciones publicada también tiene
 `[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` en vivo.

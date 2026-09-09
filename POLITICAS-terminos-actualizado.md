@@ -13,17 +13,19 @@ visibles para cualquier cliente. Aquí se rellenaron con datos reales del sitio:
 |---|---|---|
 | `[LINK]` / `[ENLACE]` (×3) | URLs reales de las políticas | `/policies/privacy-policy`, `/policies/refund-policy` |
 | `[EMPRENDEDOR]` (×2) | FEEL GOOD PHARMA | nombre de marca |
+| `[INSERTAR NOMBRE COMERCIAL]` | Feel Good Biotics S.R.L. | dato del propietario |
 | `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica | dato del propietario |
 | `[INSERTAR NÚMERO DE TELÉFONO COMERCIAL]` | +506 7109 0960 | página de contacto (WhatsApp) |
 
-## ⚠️ Faltan 2 datos que no están en ningún lado del sitio
+## ⚠️ Falta 1 dato
 
-Hay que completarlos **antes de publicar**. Son datos registrales:
-
-1. `[RAZÓN SOCIAL]` — el nombre legal inscrito en el Registro Nacional.
-   No es necesariamente "Feel Good Pharma"; suele ser una S.A. o S.R.L.
-2. `[NÚMERO DE CONTRIBUYENTE IVA]` — si no aplica, **borrar esa línea entera**
+1. `[NÚMERO DE CONTRIBUYENTE IVA]` — si no aplica, **borrar esa línea entera**
    en lugar de dejarla vacía.
+
+**Razón social:** Feel Good Biotics S.R.L. (dato del propietario). Se agregó al
+párrafo de apertura, ligando el nombre comercial "feelgoodpharma" a la sociedad
+inscrita: así las ~15 menciones posteriores de "feelgoodpharma" en el documento
+ya remiten a la entidad legal y no hubo que reescribirlas una por una.
 
 **Cédula jurídica:** se quitó por decisión del propietario. La plantilla de
 Shopify la traía como "número de registro comercial" y no es obligatoria en el
@@ -48,7 +50,7 @@ Además: la **Política de Devoluciones** todavía tiene
 
 INFORMACIÓN GENERAL
  
-¡Bienvenido a feelgoodpharma! Los términos “nosotros”, “nos” y “nuestro” se refieren al feelgoodpharma. El feelgoodpharma dirige esta tienda y sitio web, incluyendo toda la información, contenido, características, herramientas, productos y servicios relacionados para ofrecerle a usted, el cliente, una experiencia de compra selecta (los “Servicios”). feelgoodpharma es Tecnología de Shopify, que nos permite ofrecerle los Servicios. 
+¡Bienvenido a feelgoodpharma! Esta tienda es operada por Feel Good Biotics S.R.L., sociedad inscrita en Costa Rica, que comercializa bajo el nombre “Feel Good Pharma” (en adelante, “feelgoodpharma”). Los términos “nosotros”, “nos” y “nuestro” se refieren a Feel Good Biotics S.R.L. El feelgoodpharma dirige esta tienda y sitio web, incluyendo toda la información, contenido, características, herramientas, productos y servicios relacionados para ofrecerle a usted, el cliente, una experiencia de compra selecta (los “Servicios”). feelgoodpharma es Tecnología de Shopify, que nos permite ofrecerle los Servicios. 
 Los siguientes términos y condiciones, junto con cualquier política a la que se hace referencia en este documento (estos “Términos del Servicio” o “Términos”) describen sus derechos y responsabilidades cuando utiliza los Servicios. 
 Lea atentamente estos Términos del Servicio, ya que incluyen información importante sobre sus derechos legales y cubren áreas como garantía, descargo de responsabilidad y limitación de responsabilidad. 
 Al visitar, interactuar con o utilizar nuestros Servicios, usted acepta estar sujeto a estos Términos del Servicio y nuestra Política de Privacidad (https://feelgoodpharmacr.com/policies/privacy-policy). Si no está de acuerdo con estos Términos del Servicio o Política de privacidad, no debe utilizar ni acceder a nuestros Servicios. 
@@ -160,7 +162,7 @@ SECCIÓN 25 - INFORMACIÓN DE CONTACTO
  
 Las preguntas sobre los Términos del Servicio deben enviarse a hola@feelgoodpharmacr.com. 
 A continuación figura nuestra información de contacto: 
-[RAZÓN SOCIAL — nombre legal inscrito en el Registro Nacional] 
+Feel Good Biotics S.R.L. 
 hola@feelgoodpharmacr.com 
 Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica 
 +506 7109 0960 
