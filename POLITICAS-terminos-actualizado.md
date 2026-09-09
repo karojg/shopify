@@ -13,7 +13,7 @@ visibles para cualquier cliente. Aquí se rellenaron con datos reales del sitio:
 |---|---|---|
 | `[LINK]` / `[ENLACE]` (×3) | URLs reales de las políticas | `/policies/privacy-policy`, `/policies/refund-policy` |
 | `[EMPRENDEDOR]` (×2) | FEEL GOOD PHARMA | nombre de marca |
-| `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Escazú, San José, Costa Rica | footer del tema |
+| `[INSERTAR DIRECCIÓN COMERCIAL]` | Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica | dato del propietario |
 | `[INSERTAR NÚMERO DE TELÉFONO COMERCIAL]` | +506 7109 0960 | página de contacto (WhatsApp) |
 
 ## ⚠️ Faltan 3 datos que no están en ningún lado del sitio
@@ -157,7 +157,7 @@ Las preguntas sobre los Términos del Servicio deben enviarse a hola@feelgoodpha
 A continuación figura nuestra información de contacto: 
 [RAZÓN SOCIAL — nombre legal inscrito en el Registro Nacional] 
 hola@feelgoodpharmacr.com 
-Plaza Florencia, Escazú, San José, Costa Rica 
+Plaza Florencia, Local #5, Guachipelín, Escazú, San José, Costa Rica 
 +506 7109 0960 
 [CÉDULA JURÍDICA — p. ej. 3-101-XXXXXX] 
 [NÚMERO DE CONTRIBUYENTE IVA — o eliminar esta línea si no aplica]
