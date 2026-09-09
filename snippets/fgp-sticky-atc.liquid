@@ -45,7 +45,7 @@
 
       {% if product.selling_plan_groups.size > 0 %}
         <a href="{{ product.url }}" class="fgp-satc__btn fgp-satc__btn--bin">
-          Buy it now
+          {{ 'products.product.view_full_details' | t }}
         </a>
       {% endif %}
     </div>
@@ -70,6 +70,12 @@
 
 .fgp-satc.is-visible {
   transform: translateY(0);
+}
+
+/* Mobile only: on desktop the main add-to-cart stays reachable beside the
+   gallery, so a fixed bar would just cover content. */
+@media (min-width: 990px) {
+  .fgp-satc { display: none; }
 }
 
 .fgp-satc__inner {
@@ -198,23 +204,40 @@
 
   observer.observe(trigger);
 
-  /* Sync variant selection from main product form */
-  document.addEventListener('change', function(e) {
-    var input = e.target.closest('[name="id"]');
-    if (!input) return;
-    var satcId = bar.querySelector('[name="id"]');
-    if (satcId) satcId.value = input.value;
+  /* Keep the bar in sync with the main product form.
 
-    var variant = window.__fgpVariants && window.__fgpVariants[input.value];
-    if (variant) {
-      var priceEl = bar.querySelector('.fgp-satc__price');
-      if (priceEl && variant.price) {
-        priceEl.textContent = (variant.price / 100).toLocaleString('en-US', {
-          style: 'currency', currency: '{{ shop.currency }}'
-        });
-      }
+     This used to read a window.__fgpVariants map that nothing ever defined,
+     so the price silently never updated. Dawn publishes `variantChange` with
+     the full variant, and re-renders the section HTML — so the price is taken
+     from that markup, keeping Shopify's own money formatting (locale,
+     currency, decimal style) instead of re-implementing it in JS. */
+  function syncVariant(variant, html) {
+    if (!variant) return;
+
+    var idInput = bar.querySelector('[name="id"]');
+    if (idInput) idInput.value = variant.id;
+
+    var priceEl = bar.querySelector('.fgp-satc__price');
+    var freshPrice = html && html.querySelector('.price__container .price-item--sale, .price__container .price-item--regular');
+    if (priceEl && freshPrice) {
+      priceEl.textContent = freshPrice.textContent.trim();
     }
-  });
+
+    var btn = bar.querySelector('.fgp-satc__btn--atc');
+    if (btn) {
+      btn.disabled = !variant.available;
+      btn.textContent = variant.available
+        ? window.variantStrings.addToCart
+        : window.variantStrings.soldOut;
+    }
+  }
+
+  if (typeof subscribe === 'function' && window.PUB_SUB_EVENTS) {
+    subscribe(PUB_SUB_EVENTS.variantChange, function(event) {
+      if (!event || !event.data) return;
+      syncVariant(event.data.variant, event.data.html);
+    });
+  }
 })();
 </script>
 {% endunless %}

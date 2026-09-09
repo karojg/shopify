@@ -116,7 +116,8 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "enable_sticky_atc": true
       }
     },
     "fgp_icon_strip_NKaMTe": {
@@ -324,7 +325,6 @@
         "cta_url": "shopify://pages/product-information"
       }
     },
-    
     "fgp_product_faq_syn": {
       "type": "fgp-product-faq",
       "blocks": {
