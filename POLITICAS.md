@@ -13,6 +13,17 @@ El tema solo las lee (`shop.privacy_policy`, `shop.refund_policy`,
 3. Reemplazar todo lo que está entre `[CORCHETES]` — son datos que no tengo
 4. Guardar
 
+## ⚠️ Términos del Servicio — ver archivo aparte
+
+Lo que está **publicado en vivo** no es este borrador: es la plantilla del
+generador de Shopify sin editar, con marcadores `[INSERTAR ...]` visibles para
+los clientes. El texto corregido y listo para pegar está en
+**`POLITICAS-terminos-actualizado.md`**, junto con los 3 datos registrales que
+todavía faltan (razón social, cédula jurídica, IVA).
+
+La Política de Devoluciones publicada también tiene
+`[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` en vivo.
+
 ## Antes de publicar
 
 **No soy abogado y esto es un suplemento alimenticio vendido en Costa Rica.**
