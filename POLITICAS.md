@@ -33,8 +33,9 @@ borradores de más abajo:
 
 El **IVA** se eliminó de los Términos por decisión del propietario.
 
-La Política de Devoluciones publicada también tiene
-`[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` en vivo.
+La Política de Devoluciones **publicada en vivo** todavía tiene
+`[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` visible para los clientes. El borrador de
+más abajo ya lleva la dirección; hay que pegarlo en Settings → Policies.
 
 ## Antes de publicar
 
@@ -62,7 +63,7 @@ Cuando navegás o comprás en nuestro sitio podemos recopilar:
 - **Datos de identificación:** nombre, correo electrónico, teléfono y dirección
   de envío y facturación.
 - **Datos de la compra:** productos adquiridos, monto, medio de pago y estado
-  del pedido. El procesamiento del pago lo realiza [PASARELA DE PAGO]; nosotros
+  del pedido. El procesamiento del pago lo realiza Stripe; nosotros
   no almacenamos los datos completos de tu tarjeta.
 - **Datos de navegación:** dirección IP, tipo de dispositivo y navegador, páginas
   visitadas y tiempo de permanencia, recopilados mediante cookies.
@@ -96,8 +97,8 @@ funciones del sitio pueden dejar de operar correctamente si las desactivás.
 Podés solicitar en cualquier momento acceder a tus datos, corregirlos,
 actualizarlos o pedir su eliminación, así como revocar el consentimiento para
 recibir comunicaciones comerciales. Escribinos a
-[CORREO DE PRIVACIDAD — sugerido: hola@feelgoodpharma.com] y te respondemos
-dentro de [PLAZO — sugerido: 10 días hábiles].
+hola@feelgoodpharmacr.com y te respondemos
+dentro de 10 días hábiles.
 
 El tratamiento de datos personales se rige por la Ley N.º 8968 de Protección de
 la Persona frente al Tratamiento de sus Datos Personales de Costa Rica.
@@ -115,8 +116,7 @@ este sitio con su fecha de última modificación.
 
 **Responsable del tratamiento:** Feel Good Biotics S.R.L., cédula jurídica
 3-102-908874, Plaza Florencia, Escazú, Costa Rica.
-**Última actualización:** [FECHA — poner la fecha del día en que se publique,
-p. ej. "10 de setiembre de 2026". No fecharlo antes de pegarlo.]
+**Última actualización:** 10 de setiembre de 2026
 
 ---
 
@@ -135,7 +135,7 @@ devolución. Si no quedás conforme, contactanos y gestionamos el reembolso.
 Para que una devolución proceda, el producto debe estar:
 
 - En su empaque original, con etiquetas y sellos.
-- Sin usar o con [CONDICIÓN — ej. menos del 25% de contenido consumido].
+- Sin usar, con el sello de seguridad intacto.
 - Acompañado del comprobante de compra o número de pedido.
 
 Por tratarse de un suplemento alimenticio, **no podemos aceptar devoluciones de
@@ -148,6 +148,10 @@ en el envío. Esto protege la inocuidad de lo que vendemos.
 2. Indicá tu número de pedido y el motivo.
 3. Te confirmamos si procede y te damos las instrucciones de envío.
 
+Una vez aprobada, la devolución se envía a:
+
+**Feel Good Biotics S.R.L.** — Plaza Florencia, Escazú, Costa Rica
+
 No enviés el producto antes de recibir nuestra confirmación.
 
 ## Costos de envío del retorno
@@ -155,21 +159,20 @@ No enviés el producto antes de recibir nuestra confirmación.
 - **Defecto de fábrica, producto incorrecto o dañado:** el costo corre por
   nuestra cuenta.
 - **Cambio de opinión:** el costo corre por cuenta de la persona compradora.
-  [CONFIRMAR]
 
 ## Reembolsos
 
 Una vez recibido y revisado el producto, te notificamos si la devolución fue
 aprobada. Si procede, el reembolso se realiza al mismo medio de pago original
-dentro de [PLAZO — sugerido: 10 días hábiles]. El tiempo en que se refleje
+dentro de 10 días hábiles. El tiempo en que se refleje
 depende de tu banco o emisor.
 
-Los costos de envío originales [SON / NO SON] reembolsables. [CONFIRMAR]
+Los costos de envío originales no son reembolsables.
 
 ## Producto dañado o incorrecto
 
 Si tu pedido llegó dañado, incompleto o no corresponde a lo que ordenaste,
-escribinos dentro de [PLAZO — sugerido: 5 días hábiles] con fotografías del
+escribinos dentro de 5 días hábiles con fotografías del
 producto y del empaque. Lo reponemos o reembolsamos sin costo para vos.
 
 ## Cambios
@@ -190,21 +193,18 @@ Realizamos envíos a todo el territorio de Costa Rica.
 ## Costos
 
 - **Envío gratis** en pedidos superiores a **$50**.
-- Pedidos por debajo de ese monto: [TARIFA].
-- [ZONAS CON TARIFA DIFERENCIADA, si aplica]
-
-El costo exacto se calcula al finalizar la compra, antes del pago.
+- Para pedidos por debajo de ese monto, la tarifa de envío se calcula al
+  finalizar la compra, antes del pago, según la dirección de destino.
 
 ## Tiempos de entrega
 
 - **Entrega estándar:** de **3 a 5 días hábiles** dentro del Gran Área
   Metropolitana.
-- **Zonas rurales o alejadas:** [PLAZO].
-- Los pedidos se procesan en [PLAZO — sugerido: 1 a 2 días hábiles] antes de
-  ser despachados.
+- **Zonas rurales o alejadas:** el plazo puede ser mayor; Correos de Costa Rica
+  indica el tiempo estimado según la zona de destino.
 
-Los pedidos realizados después de [HORA] o en fines de semana y feriados se
-procesan el siguiente día hábil.
+Los pedidos realizados en fines de semana y feriados se procesan el siguiente
+día hábil.
 
 ## Seguimiento
 
@@ -223,7 +223,7 @@ Verificá que tu dirección esté completa y correcta antes de confirmar la comp
 Si un pedido se devuelve por datos incorrectos o por ausencia en la entrega, el
 costo de un nuevo envío corre por cuenta de la persona compradora.
 
-**Empresa de mensajería:** [TRANSPORTISTA]
+**Empresa de mensajería:** Correos de Costa Rica
 
 ---
 
@@ -255,8 +255,7 @@ experiencias individuales y no garantizan resultados equivalentes.
 
 ## Precios y disponibilidad
 
-Los precios están expresados en dólares estadounidenses (USD) e incluyen
-[IVA INCLUIDO / MÁS IVA — confirmar con contabilidad cuál aplica].
+Los precios están expresados en dólares estadounidenses (USD) y no llevan IVA.
 Podemos modificarlos sin previo aviso. La disponibilidad está sujeta a
 existencias; si un producto no está disponible después de tu compra, te
 avisamos y reembolsamos el monto correspondiente.
@@ -293,8 +292,7 @@ controversia se someterá a los tribunales competentes del país.
 hola@feelgoodpharmacr.com · WhatsApp +506 7109 0960 · Lun – Vie 8 a.m. – 8 p.m.,
 Sáb y Dom 9 a.m. – 4 p.m.
 
-**Última actualización:** [FECHA — poner la fecha del día en que se publique,
-p. ej. "10 de setiembre de 2026". No fecharlo antes de pegarlo.]
+**Última actualización:** 10 de setiembre de 2026
 
 ---
 
@@ -311,19 +309,26 @@ Recopilados de todos los `[CORCHETES]`:
 | Fecha de última actualización | Privacidad, Términos de uso | ⏳ poner al publicar |
 | Dirección de devolución | Devoluciones | ⏳ pendiente (ver arriba) |
 
-Lo que todavía falta son **decisiones del negocio**, no datos que estén en el
-sitio. Ninguna se puede deducir del tema ni de la tienda:
+Decisiones ya tomadas por el propietario y aplicadas en los borradores:
 
-| Marcador | Pregunta que hay que responder |
+| Tema | Decisión |
 |---|---|
-| `[IVA INCLUIDO / MÁS IVA]` | ¿Los precios en USD ya llevan IVA o se suma al cobrar? |
-| `[PASARELA DE PAGO]` | Quién procesa los pagos (Shopify Payments, Tilopay, Greenpay…) |
-| `[TRANSPORTISTA]` | Empresa de mensajería |
-| `[TARIFA]` | Costo de envío bajo el mínimo de envío gratis |
-| `[PLAZO]` | Tiempo de entrega a zonas rurales |
-| `[HORA]` | Hora de corte para despachar el mismo día |
-| `[CONFIRMAR]` ×2 | Si el envío original se reembolsa en una devolución |
-| `[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` | A dónde se mandan las devoluciones |
+| IVA | Los precios en USD **no llevan IVA** |
+| Pasarela de pago | **Stripe** |
+| Mensajería | **Correos de Costa Rica** |
+| Tarifa de envío | Se calcula en el checkout (no se fija en la política) |
+| Zonas rurales / hora de corte | Sin plazos fijos; los define la mensajería |
+| Envío en devoluciones | El envío original **no se reembolsa** |
+| Dirección de devolución | **Plaza Florencia, Escazú, Costa Rica** |
+
+**Producto abierto:** el borrador tenía una contradicción — una línea aceptaba
+devoluciones "con menos del 25% consumido" y el párrafo siguiente decía que **no**
+se aceptan productos abiertos por tratarse de un suplemento alimenticio. Se
+resolvió a favor de la regla estricta ("sin usar, con el sello intacto"), que es
+la defendible en inocuidad alimentaria. Si comercialmente se prefiere la manga
+ancha, hay que cambiar **las dos** líneas, no solo una.
+
+No quedan marcadores pendientes en los cuatro borradores.
 | Pasarela de pago | Privacidad |
 | Empresa de mensajería | Envíos |
 | Tarifa bajo $50 y zonas | Envíos |
