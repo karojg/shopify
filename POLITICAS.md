@@ -132,15 +132,23 @@ devolución. Si no quedás conforme, contactanos y gestionamos el reembolso.
 
 ## Condiciones
 
-Para que una devolución proceda, el producto debe estar:
+Para que una devolución **por cambio de opinión** proceda, el producto debe
+estar:
 
 - En su empaque original, con etiquetas y sellos.
 - Sin usar, con el sello de seguridad intacto.
 - Acompañado del comprobante de compra o número de pedido.
 
 Por tratarse de un suplemento alimenticio, **no podemos aceptar devoluciones de
-productos abiertos o parcialmente consumidos**, salvo defecto de fábrica o error
-en el envío. Esto protege la inocuidad de lo que vendemos.
+productos abiertos o parcialmente consumidos por cambio de opinión**. Esto
+protege la inocuidad de lo que vendemos.
+
+**Excepción — defecto de fábrica:** si el problema viene del producto mismo, sí
+aceptamos el envase abierto. Por ejemplo: cápsulas abiertas, rotas o dañadas,
+contenido en mal estado, envase defectuoso o mal sellado de origen, o si
+recibiste un producto distinto al que pediste. En estos casos no se exige el
+sello intacto: escribinos con fotografías y lo resolvemos con reposición o
+reembolso.
 
 ## Cómo solicitarla
 
@@ -321,12 +329,11 @@ Decisiones ya tomadas por el propietario y aplicadas en los borradores:
 | Envío en devoluciones | El envío original **no se reembolsa** |
 | Dirección de devolución | **Plaza Florencia, Escazú, Costa Rica** |
 
-**Producto abierto:** el borrador tenía una contradicción — una línea aceptaba
-devoluciones "con menos del 25% consumido" y el párrafo siguiente decía que **no**
-se aceptan productos abiertos por tratarse de un suplemento alimenticio. Se
-resolvió a favor de la regla estricta ("sin usar, con el sello intacto"), que es
-la defendible en inocuidad alimentaria. Si comercialmente se prefiere la manga
-ancha, hay que cambiar **las dos** líneas, no solo una.
+**Producto abierto:** decisión del propietario. Por **cambio de opinión** no se
+acepta producto abierto (inocuidad alimentaria). Por **defecto de fábrica** sí:
+cápsulas abiertas o dañadas, contenido en mal estado, envase mal sellado o
+producto equivocado. La distinción es quién causó el problema, no el estado del
+sello.
 
 No quedan marcadores pendientes en los cuatro borradores.
 | Pasarela de pago | Privacidad |
