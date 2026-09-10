@@ -188,7 +188,7 @@
       "name": "FGP Kids Spotlight",
       "settings": {
         "product_logo": "shopify://shop_images/KidsProbiotics_Logo_Color.png",
-        "product_logo_alt": "Probióticos para Niños",
+        "product_logo_alt": "Kids Probiotics",
         "badge_icon": "shopify://shop_images/Bacillus_Subtilis.png",
         "strawberry_icon": "shopify://shop_images/fresa-caricatura.png",
         "badge_name": "DE111®",
@@ -271,7 +271,7 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "¿Cómo le doy Probióticos para Niños a mi hijo?",
+            "question": "¿Cómo le doy Kids Probiotics a mi hijo?",
             "answer": "<p>Dale 1 cápsula al día con una comida. Podés abrir la cápsula y mezclar el contenido con comida o una bebida fría: no tiene sabor desagradable.</p>"
           }
         },
@@ -279,7 +279,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿A partir de qué edad se puede tomar?",
-            "answer": "<p>Probióticos para Niños está formulado para niños a partir de 3 años. Para niños menores, consultá a tu pediatra.</p>"
+            "answer": "<p>Kids Probiotics está formulado para niños a partir de 3 años. Para niños menores, consultá a tu pediatra.</p>"
           }
         },
         "faq_3": {
@@ -300,7 +300,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Contiene alérgenos?",
-            "answer": "<p>Probióticos para Niños no contiene gluten, lácteos ni colorantes artificiales. Consultá la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
+            "answer": "<p>Kids Probiotics no contiene gluten, lácteos ni colorantes artificiales. Consultá la lista completa de ingredientes en la etiqueta si tu hijo tiene alergias conocidas.</p>"
           }
         }
       },
@@ -337,7 +337,7 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Mi hijo se enfermaba cada dos semanas. Desde que empezó con Probióticos para Niños casi no se ha enfermado. ¡Un cambio total!",
+            "review": "Mi hijo se enfermaba cada dos semanas. Desde que empezó con Kids Probiotics casi no se ha enfermado. ¡Un cambio total!",
             "name": "Ricardo M.",
             "location": "Alajuela, Costa Rica"
           }

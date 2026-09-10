@@ -226,7 +226,7 @@
         "badge_text": "4 IN 1",
         "badge_subtext": "2 cápsulas · 3 veces al día",
         "eyebrow": "NIÑOS",
-        "title": "PROBIÓTICOS PARA NIÑOS",
+        "title": "KIDS PROBIOTICS",
         "description": "<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>",
         "cta_label": "Comprar Kids 60",
         "cta_variant_id": "50086279315777",
@@ -242,7 +242,7 @@
       "type": "fgp-kids-symptoms",
       "name": "FGP Kids Symptoms",
       "settings": {
-        "heading": "Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:",
+        "heading": "Con KIDS PROBIOTICS, tu hijo nunca más tendrá que sufrir de:",
         "icon_1": "shopify://shop_images/Gut.png",
         "label_1": "Estreñimiento o diarrea",
         "icon_2": "shopify://shop_images/Balance.png",
@@ -273,7 +273,7 @@
           "settings": {
             "video": "shopify://files/videos/FLGD_KIDS_PRO_DDM_CLEAN_5.mp4",
             "video_url": "",
-            "title": "PROBIÓTICOS PARA NIÑOS",
+            "title": "KIDS PROBIOTICS",
             "subtitle": "Fórmula 4 en 1 para los más pequeños",
             "cta_label": "Comprar",
             "cta_url": "shopify://products/kids-organic-probiotic-gummies"
@@ -404,7 +404,7 @@
             "name": "Dra. Nancy Conejo",
             "specialty": "Pediatra | Neonatóloga",
             "ig_handle": "@pediatranancyconejo",
-            "quote": "Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Probióticos para Niños están diseñados para complementar el estilo de vida saludable de tu familia.\"",
+            "quote": "Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Kids Probiotics están diseñados para complementar el estilo de vida saludable de tu familia.\"",
             "quote_url": ""
           }
         },

@@ -59,7 +59,7 @@
           "settings": {
             "heading": "Qué incluye",
             "icon": "none",
-            "content": "<p>Este kit incluye Synbiotic+, Probióticos para Niños y Stressbiotic®: un frasco completo de cada uno.</p>",
+            "content": "<p>Este kit incluye Synbiotic+, Kids Probiotics y Stressbiotic®: un frasco completo de cada uno.</p>",
             "page": ""
           }
         },
@@ -177,8 +177,8 @@
           "settings": {
             "product": "",
             "eyebrow": "NIÑOS",
-            "placeholder_title": "Probióticos para Niños",
-            "cta_label": "Comprar Probióticos para Niños"
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Comprar Kids Probiotics"
           }
         },
         "prod_stressbiotic": {
@@ -255,7 +255,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Qué incluye el kit?",
-            "answer": "<p>Un frasco completo de Synbiotic+, Probióticos para Niños y Stressbiotic®.</p>"
+            "answer": "<p>Un frasco completo de Synbiotic+, Kids Probiotics y Stressbiotic®.</p>"
           }
         },
         "faq_2": {

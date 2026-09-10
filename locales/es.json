@@ -609,9 +609,9 @@
       "hero_banner": "Banner principal",
       "hero": "Portada",
       "how_it_works": "Cómo funciona",
-      "kids_feature": "Sección Probióticos para Niños",
-      "kids_spotlight": "Destacado Probióticos para Niños",
-      "kids_symptoms": "Síntomas Probióticos para Niños",
+      "kids_feature": "Sección Kids Probiotics",
+      "kids_spotlight": "Destacado Kids Probiotics",
+      "kids_symptoms": "Síntomas Kids Probiotics",
       "lifestyle_grid": "Fotos de estilo de vida",
       "mission_text": "Nuestra misión",
       "newsletter": "Suscripción al boletín",
@@ -662,23 +662,23 @@
       "capsules_alt": "Cápsulas"
     },
     "kids": {
-      "title": "PROBIÓTICOS PARA NIÑOS",
-      "title_plain": "Probióticos para Niños",
+      "title": "KIDS PROBIOTICS",
+      "title_plain": "Kids Probiotics",
       "description_html": "<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>",
       "cta_label": "Comprar Kids 60",
-      "product_alt": "Producto Probióticos para Niños",
+      "product_alt": "Producto Kids Probiotics",
       "gummies_text_html": "<p>Cada gomita contiene 2.500 millones de <em>Bacillus Subtilis</em>.</p>",
       "gummy_1_alt": "1 gomita",
       "gummy_2_alt": "2 gomitas",
       "de111_alt": "DE111 Bacillus Subtilis",
-      "bottle_alt": "Frasco de Probióticos para Niños"
+      "bottle_alt": "Frasco de Kids Probiotics"
     },
     "goodbye": {
       "heading_html": "Con <strong>SYNBIOTIC+,</strong><br>dile adiós a:"
     },
     "kids_symptoms": {
-      "heading": "Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:",
-      "heading_html": "Con <strong>PROBIÓTICOS PARA NIÑOS,</strong><br>tu hijo nunca más tendrá que sufrir de:"
+      "heading": "Con KIDS PROBIOTICS, tu hijo nunca más tendrá que sufrir de:",
+      "heading_html": "Con <strong>KIDS PROBIOTICS,</strong><br>tu hijo nunca más tendrá que sufrir de:"
     },
     "login": {
       "no_account": "¿No tenés cuenta?"
