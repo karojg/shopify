@@ -58,11 +58,33 @@
       {% for block in section.blocks %}
         {% assign prod = all_products[block.settings.product] %}
         {% if prod != blank %}
+          {%- comment -%}
+            Optional variant pick. Shopify has no "variant" setting type, so the
+            block stores a position and we resolve it against the product here.
+            Falls back to the product itself when unset or out of range.
+          {%- endcomment -%}
+          {%- assign pg_variant = blank -%}
+          {%- if block.settings.variant_pick == 'second' and prod.variants.size > 1 -%}
+            {%- assign pg_variant = prod.variants[1] -%}
+          {%- elsif block.settings.variant_pick == 'first' -%}
+            {%- assign pg_variant = prod.variants.first -%}
+          {%- endif -%}
+          {%- if pg_variant != blank -%}
+            {%- assign pg_url = pg_variant.url -%}
+            {%- assign pg_price = pg_variant.price -%}
+          {%- else -%}
+            {%- assign pg_url = prod.url -%}
+            {%- assign pg_price = prod.price -%}
+          {%- endif -%}
           <div class="fgp-pgrid__card" {{ block.shopify_attributes }}>
-            <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
+            <a href="{{ pg_url }}" class="fgp-pgrid__img-link">
               {%- assign pg_img = prod.featured_image -%}
               {%- if prod.metafields.custom.card_image.value != blank -%}
                 {%- assign pg_img = prod.metafields.custom.card_image.value -%}
+              {%- endif -%}
+              {%- comment -%} A variant's own image wins when it has one {%- endcomment -%}
+              {%- if pg_variant != blank and pg_variant.image != blank -%}
+                {%- assign pg_img = pg_variant.image -%}
               {%- endif -%}
               {% if pg_img %}
                 <img
@@ -80,11 +102,11 @@
                 <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
               {% endif %}
               <h3 class="fgp-pgrid__title">
-                <a href="{{ prod.url }}">{{ prod.title }}</a>
+                <a href="{{ pg_url }}">{{ prod.title }}</a>
               </h3>
               <div class="fgp-pgrid__price-row">
-                <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-                <a href="{{ prod.url }}" class="fgp-pgrid__cta">
+                <p class="fgp-pgrid__price">{{ pg_price | money }}</p>
+                <a href="{{ pg_url }}" class="fgp-pgrid__cta">
                   {{ block.settings.cta_label | default: 'Shop Now' }}
                 </a>
               </div>
@@ -333,6 +355,18 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "select",
+          "id": "variant_pick",
+          "label": "Variant to show",
+          "info": "Which variant the card shows and links to. \"Product default\" uses the product's own image, price and URL. Follows the variant order set on the product in Shopify.",
+          "options": [
+            { "value": "default", "label": "Product default" },
+            { "value": "first", "label": "First variant" },
+            { "value": "second", "label": "Second variant" }
+          ],
+          "default": "default"
         },
         {
           "type": "text",
