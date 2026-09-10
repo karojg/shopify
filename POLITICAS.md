@@ -18,11 +18,20 @@ El tema solo las lee (`shop.privacy_policy`, `shop.refund_policy`,
 Lo que está **publicado en vivo** no es este borrador: es la plantilla del
 generador de Shopify sin editar, con marcadores `[INSERTAR ...]` visibles para
 los clientes. El texto corregido y listo para pegar está en
-**`POLITICAS-terminos-actualizado.md`**. La razón social es
-**Feel Good Biotics S.R.L.** y ya está puesta; solo falta el número de IVA
-(o borrar esa línea si no aplica). La cédula jurídica se quitó de los Términos
-por decisión del propietario — ojo que los borradores de Privacidad más abajo
-todavía piden razón social y cédula.
+**`POLITICAS-terminos-actualizado.md`**, ya completo: sin marcadores pendientes.
+
+Los datos de la sociedad, ya aplicados tanto en los Términos como en los
+borradores de más abajo:
+
+| Dato | Valor |
+|---|---|
+| Razón social | Feel Good Biotics S.R.L. |
+| Cédula jurídica | 3-102-908874 |
+| Dirección | Plaza Florencia, Escazú, Costa Rica |
+| Correo | hola@feelgoodpharmacr.com |
+| Teléfono | +506 7109 0960 |
+
+El **IVA** se eliminó de los Términos por decisión del propietario.
 
 La Política de Devoluciones publicada también tiene
 `[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` en vivo.
@@ -104,9 +113,10 @@ protegerlos, aunque ningún sistema es completamente infalible.
 Podemos actualizar esta política. La versión vigente siempre estará publicada en
 este sitio con su fecha de última modificación.
 
-**Responsable del tratamiento:** [RAZÓN SOCIAL], cédula jurídica
-[CÉDULA JURÍDICA], [DIRECCIÓN FISCAL].
-**Última actualización:** [FECHA]
+**Responsable del tratamiento:** Feel Good Biotics S.R.L., cédula jurídica
+3-102-908874, Plaza Florencia, Escazú, Costa Rica.
+**Última actualización:** [FECHA — poner la fecha del día en que se publique,
+p. ej. "10 de setiembre de 2026". No fecharlo antes de pegarlo.]
 
 ---
 
@@ -134,7 +144,7 @@ en el envío. Esto protege la inocuidad de lo que vendemos.
 
 ## Cómo solicitarla
 
-1. Escribinos a [CORREO] o por WhatsApp al +506 7109 0960.
+1. Escribinos a hola@feelgoodpharmacr.com o por WhatsApp al +506 7109 0960.
 2. Indicá tu número de pedido y el motivo.
 3. Te confirmamos si procede y te damos las instrucciones de envío.
 
@@ -226,8 +236,8 @@ acuerdo, te pedimos no utilizarlo.
 
 ## Quiénes somos
 
-Este sitio es operado por [RAZÓN SOCIAL], cédula jurídica [CÉDULA JURÍDICA], con
-domicilio en [DIRECCIÓN FISCAL], Costa Rica.
+Este sitio es operado por Feel Good Biotics S.R.L., cédula jurídica 3-102-908874, con
+domicilio en Plaza Florencia, Escazú, Costa Rica.
 
 ## Productos
 
@@ -245,7 +255,8 @@ experiencias individuales y no garantizan resultados equivalentes.
 
 ## Precios y disponibilidad
 
-Los precios están expresados en [MONEDA] e incluyen [IVA INCLUIDO / MÁS IVA].
+Los precios están expresados en dólares estadounidenses (USD) e incluyen
+[IVA INCLUIDO / MÁS IVA — confirmar con contabilidad cuál aplica].
 Podemos modificarlos sin previo aviso. La disponibilidad está sujeta a
 existencias; si un producto no está disponible después de tu compra, te
 avisamos y reembolsamos el monto correspondiente.
@@ -263,7 +274,7 @@ cualquier uso no autorizado.
 ## Propiedad intelectual
 
 Las marcas, logotipos, textos, imágenes y contenidos del sitio son propiedad de
-[RAZÓN SOCIAL] o se usan con autorización. No pueden reproducirse ni utilizarse
+Feel Good Biotics S.R.L. o se usan con autorización. No pueden reproducirse ni utilizarse
 con fines comerciales sin permiso escrito.
 
 ## Limitación de responsabilidad
@@ -279,10 +290,11 @@ controversia se someterá a los tribunales competentes del país.
 
 ## Contacto
 
-[CORREO] · WhatsApp +506 7109 0960 · Lun – Vie 8 a.m. – 8 p.m.,
+hola@feelgoodpharmacr.com · WhatsApp +506 7109 0960 · Lun – Vie 8 a.m. – 8 p.m.,
 Sáb y Dom 9 a.m. – 4 p.m.
 
-**Última actualización:** [FECHA]
+**Última actualización:** [FECHA — poner la fecha del día en que se publique,
+p. ej. "10 de setiembre de 2026". No fecharlo antes de pegarlo.]
 
 ---
 
@@ -290,12 +302,28 @@ Sáb y Dom 9 a.m. – 4 p.m.
 
 Recopilados de todos los `[CORCHETES]`:
 
-| Dato | Dónde aparece |
+| Dato | Dónde aparece | Estado |
+|---|---|---|
+| Razón social y cédula jurídica | Privacidad, Términos | ✅ puestos |
+| Dirección fiscal | Privacidad, Términos | ✅ puesta |
+| Correo de contacto legal | las 4 | ✅ hola@feelgoodpharmacr.com |
+| Moneda y tratamiento de IVA | Términos | ✅ línea de IVA eliminada |
+| Fecha de última actualización | Privacidad, Términos de uso | ⏳ poner al publicar |
+| Dirección de devolución | Devoluciones | ⏳ pendiente (ver arriba) |
+
+Lo que todavía falta son **decisiones del negocio**, no datos que estén en el
+sitio. Ninguna se puede deducir del tema ni de la tienda:
+
+| Marcador | Pregunta que hay que responder |
 |---|---|
-| Razón social y cédula jurídica | Privacidad, Términos |
-| Dirección fiscal | Privacidad, Términos |
-| Correo de contacto legal | las 4 |
-| Moneda y tratamiento de IVA | Términos |
+| `[IVA INCLUIDO / MÁS IVA]` | ¿Los precios en USD ya llevan IVA o se suma al cobrar? |
+| `[PASARELA DE PAGO]` | Quién procesa los pagos (Shopify Payments, Tilopay, Greenpay…) |
+| `[TRANSPORTISTA]` | Empresa de mensajería |
+| `[TARIFA]` | Costo de envío bajo el mínimo de envío gratis |
+| `[PLAZO]` | Tiempo de entrega a zonas rurales |
+| `[HORA]` | Hora de corte para despachar el mismo día |
+| `[CONFIRMAR]` ×2 | Si el envío original se reembolsa en una devolución |
+| `[INSERTAR DIRECCIÓN DE DEVOLUCIÓN]` | A dónde se mandan las devoluciones |
 | Pasarela de pago | Privacidad |
 | Empresa de mensajería | Envíos |
 | Tarifa bajo $50 y zonas | Envíos |
