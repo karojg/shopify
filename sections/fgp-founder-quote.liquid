@@ -16,12 +16,13 @@
       <!-- LEFT: Photo -->
       <div class="fgp-founder__image-col">
         {% if section.settings.founder_image != blank %}
-          <img
-            class="fgp-founder__image"
-            src="{{ section.settings.founder_image | img_url: 'master' }}"
-            alt="{{ section.settings.founder_name | default: 'Founder' }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_1 = section.settings.founder_name | default: 'Founder' -%}
+          {% render 'fgp-responsive-image',
+            image: section.settings.founder_image,
+            class: 'fgp-founder__image',
+            alt: fgp_ri_alt_1,
+            sizes: '(max-width: 767px) 100vw, 50vw',
+            widths: '400,600,800,1200' %}
         {% else %}
           <div class="fgp-founder__image fgp-founder__image--placeholder"></div>
         {% endif %}
@@ -46,12 +47,13 @@
       <!-- TOP: Photo -->
       <div class="fgp-founder__mobile-image-wrap">
         {% if section.settings.founder_image != blank %}
-          <img
-            class="fgp-founder__mobile-image"
-            src="{{ section.settings.founder_image | img_url: 'master' }}"
-            alt="{{ section.settings.founder_name | default: 'Founder' }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_2 = section.settings.founder_name | default: 'Founder' -%}
+          {% render 'fgp-responsive-image',
+            image: section.settings.founder_image,
+            class: 'fgp-founder__mobile-image',
+            alt: fgp_ri_alt_2,
+            sizes: '100vw',
+            widths: '400,600,800' %}
         {% else %}
           <div class="fgp-founder__mobile-image fgp-founder__image--placeholder"></div>
         {% endif %}

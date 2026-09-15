@@ -30,7 +30,9 @@
         {% if section.settings.image != blank %}
           <img
             class="fgp-ahero__image"
-            src="{{ section.settings.image | img_url: 'master' }}"
+            src="{{ section.settings.image | image_url: width: 1600 }}"
+            srcset="{{ section.settings.image | image_url: width: 300 }} 300w, {{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1000 }} 1000w, {{ section.settings.image | image_url: width: 1200 }} 1200w, {{ section.settings.image | image_url: width: 1600 }} 1600w"
+            sizes="(max-width: 767px) 100vw, 50vw"
             alt="{{ section.settings.image_alt | default: 'About Feel Good Pharma' }}"
             loading="eager"
           >
@@ -47,7 +49,9 @@
       {% if section.settings.image != blank %}
         <img
           class="fgp-ahero__mobile-image"
-          src="{{ section.settings.image | img_url: 'master' }}"
+          src="{{ section.settings.image | image_url: width: 1000 }}"
+          srcset="{{ section.settings.image | image_url: width: 300 }} 300w, {{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 600 }} 600w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1000 }} 1000w"
+          sizes="100vw"
           alt="{{ section.settings.image_alt | default: 'About Feel Good Pharma' }}"
           loading="eager"
         >

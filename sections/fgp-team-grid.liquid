@@ -28,7 +28,9 @@
           <div class="fgp-team__img-wrap">
             <img
               class="fgp-team__img"
-              src="{{ block.settings.image | img_url: 'master' }}"
+              src="{{ block.settings.image | image_url: width: 600 }}"
+              srcset="{{ block.settings.image | image_url: width: 300 }} 300w, {{ block.settings.image | image_url: width: 400 }} 400w, {{ block.settings.image | image_url: width: 600 }} 600w"
+              sizes="(max-width: 767px) 100vw, 300px"
               alt="{{ block.settings.name | default: block.settings.image_alt | default: 'Team member' }}"
               loading="lazy"
             >

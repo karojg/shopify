@@ -14,10 +14,10 @@
       "settings": {
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "enable_filtering": false,
         "filter_type": "horizontal",
         "enable_sorting": true,

@@ -59,7 +59,7 @@
           "settings": {
             "heading": "Qué incluye",
             "icon": "none",
-            "content": "<p>Este kit incluye Synbiotic+, Probióticos para Niños y Stressbiotic®: un frasco completo de cada uno.</p>",
+            "content": "<p>Este kit incluye Synbiotic+, Kids Probiotics y Stressbiotic®: un frasco completo de cada uno.</p>",
             "page": ""
           }
         },
@@ -77,7 +77,7 @@
           "settings": {
             "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedás conforme, escribinos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -108,7 +108,7 @@
         "color_scheme": "",
         "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "show",
         "media_position": "left",
@@ -116,7 +116,8 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "enable_sticky_atc": true
       }
     },
     "fgp_icon_strip_kit": {
@@ -176,8 +177,8 @@
           "settings": {
             "product": "",
             "eyebrow": "NIÑOS",
-            "placeholder_title": "Probióticos para Niños",
-            "cta_label": "Comprar Probióticos para Niños"
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Comprar Kids Probiotics"
           }
         },
         "prod_stressbiotic": {
@@ -254,7 +255,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Qué incluye el kit?",
-            "answer": "<p>Un frasco completo de Synbiotic+, Probióticos para Niños y Stressbiotic®.</p>"
+            "answer": "<p>Un frasco completo de Synbiotic+, Kids Probiotics y Stressbiotic®.</p>"
           }
         },
         "faq_2": {
@@ -268,7 +269,7 @@
           "type": "faq_item",
           "settings": {
             "question": "¿Debo tomar los tres a la vez?",
-            "answer": "<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usa el que se ajuste a tus necesidades o a las de tu hijo.</p>"
+            "answer": "<p>No: cada producto tiene sus propias instrucciones de dosis en el frasco. Usá el que se ajuste a tus necesidades o a las de tu hijo.</p>"
           }
         },
         "faq_4": {
@@ -288,7 +289,7 @@
       "name": "Kit FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Preguntas frecuentes",
         "subtext": ""
       }
@@ -337,11 +338,11 @@
         "columns_desktop": 3,
         "columns_mobile": "2",
         "color_scheme": "scheme-3",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 0,
         "padding_bottom": 60
       }

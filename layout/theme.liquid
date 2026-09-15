@@ -288,6 +288,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'fgp-global.css' | asset_url | stylesheet_tag }}
     {{ 'stressbiotic.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -453,8 +454,10 @@
 
       .shopify-policy__body .rte a,
       .shopify-policy_body .rte a {
-        color: #45bfef;
-        text-decoration-color: rgba(69, 191, 239, 0.5);
+        /* #45bfef is only 2.11:1 on white — fails WCAG AA for body-size link
+           text. Darkened to 4.87:1 while staying the same brand hue. */
+        color: #1479a6;
+        text-decoration-color: rgba(20, 121, 166, 0.5);
       }
 
       @media screen and (max-width: 749px) {

@@ -23,12 +23,13 @@
       <!-- LEFT: Product image -->
       <div class="fgp-kids__col-left">
         {% if section.settings.product_image != blank %}
-          <img
-            class="fgp-kids__product-img"
-            src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: fgp_kids_product_alt }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_1 = section.settings.product_image_alt | default: fgp_kids_product_alt -%}
+          {% render 'fgp-responsive-image',
+            image: section.settings.product_image,
+            class: 'fgp-kids__product-img',
+            alt: fgp_ri_alt_1,
+            sizes: '(max-width: 767px) 100vw, 50vw',
+            widths: '400,600,800,1200,1600' %}
         {% else %}
           <div class="fgp-kids__product-img-placeholder"></div>
         {% endif %}
@@ -37,7 +38,8 @@
       <!-- RIGHT: Text + CTA -->
       <div class="fgp-kids__col-right">
         {% if section.settings.title_image != blank %}
-          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: fgp_kids_title_plain }}" loading="lazy">
+          {%- assign fgp_ri_alt_2 = section.settings.title | default: fgp_kids_title_plain -%}
+          {% render 'fgp-responsive-image', image: section.settings.title_image, class: 'fgp-kids__title-img', alt: fgp_ri_alt_2, sizes: '(max-width: 767px) 80vw, 400px', widths: '300,400,600,800' %}
         {% else %}
           <h2 class="fgp-kids__title">{{ section.settings.title | default: fgp_kids_title }}</h2>
         {% endif %}
@@ -79,12 +81,13 @@
       <!-- TOP: Product image -->
       <div class="fgp-kids__mobile-image-wrap">
         {% if section.settings.product_image != blank %}
-          <img
-            class="fgp-kids__mobile-product-img"
-            src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: fgp_kids_product_alt }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_3 = section.settings.product_image_alt | default: fgp_kids_product_alt -%}
+          {% render 'fgp-responsive-image',
+            image: section.settings.product_image,
+            class: 'fgp-kids__mobile-product-img',
+            alt: fgp_ri_alt_3,
+            sizes: '100vw',
+            widths: '400,600,800,1000' %}
         {% else %}
           <div class="fgp-kids__product-img-placeholder"></div>
         {% endif %}
@@ -93,7 +96,8 @@
       <!-- BOTTOM: Gold panel with logo, description + CTAs -->
       <div class="fgp-kids__mobile-panel">
         {% if section.settings.title_image != blank %}
-          <img class="fgp-kids__title-img" src="{{ section.settings.title_image | img_url: 'master' }}" alt="{{ section.settings.title | default: fgp_kids_title_plain }}" loading="lazy">
+          {%- assign fgp_ri_alt_4 = section.settings.title | default: fgp_kids_title_plain -%}
+          {% render 'fgp-responsive-image', image: section.settings.title_image, class: 'fgp-kids__title-img', alt: fgp_ri_alt_4, sizes: '(max-width: 767px) 80vw, 400px', widths: '300,400,600,800' %}
         {% else %}
           <h2 class="fgp-kids__title">{{ section.settings.title | default: fgp_kids_title }}</h2>
         {% endif %}
@@ -175,7 +179,8 @@
 .fgp-kids__product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* packshot, not a lifestyle photo — cover was cropping the bottle */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -330,7 +335,7 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center top;
   }
 

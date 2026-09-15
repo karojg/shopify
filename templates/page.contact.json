@@ -9,13 +9,21 @@
  */
 {
   "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "fgp_contact_hero": {
       "type": "fgp-contact-hero",
       "name": "Contact Hero",
       "settings": {
         "eyebrow": "ESTAMOS PARA AYUDARTE",
         "heading": "Contáctanos",
-        "subtext": "¿Dudas sobre cuál fórmula es para ti? Escríbenos por WhatsApp y te respondemos el mismo día hábil."
+        "subtext": "<p>¿Dudas sobre cuál fórmula es para vos?</p><p>Escríbenos por WhatsApp y te respondemos el mismo día hábil.</p>"
       }
     },
     "fgp_contact_info": {
@@ -31,20 +39,13 @@
             "subvalue": "Respuesta el mismo día hábil"
           }
         },
-        "info_phone": {
-          "type": "info_card",
-          "settings": {
-            "type": "phone",
-            "label": "Teléfono",
-            "value": "+506 7164 3200"
-          }
-        },
         "info_email": {
           "type": "info_card",
           "settings": {
             "type": "email",
             "label": "Correo electrónico",
-            "value": "hola@feelgoodpharma.com"
+            "value": "hola@feelgoodpharmacr.com",
+            "subvalue": "Te respondemos en 24 h"
           }
         },
         "info_hours": {
@@ -52,14 +53,13 @@
           "settings": {
             "type": "hours",
             "label": "Horario",
-            "value": "Lun – Vie: 8 a.m. – 8 p.m.",
-            "subvalue": "Sáb – Dom: 9 a.m. – 4 p.m."
+            "value": "Lun – Vie · 8 a.m. – 8 p.m.",
+            "subvalue": "Sáb y Dom · 9 a.m. – 4 p.m."
           }
         }
       },
       "block_order": [
         "info_whatsapp",
-        "info_phone",
         "info_email",
         "info_hours"
       ],
@@ -72,8 +72,8 @@
         "heading": "Envíanos un mensaje",
         "heading_size": "h2",
         "color_scheme": "background-1",
-        "padding_top": 48,
-        "padding_bottom": 60
+        "padding_top": 40,
+        "padding_bottom": 56
       }
     },
     "fgp_subfooter_contact": {
@@ -82,14 +82,9 @@
       "settings": {
         "tagline": "",
         "hashtag": "#FeelGoodWithin",
-        "ig_handle": "feel.goodpharma"
-      }
-    },
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "ig_handle": "feel.goodpharma",
+        "fb_url": "",
+        "fb_label": "FEELGOODPHARMA"
       }
     }
   },

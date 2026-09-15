@@ -32,12 +32,13 @@
       <!-- RIGHT: Full product image -->
       <div class="fgp-syn__col-right">
         {% if section.settings.product_image != blank %}
-          <img
-            class="fgp-syn__product-img"
-            src="{{ section.settings.product_image | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: fgp_syn_product_alt }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_1 = section.settings.product_image_alt | default: fgp_syn_product_alt -%}
+          {% render 'fgp-responsive-image',
+            image: section.settings.product_image,
+            class: 'fgp-syn__product-img',
+            alt: fgp_ri_alt_1,
+            sizes: '(max-width: 767px) 100vw, 50vw',
+            widths: '400,600,800,1200,1600' %}
         {% else %}
           <div class="fgp-syn__product-img-placeholder"></div>
         {% endif %}
@@ -54,12 +55,13 @@
       <div class="fgp-syn__mobile-image-wrap">
         {%- assign mobile_img = section.settings.product_image_mobile | default: section.settings.product_image -%}
         {% if mobile_img != blank %}
-          <img
-            class="fgp-syn__mobile-product-img"
-            src="{{ mobile_img | img_url: 'master' }}"
-            alt="{{ section.settings.product_image_alt | default: fgp_syn_product_alt }}"
-            loading="lazy"
-          >
+          {%- assign fgp_ri_alt_2 = section.settings.product_image_alt | default: fgp_syn_product_alt -%}
+          {% render 'fgp-responsive-image',
+            image: mobile_img,
+            class: 'fgp-syn__mobile-product-img',
+            alt: fgp_ri_alt_2,
+            sizes: '100vw',
+            widths: '400,600,800,1000' %}
         {% else %}
           <div class="fgp-syn__product-img-placeholder"></div>
         {% endif %}

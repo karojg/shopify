@@ -13,7 +13,7 @@
     {% endif %}
     <h1 class="fgp-chero__heading">{{ section.settings.heading | default: 'Contact us' }}</h1>
     {% if section.settings.subtext != blank %}
-      <p class="fgp-chero__subtext">{{ section.settings.subtext }}</p>
+      <div class="fgp-chero__subtext">{{ section.settings.subtext }}</div>
     {% endif %}
   </div>
 </section>
@@ -32,7 +32,7 @@
 }
 
 .fgp-chero__inner {
-  max-width: 700px;
+  max-width: 780px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -65,6 +65,16 @@
   line-height: 1.6;
 }
 
+/* richtext wraps each line in its own <p>; collapse the default margins so
+   the two lines sit together as one block */
+.fgp-chero__subtext p {
+  margin: 0;
+}
+
+.fgp-chero__subtext p + p {
+  margin-top: 4px;
+}
+
 @media (max-width: 767px) {
   .fgp-chero { padding: 48px 24px 56px; }
   .fgp-chero__heading { font-size: 28px; }
@@ -91,10 +101,11 @@
       "default": "Contact us"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "subtext",
       "label": "Subtext",
-      "default": "We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+      "info": "Each paragraph renders as its own line",
+      "default": "<p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>"
     }
   ],
   "presets": [

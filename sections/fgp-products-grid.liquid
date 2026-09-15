@@ -22,11 +22,15 @@
       {% for prod in source_collection.products limit: limit %}
         <div class="fgp-pgrid__card">
           <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
-            {% if prod.featured_image %}
+            {%- assign pg_img = prod.featured_image -%}
+            {%- if prod.metafields.custom.card_image.value != blank -%}
+              {%- assign pg_img = prod.metafields.custom.card_image.value -%}
+            {%- endif -%}
+            {% if pg_img %}
               <img
                 class="fgp-pgrid__img"
-                src="{{ prod.featured_image | img_url: '600x' }}"
-                alt="{{ prod.featured_image.alt | default: prod.title }}"
+                src="{{ pg_img | image_url: width: 600 }}"
+                alt="{{ pg_img.alt | default: prod.title }}"
                 loading="lazy"
               >
             {% else %}
@@ -40,10 +44,12 @@
             <h3 class="fgp-pgrid__title">
               <a href="{{ prod.url }}">{{ prod.title }}</a>
             </h3>
-            <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-            <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-              {{ section.settings.cta_label | default: 'Shop Now' }}
-            </a>
+            <div class="fgp-pgrid__price-row">
+              <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
+              <a href="{{ prod.url }}" class="fgp-pgrid__cta">
+                {{ section.settings.cta_label | default: 'Shop Now' }}
+              </a>
+            </div>
           </div>
         </div>
       {% endfor %}
@@ -52,13 +58,39 @@
       {% for block in section.blocks %}
         {% assign prod = all_products[block.settings.product] %}
         {% if prod != blank %}
+          {%- comment -%}
+            Optional variant pick. Shopify has no "variant" setting type, so the
+            block stores a position and we resolve it against the product here.
+            Falls back to the product itself when unset or out of range.
+          {%- endcomment -%}
+          {%- assign pg_variant = blank -%}
+          {%- if block.settings.variant_pick == 'second' and prod.variants.size > 1 -%}
+            {%- assign pg_variant = prod.variants[1] -%}
+          {%- elsif block.settings.variant_pick == 'first' -%}
+            {%- assign pg_variant = prod.variants.first -%}
+          {%- endif -%}
+          {%- if pg_variant != blank -%}
+            {%- assign pg_url = pg_variant.url -%}
+            {%- assign pg_price = pg_variant.price -%}
+          {%- else -%}
+            {%- assign pg_url = prod.url -%}
+            {%- assign pg_price = prod.price -%}
+          {%- endif -%}
           <div class="fgp-pgrid__card" {{ block.shopify_attributes }}>
-            <a href="{{ prod.url }}" class="fgp-pgrid__img-link">
-              {% if prod.featured_image %}
+            <a href="{{ pg_url }}" class="fgp-pgrid__img-link">
+              {%- assign pg_img = prod.featured_image -%}
+              {%- if prod.metafields.custom.card_image.value != blank -%}
+                {%- assign pg_img = prod.metafields.custom.card_image.value -%}
+              {%- endif -%}
+              {%- comment -%} A variant's own image wins when it has one {%- endcomment -%}
+              {%- if pg_variant != blank and pg_variant.image != blank -%}
+                {%- assign pg_img = pg_variant.image -%}
+              {%- endif -%}
+              {% if pg_img %}
                 <img
                   class="fgp-pgrid__img"
-                  src="{{ prod.featured_image | img_url: '600x' }}"
-                  alt="{{ prod.featured_image.alt | default: prod.title }}"
+                  src="{{ pg_img | image_url: width: 600 }}"
+                  alt="{{ pg_img.alt | default: prod.title }}"
                   loading="lazy"
                 >
               {% else %}
@@ -70,12 +102,14 @@
                 <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
               {% endif %}
               <h3 class="fgp-pgrid__title">
-                <a href="{{ prod.url }}">{{ prod.title }}</a>
+                <a href="{{ pg_url }}">{{ prod.title }}</a>
               </h3>
-              <p class="fgp-pgrid__price">{{ prod.price | money }}</p>
-              <a href="{{ prod.url }}" class="fgp-pgrid__cta">
-                {{ block.settings.cta_label | default: 'Shop Now' }}
-              </a>
+              <div class="fgp-pgrid__price-row">
+                <p class="fgp-pgrid__price">{{ pg_price | money }}</p>
+                <a href="{{ pg_url }}" class="fgp-pgrid__cta">
+                  {{ block.settings.cta_label | default: 'Shop Now' }}
+                </a>
+              </div>
             </div>
           </div>
         {% else %}
@@ -84,8 +118,10 @@
             <div class="fgp-pgrid__info">
               <p class="fgp-pgrid__eyebrow">{{ block.settings.eyebrow }}</p>
               <h3 class="fgp-pgrid__title">{{ block.settings.placeholder_title | default: 'Product name' }}</h3>
-              <p class="fgp-pgrid__price">—</p>
-              <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+              <div class="fgp-pgrid__price-row">
+                <p class="fgp-pgrid__price">—</p>
+                <span class="fgp-pgrid__cta fgp-pgrid__cta--disabled">{{ block.settings.cta_label | default: 'Shop Now' }}</span>
+              </div>
             </div>
           </div>
         {% endif %}
@@ -121,37 +157,35 @@
 .fgp-pgrid__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  /* 40px gap per the Figma spec */
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Card */
+/* No card chrome in the design — only the image is rounded */
 .fgp-pgrid__card {
-  background: var(--fgp-white);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  background: transparent;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.fgp-pgrid__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
+.fgp-pgrid__img-link { border-radius: 12px; }
 
-/* Image */
+/* Image — full-bleed square, as in the design. The padded white frame here
+   was compensating for packshots; lifestyle photos fill the card instead. */
 .fgp-pgrid__img-link {
   display: block;
   overflow: hidden;
   line-height: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .fgp-pgrid__img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -159,21 +193,23 @@
 }
 
 .fgp-pgrid__card:hover .fgp-pgrid__img {
-  transform: scale(1.03);
+  /* gentler than before — with contain the image already fills less of the
+     frame, so a large scale reads as a jump */
+  transform: scale(1.04);
 }
 
 .fgp-pgrid__img-placeholder {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 1 / 1;
   background: #dce8f5;
 }
 
 /* Info */
 .fgp-pgrid__info {
-  padding: 20px 24px 28px;
+  padding: 14px 2px 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   flex: 1;
 }
 
@@ -210,20 +246,29 @@
   margin: 0;
 }
 
+/* Compact cyber-grape pill sitting on the price row, per the design */
+.fgp-pgrid__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
 .fgp-pgrid__cta {
   display: inline-block;
-  background: var(--fgp-navy);
+  background: var(--fgp-cyber-grape, #65438a);
   color: var(--fgp-white);
   font-family: var(--fgp-font);
   font-size: 14px;
   font-weight: 600;
   border-radius: 100px;
-  padding: 12px 24px;
+  min-width: 100px;
+  padding: 11px 24px;
   text-decoration: none;
   text-align: center;
   transition: opacity 0.2s;
-  margin-top: auto;
-  align-self: flex-start;
+  white-space: nowrap;
 }
 
 .fgp-pgrid__cta:hover { opacity: 0.85; }
@@ -241,9 +286,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-
-  .fgp-pgrid__img { height: 200px; }
-  .fgp-pgrid__img-placeholder { height: 200px; }
 }
 
 /* Desktop */
@@ -265,8 +307,6 @@
     gap: 20px;
   }
 
-  .fgp-pgrid__img { height: 240px; }
-  .fgp-pgrid__img-placeholder { height: 240px; }
   .fgp-pgrid__title { font-size: 17px; }
 }
 </style>
@@ -315,6 +355,18 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "select",
+          "id": "variant_pick",
+          "label": "Variant to show",
+          "info": "Which variant the card shows and links to. \"Product default\" uses the product's own image, price and URL. Follows the variant order set on the product in Shopify.",
+          "options": [
+            { "value": "default", "label": "Product default" },
+            { "value": "first", "label": "First variant" },
+            { "value": "second", "label": "Second variant" }
+          ],
+          "default": "default"
         },
         {
           "type": "text",

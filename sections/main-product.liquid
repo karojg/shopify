@@ -753,6 +753,14 @@
   </product-component>
 </product-info>
 
+{%- comment -%}
+  Mobile sticky add-to-cart. Off by default so existing product pages are
+  unchanged; enable per template in the theme editor.
+{%- endcomment -%}
+{%- if section.settings.enable_sticky_atc -%}
+  {% render 'fgp-sticky-atc', product: product, section: section %}
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -2296,6 +2304,13 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_atc",
+      "label": "Enable mobile sticky add to cart",
+      "info": "Shows a fixed add-to-cart bar once the main button scrolls out of view.",
+      "default": false
     },
     {
       "type": "header",

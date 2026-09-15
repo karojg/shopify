@@ -61,8 +61,13 @@
             name="contact[{{ 'templates.contact.form.name' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
             placeholder="{{ 'templates.contact.form.name' | t }}"
+            required
+            aria-required="true"
           >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <label class="field__label" for="ContactForm-name">
+            {{- 'templates.contact.form.name' | t }}
+            <span aria-hidden="true">*</span></label
+          >
         </div>
         <div class="field field--with-error">
           <input
@@ -74,6 +79,7 @@
             spellcheck="false"
             autocapitalize="off"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            required
             aria-required="true"
             {% if form.errors contains 'email' %}
               aria-invalid="true"
@@ -106,7 +112,8 @@
           class="field__input"
           autocomplete="tel"
           name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
+          {%- comment -%} Allow +506 country codes and spaces, not just digits/dashes. {%- endcomment -%}
+          pattern="[0-9+\-\s()]*"
           value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
           placeholder="{{ 'templates.contact.form.phone' | t }}"
         >
@@ -119,11 +126,14 @@
           class="text-area field__input"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
           placeholder="{{ 'templates.contact.form.comment' | t }}"
+          required
+          aria-required="true"
         >
           {{- form.body -}}
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
+          {{- 'templates.contact.form.comment' | t }}
+          <span aria-hidden="true">*</span>
         </label>
       </div>
       <div class="contact__button">

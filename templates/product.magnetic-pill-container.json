@@ -77,7 +77,7 @@
           "settings": {
             "heading": "Política de devoluciones",
             "icon": "none",
-            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedas conforme, contáctanos para un reembolso completo.</p>",
+            "content": "<p>Ofrecemos una garantía de satisfacción de 30 días. Si no quedás conforme, escribinos para un reembolso completo.</p>",
             "page": ""
           }
         },
@@ -108,7 +108,7 @@
         "color_scheme": "",
         "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "show",
         "media_position": "left",
@@ -116,7 +116,8 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "enable_sticky_atc": true
       }
     },
     "fgp_icon_strip_pillcase": {
@@ -245,7 +246,7 @@
       "name": "Product FAQ",
       "settings": {
         "layout": "split",
-        "eyebrow": "¿TIENES PREGUNTAS?",
+        "eyebrow": "¿TENÉS PREGUNTAS?",
         "heading": "Preguntas frecuentes",
         "subtext": ""
       }
@@ -293,11 +294,11 @@
         "columns_desktop": 3,
         "columns_mobile": "2",
         "color_scheme": "scheme-3",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 0,
         "padding_bottom": 60
       }

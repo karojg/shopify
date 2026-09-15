@@ -40,7 +40,7 @@
 
         <div class="fgp-hero__desktop-products">
           {% if section.settings.product_combined_image != blank %}
-            <img class="fgp-hero__product-combined-desktop" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
+            <img class="fgp-hero__product-combined-desktop" src="{{ section.settings.product_combined_image | image_url: width: 1600 }}" srcset="{{ section.settings.product_combined_image | image_url: width: 300 }} 300w, {{ section.settings.product_combined_image | image_url: width: 400 }} 400w, {{ section.settings.product_combined_image | image_url: width: 600 }} 600w, {{ section.settings.product_combined_image | image_url: width: 800 }} 800w, {{ section.settings.product_combined_image | image_url: width: 1000 }} 1000w, {{ section.settings.product_combined_image | image_url: width: 1200 }} 1200w, {{ section.settings.product_combined_image | image_url: width: 1600 }} 1600w" sizes="(max-width: 767px) 100vw, 60vw" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
           {% endif %}
 
           {% if section.settings.badge_image != blank %}
@@ -128,7 +128,7 @@
       <div class="fgp-hero__products">
         <div class="fgp-hero__products-wrapper">
           {% if section.settings.product_combined_image != blank %}
-            <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | img_url: 'master' }}" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
+            <img class="fgp-hero__product-combined" src="{{ section.settings.product_combined_image | image_url: width: 1000 }}" srcset="{{ section.settings.product_combined_image | image_url: width: 300 }} 300w, {{ section.settings.product_combined_image | image_url: width: 400 }} 400w, {{ section.settings.product_combined_image | image_url: width: 600 }} 600w, {{ section.settings.product_combined_image | image_url: width: 800 }} 800w, {{ section.settings.product_combined_image | image_url: width: 1000 }} 1000w" sizes="100vw" alt="{{ section.settings.product_combined_alt | default: fgp_products_alt }}" loading="lazy">
           {% endif %}
           {% if section.settings.badge_image != blank %}
             <img class="fgp-hero__badge fgp-hero__badge--mobile" src="{{ section.settings.badge_image | img_url: '120x' }}" alt="{{ section.settings.badge_alt | default: fgp_badge_alt }}" loading="lazy">

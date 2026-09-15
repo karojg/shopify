@@ -10,7 +10,7 @@
 <section class="fgp-cinfo" aria-label="{{ 'fgp.aria.contact_info' | t }}">
   <div class="fgp-cinfo__grid">
     {% for block in section.blocks %}
-      <div class="fgp-cinfo__card" {{ block.shopify_attributes }}>
+      <div class="fgp-cinfo__card fgp-cinfo__card--{{ block.settings.type }}" {{ block.shopify_attributes }}>
         {% if block.settings.icon != blank %}
           <img
             class="fgp-cinfo__icon"
@@ -95,16 +95,17 @@
   --fgp-font:     'Poppins', sans-serif;
 
   font-family: var(--fgp-font);
-  background: var(--fgp-offwhite);
+  background: var(--fgp-white);
   padding: 48px 24px 56px;
 }
 
 .fgp-cinfo__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .fgp-cinfo__card {
@@ -112,7 +113,10 @@
   border-radius: 16px;
   padding: 28px 20px;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  /* on a white section the shadow alone no longer separates the card,
+     so a faint navy border carries the edge */
+  border: 1px solid rgba(35, 64, 146, 0.10);
+  box-shadow: 0 2px 10px rgba(35, 64, 146, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +165,8 @@
 
 .fgp-cinfo__card:has(a.fgp-cinfo__value):hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(35, 64, 146, 0.14);
+  border-color: rgba(35, 64, 146, 0.22);
+  box-shadow: 0 8px 24px rgba(35, 64, 146, 0.12);
 }
 
 .fgp-cinfo__card:has(a.fgp-cinfo__value):hover .fgp-cinfo__icon-fallback {
@@ -183,7 +188,7 @@
 .fgp-cinfo__label {
   font-size: 11px;
   font-weight: 700;
-  color: var(--fgp-blue);
+  color: var(--fgp-blue-text);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
@@ -197,10 +202,39 @@
   text-decoration: none;
   line-height: 1.4;
   transition: color 0.2s;
+  /* the email must not break mid-address; shrink it slightly instead so
+     hola@feelgoodpharmacr.com stays on one line */
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+  max-width: 100%;
+}
+
+/* Email is the longest value — give it a size that fits the card */
+.fgp-cinfo__card:has(a[href^="mailto:"]) .fgp-cinfo__value {
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+/* Hours read as two equal lines rather than a value and a faint footnote */
+.fgp-cinfo__card--hours .fgp-cinfo__value,
+.fgp-cinfo__card--hours .fgp-cinfo__subvalue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgp-navy);
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.fgp-cinfo__card--hours .fgp-cinfo__subvalue {
+  margin-top: 4px;
+  padding-top: 0;
+  font-weight: 500;
+  opacity: 0.75;
 }
 
 a.fgp-cinfo__value:hover {
-  color: var(--fgp-blue);
+  color: var(--fgp-blue-text);
   text-decoration: underline;
 }
 
@@ -210,16 +244,23 @@ a.fgp-cinfo__value:hover {
   opacity: 0.6;
   margin: 0;
   line-height: 1.4;
+  /* keeps the sub-line on the bottom edge so cards with and without one
+     still line up their labels and values */
+  margin-top: auto;
+  padding-top: 6px;
 }
 
 @media (max-width: 767px) {
   .fgp-cinfo { padding: 32px 20px 40px; }
+  /* single column — three cards in a 2-col grid leave one orphaned */
   .fgp-cinfo__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 14px;
+    max-width: 420px;
   }
-  .fgp-cinfo__card { padding: 20px 14px; }
-  .fgp-cinfo__value { font-size: 13px; }
+  .fgp-cinfo__card { padding: 22px 18px; }
+  .fgp-cinfo__value { font-size: 15px; }
+  .fgp-cinfo__card:has(a[href^="mailto:"]) .fgp-cinfo__value { font-size: 15px; }
 }
 </style>
 
@@ -265,7 +306,7 @@ a.fgp-cinfo__value:hover {
           "type": "text",
           "id": "value",
           "label": "Value (email address, phone number, text, or URL)",
-          "default": "hola@feelgoodpharma.com"
+          "default": "hola@feelgoodpharmacr.com"
         },
         {
           "type": "text",
@@ -302,7 +343,7 @@ a.fgp-cinfo__value:hover {
           "settings": {
             "type": "email",
             "label": "Email",
-            "value": "hola@feelgoodpharma.com"
+            "value": "hola@feelgoodpharmacr.com"
           }
         },
         {

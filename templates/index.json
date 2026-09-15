@@ -226,7 +226,7 @@
         "badge_text": "4 IN 1",
         "badge_subtext": "2 cápsulas · 3 veces al día",
         "eyebrow": "NIÑOS",
-        "title": "PROBIÓTICOS PARA NIÑOS",
+        "title": "KIDS PROBIOTICS",
         "description": "<p>Formulación especialmente diseñada para <strong>favorecer la salud digestiva, fortalecer la inmunidad y equilibrar la microbiota intestinal</strong> de los más pequeños.</p>",
         "cta_label": "Comprar Kids 60",
         "cta_variant_id": "50086279315777",
@@ -242,7 +242,7 @@
       "type": "fgp-kids-symptoms",
       "name": "FGP Kids Symptoms",
       "settings": {
-        "heading": "Con PROBIÓTICOS PARA NIÑOS, tu hijo nunca más tendrá que sufrir de:",
+        "heading": "Con KIDS PROBIOTICS, tu hijo nunca más tendrá que sufrir de:",
         "icon_1": "shopify://shop_images/Gut.png",
         "label_1": "Estreñimiento o diarrea",
         "icon_2": "shopify://shop_images/Balance.png",
@@ -273,7 +273,7 @@
           "settings": {
             "video": "shopify://files/videos/FLGD_KIDS_PRO_DDM_CLEAN_5.mp4",
             "video_url": "",
-            "title": "PROBIÓTICOS PARA NIÑOS",
+            "title": "KIDS PROBIOTICS",
             "subtitle": "Fórmula 4 en 1 para los más pequeños",
             "cta_label": "Comprar",
             "cta_url": "shopify://products/kids-organic-probiotic-gummies"
@@ -366,18 +366,18 @@
           "type": "product_card",
           "settings": {
             "product": "kids-organic-probiotic-gummies",
-            "eyebrow": "NIÑOS",
-            "placeholder_title": "Probióticos para Niños",
-            "cta_label": "Comprar Probióticos para Niños"
+            "eyebrow": "Gomitas",
+            "placeholder_title": "Kids Probiotics",
+            "cta_label": "Comprar Kids Probiotics"
           }
         },
         "product_3": {
           "type": "product_card",
           "settings": {
             "product": "pastilleros-magneticos-feel-good-eucalipto",
-            "eyebrow": "ENZIMAS DIGESTIVAS",
-            "placeholder_title": "Enzimas digestivas",
-            "cta_label": "Comprar enzimas"
+            "eyebrow": "Pastilleros",
+            "placeholder_title": "Pastilleros Magnéticos Feel Good",
+            "cta_label": "Comprar Pastilleros"
           }
         }
       },
@@ -400,17 +400,19 @@
         "doctor_1": {
           "type": "doctor",
           "settings": {
+            "photo": "shopify://shop_images/FLGD_DRA_NANCY_CONEJO-7404682.jpg",
             "name": "Dra. Nancy Conejo",
             "specialty": "Pediatra | Neonatóloga",
             "ig_handle": "@pediatranancyconejo",
-            "quote": "Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Probióticos para Niños están diseñados para complementar el estilo de vida saludable de tu familia.\"",
+            "quote": "Combinar probióticos con una dieta equilibrada rica en alimentos integrales, fibra e hidratación es la clave del bienestar a largo plazo. Por eso Synbiotic y Kids Probiotics están diseñados para complementar el estilo de vida saludable de tu familia.\"",
             "quote_url": ""
           }
         },
         "doctor_2": {
           "type": "doctor",
           "settings": {
-            "name": "Doctora Von Saalfeld",
+            "photo": "shopify://shop_images/FLGD_VS.png",
+            "name": "Dra. Von Saalfeld",
             "specialty": "Nutricionista",
             "ig_handle": "@cnvs_nutricion",
             "quote": "Synbiotic + funciona increíblemente bien como complemento de una dieta equilibrada en pacientes con síndrome de intestino irritable y otros problemas digestivos.\"",
@@ -420,10 +422,11 @@
         "doctor_3": {
           "type": "doctor",
           "settings": {
-            "name": "Dr. Nombre Apellido",
-            "specialty": "Medicina interna",
-            "ig_handle": "",
-            "quote": "Un producto científicamente sólido que realmente da resultados. Confío en Feel Good Pharma por su calidad y transparencia.",
+            "photo": "shopify://shop_images/dra-masis.jpg",
+            "name": "Dra. Andrea Masis",
+            "specialty": "Dermatóloga",
+            "ig_handle": "drm.dermatologia",
+            "quote": "Tenemos un eje que conecta el intestino con la piel, algunas enfermedades infamatorias en la piel, por ejemplo el acné, psoriasis, eccema y dermatitis atópica, tienen un componente inflamatorio qué se ven directamente afectadas cuando las bacterias que están en el intestino están en disbiosis y cuando están balanceadas la piel esta saludable.\"",
             "quote_url": ""
           }
         }
@@ -447,8 +450,8 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Llevo 3 meses usando este producto y me siento increíble. Mi digestión ha mejorado muchísimo y tengo más energía que nunca.",
-            "name": "Maria G.",
+            "review": "\"Ha sido un cambio rotundo en mi estómago y en mi vida.\"",
+            "name": "Cliente Verificado",
             "location": "San José, Costa Rica"
           }
         },
@@ -457,9 +460,9 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Llevo 3 meses usando Synbiotic+ y mi digestión ha mejorado muchísimo. Tengo más energía y me siento increíble.",
-            "name": "Maria G.",
-            "location": "San José, Costa Rica"
+            "review": "\"Mi experiencia ha sido muy buena con Synbiotic+. Me ha encantado el producto y lo recomiendo a ojos cerrados. A nivel digestivo mejoré muchísimo y sentí un cambio positivo en mi salud.\"",
+            "name": "Cliente Verificado",
+            "location": "Cartago, Costa Rica"
           }
         },
         "review_2": {
@@ -467,8 +470,8 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "Mi hija empezó con Probióticos para Niños y en pocas semanas se le quitaron los dolores de barriga. ¡Estoy muy agradecida!",
-            "name": "Ana R.",
+            "review": "\"Nos ha ido súper. Ya llevamos 2 meses y acabamos de comprar 2 Kids Probiotics más. ¡Lo amamos!\"",
+            "name": "Cliente Verificado",
             "location": "Heredia, Costa Rica"
           }
         },
@@ -477,9 +480,9 @@
           "settings": {
             "stars": 5,
             "verified": true,
-            "review": "¡Por fin un probiótico que sí funciona! Se acabó la hinchazón y las molestias. Feel Good Pharma me cambió la vida.",
-            "name": "Carlos M.",
-            "location": "Cartago, Costa Rica"
+            "review": "\"Ha sido un excelente aliado para mi problema de estreñimiento. Muchas gracias.\"",
+            "name": "Cliente Verificado",
+            "location": "San José, Costa Rica"
           }
         }
       },
