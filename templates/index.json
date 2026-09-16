@@ -15,37 +15,37 @@
         "symptom_9LcLEX": {
           "type": "symptom",
           "settings": {
-            "label": "Estrés"
+            "label": "Stress"
           }
         },
         "symptom_Czacg9": {
           "type": "symptom",
           "settings": {
-            "label": "Intolerancia al gluten"
+            "label": "Gluten intolerance"
           }
         },
         "symptom_84T8f3": {
           "type": "symptom",
           "settings": {
-            "label": "Intolerancia a la lactosa"
+            "label": "Lactose intolerance"
           }
         },
         "symptom_8DJzUP": {
           "type": "symptom",
           "settings": {
-            "label": "Estreñimiento o diarrea"
+            "label": "Constipation or Diarrhea"
           }
         },
         "symptom_hijUjK": {
           "type": "symptom",
           "settings": {
-            "label": "Síndrome de intestino irritable"
+            "label": "Irritable Bowel Syndrome"
           }
         },
         "symptom_en4tU4": {
           "type": "symptom",
           "settings": {
-            "label": "Bajas defensas"
+            "label": "Low defenses"
           }
         }
       },
