@@ -342,8 +342,8 @@ templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_6.settings,our_value,3 incluidos,3 Included,translated
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_6.settings,other_value,No incluye patentes,Does not include patents,translated
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,feature,Acción sobre estrés y sueño,Stress + sleep actions,translated
-templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,our_value,De alta proliferación,Upto-proliferating,translated
-templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,other_value,Solo cepas para el sueño,Only strains to sleep,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,our_value,De alta proliferación,High-proliferation strains,translated
+templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_7.settings,other_value,Solo cepas para el sueño,Sleep-only strains,translated
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,feature,Requiere refrigeración,Refrigeration required,translated
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,our_value,No requiere refrigeración,No refrigeration needed,translated
 templates/product.stressbiotic.json,fgp-comparison-table,sections.fgp_comparison_table.blocks.row_8.settings,other_value,No requiere refrigeración,No refrigeration needed,translated
