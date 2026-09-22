@@ -21,13 +21,20 @@
     {% # theme-check-enable %}
     {{ block.shopify_attributes }}
   >
+    {%- liquid
+      assign picker_type_override = product.metafields.custom.variant_picker_style.value
+    -%}
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
 
+        if picker_type_override == 'dropdown' or picker_type_override == 'button'
+          assign picker_type = picker_type_override
+        endif
+
         if swatch_count > 0 and block.settings.swatch_shape != 'none'
-          if block.settings.picker_type == 'dropdown'
+          if picker_type == 'dropdown'
             assign picker_type = 'swatch_dropdown'
           else
             assign picker_type = 'swatch'
